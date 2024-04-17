@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Applications
-Module Guid: a4bdb7cf-d446-4fd4-bd19-dbab84a221e1
+Module Guid: 7a3d0fac-b855-4263-a24f-8515b799599a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -20,7 +20,6 @@ You can use the Update application operation to perform an update instead.
 
 ### [Add-MgBetaApplicationPassword](Add-MgBetaApplicationPassword.md)
 Adds a strong password to an application.
-You can also add passwords while creating the application.
 
 ### [Add-MgBetaServicePrincipalTokenSigningCertificate](Add-MgBetaServicePrincipalTokenSigningCertificate.md)
 Creates a self-signed signing certificate and returns a selfSignedCertificate object, which is the public part of the generated certificate.
@@ -115,9 +114,6 @@ Read a directory extension definition represented by an extensionProperty object
 Get the number of the resource
 
 ### [Get-MgBetaApplicationFederatedIdentityCredential](Get-MgBetaApplicationFederatedIdentityCredential.md)
-Read the properties and relationships of a federatedIdentityCredential object.
-
-### [Get-MgBetaApplicationFederatedIdentityCredentialByName](Get-MgBetaApplicationFederatedIdentityCredentialByName.md)
 Read the properties and relationships of a federatedIdentityCredential object.
 
 ### [Get-MgBetaApplicationFederatedIdentityCredentialCount](Get-MgBetaApplicationFederatedIdentityCredentialCount.md)
@@ -319,12 +315,6 @@ Retrieve the properties of a connectorGroup.
 ### [Get-MgBetaOnPremisePublishingProfileConnectorGroupApplication](Get-MgBetaOnPremisePublishingProfileConnectorGroupApplication.md)
 Get applications from onPremisesPublishingProfiles
 
-### [Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationByAppId](Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationByAppId.md)
-Get applications from onPremisesPublishingProfiles
-
-### [Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationByUniqueName](Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationByUniqueName.md)
-Get applications from onPremisesPublishingProfiles
-
 ### [Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationCount](Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationCount.md)
 Get the number of the resource
 
@@ -464,9 +454,6 @@ Get licenseDetails from servicePrincipals
 ### [Get-MgBetaServicePrincipalLicenseDetailCount](Get-MgBetaServicePrincipalLicenseDetailCount.md)
 Get the number of the resource
 
-### [Get-MgBetaServicePrincipalLicenseDetailTeamLicensingDetail](Get-MgBetaServicePrincipalLicenseDetailTeamLicensingDetail.md)
-Invoke function getTeamsLicensingDetails
-
 ### [Get-MgBetaServicePrincipalMemberGroup](Get-MgBetaServicePrincipalMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -547,7 +534,7 @@ Get the number of the resource
 
 ### [Get-MgBetaServicePrincipalOwner](Get-MgBetaServicePrincipalOwner.md)
 Directory objects that are owners of this servicePrincipal.
-The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
 Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
@@ -563,7 +550,7 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgBetaServicePrincipalOwnerByRef](Get-MgBetaServicePrincipalOwnerByRef.md)
 Directory objects that are owners of this servicePrincipal.
-The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
 Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
@@ -714,7 +701,8 @@ Invoke function functions
 
 ### [Invoke-MgBetaInstantiateApplicationTemplate](Invoke-MgBetaInstantiateApplicationTemplate.md)
 Add an instance of an application from the Microsoft Entra application gallery into your directory.
-The application template with ID 8adf8e6e-67b2-4cf2-a259-e3dc5476c621 can be used to add a non-gallery app that you can configure different single-sign on (SSO) modes like SAML SSO and password-based SSO.
+You can also use this API to instantiate non-gallery apps.
+Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
 
 ### [Invoke-MgBetaParseApplicationSynchronizationJobSchemaExpression](Invoke-MgBetaParseApplicationSynchronizationJobSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
@@ -903,10 +891,6 @@ Deletes an application.
 When deleted, apps are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
 
-### [Remove-MgBetaApplicationAppManagementPolicyAppManagementPolicyByRef](Remove-MgBetaApplicationAppManagementPolicyAppManagementPolicyByRef.md)
-Remove an appManagementPolicy policy object from an application or service principal object.
-When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
-
 ### [Remove-MgBetaApplicationAppManagementPolicyByRef](Remove-MgBetaApplicationAppManagementPolicyByRef.md)
 Remove an appManagementPolicy policy object from an application or service principal object.
 When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
@@ -931,19 +915,12 @@ You can delete only directory extensions that aren't synced from on-premises act
 ### [Remove-MgBetaApplicationFederatedIdentityCredential](Remove-MgBetaApplicationFederatedIdentityCredential.md)
 Deletes a federatedIdentityCredential object from an application.
 
-### [Remove-MgBetaApplicationFederatedIdentityCredentialByName](Remove-MgBetaApplicationFederatedIdentityCredentialByName.md)
-Deletes a federatedIdentityCredential object from an application.
-
 ### [Remove-MgBetaApplicationKey](Remove-MgBetaApplicationKey.md)
 Remove a key credential from an application.
 This method along with addKey can be used by an application to automate rolling its expiring keys.
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
 
 ### [Remove-MgBetaApplicationOwnerByRef](Remove-MgBetaApplicationOwnerByRef.md)
-Remove an owner from an application.
-As a recommended best practice, apps should have at least two owners.
-
-### [Remove-MgBetaApplicationOwnerDirectoryObjectByRef](Remove-MgBetaApplicationOwnerDirectoryObjectByRef.md)
 Remove an owner from an application.
 As a recommended best practice, apps should have at least two owners.
 
@@ -978,13 +955,7 @@ Delete navigation property directories for applications
 ### [Remove-MgBetaApplicationTokenIssuancePolicyByRef](Remove-MgBetaApplicationTokenIssuancePolicyByRef.md)
 Remove a tokenIssuancePolicy from an application.
 
-### [Remove-MgBetaApplicationTokenIssuancePolicyTokenIssuancePolicyByRef](Remove-MgBetaApplicationTokenIssuancePolicyTokenIssuancePolicyByRef.md)
-Remove a tokenIssuancePolicy from an application.
-
 ### [Remove-MgBetaApplicationTokenLifetimePolicyByRef](Remove-MgBetaApplicationTokenLifetimePolicyByRef.md)
-Remove a tokenLifetimePolicy from an application or servicePrincipal.
-
-### [Remove-MgBetaApplicationTokenLifetimePolicyTokenLifetimePolicyByRef](Remove-MgBetaApplicationTokenLifetimePolicyTokenLifetimePolicyByRef.md)
 Remove a tokenLifetimePolicy from an application or servicePrincipal.
 
 ### [Remove-MgBetaGroupAppRoleAssignment](Remove-MgBetaGroupAppRoleAssignment.md)
@@ -1005,16 +976,10 @@ Delete navigation property agents for onPremisesPublishingProfiles
 ### [Remove-MgBetaOnPremisePublishingProfileAgentGroupByRef](Remove-MgBetaOnPremisePublishingProfileAgentGroupByRef.md)
 Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
 
-### [Remove-MgBetaOnPremisePublishingProfileAgentGroupOnPremiseAgentGroupByRef](Remove-MgBetaOnPremisePublishingProfileAgentGroupOnPremiseAgentGroupByRef.md)
-Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-
 ### [Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResource](Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResource.md)
 Delete navigation property publishedResources for onPremisesPublishingProfiles
 
 ### [Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef](Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef.md)
-Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-
-### [Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupOnPremiseAgentGroupByRef](Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupOnPremiseAgentGroupByRef.md)
 Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
 
 ### [Remove-MgBetaOnPremisePublishingProfileConnector](Remove-MgBetaOnPremisePublishingProfileConnector.md)
@@ -1027,13 +992,7 @@ All connectors and applications must be removed from the connector group before 
 ### [Remove-MgBetaOnPremisePublishingProfileConnectorGroupMemberByRef](Remove-MgBetaOnPremisePublishingProfileConnectorGroupMemberByRef.md)
 Delete ref of navigation property members for onPremisesPublishingProfiles
 
-### [Remove-MgBetaOnPremisePublishingProfileConnectorGroupMemberConnectorByRef](Remove-MgBetaOnPremisePublishingProfileConnectorGroupMemberConnectorByRef.md)
-Delete ref of navigation property members for onPremisesPublishingProfiles
-
 ### [Remove-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef](Remove-MgBetaOnPremisePublishingProfileConnectorMemberOfByRef.md)
-Delete ref of navigation property memberOf for onPremisesPublishingProfiles
-
-### [Remove-MgBetaOnPremisePublishingProfileConnectorMemberOfConnectorGroupByRef](Remove-MgBetaOnPremisePublishingProfileConnectorMemberOfConnectorGroupByRef.md)
 Delete ref of navigation property memberOf for onPremisesPublishingProfiles
 
 ### [Remove-MgBetaOnPremisePublishingProfilePublishedResource](Remove-MgBetaOnPremisePublishingProfilePublishedResource.md)
@@ -1042,11 +1001,12 @@ Delete navigation property publishedResources for onPremisesPublishingProfiles
 ### [Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef](Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef.md)
 Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
 
-### [Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupOnPremiseAgentGroupByRef](Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupOnPremiseAgentGroupByRef.md)
-Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
-
 ### [Remove-MgBetaServicePrincipal](Remove-MgBetaServicePrincipal.md)
 Delete a servicePrincipal object.
+
+### [Remove-MgBetaServicePrincipalAppManagementPolicy](Remove-MgBetaServicePrincipalAppManagementPolicy.md)
+Remove an appManagementPolicy policy object from an application or service principal object.
+When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 
 ### [Remove-MgBetaServicePrincipalAppRoleAssignedTo](Remove-MgBetaServicePrincipalAppRoleAssignedTo.md)
 Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
@@ -1062,9 +1022,6 @@ Delete a servicePrincipal object.
 ### [Remove-MgBetaServicePrincipalClaimMappingPolicyByRef](Remove-MgBetaServicePrincipalClaimMappingPolicyByRef.md)
 Remove a claimsMappingPolicy from a servicePrincipal.
 
-### [Remove-MgBetaServicePrincipalClaimMappingPolicyClaimMappingPolicyByRef](Remove-MgBetaServicePrincipalClaimMappingPolicyClaimMappingPolicyByRef.md)
-Remove a claimsMappingPolicy from a servicePrincipal.
-
 ### [Remove-MgBetaServicePrincipalDelegatedPermissionClassification](Remove-MgBetaServicePrincipalDelegatedPermissionClassification.md)
 Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
 
@@ -1074,17 +1031,10 @@ Delete navigation property endpoints for servicePrincipals
 ### [Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyByRef](Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
 
-### [Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef](Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef.md)
-Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
-
 ### [Remove-MgBetaServicePrincipalLicenseDetail](Remove-MgBetaServicePrincipalLicenseDetail.md)
 Delete navigation property licenseDetails for servicePrincipals
 
 ### [Remove-MgBetaServicePrincipalOwnerByRef](Remove-MgBetaServicePrincipalOwnerByRef.md)
-Remove an owner from a servicePrincipal object.
-As a recommended best practice, service principals should have at least two owners.
-
-### [Remove-MgBetaServicePrincipalOwnerDirectoryObjectByRef](Remove-MgBetaServicePrincipalOwnerDirectoryObjectByRef.md)
 Remove an owner from a servicePrincipal object.
 As a recommended best practice, service principals should have at least two owners.
 
@@ -1219,21 +1169,18 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that the credentials are valid in the tenant.
 
 ### [Update-MgBetaApplication](Update-MgBetaApplication.md)
-Create a new application object if it doesn't exist, or update the properties of an existing application object.
+Update the properties of an application object.
 
 ### [Update-MgBetaApplicationByAppId](Update-MgBetaApplicationByAppId.md)
-Create a new application object if it doesn't exist, or update the properties of an existing application object.
+Update the properties of an application object.
 
 ### [Update-MgBetaApplicationByUniqueName](Update-MgBetaApplicationByUniqueName.md)
-Create a new application object if it doesn't exist, or update the properties of an existing application object.
+Update the properties of an application object.
 
 ### [Update-MgBetaApplicationExtensionProperty](Update-MgBetaApplicationExtensionProperty.md)
 Update the navigation property extensionProperties in applications
 
 ### [Update-MgBetaApplicationFederatedIdentityCredential](Update-MgBetaApplicationFederatedIdentityCredential.md)
-Update the properties of a federatedIdentityCredential object.
-
-### [Update-MgBetaApplicationFederatedIdentityCredentialByName](Update-MgBetaApplicationFederatedIdentityCredentialByName.md)
 Update the properties of a federatedIdentityCredential object.
 
 ### [Update-MgBetaApplicationSynchronizationJob](Update-MgBetaApplicationSynchronizationJob.md)
@@ -1288,7 +1235,7 @@ Update the properties of a connectorGroup object.
 Update the properties of published resource  publishedResource object.
 
 ### [Update-MgBetaServicePrincipal](Update-MgBetaServicePrincipal.md)
-Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object.
+Update the properties of servicePrincipal object.
 
 ### [Update-MgBetaServicePrincipalAppRoleAssignedTo](Update-MgBetaServicePrincipalAppRoleAssignedTo.md)
 Update the navigation property appRoleAssignedTo in servicePrincipals
@@ -1297,7 +1244,7 @@ Update the navigation property appRoleAssignedTo in servicePrincipals
 Update the navigation property appRoleAssignments in servicePrincipals
 
 ### [Update-MgBetaServicePrincipalByAppId](Update-MgBetaServicePrincipalByAppId.md)
-Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object.
+Update the properties of servicePrincipal object.
 
 ### [Update-MgBetaServicePrincipalDelegatedPermissionClassification](Update-MgBetaServicePrincipalDelegatedPermissionClassification.md)
 Update the navigation property delegatedPermissionClassifications in servicePrincipals

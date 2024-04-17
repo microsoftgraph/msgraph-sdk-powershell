@@ -20,24 +20,23 @@ Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -Comp
  [-CurrencyCode <String>] [-CurrencyId <String>] [-DisplayName <String>] [-Email <String>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-PaymentMethod <IMicrosoftGraphPaymentMethod>]
  [-PaymentMethodId <String>] [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>]
- [-PhoneNumber <String>] [-Picture <IMicrosoftGraphPicture[]>] [-ResponseHeadersVariable <String>]
+ [-PhoneNumber <String>] [-Picture <IMicrosoftGraphPicture[]>]
  [-ShipmentMethod <IMicrosoftGraphShipmentMethod>] [-ShipmentMethodId <String>] [-TaxAreaDisplayName <String>]
  [-TaxAreaId <String>] [-TaxLiable] [-TaxRegistrationNumber <String>] [-Type <String>] [-Website <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -CompanyId <String>
  -CustomerPaymentId <String> -CustomerPaymentJournalId <String> -BodyParameter <IMicrosoftGraphCustomer>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphCustomer> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCustomer> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -48,10 +47,10 @@ Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -Inpu
  [-Email <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-PaymentMethod <IMicrosoftGraphPaymentMethod>] [-PaymentMethodId <String>]
  [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
- [-Picture <IMicrosoftGraphPicture[]>] [-ResponseHeadersVariable <String>]
- [-ShipmentMethod <IMicrosoftGraphShipmentMethod>] [-ShipmentMethodId <String>] [-TaxAreaDisplayName <String>]
- [-TaxAreaId <String>] [-TaxLiable] [-TaxRegistrationNumber <String>] [-Type <String>] [-Website <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Picture <IMicrosoftGraphPicture[]>] [-ShipmentMethod <IMicrosoftGraphShipmentMethod>]
+ [-ShipmentMethodId <String>] [-TaxAreaDisplayName <String>] [-TaxAreaId <String>] [-TaxLiable]
+ [-TaxRegistrationNumber <String>] [-Type <String>] [-Website <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -258,21 +257,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -419,21 +403,6 @@ To construct, see NOTES section for PICTURE properties and create a hash table.
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -602,8 +571,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

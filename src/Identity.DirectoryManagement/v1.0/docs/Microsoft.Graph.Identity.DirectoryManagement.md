@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: b8db1206-c2f3-438c-bcc8-0eaaaeef058b
+Module Guid: 3c0ae1b5-e7f1-4db6-836e-a096e20e65a6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -94,10 +94,6 @@ The profileCardProperty is identified by its directoryPropertyName property.
 ### [Get-MgAdminPeopleProfileCardPropertyCount](Get-MgAdminPeopleProfileCardPropertyCount.md)
 Get the number of the resource
 
-### [Get-MgAdminPeoplePronoun](Get-MgAdminPeoplePronoun.md)
-Get the properties of the pronounsSettings resource for an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
-
 ### [Get-MgContact](Get-MgContact.md)
 Get the properties and relationships of an organizational contact.
 
@@ -170,8 +166,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgContactServiceProvisioningError](Get-MgContactServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgContactServiceProvisioningErrorCount](Get-MgContactServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -974,13 +969,7 @@ Delete navigation property extensions for devices
 ### [Remove-MgDeviceRegisteredOwnerByRef](Remove-MgDeviceRegisteredOwnerByRef.md)
 Remove a user as a registered owner of the device.
 
-### [Remove-MgDeviceRegisteredOwnerDirectoryObjectByRef](Remove-MgDeviceRegisteredOwnerDirectoryObjectByRef.md)
-Remove a user as a registered owner of the device.
-
 ### [Remove-MgDeviceRegisteredUserByRef](Remove-MgDeviceRegisteredUserByRef.md)
-Remove a user as a registered user of the device.
-
-### [Remove-MgDeviceRegisteredUserDirectoryObjectByRef](Remove-MgDeviceRegisteredUserDirectoryObjectByRef.md)
 Remove a user as a registered user of the device.
 
 ### [Remove-MgDirectoryAdministrativeUnit](Remove-MgDirectoryAdministrativeUnit.md)
@@ -990,9 +979,6 @@ Delete an administrativeUnit.
 Delete navigation property extensions for directory
 
 ### [Remove-MgDirectoryAdministrativeUnitMemberByRef](Remove-MgDirectoryAdministrativeUnitMemberByRef.md)
-Use this API to remove a member (user, group, or device) from an administrative unit.
-
-### [Remove-MgDirectoryAdministrativeUnitMemberDirectoryObjectByRef](Remove-MgDirectoryAdministrativeUnitMemberDirectoryObjectByRef.md)
 Use this API to remove a member (user, group, or device) from an administrative unit.
 
 ### [Remove-MgDirectoryAdministrativeUnitScopedRoleMember](Remove-MgDirectoryAdministrativeUnitScopedRoleMember.md)
@@ -1008,7 +994,10 @@ Delete navigation property customSecurityAttributeDefinitions for directory
 Delete navigation property allowedValues for directory
 
 ### [Remove-MgDirectoryDeletedItem](Remove-MgDirectoryDeletedItem.md)
-Delete navigation property deletedItems for directory
+Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items.
+After an item is permanently deleted, it cannot be restored.
+Administrative units cannot be permanently deleted by using the deletedItems API.
+Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
 
 ### [Remove-MgDirectoryDeviceLocalCredential](Remove-MgDirectoryDeviceLocalCredential.md)
 Delete navigation property deviceLocalCredentials for directory
@@ -1026,12 +1015,6 @@ Delete entity from directoryRoles
 Delete entity from directoryRoles by roleTemplateId
 
 ### [Remove-MgDirectoryRoleMemberByRef](Remove-MgDirectoryRoleMemberByRef.md)
-Remove a member from a directoryRole.
-You can use both the object ID and template ID of the directoryRole with this API.
-The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
-For details, see Role template IDs.
-
-### [Remove-MgDirectoryRoleMemberDirectoryObjectByRef](Remove-MgDirectoryRoleMemberDirectoryObjectByRef.md)
 Remove a member from a directoryRole.
 You can use both the object ID and template ID of the directoryRole with this API.
 The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
@@ -1235,12 +1218,11 @@ If the properties fail multiple validations, only the first validation failure i
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
 
+### [Update-MgAdminPeople](Update-MgAdminPeople.md)
+Update the navigation property people in admin
+
 ### [Update-MgAdminPeopleProfileCardProperty](Update-MgAdminPeopleProfileCardProperty.md)
 Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
-
-### [Update-MgAdminPeoplePronoun](Update-MgAdminPeoplePronoun.md)
-Update the properties of a pronounsSettings object in an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 
 ### [Update-MgContact](Update-MgContact.md)
 Update entity in contacts
@@ -1314,9 +1296,7 @@ Update the navigation property serviceConfigurationRecords in domains
 Update the navigation property verificationDnsRecords in domains
 
 ### [Update-MgOrganization](Update-MgOrganization.md)
-Update the properties of the currently authenticated organization.
-In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.
-The ID is also known as the tenantId of the organization.
+Update the properties of a organization object.
 
 ### [Update-MgOrganizationBranding](Update-MgOrganizationBranding.md)
 Update the properties of the default branding object specified by the organizationalBranding resource.

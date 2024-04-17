@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Calendar
-Module Guid: 2c50db4b-75f4-4fbd-b3f2-1f8e74b359cd
+Module Guid: bc9aef17-e461-4820-a576-bcb1952156a6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -100,9 +100,6 @@ Get the item of type microsoft.graph.place as microsoft.graph.roomList
 ### [Get-MgPlaceAsRoomListRoom](Get-MgPlaceAsRoomListRoom.md)
 Get rooms from places
 
-### [Get-MgPlaceAsRoomListRoomCount](Get-MgPlaceAsRoomListRoomCount.md)
-Get the number of the resource
-
 ### [Get-MgPlaceCount](Get-MgPlaceCount.md)
 Get the number of the resource
 
@@ -110,6 +107,9 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgPlaceCountAsRoomList](Get-MgPlaceCountAsRoomList.md)
+Get the number of the resource
+
+### [Get-MgPlaceRoomCount](Get-MgPlaceRoomCount.md)
 Get the number of the resource
 
 ### [Get-MgUserCalendar](Get-MgUserCalendar.md)
@@ -124,7 +124,7 @@ Get the number of the resource
 Retrieve a list of events in a calendar.
 The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 The list of events contains single instance meetings and series masters.
-To get expanded event instances, you can get the calendar view, or\nget the instances of an event.
+To get expanded event instances, you can get the calendar view, or \nget the instances of an event.
 
 ### [Get-MgUserCalendarGroup](Get-MgUserCalendarGroup.md)
 Retrieve the properties and relationships of a calendar group object.
@@ -148,14 +148,14 @@ Read-only.
 
 ### [Get-MgUserDefaultCalendar](Get-MgUserDefaultCalendar.md)
 Get the properties and relationships of a calendar object.
-The calendar can be one for a user,\nor the default calendar of a Microsoft 365 group.
+The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group.
 There are two scenarios where an app can get another user's calendar:
 
 ### [Get-MgUserDefaultCalendarEvent](Get-MgUserDefaultCalendarEvent.md)
 Retrieve a list of events in a calendar.
 The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 The list of events contains single instance meetings and series masters.
-To get expanded event instances, you can get the calendar view, or\nget the instances of an event.
+To get expanded event instances, you can get the calendar view, or \nget the instances of an event.
 
 ### [Get-MgUserEvent](Get-MgUserEvent.md)
 Get the properties and relationships of the specified event object.
@@ -230,8 +230,9 @@ Create a calendarPermission resource to specify the identity and role of the use
 Use this API to create a new event.
 
 ### [New-MgGroupEventAttachment](New-MgGroupEventAttachment.md)
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ### [New-MgGroupEventExtension](New-MgGroupEventExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -239,8 +240,9 @@ You can create an open extension in a resource instance and store custom data to
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgGroupEventInstanceAttachment](New-MgGroupEventInstanceAttachment.md)
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ### [New-MgGroupEventInstanceExtension](New-MgGroupEventInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -271,12 +273,13 @@ Use this API to create a new event in a calendar.
 The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 
 ### [New-MgUserEvent](New-MgUserEvent.md)
-Create one or more single-value extended properties in a new or existing instance of a resource.
-The following user resources are supported: The following group resources: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
+Create one or more multi-value extended properties in a new or existing instance of a resource.
+The following user resources are supported: The following group resources are supported: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
 
 ### [New-MgUserEventAttachment](New-MgUserEventAttachment.md)
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ### [New-MgUserEventExtension](New-MgUserEventExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -284,8 +287,9 @@ You can create an open extension in a resource instance and store custom data to
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgUserEventInstanceAttachment](New-MgUserEventInstanceAttachment.md)
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ### [New-MgUserEventInstanceExtension](New-MgUserEventInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.

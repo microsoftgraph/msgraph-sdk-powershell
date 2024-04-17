@@ -18,21 +18,20 @@ New-MgBetaCommunicationCallParticipant -CallId <String> [-AdditionalProperties <
  [-Info <IMicrosoftGraphParticipantInfo>] [-IsIdentityAnonymized] [-IsInLobby] [-IsMuted]
  [-MediaStreams <IMicrosoftGraphMediaStream[]>] [-Metadata <String>] [-PreferredDisplayName <String>]
  [-RecordingInfo <IMicrosoftGraphRecordingInfo>] [-RemovedState <IMicrosoftGraphRemovedState>]
- [-ResponseHeadersVariable <String>] [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>]
- [-RosterSequenceNumber <Int64>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>] [-RosterSequenceNumber <Int64>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaCommunicationCallParticipant -CallId <String> -BodyParameter <IMicrosoftGraphParticipant>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaCommunicationCallParticipant -CallId <String> -BodyParameter <IMicrosoftGraphParticipant> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphParticipant> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphParticipant> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,9 +40,9 @@ New-MgBetaCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentit
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Info <IMicrosoftGraphParticipantInfo>]
  [-IsIdentityAnonymized] [-IsInLobby] [-IsMuted] [-MediaStreams <IMicrosoftGraphMediaStream[]>]
  [-Metadata <String>] [-PreferredDisplayName <String>] [-RecordingInfo <IMicrosoftGraphRecordingInfo>]
- [-RemovedState <IMicrosoftGraphRemovedState>] [-ResponseHeadersVariable <String>]
- [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>] [-RosterSequenceNumber <Int64>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RemovedState <IMicrosoftGraphRemovedState>]
+ [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>] [-RosterSequenceNumber <Int64>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,21 +102,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -292,21 +276,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RestrictedExperience
 onlineMeetingRestricted
 To construct, see NOTES section for RESTRICTEDEXPERIENCE properties and create a hash table.
@@ -377,8 +346,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphParticipant
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -466,7 +433,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserSettingWindowsInstance
 
 ## SYNOPSIS
-Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL.
-This method gets a windowsSettingInstance for the signed-in user.
+Get instances from users
 
 ## SYNTAX
 
@@ -35,8 +34,7 @@ Get-MgBetaUserSettingWindowsInstance -InputObject <IUsersIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL.
-This method gets a windowsSettingInstance for the signed-in user.
+Get instances from users
 
 ## EXAMPLES
 
@@ -338,7 +336,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
-  - `[ServiceStorageQuotaBreakdownId <String>]`: The unique identifier of serviceStorageQuotaBreakdown
   - `[SharedInsightId <String>]`: The unique identifier of sharedInsight
   - `[TodoTaskId <String>]`: The unique identifier of todoTask
   - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList

@@ -21,22 +21,20 @@ Update-MgBetaSecurityIncident -IncidentId <String> [-AdditionalProperties <Hasht
  [-IncidentWebUrl <String>] [-LastModifiedBy <String>] [-LastUpdateDateTime <DateTime>]
  [-RecommendedActions <String>]
  [-RecommendedHuntingQueries <IMicrosoftGraphSecurityRecommendedHuntingQuery[]>]
- [-RedirectIncidentId <String>] [-ResolvingComment <String>] [-ResponseHeadersVariable <String>]
- [-Severity <String>] [-Status <String>] [-SystemTags <String[]>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RedirectIncidentId <String>] [-Severity <String>] [-Status <String>] [-SystemTags <String[]>]
+ [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaSecurityIncident -IncidentId <String> -BodyParameter <IMicrosoftGraphSecurityIncident>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaSecurityIncident -IncidentId <String> -BodyParameter <IMicrosoftGraphSecurityIncident> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSecurityIncident -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityIncident> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityIncident> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -48,9 +46,8 @@ Update-MgBetaSecurityIncident -InputObject <ISecurityIdentity> [-AdditionalPrope
  [-IncidentWebUrl <String>] [-LastModifiedBy <String>] [-LastUpdateDateTime <DateTime>]
  [-RecommendedActions <String>]
  [-RecommendedHuntingQueries <IMicrosoftGraphSecurityRecommendedHuntingQuery[]>]
- [-RedirectIncidentId <String>] [-ResolvingComment <String>] [-ResponseHeadersVariable <String>]
- [-Severity <String>] [-Status <String>] [-SystemTags <String[]>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RedirectIncidentId <String>] [-Severity <String>] [-Status <String>] [-SystemTags <String[]>]
+ [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,8 +64,8 @@ $params = @{
 	classification = "TruePositive"
 	determination = "MultiStagedAttack"
 	customTags = @(
-	"Demo"
-)
+		"Demo"
+	)
 }
 
 Update-MgBetaSecurityIncident -IncidentId $incidentId -BodyParameter $params
@@ -186,7 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomTags
-The collection of custom tags that are associated with an incident.
+Array of custom tags associated with an incident.
 
 ```yaml
 Type: System.String[]
@@ -201,7 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description of the incident.
+.
 
 ```yaml
 Type: System.String
@@ -242,21 +239,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -323,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedBy
-The identity that last modified the incident.
+.
 
 ```yaml
 Type: System.String
@@ -353,7 +335,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecommendedActions
-A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
+.
 
 ```yaml
 Type: System.String
@@ -368,7 +350,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecommendedHuntingQueries
-List of hunting Kusto Query Language (KQL) queries related to the incident
+.
 To construct, see NOTES section for RECOMMENDEDHUNTINGQUERIES properties and create a hash table.
 
 ```yaml
@@ -391,36 +373,6 @@ In such a case, the status property is redirected.
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResolvingComment
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -460,7 +412,7 @@ Accept wildcard characters: False
 ```
 
 ### -SystemTags
-The collection of system tags that are associated with the incident.
+.
 
 ```yaml
 Type: System.String[]
@@ -529,8 +481,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityIncident
@@ -549,8 +499,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
   - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AlertPolicyId <String>]`: The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
-  - `[AlertWebUrl <String>]`: URL for the Microsoft 365 Defender portal alert page.
+  - `[AlertPolicyId <String>]`: 
+  - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
   - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
   - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
   - `[Classification <String>]`: alertClassification
@@ -577,14 +527,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastActivityDateTime <DateTime?>]`: The oldest activity associated with the alert.
   - `[LastUpdateDateTime <DateTime?>]`: Time when the alert was last updated at Microsoft 365 Defender.
   - `[MitreTechniques <String[]>]`: The attack techniques, as aligned with the MITRE ATT&CK framework.
-  - `[ProductName <String>]`: The name of the product which published this alert.
+  - `[ProductName <String>]`: 
   - `[ProviderAlertId <String>]`: The ID of the alert as it appears in the security provider product that generated the alert.
   - `[RecommendedActions <String>]`: Recommended response and remediation actions to take in the event this alert was generated.
   - `[ResolvedDateTime <DateTime?>]`: Time when the alert was resolved.
   - `[ServiceSource <String>]`: serviceSource
   - `[Severity <String>]`: alertSeverity
   - `[Status <String>]`: alertStatus
-  - `[SystemTags <String[]>]`: The system tags associated with the alert.
+  - `[SystemTags <String[]>]`: 
   - `[TenantId <String>]`: The Microsoft Entra tenant the alert was created in.
   - `[ThreatDisplayName <String>]`: The threat associated with this alert.
   - `[ThreatFamilyName <String>]`: Threat family associated with this alert.
@@ -598,8 +548,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
     - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AlertPolicyId <String>]`: The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
-    - `[AlertWebUrl <String>]`: URL for the Microsoft 365 Defender portal alert page.
+    - `[AlertPolicyId <String>]`: 
+    - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
     - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
     - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
     - `[Classification <String>]`: alertClassification
@@ -626,14 +576,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[LastActivityDateTime <DateTime?>]`: The oldest activity associated with the alert.
     - `[LastUpdateDateTime <DateTime?>]`: Time when the alert was last updated at Microsoft 365 Defender.
     - `[MitreTechniques <String[]>]`: The attack techniques, as aligned with the MITRE ATT&CK framework.
-    - `[ProductName <String>]`: The name of the product which published this alert.
+    - `[ProductName <String>]`: 
     - `[ProviderAlertId <String>]`: The ID of the alert as it appears in the security provider product that generated the alert.
     - `[RecommendedActions <String>]`: Recommended response and remediation actions to take in the event this alert was generated.
     - `[ResolvedDateTime <DateTime?>]`: Time when the alert was resolved.
     - `[ServiceSource <String>]`: serviceSource
     - `[Severity <String>]`: alertSeverity
     - `[Status <String>]`: alertStatus
-    - `[SystemTags <String[]>]`: The system tags associated with the alert.
+    - `[SystemTags <String[]>]`: 
     - `[TenantId <String>]`: The Microsoft Entra tenant the alert was created in.
     - `[ThreatDisplayName <String>]`: The threat associated with this alert.
     - `[ThreatFamilyName <String>]`: Threat family associated with this alert.
@@ -642,21 +592,20 @@ To create the parameters described below, construct a hash table containing the 
   - `[Classification <String>]`: alertClassification
   - `[Comments <IMicrosoftGraphSecurityAlertComment[]>]`: Array of comments created by the Security Operations (SecOps) team when the incident is managed.
   - `[CreatedDateTime <DateTime?>]`: Time when the incident was first created.
-  - `[CustomTags <String[]>]`: The collection of custom tags that are associated with an incident.
-  - `[Description <String>]`: Description of the incident.
+  - `[CustomTags <String[]>]`: Array of custom tags associated with an incident.
+  - `[Description <String>]`: 
   - `[Determination <String>]`: alertDetermination
   - `[DisplayName <String>]`: The incident name.
   - `[IncidentWebUrl <String>]`: The URL for the incident page in the Microsoft 365 Defender portal.
-  - `[LastModifiedBy <String>]`: The identity that last modified the incident.
+  - `[LastModifiedBy <String>]`: 
   - `[LastUpdateDateTime <DateTime?>]`: Time when the incident was last updated.
-  - `[RecommendedActions <String>]`: A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
-  - `[RecommendedHuntingQueries <IMicrosoftGraphSecurityRecommendedHuntingQuery[]>]`: List of hunting Kusto Query Language (KQL) queries related to the incident
-    - `[KqlText <String>]`: The query string.
+  - `[RecommendedActions <String>]`: 
+  - `[RecommendedHuntingQueries <IMicrosoftGraphSecurityRecommendedHuntingQuery[]>]`: 
+    - `[KqlText <String>]`: 
   - `[RedirectIncidentId <String>]`: Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
-  - `[ResolvingComment <String>]`: 
   - `[Severity <String>]`: alertSeverity
   - `[Status <String>]`: incidentStatus
-  - `[SystemTags <String[]>]`: The collection of system tags that are associated with the incident.
+  - `[SystemTags <String[]>]`: 
   - `[TenantId <String>]`: The Microsoft Entra tenant in which the alert was created.
 
 `COMMENTS <IMicrosoftGraphSecurityAlertComment[]>`: Array of comments created by the Security Operations (SecOps) team when the incident is managed.
@@ -666,7 +615,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
-  - `[AnalyzedEmailId <String>]`: The unique identifier of analyzedEmail
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation
@@ -680,8 +628,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudAppSecurityProfileId <String>]`: The unique identifier of cloudAppSecurityProfile
   - `[DataSourceId <String>]`: The unique identifier of dataSource
   - `[DepartmentTemplateId <String>]`: The unique identifier of departmentTemplate
-  - `[DetectionRuleId <String>]`: The unique identifier of detectionRule
-  - `[DispositionReviewStageNumber <String>]`: The unique identifier of dispositionReviewStage
+  - `[DispositionReviewStageId <String>]`: The unique identifier of dispositionReviewStage
   - `[DomainSecurityProfileId <String>]`: The unique identifier of domainSecurityProfile
   - `[EdiscoveryCaseId <String>]`: The unique identifier of ediscoveryCase
   - `[EdiscoveryCustodianId <String>]`: The unique identifier of ediscoveryCustodian
@@ -700,7 +647,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[FilePlanReferenceTemplateId <String>]`: The unique identifier of filePlanReferenceTemplate
   - `[FileSecurityProfileId <String>]`: The unique identifier of fileSecurityProfile
   - `[FileThreatSubmissionId <String>]`: The unique identifier of fileThreatSubmission
-  - `[HealthIssueId <String>]`: The unique identifier of healthIssue
   - `[HostComponentId <String>]`: The unique identifier of hostComponent
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
@@ -731,11 +677,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SimulationId <String>]`: The unique identifier of simulation
   - `[SiteSourceId <String>]`: The unique identifier of siteSource
   - `[SslCertificateId <String>]`: The unique identifier of sslCertificate
-  - `[SubcategoryTemplateId <String>]`: The unique identifier of subcategoryTemplate
+  - `[SubCategoryTemplateId <String>]`: The unique identifier of subCategoryTemplate
   - `[SubdomainId <String>]`: The unique identifier of subdomain
   - `[SubjectRightsRequestId <String>]`: The unique identifier of subjectRightsRequest
   - `[TiIndicatorId <String>]`: The unique identifier of tiIndicator
-  - `[TrainingCampaignId <String>]`: The unique identifier of trainingCampaign
   - `[TrainingId <String>]`: The unique identifier of training
   - `[TrainingLanguageDetailId <String>]`: The unique identifier of trainingLanguageDetail
   - `[UnifiedGroupSourceId <String>]`: The unique identifier of unifiedGroupSource
@@ -748,8 +693,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[WhoisHistoryRecordId <String>]`: The unique identifier of whoisHistoryRecord
   - `[WhoisRecordId <String>]`: The unique identifier of whoisRecord
 
-`RECOMMENDEDHUNTINGQUERIES <IMicrosoftGraphSecurityRecommendedHuntingQuery[]>`: List of hunting Kusto Query Language (KQL) queries related to the incident
-  - `[KqlText <String>]`: The query string.
+`RECOMMENDEDHUNTINGQUERIES <IMicrosoftGraphSecurityRecommendedHuntingQuery[]>`: .
+  - `[KqlText <String>]`: 
 
 ## RELATED LINKS
 

@@ -17,22 +17,19 @@ Update the navigation property termStore in groups
 Update-MgBetaGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-DefaultLanguageTag <String>]
  [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>] [-LanguageTags <String[]>]
- [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphTermStore> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStore> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphTermStore> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStore> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded
@@ -40,38 +37,35 @@ Update-MgBetaGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -SiteI
 Update-MgBetaGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-DefaultLanguageTag <String>]
  [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>] [-LanguageTags <String[]>]
- [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaGroupSiteGetByPathTermStore -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphTermStore> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStore> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaGroupSiteGetByPathTermStore -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphTermStore> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStore> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaGroupSiteGetByPathTermStore -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-DefaultLanguageTag <String>] [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>]
- [-LanguageTags <String[]>] [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LanguageTags <String[]>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgBetaGroupSiteGetByPathTermStore -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-DefaultLanguageTag <String>] [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>]
- [-LanguageTags <String[]>] [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LanguageTags <String[]>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -264,21 +258,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Sets
 Collection of all sets available in the term store.
 To construct, see NOTES section for SETS properties and create a hash table.
@@ -391,8 +370,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with.
+          - `[Value <String>]`: Contains the corresponding value for the specified key.
         - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -434,8 +413,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
+        - `[Key <String>]`: Contains the name of the field that a value is associated with.
+        - `[Value <String>]`: Contains the corresponding value for the specified key.
       - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -522,8 +501,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Name <String>]`: The name of the label.
     - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
+      - `[Key <String>]`: Contains the name of the field that a value is associated with.
+      - `[Value <String>]`: Contains the corresponding value for the specified key.
     - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term

@@ -18,15 +18,14 @@ New-MgBetaSecurityDomainSecurityProfile [-ActivityGroupNames <String[]>] [-Addit
  [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CountHits <Int32>] [-CountInOrg <Int32>]
  [-DomainCategories <IMicrosoftGraphReputationCategory[]>] [-DomainRegisteredDateTime <DateTime>]
  [-FirstSeenDateTime <DateTime>] [-Id <String>] [-LastSeenDateTime <DateTime>] [-Name <String>]
- [-Registrant <IMicrosoftGraphDomainRegistrant>] [-ResponseHeadersVariable <String>] [-RiskScore <String>]
- [-Tags <String[]>] [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Registrant <IMicrosoftGraphDomainRegistrant>] [-RiskScore <String>] [-Tags <String[]>]
+ [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityDomainSecurityProfile -BodyParameter <IMicrosoftGraphDomainSecurityProfile>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityDomainSecurityProfile -BodyParameter <IMicrosoftGraphDomainSecurityProfile> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -202,21 +201,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -271,21 +255,6 @@ To construct, see NOTES section for REGISTRANT properties and create a hash tabl
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainRegistrant
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -377,8 +346,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainSecurityProfile
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

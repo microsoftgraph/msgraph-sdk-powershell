@@ -17,17 +17,15 @@ Create new navigation property to deviceHealthStatuses for tenantRelationships
 New-MgBetaTenantRelationshipManagedTenantDeviceHealthStatus [-AdditionalProperties <Hashtable>]
  [-BlueScreenCount <Int32>] [-BootTotalDurationInSeconds <Double>] [-DeviceId <String>] [-DeviceMake <String>]
  [-DeviceModel <String>] [-DeviceName <String>] [-HealthStatus <String>] [-Id <String>]
- [-LastUpdatedDateTime <DateTime>] [-OSVersion <String>] [-PrimaryDiskType <String>]
- [-ResponseHeadersVariable <String>] [-RestartCount <Int32>] [-StartupPerformanceScore <Double>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-TopProcesses <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastUpdatedDateTime <DateTime>] [-OSVersion <String>] [-PrimaryDiskType <String>] [-RestartCount <Int32>]
+ [-StartupPerformanceScore <Double>] [-TenantDisplayName <String>] [-TenantId <String>]
+ [-TopProcesses <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantDeviceHealthStatus
- -BodyParameter <IMicrosoftGraphManagedTenantsDeviceHealthStatus> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsDeviceHealthStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -172,21 +170,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HealthStatus
 .
 
@@ -255,21 +238,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -390,8 +358,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceHealthStatus
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

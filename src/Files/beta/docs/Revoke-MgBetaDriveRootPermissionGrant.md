@@ -15,29 +15,28 @@ Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by r
 ### RevokeExpanded (Default)
 ```
 Revoke-MgBetaDriveRootPermissionGrant -DriveId <String> -PermissionId <String>
- [-AdditionalProperties <Hashtable>] [-Grantees <IMicrosoftGraphDriveRecipient[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Grantees <IMicrosoftGraphDriveRecipient[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Revoke
 ```
 Revoke-MgBetaDriveRootPermissionGrant -DriveId <String> -PermissionId <String>
  -BodyParameter <IPathsXr3Z2DDrivesDriveIdRootPermissionsPermissionIdMicrosoftGraphRevokegrantsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RevokeViaIdentity
 ```
 Revoke-MgBetaDriveRootPermissionGrant -InputObject <IFilesIdentity>
  -BodyParameter <IPathsXr3Z2DDrivesDriveIdRootPermissionsPermissionIdMicrosoftGraphRevokegrantsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RevokeViaIdentityExpanded
 ```
 Revoke-MgBetaDriveRootPermissionGrant -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-Grantees <IMicrosoftGraphDriveRecipient[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Grantees <IMicrosoftGraphDriveRecipient[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,21 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -163,21 +147,6 @@ Parameter Sets: Revoke, RevokeExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -223,8 +192,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsXr3Z2DDrivesDriveIdRootPermissionsPermissionIdMicrosoftGraphRevokegrantsPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

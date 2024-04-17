@@ -17,18 +17,17 @@ Create new navigation property to configurationPolicyTemplates for deviceManagem
 New-MgBetaDeviceManagementConfigurationPolicyTemplate [-AdditionalProperties <Hashtable>]
  [-AllowUnmanagedSettings] [-BaseId <String>] [-Description <String>] [-DisplayName <String>]
  [-DisplayVersion <String>] [-Id <String>] [-LifecycleState <DeviceManagementTemplateLifecycleState>]
- [-Platforms <DeviceManagementConfigurationPlatforms>] [-ResponseHeadersVariable <String>]
+ [-Platforms <DeviceManagementConfigurationPlatforms>]
  [-SettingTemplates <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
- [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementConfigurationPolicyTemplate
- -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,21 +157,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -211,21 +195,6 @@ Supported platform types.
 Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceManagementConfigurationPlatforms
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -317,8 +286,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -15,31 +15,29 @@ Update the navigation property operations in reports
 ### UpdateExpanded (Default)
 ```
 Update-MgReportPartnerBillingOperation -OperationId <String> [-AdditionalProperties <Hashtable>]
- [-CreatedDateTime <DateTime>] [-Id <String>] [-LastActionDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-CreatedDateTime <DateTime>] [-Id <String>] [-LastActionDateTime <DateTime>] [-Status <String>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgReportPartnerBillingOperation -OperationId <String>
- -BodyParameter <IMicrosoftGraphPartnersBillingOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPartnersBillingOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgReportPartnerBillingOperation -InputObject <IReportsIdentity>
- -BodyParameter <IMicrosoftGraphPartnersBillingOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPartnersBillingOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgReportPartnerBillingOperation -InputObject <IReportsIdentity> [-AdditionalProperties <Hashtable>]
- [-CreatedDateTime <DateTime>] [-Id <String>] [-LastActionDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-CreatedDateTime <DateTime>] [-Id <String>] [-LastActionDateTime <DateTime>] [-Status <String>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -184,21 +182,6 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 22db2c44-fb32-4090-a979-48860e1cb314
+Module Guid: 432f6fab-0641-45c1-b419-37e2a5cd7042
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Follow a user's site or multiple sites.
 
 ### [Add-MgBetaSiteContentTypeCopy](Add-MgBetaSiteContentTypeCopy.md)
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgBetaSiteContentTypeCopyFromContentTypeHub](Add-MgBetaSiteContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
@@ -24,7 +24,7 @@ The method allows users to pull content types directly from the content type hub
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
 ### [Add-MgBetaSiteListContentTypeCopy](Add-MgBetaSiteListContentTypeCopy.md)
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgBetaSiteListContentTypeCopyFromContentTypeHub](Add-MgBetaSiteListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
@@ -36,10 +36,12 @@ For more information, see getCompatibleHubContentTypes and the blog post Syntex 
 Invoke action verifySignature
 
 ### [Copy-MgBetaSiteContentTypeToDefaultContentLocation](Copy-MgBetaSiteContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ### [Copy-MgBetaSiteListContentTypeToDefaultContentLocation](Copy-MgBetaSiteListContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ### [Copy-MgBetaSiteOnenoteNotebook](Copy-MgBetaSiteOnenoteNotebook.md)
 Copies a notebook to the Notebooks folder in the destination Documents library.
@@ -112,7 +114,7 @@ The list of SharePoint sites in this group.
 Access the default site with /sites/root.
 
 ### [Get-MgBetaGroupSiteAnalytic](Get-MgBetaGroupSiteAnalytic.md)
-Analytics about the view activities that took place on this site.
+Analytics about the view activities that took place in this site.
 
 ### [Get-MgBetaGroupSiteAnalyticItemActivityStat](Get-MgBetaGroupSiteAnalyticItemActivityStat.md)
 Get itemActivityStats from groups
@@ -127,9 +129,6 @@ Get the number of the resource
 Exposes the driveItem that was the target of this activity.
 
 ### [Get-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContent](Get-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContent.md)
-Get content for the navigation property driveItem from groups
-
-### [Get-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContentStream](Get-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupSiteAnalyticItemActivityStatCount](Get-MgBetaGroupSiteAnalyticItemActivityStatCount.md)
@@ -163,13 +162,13 @@ The collection of content types that are ancestors of this content type.
 Get the number of the resource
 
 ### [Get-MgBetaGroupSiteContentTypeColumn](Get-MgBetaGroupSiteContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ### [Get-MgBetaGroupSiteContentTypeColumnCount](Get-MgBetaGroupSiteContentTypeColumnCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupSiteContentTypeColumnLink](Get-MgBetaGroupSiteContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+The collection of columns that are required by this content type
 
 ### [Get-MgBetaGroupSiteContentTypeColumnLinkCount](Get-MgBetaGroupSiteContentTypeColumnLinkCount.md)
 Get the number of the resource
@@ -214,66 +213,10 @@ The collection of drives (document libraries) under this site.
 Get the number of the resource
 
 ### [Get-MgBetaGroupSiteExternalColumn](Get-MgBetaGroupSiteExternalColumn.md)
-The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
+The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 
 ### [Get-MgBetaGroupSiteExternalColumnCount](Get-MgBetaGroupSiteExternalColumnCount.md)
 Get the number of the resource
-
-### [Get-MgBetaGroupSiteGetByPath](Get-MgBetaGroupSiteGetByPath.md)
-Get the collection of [lists][] for a [site][].
-Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement.
-
-### [Get-MgBetaGroupSiteGetByPathAnalytic](Get-MgBetaGroupSiteGetByPathAnalytic.md)
-Analytics about the view activities that took place on this site.
-
-### [Get-MgBetaGroupSiteGetByPathColumn](Get-MgBetaGroupSiteGetByPathColumn.md)
-The collection of column definitions reusable across lists under this site.
-
-### [Get-MgBetaGroupSiteGetByPathContentType](Get-MgBetaGroupSiteGetByPathContentType.md)
-The collection of content types defined for this site.
-
-### [Get-MgBetaGroupSiteGetByPathDrive](Get-MgBetaGroupSiteGetByPathDrive.md)
-The default drive (document library) for this site.
-
-### [Get-MgBetaGroupSiteGetByPathExternalColumn](Get-MgBetaGroupSiteGetByPathExternalColumn.md)
-The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
-
-### [Get-MgBetaGroupSiteGetByPathInformationProtection](Get-MgBetaGroupSiteGetByPathInformationProtection.md)
-Get informationProtection from groups
-
-### [Get-MgBetaGroupSiteGetByPathItem](Get-MgBetaGroupSiteGetByPathItem.md)
-Used to address any item contained in this site.
-This collection can't be enumerated.
-
-### [Get-MgBetaGroupSiteGetByPathOnenote](Get-MgBetaGroupSiteGetByPathOnenote.md)
-Get onenote from groups
-
-### [Get-MgBetaGroupSiteGetByPathOperation](Get-MgBetaGroupSiteGetByPathOperation.md)
-Get the list of richLongRunningOperations associated with a site.
-
-### [Get-MgBetaGroupSiteGetByPathPage](Get-MgBetaGroupSiteGetByPathPage.md)
-Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][].
-All pages in the site are returned (with pagination).
-Sort alphabetically by name in ascending order.
-The following table lists the available subtypes.
-
-### [Get-MgBetaGroupSiteGetByPathPermission](Get-MgBetaGroupSiteGetByPathPermission.md)
-Get the permission resources from the permissions navigation property on a site.
-
-### [Get-MgBetaGroupSiteGetByPathRecycleBin](Get-MgBetaGroupSiteGetByPathRecycleBin.md)
-A container for a collection of recycleBinItem resources in this site.
-
-### [Get-MgBetaGroupSiteGetByPathSite](Get-MgBetaGroupSiteGetByPathSite.md)
-Get a collection of subsites defined for a [site][].
-
-### [Get-MgBetaGroupSiteGetByPathTermStore](Get-MgBetaGroupSiteGetByPathTermStore.md)
-Read the properties and relationships of a store object.
-
-### [Get-MgBetaGroupSiteGetGraphBPrePathCreatedByUser](Get-MgBetaGroupSiteGetGraphBPrePathCreatedByUser.md)
-Get createdByUser from groups
-
-### [Get-MgBetaGroupSiteGetGraphBPrePathLastModifiedByUser](Get-MgBetaGroupSiteGetGraphBPrePathLastModifiedByUser.md)
-Get lastModifiedByUser from groups
 
 ### [Get-MgBetaGroupSiteInformationProtection](Get-MgBetaGroupSiteInformationProtection.md)
 Get informationProtection from groups
@@ -338,7 +281,7 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupSiteItem](Get-MgBetaGroupSiteItem.md)
 Used to address any item contained in this site.
-This collection can't be enumerated.
+This collection cannot be enumerated.
 
 ### [Get-MgBetaGroupSiteItemCount](Get-MgBetaGroupSiteItemCount.md)
 Get the number of the resource
@@ -374,7 +317,7 @@ Errors published by a federated service describing a nontransient, service-speci
 Get the number of the resource
 
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
@@ -392,13 +335,13 @@ The source column for content type column.
 The collection of content types present in this list.
 
 ### [Get-MgBetaGroupSiteListContentTypeColumn](Get-MgBetaGroupSiteListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ### [Get-MgBetaGroupSiteListContentTypeColumnCount](Get-MgBetaGroupSiteListContentTypeColumnCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupSiteListContentTypeColumnLink](Get-MgBetaGroupSiteListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+The collection of columns that are required by this content type
 
 ### [Get-MgBetaGroupSiteListContentTypeColumnLinkCount](Get-MgBetaGroupSiteListContentTypeColumnLinkCount.md)
 Get the number of the resource
@@ -450,9 +393,6 @@ Get the number of the resource
 Get driveItem from groups
 
 ### [Get-MgBetaGroupSiteListItemActivityDriveItemContent](Get-MgBetaGroupSiteListItemActivityDriveItemContent.md)
-Get content for the navigation property driveItem from groups
-
-### [Get-MgBetaGroupSiteListItemActivityDriveItemContentStream](Get-MgBetaGroupSiteListItemActivityDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupSiteListItemActivityListItem](Get-MgBetaGroupSiteListItemActivityListItem.md)
@@ -489,9 +429,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaGroupSiteListItemDriveItemContent](Get-MgBetaGroupSiteListItemDriveItemContent.md)
-Get content for the navigation property driveItem from groups
-
-### [Get-MgBetaGroupSiteListItemDriveItemContentStream](Get-MgBetaGroupSiteListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupSiteListItemField](Get-MgBetaGroupSiteListItemField.md)
@@ -745,79 +682,7 @@ Get the number of the resource
 ### [Get-MgBetaGroupSitePage](Get-MgBetaGroupSitePage.md)
 Get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
 
-### [Get-MgBetaGroupSitePageAsSitePage](Get-MgBetaGroupSitePageAsSitePage.md)
-Get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayout](Get-MgBetaGroupSitePageAsSitePageCanvaLayout.md)
-Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSection](Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Collection of horizontal sections on the SharePoint page.
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-The set of vertical columns in this section.
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnCount](Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-The collection of WebParts in this column.
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartCount](Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionCount](Get-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSection](Get-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Vertical section on the SharePoint page.
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Get-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-The set of web parts in this section.
-
-### [Get-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpartCount](Get-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageAsSitePageCreatedByUser](Get-MgBetaGroupSitePageAsSitePageCreatedByUser.md)
-Get createdByUser from groups
-
-### [Get-MgBetaGroupSitePageAsSitePageCreatedByUserMailboxSetting](Get-MgBetaGroupSitePageAsSitePageCreatedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
-
-### [Get-MgBetaGroupSitePageAsSitePageCreatedByUserServiceProvisioningError](Get-MgBetaGroupSitePageAsSitePageCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-
-### [Get-MgBetaGroupSitePageAsSitePageCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSitePageAsSitePageCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageAsSitePageLastModifiedByUser](Get-MgBetaGroupSitePageAsSitePageLastModifiedByUser.md)
-Get lastModifiedByUser from groups
-
-### [Get-MgBetaGroupSitePageAsSitePageLastModifiedByUserMailboxSetting](Get-MgBetaGroupSitePageAsSitePageLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
-
-### [Get-MgBetaGroupSitePageAsSitePageLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupSitePageAsSitePageLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-
-### [Get-MgBetaGroupSitePageAsSitePageLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSitePageAsSitePageLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageAsSitePageWebPart](Get-MgBetaGroupSitePageAsSitePageWebPart.md)
-Collection of webparts on the SharePoint page.
-
-### [Get-MgBetaGroupSitePageAsSitePageWebPartCount](Get-MgBetaGroupSitePageAsSitePageWebPartCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaGroupSitePageCount](Get-MgBetaGroupSitePageCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageCountAsSitePage](Get-MgBetaGroupSitePageCountAsSitePage.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupSitePageCreatedByUser](Get-MgBetaGroupSitePageCreatedByUser.md)
@@ -1268,7 +1133,7 @@ Retrieve properties and relationships for a [site][] resource.\nA site resource 
 Invoke function getActivitiesByInterval
 
 ### [Get-MgBetaSiteAnalytic](Get-MgBetaSiteAnalytic.md)
-Analytics about the view activities that took place on this site.
+Analytics about the view activities that took place in this site.
 
 ### [Get-MgBetaSiteAnalyticItemActivityStat](Get-MgBetaSiteAnalyticItemActivityStat.md)
 Get itemActivityStats from sites
@@ -1283,9 +1148,6 @@ Get the number of the resource
 Exposes the driveItem that was the target of this activity.
 
 ### [Get-MgBetaSiteAnalyticItemActivityStatActivityDriveItemContent](Get-MgBetaSiteAnalyticItemActivityStatActivityDriveItemContent.md)
-Get content for the navigation property driveItem from sites
-
-### [Get-MgBetaSiteAnalyticItemActivityStatActivityDriveItemContentStream](Get-MgBetaSiteAnalyticItemActivityStatActivityDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaSiteAnalyticItemActivityStatCount](Get-MgBetaSiteAnalyticItemActivityStatCount.md)
@@ -1325,13 +1187,13 @@ The collection of content types that are ancestors of this content type.
 Get the number of the resource
 
 ### [Get-MgBetaSiteContentTypeColumn](Get-MgBetaSiteContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ### [Get-MgBetaSiteContentTypeColumnCount](Get-MgBetaSiteContentTypeColumnCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSiteContentTypeColumnLink](Get-MgBetaSiteContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+The collection of columns that are required by this content type
 
 ### [Get-MgBetaSiteContentTypeColumnLinkCount](Get-MgBetaSiteContentTypeColumnLinkCount.md)
 Get the number of the resource
@@ -1367,56 +1229,10 @@ The collection of drives (document libraries) under this site.
 Get the number of the resource
 
 ### [Get-MgBetaSiteExternalColumn](Get-MgBetaSiteExternalColumn.md)
-The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
+The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 
 ### [Get-MgBetaSiteExternalColumnCount](Get-MgBetaSiteExternalColumnCount.md)
 Get the number of the resource
-
-### [Get-MgBetaSiteGetByPath](Get-MgBetaSiteGetByPath.md)
-Get the collection of [lists][] for a [site][].
-Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement.
-
-### [Get-MgBetaSiteGetByPathAnalytic](Get-MgBetaSiteGetByPathAnalytic.md)
-Analytics about the view activities that took place on this site.
-
-### [Get-MgBetaSiteGetByPathApplicableContentTypeForList](Get-MgBetaSiteGetByPathApplicableContentTypeForList.md)
-Invoke function getApplicableContentTypesForList
-
-### [Get-MgBetaSiteGetByPathColumn](Get-MgBetaSiteGetByPathColumn.md)
-The collection of column definitions reusable across lists under this site.
-
-### [Get-MgBetaSiteGetByPathContentType](Get-MgBetaSiteGetByPathContentType.md)
-The collection of content types defined for this site.
-
-### [Get-MgBetaSiteGetByPathDrive](Get-MgBetaSiteGetByPathDrive.md)
-The default drive (document library) for this site.
-
-### [Get-MgBetaSiteGetByPathExternalColumn](Get-MgBetaSiteGetByPathExternalColumn.md)
-The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
-
-### [Get-MgBetaSiteGetByPathOperation](Get-MgBetaSiteGetByPathOperation.md)
-Get the list of richLongRunningOperations associated with a site.
-
-### [Get-MgBetaSiteGetByPathPage](Get-MgBetaSiteGetByPathPage.md)
-Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][].
-All pages in the site are returned (with pagination).
-Sort alphabetically by name in ascending order.
-The following table lists the available subtypes.
-
-### [Get-MgBetaSiteGetByPathPermission](Get-MgBetaSiteGetByPathPermission.md)
-Get the permission resources from the permissions navigation property on a site.
-
-### [Get-MgBetaSiteGetByPathSite](Get-MgBetaSiteGetByPathSite.md)
-Get a collection of subsites defined for a [site][].
-
-### [Get-MgBetaSiteGetByPathTermStore](Get-MgBetaSiteGetByPathTermStore.md)
-Read the properties and relationships of a store object.
-
-### [Get-MgBetaSiteGetGraphBPrePathActivityByInterval](Get-MgBetaSiteGetGraphBPrePathActivityByInterval.md)
-Invoke function getActivitiesByInterval
-
-### [Get-MgBetaSiteGetGraphBPrePathByPath](Get-MgBetaSiteGetGraphBPrePathByPath.md)
-Invoke function getByPath
 
 ### [Get-MgBetaSiteItemLastModifiedByUser](Get-MgBetaSiteItemLastModifiedByUser.md)
 Get lastModifiedByUser from sites
@@ -1449,7 +1265,7 @@ Errors published by a federated service describing a nontransient, service-speci
 Get the number of the resource
 
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1467,13 +1283,13 @@ The source column for content type column.
 The collection of content types present in this list.
 
 ### [Get-MgBetaSiteListContentTypeColumn](Get-MgBetaSiteListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ### [Get-MgBetaSiteListContentTypeColumnCount](Get-MgBetaSiteListContentTypeColumnCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSiteListContentTypeColumnLink](Get-MgBetaSiteListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+The collection of columns that are required by this content type
 
 ### [Get-MgBetaSiteListContentTypeColumnLinkCount](Get-MgBetaSiteListContentTypeColumnLinkCount.md)
 Get the number of the resource
@@ -1531,9 +1347,6 @@ Get the number of the resource
 Get driveItem from sites
 
 ### [Get-MgBetaSiteListItemActivityDriveItemContent](Get-MgBetaSiteListItemActivityDriveItemContent.md)
-Get content for the navigation property driveItem from sites
-
-### [Get-MgBetaSiteListItemActivityDriveItemContentStream](Get-MgBetaSiteListItemActivityDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaSiteListItemActivityListItem](Get-MgBetaSiteListItemActivityListItem.md)
@@ -1573,9 +1386,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaSiteListItemDriveItemContent](Get-MgBetaSiteListItemDriveItemContent.md)
-Get content for the navigation property driveItem from sites
-
-### [Get-MgBetaSiteListItemDriveItemContentStream](Get-MgBetaSiteListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaSiteListItemField](Get-MgBetaSiteListItemField.md)
@@ -1615,79 +1425,7 @@ Get the number of the resource
 ### [Get-MgBetaSitePage](Get-MgBetaSitePage.md)
 Get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
 
-### [Get-MgBetaSitePageAsSitePage](Get-MgBetaSitePageAsSitePage.md)
-Get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayout](Get-MgBetaSitePageAsSitePageCanvaLayout.md)
-Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSection](Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Collection of horizontal sections on the SharePoint page.
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-The set of vertical columns in this section.
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnCount](Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-The collection of WebParts in this column.
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartCount](Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionCount](Get-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection](Get-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Vertical section on the SharePoint page.
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Get-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-The set of web parts in this section.
-
-### [Get-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpartCount](Get-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageAsSitePageCreatedByUser](Get-MgBetaSitePageAsSitePageCreatedByUser.md)
-Get createdByUser from sites
-
-### [Get-MgBetaSitePageAsSitePageCreatedByUserMailboxSetting](Get-MgBetaSitePageAsSitePageCreatedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
-
-### [Get-MgBetaSitePageAsSitePageCreatedByUserServiceProvisioningError](Get-MgBetaSitePageAsSitePageCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-
-### [Get-MgBetaSitePageAsSitePageCreatedByUserServiceProvisioningErrorCount](Get-MgBetaSitePageAsSitePageCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageAsSitePageLastModifiedByUser](Get-MgBetaSitePageAsSitePageLastModifiedByUser.md)
-Get lastModifiedByUser from sites
-
-### [Get-MgBetaSitePageAsSitePageLastModifiedByUserMailboxSetting](Get-MgBetaSitePageAsSitePageLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
-
-### [Get-MgBetaSitePageAsSitePageLastModifiedByUserServiceProvisioningError](Get-MgBetaSitePageAsSitePageLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-
-### [Get-MgBetaSitePageAsSitePageLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaSitePageAsSitePageLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageAsSitePageWebPart](Get-MgBetaSitePageAsSitePageWebPart.md)
-Collection of webparts on the SharePoint page.
-
-### [Get-MgBetaSitePageAsSitePageWebPartCount](Get-MgBetaSitePageAsSitePageWebPartCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaSitePageCount](Get-MgBetaSitePageCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageCountAsSitePage](Get-MgBetaSitePageCountAsSitePage.md)
 Get the number of the resource
 
 ### [Get-MgBetaSitePageCreatedByUser](Get-MgBetaSitePageCreatedByUser.md)
@@ -1719,15 +1457,6 @@ Errors published by a federated service describing a nontransient, service-speci
 
 ### [Get-MgBetaSitePageLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaSitePageLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
-
-### [Get-MgBetaSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart](Get-MgBetaSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart](Get-MgBetaSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart](Get-MgBetaSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
 
 ### [Get-MgBetaSitePermission](Get-MgBetaSitePermission.md)
 Retrieve the properties and relationships of a permission object on a site.
@@ -2115,10 +1844,10 @@ Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 Invoke action signDigest
 
 ### [Join-MgBetaSiteContentTypeWithHubSite](Join-MgBetaSiteContentTypeWithHubSite.md)
-Invoke action associateWithHubSites
+Associate a [content type][contentType] with a list of hub sites.
 
 ### [Join-MgBetaSiteListContentTypeWithHubSite](Join-MgBetaSiteListContentTypeWithHubSite.md)
-Invoke action associateWithHubSites
+Associate a [content type][contentType] with a list of hub sites.
 
 ### [New-MgBetaGroupSiteAnalyticItemActivityStat](New-MgBetaGroupSiteAnalyticItemActivityStat.md)
 Create new navigation property to itemActivityStats for groups
@@ -2127,34 +1856,16 @@ Create new navigation property to itemActivityStats for groups
 Create new navigation property to activities for groups
 
 ### [New-MgBetaGroupSiteColumn](New-MgBetaGroupSiteColumn.md)
-Create columnDefinition for a site
+Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaGroupSiteContentType](New-MgBetaGroupSiteContentType.md)
 Create a new [contentType][] for a [site][].
 
 ### [New-MgBetaGroupSiteContentTypeColumn](New-MgBetaGroupSiteContentTypeColumn.md)
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaGroupSiteContentTypeColumnLink](New-MgBetaGroupSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
-
-### [New-MgBetaGroupSiteGetByPathColumn](New-MgBetaGroupSiteGetByPathColumn.md)
-Create columnDefinition for a site
-
-### [New-MgBetaGroupSiteGetByPathContentType](New-MgBetaGroupSiteGetByPathContentType.md)
-Create a new [contentType][] for a [site][].
-
-### [New-MgBetaGroupSiteGetByPathList](New-MgBetaGroupSiteGetByPathList.md)
-Create a new [list][] in a [site][].
-
-### [New-MgBetaGroupSiteGetByPathOperation](New-MgBetaGroupSiteGetByPathOperation.md)
-Create new navigation property to operations for groups
-
-### [New-MgBetaGroupSiteGetByPathPage](New-MgBetaGroupSiteGetByPathPage.md)
-Create a new [sitePage][] in the site pages [list][] in a [site][].
-
-### [New-MgBetaGroupSiteGetByPathPermission](New-MgBetaGroupSiteGetByPathPermission.md)
-Create a new permission object on a site.
 
 ### [New-MgBetaGroupSiteInformationProtectionDataLossPreventionPolicy](New-MgBetaGroupSiteInformationProtectionDataLossPreventionPolicy.md)
 Create new navigation property to dataLossPreventionPolicies for groups
@@ -2182,13 +1893,13 @@ Create a new [list][] in a [site][].
 Create new navigation property to activities for groups
 
 ### [New-MgBetaGroupSiteListColumn](New-MgBetaGroupSiteListColumn.md)
-Create columnDefinition
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaGroupSiteListContentType](New-MgBetaGroupSiteListContentType.md)
 Create new navigation property to contentTypes for groups
 
 ### [New-MgBetaGroupSiteListContentTypeColumn](New-MgBetaGroupSiteListContentTypeColumn.md)
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaGroupSiteListContentTypeColumnLink](New-MgBetaGroupSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
@@ -2258,21 +1969,6 @@ Create new navigation property to operations for groups
 
 ### [New-MgBetaGroupSitePage](New-MgBetaGroupSitePage.md)
 Create a new [sitePage][] in the site pages [list][] in a [site][].
-
-### [New-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSection](New-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Create new navigation property to horizontalSections for groups
-
-### [New-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](New-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Create new navigation property to columns for groups
-
-### [New-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](New-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Create new navigation property to webparts for groups
-
-### [New-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](New-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Create new navigation property to webparts for groups
-
-### [New-MgBetaGroupSitePageAsSitePageWebPart](New-MgBetaGroupSitePageAsSitePageWebPart.md)
-Create new navigation property to webParts for groups
 
 ### [New-MgBetaGroupSitePermission](New-MgBetaGroupSitePermission.md)
 Create a new permission object on a site.
@@ -2362,34 +2058,16 @@ Create new navigation property to itemActivityStats for sites
 Create new navigation property to activities for sites
 
 ### [New-MgBetaSiteColumn](New-MgBetaSiteColumn.md)
-Create columnDefinition for a site
+Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaSiteContentType](New-MgBetaSiteContentType.md)
 Create a new [contentType][] for a [site][].
 
 ### [New-MgBetaSiteContentTypeColumn](New-MgBetaSiteContentTypeColumn.md)
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaSiteContentTypeColumnLink](New-MgBetaSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
-
-### [New-MgBetaSiteGetByPathColumn](New-MgBetaSiteGetByPathColumn.md)
-Create columnDefinition for a site
-
-### [New-MgBetaSiteGetByPathContentType](New-MgBetaSiteGetByPathContentType.md)
-Create a new [contentType][] for a [site][].
-
-### [New-MgBetaSiteGetByPathList](New-MgBetaSiteGetByPathList.md)
-Create a new [list][] in a [site][].
-
-### [New-MgBetaSiteGetByPathOperation](New-MgBetaSiteGetByPathOperation.md)
-Create new navigation property to operations for sites
-
-### [New-MgBetaSiteGetByPathPage](New-MgBetaSiteGetByPathPage.md)
-Create a new [sitePage][] in the site pages [list][] in a [site][].
-
-### [New-MgBetaSiteGetByPathPermission](New-MgBetaSiteGetByPathPermission.md)
-Create a new permission object on a site.
 
 ### [New-MgBetaSiteList](New-MgBetaSiteList.md)
 Create a new [list][] in a [site][].
@@ -2398,13 +2076,13 @@ Create a new [list][] in a [site][].
 Create new navigation property to activities for sites
 
 ### [New-MgBetaSiteListColumn](New-MgBetaSiteListColumn.md)
-Create columnDefinition
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaSiteListContentType](New-MgBetaSiteListContentType.md)
 Create new navigation property to contentTypes for sites
 
 ### [New-MgBetaSiteListContentTypeColumn](New-MgBetaSiteListContentTypeColumn.md)
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaSiteListContentTypeColumnLink](New-MgBetaSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
@@ -2420,7 +2098,7 @@ Create a new version of a document set item in a list.
 
 ### [New-MgBetaSiteListItemLink](New-MgBetaSiteListItemLink.md)
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaSiteListItemVersion](New-MgBetaSiteListItemVersion.md)
@@ -2437,21 +2115,6 @@ Create new navigation property to operations for sites
 
 ### [New-MgBetaSitePage](New-MgBetaSitePage.md)
 Create a new [sitePage][] in the site pages [list][] in a [site][].
-
-### [New-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSection](New-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Create new navigation property to horizontalSections for sites
-
-### [New-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](New-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Create new navigation property to columns for sites
-
-### [New-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](New-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Create new navigation property to webparts for sites
-
-### [New-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](New-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Create new navigation property to webparts for sites
-
-### [New-MgBetaSitePageAsSitePageWebPart](New-MgBetaSitePageAsSitePageWebPart.md)
-Create new navigation property to webParts for sites
 
 ### [New-MgBetaSitePermission](New-MgBetaSitePermission.md)
 Create a new permission object on a site.
@@ -2532,10 +2195,10 @@ Create new navigation property to relations for sites
 Create new navigation property to relations for sites
 
 ### [Publish-MgBetaSiteContentType](Publish-MgBetaSiteContentType.md)
-Invoke action publish
+Publishes a [contentType][] present in a content type hub site.
 
 ### [Publish-MgBetaSiteListContentType](Publish-MgBetaSiteListContentType.md)
-Invoke action publish
+Publishes a [contentType][] present in a content type hub site.
 
 ### [Remove-MgBetaAdminSharepoint](Remove-MgBetaAdminSharepoint.md)
 Delete navigation property sharepoint for admin
@@ -2559,25 +2222,10 @@ Delete navigation property columns for groups
 Remove a [content type][contentType] from a [list][] or a [site][].
 
 ### [Remove-MgBetaGroupSiteContentTypeColumn](Remove-MgBetaGroupSiteContentTypeColumn.md)
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ### [Remove-MgBetaGroupSiteContentTypeColumnLink](Remove-MgBetaGroupSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
-
-### [Remove-MgBetaGroupSiteGetByPathAnalytic](Remove-MgBetaGroupSiteGetByPathAnalytic.md)
-Delete navigation property analytics for groups
-
-### [Remove-MgBetaGroupSiteGetByPathInformationProtection](Remove-MgBetaGroupSiteGetByPathInformationProtection.md)
-Delete navigation property informationProtection for groups
-
-### [Remove-MgBetaGroupSiteGetByPathOnenote](Remove-MgBetaGroupSiteGetByPathOnenote.md)
-Delete navigation property onenote for groups
-
-### [Remove-MgBetaGroupSiteGetByPathRecycleBin](Remove-MgBetaGroupSiteGetByPathRecycleBin.md)
-Delete navigation property recycleBin for groups
-
-### [Remove-MgBetaGroupSiteGetByPathTermStore](Remove-MgBetaGroupSiteGetByPathTermStore.md)
-Delete navigation property termStore for groups
 
 ### [Remove-MgBetaGroupSiteInformationProtection](Remove-MgBetaGroupSiteInformationProtection.md)
 Delete navigation property informationProtection for groups
@@ -2616,7 +2264,7 @@ Delete navigation property columns for groups
 Delete navigation property contentTypes for groups
 
 ### [Remove-MgBetaGroupSiteListContentTypeColumn](Remove-MgBetaGroupSiteListContentTypeColumn.md)
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ### [Remove-MgBetaGroupSiteListContentTypeColumnLink](Remove-MgBetaGroupSiteListContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
@@ -2698,27 +2346,6 @@ Delete navigation property operations for groups
 
 ### [Remove-MgBetaGroupSitePage](Remove-MgBetaGroupSitePage.md)
 Delete navigation property pages for groups
-
-### [Remove-MgBetaGroupSitePageAsSitePageCanvaLayout](Remove-MgBetaGroupSitePageAsSitePageCanvaLayout.md)
-Delete navigation property canvasLayout for groups
-
-### [Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSection](Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Delete navigation property horizontalSections for groups
-
-### [Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Delete navigation property columns for groups
-
-### [Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Delete navigation property webparts for groups
-
-### [Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSection](Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Delete navigation property verticalSection for groups
-
-### [Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Remove-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Delete navigation property webparts for groups
-
-### [Remove-MgBetaGroupSitePageAsSitePageWebPart](Remove-MgBetaGroupSitePageAsSitePageWebPart.md)
-Delete navigation property webParts for groups
 
 ### [Remove-MgBetaGroupSitePermission](Remove-MgBetaGroupSitePermission.md)
 Delete navigation property permissions for groups
@@ -2829,16 +2456,10 @@ Delete navigation property columns for sites
 Remove a [content type][contentType] from a [list][] or a [site][].
 
 ### [Remove-MgBetaSiteContentTypeColumn](Remove-MgBetaSiteContentTypeColumn.md)
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ### [Remove-MgBetaSiteContentTypeColumnLink](Remove-MgBetaSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
-
-### [Remove-MgBetaSiteGetByPathAnalytic](Remove-MgBetaSiteGetByPathAnalytic.md)
-Delete navigation property analytics for sites
-
-### [Remove-MgBetaSiteGetByPathTermStore](Remove-MgBetaSiteGetByPathTermStore.md)
-Delete navigation property termStore for sites
 
 ### [Remove-MgBetaSiteList](Remove-MgBetaSiteList.md)
 Delete navigation property lists for sites
@@ -2850,7 +2471,7 @@ Delete navigation property columns for sites
 Delete navigation property contentTypes for sites
 
 ### [Remove-MgBetaSiteListContentTypeColumn](Remove-MgBetaSiteListContentTypeColumn.md)
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ### [Remove-MgBetaSiteListContentTypeColumnLink](Remove-MgBetaSiteListContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
@@ -2887,27 +2508,6 @@ Delete navigation property operations for sites
 
 ### [Remove-MgBetaSitePage](Remove-MgBetaSitePage.md)
 Delete navigation property pages for sites
-
-### [Remove-MgBetaSitePageAsSitePageCanvaLayout](Remove-MgBetaSitePageAsSitePageCanvaLayout.md)
-Delete navigation property canvasLayout for sites
-
-### [Remove-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSection](Remove-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Delete navigation property horizontalSections for sites
-
-### [Remove-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Remove-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Delete navigation property columns for sites
-
-### [Remove-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Remove-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Delete navigation property webparts for sites
-
-### [Remove-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection](Remove-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Delete navigation property verticalSection for sites
-
-### [Remove-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Remove-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Delete navigation property webparts for sites
-
-### [Remove-MgBetaSitePageAsSitePageWebPart](Remove-MgBetaSitePageAsSitePageWebPart.md)
-Delete navigation property webParts for sites
 
 ### [Remove-MgBetaSitePermission](Remove-MgBetaSitePermission.md)
 Delete navigation property permissions for sites
@@ -3006,21 +2606,12 @@ Invoke action restoreVersion
 Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
 ### [Set-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContent](Set-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContent.md)
-Update content for the navigation property driveItem in groups
-
-### [Set-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContentStream](Set-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupSiteListItemActivityDriveItemContent](Set-MgBetaGroupSiteListItemActivityDriveItemContent.md)
-Update content for the navigation property driveItem in groups
-
-### [Set-MgBetaGroupSiteListItemActivityDriveItemContentStream](Set-MgBetaGroupSiteListItemActivityDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupSiteListItemDriveItemContent](Set-MgBetaGroupSiteListItemDriveItemContent.md)
-Update content for the navigation property driveItem in groups
-
-### [Set-MgBetaGroupSiteListItemDriveItemContentStream](Set-MgBetaGroupSiteListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupSiteOnenoteNotebookSectionGroupSectionPageContent](Set-MgBetaGroupSiteOnenoteNotebookSectionGroupSectionPageContent.md)
@@ -3042,21 +2633,12 @@ The page's HTML content.
 The page's HTML content.
 
 ### [Set-MgBetaSiteAnalyticItemActivityStatActivityDriveItemContent](Set-MgBetaSiteAnalyticItemActivityStatActivityDriveItemContent.md)
-Update content for the navigation property driveItem in sites
-
-### [Set-MgBetaSiteAnalyticItemActivityStatActivityDriveItemContentStream](Set-MgBetaSiteAnalyticItemActivityStatActivityDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaSiteListItemActivityDriveItemContent](Set-MgBetaSiteListItemActivityDriveItemContent.md)
-Update content for the navigation property driveItem in sites
-
-### [Set-MgBetaSiteListItemActivityDriveItemContentStream](Set-MgBetaSiteListItemActivityDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaSiteListItemDriveItemContent](Set-MgBetaSiteListItemDriveItemContent.md)
-Update content for the navigation property driveItem in sites
-
-### [Set-MgBetaSiteListItemDriveItemContentStream](Set-MgBetaSiteListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Test-MgBetaSiteContentTypePublished](Test-MgBetaSiteContentTypePublished.md)
@@ -3090,10 +2672,10 @@ Invoke action evaluate
 Invoke function isPublished
 
 ### [Unpublish-MgBetaSiteContentType](Unpublish-MgBetaSiteContentType.md)
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Unpublish-MgBetaSiteListContentType](Unpublish-MgBetaSiteListContentType.md)
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgBetaAdminSharepoint](Update-MgBetaAdminSharepoint.md)
 Update the navigation property sharepoint in admin
@@ -3117,31 +2699,16 @@ Update the navigation property activities in groups
 Update the navigation property columns in groups
 
 ### [Update-MgBetaGroupSiteContentType](Update-MgBetaGroupSiteContentType.md)
-Update contentType
+Update a [content type][contentType].
 
 ### [Update-MgBetaGroupSiteContentTypeColumn](Update-MgBetaGroupSiteContentTypeColumn.md)
-Update columnDefinition
+Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgBetaGroupSiteContentTypeColumnLink](Update-MgBetaGroupSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
 
 ### [Update-MgBetaGroupSiteCreatedByUserMailboxSetting](Update-MgBetaGroupSiteCreatedByUserMailboxSetting.md)
 Update property mailboxSettings value.
-
-### [Update-MgBetaGroupSiteGetByPathAnalytic](Update-MgBetaGroupSiteGetByPathAnalytic.md)
-Update the navigation property analytics in groups
-
-### [Update-MgBetaGroupSiteGetByPathInformationProtection](Update-MgBetaGroupSiteGetByPathInformationProtection.md)
-Update the navigation property informationProtection in groups
-
-### [Update-MgBetaGroupSiteGetByPathOnenote](Update-MgBetaGroupSiteGetByPathOnenote.md)
-Update the navigation property onenote in groups
-
-### [Update-MgBetaGroupSiteGetByPathRecycleBin](Update-MgBetaGroupSiteGetByPathRecycleBin.md)
-Update the navigation property recycleBin in groups
-
-### [Update-MgBetaGroupSiteGetByPathTermStore](Update-MgBetaGroupSiteGetByPathTermStore.md)
-Update the navigation property termStore in groups
 
 ### [Update-MgBetaGroupSiteInformationProtection](Update-MgBetaGroupSiteInformationProtection.md)
 Update the navigation property informationProtection in groups
@@ -3183,7 +2750,7 @@ Update the navigation property columns in groups
 Update the navigation property contentTypes in groups
 
 ### [Update-MgBetaGroupSiteListContentTypeColumn](Update-MgBetaGroupSiteListContentTypeColumn.md)
-Update columnDefinition
+Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgBetaGroupSiteListContentTypeColumnLink](Update-MgBetaGroupSiteListContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
@@ -3277,33 +2844,6 @@ Update the navigation property operations in groups
 
 ### [Update-MgBetaGroupSitePage](Update-MgBetaGroupSitePage.md)
 Update the navigation property pages in groups
-
-### [Update-MgBetaGroupSitePageAsSitePageCanvaLayout](Update-MgBetaGroupSitePageAsSitePageCanvaLayout.md)
-Update the navigation property canvasLayout in groups
-
-### [Update-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSection](Update-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Update the navigation property horizontalSections in groups
-
-### [Update-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Update-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Update the navigation property columns in groups
-
-### [Update-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Update-MgBetaGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Update the navigation property webparts in groups
-
-### [Update-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSection](Update-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Update the navigation property verticalSection in groups
-
-### [Update-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Update-MgBetaGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Update the navigation property webparts in groups
-
-### [Update-MgBetaGroupSitePageAsSitePageCreatedByUserMailboxSetting](Update-MgBetaGroupSitePageAsSitePageCreatedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgBetaGroupSitePageAsSitePageLastModifiedByUserMailboxSetting](Update-MgBetaGroupSitePageAsSitePageLastModifiedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgBetaGroupSitePageAsSitePageWebPart](Update-MgBetaGroupSitePageAsSitePageWebPart.md)
-Update the navigation property webParts in groups
 
 ### [Update-MgBetaGroupSitePageCreatedByUserMailboxSetting](Update-MgBetaGroupSitePageCreatedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3432,19 +2972,13 @@ Update the navigation property activities in sites
 Update the navigation property columns in sites
 
 ### [Update-MgBetaSiteContentType](Update-MgBetaSiteContentType.md)
-Update contentType
+Update a [content type][contentType].
 
 ### [Update-MgBetaSiteContentTypeColumn](Update-MgBetaSiteContentTypeColumn.md)
-Update columnDefinition
+Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgBetaSiteContentTypeColumnLink](Update-MgBetaSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
-
-### [Update-MgBetaSiteGetByPathAnalytic](Update-MgBetaSiteGetByPathAnalytic.md)
-Update the navigation property analytics in sites
-
-### [Update-MgBetaSiteGetByPathTermStore](Update-MgBetaSiteGetByPathTermStore.md)
-Update the navigation property termStore in sites
 
 ### [Update-MgBetaSiteList](Update-MgBetaSiteList.md)
 Update the navigation property lists in sites
@@ -3456,7 +2990,7 @@ Update the navigation property columns in sites
 Update the navigation property contentTypes in sites
 
 ### [Update-MgBetaSiteListContentTypeColumn](Update-MgBetaSiteListContentTypeColumn.md)
-Update columnDefinition
+Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgBetaSiteListContentTypeColumnLink](Update-MgBetaSiteListContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
@@ -3520,33 +3054,6 @@ Update the navigation property operations in sites
 
 ### [Update-MgBetaSitePage](Update-MgBetaSitePage.md)
 Update the navigation property pages in sites
-
-### [Update-MgBetaSitePageAsSitePageCanvaLayout](Update-MgBetaSitePageAsSitePageCanvaLayout.md)
-Update the navigation property canvasLayout in sites
-
-### [Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSection](Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Update the navigation property horizontalSections in sites
-
-### [Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Update the navigation property columns in sites
-
-### [Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Update the navigation property webparts in sites
-
-### [Update-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection](Update-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Update the navigation property verticalSection in sites
-
-### [Update-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Update-MgBetaSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Update the navigation property webparts in sites
-
-### [Update-MgBetaSitePageAsSitePageCreatedByUserMailboxSetting](Update-MgBetaSitePageAsSitePageCreatedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgBetaSitePageAsSitePageLastModifiedByUserMailboxSetting](Update-MgBetaSitePageAsSitePageLastModifiedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgBetaSitePageAsSitePageWebPart](Update-MgBetaSitePageAsSitePageWebPart.md)
-Update the navigation property webParts in sites
 
 ### [Update-MgBetaSitePageCreatedByUserMailboxSetting](Update-MgBetaSitePageCreatedByUserMailboxSetting.md)
 Update property mailboxSettings value.

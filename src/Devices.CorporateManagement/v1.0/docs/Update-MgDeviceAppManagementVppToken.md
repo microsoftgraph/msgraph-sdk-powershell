@@ -17,22 +17,20 @@ Update the properties of a vppToken object.
 Update-MgDeviceAppManagementVppToken -VppTokenId <String> [-AdditionalProperties <Hashtable>]
  [-AppleId <String>] [-AutomaticallyUpdateApps] [-CountryOrRegion <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-LastSyncDateTime <DateTime>]
- [-LastSyncStatus <VppTokenSyncStatus>] [-OrganizationName <String>] [-ResponseHeadersVariable <String>]
- [-State <VppTokenState>] [-Token <String>] [-VppTokenAccountType <VppTokenAccountType>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastSyncStatus <VppTokenSyncStatus>] [-OrganizationName <String>] [-State <VppTokenState>]
+ [-Token <String>] [-VppTokenAccountType <VppTokenAccountType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceAppManagementVppToken -VppTokenId <String> -BodyParameter <IMicrosoftGraphVppToken>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgDeviceAppManagementVppToken -VppTokenId <String> -BodyParameter <IMicrosoftGraphVppToken> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppManagementVppToken -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphVppToken> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphVppToken> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,9 +39,8 @@ Update-MgDeviceAppManagementVppToken -InputObject <IDevicesCorporateManagementId
  [-AdditionalProperties <Hashtable>] [-AppleId <String>] [-AutomaticallyUpdateApps]
  [-CountryOrRegion <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-LastSyncDateTime <DateTime>] [-LastSyncStatus <VppTokenSyncStatus>]
- [-OrganizationName <String>] [-ResponseHeadersVariable <String>] [-State <VppTokenState>] [-Token <String>]
- [-VppTokenAccountType <VppTokenAccountType>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OrganizationName <String>] [-State <VppTokenState>] [-Token <String>]
+ [-VppTokenAccountType <VppTokenAccountType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,21 +158,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -260,21 +242,6 @@ The organization associated with the Apple Volume Purchase Program Token
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -382,8 +349,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

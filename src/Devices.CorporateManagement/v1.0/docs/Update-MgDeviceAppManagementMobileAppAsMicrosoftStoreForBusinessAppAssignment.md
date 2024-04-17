@@ -16,30 +16,29 @@ Update the properties of a mobileAppAssignment object.
 ```
 Update-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment -MobileAppAssignmentId <String>
  -MobileAppId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <InstallIntent>]
- [-ResponseHeadersVariable <String>] [-Settings <Hashtable>] [-Target <Hashtable>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Settings <Hashtable>] [-Target <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment -MobileAppAssignmentId <String>
- -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppAssignment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphMobileAppAssignment>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Intent <InstallIntent>] [-ResponseHeadersVariable <String>] [-Settings <Hashtable>] [-Target <Hashtable>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Intent <InstallIntent>] [-Settings <Hashtable>] [-Target <Hashtable>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +87,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -186,21 +170,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Settings
 Abstract class to contain properties used to assign a mobile app to a group.
 
@@ -270,8 +239,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

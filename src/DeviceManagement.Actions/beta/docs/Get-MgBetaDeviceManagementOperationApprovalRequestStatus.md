@@ -15,15 +15,15 @@ Invoke action retrieveRequestStatus
 ### RetrieveExpanded (Default)
 ```
 Get-MgBetaDeviceManagementOperationApprovalRequestStatus [-AdditionalProperties <Hashtable>]
- [-EntityId <String>] [-EntityType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EntityId <String>] [-EntityType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Retrieve
 ```
 Get-MgBetaDeviceManagementOperationApprovalRequestStatus
  -Body <IPaths1Lazzr4DevicemanagementOperationapprovalrequestsMicrosoftGraphRetrieverequeststatusPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,21 +120,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

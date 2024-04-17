@@ -18,22 +18,21 @@ Invoke-MgBetaExecuteUserManagedDeviceAction -UserId <String> [-ActionName <Manag
  [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>] [-DeprovisionReason <String>]
  [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData] [-KeepUserData]
  [-NotificationBody <String>] [-NotificationTitle <String>] [-OrganizationalUnitPath <String>]
- [-PersistEsimDataPlan] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PersistEsimDataPlan] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Execute
 ```
 Invoke-MgBetaExecuteUserManagedDeviceAction -UserId <String>
  -BodyParameter <IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExecuteViaIdentity
 ```
 Invoke-MgBetaExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExecuteViaIdentityExpanded
@@ -42,8 +41,7 @@ Invoke-MgBetaExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity>
  [-ActionName <ManagedDeviceRemoteAction>] [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>]
  [-DeprovisionReason <String>] [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData]
  [-KeepUserData] [-NotificationBody <String>] [-NotificationTitle <String>] [-OrganizationalUnitPath <String>]
- [-PersistEsimDataPlan] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PersistEsimDataPlan] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -173,21 +171,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -294,21 +277,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -364,8 +332,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBulkManagedDeviceActionResult
@@ -412,7 +378,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

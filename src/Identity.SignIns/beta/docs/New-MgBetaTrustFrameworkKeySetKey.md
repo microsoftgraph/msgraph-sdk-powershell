@@ -16,29 +16,27 @@ The caller doesn't have to provide a secret.
 ### GenerateExpanded (Default)
 ```
 New-MgBetaTrustFrameworkKeySetKey -TrustFrameworkKeySetId <String> [-AdditionalProperties <Hashtable>]
- [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-ResponseHeadersVariable <String>] [-Use <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Generate
 ```
 New-MgBetaTrustFrameworkKeySetKey -TrustFrameworkKeySetId <String>
  -BodyParameter <IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GenerateViaIdentity
 ```
 New-MgBetaTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GenerateViaIdentityExpanded
 ```
 New-MgBetaTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
- [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-ResponseHeadersVariable <String>] [-Use <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,21 +107,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -162,21 +145,6 @@ Accept wildcard characters: False
 Type: System.Int64
 Parameter Sets: GenerateExpanded, GenerateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -254,8 +222,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

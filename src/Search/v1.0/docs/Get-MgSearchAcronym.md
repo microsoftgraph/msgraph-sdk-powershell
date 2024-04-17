@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSearchAcronym
 
 ## SYNOPSIS
-Read the properties and relationships of an acronym object.
+Get acronyms from search
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSearchAcronym -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an acronym object.
+Get acronyms from search
 
 ## EXAMPLES
 

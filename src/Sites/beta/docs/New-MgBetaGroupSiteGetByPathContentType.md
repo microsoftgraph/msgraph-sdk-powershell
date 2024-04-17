@@ -21,23 +21,22 @@ New-MgBetaGroupSiteGetByPathContentType -GroupId <String> -Path <String> -SiteId
  [-Description <String>] [-DocumentSet <IMicrosoftGraphDocumentSet>]
  [-DocumentTemplate <IMicrosoftGraphDocumentSetContent>] [-Group <String>] [-Hidden] [-Id <String>]
  [-InheritedFrom <IMicrosoftGraphItemReference>] [-IsBuiltIn] [-Name <String>]
- [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-PropagateChanges] [-ReadOnly]
- [-ResponseHeadersVariable <String>] [-Sealed] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-PropagateChanges] [-ReadOnly] [-Sealed]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaGroupSiteGetByPathContentType -GroupId <String> -Path <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphContentType> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphContentType> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgBetaGroupSiteGetByPathContentType -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphContentType> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphContentType> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateExpanded1
@@ -49,23 +48,22 @@ New-MgBetaGroupSiteGetByPathContentType -GroupId <String> -Path <String> -Path1 
  [-Description <String>] [-DocumentSet <IMicrosoftGraphDocumentSet>]
  [-DocumentTemplate <IMicrosoftGraphDocumentSetContent>] [-Group <String>] [-Hidden] [-Id <String>]
  [-InheritedFrom <IMicrosoftGraphItemReference>] [-IsBuiltIn] [-Name <String>]
- [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-PropagateChanges] [-ReadOnly]
- [-ResponseHeadersVariable <String>] [-Sealed] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-PropagateChanges] [-ReadOnly] [-Sealed]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaGroupSiteGetByPathContentType -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphContentType> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphContentType> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgBetaGroupSiteGetByPathContentType -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphContentType> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphContentType> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -77,9 +75,8 @@ New-MgBetaGroupSiteGetByPathContentType -InputObject <ISitesIdentity> [-Addition
  [-Description <String>] [-DocumentSet <IMicrosoftGraphDocumentSet>]
  [-DocumentTemplate <IMicrosoftGraphDocumentSetContent>] [-Group <String>] [-Hidden] [-Id <String>]
  [-InheritedFrom <IMicrosoftGraphItemReference>] [-IsBuiltIn] [-Name <String>]
- [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-PropagateChanges] [-ReadOnly]
- [-ResponseHeadersVariable <String>] [-Sealed] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-PropagateChanges] [-ReadOnly] [-Sealed]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
@@ -91,9 +88,8 @@ New-MgBetaGroupSiteGetByPathContentType -InputObject <ISitesIdentity> [-Addition
  [-Description <String>] [-DocumentSet <IMicrosoftGraphDocumentSet>]
  [-DocumentTemplate <IMicrosoftGraphDocumentSetContent>] [-Group <String>] [-Hidden] [-Id <String>]
  [-InheritedFrom <IMicrosoftGraphItemReference>] [-IsBuiltIn] [-Name <String>]
- [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-PropagateChanges] [-ReadOnly]
- [-ResponseHeadersVariable <String>] [-Sealed] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-PropagateChanges] [-ReadOnly] [-Sealed]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -135,7 +131,7 @@ Accept wildcard characters: False
 ### -AssociatedHubsUrls
 List of canonical URLs for hub sites with which this content type is associated to.
 This contains all hub sites where this content type is queued to be enforced or is already enforced.
-Enforcing a content type means that the content type is applied to the lists in the enforced sites.
+Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
 
 ```yaml
 Type: System.String[]
@@ -198,7 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -ColumnLinks
-The collection of columns that are required by this content type.
+The collection of columns that are required by this content type
 To construct, see NOTES section for COLUMNLINKS properties and create a hash table.
 
 ```yaml
@@ -230,7 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -Columns
-The collection of column definitions for this content type.
+The collection of column definitions for this contentType.
 To construct, see NOTES section for COLUMNS properties and create a hash table.
 
 ```yaml
@@ -493,7 +489,7 @@ Accept wildcard characters: False
 ```
 
 ### -PropagateChanges
-If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
+If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -514,21 +510,6 @@ If true, the content type can't be modified unless this value is first set to fa
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -626,10 +607,10 @@ To create the parameters described below, construct a hash table containing the 
 `BASE <IMicrosoftGraphContentType>`: contentType
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
+  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
   - `[Base <IMicrosoftGraphContentType>]`: contentType
   - `[BaseTypes <IMicrosoftGraphContentType[]>]`: The collection of content types that are ancestors of this content type.
-  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type.
+  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Name <String>]`: The name of the column  in this content type.
   - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
@@ -717,8 +698,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with.
+          - `[Value <String>]`: Contains the corresponding value for the specified key.
         - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -765,7 +746,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
       - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
-  - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this content type.
+  - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
   - `[Description <String>]`: The descriptive text for the item.
   - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -807,16 +788,16 @@ To create the parameters described below, construct a hash table containing the 
     - `[Default <Boolean?>]`: Indicates whether this is the default content type.
     - `[Position <Int32?>]`: Specifies the position in which the content type appears in the selection UI.
   - `[ParentId <String>]`: The unique identifier of the content type.
-  - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
+  - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
   - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
   - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 
 `BASETYPES <IMicrosoftGraphContentType[]>`: The collection of content types that are ancestors of this content type.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
+  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
   - `[Base <IMicrosoftGraphContentType>]`: contentType
   - `[BaseTypes <IMicrosoftGraphContentType[]>]`: The collection of content types that are ancestors of this content type.
-  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type.
+  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Name <String>]`: The name of the column  in this content type.
   - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
@@ -904,8 +885,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with.
+          - `[Value <String>]`: Contains the corresponding value for the specified key.
         - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -952,7 +933,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
       - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
-  - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this content type.
+  - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
   - `[Description <String>]`: The descriptive text for the item.
   - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -994,17 +975,17 @@ To create the parameters described below, construct a hash table containing the 
     - `[Default <Boolean?>]`: Indicates whether this is the default content type.
     - `[Position <Int32?>]`: Specifies the position in which the content type appears in the selection UI.
   - `[ParentId <String>]`: The unique identifier of the content type.
-  - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
+  - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
   - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
   - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 
 `BODYPARAMETER <IMicrosoftGraphContentType>`: contentType
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
+  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
   - `[Base <IMicrosoftGraphContentType>]`: contentType
   - `[BaseTypes <IMicrosoftGraphContentType[]>]`: The collection of content types that are ancestors of this content type.
-  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type.
+  - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Name <String>]`: The name of the column  in this content type.
   - `[ColumnPositions <IMicrosoftGraphColumnDefinition[]>]`: Column order information in a content type.
@@ -1092,8 +1073,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with.
+          - `[Value <String>]`: Contains the corresponding value for the specified key.
         - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -1140,7 +1121,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
       - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
-  - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this content type.
+  - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions for this contentType.
   - `[Description <String>]`: The descriptive text for the item.
   - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1182,11 +1163,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[Default <Boolean?>]`: Indicates whether this is the default content type.
     - `[Position <Int32?>]`: Specifies the position in which the content type appears in the selection UI.
   - `[ParentId <String>]`: The unique identifier of the content type.
-  - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
+  - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
   - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
   - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 
-`COLUMNLINKS <IMicrosoftGraphColumnLink[]>`: The collection of columns that are required by this content type.
+`COLUMNLINKS <IMicrosoftGraphColumnLink[]>`: The collection of columns that are required by this content type
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Name <String>]`: The name of the column  in this content type.
 
@@ -1275,8 +1256,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
+        - `[Key <String>]`: Contains the name of the field that a value is associated with.
+        - `[Value <String>]`: Contains the corresponding value for the specified key.
       - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -1324,7 +1305,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
     - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
 
-`COLUMNS <IMicrosoftGraphColumnDefinition[]>`: The collection of column definitions for this content type.
+`COLUMNS <IMicrosoftGraphColumnDefinition[]>`: The collection of column definitions for this contentType.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1409,8 +1390,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
+        - `[Key <String>]`: Contains the name of the field that a value is associated with.
+        - `[Value <String>]`: Contains the corresponding value for the specified key.
       - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -1550,8 +1531,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Name <String>]`: The name of the label.
         - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with.
+          - `[Value <String>]`: Contains the corresponding value for the specified key.
         - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term

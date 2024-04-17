@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgUserSettingWindowsInstance
 
 ## SYNOPSIS
-Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL.
-This method gets a windowsSettingInstance for the signed-in user.
+Get instances from users
 
 ## SYNTAX
 
@@ -35,8 +34,7 @@ Get-MgUserSettingWindowsInstance -InputObject <IUsersIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL.
-This method gets a windowsSettingInstance for the signed-in user.
+Get instances from users
 
 ## EXAMPLES
 

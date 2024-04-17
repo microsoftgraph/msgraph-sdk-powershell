@@ -14,15 +14,14 @@ Invoke function retrieveMyRequestById
 
 ### Retrieve (Default)
 ```
-Get-MgBetaDeviceManagementOperationApprovalRequestMyRequestById -Id <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgBetaDeviceManagementOperationApprovalRequestMyRequestById -Id <String> [-Headers <IDictionary>]
+ [<CommonParameters>]
 ```
 
 ### RetrieveViaIdentity
 ```
 Get-MgBetaDeviceManagementOperationApprovalRequestMyRequestById
- -InputObject <IDeviceManagementFunctionsIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ -InputObject <IDeviceManagementFunctionsIdentity> [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,21 +88,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: 778661be-c1ec-4447-a5cd-db26bb9d6f14
+Module Guid: e571bde0-4c9f-46d9-80bc-17b3f9782cc6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Beta.Files Cmdlets
 ### [Add-MgBetaDriveListContentTypeCopy](Add-MgBetaDriveListContentTypeCopy.md)
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgBetaDriveListContentTypeCopyFromContentTypeHub](Add-MgBetaDriveListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
@@ -21,7 +21,7 @@ The method allows users to pull content types directly from the content type hub
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
 ### [Add-MgBetaShareListContentTypeCopy](Add-MgBetaShareListContentTypeCopy.md)
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgBetaShareListContentTypeCopyFromContentTypeHub](Add-MgBetaShareListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
@@ -33,13 +33,15 @@ For more information, see getCompatibleHubContentTypes and the blog post Syntex 
 Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ### [Copy-MgBetaDriveListContentTypeToDefaultContentLocation](Copy-MgBetaDriveListContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ### [Copy-MgBetaDriveRoot](Copy-MgBetaDriveRoot.md)
 Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ### [Copy-MgBetaShareListContentTypeToDefaultContentLocation](Copy-MgBetaShareListContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ### [Get-MgBetaDrive](Get-MgBetaDrive.md)
 Get entity from drives by key
@@ -51,9 +53,6 @@ List the recent activities that took place on an item or under a hierarchy.
 Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### [Get-MgBetaDriveBundleContent](Get-MgBetaDriveBundleContent.md)
-Get content for the navigation property bundles from drives
-
-### [Get-MgBetaDriveBundleContentStream](Get-MgBetaDriveBundleContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveBundleCount](Get-MgBetaDriveBundleCount.md)
@@ -88,9 +87,6 @@ The list of items the user is following.
 Only in OneDrive for Business.
 
 ### [Get-MgBetaDriveFollowingContent](Get-MgBetaDriveFollowingContent.md)
-Get content for the navigation property following from drives
-
-### [Get-MgBetaDriveFollowingContentStream](Get-MgBetaDriveFollowingContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveFollowingCount](Get-MgBetaDriveFollowingCount.md)
@@ -130,18 +126,12 @@ Read-only.
 Nullable.
 
 ### [Get-MgBetaDriveItemChildContent](Get-MgBetaDriveItemChildContent.md)
-Get content for the navigation property children from drives
-
-### [Get-MgBetaDriveItemChildContentStream](Get-MgBetaDriveItemChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveItemChildCount](Get-MgBetaDriveItemChildCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDriveItemContent](Get-MgBetaDriveItemContent.md)
-Get content for the navigation property items from drives
-
-### [Get-MgBetaDriveItemContentStream](Get-MgBetaDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveItemCount](Get-MgBetaDriveItemCount.md)
@@ -237,9 +227,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaDriveItemListItemDriveItemContent](Get-MgBetaDriveItemListItemDriveItemContent.md)
-Get content for the navigation property driveItem from drives
-
-### [Get-MgBetaDriveItemListItemDriveItemContentStream](Get-MgBetaDriveItemListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveItemListItemField](Get-MgBetaDriveItemListItemField.md)
@@ -327,13 +314,13 @@ The source column for content type column.
 The collection of content types present in this list.
 
 ### [Get-MgBetaDriveListContentTypeColumn](Get-MgBetaDriveListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ### [Get-MgBetaDriveListContentTypeColumnCount](Get-MgBetaDriveListContentTypeColumnCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDriveListContentTypeColumnLink](Get-MgBetaDriveListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+The collection of columns that are required by this content type
 
 ### [Get-MgBetaDriveListContentTypeColumnLinkCount](Get-MgBetaDriveListContentTypeColumnLinkCount.md)
 Get the number of the resource
@@ -418,9 +405,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaDriveListItemDriveItemContent](Get-MgBetaDriveListItemDriveItemContent.md)
-Get content for the navigation property driveItem from drives
-
-### [Get-MgBetaDriveListItemDriveItemContentStream](Get-MgBetaDriveListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveListItemField](Get-MgBetaDriveListItemField.md)
@@ -481,18 +465,12 @@ Read-only.
 Nullable.
 
 ### [Get-MgBetaDriveRootChildContent](Get-MgBetaDriveRootChildContent.md)
-Get content for the navigation property children from drives
-
-### [Get-MgBetaDriveRootChildContentStream](Get-MgBetaDriveRootChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveRootChildCount](Get-MgBetaDriveRootChildCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDriveRootContent](Get-MgBetaDriveRootContent.md)
-Get content for the navigation property root from drives
-
-### [Get-MgBetaDriveRootContentStream](Get-MgBetaDriveRootContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveRootCreatedByUser](Get-MgBetaDriveRootCreatedByUser.md)
@@ -585,9 +563,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaDriveRootListItemDriveItemContent](Get-MgBetaDriveRootListItemDriveItemContent.md)
-Get content for the navigation property driveItem from drives
-
-### [Get-MgBetaDriveRootListItemDriveItemContentStream](Get-MgBetaDriveRootListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveRootListItemField](Get-MgBetaDriveRootListItemField.md)
@@ -647,9 +622,6 @@ Special folders are automatically created the first time an application attempts
 If a user deletes one, it is recreated when written to again.
 
 ### [Get-MgBetaDriveSpecialContent](Get-MgBetaDriveSpecialContent.md)
-Get content for the navigation property special from drives
-
-### [Get-MgBetaDriveSpecialContentStream](Get-MgBetaDriveSpecialContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveSpecialCount](Get-MgBetaDriveSpecialCount.md)
@@ -670,9 +642,6 @@ List the recent activities that took place on an item or under a hierarchy.
 Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### [Get-MgBetaGroupDriveBundleContent](Get-MgBetaGroupDriveBundleContent.md)
-Get content for the navigation property bundles from groups
-
-### [Get-MgBetaGroupDriveBundleContentStream](Get-MgBetaGroupDriveBundleContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveBundleCount](Get-MgBetaGroupDriveBundleCount.md)
@@ -710,9 +679,6 @@ The list of items the user is following.
 Only in OneDrive for Business.
 
 ### [Get-MgBetaGroupDriveFollowingContent](Get-MgBetaGroupDriveFollowingContent.md)
-Get content for the navigation property following from groups
-
-### [Get-MgBetaGroupDriveFollowingContentStream](Get-MgBetaGroupDriveFollowingContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveFollowingCount](Get-MgBetaGroupDriveFollowingCount.md)
@@ -749,18 +715,12 @@ Read-only.
 Nullable.
 
 ### [Get-MgBetaGroupDriveItemChildContent](Get-MgBetaGroupDriveItemChildContent.md)
-Get content for the navigation property children from groups
-
-### [Get-MgBetaGroupDriveItemChildContentStream](Get-MgBetaGroupDriveItemChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveItemChildCount](Get-MgBetaGroupDriveItemChildCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveItemContent](Get-MgBetaGroupDriveItemContent.md)
-Get content for the navigation property items from groups
-
-### [Get-MgBetaGroupDriveItemContentStream](Get-MgBetaGroupDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveItemCount](Get-MgBetaGroupDriveItemCount.md)
@@ -850,9 +810,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaGroupDriveItemListItemDriveItemContent](Get-MgBetaGroupDriveItemListItemDriveItemContent.md)
-Get content for the navigation property driveItem from groups
-
-### [Get-MgBetaGroupDriveItemListItemDriveItemContentStream](Get-MgBetaGroupDriveItemListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveItemListItemField](Get-MgBetaGroupDriveItemListItemField.md)
@@ -940,13 +897,13 @@ The source column for content type column.
 The collection of content types present in this list.
 
 ### [Get-MgBetaGroupDriveListContentTypeColumn](Get-MgBetaGroupDriveListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ### [Get-MgBetaGroupDriveListContentTypeColumnCount](Get-MgBetaGroupDriveListContentTypeColumnCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveListContentTypeColumnLink](Get-MgBetaGroupDriveListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+The collection of columns that are required by this content type
 
 ### [Get-MgBetaGroupDriveListContentTypeColumnLinkCount](Get-MgBetaGroupDriveListContentTypeColumnLinkCount.md)
 Get the number of the resource
@@ -1019,9 +976,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaGroupDriveListItemDriveItemContent](Get-MgBetaGroupDriveListItemDriveItemContent.md)
-Get content for the navigation property driveItem from groups
-
-### [Get-MgBetaGroupDriveListItemDriveItemContentStream](Get-MgBetaGroupDriveListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveListItemField](Get-MgBetaGroupDriveListItemField.md)
@@ -1079,18 +1033,12 @@ Read-only.
 Nullable.
 
 ### [Get-MgBetaGroupDriveRootChildContent](Get-MgBetaGroupDriveRootChildContent.md)
-Get content for the navigation property children from groups
-
-### [Get-MgBetaGroupDriveRootChildContentStream](Get-MgBetaGroupDriveRootChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveRootChildCount](Get-MgBetaGroupDriveRootChildCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveRootContent](Get-MgBetaGroupDriveRootContent.md)
-Get content for the navigation property root from groups
-
-### [Get-MgBetaGroupDriveRootContentStream](Get-MgBetaGroupDriveRootContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveRootCreatedByUser](Get-MgBetaGroupDriveRootCreatedByUser.md)
@@ -1177,9 +1125,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaGroupDriveRootListItemDriveItemContent](Get-MgBetaGroupDriveRootListItemDriveItemContent.md)
-Get content for the navigation property driveItem from groups
-
-### [Get-MgBetaGroupDriveRootListItemDriveItemContentStream](Get-MgBetaGroupDriveRootListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveRootListItemField](Get-MgBetaGroupDriveRootListItemField.md)
@@ -1239,9 +1184,6 @@ Special folders are automatically created the first time an application attempts
 If a user deletes one, it is recreated when written to again.
 
 ### [Get-MgBetaGroupDriveSpecialContent](Get-MgBetaGroupDriveSpecialContent.md)
-Get content for the navigation property special from groups
-
-### [Get-MgBetaGroupDriveSpecialContentStream](Get-MgBetaGroupDriveSpecialContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupDriveSpecialCount](Get-MgBetaGroupDriveSpecialCount.md)
@@ -1279,9 +1221,6 @@ Access a shared DriveItem or a collection of shared items by using a shareId or 
 To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 
 ### [Get-MgBetaShareDriveItemContent](Get-MgBetaShareDriveItemContent.md)
-Get content for the navigation property driveItem from shares
-
-### [Get-MgBetaShareDriveItemContentStream](Get-MgBetaShareDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaShareItem](Get-MgBetaShareItem.md)
@@ -1289,9 +1228,6 @@ All driveItems contained in the sharing root.
 This collection cannot be enumerated.
 
 ### [Get-MgBetaShareItemContent](Get-MgBetaShareItemContent.md)
-Get content for the navigation property items from shares
-
-### [Get-MgBetaShareItemContentStream](Get-MgBetaShareItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaShareItemCount](Get-MgBetaShareItemCount.md)
@@ -1346,13 +1282,13 @@ The source column for content type column.
 The collection of content types present in this list.
 
 ### [Get-MgBetaShareListContentTypeColumn](Get-MgBetaShareListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ### [Get-MgBetaShareListContentTypeColumnCount](Get-MgBetaShareListContentTypeColumnCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaShareListContentTypeColumnLink](Get-MgBetaShareListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+The collection of columns that are required by this content type
 
 ### [Get-MgBetaShareListContentTypeColumnLinkCount](Get-MgBetaShareListContentTypeColumnLinkCount.md)
 Get the number of the resource
@@ -1434,9 +1370,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaShareListItemDriveItemContent](Get-MgBetaShareListItemDriveItemContent.md)
-Get content for the navigation property driveItem from shares
-
-### [Get-MgBetaShareListItemDriveItemContentStream](Get-MgBetaShareListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaShareListItemField](Get-MgBetaShareListItemField.md)
@@ -1470,9 +1403,6 @@ Used to access the permission representing the underlying sharing link
 Get root from shares
 
 ### [Get-MgBetaShareRootContent](Get-MgBetaShareRootContent.md)
-Get content for the navigation property root from shares
-
-### [Get-MgBetaShareRootContentStream](Get-MgBetaShareRootContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaShareSharedDriveItemSharedDriveItem](Get-MgBetaShareSharedDriveItemSharedDriveItem.md)
@@ -1483,8 +1413,8 @@ To use a sharing URL with this API, your app needs to transform the URL into a s
 Used to access the underlying site
 
 ### [Get-MgBetaUserDefaultDrive](Get-MgBetaUserDefaultDrive.md)
-Retrieve the properties and relationships of a drive resource.
-A drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+Retrieve the properties and relationships of a Drive resource.
+A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 
 ### [Get-MgBetaUserDrive](Get-MgBetaUserDrive.md)
 A collection of drives available for this user.
@@ -1497,9 +1427,6 @@ List the recent activities that took place on an item or under a hierarchy.
 Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### [Get-MgBetaUserDriveBundleContent](Get-MgBetaUserDriveBundleContent.md)
-Get content for the navigation property bundles from users
-
-### [Get-MgBetaUserDriveBundleContentStream](Get-MgBetaUserDriveBundleContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveBundleCount](Get-MgBetaUserDriveBundleCount.md)
@@ -1537,9 +1464,6 @@ The list of items the user is following.
 Only in OneDrive for Business.
 
 ### [Get-MgBetaUserDriveFollowingContent](Get-MgBetaUserDriveFollowingContent.md)
-Get content for the navigation property following from users
-
-### [Get-MgBetaUserDriveFollowingContentStream](Get-MgBetaUserDriveFollowingContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveFollowingCount](Get-MgBetaUserDriveFollowingCount.md)
@@ -1576,18 +1500,12 @@ Read-only.
 Nullable.
 
 ### [Get-MgBetaUserDriveItemChildContent](Get-MgBetaUserDriveItemChildContent.md)
-Get content for the navigation property children from users
-
-### [Get-MgBetaUserDriveItemChildContentStream](Get-MgBetaUserDriveItemChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveItemChildCount](Get-MgBetaUserDriveItemChildCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveItemContent](Get-MgBetaUserDriveItemContent.md)
-Get content for the navigation property items from users
-
-### [Get-MgBetaUserDriveItemContentStream](Get-MgBetaUserDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveItemCount](Get-MgBetaUserDriveItemCount.md)
@@ -1677,9 +1595,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaUserDriveItemListItemDriveItemContent](Get-MgBetaUserDriveItemListItemDriveItemContent.md)
-Get content for the navigation property driveItem from users
-
-### [Get-MgBetaUserDriveItemListItemDriveItemContentStream](Get-MgBetaUserDriveItemListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveItemListItemField](Get-MgBetaUserDriveItemListItemField.md)
@@ -1767,13 +1682,13 @@ The source column for content type column.
 The collection of content types present in this list.
 
 ### [Get-MgBetaUserDriveListContentTypeColumn](Get-MgBetaUserDriveListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ### [Get-MgBetaUserDriveListContentTypeColumnCount](Get-MgBetaUserDriveListContentTypeColumnCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveListContentTypeColumnLink](Get-MgBetaUserDriveListContentTypeColumnLink.md)
-The collection of columns that are required by this content type.
+The collection of columns that are required by this content type
 
 ### [Get-MgBetaUserDriveListContentTypeColumnLinkCount](Get-MgBetaUserDriveListContentTypeColumnLinkCount.md)
 Get the number of the resource
@@ -1846,9 +1761,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaUserDriveListItemDriveItemContent](Get-MgBetaUserDriveListItemDriveItemContent.md)
-Get content for the navigation property driveItem from users
-
-### [Get-MgBetaUserDriveListItemDriveItemContentStream](Get-MgBetaUserDriveListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveListItemField](Get-MgBetaUserDriveListItemField.md)
@@ -1906,18 +1818,12 @@ Read-only.
 Nullable.
 
 ### [Get-MgBetaUserDriveRootChildContent](Get-MgBetaUserDriveRootChildContent.md)
-Get content for the navigation property children from users
-
-### [Get-MgBetaUserDriveRootChildContentStream](Get-MgBetaUserDriveRootChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveRootChildCount](Get-MgBetaUserDriveRootChildCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveRootContent](Get-MgBetaUserDriveRootContent.md)
-Get content for the navigation property root from users
-
-### [Get-MgBetaUserDriveRootContentStream](Get-MgBetaUserDriveRootContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveRootCreatedByUser](Get-MgBetaUserDriveRootCreatedByUser.md)
@@ -2004,9 +1910,6 @@ A collection of the fields and values for this version of the list item.
 For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ### [Get-MgBetaUserDriveRootListItemDriveItemContent](Get-MgBetaUserDriveRootListItemDriveItemContent.md)
-Get content for the navigation property driveItem from users
-
-### [Get-MgBetaUserDriveRootListItemDriveItemContentStream](Get-MgBetaUserDriveRootListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveRootListItemField](Get-MgBetaUserDriveRootListItemField.md)
@@ -2066,9 +1969,6 @@ Special folders are automatically created the first time an application attempts
 If a user deletes one, it is recreated when written to again.
 
 ### [Get-MgBetaUserDriveSpecialContent](Get-MgBetaUserDriveSpecialContent.md)
-Get content for the navigation property special from users
-
-### [Get-MgBetaUserDriveSpecialContentStream](Get-MgBetaUserDriveSpecialContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaUserDriveSpecialCount](Get-MgBetaUserDriveSpecialCount.md)
@@ -2111,10 +2011,10 @@ Follow a driveItem.
 Invoke function sharedWithMe
 
 ### [Invoke-MgBetaInviteDriveItem](Invoke-MgBetaInviteDriveItem.md)
-Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ### [Invoke-MgBetaInviteDriveRoot](Invoke-MgBetaInviteDriveRoot.md)
-Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ### [Invoke-MgBetaPreviewDriveItem](Invoke-MgBetaPreviewDriveItem.md)
 Invoke action preview
@@ -2144,10 +2044,10 @@ Unfollow a driveItem.
 Unfollow a driveItem.
 
 ### [Join-MgBetaDriveListContentTypeWithHubSite](Join-MgBetaDriveListContentTypeWithHubSite.md)
-Invoke action associateWithHubSites
+Associate a [content type][contentType] with a list of hub sites.
 
 ### [Join-MgBetaShareListContentTypeWithHubSite](Join-MgBetaShareListContentTypeWithHubSite.md)
-Invoke action associateWithHubSites
+Associate a [content type][contentType] with a list of hub sites.
 
 ### [New-MgBetaDrive](New-MgBetaDrive.md)
 Add new entity to drives
@@ -2165,7 +2065,8 @@ Create new navigation property to itemActivityStats for drives
 Create new navigation property to children for drives
 
 ### [New-MgBetaDriveItemLink](New-MgBetaDriveItemLink.md)
-Create a link to share a driveItem driveItem.\nThe createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned.
+You can use createLink action to share a driveItem via a sharing link.
+The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
 ### [New-MgBetaDriveItemListItemDocumentSetVersion](New-MgBetaDriveItemListItemDocumentSetVersion.md)
@@ -2173,7 +2074,7 @@ Create a new version of a document set item in a list.
 
 ### [New-MgBetaDriveItemListItemLink](New-MgBetaDriveItemListItemLink.md)
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaDriveItemListItemVersion](New-MgBetaDriveItemListItemVersion.md)
@@ -2195,13 +2096,13 @@ Invoke action createUploadSession
 Create new navigation property to versions for drives
 
 ### [New-MgBetaDriveListColumn](New-MgBetaDriveListColumn.md)
-Create columnDefinition
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaDriveListContentType](New-MgBetaDriveListContentType.md)
 Create new navigation property to contentTypes for drives
 
 ### [New-MgBetaDriveListContentTypeColumn](New-MgBetaDriveListContentTypeColumn.md)
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaDriveListContentTypeColumnLink](New-MgBetaDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for drives
@@ -2214,7 +2115,7 @@ Create a new version of a document set item in a list.
 
 ### [New-MgBetaDriveListItemLink](New-MgBetaDriveListItemLink.md)
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaDriveListItemVersion](New-MgBetaDriveListItemVersion.md)
@@ -2233,7 +2134,8 @@ Create new navigation property to itemActivityStats for drives
 Create new navigation property to children for drives
 
 ### [New-MgBetaDriveRootLink](New-MgBetaDriveRootLink.md)
-Create a link to share a driveItem driveItem.\nThe createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned.
+You can use createLink action to share a driveItem via a sharing link.
+The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
 ### [New-MgBetaDriveRootListItemDocumentSetVersion](New-MgBetaDriveRootListItemDocumentSetVersion.md)
@@ -2241,7 +2143,7 @@ Create a new version of a document set item in a list.
 
 ### [New-MgBetaDriveRootListItemLink](New-MgBetaDriveRootListItemLink.md)
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaDriveRootListItemVersion](New-MgBetaDriveRootListItemVersion.md)
@@ -2296,13 +2198,13 @@ Create new navigation property to thumbnails for groups
 Create new navigation property to versions for groups
 
 ### [New-MgBetaGroupDriveListColumn](New-MgBetaGroupDriveListColumn.md)
-Create columnDefinition
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaGroupDriveListContentType](New-MgBetaGroupDriveListContentType.md)
 Create new navigation property to contentTypes for groups
 
 ### [New-MgBetaGroupDriveListContentTypeColumn](New-MgBetaGroupDriveListContentTypeColumn.md)
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaGroupDriveListContentTypeColumnLink](New-MgBetaGroupDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
@@ -2347,13 +2249,13 @@ Create new navigation property to thumbnails for groups
 Create new navigation property to versions for groups
 
 ### [New-MgBetaShareListColumn](New-MgBetaShareListColumn.md)
-Create columnDefinition
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaShareListContentType](New-MgBetaShareListContentType.md)
 Create new navigation property to contentTypes for shares
 
 ### [New-MgBetaShareListContentTypeColumn](New-MgBetaShareListContentTypeColumn.md)
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaShareListContentTypeColumnLink](New-MgBetaShareListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for shares
@@ -2410,13 +2312,13 @@ Create new navigation property to thumbnails for users
 Create new navigation property to versions for users
 
 ### [New-MgBetaUserDriveListColumn](New-MgBetaUserDriveListColumn.md)
-Create columnDefinition
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaUserDriveListContentType](New-MgBetaUserDriveListContentType.md)
 Create new navigation property to contentTypes for users
 
 ### [New-MgBetaUserDriveListContentTypeColumn](New-MgBetaUserDriveListContentTypeColumn.md)
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ### [New-MgBetaUserDriveListContentTypeColumnLink](New-MgBetaUserDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for users
@@ -2461,22 +2363,25 @@ Create new navigation property to thumbnails for users
 Create new navigation property to versions for users
 
 ### [Publish-MgBetaDriveListContentType](Publish-MgBetaDriveListContentType.md)
-Invoke action publish
+Publishes a [contentType][] present in a content type hub site.
 
 ### [Publish-MgBetaShareListContentType](Publish-MgBetaShareListContentType.md)
-Invoke action publish
+Publishes a [contentType][] present in a content type hub site.
 
 ### [Remove-MgBetaDrive](Remove-MgBetaDrive.md)
 Delete entity from drives
 
 ### [Remove-MgBetaDriveItem](Remove-MgBetaDriveItem.md)
-Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items referenced by the bundle.\nThey remain in their parent folders.
+Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey'll remain in their parent folders.
 
 ### [Remove-MgBetaDriveItemAnalytic](Remove-MgBetaDriveItemAnalytic.md)
 Delete navigation property analytics for drives
 
 ### [Remove-MgBetaDriveItemAnalyticItemActivityStat](Remove-MgBetaDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for drives
+
+### [Remove-MgBetaDriveItemChild](Remove-MgBetaDriveItemChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaDriveItemListItem](Remove-MgBetaDriveItemListItem.md)
 Delete navigation property listItem for drives
@@ -2526,7 +2431,7 @@ Delete navigation property columns for drives
 Delete navigation property contentTypes for drives
 
 ### [Remove-MgBetaDriveListContentTypeColumn](Remove-MgBetaDriveListContentTypeColumn.md)
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ### [Remove-MgBetaDriveListContentTypeColumnLink](Remove-MgBetaDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for drives
@@ -2563,6 +2468,9 @@ Delete navigation property analytics for drives
 
 ### [Remove-MgBetaDriveRootAnalyticItemActivityStat](Remove-MgBetaDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for drives
+
+### [Remove-MgBetaDriveRootChild](Remove-MgBetaDriveRootChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaDriveRootListItem](Remove-MgBetaDriveRootListItem.md)
 Delete navigation property listItem for drives
@@ -2606,13 +2514,16 @@ Delete navigation property versions for drives
 Delete navigation property drives for groups
 
 ### [Remove-MgBetaGroupDriveItem](Remove-MgBetaGroupDriveItem.md)
-Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items referenced by the bundle.\nThey remain in their parent folders.
+Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey'll remain in their parent folders.
 
 ### [Remove-MgBetaGroupDriveItemAnalytic](Remove-MgBetaGroupDriveItemAnalytic.md)
 Delete navigation property analytics for groups
 
 ### [Remove-MgBetaGroupDriveItemAnalyticItemActivityStat](Remove-MgBetaGroupDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for groups
+
+### [Remove-MgBetaGroupDriveItemChild](Remove-MgBetaGroupDriveItemChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaGroupDriveItemListItem](Remove-MgBetaGroupDriveItemListItem.md)
 Delete navigation property listItem for groups
@@ -2659,7 +2570,7 @@ Delete navigation property columns for groups
 Delete navigation property contentTypes for groups
 
 ### [Remove-MgBetaGroupDriveListContentTypeColumn](Remove-MgBetaGroupDriveListContentTypeColumn.md)
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ### [Remove-MgBetaGroupDriveListContentTypeColumnLink](Remove-MgBetaGroupDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
@@ -2696,6 +2607,9 @@ Delete navigation property analytics for groups
 
 ### [Remove-MgBetaGroupDriveRootAnalyticItemActivityStat](Remove-MgBetaGroupDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for groups
+
+### [Remove-MgBetaGroupDriveRootChild](Remove-MgBetaGroupDriveRootChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaGroupDriveRootListItem](Remove-MgBetaGroupDriveRootListItem.md)
 Delete navigation property listItem for groups
@@ -2742,7 +2656,7 @@ Delete navigation property columns for shares
 Delete navigation property contentTypes for shares
 
 ### [Remove-MgBetaShareListContentTypeColumn](Remove-MgBetaShareListContentTypeColumn.md)
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ### [Remove-MgBetaShareListContentTypeColumnLink](Remove-MgBetaShareListContentTypeColumnLink.md)
 Delete navigation property columnLinks for shares
@@ -2781,13 +2695,16 @@ Delete entity from shares
 Delete navigation property drives for users
 
 ### [Remove-MgBetaUserDriveItem](Remove-MgBetaUserDriveItem.md)
-Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items referenced by the bundle.\nThey remain in their parent folders.
+Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey'll remain in their parent folders.
 
 ### [Remove-MgBetaUserDriveItemAnalytic](Remove-MgBetaUserDriveItemAnalytic.md)
 Delete navigation property analytics for users
 
 ### [Remove-MgBetaUserDriveItemAnalyticItemActivityStat](Remove-MgBetaUserDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for users
+
+### [Remove-MgBetaUserDriveItemChild](Remove-MgBetaUserDriveItemChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaUserDriveItemListItem](Remove-MgBetaUserDriveItemListItem.md)
 Delete navigation property listItem for users
@@ -2834,7 +2751,7 @@ Delete navigation property columns for users
 Delete navigation property contentTypes for users
 
 ### [Remove-MgBetaUserDriveListContentTypeColumn](Remove-MgBetaUserDriveListContentTypeColumn.md)
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ### [Remove-MgBetaUserDriveListContentTypeColumnLink](Remove-MgBetaUserDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for users
@@ -2871,6 +2788,9 @@ Delete navigation property analytics for users
 
 ### [Remove-MgBetaUserDriveRootAnalyticItemActivityStat](Remove-MgBetaUserDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for users
+
+### [Remove-MgBetaUserDriveRootChild](Remove-MgBetaUserDriveRootChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaUserDriveRootListItem](Remove-MgBetaUserDriveRootListItem.md)
 Delete navigation property listItem for users
@@ -2964,33 +2884,18 @@ Invoke function search
 Invoke function search
 
 ### [Set-MgBetaDriveBundleContent](Set-MgBetaDriveBundleContent.md)
-Update content for the navigation property bundles in drives
-
-### [Set-MgBetaDriveBundleContentStream](Set-MgBetaDriveBundleContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaDriveFollowingContent](Set-MgBetaDriveFollowingContent.md)
-Update content for the navigation property following in drives
-
-### [Set-MgBetaDriveFollowingContentStream](Set-MgBetaDriveFollowingContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaDriveItemChildContent](Set-MgBetaDriveItemChildContent.md)
-Update content for the navigation property children in drives
-
-### [Set-MgBetaDriveItemChildContentStream](Set-MgBetaDriveItemChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaDriveItemContent](Set-MgBetaDriveItemContent.md)
-Update content for the navigation property items in drives
-
-### [Set-MgBetaDriveItemContentStream](Set-MgBetaDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaDriveItemListItemDriveItemContent](Set-MgBetaDriveItemListItemDriveItemContent.md)
-Update content for the navigation property driveItem in drives
-
-### [Set-MgBetaDriveItemListItemDriveItemContentStream](Set-MgBetaDriveItemListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaDriveItemSensitivityLabel](Set-MgBetaDriveItemSensitivityLabel.md)
@@ -3000,27 +2905,15 @@ Invoke action assignSensitivityLabel
 Update content for the navigation property versions in drives
 
 ### [Set-MgBetaDriveListItemDriveItemContent](Set-MgBetaDriveListItemDriveItemContent.md)
-Update content for the navigation property driveItem in drives
-
-### [Set-MgBetaDriveListItemDriveItemContentStream](Set-MgBetaDriveListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaDriveRootChildContent](Set-MgBetaDriveRootChildContent.md)
-Update content for the navigation property children in drives
-
-### [Set-MgBetaDriveRootChildContentStream](Set-MgBetaDriveRootChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaDriveRootContent](Set-MgBetaDriveRootContent.md)
-Update content for the navigation property root in drives
-
-### [Set-MgBetaDriveRootContentStream](Set-MgBetaDriveRootContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaDriveRootListItemDriveItemContent](Set-MgBetaDriveRootListItemDriveItemContent.md)
-Update content for the navigation property driveItem in drives
-
-### [Set-MgBetaDriveRootListItemDriveItemContentStream](Set-MgBetaDriveRootListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaDriveRootSensitivityLabel](Set-MgBetaDriveRootSensitivityLabel.md)
@@ -3030,165 +2923,90 @@ Invoke action assignSensitivityLabel
 Update content for the navigation property versions in drives
 
 ### [Set-MgBetaDriveSpecialContent](Set-MgBetaDriveSpecialContent.md)
-Update content for the navigation property special in drives
-
-### [Set-MgBetaDriveSpecialContentStream](Set-MgBetaDriveSpecialContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveBundleContent](Set-MgBetaGroupDriveBundleContent.md)
-Update content for the navigation property bundles in groups
-
-### [Set-MgBetaGroupDriveBundleContentStream](Set-MgBetaGroupDriveBundleContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveFollowingContent](Set-MgBetaGroupDriveFollowingContent.md)
-Update content for the navigation property following in groups
-
-### [Set-MgBetaGroupDriveFollowingContentStream](Set-MgBetaGroupDriveFollowingContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveItemChildContent](Set-MgBetaGroupDriveItemChildContent.md)
-Update content for the navigation property children in groups
-
-### [Set-MgBetaGroupDriveItemChildContentStream](Set-MgBetaGroupDriveItemChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveItemContent](Set-MgBetaGroupDriveItemContent.md)
-Update content for the navigation property items in groups
-
-### [Set-MgBetaGroupDriveItemContentStream](Set-MgBetaGroupDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveItemListItemDriveItemContent](Set-MgBetaGroupDriveItemListItemDriveItemContent.md)
-Update content for the navigation property driveItem in groups
-
-### [Set-MgBetaGroupDriveItemListItemDriveItemContentStream](Set-MgBetaGroupDriveItemListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveItemVersionContent](Set-MgBetaGroupDriveItemVersionContent.md)
 Update content for the navigation property versions in groups
 
 ### [Set-MgBetaGroupDriveListItemDriveItemContent](Set-MgBetaGroupDriveListItemDriveItemContent.md)
-Update content for the navigation property driveItem in groups
-
-### [Set-MgBetaGroupDriveListItemDriveItemContentStream](Set-MgBetaGroupDriveListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveRootChildContent](Set-MgBetaGroupDriveRootChildContent.md)
-Update content for the navigation property children in groups
-
-### [Set-MgBetaGroupDriveRootChildContentStream](Set-MgBetaGroupDriveRootChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveRootContent](Set-MgBetaGroupDriveRootContent.md)
-Update content for the navigation property root in groups
-
-### [Set-MgBetaGroupDriveRootContentStream](Set-MgBetaGroupDriveRootContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveRootListItemDriveItemContent](Set-MgBetaGroupDriveRootListItemDriveItemContent.md)
-Update content for the navigation property driveItem in groups
-
-### [Set-MgBetaGroupDriveRootListItemDriveItemContentStream](Set-MgBetaGroupDriveRootListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupDriveRootVersionContent](Set-MgBetaGroupDriveRootVersionContent.md)
 Update content for the navigation property versions in groups
 
 ### [Set-MgBetaGroupDriveSpecialContent](Set-MgBetaGroupDriveSpecialContent.md)
-Update content for the navigation property special in groups
-
-### [Set-MgBetaGroupDriveSpecialContentStream](Set-MgBetaGroupDriveSpecialContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaShareDriveItemContent](Set-MgBetaShareDriveItemContent.md)
-Update content for the navigation property driveItem in shares
-
-### [Set-MgBetaShareDriveItemContentStream](Set-MgBetaShareDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaShareItemContent](Set-MgBetaShareItemContent.md)
-Update content for the navigation property items in shares
-
-### [Set-MgBetaShareItemContentStream](Set-MgBetaShareItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaShareListItemDriveItemContent](Set-MgBetaShareListItemDriveItemContent.md)
-Update content for the navigation property driveItem in shares
-
-### [Set-MgBetaShareListItemDriveItemContentStream](Set-MgBetaShareListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaShareRootContent](Set-MgBetaShareRootContent.md)
-Update content for the navigation property root in shares
-
-### [Set-MgBetaShareRootContentStream](Set-MgBetaShareRootContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveBundleContent](Set-MgBetaUserDriveBundleContent.md)
-Update content for the navigation property bundles in users
-
-### [Set-MgBetaUserDriveBundleContentStream](Set-MgBetaUserDriveBundleContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveFollowingContent](Set-MgBetaUserDriveFollowingContent.md)
-Update content for the navigation property following in users
-
-### [Set-MgBetaUserDriveFollowingContentStream](Set-MgBetaUserDriveFollowingContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveItemChildContent](Set-MgBetaUserDriveItemChildContent.md)
-Update content for the navigation property children in users
-
-### [Set-MgBetaUserDriveItemChildContentStream](Set-MgBetaUserDriveItemChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveItemContent](Set-MgBetaUserDriveItemContent.md)
-Update content for the navigation property items in users
-
-### [Set-MgBetaUserDriveItemContentStream](Set-MgBetaUserDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveItemListItemDriveItemContent](Set-MgBetaUserDriveItemListItemDriveItemContent.md)
-Update content for the navigation property driveItem in users
-
-### [Set-MgBetaUserDriveItemListItemDriveItemContentStream](Set-MgBetaUserDriveItemListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveItemVersionContent](Set-MgBetaUserDriveItemVersionContent.md)
 Update content for the navigation property versions in users
 
 ### [Set-MgBetaUserDriveListItemDriveItemContent](Set-MgBetaUserDriveListItemDriveItemContent.md)
-Update content for the navigation property driveItem in users
-
-### [Set-MgBetaUserDriveListItemDriveItemContentStream](Set-MgBetaUserDriveListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveRootChildContent](Set-MgBetaUserDriveRootChildContent.md)
-Update content for the navigation property children in users
-
-### [Set-MgBetaUserDriveRootChildContentStream](Set-MgBetaUserDriveRootChildContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveRootContent](Set-MgBetaUserDriveRootContent.md)
-Update content for the navigation property root in users
-
-### [Set-MgBetaUserDriveRootContentStream](Set-MgBetaUserDriveRootContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveRootListItemDriveItemContent](Set-MgBetaUserDriveRootListItemDriveItemContent.md)
-Update content for the navigation property driveItem in users
-
-### [Set-MgBetaUserDriveRootListItemDriveItemContentStream](Set-MgBetaUserDriveRootListItemDriveItemContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaUserDriveRootVersionContent](Set-MgBetaUserDriveRootVersionContent.md)
 Update content for the navigation property versions in users
 
 ### [Set-MgBetaUserDriveSpecialContent](Set-MgBetaUserDriveSpecialContent.md)
-Update content for the navigation property special in users
-
-### [Set-MgBetaUserDriveSpecialContentStream](Set-MgBetaUserDriveSpecialContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Test-MgBetaDriveItemPermission](Test-MgBetaDriveItemPermission.md)
@@ -3204,10 +3022,10 @@ Invoke action validatePermission
 Invoke function isPublished
 
 ### [Unpublish-MgBetaDriveListContentType](Unpublish-MgBetaDriveListContentType.md)
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Unpublish-MgBetaShareListContentType](Unpublish-MgBetaShareListContentType.md)
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgBetaDrive](Update-MgBetaDrive.md)
 Update entity in drives
@@ -3285,7 +3103,7 @@ Update the navigation property columns in drives
 Update the navigation property contentTypes in drives
 
 ### [Update-MgBetaDriveListContentTypeColumn](Update-MgBetaDriveListContentTypeColumn.md)
-Update columnDefinition
+Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgBetaDriveListContentTypeColumnLink](Update-MgBetaDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in drives
@@ -3459,7 +3277,7 @@ Update the navigation property columns in groups
 Update the navigation property contentTypes in groups
 
 ### [Update-MgBetaGroupDriveListContentTypeColumn](Update-MgBetaGroupDriveListContentTypeColumn.md)
-Update columnDefinition
+Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgBetaGroupDriveListContentTypeColumnLink](Update-MgBetaGroupDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
@@ -3573,7 +3391,7 @@ Update the navigation property columns in shares
 Update the navigation property contentTypes in shares
 
 ### [Update-MgBetaShareListContentTypeColumn](Update-MgBetaShareListContentTypeColumn.md)
-Update columnDefinition
+Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgBetaShareListContentTypeColumnLink](Update-MgBetaShareListContentTypeColumnLink.md)
 Update the navigation property columnLinks in shares
@@ -3696,7 +3514,7 @@ Update the navigation property columns in users
 Update the navigation property contentTypes in users
 
 ### [Update-MgBetaUserDriveListContentTypeColumn](Update-MgBetaUserDriveListContentTypeColumn.md)
-Update columnDefinition
+Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgBetaUserDriveListContentTypeColumnLink](Update-MgBetaUserDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in users

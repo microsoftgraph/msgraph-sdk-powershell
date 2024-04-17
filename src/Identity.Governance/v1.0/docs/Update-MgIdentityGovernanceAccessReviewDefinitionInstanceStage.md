@@ -21,24 +21,21 @@ Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewInst
  -AccessReviewScheduleDefinitionId <String> -AccessReviewStageId <String> [-AdditionalProperties <Hashtable>]
  [-Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem[]>] [-EndDateTime <DateTime>]
  [-FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]
- [-StartDateTime <DateTime>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-StartDateTime <DateTime>] [-Status <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> -AccessReviewStageId <String>
- -BodyParameter <IMicrosoftGraphAccessReviewStage> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewStage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessReviewStage> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewStage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,9 +43,8 @@ Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -InputObject <IId
 Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem[]>]
  [-EndDateTime <DateTime>] [-FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]
- [-StartDateTime <DateTime>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-StartDateTime <DateTime>] [-Status <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -215,21 +211,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -259,21 +240,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -367,8 +333,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewStage
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -498,6 +462,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule

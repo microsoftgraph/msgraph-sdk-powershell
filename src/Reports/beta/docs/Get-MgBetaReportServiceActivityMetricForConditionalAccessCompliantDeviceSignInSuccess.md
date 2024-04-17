@@ -17,15 +17,14 @@ Invoke function getMetricsForConditionalAccessCompliantDevicesSignInSuccess
 Get-MgBetaReportServiceActivityMetricForConditionalAccessCompliantDeviceSignInSuccess
  -ExclusiveIntervalEndDateTime <DateTime> -InclusiveIntervalStartDateTime <DateTime>
  [-AggregationIntervalInMinutes <Int32>] [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
- [-Top <Int32>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaReportServiceActivityMetricForConditionalAccessCompliantDeviceSignInSuccess
  -InputObject <IReportsIdentity> [-AggregationIntervalInMinutes <Int32>] [-Count] [-Filter <String>]
- [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,21 +108,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InclusiveIntervalStartDateTime
 Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
 
@@ -152,21 +136,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -222,8 +191,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceActivityValueMetric
@@ -259,11 +226,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
   - `[InclusiveIntervalStartDateTime <DateTime?>]`: Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
   - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
-  - `[ManifestId <String>]`: The unique identifier of manifest
   - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
   - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric
   - `[MonthlyInactiveUsersMetricId <String>]`: The unique identifier of monthlyInactiveUsersMetric
-  - `[OperationId <String>]`: The unique identifier of operation
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: The unique identifier of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: The unique identifier of printUsageByUser

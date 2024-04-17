@@ -30,24 +30,22 @@ Update-MgBetaOrganization -OrganizationId <String> [-AdditionalProperties <Hasht
  [-OnPremisesSyncEnabled] [-PartnerInformation <IMicrosoftGraphPartnerInformation>]
  [-PartnerTenantType <String>] [-PostalCode <String>] [-PreferredLanguage <String>]
  [-PrivacyProfile <IMicrosoftGraphPrivacyProfile>] [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]
- [-ResponseHeadersVariable <String>] [-SecurityComplianceNotificationMails <String[]>]
- [-SecurityComplianceNotificationPhones <String[]>] [-Settings <IMicrosoftGraphOrganizationSettings>]
- [-State <String>] [-Street <String>] [-TechnicalNotificationMails <String[]>] [-TenantType <String>]
- [-VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SecurityComplianceNotificationMails <String[]>] [-SecurityComplianceNotificationPhones <String[]>]
+ [-Settings <IMicrosoftGraphOrganizationSettings>] [-State <String>] [-Street <String>]
+ [-TechnicalNotificationMails <String[]>] [-VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaOrganization -OrganizationId <String> -BodyParameter <IMicrosoftGraphOrganization>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaOrganization -OrganizationId <String> -BodyParameter <IMicrosoftGraphOrganization> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaOrganization -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphOrganization> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOrganization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -66,11 +64,10 @@ Update-MgBetaOrganization -InputObject <IIdentityDirectoryManagementIdentity>
  [-OnPremisesSyncEnabled] [-PartnerInformation <IMicrosoftGraphPartnerInformation>]
  [-PartnerTenantType <String>] [-PostalCode <String>] [-PreferredLanguage <String>]
  [-PrivacyProfile <IMicrosoftGraphPrivacyProfile>] [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]
- [-ResponseHeadersVariable <String>] [-SecurityComplianceNotificationMails <String[]>]
- [-SecurityComplianceNotificationPhones <String[]>] [-Settings <IMicrosoftGraphOrganizationSettings>]
- [-State <String>] [-Street <String>] [-TechnicalNotificationMails <String[]>] [-TenantType <String>]
- [-VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SecurityComplianceNotificationMails <String[]>] [-SecurityComplianceNotificationPhones <String[]>]
+ [-Settings <IMicrosoftGraphOrganizationSettings>] [-State <String>] [-Street <String>]
+ [-TechnicalNotificationMails <String[]>] [-VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,7 +171,7 @@ Accept wildcard characters: False
 
 ### -BusinessPhones
 Telephone number for the organization.
-Although this property is a string collection, only one number can be set.
+Although this is a string collection, only one number can be set for this property.
 
 ```yaml
 Type: System.String[]
@@ -268,7 +265,7 @@ Accept wildcard characters: False
 
 ### -CreatedDateTime
 Timestamp of when the organization was created.
-The value can't be modified and is automatically populated when the organization is created.
+The value cannot be modified and is automatically populated when the organization is created.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
@@ -364,21 +361,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -412,7 +394,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsMultipleDataLocationsForServicesEnabled
-true if organization is Multi-Geo enabled; false if organization isn't Multi-Geo enabled; null (default).
+true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default).
 Read-only.
 For more information, see OneDrive Online Multi-Geo.
 
@@ -492,7 +474,7 @@ Accept wildcard characters: False
 
 ### -OnPremisesSyncEnabled
 true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable.
-null, if this object isn't synced from on-premises active directory (default).
+null if this object has never been synced from an on-premises directory (default).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -569,7 +551,7 @@ Accept wildcard characters: False
 
 ### -PreferredLanguage
 The preferred language for the organization.
-Should follow ISO 639-1 code; for example, en.
+Should follow ISO 639-1 Code; for example en.
 
 ```yaml
 Type: System.String
@@ -607,21 +589,6 @@ To construct, see NOTES section for PROVISIONEDPLANS properties and create a has
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProvisionedPlan[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -721,24 +688,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TenantType
-Not nullable.
-Can be one of the following types: AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.
-AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.
-CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -VerifiedDomains
 The collection of domains associated with this tenant.
 Not nullable.
@@ -795,8 +744,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrganization
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -909,7 +856,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[SquareLogoRelativeUrl <String>]`: A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
       - `[UsernameHintText <String>]`: A string that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[BusinessPhones <String[]>]`: Telephone number for the organization. Although this property is a string collection, only one number can be set.
+  - `[BusinessPhones <String[]>]`: Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
   - `[CertificateBasedAuthConfiguration <IMicrosoftGraphCertificateBasedAuthConfiguration[]>]`: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CertificateAuthorities <IMicrosoftGraphCertificateAuthority[]>]`: Collection of certificate authorities which creates a trusted certificate chain.
@@ -930,7 +877,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[City <String>]`: City name of the address for the organization.
   - `[Country <String>]`: Country/region name of the address for the organization.
   - `[CountryLetterCode <String>]`: Country or region abbreviation for the organization in ISO 3166-2 format.
-  - `[CreatedDateTime <DateTime?>]`: Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[CreatedDateTime <DateTime?>]`: Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[DefaultUsageLocation <String>]`: Two-letter ISO 3166 country code indicating the default service usage location of an organization.
   - `[DirectorySizeQuota <IMicrosoftGraphDirectorySizeQuota>]`: directorySizeQuota
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -939,12 +886,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: The display name for the tenant.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the organization resource. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IsMultipleDataLocationsForServicesEnabled <Boolean?>]`: true if organization is Multi-Geo enabled; false if organization isn't Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
+  - `[IsMultipleDataLocationsForServicesEnabled <Boolean?>]`: true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
   - `[MarketingNotificationEmails <String[]>]`: Not nullable.
   - `[MobileDeviceManagementAuthority <MdmAuthority?>]`: Mobile device management authority.
   - `[OnPremisesLastPasswordSyncDateTime <DateTime?>]`: The last time a password sync request was received for the tenant.
   - `[OnPremisesLastSyncDateTime <DateTime?>]`: The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null, if this object isn't synced from on-premises active directory (default).
+  - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
   - `[PartnerInformation <IMicrosoftGraphPartnerInformation>]`: partnerInformation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CommerceUrl <String>]`: 
@@ -957,7 +904,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SupportUrl <String>]`: 
   - `[PartnerTenantType <String>]`: partnerTenantType
   - `[PostalCode <String>]`: Postal code of the address for the organization.
-  - `[PreferredLanguage <String>]`: The preferred language for the organization. Should follow ISO 639-1 code; for example, en.
+  - `[PreferredLanguage <String>]`: The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
   - `[PrivacyProfile <IMicrosoftGraphPrivacyProfile>]`: privacyProfile
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ContactEmail <String>]`: A valid smtp email address for the privacy statement contact. Not required.
@@ -975,7 +922,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DisabledForGroup <String>]`: The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
-      - `[IsEnabledInOrganization <Boolean?>]`: true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.
+      - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
     - `[ItemInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
     - `[MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]`: microsoftApplicationDataAccessSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -986,12 +933,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[State <String>]`: State name of the address for the organization.
   - `[Street <String>]`: Street name of the address for organization.
   - `[TechnicalNotificationMails <String[]>]`: Not nullable.
-  - `[TenantType <String>]`: Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
   - `[VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>]`: The collection of domains associated with this tenant. Not nullable.
     - `[Capabilities <String>]`: For example, Email, OfficeCommunicationsOnline.
     - `[IsDefault <Boolean?>]`: true if this is the default domain associated with the tenant; otherwise, false.
     - `[IsInitial <Boolean?>]`: true if this is the initial domain associated with the tenant; otherwise, false.
-    - `[Name <String>]`: The domain name; for example, contoso.com`.
+    - `[Name <String>]`: The domain name; for example, contoso.onmicrosoft.com.
     - `[Type <String>]`: For example, Managed.
 
 `BRANDING <IMicrosoftGraphOrganizationalBranding>`: organizationalBranding
@@ -1112,7 +1058,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
   - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
-  - `[CommerceSubscriptionId <String>]`: Alternate key of companySubscription
   - `[CompanySubscriptionId <String>]`: The unique identifier of companySubscription
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
@@ -1126,7 +1071,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DomainDnsRecordId <String>]`: The unique identifier of domainDnsRecord
   - `[DomainId <String>]`: The unique identifier of domain
   - `[ExtensionId <String>]`: The unique identifier of extension
-  - `[ExternalUserProfileId <String>]`: The unique identifier of externalUserProfile
   - `[FeatureRolloutPolicyId <String>]`: The unique identifier of featureRolloutPolicy
   - `[IdentityProviderBaseId <String>]`: The unique identifier of identityProviderBase
   - `[ImpactedResourceId <String>]`: The unique identifier of impactedResource
@@ -1134,13 +1078,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[InternalDomainFederationId <String>]`: The unique identifier of internalDomainFederation
   - `[ManagedTenantAlertId <String>]`: The unique identifier of managedTenantAlert
   - `[ManagementActionId <String>]`: The unique identifier of managementAction
-  - `[OcpSubscriptionId <String>]`: Alternate key of companySubscription
   - `[OnPremisesDirectorySynchronizationId <String>]`: The unique identifier of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: The unique identifier of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: The unique identifier of outboundSharedUserProfile
-  - `[PendingExternalUserProfileId <String>]`: The unique identifier of pendingExternalUserProfile
   - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RecommendationId <String>]`: The unique identifier of recommendation
   - `[RoleTemplateId <String>]`: Alternate key of directoryRole
@@ -1182,7 +1124,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisabledForGroup <String>]`: The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
-    - `[IsEnabledInOrganization <Boolean?>]`: true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.
+    - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
   - `[ItemInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
   - `[MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]`: microsoftApplicationDataAccessSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1195,7 +1137,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Capabilities <String>]`: For example, Email, OfficeCommunicationsOnline.
   - `[IsDefault <Boolean?>]`: true if this is the default domain associated with the tenant; otherwise, false.
   - `[IsInitial <Boolean?>]`: true if this is the initial domain associated with the tenant; otherwise, false.
-  - `[Name <String>]`: The domain name; for example, contoso.com`.
+  - `[Name <String>]`: The domain name; for example, contoso.onmicrosoft.com.
   - `[Type <String>]`: For example, Managed.
 
 ## RELATED LINKS

@@ -16,8 +16,8 @@ Invoke action changeSettings
 ```
 Rename-MgBetaDeviceAppManagementTargetedManagedAppConfigurationSetting
  -TargetedManagedAppConfigurationId <String> [-AdditionalProperties <Hashtable>]
- [-ResponseHeadersVariable <String>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Change
@@ -25,8 +25,7 @@ Rename-MgBetaDeviceAppManagementTargetedManagedAppConfigurationSetting
 Rename-MgBetaDeviceAppManagementTargetedManagedAppConfigurationSetting
  -TargetedManagedAppConfigurationId <String>
  -BodyParameter <IPathsQrfq9IDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphChangesettingsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentity
@@ -34,16 +33,15 @@ Rename-MgBetaDeviceAppManagementTargetedManagedAppConfigurationSetting
 Rename-MgBetaDeviceAppManagementTargetedManagedAppConfigurationSetting
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPathsQrfq9IDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphChangesettingsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentityExpanded
 ```
 Rename-MgBetaDeviceAppManagementTargetedManagedAppConfigurationSetting
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
- [-ResponseHeadersVariable <String>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -98,21 +96,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -136,21 +119,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -230,8 +198,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsQrfq9IDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphChangesettingsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -261,11 +227,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[Platform <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
         - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
       - `[BaseUri <String>]`: Base CSP Path
-      - `[CategoryId <String>]`: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
-      - `[Description <String>]`: Description of the item
-      - `[DisplayName <String>]`: Display name of the item
-      - `[HelpText <String>]`: Help text of the item
-      - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at
+      - `[CategoryId <String>]`: Specify category in which the setting is under. Support $filters.
+      - `[Description <String>]`: Description of the setting.
+      - `[DisplayName <String>]`: Name of the setting. For example: Allow Toast.
+      - `[HelpText <String>]`: Help text of the setting. Give more details of the setting.
+      - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at.
       - `[Keywords <String[]>]`: Tokens which to search settings on
       - `[Name <String>]`: Name of the item
       - `[Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>]`: deviceManagementConfigurationSettingOccurrence
@@ -274,8 +240,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
       - `[OffsetUri <String>]`: Offset CSP Path from Base
       - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
-        - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting.
-      - `[RootDefinitionId <String>]`: Root setting definition if the setting is a child setting.
+        - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
+      - `[RootDefinitionId <String>]`: Root setting definition id if the setting is a child setting.
       - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
       - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX
       - `[Version <String>]`: Item Version
@@ -327,7 +293,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent
@@ -370,11 +335,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[Platform <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
       - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
     - `[BaseUri <String>]`: Base CSP Path
-    - `[CategoryId <String>]`: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
-    - `[Description <String>]`: Description of the item
-    - `[DisplayName <String>]`: Display name of the item
-    - `[HelpText <String>]`: Help text of the item
-    - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at
+    - `[CategoryId <String>]`: Specify category in which the setting is under. Support $filters.
+    - `[Description <String>]`: Description of the setting.
+    - `[DisplayName <String>]`: Name of the setting. For example: Allow Toast.
+    - `[HelpText <String>]`: Help text of the setting. Give more details of the setting.
+    - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at.
     - `[Keywords <String[]>]`: Tokens which to search settings on
     - `[Name <String>]`: Name of the item
     - `[Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>]`: deviceManagementConfigurationSettingOccurrence
@@ -383,8 +348,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
     - `[OffsetUri <String>]`: Offset CSP Path from Base
     - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
-      - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting.
-    - `[RootDefinitionId <String>]`: Root setting definition if the setting is a child setting.
+      - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
+    - `[RootDefinitionId <String>]`: Root setting definition id if the setting is a child setting.
     - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
     - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX
     - `[Version <String>]`: Item Version

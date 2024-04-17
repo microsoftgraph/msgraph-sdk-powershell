@@ -17,22 +17,20 @@ Update the navigation property policySets in deviceAppManagement
 Update-MgBetaDeviceAppManagementPolicySet -PolicySetId <String> [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphPolicySetAssignment[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-ErrorCode <ErrorCode>] [-GuidedDeploymentTags <String[]>] [-Id <String>]
- [-Items <IMicrosoftGraphPolicySetItem[]>] [-LastModifiedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-RoleScopeTags <String[]>] [-Status <PolicySetStatus>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Items <IMicrosoftGraphPolicySetItem[]>] [-LastModifiedDateTime <DateTime>] [-RoleScopeTags <String[]>]
+ [-Status <PolicySetStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementPolicySet -PolicySetId <String> -BodyParameter <IMicrosoftGraphPolicySet>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementPolicySet -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphPolicySet> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPolicySet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,8 +39,8 @@ Update-MgBetaDeviceAppManagementPolicySet -InputObject <IDevicesCorporateManagem
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphPolicySetAssignment[]>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-ErrorCode <ErrorCode>]
  [-GuidedDeploymentTags <String[]>] [-Id <String>] [-Items <IMicrosoftGraphPolicySetItem[]>]
- [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-RoleScopeTags <String[]>]
- [-Status <PolicySetStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-RoleScopeTags <String[]>] [-Status <PolicySetStatus>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -188,21 +186,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -281,21 +264,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RoleScopeTags
 RoleScopeTags of the PolicySet
 
@@ -365,8 +333,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySet
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -460,7 +426,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent

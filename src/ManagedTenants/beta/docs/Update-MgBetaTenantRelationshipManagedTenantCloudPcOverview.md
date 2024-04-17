@@ -22,24 +22,21 @@ Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTena
  [-NumberOfCloudPcStatusFailed <Int32>] [-NumberOfCloudPcStatusInGracePeriod <Int32>]
  [-NumberOfCloudPcStatusNotProvisioned <Int32>] [-NumberOfCloudPcStatusProvisioned <Int32>]
  [-NumberOfCloudPcStatusProvisioning <Int32>] [-NumberOfCloudPcStatusUnknown <Int32>]
- [-NumberOfCloudPcStatusUpgrading <Int32>] [-ResponseHeadersVariable <String>] [-TenantDisplayName <String>]
- [-TenantId <String>] [-TotalBusinessLicenses <Int32>] [-TotalCloudPcConnectionStatus <Int32>]
- [-TotalCloudPcStatus <Int32>] [-TotalEnterpriseLicenses <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-NumberOfCloudPcStatusUpgrading <Int32>] [-TenantDisplayName <String>] [-TenantId <String>]
+ [-TotalBusinessLicenses <Int32>] [-TotalCloudPcConnectionStatus <Int32>] [-TotalCloudPcStatus <Int32>]
+ [-TotalEnterpriseLicenses <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTenantId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcOverview> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcOverview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcOverview> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcOverview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -52,10 +49,9 @@ Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview -InputObject <IManag
  [-NumberOfCloudPcStatusFailed <Int32>] [-NumberOfCloudPcStatusInGracePeriod <Int32>]
  [-NumberOfCloudPcStatusNotProvisioned <Int32>] [-NumberOfCloudPcStatusProvisioned <Int32>]
  [-NumberOfCloudPcStatusProvisioning <Int32>] [-NumberOfCloudPcStatusUnknown <Int32>]
- [-NumberOfCloudPcStatusUpgrading <Int32>] [-ResponseHeadersVariable <String>] [-TenantDisplayName <String>]
- [-TenantId <String>] [-TotalBusinessLicenses <Int32>] [-TotalCloudPcConnectionStatus <Int32>]
- [-TotalCloudPcStatus <Int32>] [-TotalEnterpriseLicenses <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-NumberOfCloudPcStatusUpgrading <Int32>] [-TenantDisplayName <String>] [-TenantId <String>]
+ [-TotalBusinessLicenses <Int32>] [-TotalCloudPcConnectionStatus <Int32>] [-TotalCloudPcStatus <Int32>]
+ [-TotalEnterpriseLicenses <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +118,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -410,21 +391,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TenantDisplayName
 The display name for the managed tenant.
 Optional.
@@ -564,8 +530,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

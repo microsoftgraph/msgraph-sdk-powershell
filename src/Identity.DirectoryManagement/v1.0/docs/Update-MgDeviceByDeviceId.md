@@ -20,29 +20,26 @@ Update-MgDeviceByDeviceId -DeviceId <String> [-AccountEnabled] [-AdditionalPrope
  [-ApproximateLastSignInDateTime <DateTime>] [-ComplianceExpirationDateTime <DateTime>]
  [-DeletedDateTime <DateTime>] [-DeviceCategory <String>] [-DeviceId1 <String>] [-DeviceMetadata <String>]
  [-DeviceOwnership <String>] [-DeviceVersion <Int32>] [-DisplayName <String>]
- [-EnrollmentProfileName <String>] [-EnrollmentType <String>] [-Extensions <IMicrosoftGraphExtension[]>]
- [-Id <String>] [-IsCompliant] [-IsManaged] [-IsRooted] [-ManagementType <String>] [-Manufacturer <String>]
- [-MdmAppId <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>] [-Model <String>]
- [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSecurityIdentifier <String>] [-OnPremisesSyncEnabled]
- [-OperatingSystem <String>] [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>]
- [-ProfileType <String>] [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]
- [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>] [-RegistrationDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-SystemLabels <String[]>]
- [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-TrustType <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EnrollmentProfileName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsCompliant]
+ [-IsManaged] [-MdmAppId <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>]
+ [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled] [-OperatingSystem <String>]
+ [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>] [-ProfileType <String>]
+ [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>] [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]
+ [-RegistrationDateTime <DateTime>] [-SystemLabels <String[]>]
+ [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-TrustType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceByDeviceId -DeviceId <String> -BodyParameter <IMicrosoftGraphDevice>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgDeviceByDeviceId -DeviceId <String> -BodyParameter <IMicrosoftGraphDevice> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceByDeviceId -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphDevice> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDevice> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -53,16 +50,14 @@ Update-MgDeviceByDeviceId -InputObject <IIdentityDirectoryManagementIdentity> [-
  [-ApproximateLastSignInDateTime <DateTime>] [-ComplianceExpirationDateTime <DateTime>]
  [-DeletedDateTime <DateTime>] [-DeviceCategory <String>] [-DeviceMetadata <String>]
  [-DeviceOwnership <String>] [-DeviceVersion <Int32>] [-DisplayName <String>]
- [-EnrollmentProfileName <String>] [-EnrollmentType <String>] [-Extensions <IMicrosoftGraphExtension[]>]
- [-Id <String>] [-IsCompliant] [-IsManaged] [-IsRooted] [-ManagementType <String>] [-Manufacturer <String>]
- [-MdmAppId <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>] [-Model <String>]
- [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSecurityIdentifier <String>] [-OnPremisesSyncEnabled]
- [-OperatingSystem <String>] [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>]
- [-ProfileType <String>] [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]
- [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>] [-RegistrationDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-SystemLabels <String[]>]
- [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-TrustType <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EnrollmentProfileName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsCompliant]
+ [-IsManaged] [-MdmAppId <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>]
+ [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled] [-OperatingSystem <String>]
+ [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>] [-ProfileType <String>]
+ [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>] [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]
+ [-RegistrationDateTime <DateTime>] [-SystemLabels <String[]>]
+ [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-TrustType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -336,21 +331,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnrollmentType
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Extensions
 The collection of open extensions defined for the device.
 Read-only.
@@ -366,21 +346,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -451,52 +416,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IsRooted
-.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ManagementType
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Manufacturer
-Manufacturer of the device.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -MdmAppId
 Application identifier used to register device into MDM.
 Read-only.
@@ -533,22 +452,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Model
-Model of the device.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -OnPremisesLastSyncDateTime
 The last time at which the object was synced with the on-premises directory.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
@@ -557,24 +460,6 @@ Supports $filter (eq, ne, not, ge, le, in).
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OnPremisesSecurityIdentifier
-The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud.
-Read-only.
-Returned only on $select.
-Supports $filter (eq).
-
-```yaml
-Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -727,21 +612,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SystemLabels
 List of labels applied to the device by the system.
 Supports $filter (/$count eq 0, /$count ne 0).
@@ -834,8 +704,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
@@ -872,21 +740,15 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceVersion <Int32?>]`: For internal use only.
   - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
   - `[EnrollmentProfileName <String>]`: Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
-  - `[EnrollmentType <String>]`: 
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
   - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-  - `[IsRooted <Boolean?>]`: 
-  - `[ManagementType <String>]`: 
-  - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
   - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
   - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Model <String>]`: Model of the device. Read-only.
   - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-  - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
   - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
   - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
   - `[OperatingSystemVersion <String>]`: The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).

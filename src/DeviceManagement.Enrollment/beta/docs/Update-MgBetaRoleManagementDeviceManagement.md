@@ -15,16 +15,15 @@ Update the navigation property deviceManagement in roleManagement
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaRoleManagementDeviceManagement [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>] [-ResponseHeadersVariable <String>]
+ [-ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]
  [-RoleAssignments <IMicrosoftGraphUnifiedRoleAssignmentMultiple[]>]
- [-RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaRoleManagementDeviceManagement -BodyParameter <IMicrosoftGraphRbacApplicationMultiple>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaRoleManagementDeviceManagement -BodyParameter <IMicrosoftGraphRbacApplicationMultiple> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,21 +78,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -118,21 +102,6 @@ To construct, see NOTES section for RESOURCENAMESPACES properties and create a h
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace[]
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -210,8 +179,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRbacApplicationMultiple
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

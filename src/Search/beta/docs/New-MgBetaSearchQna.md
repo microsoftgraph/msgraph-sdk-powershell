@@ -18,15 +18,14 @@ New-MgBetaSearchQna [-AdditionalProperties <Hashtable>] [-AvailabilityEndDateTim
  [-AvailabilityStartDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-GroupIds <String[]>] [-Id <String>] [-IsSuggested] [-Keywords <IMicrosoftGraphSearchAnswerKeyword>]
  [-LanguageTags <String[]>] [-LastModifiedBy <IMicrosoftGraphSearchIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Platforms <DevicePlatformType[]>] [-ResponseHeadersVariable <String>]
- [-State <String>] [-TargetedVariations <IMicrosoftGraphSearchAnswerVariant[]>] [-WebUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Platforms <DevicePlatformType[]>] [-State <String>]
+ [-TargetedVariations <IMicrosoftGraphSearchAnswerVariant[]>] [-WebUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSearchQna -BodyParameter <IMicrosoftGraphSearchQna> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSearchQna -BodyParameter <IMicrosoftGraphSearchQna> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,43 +36,41 @@ Create a new qna object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Search
+$params = @{
+	DisplayName = "Global Country Holidays"
+	WebUrl = "http://www.contoso.com/"
+	Description = "The dates that Contoso offices will be closed to observe holidays. These dates may differ from the actual date of the holiday in cases where the holiday falls on a wee​kend.    <table>    <thead>    <tr>    <td><strong>2021 Dates</strong></td>    <td><strong>Holiday</strong></td>    </tr>    </thead>    <tbody>    <tr>        <td>January 1, 2021</td>        <td>New Year's Day</td>    </tr>        <tr>        <td>January 18, 2021</td>        <td>Martin Luther King Day</td>    </tr>        <tr>        <td>February 15, 2021</td>        <td>Presidents Day</td>    </tr>        <tr>        <td>May 31, 2021</td>        <td>Memorial Day</td>    </tr>        <tr>        <td>July 5, 2021</td>        <td>Independence Day</td>    </tr>        <tr>        <td>September 6, 2021</td>        <td>Labor Day</td>    </tr>        <tr>        <td>November 25, 2021 - November 26, 2021</td>        <td>Thanksgiving Day and Day after Thanksgiving</td>    </tr>    <tr>        <td>December 23, 2021 - December 24, 2021</td>        <td>Christmas Eve and Christmas Day</td>    </tr>    </tbody>    </table>"
+	Keywords = @{
+		Keywords = @(
+			"new years day"
+			"martin luther king day"
+			"presidents day"
+			"memorial day"
+			"independence day"
+			"labor day"
+			"thanksgiving"
+			"christmas"
+		)
+		ReservedKeywords = @(
+			"holidays"
+			"paid days off"
+		)
+		MatchSimilarKeywords = $true
+	}
+	AvailabilityStartDateTime = [System.DateTime]::Parse("2020-09-21T20:01:37Z")
+	AvailabilityEndDateTime = [System.DateTime]::Parse("2021-12-31T20:01:37Z")
+	LanguageTags = @(
+		"en-us"
+	)
+	Platforms = @(
+		"ios"
+	)
+	State = "published"
+}
+New-MgBetaSearchQna -BodyParameter $params
 ```
 
-$params = @{
-	displayName = "Global Country Holidays"
-	webUrl = "http://www.contoso.com/"
-	description = "The dates that Contoso offices will be closed to observe holidays.
-These dates may differ from the actual date of the holiday in cases where the holiday falls on a weekend.
-  \<table\>    \<thead\>    \<tr\>    \<td\>\<strong\>2021 Dates\</strong\>\</td\>    \<td\>\<strong\>Holiday\</strong\>\</td\>    \</tr\>    \</thead\>    \<tbody\>    \<tr\>        \<td\>January 1, 2021\</td\>        \<td\>New Year's Day\</td\>    \</tr\>        \<tr\>        \<td\>January 18, 2021\</td\>        \<td\>Martin Luther King Day\</td\>    \</tr\>        \<tr\>        \<td\>February 15, 2021\</td\>        \<td\>Presidents Day\</td\>    \</tr\>        \<tr\>        \<td\>May 31, 2021\</td\>        \<td\>Memorial Day\</td\>    \</tr\>        \<tr\>        \<td\>July 5, 2021\</td\>        \<td\>Independence Day\</td\>    \</tr\>        \<tr\>        \<td\>September 6, 2021\</td\>        \<td\>Labor Day\</td\>    \</tr\>        \<tr\>        \<td\>November 25, 2021 - November 26, 2021\</td\>        \<td\>Thanksgiving Day and Day after Thanksgiving\</td\>    \</tr\>    \<tr\>        \<td\>December 23, 2021 - December 24, 2021\</td\>        \<td\>Christmas Eve and Christmas Day\</td\>    \</tr\>    \</tbody\>    \</table\>"
-	keywords = @{
-		keywords = @(
-		"new years day"
-	"martin luther king day"
-"presidents day"
-"memorial day"
-"independence day"
-"labor day"
-"thanksgiving"
-"christmas"
-)
-reservedKeywords = @(
-"holidays"
-"paid days off"
-)
-matchSimilarKeywords = $true
-}
-availabilityStartDateTime = [System.DateTime]::Parse("2020-09-21T20:01:37Z")
-availabilityEndDateTime = [System.DateTime]::Parse("2021-12-31T20:01:37Z")
-languageTags = @(
-"en-us"
-)
-platforms = @(
-"ios"
-)
-state = "published"
-}
 
-New-MgBetaSearchQna -BodyParameter $params
 
 ## PARAMETERS
 
@@ -93,10 +90,8 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityEndDateTime
-Date and time when the QnA stops appearing as a search result.
+Timestamp of when the qna stops to appear as a search result.
 Set as null for always available.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -111,10 +106,8 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityStartDateTime
-Date and time when the QnA starts to appear as a search result.
+Timestamp of when the qna starts to appear as a search result.
 Set as null for always available.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -145,7 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The search answer description that is shown on the search results page.
+Search answer description shown on search results page.
 
 ```yaml
 Type: System.String
@@ -160,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The search answer name that is displayed in search results.
+Search answer name displayed in search results.
 
 ```yaml
 Type: System.String
@@ -175,7 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupIds
-The list of security groups that are able to view this QnA.
+List of security groups able to view this qna.
 
 ```yaml
 Type: System.String[]
@@ -186,21 +179,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -221,7 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsSuggested
-True if a user or Microsoft suggested this QnA to the admin.
+True if a user or Microsoft suggested this qna to the admin.
 Read-only.
 
 ```yaml
@@ -253,10 +231,10 @@ Accept wildcard characters: False
 ```
 
 ### -LanguageTags
-A list of geographically specific language names in which this QnA can be viewed.
+A list of language names that are geographically specific and that this QnA can be viewed in.
 Each language tag value follows the pattern {language}-{region}.
-For example, en-us is English as used in the United States.
-For the list of possible values, see Supported language tags.
+As an example, en-us is English as used in the United States.
+For the list of possible values, see supported language tags.
 
 ```yaml
 Type: System.String[]
@@ -287,9 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-Date and time when the search answer was created or last edited.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+Timestamp of when the search answer is created or edited.
 Read-only.
 
 ```yaml
@@ -305,28 +281,13 @@ Accept wildcard characters: False
 ```
 
 ### -Platforms
-List of devices and operating systems that are able to view this QnA.
-Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
+List of devices and operating systems able to view this qna.
+Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Support.DevicePlatformType[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -351,7 +312,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetedVariations
-Variations of a QnA for different countries or devices.
+Variations of a qna for different countries or devices.
 Use when you need to show different content to users based on their device, country/region, or both.
 The date and group settings apply to all variations.
 To construct, see NOTES section for TARGETEDVARIATIONS properties and create a hash table.
@@ -369,8 +330,8 @@ Accept wildcard characters: False
 ```
 
 ### -WebUrl
-The URL link for the search answer.
-When users select this search answer from the search results, they're directed to the specified URL.
+Search answer URL link.
+When users click this search answer in search results, they'll go to this URL.
 
 ```yaml
 Type: System.String
@@ -422,8 +383,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchQna
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchQna
@@ -439,8 +398,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphSearchQna>`: qna
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Description <String>]`: The search answer description that is shown on the search results page.
-  - `[DisplayName <String>]`: The search answer name that is displayed in search results.
+  - `[Description <String>]`: Search answer description shown on search results page.
+  - `[DisplayName <String>]`: Search answer name displayed in search results.
   - `[LastModifiedBy <IMicrosoftGraphSearchIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphSearchIdentity>]`: identity
@@ -449,33 +408,33 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: 
     - `[Device <IMicrosoftGraphSearchIdentity>]`: identity
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  - `[WebUrl <String>]`: The URL link for the search answer. When users select this search answer from the search results, they're directed to the specified URL.
+  - `[LastModifiedDateTime <DateTime?>]`: Timestamp of when the search answer is created or edited. Read-only.
+  - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they'll go to this URL.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AvailabilityEndDateTime <DateTime?>]`: Date and time when the QnA stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[AvailabilityStartDateTime <DateTime?>]`: Date and time when the QnA starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[GroupIds <String[]>]`: The list of security groups that are able to view this QnA.
-  - `[IsSuggested <Boolean?>]`: True if a user or Microsoft suggested this QnA to the admin. Read-only.
+  - `[AvailabilityEndDateTime <DateTime?>]`: Timestamp of when the qna stops to appear as a search result. Set as null for always available.
+  - `[AvailabilityStartDateTime <DateTime?>]`: Timestamp of when the qna starts to appear as a search result. Set as null for always available.
+  - `[GroupIds <String[]>]`: List of security groups able to view this qna.
+  - `[IsSuggested <Boolean?>]`: True if a user or Microsoft suggested this qna to the admin. Read-only.
   - `[Keywords <IMicrosoftGraphSearchAnswerKeyword>]`: answerKeyword
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Keywords <String[]>]`: A collection of keywords used to trigger the search answer.
     - `[MatchSimilarKeywords <Boolean?>]`: If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
-    - `[ReservedKeywords <String[]>]`: Unique keywords that guarantee the search answer is triggered.
-  - `[LanguageTags <String[]>]`: A list of geographically specific language names in which this QnA can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.
-  - `[Platforms <DevicePlatformType[]>]`: List of devices and operating systems that are able to view this QnA. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
+    - `[ReservedKeywords <String[]>]`: Unique keywords that will guarantee the search answer is triggered.
+  - `[LanguageTags <String[]>]`: A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
+  - `[Platforms <DevicePlatformType[]>]`: List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
   - `[State <String>]`: answerState
-  - `[TargetedVariations <IMicrosoftGraphSearchAnswerVariant[]>]`: Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
-    - `[Description <String>]`: The answer variation description that is shown on the search results page.
-    - `[DisplayName <String>]`: The answer variation name that is displayed in search results.
-    - `[LanguageTag <String>]`: The country or region that can view this answer variation.
+  - `[TargetedVariations <IMicrosoftGraphSearchAnswerVariant[]>]`: Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
+    - `[Description <String>]`: Answer variation description shown on search results page.
+    - `[DisplayName <String>]`: Answer variation name displayed in search results.
+    - `[LanguageTag <String>]`: 
     - `[Platform <DevicePlatformType?>]`: Supported platform types.
-    - `[WebUrl <String>]`: The URL link for the answer variation. When users select this answer variation from the search results, they're directed to the specified URL.
+    - `[WebUrl <String>]`: Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
 
 `KEYWORDS <IMicrosoftGraphSearchAnswerKeyword>`: answerKeyword
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Keywords <String[]>]`: A collection of keywords used to trigger the search answer.
   - `[MatchSimilarKeywords <Boolean?>]`: If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
-  - `[ReservedKeywords <String[]>]`: Unique keywords that guarantee the search answer is triggered.
+  - `[ReservedKeywords <String[]>]`: Unique keywords that will guarantee the search answer is triggered.
 
 `LASTMODIFIEDBY <IMicrosoftGraphSearchIdentitySet>`: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -486,12 +445,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[Device <IMicrosoftGraphSearchIdentity>]`: identity
   - `[User <IMicrosoftGraphSearchIdentity>]`: identity
 
-`TARGETEDVARIATIONS <IMicrosoftGraphSearchAnswerVariant[]>`: Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
-  - `[Description <String>]`: The answer variation description that is shown on the search results page.
-  - `[DisplayName <String>]`: The answer variation name that is displayed in search results.
-  - `[LanguageTag <String>]`: The country or region that can view this answer variation.
+`TARGETEDVARIATIONS <IMicrosoftGraphSearchAnswerVariant[]>`: Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
+  - `[Description <String>]`: Answer variation description shown on search results page.
+  - `[DisplayName <String>]`: Answer variation name displayed in search results.
+  - `[LanguageTag <String>]`: 
   - `[Platform <DevicePlatformType?>]`: Supported platform types.
-  - `[WebUrl <String>]`: The URL link for the answer variation. When users select this answer variation from the search results, they're directed to the specified URL.
+  - `[WebUrl <String>]`: Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
 
 ## RELATED LINKS
 

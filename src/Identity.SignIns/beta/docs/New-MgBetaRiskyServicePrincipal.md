@@ -16,15 +16,15 @@ Create new navigation property to riskyServicePrincipals for identityProtection
 ```
 New-MgBetaRiskyServicePrincipal [-AccountEnabled] [-AdditionalProperties <Hashtable>] [-AppId <String>]
  [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>] [-Id <String>]
- [-IsEnabled] [-IsProcessing] [-ResponseHeadersVariable <String>] [-RiskDetail <String>]
- [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
- [-ServicePrincipalType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsEnabled] [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>]
+ [-RiskLevel <String>] [-RiskState <String>] [-ServicePrincipalType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaRiskyServicePrincipal -BodyParameter <IMicrosoftGraphRiskyServicePrincipal>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaRiskyServicePrincipal -BodyParameter <IMicrosoftGraphRiskyServicePrincipal> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -117,21 +117,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -History
 Represents the risk history of Microsoft Entra service principals.
 To construct, see NOTES section for HISTORY properties and create a hash table.
@@ -186,21 +171,6 @@ Indicates whether Microsoft Entra ID Protection is currently processing the serv
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -325,8 +295,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

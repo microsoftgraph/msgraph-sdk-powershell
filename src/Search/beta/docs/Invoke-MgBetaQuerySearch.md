@@ -16,14 +16,14 @@ Search results are provided in the response.
 ### QueryExpanded (Default)
 ```
 Invoke-MgBetaQuerySearch [-AdditionalProperties <Hashtable>] [-Requests <IMicrosoftGraphSearchRequest[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Query
 ```
 Invoke-MgBetaQuerySearch
- -Body <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -Body <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,23 +41,22 @@ $params = @{
 	requests = @(
 		@{
 			entityTypes = @(
-			"externalItem"
-		)
-		contentSources = @(
-		"/external/connections/connectionfriendlyname"
+				"externalItem"
+			)
+			contentSources = @(
+				"/external/connections/connectionfriendlyname"
+			)
+			query = @{
+				queryString = "contoso product"
+			}
+			from = 0
+			size = 25
+			fields = @(
+				"title"
+				"description"
+			)
+		}
 	)
-	region = "US"
-	query = @{
-		queryString = "contoso product"
-	}
-	from = 0
-	size = 25
-	fields = @(
-	"title"
-"description"
-)
-}
-)
 }
 
 Invoke-MgBetaQuerySearch -BodyParameter $params
@@ -95,21 +94,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Requests
 .
 To construct, see NOTES section for REQUESTS properties and create a hash table.
@@ -118,21 +102,6 @@ To construct, see NOTES section for REQUESTS properties and create a hash table.
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchRequest[]
 Parameter Sets: QueryExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -179,8 +148,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchResponse
@@ -208,8 +175,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[From <String>]`: Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
           - `[To <String>]`: Defines the upper bound up to which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
         - `[SortBy <String>]`: bucketAggregationSortProperty
-      - `[Field <String>]`: Computes aggregation on the field while the field exists in the current entity type. Required.
-      - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.
+      - `[Field <String>]`: Computes aggregation on the field while the field exists in current entity type. Required.
+      - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
     - `[CollapseProperties <IMicrosoftGraphCollapseProperty[]>]`: Contains the ordered collection of fields and limit to collapse results. Optional.
       - `[Fields <String[]>]`: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
       - `[Limit <Int32?>]`: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
@@ -252,8 +219,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[From <String>]`: Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
         - `[To <String>]`: Defines the upper bound up to which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
       - `[SortBy <String>]`: bucketAggregationSortProperty
-    - `[Field <String>]`: Computes aggregation on the field while the field exists in the current entity type. Required.
-    - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.
+    - `[Field <String>]`: Computes aggregation on the field while the field exists in current entity type. Required.
+    - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
   - `[CollapseProperties <IMicrosoftGraphCollapseProperty[]>]`: Contains the ordered collection of fields and limit to collapse results. Optional.
     - `[Fields <String[]>]`: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
     - `[Limit <Int32?>]`: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.

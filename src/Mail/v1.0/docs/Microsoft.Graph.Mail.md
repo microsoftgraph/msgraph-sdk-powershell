@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: d267b326-0452-40e7-ac39-1ab9e9155aeb
+Module Guid: 75424c0c-e979-4cd3-9903-809ea06fa6f3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -132,8 +132,7 @@ Use this API to create a new mail folder in the root folder of the user's mailbo
 If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgUserMailFolderChildFolder](New-MgUserMailFolderChildFolder.md)
-Use this API to create a new child mailFolder.
-If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
+Create a new mailSearchFolder in the specified user's mailbox.
 
 ### [New-MgUserMailFolderChildFolderMessage](New-MgUserMailFolderChildFolderMessage.md)
 Use this API to create a new Message in a mailfolder.
@@ -168,9 +167,12 @@ Create a messageRule object by specifying a set of conditions and actions.
 Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
 
 ### [New-MgUserMessage](New-MgUserMessage.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Create a draft of a new message in either JSON or MIME format.
+When using JSON format, you can:\n- Include an attachment to the message.\n- Update the draft later to add content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
+By default, this operation saves the draft in the Drafts folder.
+Send the draft message in a subsequent operation.
+Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
 
 ### [New-MgUserMessageAttachment](New-MgUserMessageAttachment.md)
 Use this API to create a new Attachment.
@@ -219,7 +221,7 @@ For the list of resources that support open extensions, see the table in the Per
 Delete the specified messageRule object.
 
 ### [Remove-MgUserMessage](Remove-MgUserMessage.md)
-Delete eventMessage.
+Delete a message in the specified user's mailbox, or delete a relationship of the message.
 
 ### [Remove-MgUserMessageAttachment](Remove-MgUserMessageAttachment.md)
 Delete navigation property attachments for users

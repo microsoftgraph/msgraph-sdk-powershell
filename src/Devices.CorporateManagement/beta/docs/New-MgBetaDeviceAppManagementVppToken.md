@@ -18,16 +18,15 @@ New-MgBetaDeviceAppManagementVppToken [-AdditionalProperties <Hashtable>] [-Appl
  [-AutomaticallyUpdateApps] [-ClaimTokenManagementFromExternalMdm] [-CountryOrRegion <String>]
  [-DataSharingConsentGranted] [-DisplayName <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-LastSyncDateTime <DateTime>] [-LastSyncStatus <VppTokenSyncStatus>]
- [-LocationName <String>] [-OrganizationName <String>] [-ResponseHeadersVariable <String>]
- [-RoleScopeTagIds <String[]>] [-State <VppTokenState>] [-Token <String>]
- [-TokenActionResults <IMicrosoftGraphVppTokenActionResult[]>] [-VppTokenAccountType <VppTokenAccountType>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LocationName <String>] [-OrganizationName <String>] [-RoleScopeTagIds <String[]>] [-State <VppTokenState>]
+ [-Token <String>] [-TokenActionResults <IMicrosoftGraphVppTokenActionResult[]>]
+ [-VppTokenAccountType <VppTokenAccountType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDeviceAppManagementVppToken -BodyParameter <IMicrosoftGraphVppToken>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDeviceAppManagementVppToken -BodyParameter <IMicrosoftGraphVppToken> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -190,21 +189,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -288,21 +272,6 @@ The organization associated with the Apple Volume Purchase Program Token
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -424,8 +393,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVppToken
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

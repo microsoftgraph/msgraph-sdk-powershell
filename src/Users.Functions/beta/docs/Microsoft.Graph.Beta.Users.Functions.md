@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Functions
-Module Guid: 80aa4704-2c2f-4c18-9b5a-3127d2816466
+Module Guid: 7764d3a1-0cf8-4457-8dde-e9fa7e7d4652
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -46,9 +46,6 @@ Invoke function delta
 
 ### [Get-MgBetaUserChatMessageReplyDelta](Get-MgBetaUserChatMessageReplyDelta.md)
 Invoke function delta
-
-### [Get-MgBetaUserChatRetainedMessage](Get-MgBetaUserChatRetainedMessage.md)
-Invoke function getAllRetainedMessages
 
 ### [Get-MgBetaUserCloudPcConnectivityHistory](Get-MgBetaUserCloudPcConnectivityHistory.md)
 Invoke function getCloudPcConnectivityHistory
@@ -149,9 +146,6 @@ The initial call is a full synchronization, and every subsequent delta call in t
 This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time.
 The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.
 
-### [Get-MgBetaUserLicenseDetailTeamLicensingDetail](Get-MgBetaUserLicenseDetailTeamLicensingDetail.md)
-Invoke function getTeamsLicensingDetails
-
 ### [Get-MgBetaUserLoggedOnManagedDevice](Get-MgBetaUserLoggedOnManagedDevice.md)
 Invoke function getLoggedOnManagedDevices
 
@@ -209,9 +203,6 @@ This allows you to maintain and synchronize a local store of a user's messages w
 
 ### [Get-MgBetaUserOnenoteRecentNotebook](Get-MgBetaUserOnenoteRecentNotebook.md)
 Invoke function getRecentNotebooks
-
-### [Get-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentJoinWebUrl](Get-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentJoinWebUrl.md)
-Invoke function getVirtualAppointmentJoinWebUrl
 
 ### [Get-MgBetaUserOnlineMeetingRecordingDelta](Get-MgBetaUserOnlineMeetingRecordingDelta.md)
 Invoke function delta

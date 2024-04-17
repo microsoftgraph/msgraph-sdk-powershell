@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.People
-Module Guid: ac09a38e-68bb-41d6-a3ae-6b49e2ef5cfc
+Module Guid: 5df9869d-c156-4c77-a537-2cac76ae2346
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.people
 Help Version: 1.0.0.0
 Locale: en-US

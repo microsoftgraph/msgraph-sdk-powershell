@@ -8,10 +8,7 @@ schema: 2.0.0
 # Update-MgEducationClassModule
 
 ## SYNOPSIS
-Update an educationModule object in a class.
-Only teachers in the class can perform this operation.
-You can't use a PATCH request to change the status of a module.
-Use the publish action to change the module status.
+Update the navigation property modules in education
 
 ## SYNTAX
 
@@ -20,22 +17,22 @@ Use the publish action to change the module status.
 Update-MgEducationClassModule -EducationClassId <String> -EducationModuleId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsPinned] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-ResponseHeadersVariable <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-Status <String>] [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEducationClassModule -EducationClassId <String> -EducationModuleId <String>
- -BodyParameter <IMicrosoftGraphEducationModule> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationModule> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgEducationClassModule -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationModule> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationModule> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,15 +40,12 @@ Update-MgEducationClassModule -InputObject <IEducationIdentity>
 Update-MgEducationClassModule -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-IsPinned] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-ResponseHeadersVariable <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-Status <String>] [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update an educationModule object in a class.
-Only teachers in the class can perform this operation.
-You can't use a PATCH request to change the status of a module.
-Use the publish action to change the module status.
+Update the navigation property modules in education
 
 ## EXAMPLES
 
@@ -119,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description of the module.
+.
 
 ```yaml
 Type: System.String
@@ -134,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Name of the module.
+.
 
 ```yaml
 Type: System.String
@@ -226,7 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsPinned
-Indicates whether the module is pinned or not.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -257,30 +251,13 @@ Accept wildcard characters: False
 ```
 
 ### -Resources
-Learning objects that are associated with this module.
-Only teachers can modify this list.
-Nullable.
+.
 To construct, see NOTES section for RESOURCES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationModuleResource[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -370,11 +347,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[Description <String>]`: Description of the module.
-  - `[DisplayName <String>]`: Name of the module.
-  - `[IsPinned <Boolean?>]`: Indicates whether the module is pinned or not.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[IsPinned <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[Resources <IMicrosoftGraphEducationModuleResource[]>]`: Learning objects that are associated with this module. Only teachers can modify this list. Nullable.
+  - `[Resources <IMicrosoftGraphEducationModuleResource[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -416,7 +393,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-`RESOURCES <IMicrosoftGraphEducationModuleResource[]>`: Learning objects that are associated with this module. Only teachers can modify this list. Nullable.
+`RESOURCES <IMicrosoftGraphEducationModuleResource[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

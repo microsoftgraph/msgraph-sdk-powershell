@@ -8,29 +8,25 @@ schema: 2.0.0
 # Add-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyConfig
 
 ## SYNOPSIS
-Update the provisioning policy configuration for a set of Cloud PC devices by their IDs.
-This method supports retry and allows you to apply the configuration to a subset of Cloud PCs initially to test.
+Invoke action applyConfig
 
 ## SYNTAX
 
 ### ApplyExpanded (Default)
 ```
 Add-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyConfig [-AdditionalProperties <Hashtable>]
- [-CloudPcIds <String[]>] [-PolicySettings <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CloudPcIds <String[]>] [-PolicySettings <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Apply
 ```
 Add-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyConfig
  -BodyParameter <IPaths1131ZgkDevicemanagementVirtualendpointProvisioningpoliciesMicrosoftGraphApplyconfigPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the provisioning policy configuration for a set of Cloud PC devices by their IDs.
-This method supports retry and allows you to apply the configuration to a subset of Cloud PCs initially to test.
+Invoke action applyConfig
 
 ## EXAMPLES
 
@@ -96,21 +92,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -133,21 +114,6 @@ cloudPcPolicySettingType
 Type: System.String
 Parameter Sets: ApplyExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -193,8 +159,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1131ZgkDevicemanagementVirtualendpointProvisioningpoliciesMicrosoftGraphApplyconfigPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

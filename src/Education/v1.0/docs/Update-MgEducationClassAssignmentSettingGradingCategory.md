@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgEducationClassAssignmentSettingGradingCategory
 
 ## SYNOPSIS
-Update a single gradingCategory on the educationAssignmentSettings.
-Only teachers can perform this operation.
+Update the navigation property gradingCategories in education
 
 ## SYNTAX
 
@@ -17,34 +16,31 @@ Only teachers can perform this operation.
 ```
 Update-MgEducationClassAssignmentSettingGradingCategory -EducationClassId <String>
  -EducationGradingCategoryId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
- [-Id <String>] [-PercentageWeight <Int32>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-PercentageWeight <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEducationClassAssignmentSettingGradingCategory -EducationClassId <String>
- -EducationGradingCategoryId <String> -BodyParameter <IMicrosoftGraphEducationGradingCategory>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -EducationGradingCategoryId <String> -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgEducationClassAssignmentSettingGradingCategory -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgEducationClassAssignmentSettingGradingCategory -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PercentageWeight <Int32>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update a single gradingCategory on the educationAssignmentSettings.
-Only teachers can perform this operation.
+Update the navigation property gradingCategories in education
 
 ## EXAMPLES
 
@@ -96,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The name of the grading category.
+.
 
 ```yaml
 Type: System.String
@@ -140,21 +136,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -188,27 +169,12 @@ Accept wildcard characters: False
 ```
 
 ### -PercentageWeight
-The weight of the category; an integer between 0 and 100.
+.
 
 ```yaml
 Type: System.Int32
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -257,8 +223,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationGradingCategory
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationGradingCategory
@@ -275,8 +239,8 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphEducationGradingCategory>`: educationGradingCategory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: The name of the grading category.
-  - `[PercentageWeight <Int32?>]`: The weight of the category; an integer between 0 and 100.
+  - `[DisplayName <String>]`: 
+  - `[PercentageWeight <Int32?>]`: 
 
 `INPUTOBJECT <IEducationIdentity>`: Identity Parameter
   - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment
@@ -284,8 +248,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationModuleId <String>]`: The unique identifier of educationModule
-  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

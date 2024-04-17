@@ -15,32 +15,33 @@ Create new navigation property to files for deviceAppManagement
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile -MobileAppContentId <String>
- -MobileAppId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-ManifestInputFile <String>]
- [-Name <String>] [-ResponseHeadersVariable <String>] [-Size <Int64>] [-SizeEncrypted <Int64>]
- [-UploadState <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MobileAppId <String> [-AdditionalProperties <Hashtable>] [-AzureStorageUri <String>]
+ [-AzureStorageUriExpirationDateTime <DateTime>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsCommitted]
+ [-ManifestInputFile <String>] [-Name <String>] [-Size <Int64>] [-SizeEncrypted <Int64>]
+ [-UploadState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile -MobileAppContentId <String>
- -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppContentFile>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppContentFile> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphMobileAppContentFile>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile
- -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ManifestInputFile <String>] [-Name <String>] [-ResponseHeadersVariable <String>] [-Size <Int64>]
- [-SizeEncrypted <Int64>] [-UploadState <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
+ [-AzureStorageUri <String>] [-AzureStorageUriExpirationDateTime <DateTime>] [-CreatedDateTime <DateTime>]
+ [-Id <String>] [-IsCommitted] [-ManifestInputFile <String>] [-Name <String>] [-Size <Int64>]
+ [-SizeEncrypted <Int64>] [-UploadState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,6 +80,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AzureStorageUri
+The Azure Storage URI.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AzureStorageUriExpirationDateTime
+The time the Azure storage Uri expires.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 Contains properties for a single installer file that is associated with a given mobileAppContent version.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -95,18 +126,18 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
+### -CreatedDateTime
+The time the file was created.
 
 ```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
+Type: System.DateTime
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -139,6 +170,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -IsCommitted
+A value indicating whether the file is committed.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -194,21 +240,6 @@ the file name.
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -302,8 +333,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppContentFile
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppContentFile
@@ -322,6 +351,10 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphMobileAppContentFile>`: Contains properties for a single installer file that is associated with a given mobileAppContent version.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[AzureStorageUri <String>]`: The Azure Storage URI.
+  - `[AzureStorageUriExpirationDateTime <DateTime?>]`: The time the Azure storage Uri expires.
+  - `[CreatedDateTime <DateTime?>]`: The time the file was created.
+  - `[IsCommitted <Boolean?>]`: A value indicating whether the file is committed.
   - `[Manifest <Byte[]>]`: The manifest information.
   - `[Name <String>]`: the file name.
   - `[Size <Int64?>]`: The size of the file prior to encryption.

@@ -19,13 +19,13 @@ Update-MgBetaRoleManagement [-AdditionalProperties <Hashtable>]
  [-DeviceManagement <IMicrosoftGraphRbacApplicationMultiple>] [-Directory <IMicrosoftGraphRbacApplication>]
  [-EnterpriseApps <IMicrosoftGraphRbacApplication[]>]
  [-EntitlementManagement <IMicrosoftGraphRbacApplication>] [-Exchange <IMicrosoftGraphUnifiedRbacApplication>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaRoleManagement -BodyParameter <IMicrosoftGraphRoleManagement> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaRoleManagement -BodyParameter <IMicrosoftGraphRoleManagement> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -176,36 +176,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -243,8 +213,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleManagement
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -338,8 +306,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[ReviewResult <String>]`: The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
         - `[ReviewedBy <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-          - `[Id <String>]`: The identifier of the identity. This property is read-only.
+          - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+          - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
         - `[ReviewedDateTime <DateTime?>]`: The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[Status <String>]`: The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
     - `[RoleAssignmentScheduleInstances <IMicrosoftGraphUnifiedRoleAssignmentScheduleInstance[]>]`: 
@@ -367,10 +335,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[MemberType <String>]`: Membership type of the assignment. It can either be Inherited, Direct, or Group.
         - `[RoleEligibilityScheduleId <String>]`: Identifier of the parent roleEligibilitySchedule for this instance.
         - `[StartDateTime <DateTime?>]`: Time that the roleEligibilityScheduleInstance will start.
-      - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
+      - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
       - `[EndDateTime <DateTime?>]`: The end date of the schedule instance.
-      - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
-      - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Microsoft Entra ID.
+      - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+      - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Azure AD.
       - `[RoleAssignmentScheduleId <String>]`: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
       - `[StartDateTime <DateTime?>]`: When this instance starts.
     - `[RoleAssignmentScheduleRequests <IMicrosoftGraphUnifiedRoleAssignmentScheduleRequest[]>]`: 
@@ -455,8 +423,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Status <String>]`: The status of the role assignment or eligibility request.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[ActivatedUsing <IMicrosoftGraphUnifiedRoleEligibilitySchedule>]`: unifiedRoleEligibilitySchedule
-        - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
-        - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+        - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+        - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
         - `[ScheduleInfo <IMicrosoftGraphRequestSchedule>]`: requestSchedule
       - `[TargetScheduleId <String>]`: Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
       - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo
@@ -685,8 +653,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[ReviewResult <String>]`: The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
       - `[ReviewedBy <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
       - `[ReviewedDateTime <DateTime?>]`: The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Status <String>]`: The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
   - `[RoleAssignmentScheduleInstances <IMicrosoftGraphUnifiedRoleAssignmentScheduleInstance[]>]`: 
@@ -737,10 +705,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[MemberType <String>]`: Membership type of the assignment. It can either be Inherited, Direct, or Group.
       - `[RoleEligibilityScheduleId <String>]`: Identifier of the parent roleEligibilitySchedule for this instance.
       - `[StartDateTime <DateTime?>]`: Time that the roleEligibilityScheduleInstance will start.
-    - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
+    - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
     - `[EndDateTime <DateTime?>]`: The end date of the schedule instance.
-    - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
-    - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Microsoft Entra ID.
+    - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+    - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Azure AD.
     - `[RoleAssignmentScheduleId <String>]`: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
     - `[StartDateTime <DateTime?>]`: When this instance starts.
   - `[RoleAssignmentScheduleRequests <IMicrosoftGraphUnifiedRoleAssignmentScheduleRequest[]>]`: 
@@ -825,8 +793,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Status <String>]`: The status of the role assignment or eligibility request.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ActivatedUsing <IMicrosoftGraphUnifiedRoleEligibilitySchedule>]`: unifiedRoleEligibilitySchedule
-      - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
-      - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+      - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+      - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
       - `[ScheduleInfo <IMicrosoftGraphRequestSchedule>]`: requestSchedule
     - `[TargetScheduleId <String>]`: Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
     - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo
@@ -913,8 +881,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[ReviewResult <String>]`: The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
       - `[ReviewedBy <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
       - `[ReviewedDateTime <DateTime?>]`: The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Status <String>]`: The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
   - `[RoleAssignmentScheduleInstances <IMicrosoftGraphUnifiedRoleAssignmentScheduleInstance[]>]`: 
@@ -965,10 +933,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[MemberType <String>]`: Membership type of the assignment. It can either be Inherited, Direct, or Group.
       - `[RoleEligibilityScheduleId <String>]`: Identifier of the parent roleEligibilitySchedule for this instance.
       - `[StartDateTime <DateTime?>]`: Time that the roleEligibilityScheduleInstance will start.
-    - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
+    - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
     - `[EndDateTime <DateTime?>]`: The end date of the schedule instance.
-    - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
-    - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Microsoft Entra ID.
+    - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+    - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Azure AD.
     - `[RoleAssignmentScheduleId <String>]`: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
     - `[StartDateTime <DateTime?>]`: When this instance starts.
   - `[RoleAssignmentScheduleRequests <IMicrosoftGraphUnifiedRoleAssignmentScheduleRequest[]>]`: 
@@ -1053,8 +1021,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Status <String>]`: The status of the role assignment or eligibility request.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ActivatedUsing <IMicrosoftGraphUnifiedRoleEligibilitySchedule>]`: unifiedRoleEligibilitySchedule
-      - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
-      - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+      - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+      - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
       - `[ScheduleInfo <IMicrosoftGraphRequestSchedule>]`: requestSchedule
     - `[TargetScheduleId <String>]`: Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
     - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo
@@ -1142,8 +1110,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[ReviewResult <String>]`: The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
       - `[ReviewedBy <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
       - `[ReviewedDateTime <DateTime?>]`: The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Status <String>]`: The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
   - `[RoleAssignmentScheduleInstances <IMicrosoftGraphUnifiedRoleAssignmentScheduleInstance[]>]`: 
@@ -1194,10 +1162,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[MemberType <String>]`: Membership type of the assignment. It can either be Inherited, Direct, or Group.
       - `[RoleEligibilityScheduleId <String>]`: Identifier of the parent roleEligibilitySchedule for this instance.
       - `[StartDateTime <DateTime?>]`: Time that the roleEligibilityScheduleInstance will start.
-    - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
+    - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
     - `[EndDateTime <DateTime?>]`: The end date of the schedule instance.
-    - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
-    - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Microsoft Entra ID.
+    - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+    - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Azure AD.
     - `[RoleAssignmentScheduleId <String>]`: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
     - `[StartDateTime <DateTime?>]`: When this instance starts.
   - `[RoleAssignmentScheduleRequests <IMicrosoftGraphUnifiedRoleAssignmentScheduleRequest[]>]`: 
@@ -1282,8 +1250,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Status <String>]`: The status of the role assignment or eligibility request.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ActivatedUsing <IMicrosoftGraphUnifiedRoleEligibilitySchedule>]`: unifiedRoleEligibilitySchedule
-      - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
-      - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+      - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+      - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
       - `[ScheduleInfo <IMicrosoftGraphRequestSchedule>]`: requestSchedule
     - `[TargetScheduleId <String>]`: Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
     - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo

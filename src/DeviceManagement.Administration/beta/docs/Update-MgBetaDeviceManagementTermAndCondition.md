@@ -19,23 +19,20 @@ Update-MgBetaDeviceManagementTermAndCondition -TermsAndConditionsId <String> [-A
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphTermsAndConditionsAssignment[]>]
  [-BodyText <String>] [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-GroupAssignments <IMicrosoftGraphTermsAndConditionsGroupAssignment[]>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-ModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-RoleScopeTagIds <String[]>] [-Title <String>] [-Version <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-ModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>]
+ [-Title <String>] [-Version <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementTermAndCondition -TermsAndConditionsId <String>
- -BodyParameter <IMicrosoftGraphTermsAndConditions> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermsAndConditions> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementTermAndCondition -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphTermsAndConditions> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermsAndConditions> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,9 +42,8 @@ Update-MgBetaDeviceManagementTermAndCondition -InputObject <IDeviceManagementAdm
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphTermsAndConditionsAssignment[]>]
  [-BodyText <String>] [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-GroupAssignments <IMicrosoftGraphTermsAndConditionsGroupAssignment[]>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-ModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-RoleScopeTagIds <String[]>] [-Title <String>] [-Version <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-ModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>]
+ [-Title <String>] [-Version <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -229,21 +225,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -298,21 +279,6 @@ DateTime the object was last modified.
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -422,8 +388,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditions
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

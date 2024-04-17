@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrollment
-Module Guid: 46b75c7f-376d-4fa5-8369-ffd67765c2f2
+Module Guid: 9b6513df-fedd-4197-8ab2-79aefbc7b7a6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -42,7 +42,7 @@ Get the number of the resource
 Get roleManagement
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfiguration](New-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+Create a new deviceEnrollmentLimitConfiguration object.
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Create a new enrollmentConfigurationAssignment object.
@@ -57,7 +57,7 @@ Create a new windowsAutopilotDeviceIdentity object.
 Delete navigation property conditionalAccessSettings for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfiguration](Remove-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Deletes a deviceEnrollmentLimitConfiguration.
+Deletes a deviceEnrollmentPlatformRestrictionsConfiguration.
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Deletes a enrollmentConfigurationAssignment.
@@ -72,7 +72,7 @@ Deletes a windowsAutopilotDeviceIdentity.
 Update the properties of a onPremisesConditionalAccessSettings object.
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfiguration](Update-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
+Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Update the properties of a enrollmentConfigurationAssignment object.

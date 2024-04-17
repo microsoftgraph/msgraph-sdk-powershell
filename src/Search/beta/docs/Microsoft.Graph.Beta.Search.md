@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: 9334ff89-b17d-45e2-b50d-2024acc47c2b
+Module Guid: 1c464169-139c-42b2-bac7-2e90034c0469
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -251,10 +251,10 @@ Delete navigation property operations for external
 Delete navigation property quota for external
 
 ### [Remove-MgBetaExternalIndustryDataConnector](Remove-MgBetaExternalIndustryDataConnector.md)
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
-Delete an inboundFileFlow object.
+Delete an inboundFlow object.
 
 ### [Remove-MgBetaExternalIndustryDataOperation](Remove-MgBetaExternalIndustryDataOperation.md)
 Delete navigation property operations for external
@@ -272,7 +272,7 @@ Delete a sourceSystemDefinition object.
 Delete a yearTimePeriodDefinition object.
 
 ### [Remove-MgBetaSearchAcronym](Remove-MgBetaSearchAcronym.md)
-Delete an acronym object.
+Deletes an acronym object.
 
 ### [Remove-MgBetaSearchBookmark](Remove-MgBetaSearchBookmark.md)
 Delete a bookmark object.
@@ -314,7 +314,7 @@ Update the navigation property operations in external
 Update the navigation property quota in external
 
 ### [Update-MgBetaExternalConnectionSchema](Update-MgBetaExternalConnectionSchema.md)
-Update the properties of a schema for an externalConnection.
+Create the schema for a Microsoft Search connection.
 
 ### [Update-MgBetaExternalIndustryDataConnector](Update-MgBetaExternalIndustryDataConnector.md)
 Update the properties of an azureDataLakeConnector object.

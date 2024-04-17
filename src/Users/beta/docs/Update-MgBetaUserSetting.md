@@ -19,21 +19,20 @@ Update-MgBetaUserSetting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
  [-Id <String>] [-ItemInsights <IMicrosoftGraphUserInsightsSettings>]
  [-RegionalAndLanguageSettings <IMicrosoftGraphRegionalAndLanguageSettings>]
- [-ResponseHeadersVariable <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>]
- [-Storage <IMicrosoftGraphUserStorage>] [-Windows <IMicrosoftGraphWindowsSetting[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,9 +42,8 @@ Update-MgBetaUserSetting -InputObject <IUsersIdentity> [-AdditionalProperties <H
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
  [-Id <String>] [-ItemInsights <IMicrosoftGraphUserInsightsSettings>]
  [-RegionalAndLanguageSettings <IMicrosoftGraphRegionalAndLanguageSettings>]
- [-ResponseHeadersVariable <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>]
- [-Storage <IMicrosoftGraphUserStorage>] [-Windows <IMicrosoftGraphWindowsSetting[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -259,22 +257,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Storage
-userStorage
-To construct, see NOTES section for STORAGE properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserStorage
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -291,7 +273,7 @@ Accept wildcard characters: False
 ```
 
 ### -Windows
-The Windows settings of the user stored in the cloud.
+.
 To construct, see NOTES section for WINDOWS properties and create a hash table.
 
 ```yaml
@@ -351,6 +333,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserSettings
+
+### System.Collections.Hashtable
 
 ## NOTES
 
@@ -435,34 +419,17 @@ To create the parameters described below, construct a hash table containing the 
         - `[EndTime <String>]`: End time for the time range.
         - `[StartTime <String>]`: Start time for the time range.
       - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
-  - `[Storage <IMicrosoftGraphUserStorage>]`: userStorage
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Windows <IMicrosoftGraphWindowsSetting[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Quota <IMicrosoftGraphUnifiedStorageQuota>]`: unifiedStorageQuota
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Deleted <Int64?>]`: 
-      - `[ManageWebUrl <String>]`: A URL that can be used in a browser to manage the breakdown. Read-only.
-      - `[Remaining <Int64?>]`: Total space remaining before reaching the quota limit in bytes.
-      - `[Services <IMicrosoftGraphServiceStorageQuotaBreakdown[]>]`: The breakdown of services contributing to the user's quota usage.
-        - `[DisplayName <String>]`: 
-        - `[ManageWebUrl <String>]`: 
-        - `[Used <Int64?>]`: 
-        - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[State <String>]`: Indicates the state of the storage space. The possible values are: normal, nearing, critical, full, and overLimit.
-      - `[Total <Int64?>]`: Total allowed storage space in bytes.
-      - `[Used <Int64?>]`: Total space used in bytes.
-  - `[Windows <IMicrosoftGraphWindowsSetting[]>]`: The Windows settings of the user stored in the cloud.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: A collection of setting values for a given windowsSetting.
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[CreatedDateTime <DateTime?>]`: Set by the server. Represents the dateTime in UTC when the object was created on the server.
-      - `[ExpirationDateTime <DateTime?>]`: Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.
-      - `[LastModifiedDateTime <DateTime?>]`: Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
-      - `[Payload <String>]`: Base64-encoded JSON setting value.
-    - `[PayloadType <String>]`: The type of setting payloads contained in the instances navigation property.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[ExpirationDateTime <DateTime?>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: 
+      - `[Payload <String>]`: 
+    - `[PayloadType <String>]`: 
     - `[SettingType <String>]`: windowsSettingType
-    - `[WindowsDeviceId <String>]`: A unique identifier for the device the setting might belong to if it is of the settingType backup.
+    - `[WindowsDeviceId <String>]`: 
 
 `CONTACTMERGESUGGESTIONS <IMicrosoftGraphContactMergeSuggestions>`: contactMergeSuggestions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -470,7 +437,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsEnabled <Boolean?>]`: true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
@@ -487,15 +453,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
-  - `[ServiceStorageQuotaBreakdownId <String>]`: The unique identifier of serviceStorageQuotaBreakdown
   - `[SharedInsightId <String>]`: The unique identifier of sharedInsight
   - `[TodoTaskId <String>]`: The unique identifier of todoTask
   - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[TrendingId <String>]`: The unique identifier of trending
   - `[UsedInsightId <String>]`: The unique identifier of usedInsight
   - `[UserId <String>]`: The unique identifier of user
-  - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
-  - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 `ITEMINSIGHTS <IMicrosoftGraphUserInsightsSettings>`: userInsightsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -565,35 +528,17 @@ To create the parameters described below, construct a hash table containing the 
       - `[StartTime <String>]`: Start time for the time range.
     - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
 
-`STORAGE <IMicrosoftGraphUserStorage>`: userStorage
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+`WINDOWS <IMicrosoftGraphWindowsSetting[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Quota <IMicrosoftGraphUnifiedStorageQuota>]`: unifiedStorageQuota
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Deleted <Int64?>]`: 
-    - `[ManageWebUrl <String>]`: A URL that can be used in a browser to manage the breakdown. Read-only.
-    - `[Remaining <Int64?>]`: Total space remaining before reaching the quota limit in bytes.
-    - `[Services <IMicrosoftGraphServiceStorageQuotaBreakdown[]>]`: The breakdown of services contributing to the user's quota usage.
-      - `[DisplayName <String>]`: 
-      - `[ManageWebUrl <String>]`: 
-      - `[Used <Int64?>]`: 
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[State <String>]`: Indicates the state of the storage space. The possible values are: normal, nearing, critical, full, and overLimit.
-    - `[Total <Int64?>]`: Total allowed storage space in bytes.
-    - `[Used <Int64?>]`: Total space used in bytes.
-
-`WINDOWS <IMicrosoftGraphWindowsSetting[]>`: The Windows settings of the user stored in the cloud.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: A collection of setting values for a given windowsSetting.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: Set by the server. Represents the dateTime in UTC when the object was created on the server.
-    - `[ExpirationDateTime <DateTime?>]`: Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.
-    - `[LastModifiedDateTime <DateTime?>]`: Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
-    - `[Payload <String>]`: Base64-encoded JSON setting value.
-  - `[PayloadType <String>]`: The type of setting payloads contained in the instances navigation property.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[ExpirationDateTime <DateTime?>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Payload <String>]`: 
+  - `[PayloadType <String>]`: 
   - `[SettingType <String>]`: windowsSettingType
-  - `[WindowsDeviceId <String>]`: A unique identifier for the device the setting might belong to if it is of the settingType backup.
+  - `[WindowsDeviceId <String>]`: 
 
 ## RELATED LINKS
 

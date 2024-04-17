@@ -15,17 +15,15 @@ Not yet documented
 ### GetExpanded (Default)
 ```
 Get-MgDeviceManagementReportFilter -OutFile <String> [-AdditionalProperties <Hashtable>] [-Filter <String>]
- [-GroupBy <String[]>] [-Name <String>] [-Property <String[]>] [-ResponseHeadersVariable <String>]
- [-Search <String>] [-SessionId <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GroupBy <String[]>] [-Name <String>] [-Property <String[]>] [-Search <String>] [-SessionId <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgDeviceManagementReportFilter
  -BodyParameter <IPaths1J4Do9UDevicemanagementReportsMicrosoftGraphGetreportfiltersPostRequestbodyContentApplicationJsonSchema>
- -OutFile <String> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,28 +33,17 @@ Not yet documented
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
+{{ Add code here }}
 ```
 
-$params = @{
-	name = "Name value"
-	select = @(
-	"Select value"
-)
-search = "Search value"
-groupBy = @(
-"Group By value"
-)
-orderBy = @(
-"Order By value"
-)
-skip = 4
-top = 3
-sessionId = "Session Id value"
-filter = "Filter value"
-}
+{{ Add output here }}
 
-Get-MgDeviceManagementReportFilter -BodyParameter $params
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 
@@ -121,21 +108,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Name
 .
 
@@ -188,21 +160,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: GetExpanded
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -323,8 +280,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1J4Do9UDevicemanagementReportsMicrosoftGraphGetreportfiltersPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

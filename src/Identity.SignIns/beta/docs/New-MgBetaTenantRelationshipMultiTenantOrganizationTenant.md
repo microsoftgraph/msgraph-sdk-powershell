@@ -19,17 +19,15 @@ A tenant can be part of only one multitenant organization.
 ```
 New-MgBetaTenantRelationshipMultiTenantOrganizationTenant [-AddedByTenantId <String>]
  [-AddedDateTime <DateTime>] [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
- [-DisplayName <String>] [-Id <String>] [-JoinedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-Role <String>] [-State <String>] [-TenantId <String>]
- [-TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>] [-Headers <IDictionary>]
+ [-DisplayName <String>] [-Id <String>] [-JoinedDateTime <DateTime>] [-Role <String>] [-State <String>]
+ [-TenantId <String>] [-TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipMultiTenantOrganizationTenant
- -BodyParameter <IMicrosoftGraphMultiTenantOrganizationMember> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMultiTenantOrganizationMember> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,21 +148,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -189,21 +172,6 @@ Read-only.
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -312,8 +280,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiTenantOrganizationMember
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

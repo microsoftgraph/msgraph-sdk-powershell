@@ -17,8 +17,7 @@ An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (
 ```
 Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Property <String[]>]
- [-ReportName <String>] [-ResponseHeadersVariable <String>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -26,8 +25,7 @@ Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport -OutFil
 ```
 Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport
  -BodyParameter <IPaths1Cf3EkeDevicemanagementVirtualendpointReportsMicrosoftGraphGetinaccessiblecloudpcreportsPostRequestbodyContentApplicationJsonSchema>
- -OutFile <String> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,21 +111,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -OutFile
 Path to write output file to
 
@@ -165,36 +148,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: GetExpanded
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ReportName
-cloudPCInaccessibleReportName
-
-```yaml
-Type: System.String
-Parameter Sets: GetExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -301,8 +254,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Cf3EkeDevicemanagementVirtualendpointReportsMicrosoftGraphGetinaccessiblecloudpcreportsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -321,7 +272,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Filter <String>]`: 
   - `[GroupBy <String[]>]`: 
   - `[OrderBy <String[]>]`: 
-  - `[ReportName <String>]`: cloudPCInaccessibleReportName
   - `[Search <String>]`: 
   - `[Select <String[]>]`: 
   - `[Skip <Int32?>]`: 

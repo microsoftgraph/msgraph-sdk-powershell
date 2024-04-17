@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: 073e62b6-6b81-48d8-9906-77aa7e3163f7
+Module Guid: 950867ec-4468-46c3-8b97-5347b8d70854
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,12 +17,8 @@ This operation returns by default only a subset of the more commonly used proper
 These default properties are noted in the Properties section.
 To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
 Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
-Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
 
 ### [Get-MgBetaUserAppRoleAssignedResource](Get-MgBetaUserAppRoleAssignedResource.md)
-Get appRoleAssignedResources from users
-
-### [Get-MgBetaUserAppRoleAssignedResourceByAppId](Get-MgBetaUserAppRoleAssignedResourceByAppId.md)
 Get appRoleAssignedResources from users
 
 ### [Get-MgBetaUserAppRoleAssignedResourceCount](Get-MgBetaUserAppRoleAssignedResourceCount.md)
@@ -110,9 +106,6 @@ Get the number of the resource
 Used for navigating to the item that was used.
 For file attachments, the type is fileAttachment.
 For linked attachments, the type is driveItem.
-
-### [Get-MgBetaUserInvitedBy](Get-MgBetaUserInvitedBy.md)
-Get invitedBy from users
 
 ### [Get-MgBetaUserLicenseDetail](Get-MgBetaUserLicenseDetail.md)
 Get licenseDetails from users
@@ -338,32 +331,6 @@ Retrieve the properties of a user's regionalAndLanguageSettings.
 ### [Get-MgBetaUserSettingShiftPreference](Get-MgBetaUserSettingShiftPreference.md)
 Retrieve the properties and relationships of a shiftPreferences object by ID.
 
-### [Get-MgBetaUserSettingStorage](Get-MgBetaUserSettingStorage.md)
-Get storage from users
-
-### [Get-MgBetaUserSettingStorageQuota](Get-MgBetaUserSettingStorageQuota.md)
-Read the properties and relationships of a unifiedStorageQuota object.
-
-### [Get-MgBetaUserSettingStorageQuotaService](Get-MgBetaUserSettingStorageQuotaService.md)
-The breakdown of services contributing to the user's quota usage.
-
-### [Get-MgBetaUserSettingStorageQuotaServiceCount](Get-MgBetaUserSettingStorageQuotaServiceCount.md)
-Get the number of the resource
-
-### [Get-MgBetaUserSettingWindows](Get-MgBetaUserSettingWindows.md)
-Read the properties and relationships of a windowsSetting object by passing the ID of the setting in the URL.
-This method gets the setting for the signed-in user.
-
-### [Get-MgBetaUserSettingWindowsCount](Get-MgBetaUserSettingWindowsCount.md)
-Get the number of the resource
-
-### [Get-MgBetaUserSettingWindowsInstance](Get-MgBetaUserSettingWindowsInstance.md)
-Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL.
-This method gets a windowsSettingInstance for the signed-in user.
-
-### [Get-MgBetaUserSettingWindowsInstanceCount](Get-MgBetaUserSettingWindowsInstanceCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaUserSponsor](Get-MgBetaUserSponsor.md)
 The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated.
 (HTTP Methods: GET, POST, DELETE.).
@@ -521,15 +488,6 @@ The POST method always ignores the time portion of startDateTime and dueDateTime
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 
-### [New-MgBetaUserSettingStorageQuotaService](New-MgBetaUserSettingStorageQuotaService.md)
-Create new navigation property to services for users
-
-### [New-MgBetaUserSettingWindows](New-MgBetaUserSettingWindows.md)
-Create new navigation property to windows for users
-
-### [New-MgBetaUserSettingWindowsInstance](New-MgBetaUserSettingWindowsInstance.md)
-Create new navigation property to instances for users
-
 ### [New-MgBetaUserTodoList](New-MgBetaUserTodoList.md)
 Create a new lists object.
 
@@ -579,6 +537,9 @@ Delete navigation property used for users
 ### [Remove-MgBetaUserLicenseDetail](Remove-MgBetaUserLicenseDetail.md)
 Delete navigation property licenseDetails for users
 
+### [Remove-MgBetaUserManager](Remove-MgBetaUserManager.md)
+Remove a user's manager.
+
 ### [Remove-MgBetaUserManagerByRef](Remove-MgBetaUserManagerByRef.md)
 Remove a user's manager.
 
@@ -615,9 +576,6 @@ Delete navigation property tasks for users
 ### [Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment](Remove-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment.md)
 Delete navigation property attachments for users
 
-### [Remove-MgBetaUserPhoto](Remove-MgBetaUserPhoto.md)
-Delete navigation property photo for users
-
 ### [Remove-MgBetaUserSetting](Remove-MgBetaUserSetting.md)
 Delete navigation property settings for users
 
@@ -633,20 +591,8 @@ Delete navigation property regionalAndLanguageSettings for users
 ### [Remove-MgBetaUserSettingShiftPreference](Remove-MgBetaUserSettingShiftPreference.md)
 Delete navigation property shiftPreferences for users
 
-### [Remove-MgBetaUserSettingStorage](Remove-MgBetaUserSettingStorage.md)
-Delete navigation property storage for users
-
-### [Remove-MgBetaUserSettingStorageQuota](Remove-MgBetaUserSettingStorageQuota.md)
-Delete navigation property quota for users
-
-### [Remove-MgBetaUserSettingStorageQuotaService](Remove-MgBetaUserSettingStorageQuotaService.md)
-Delete navigation property services for users
-
-### [Remove-MgBetaUserSettingWindows](Remove-MgBetaUserSettingWindows.md)
-Delete navigation property windows for users
-
-### [Remove-MgBetaUserSettingWindowsInstance](Remove-MgBetaUserSettingWindowsInstance.md)
-Delete navigation property instances for users
+### [Remove-MgBetaUserSponsor](Remove-MgBetaUserSponsor.md)
+Remove a user's sponsor.
 
 ### [Remove-MgBetaUserTodoList](Remove-MgBetaUserTodoList.md)
 Deletes a todoTaskList object.
@@ -670,7 +616,7 @@ Delete a checklistItem object.
 Delete navigation property extensions for users
 
 ### [Remove-MgBetaUserTodoListTaskLinkedResource](Remove-MgBetaUserTodoListTaskLinkedResource.md)
-Delete a linkedResource object.
+Deletes a linkedResource object.
 
 ### [Set-MgBetaUserManagerByRef](Set-MgBetaUserManagerByRef.md)
 Assign a user's manager.
@@ -688,8 +634,6 @@ The content streams that are uploaded.
 Update the properties of a user object.
 Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
 Compare member and guest default permissions to see properties they can manage.
-Customers through Microsoft Entra ID for customers can also use this API operation to update their details.
-See Default user permissions in customer tenants for the list of properties they can update.
 
 ### [Update-MgBetaUserExtension](Update-MgBetaUserExtension.md)
 Update the navigation property extensions in users
@@ -717,7 +661,7 @@ Update the navigation property notifications in users
 
 ### [Update-MgBetaUserOutlookMasterCategory](Update-MgBetaUserOutlookMasterCategory.md)
 Update the writable property, color, of the specified outlookCategory object.
-You can't modify the displayName property once you have created the category.
+You can't modify the displayName property\nonce you have created the category.
 
 ### [Update-MgBetaUserOutlookTask](Update-MgBetaUserOutlookTask.md)
 Change writable properties of an Outlook task.
@@ -756,21 +700,6 @@ Update some or all of the properties of a regionalAndLanguageSettings object.
 
 ### [Update-MgBetaUserSettingShiftPreference](Update-MgBetaUserSettingShiftPreference.md)
 Update the properties and relationships of a shiftPreferences object.
-
-### [Update-MgBetaUserSettingStorage](Update-MgBetaUserSettingStorage.md)
-Update the navigation property storage in users
-
-### [Update-MgBetaUserSettingStorageQuota](Update-MgBetaUserSettingStorageQuota.md)
-Update the navigation property quota in users
-
-### [Update-MgBetaUserSettingStorageQuotaService](Update-MgBetaUserSettingStorageQuotaService.md)
-Update the navigation property services in users
-
-### [Update-MgBetaUserSettingWindows](Update-MgBetaUserSettingWindows.md)
-Update the navigation property windows in users
-
-### [Update-MgBetaUserSettingWindowsInstance](Update-MgBetaUserSettingWindowsInstance.md)
-Update the navigation property instances in users
 
 ### [Update-MgBetaUserTodoList](Update-MgBetaUserTodoList.md)
 Update the properties of a todoTaskList object.

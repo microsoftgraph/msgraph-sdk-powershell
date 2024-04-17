@@ -26,17 +26,16 @@ New-MgBetaDeviceManagementIntuneBrandingProfile [-AdditionalProperties <Hashtabl
  [-LandingPageCustomizedImage <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>]
  [-LightBackgroundLogo <IMicrosoftGraphMimeContent>] [-OnlineSupportSiteName <String>]
  [-OnlineSupportSiteUrl <String>] [-PrivacyUrl <String>] [-ProfileDescription <String>]
- [-ProfileName <String>] [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>]
- [-SendDeviceOwnershipChangePushNotification] [-ShowAzureAdEnterpriseApps] [-ShowConfigurationManagerApps]
- [-ShowDisplayNameNextToLogo] [-ShowLogo] [-ShowOfficeWebApps] [-ThemeColor <IMicrosoftGraphRgbColor>]
- [-ThemeColorLogo <IMicrosoftGraphMimeContent>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ProfileName <String>] [-RoleScopeTagIds <String[]>] [-SendDeviceOwnershipChangePushNotification]
+ [-ShowAzureAdEnterpriseApps] [-ShowConfigurationManagerApps] [-ShowDisplayNameNextToLogo] [-ShowLogo]
+ [-ShowOfficeWebApps] [-ThemeColor <IMicrosoftGraphRgbColor>] [-ThemeColorLogo <IMicrosoftGraphMimeContent>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementIntuneBrandingProfile -BodyParameter <IMicrosoftGraphIntuneBrandingProfile>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -304,21 +303,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -502,21 +486,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RoleScopeTagIds
 List of scope tags assigned to the branding profile
 
@@ -691,8 +660,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIntuneBrandingProfile
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

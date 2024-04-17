@@ -17,14 +17,13 @@ Create new navigation property to hostSslCertificates for security
 New-MgSecurityThreatIntelligenceHostSslCertificate [-AdditionalProperties <Hashtable>]
  [-FirstSeenDateTime <DateTime>] [-Host1 <IMicrosoftGraphSecurityHost>] [-Id <String>]
  [-LastSeenDateTime <DateTime>] [-Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]
- [-ResponseHeadersVariable <String>] [-SslCertificate <IMicrosoftGraphSecuritySslCertificate>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SslCertificate <IMicrosoftGraphSecuritySslCertificate>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgSecurityThreatIntelligenceHostSslCertificate -BodyParameter <IMicrosoftGraphSecurityHostSslCertificate>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,21 +95,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Host1
 host
 To construct, see NOTES section for HOST1 properties and create a hash table.
@@ -176,21 +160,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SslCertificate
 sslCertificate
 To construct, see NOTES section for SSLCERTIFICATE properties and create a hash table.
@@ -244,8 +213,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityHostSslCertificate
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

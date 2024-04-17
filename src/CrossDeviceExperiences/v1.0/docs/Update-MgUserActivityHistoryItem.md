@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserActivityHistoryItem
 
 ## SYNOPSIS
-Create a new or replace an existing history item for an existing user activity.
+Delete an existing history item for an existing user activity.
 
 ## SYNTAX
 
@@ -18,22 +18,20 @@ Update-MgUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId
  [-ActiveDurationSeconds <Int32>] [-Activity <IMicrosoftGraphUserActivity>]
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-LastActiveDateTime <DateTime>] [-LastModifiedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
- -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,12 +40,12 @@ Update-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
  [-ActiveDurationSeconds <Int32>] [-Activity <IMicrosoftGraphUserActivity>]
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-LastActiveDateTime <DateTime>] [-LastModifiedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new or replace an existing history item for an existing user activity.
+Delete an existing history item for an existing user activity.
 
 ## EXAMPLES
 
@@ -179,21 +177,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -250,21 +233,6 @@ DateTime in UTC when the object was modified on the server.
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -391,8 +359,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -16,44 +16,39 @@ Update the navigation property userExperienceAnalyticsResourcePerformance in dev
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance
  -UserExperienceAnalyticsResourcePerformanceId <String> [-AdditionalProperties <Hashtable>]
- [-AverageSpikeTimeScore <Int32>] [-CpuClockSpeedInMHz <Double>] [-CpuDisplayName <String>]
- [-CpuSpikeTimePercentage <Double>] [-CpuSpikeTimePercentageThreshold <Double>] [-CpuSpikeTimeScore <Int32>]
- [-DeviceCount <Int64>] [-DeviceId <String>] [-DeviceName <String>] [-DeviceResourcePerformanceScore <Int32>]
- [-DiskType <DiskType>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
- [-MachineType <UserExperienceAnalyticsMachineType>] [-Manufacturer <String>] [-Model <String>]
- [-RamSpikeTimePercentage <Double>] [-RamSpikeTimePercentageThreshold <Double>] [-RamSpikeTimeScore <Int32>]
- [-ResponseHeadersVariable <String>] [-TotalProcessorCoreCount <Int32>] [-TotalRamInMb <Double>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AverageSpikeTimeScore <Int32>] [-CpuSpikeTimePercentage <Double>]
+ [-CpuSpikeTimePercentageThreshold <Double>] [-CpuSpikeTimeScore <Int32>] [-DeviceCount <Int64>]
+ [-DeviceId <String>] [-DeviceName <String>] [-DeviceResourcePerformanceScore <Int32>] [-Id <String>]
+ [-Manufacturer <String>] [-Model <String>] [-RamSpikeTimePercentage <Double>]
+ [-RamSpikeTimePercentageThreshold <Double>] [-RamSpikeTimeScore <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance
  -UserExperienceAnalyticsResourcePerformanceId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsResourcePerformance>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsResourcePerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance
  -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsResourcePerformance>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsResourcePerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticResourcePerformance
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-AverageSpikeTimeScore <Int32>]
- [-CpuClockSpeedInMHz <Double>] [-CpuDisplayName <String>] [-CpuSpikeTimePercentage <Double>]
- [-CpuSpikeTimePercentageThreshold <Double>] [-CpuSpikeTimeScore <Int32>] [-DeviceCount <Int64>]
- [-DeviceId <String>] [-DeviceName <String>] [-DeviceResourcePerformanceScore <Int32>] [-DiskType <DiskType>]
- [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
- [-MachineType <UserExperienceAnalyticsMachineType>] [-Manufacturer <String>] [-Model <String>]
- [-RamSpikeTimePercentage <Double>] [-RamSpikeTimePercentageThreshold <Double>] [-RamSpikeTimeScore <Int32>]
- [-ResponseHeadersVariable <String>] [-TotalProcessorCoreCount <Int32>] [-TotalRamInMb <Double>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CpuSpikeTimePercentage <Double>] [-CpuSpikeTimePercentageThreshold <Double>] [-CpuSpikeTimeScore <Int32>]
+ [-DeviceCount <Int64>] [-DeviceId <String>] [-DeviceName <String>] [-DeviceResourcePerformanceScore <Int32>]
+ [-Id <String>] [-Manufacturer <String>] [-Model <String>] [-RamSpikeTimePercentage <Double>]
+ [-RamSpikeTimePercentageThreshold <Double>] [-RamSpikeTimeScore <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,37 +116,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -CpuClockSpeedInMHz
-The clock speed of the processor, in MHz.
-Valid values 0 to 1000000
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CpuDisplayName
-The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -264,51 +228,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DiskType
-diskType
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Support.DiskType
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -HealthStatus
-userExperienceAnalyticsHealthState
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsHealthState
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -338,22 +257,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -MachineType
-Indicates if machine is physical or virtual.
-Possible values are: physical or virtual
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsMachineType
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -435,53 +338,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TotalProcessorCoreCount
-The count of cores of the processor of device.
-Valid values 0 to 512
-
-```yaml
-Type: System.Int32
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TotalRamInMb
-The total RAM of the device, in MB.
-Valid values 0 to 1000000
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserExperienceAnalyticsResourcePerformanceId
 The unique identifier of userExperienceAnalyticsResourcePerformance
 
@@ -537,8 +393,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsResourcePerformance
@@ -556,8 +410,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AverageSpikeTimeScore <Int32?>]`: AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
-  - `[CpuClockSpeedInMHz <Double?>]`: The clock speed of the processor, in MHz. Valid values 0 to 1000000
-  - `[CpuDisplayName <String>]`: The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.
   - `[CpuSpikeTimePercentage <Double?>]`: CPU spike time in percentage. Valid values 0 to 100
   - `[CpuSpikeTimePercentageThreshold <Double?>]`: Threshold of cpuSpikeTimeScore. Valid values 0 to 100
   - `[CpuSpikeTimeScore <Int32?>]`: The user experience analytics device CPU spike time score. Valid values 0 to 100
@@ -565,16 +417,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceId <String>]`: The id of the device.
   - `[DeviceName <String>]`: The name of the device.
   - `[DeviceResourcePerformanceScore <Int32?>]`: Resource performance score of a specific device. Valid values 0 to 100
-  - `[DiskType <DiskType?>]`: diskType
-  - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
-  - `[MachineType <UserExperienceAnalyticsMachineType?>]`: Indicates if machine is physical or virtual. Possible values are: physical or virtual
   - `[Manufacturer <String>]`: The user experience analytics device manufacturer.
   - `[Model <String>]`: The user experience analytics device model.
   - `[RamSpikeTimePercentage <Double?>]`: RAM spike time in percentage. Valid values 0 to 100
   - `[RamSpikeTimePercentageThreshold <Double?>]`: Threshold of ramSpikeTimeScore. Valid values 0 to 100
   - `[RamSpikeTimeScore <Int32?>]`: The user experience analytics device RAM spike time score. Valid values 0 to 100
-  - `[TotalProcessorCoreCount <Int32?>]`: The count of cores of the processor of device. Valid values 0 to 512
-  - `[TotalRamInMb <Double?>]`: The total RAM of the device, in MB. Valid values 0 to 1000000
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState
@@ -605,7 +452,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceConfigurationDeviceStatusId <String>]`: The unique identifier of deviceConfigurationDeviceStatus
   - `[DeviceConfigurationGroupAssignmentId <String>]`: The unique identifier of deviceConfigurationGroupAssignment
   - `[DeviceConfigurationId <String>]`: The unique identifier of deviceConfiguration
-  - `[DeviceConfigurationProfileId <String>]`: The unique identifier of deviceConfigurationProfile
   - `[DeviceConfigurationStateId <String>]`: The unique identifier of deviceConfigurationState
   - `[DeviceConfigurationUserStatusId <String>]`: The unique identifier of deviceConfigurationUserStatus
   - `[DeviceHealthScriptAssignmentId <String>]`: The unique identifier of deviceHealthScriptAssignment
@@ -657,7 +503,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

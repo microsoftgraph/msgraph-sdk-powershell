@@ -21,33 +21,29 @@ Alternatively, create a draft to forward a message, and send it later.
 ### ForwardExpanded (Default)
 ```
 Invoke-MgBetaForwardUserMessage -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-ResponseHeadersVariable <String>]
- [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-ToRecipients <IMicrosoftGraphRecipient[]>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Forward
 ```
 Invoke-MgBetaForwardUserMessage -MessageId <String> -UserId <String>
  -BodyParameter <IPaths3Ta6EnUsersUserIdMessagesMessageIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentity
 ```
 Invoke-MgBetaForwardUserMessage -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths3Ta6EnUsersUserIdMessagesMessageIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentityExpanded
 ```
 Invoke-MgBetaForwardUserMessage -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-ResponseHeadersVariable <String>]
- [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-ToRecipients <IMicrosoftGraphRecipient[]>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -132,21 +128,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -201,21 +182,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -295,8 +261,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -355,14 +319,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[HasAttachments <Boolean?>]`: Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
     - `[Importance <String>]`: importance
     - `[InferenceClassification <String>]`: inferenceClassificationType
-    - `[InternetMessageHeaders <IMicrosoftGraphInternetMessageHeader[]>]`: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
+    - `[InternetMessageHeaders <IMicrosoftGraphInternetMessageHeader[]>]`: 
       - `[Name <String>]`: Represents the key in a key-value pair.
       - `[Value <String>]`: The value in a key-value pair.
-    - `[InternetMessageId <String>]`: The message ID in the format specified by RFC5322. Updatable only if isDraft is true.
-    - `[IsDeliveryReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
-    - `[IsDraft <Boolean?>]`: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
-    - `[IsRead <Boolean?>]`: Indicates whether the message has been read.
-    - `[IsReadReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
+    - `[InternetMessageId <String>]`: 
+    - `[IsDeliveryReceiptRequested <Boolean?>]`: 
+    - `[IsDraft <Boolean?>]`: 
+    - `[IsRead <Boolean?>]`: 
+    - `[IsReadReceiptRequested <Boolean?>]`: 
     - `[Mentions <IMicrosoftGraphMention[]>]`: A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Application <String>]`: The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
@@ -379,20 +343,20 @@ To create the parameters described below, construct a hash table containing the 
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Value <String[]>]`: A collection of property values.
-    - `[ParentFolderId <String>]`: The unique identifier for the message's parent mailFolder.
-    - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: The email addresses to use when replying.
+    - `[ParentFolderId <String>]`: 
+    - `[ReceivedDateTime <DateTime?>]`: 
+    - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: 
     - `[Sender <IMicrosoftGraphRecipient>]`: recipient
-    - `[SentDateTime <DateTime?>]`: The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[SentDateTime <DateTime?>]`: 
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Value <String>]`: A property value.
-    - `[Subject <String>]`: The subject of the message.
-    - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: The To: recipients for the message.
+    - `[Subject <String>]`: 
+    - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
     - `[UniqueBody <IMicrosoftGraphItemBody>]`: itemBody
-    - `[UnsubscribeData <String[]>]`: The valid entries parsed from the List-Unsubscribe header.  This is the data for the mail command in the List-Unsubscribe header if UnsubscribeEnabled property is true.
-    - `[UnsubscribeEnabled <Boolean?>]`: Indicates whether the message is enabled for unsubscribe.  Its valueTrue if the list-Unsubscribe header conforms to rfc-2369.
-    - `[WebLink <String>]`: The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.
+    - `[UnsubscribeData <String[]>]`: 
+    - `[UnsubscribeEnabled <Boolean?>]`: 
+    - `[WebLink <String>]`: 
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
 
 `INPUTOBJECT <IUsersActionsIdentity>`: Identity Parameter
@@ -414,7 +378,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder
@@ -480,14 +443,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[HasAttachments <Boolean?>]`: Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
   - `[Importance <String>]`: importance
   - `[InferenceClassification <String>]`: inferenceClassificationType
-  - `[InternetMessageHeaders <IMicrosoftGraphInternetMessageHeader[]>]`: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
+  - `[InternetMessageHeaders <IMicrosoftGraphInternetMessageHeader[]>]`: 
     - `[Name <String>]`: Represents the key in a key-value pair.
     - `[Value <String>]`: The value in a key-value pair.
-  - `[InternetMessageId <String>]`: The message ID in the format specified by RFC5322. Updatable only if isDraft is true.
-  - `[IsDeliveryReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
-  - `[IsDraft <Boolean?>]`: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
-  - `[IsRead <Boolean?>]`: Indicates whether the message has been read.
-  - `[IsReadReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
+  - `[InternetMessageId <String>]`: 
+  - `[IsDeliveryReceiptRequested <Boolean?>]`: 
+  - `[IsDraft <Boolean?>]`: 
+  - `[IsRead <Boolean?>]`: 
+  - `[IsReadReceiptRequested <Boolean?>]`: 
   - `[Mentions <IMicrosoftGraphMention[]>]`: A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Application <String>]`: The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
@@ -504,20 +467,20 @@ To create the parameters described below, construct a hash table containing the 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Value <String[]>]`: A collection of property values.
-  - `[ParentFolderId <String>]`: The unique identifier for the message's parent mailFolder.
-  - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: The email addresses to use when replying.
+  - `[ParentFolderId <String>]`: 
+  - `[ReceivedDateTime <DateTime?>]`: 
+  - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: 
   - `[Sender <IMicrosoftGraphRecipient>]`: recipient
-  - `[SentDateTime <DateTime?>]`: The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[SentDateTime <DateTime?>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Value <String>]`: A property value.
-  - `[Subject <String>]`: The subject of the message.
-  - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: The To: recipients for the message.
+  - `[Subject <String>]`: 
+  - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
   - `[UniqueBody <IMicrosoftGraphItemBody>]`: itemBody
-  - `[UnsubscribeData <String[]>]`: The valid entries parsed from the List-Unsubscribe header.  This is the data for the mail command in the List-Unsubscribe header if UnsubscribeEnabled property is true.
-  - `[UnsubscribeEnabled <Boolean?>]`: Indicates whether the message is enabled for unsubscribe.  Its valueTrue if the list-Unsubscribe header conforms to rfc-2369.
-  - `[WebLink <String>]`: The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.
+  - `[UnsubscribeData <String[]>]`: 
+  - `[UnsubscribeEnabled <Boolean?>]`: 
+  - `[WebLink <String>]`: 
 
 `TORECIPIENTS <IMicrosoftGraphRecipient[]>`: .
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress

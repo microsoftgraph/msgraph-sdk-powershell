@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaEducationClassAssignmentSettingGradingScheme
 
 ## SYNOPSIS
-Read the properties and relationships of an educationGradingScheme object.
+Get gradingSchemes from education
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgBetaEducationClassAssignmentSettingGradingScheme -InputObject <IEducationI
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an educationGradingScheme object.
+Get gradingSchemes from education
 
 ## EXAMPLES
 

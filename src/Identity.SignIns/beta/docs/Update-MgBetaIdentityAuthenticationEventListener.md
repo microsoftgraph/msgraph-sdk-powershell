@@ -17,30 +17,28 @@ You must specify the @odata.type property and the value of the authenticationEve
 ```
 Update-MgBetaIdentityAuthenticationEventListener -AuthenticationEventListenerId <String>
  [-AdditionalProperties <Hashtable>] [-AuthenticationEventsFlowId <String>]
- [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityAuthenticationEventListener -AuthenticationEventListenerId <String>
- -BodyParameter <IMicrosoftGraphAuthenticationEventListener> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthenticationEventListener> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphAuthenticationEventListener> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthenticationEventListener> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaIdentityAuthenticationEventListener -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-AuthenticationEventsFlowId <String>]
- [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Conditions <IMicrosoftGraphAuthenticationConditions>] [-Id <String>] [-Priority <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -142,21 +140,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -205,21 +188,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -259,8 +227,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationEventListener
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

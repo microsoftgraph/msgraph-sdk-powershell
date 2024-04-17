@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -Instances
-A collection of setting values for a given windowsSetting.
+.
 To construct, see NOTES section for INSTANCES properties and create a hash table.
 
 ```yaml
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -PayloadType
-The type of setting payloads contained in the instances navigation property.
+.
 
 ```yaml
 Type: System.String
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -WindowsDeviceId
-A unique identifier for the device the setting might belong to if it is of the settingType backup.
+.
 
 ```yaml
 Type: System.String
@@ -288,15 +288,15 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphWindowsSetting>`: windowsSetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: A collection of setting values for a given windowsSetting.
+  - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: Set by the server. Represents the dateTime in UTC when the object was created on the server.
-    - `[ExpirationDateTime <DateTime?>]`: Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.
-    - `[LastModifiedDateTime <DateTime?>]`: Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
-    - `[Payload <String>]`: Base64-encoded JSON setting value.
-  - `[PayloadType <String>]`: The type of setting payloads contained in the instances navigation property.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[ExpirationDateTime <DateTime?>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Payload <String>]`: 
+  - `[PayloadType <String>]`: 
   - `[SettingType <String>]`: windowsSettingType
-  - `[WindowsDeviceId <String>]`: A unique identifier for the device the setting might belong to if it is of the settingType backup.
+  - `[WindowsDeviceId <String>]`: 
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
@@ -315,12 +315,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
   - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
-`INSTANCES <IMicrosoftGraphWindowsSettingInstance[]>`: A collection of setting values for a given windowsSetting.
+`INSTANCES <IMicrosoftGraphWindowsSettingInstance[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: Set by the server. Represents the dateTime in UTC when the object was created on the server.
-  - `[ExpirationDateTime <DateTime?>]`: Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.
-  - `[LastModifiedDateTime <DateTime?>]`: Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
-  - `[Payload <String>]`: Base64-encoded JSON setting value.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[ExpirationDateTime <DateTime?>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Payload <String>]`: 
 
 ## RELATED LINKS
 

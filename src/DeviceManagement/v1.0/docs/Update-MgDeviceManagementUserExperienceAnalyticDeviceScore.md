@@ -18,22 +18,20 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceScore -UserExperienceAnalyt
  [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>]
  [-DeviceName <String>] [-EndpointAnalyticsScore <Double>]
  [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>] [-Manufacturer <String>]
- [-Model <String>] [-ResponseHeadersVariable <String>] [-StartupPerformanceScore <Double>]
- [-WorkFromAnywhereScore <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Model <String>] [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDeviceScore -UserExperienceAnalyticsDeviceScoresId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScores> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScores> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDeviceScore -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScores> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScores> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +40,8 @@ Update-MgDeviceManagementUserExperienceAnalyticDeviceScore -InputObject <IDevice
  [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>]
  [-DeviceName <String>] [-EndpointAnalyticsScore <Double>]
  [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>] [-Manufacturer <String>]
- [-Model <String>] [-ResponseHeadersVariable <String>] [-StartupPerformanceScore <Double>]
- [-WorkFromAnywhereScore <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Model <String>] [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -175,21 +173,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HealthStatus
 userExperienceAnalyticsHealthState
 
@@ -264,21 +247,6 @@ Read-only.
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -381,8 +349,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

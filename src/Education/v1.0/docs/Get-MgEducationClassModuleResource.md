@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassModuleResource
 
 ## SYNOPSIS
-Get the properties of a resource associated with a module.
-Only teachers, students, and applications with application permissions can perform this operation.
+Get resources from education
 
 ## SYNTAX
 
@@ -17,26 +16,25 @@ Only teachers, students, and applications with application permissions can perfo
 ```
 Get-MgEducationClassModuleResource -EducationClassId <String> -EducationModuleId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-ResponseHeadersVariable <String>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgEducationClassModuleResource -EducationClassId <String> -EducationModuleId <String>
  -EducationModuleResourceId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgEducationClassModuleResource -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the properties of a resource associated with a module.
-Only teachers, students, and applications with application permissions can perform this operation.
+Get resources from education
 
 ## EXAMPLES
 
@@ -215,21 +213,6 @@ Select properties to be returned
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

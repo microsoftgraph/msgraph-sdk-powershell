@@ -8,10 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUser
 
 ## SYNOPSIS
-The assignment targeted users for the provisioning policy.
-This list of users is computed based on assignments, licenses, group memberships, and policies.
-Read-only.
-Supports$expand.
+Get assignedUsers from deviceManagement
 
 ## SYNTAX
 
@@ -40,10 +37,7 @@ Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUser
 ```
 
 ## DESCRIPTION
-The assignment targeted users for the provisioning policy.
-This list of users is computed based on assignments, licenses, group memberships, and policies.
-Read-only.
-Supports$expand.
+Get assignedUsers from deviceManagement
 
 ## EXAMPLES
 
@@ -330,10 +324,6 @@ To create the parameters described below, construct a hash table containing the 
 `INPUTOBJECT <IDeviceManagementAdministrationIdentity>`: Identity Parameter
   - `[AuditEventId <String>]`: The unique identifier of auditEvent
   - `[CloudPcAuditEventId <String>]`: The unique identifier of cloudPcAuditEvent
-  - `[CloudPcDeviceImageId <String>]`: The unique identifier of cloudPcDeviceImage
-  - `[CloudPcGalleryImageId <String>]`: The unique identifier of cloudPcGalleryImage
-  - `[CloudPcId <String>]`: The unique identifier of cloudPC
-  - `[CloudPcOnPremisesConnectionId <String>]`: The unique identifier of cloudPcOnPremisesConnection
   - `[CloudPcProvisioningPolicyAssignmentId <String>]`: The unique identifier of cloudPcProvisioningPolicyAssignment
   - `[CloudPcProvisioningPolicyId <String>]`: The unique identifier of cloudPcProvisioningPolicy
   - `[CloudPcUserSettingAssignmentId <String>]`: The unique identifier of cloudPcUserSettingAssignment

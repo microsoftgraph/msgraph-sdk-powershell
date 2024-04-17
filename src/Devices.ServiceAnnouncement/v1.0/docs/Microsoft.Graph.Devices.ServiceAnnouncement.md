@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-Module Guid: 58331282-4e84-4d3b-9609-6c807f7548dc
+Module Guid: dc97452e-1ea0-40a6-a4c3-2763b7b8c5b8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.serviceannouncement
 Help Version: 1.0.0.0
 Locale: en-US

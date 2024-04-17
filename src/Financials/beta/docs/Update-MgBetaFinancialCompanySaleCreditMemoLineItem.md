@@ -18,23 +18,20 @@ Update-MgBetaFinancialCompanySaleCreditMemoLineItem -CompanyId <String> -SalesCr
  [-AdditionalProperties <Hashtable>] [-BaseUnitOfMeasureId <String>] [-Blocked] [-DisplayName <String>]
  [-Gtin <String>] [-Id <String>] [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>]
  [-ItemCategoryCode <String>] [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
- [-Picture <IMicrosoftGraphPicture[]>] [-PriceIncludesTax] [-ResponseHeadersVariable <String>]
- [-TaxGroupCode <String>] [-TaxGroupId <String>] [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Picture <IMicrosoftGraphPicture[]>] [-PriceIncludesTax] [-TaxGroupCode <String>] [-TaxGroupId <String>]
+ [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleCreditMemoLineItem -CompanyId <String> -SalesCreditMemoLineId <String>
- -BodyParameter <IMicrosoftGraphItem> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleCreditMemoLineItem -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphItem> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,9 +40,8 @@ Update-MgBetaFinancialCompanySaleCreditMemoLineItem -InputObject <IFinancialsIde
  [-AdditionalProperties <Hashtable>] [-BaseUnitOfMeasureId <String>] [-Blocked] [-DisplayName <String>]
  [-Gtin <String>] [-Id <String>] [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>]
  [-ItemCategoryCode <String>] [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
- [-Picture <IMicrosoftGraphPicture[]>] [-PriceIncludesTax] [-ResponseHeadersVariable <String>]
- [-TaxGroupCode <String>] [-TaxGroupId <String>] [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Picture <IMicrosoftGraphPicture[]>] [-PriceIncludesTax] [-TaxGroupCode <String>] [-TaxGroupId <String>]
+ [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -172,21 +168,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -343,21 +324,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SalesCreditMemoLineId
 The unique identifier of salesCreditMemoLine
 
@@ -487,8 +453,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
