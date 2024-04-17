@@ -1665,6 +1665,7 @@ components:
       enum:
         - delegatedAdminAccessAssignmentUpdate
         - unknownFutureValue
+        - delegatedAdminRelationshipUpdate
       type: string
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
