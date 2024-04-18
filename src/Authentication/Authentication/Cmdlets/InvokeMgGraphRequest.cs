@@ -402,8 +402,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 // set body to null to prevent later FillRequestStream
                 Body = null;
             }
-            // TODO: Review the fix made in https://github.com/microsoftgraph/msgraph-sdk-powershell/pull/2455.
-            return uriBuilder.Uri;
+            return uriBuilder.Uri.EscapeDataStrings();
         }
 
         private void ThrowIfError(ErrorRecord error)

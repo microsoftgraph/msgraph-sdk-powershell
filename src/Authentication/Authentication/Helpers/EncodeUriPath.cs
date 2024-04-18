@@ -15,6 +15,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     {
         public static Uri EscapeDataStrings(this Uri uri)
         {
+            if(uri.Query.Length > 0)
+                return uri;
             int counter = 0;
             var pathSegments = uri.OriginalString.Split('/');
             StringBuilder sb = new StringBuilder();
