@@ -33,7 +33,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         sb.Append(Uri.EscapeDataString(segment));
                         sb.Append(queryString);
                     }
-                    sb.Append(Uri.EscapeDataString(segment));
+                    else
+                    {
+                        sb.Append(Uri.EscapeDataString(segment));
+                    }
                 }
                 counter++;
             }
