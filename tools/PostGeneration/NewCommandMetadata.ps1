@@ -35,6 +35,7 @@ $CommandPathMapping = [ordered]@{}
 
 # Regex patterns.
 $OpenApiTagPattern = '\[OpenAPI\].s*(.*)=>(.*):\"(.*)\"'
+$ExternalDocsPattern ='https://learn.microsoft.com/graph/api/(.*?(graph-rest-1.0|graph-rest-beta))'
 $ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
 $PermissionsUrl = "https://graphexplorerapi.azurewebsites.net/permissions"
 
@@ -51,7 +52,6 @@ $ApiVersion | ForEach-Object {
         if ($_.DirectoryName -match "\\src\\(.*?.)\\") {
             $ModuleName = ($CurrentApiVersion -eq "beta") ? "Beta.$($Matches.1)" : $Matches.1
         }
-
         $RawFileContent = (Get-Content -Path $_.FullName -Raw)
         if ($RawFileContent -match $OpenApiTagPattern) {
             $Method = $Matches.2
@@ -81,6 +81,7 @@ $ApiVersion | ForEach-Object {
                 ApiVersion  = $CurrentApiVersion
                 OutputType  = ($RawFileContent -match $OutputTypePattern) ? $Matches.1 : $null
                 Module      = $ModuleName
+                ApiReferenceLink = ($RawFileContent -match $ExternalDocsPattern) ? $Matches.0 : $null
                 Permissions = @()
             }
 
