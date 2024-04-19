@@ -15,17 +15,24 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     {
         public static Uri EscapeDataStrings(this Uri uri)
         {
-            if(uri.Query.Length > 0)
-                return uri;
             int counter = 0;
             var pathSegments = uri.OriginalString.Split('/');
             StringBuilder sb = new StringBuilder();
-            foreach (var segment in pathSegments)
+            foreach (var s in pathSegments)
             {
+                var segment = s;
                 //Skips the left part of the uri i.e https://graph.microsoft.com
                 if (counter > 2)
                 {
                     sb.Append('/');
+                    if(s.Contains("?"))
+                    {
+                        var queryStringIndex = segment.IndexOf("?");
+                        string queryString = segment.Substring(queryStringIndex);
+                        segment = s.Substring(0, queryStringIndex);
+                        sb.Append(Uri.EscapeDataString(segment));
+                        sb.Append(queryString);
+                    }
                     sb.Append(Uri.EscapeDataString(segment));
                 }
                 counter++;
