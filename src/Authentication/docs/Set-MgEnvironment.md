@@ -13,8 +13,8 @@ Sets a Microsoft Graph environment to the settings file.
 ## SYNTAX
 
 ```
-Set-MgEnvironment [-Name] <String> [[-AzureADEndpoint] <String>] [[-GraphEndpoint] <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Set-MgEnvironment [-Name] <String> [[-AzureADEndpoint] <String>] [[-GraphEndpoint] <String>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -76,6 +76,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -113,11 +128,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Authentication.Models.GraphEnvironment
-
 ## NOTES
 
 ## RELATED LINKS
