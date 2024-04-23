@@ -209,7 +209,7 @@ Describe "Find-MgGraphCommand Command" {
             It 'Should find the API reference link' {
                 {
                     $MgCommand = Find-MgGraphCommand -Command "Get-MgUser"
-                    $MgCommand[0].APIReferenceLink | Should -Be "https://learn.microsoft.com/graph/api/users-get"
+                    $MgCommand[0].ApiReferenceLink | Should -Be "https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0"
                 } | Should -Not -Throw
                 {
                     $MgCommand = Find-MgGraphCommand -Command "Get-MgUser"
