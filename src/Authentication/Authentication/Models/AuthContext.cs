@@ -19,6 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public TokenCredentialType TokenCredentialType { get; set; }
         public string CertificateThumbprint { get; set; }
         public string CertificateSubjectName { get; set; }
+        public bool SendCertificateChain { get; set; }
         public string Account { get; set; }
         public string AppName { get; set; }
         public ContextScope ContextScope { get; set; }
