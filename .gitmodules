@@ -1,4 +1,4 @@
 [submodule "autorest.powershell"]
 	path = autorest.powershell
 	url = https://github.com/microsoftgraph/autorest.powershell
-	branch = external-docs-support
+	branch = powershell_v2
