@@ -184,7 +184,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             var clientCredentialOptions = new ClientCertificateCredentialOptions
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
-                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
+                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext),
+                SendCertificateChain = authContext.SendCertificateChain
             };
             var clientCertificateCredential = new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), clientCredentialOptions);
             return await Task.FromResult(clientCertificateCredential).ConfigureAwait(false);
