@@ -206,11 +206,25 @@ Describe "Find-MgGraphCommand Command" {
                     $MgCommand[0].Command | Should -BeLike "New-MgApplication*"
                 } | Should -Not -Throw
             }
+            It 'Should find the API reference link' {
+                {
+                    $MgCommand = Find-MgGraphCommand -Command "Get-MgUser"
+                    $MgCommand[0].ApiReferenceLink | Should -Be "https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0"
+                } | Should -Not -Throw
+                {
+                    $MgCommand = Find-MgGraphCommand -Command "Get-MgUser"
+                    $MgCommand | Should -HaveCount 2 # /users and /users/{id}.
+                    $MgCommand[0].Method | Select-Object -Unique | Should -Be "GET"
+                    $MgCommand[0].APIVersion | Select-Object -Unique | Should -Be "v1.0"
+                    $MgCommand[0].Command | Select-Object -Unique | Should -Be "Get-MgUser"
+                } | Should -Not -Throw
+            }
             It 'Should throw error when command name is invalid' {
                 {
                     Find-MgGraphCommand -Command "New-MgInvalid" -ErrorAction Stop | Out-Null
                 } | Should -Throw -ExpectedMessage "*'New-MgInvalid' is not a valid Microsoft Graph PowerShell command.*"
             }
+            
         }
     }
 }
