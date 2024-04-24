@@ -46,6 +46,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, Position = 3, HelpMessage = HelpMessages.CertificateThumbprint)]
         public string CertificateThumbprint { get; set; }
 
+        [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.SendCertificateChain)]
+        public bool SendCertificateChain { get; set; }
+
         [Parameter(Mandatory = false, ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.Certificate)]
         public X509Certificate2 Certificate { get; set; }
 
@@ -200,6 +203,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.ClientId = ClientId;
                             authContext.CertificateThumbprint = CertificateThumbprint;
                             authContext.CertificateSubjectName = CertificateSubjectName;
+                            authContext.SendCertificateChain = SendCertificateChain;
                             authContext.Certificate = Certificate;
                             // Default to Process but allow the customer to change this via `-ContextScope`.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
