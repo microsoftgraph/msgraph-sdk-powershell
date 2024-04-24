@@ -1,4 +1,4 @@
- {
+{
   "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
   "Bookings": "^solutions\\.|^bookingBusinesses\\.|^bookingCurrencies\\.",
   "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
@@ -39,4 +39,4 @@
   "Users.Actions": "^users.Actions$",
   "Users.Functions": "^users.Functions$",
   "WindowsUpdates": "^admin.adminWindows$|^admin.Actions$|^admin.Functions$"
-} 
+}
