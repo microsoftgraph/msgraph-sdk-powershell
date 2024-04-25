@@ -13,7 +13,7 @@ Describe "Set-MgGraphOption" {
             $SetMgGraphOptionCommand = Get-Command Set-MgGraphOption
             $SetMgGraphOptionCommand | Should -Not -BeNullOrEmpty
             $SetMgGraphOptionCommand.ParameterSets | Should -HaveCount 1
-            $SetMgGraphOptionCommand.ParameterSets.Parameters | Should -HaveCount 13 # PS common parameters.
+            $SetMgGraphOptionCommand.ParameterSets.Parameters | Should -HaveCount 14 # PS common parameters.
         }
     
         It 'Executes successfully when toggling WAM on' {

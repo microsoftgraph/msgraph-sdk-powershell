@@ -114,9 +114,9 @@ Before using the provided `-AccessToken` to get Microsoft Graph resources, custo
 
 ### Access Token Proof of Possession (AT PoP)
 
-AT PoP is a security mechanism that binds an access token to a cryptographic key that only the intended recipient has. This prevents unauthorized use of the token by malicious actors. AT PoP enhances data protection, reduces token replay attacks, and enables fine-grained authorization policies.
+AT PoP is a security mechanism that binds an access token to a cryptographic key that only the token requestor has. This prevents unauthorized use of the token by malicious actors. AT PoP enhances data protection, reduces token replay attacks, and enables fine-grained authorization policies.
 
-Note: AT PoP requires WAM to function.
+Note: AT PoP requires Web Account Manager (WAM) to function.
 
 Microsoft Graph PowerShell module supports AT PoP in the following scenario:
 

@@ -57,6 +57,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public IGraphOption GraphOption { get; set; }
 
         /// <summary>
+        /// Temporarily stores the user's Graph request details such as Method and Uri. Essential as part of the Proof of Possession efforts.
+        /// </summary>
+        public IGraphRequestProofofPossession GraphRequestProofofPossession { get; set; }
+
+        /// <summary>
         /// Represents a collection of Microsoft Graph PowerShell meta-info.
         /// </summary>
         public Hashtable[] MgCommandMetadata { get; set; }

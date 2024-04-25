@@ -12,5 +12,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Interfaces
         IDataStore DataStore { get; set; }
         IRequestContext RequestContext { get; set; }
         IGraphOption GraphOption { get; set; }
+        IGraphRequestProofofPossession GraphRequestProofofPossession { get; set; }
     }
 }

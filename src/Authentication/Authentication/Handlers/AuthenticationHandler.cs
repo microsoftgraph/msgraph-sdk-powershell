@@ -3,7 +3,9 @@
 // ------------------------------------------------------------------------------
 
 
+using Azure.Core;
 using Microsoft.Graph.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using Microsoft.Graph.PowerShell.Authentication.Extensions;
 using System;
 using System.Collections.Generic;
@@ -63,9 +65,24 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
         {
             if (AuthenticationProvider != null)
             {
-                var accessToken = await AuthenticationProvider.GetAuthorizationTokenAsync(httpRequestMessage.RequestUri, additionalAuthenticationContext, cancellationToken: cancellationToken).ConfigureAwait(false);
-                if (!string.IsNullOrEmpty(accessToken))
-                    httpRequestMessage.Headers.Authorization = new AuthenticationHeaderValue(BearerAuthenticationScheme, accessToken);
+                if (AuthenticationHelpers.IsATPoPSupported())
+                {
+                    GraphSession.Instance.GraphRequestProofofPossession.Request.Method = AuthenticationHelpers.ConvertToAzureRequestMethod(httpRequestMessage.Method);
+                    GraphSession.Instance.GraphRequestProofofPossession.Request.Uri.Reset(httpRequestMessage.RequestUri);
+                    foreach (var header in httpRequestMessage.Headers)
+                    {
+                        GraphSession.Instance.GraphRequestProofofPossession.Request.Headers.Add(header.Key, header.Value.First());
+                    }
+                    
+                    var accessToken = GraphSession.Instance.GraphRequestProofofPossession.BrowserCredential.GetTokenAsync(GraphSession.Instance.GraphRequestProofofPossession.PopTokenContext, cancellationToken).Result;
+                    httpRequestMessage.Headers.Authorization = new AuthenticationHeaderValue("Pop", accessToken.Token);
+                }
+                else
+                {
+                    var accessToken = await AuthenticationProvider.GetAuthorizationTokenAsync(httpRequestMessage.RequestUri, additionalAuthenticationContext, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    if (!string.IsNullOrEmpty(accessToken))
+                        httpRequestMessage.Headers.Authorization = new AuthenticationHeaderValue(BearerAuthenticationScheme, accessToken);
+                }
             }
         }
 
@@ -86,6 +103,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
                     additionalRequestInfo.Add(ClaimsKey, claims);
                 }
                 await DrainAsync(httpResponseMessage).ConfigureAwait(false);
+
+                if (AuthenticationHelpers.IsATPoPSupported())
+                {
+                    var popChallenge = httpResponseMessage.Headers.WwwAuthenticate.First(wa => wa.Scheme == "PoP");
+                    var nonceStart = popChallenge.Parameter.IndexOf("nonce=\"") + "nonce=\"".Length;
+                    var nonceEnd = popChallenge.Parameter.IndexOf('"', nonceStart);
+                    GraphSession.Instance.GraphRequestProofofPossession.ProofofPossessionNonce = popChallenge.Parameter.Substring(nonceStart, nonceEnd - nonceStart);
+                    GraphSession.Instance.GraphRequestProofofPossession.PopTokenContext = new PopTokenRequestContext(GraphSession.Instance.AuthContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: GraphSession.Instance.GraphRequestProofofPossession.ProofofPossessionNonce, request: GraphSession.Instance.GraphRequestProofofPossession.Request);
+                }
 
                 // Authenticate request using auth provider
                 await AuthenticateRequestAsync(newRequest, additionalRequestInfo, cancellationToken).ConfigureAwait(false);
