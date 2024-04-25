@@ -15,7 +15,10 @@ using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -120,7 +123,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var interactiveOptions = IsWamSupported() ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
+            var interactiveOptions = IsWamSupported() ?
+                                        new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) :
+                                        new InteractiveBrowserCredentialOptions();
             interactiveOptions.ClientId = authContext.ClientId;
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
@@ -138,8 +143,21 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         // Logic to implement ATPoP Authentication
                         authRecord = await Task.Run(() =>
                         {
-                            var popTokenAuthenticationPolicy = new PopTokenAuthenticationPolicy(interactiveBrowserCredential as ISupportsProofOfPossession, $"https://graph.microsoft.com/.default");
+                            // Creating a Request to retrieve nonce value
+                            string popNonce = null;
+                            var popNonceToken = "nonce=\"";
+                            Uri resourceUri = new Uri("https://canary.graph.microsoft.com/beta/me"); //PPE (https://graph.microsoft-ppe.com) or Canary (https://canary.graph.microsoft.com) or (https://20.190.132.47/beta/me)
+                            HttpClient httpClient = new(new HttpClientHandler { ServerCertificateCustomValidationCallback = (_, _, _, _) => true });
+                            HttpResponseMessage response = httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, resourceUri)).Result;
 
+                            // Find the WWW-Authenticate header in the response.
+                            var popChallenge = response.Headers.WwwAuthenticate.First(wa => wa.Scheme == "PoP");
+                            var nonceStart = popChallenge.Parameter.IndexOf(popNonceToken) + popNonceToken.Length;
+                            var nonceEnd = popChallenge.Parameter.IndexOf('"', nonceStart);
+                            popNonce = popChallenge.Parameter.Substring(nonceStart, nonceEnd - nonceStart);
+
+                            // Refresh token logic --- start
+                            var popTokenAuthenticationPolicy = new PopTokenAuthenticationPolicy(interactiveBrowserCredential as ISupportsProofOfPossession, $"https://graph.microsoft.com/.default");
                             var pipelineOptions = new HttpPipelineOptions(new PopClientOptions()
                             {
                                 Diagnostics = 
@@ -151,16 +169,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                             pipelineOptions.PerRetryPolicies.Add(popTokenAuthenticationPolicy);
 
                             var _pipeline = HttpPipelineBuilder.Build(pipelineOptions, new HttpPipelineTransportOptions { ServerCertificateCustomValidationCallback = (_) => true });
+                            
                             using var request = _pipeline.CreateRequest();
                             request.Method = RequestMethod.Get;
-                            request.Uri.Reset(new Uri("https://20.190.132.47/beta/me"));
-                            var response = _pipeline.SendRequest(request, cancellationToken);
-                            var message = new HttpMessage(request, new ResponseClassifier());
-
+                            request.Uri.Reset(resourceUri);
+                         
                             // Manually invoke the authentication policy's process method
-                            popTokenAuthenticationPolicy.ProcessAsync(message, ReadOnlyMemory<HttpPipelinePolicy>.Empty);
+                            popTokenAuthenticationPolicy.ProcessAsync(new HttpMessage(request, new ResponseClassifier()), ReadOnlyMemory<HttpPipelinePolicy>.Empty);
+                            // Refresh token logic --- end
+
                             // Run the thread in MTA.
-                            return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                            var popContext = new PopTokenRequestContext(authContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: popNonce, request: request);
+                            //var token = interactiveBrowserCredential.GetToken(popContext, cancellationToken);
+                            return interactiveBrowserCredential.Authenticate(popContext, cancellationToken);
                         });
                     }
                     else
