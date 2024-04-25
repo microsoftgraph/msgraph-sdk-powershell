@@ -12,8 +12,8 @@ Describe "Set-MgGraphOption" {
         it 'Should have one ParameterSets' {
             $SetMgGraphOptionCommand = Get-Command Set-MgGraphOption
             $SetMgGraphOptionCommand | Should -Not -BeNullOrEmpty
-            $SetMgGraphOptionCommand.ParameterSets | Should -HaveCount 1
-            $SetMgGraphOptionCommand.ParameterSets.Parameters | Should -HaveCount 13 # PS common parameters.
+            $SetMgGraphOptionCommand.ParameterSets | Should -HaveCount 2
+            $SetMgGraphOptionCommand.ParameterSets.Parameters | Should -HaveCount 14 # PS common parameters.
         }
     
         It 'Executes successfully whren toggling WAM on' {

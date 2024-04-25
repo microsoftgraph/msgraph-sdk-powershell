@@ -12,8 +12,8 @@ Describe "Get-MgGraphOption Command" {
         it 'Should have one ParameterSets' {
             $GetMgGraphOptionCommand = Get-Command Set-MgGraphOption
             $GetMgGraphOptionCommand | Should -Not -BeNullOrEmpty
-            $GetMgGraphOptionCommand.ParameterSets | Should -HaveCount 1
-            $GetMgGraphOptionCommand.ParameterSets.Parameters | Should -HaveCount 13 # PS common parameters.
+            $GetMgGraphOptionCommand.ParameterSets | Should -HaveCount 2
+            $GetMgGraphOptionCommand.ParameterSets.Parameters | Should -HaveCount 14 # PS common parameters.
         }
     
         It 'Executes successfully' {
