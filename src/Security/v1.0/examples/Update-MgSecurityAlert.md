@@ -1,52 +1,56 @@
 ### Example 1: Request without Prefer header
 
-```powershellImport-Module Microsoft.Graph.Security
+```powershell
+
+Import-Module Microsoft.Graph.Security
 
 $params = @{
 	assignedTo = "String"
 	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
 	comments = @(
-		"String"
-	)
-	feedback = "@odata.type: microsoft.graph.alertFeedback"
-	status = "@odata.type: microsoft.graph.alertStatus"
-	tags = @(
-		"String"
-	)
-	vendorInformation = @{
-		provider = "String"
-		vendor = "String"
-	}
+	"String"
+)
+feedback = "@odata.type: microsoft.graph.alertFeedback"
+status = "@odata.type: microsoft.graph.alertStatus"
+tags = @(
+"String"
+)
+vendorInformation = @{
+provider = "String"
+vendor = "String"
+}
 }
 
 Update-MgSecurityAlert -AlertId $alertId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgSecurityAlert Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will request without prefer header
 
 ### Example 2: Request with Prefer header
 
-```powershellImport-Module Microsoft.Graph.Security
+```powershell
+
+Import-Module Microsoft.Graph.Security
 
 $params = @{
 	assignedTo = "String"
 	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
 	comments = @(
-		"String"
-	)
-	feedback = "@odata.type: microsoft.graph.alertFeedback"
-	status = "@odata.type: microsoft.graph.alertStatus"
-	tags = @(
-		"String"
-	)
-	vendorInformation = @{
-		provider = "String"
-		vendor = "String"
-	}
+	"String"
+)
+feedback = "@odata.type: microsoft.graph.alertFeedback"
+status = "@odata.type: microsoft.graph.alertStatus"
+tags = @(
+"String"
+)
+vendorInformation = @{
+provider = "String"
+vendor = "String"
+}
 }
 
 Update-MgSecurityAlert -AlertId $alertId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgSecurityAlert Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will request with prefer header
 

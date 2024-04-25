@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Devices.CloudPrint
+```powershell
+
+Import-Module Microsoft.Graph.Devices.CloudPrint
 
 $params = @{
 	displayName = "Test TaskDefinitionName"
@@ -10,7 +12,7 @@ $params = @{
 }
 
 Update-MgPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgPrintTaskDefinition Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
