@@ -63,6 +63,9 @@ extends:
   parameters:
     pool: $(BuildAgent)
     sdl:
+      binskim:
+        enabled: false
+        justificationForDisabling: "Binskim keeps on crushing and failing the weekly build pipeline. Disabling it for now because we are unable to publish the artifacts to internal feeds."
       credscan:
         suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
       policheck:
