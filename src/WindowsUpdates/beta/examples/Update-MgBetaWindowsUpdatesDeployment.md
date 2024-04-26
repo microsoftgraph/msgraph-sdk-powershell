@@ -1,36 +1,46 @@
-### Example 1: Using the Update-MgBetaWindowsUpdatesDeployment Cmdlet
+### Example 1: Pause a deployment
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.WindowsUpdates
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
-	State = @{
+	state = @{
 		"@odata.type" = "microsoft.graph.windowsUpdates.deploymentState"
-		RequestedValue = "paused"
+		requestedValue = "paused"
 	}
 }
+
 Update-MgBetaWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaWindowsUpdatesDeployment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgBetaWindowsUpdatesDeployment Cmdlet
+This example will pause a deployment
+
+### Example 2: Update deployment settings to add a monitoring rule
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.WindowsUpdates
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
-	Settings = @{
-		"@odata.type" = "microsoft.graph.windowsUpdates.windowsDeploymentSettings"
-		Monitoring = @{
-			MonitoringRules = @(
+	settings = @{
+		"@odata.type" = "microsoft.graph.windowsUpdates.deploymentSettings"
+		monitoring = @{
+			monitoringRules = @(
 				@{
-					Signal = "rollback"
-					Threshold = 5
-					Action = "pauseDeployment"
+					signal = "rollback"
+					threshold = 5
+					action = "pauseDeployment"
 				}
 			)
 		}
 	}
 }
+
 Update-MgBetaWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaWindowsUpdatesDeployment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will update deployment settings to add a monitoring rule
+

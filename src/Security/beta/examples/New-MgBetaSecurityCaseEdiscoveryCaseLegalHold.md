@@ -1,23 +1,30 @@
-### Example 1: Using the New-MgBetaSecurityCaseEdiscoveryCaseLegalHold Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Security
+
 $params = @{
-	Displayname = "My legalHold with sources"
-	Description = "Created from Graph API"
-	ContentQuery = "Bazooka"
-	"UserSources@odata.bind" = @(
+	displayName = "My legalHold with sources"
+	description = "Created from Graph API"
+	"userSources@odata.bind" = @(
 		@{
 			"@odata.type" = "microsoft.graph.security.userSource"
-			Email = "SalesTeam@M365x809305.OnMicrosoft.com"
+			email = "SalesTeam@contoso.com"
 		}
 	)
-	"SiteSources@odata.bind" = @(
+	"siteSources@odata.bind" = @(
 		@{
 			"@odata.type" = "microsoft.graph.security.siteSource"
+			site = @{
+				webUrl = "https://m365x809305.sharepoint.com/sites/Design-topsecret"
+			}
 		}
 	)
 }
+
 New-MgBetaSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaSecurityCaseEdiscoveryCaseLegalHold Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

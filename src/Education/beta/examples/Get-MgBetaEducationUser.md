@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Education
 
-Get-MgBetaEducationUser -EducationUserId $educationUserId
+Get-MgBetaEducationUser
 
 ```
 This example shows how to use the Get-MgBetaEducationUser Cmdlet.

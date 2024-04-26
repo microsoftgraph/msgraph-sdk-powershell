@@ -1,32 +1,32 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.educationSchool"
-	displayName = "String"
-	description = "String"
+	displayName = "Fabrikam High School"
+	description = "Magnate school for the arts. Los Angeles School District"
 	externalSource = "String"
-	externalSourceDetail = "String"
-	principalEmail = "String"
-	principalName = "String"
-	externalPrincipalId = "String"
-	lowestGrade = "String"
-	highestGrade = "String"
-	schoolNumber = "String"
-	externalId = "String"
-	phone = "String"
-	fax = "String"
-	createdBy = @{
-		"@odata.type" = "microsoft.graph.identitySet"
-	}
+	principalEmail = "AmyR@fabrikam.com"
+	principalName = "Amy Roebuck"
+	externalPrincipalId = "14007"
+	highestGrade = "12"
+	lowestGrade = "9"
+	schoolNumber = "10002"
 	address = @{
-		"@odata.type" = "microsoft.graph.physicalAddress"
+		city = "Los Angeles"
+		countryOrRegion = "United States"
+		postalCode = "98055"
+		state = "CA"
+		street = "12345 Main St."
 	}
+	externalId = "10002"
+	phone = "+1 (253) 555-0102"
 }
 
 New-MgBetaEducationSchool -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaEducationSchool Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

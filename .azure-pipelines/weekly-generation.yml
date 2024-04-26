@@ -14,9 +14,6 @@ parameters:
 - name: BaseBranch
   displayName: Base Branch
   default: dev
-- name: GenerationBranch
-  displayName: Generation branch
-  default: v2/generation
 - name: SkipForceRefresh
   displayName: Skip Force Refresh
   default: false
@@ -40,7 +37,6 @@ parameters:
 variables:
   Branch: "WeeklyApiRefresh"
   BaseBranch: ${{ parameters.BaseBranch }}
-  GenerationBranch: ${{ parameters.GenerationBranch }}
   BuildAgent: ${{ parameters.BuildAgent }}
   SkipForceRefresh: ${{ parameters.SkipForceRefresh }}
 trigger: none
@@ -142,51 +138,4 @@ extends:
               BaseBranch: $(BaseBranch)
               TargetBranch: $(WeeklyBranch)
               Title: "[v2] Weekly OpenApiDocs Refresh"
-              Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
-        - task: PowerShell@2
-          name: "ComputeGenerationBranch"
-          displayName: "Compute weekly generation branch name"
-          inputs:
-            targetType: inline
-            script: |
-              $branch = "{0}/{1}" -f "WeeklyGeneration", (Get-Date -Format yyyyMMddHHmm)
-              Write-Host "##vso[task.setvariable variable=WeeklyGenerationBranch;isOutput=true]$branch"
-        - task: Bash@3
-          displayName: "Create weekly generation branch"
-          inputs:
-            targetType: inline
-            script: |
-              git status
-              git branch $(ComputeGenerationBranch.WeeklyGenerationBranch)
-              git checkout $(ComputeGenerationBranch.WeeklyGenerationBranch)
-              git status
-        - task: Bash@3
-          displayName: Commit Generated SDK artifacts
-          enabled: true
-          env:
-            GITHUB_TOKEN: $(GITHUB_TOKEN)
-          inputs:
-            targetType: inline
-            script: |
-              git add .
-              git commit -m 'Adds generated module artifacts'
-              git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
-              git status
-        - task: Bash@3
-          displayName: Sync with generation branch
-          enabled: true
-          env:
-            GITHUB_TOKEN: $(GITHUB_TOKEN)
-          inputs:
-            targetType: inline
-            script: |
-              git merge $(GenerationBranch) -s ours
-              git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
-              git status
-        - ${{ if eq(parameters.CreatePullRequest, true) }}:
-          - template: .azure-pipelines/common-templates/create-pr.yml@self
-            parameters:
-              BaseBranch: $(GenerationBranch)
-              TargetBranch: $(ComputeGenerationBranch.WeeklyGenerationBranch)
-              Title: "[v2] Weekly Generated Module Artifacts"
               Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."

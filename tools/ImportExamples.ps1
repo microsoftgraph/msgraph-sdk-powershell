@@ -5,8 +5,7 @@ Param(
     $Available = @(),
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $FolderForExamplesToBeReviewed = (Join-Path $PSScriptRoot "..\examplesreport"),
-    [string] $ExamplesToBeReviewed = "ExamplesToBeReviewed.csv",
-    $MetaDataJsonFile = (Join-Path $PSScriptRoot "../src/Authentication/Authentication/custom/common/MgCommandMetadata.json")
+    [string] $ExamplesToBeReviewed = "ExamplesToBeReviewed.csv"
 )
 function Start-Generator {
     Param(
@@ -36,8 +35,7 @@ function Start-Generator {
             $ProfilePathMapping = "beta\examples"
         }
         $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
-        Get-ExternalDocsUrl -ManualExternalDocsUrl $ManualExternalDocsUrl -GenerationMode $GenerationMode -GraphProfilePath $ModulePath -Command $GraphCommand -GraphProfile $ProfilePath -Module $GraphModule
-            
+        Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ManualExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -Module $GraphModule   
     }
 }
 function Get-FilesByProfile {
@@ -54,13 +52,7 @@ function Get-FilesByProfile {
     $ModulesToGenerate | ForEach-Object {
         $ModuleName = $_
         $ModulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$GraphProfilePath"
-        $OpenApiFile = Join-Path $PSScriptRoot "..\openApiDocs\v1.0\$ModuleName.yml"
-        #test this path first before proceeding
-        if (Test-Path $OpenApiFile) {
-            $yamlContent = Get-Content -Path $OpenApiFile
-            $OpenApiContent = ($yamlContent | ConvertFrom-Yaml)
-            Get-Files -GraphProfile $GraphProfile -GraphProfilePath $modulePath -Module $ModuleName -OpenApiContent $OpenApiContent
-        }
+        Get-Files -GraphProfile $GraphProfile -GraphProfilePath $modulePath -Module $ModuleName   
     }
 
 }
@@ -71,8 +63,7 @@ function Get-Files {
         [ValidateNotNullOrEmpty()]
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\v1.0\examples"),
         [ValidateNotNullOrEmpty()]
-        [string] $Module = "Users",
-        [Hashtable] $OpenApiContent 
+        [string] $Module = "Users"
     )
     
     try {
@@ -82,15 +73,23 @@ function Get-Files {
                
                 #Extract command over here
                 $Command = [System.IO.Path]::GetFileNameWithoutExtension($File)
+                
                 if ($Command -ine "README") {
                     #Extract URI path
-                    $CommandDetails = Find-MgGraphCommand -Command $Command
-                    if ($CommandDetails) {
-                        foreach ($CommandDetail in $CommandDetails) {
-                            $ApiPath = $CommandDetail.URI
-                            $Method = $CommandDetails.Method
-                            Get-ExternalDocsUrl -GraphProfile $GraphProfile -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module
+                    $ApiRefLinks = (Find-MgGraphCommand -Command $Command).ApiReferenceLink
+                   
+                    if ($ApiRefLinks) {
+                        foreach ($ApiRefLink in $ApiRefLinks) {
+                                
+                                
+                            if (-not($null -eq $ApiRefLink -or $ApiRefLink -eq "")) {
+                                $ExternalDocsUrl = $ApiRefLink + "&tabs=powershell"
+                                Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ExternalDocsUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath -Module $Module
+                            }
+                                   
                         }
+                    
+
                     }
                     else {
                         #Clear any content in that file as long as its not a readme file
@@ -98,6 +97,7 @@ function Get-Files {
                     
                     }
                 }
+            
             }
         }
     }
@@ -108,96 +108,6 @@ function Get-Files {
         Write-Host "`nError Item Name: "$_.Exception.ItemName
     }
     
-}
-function Get-ExternalDocsUrl {
-
-    param(
-        [ValidateSet("beta", "v1.0")]
-        [string] $GraphProfile = "v1.0",
-        [string] $UriPath,
-        [string] $Module = "Users",
-        [string] $GenerationMode = "auto",
-        [string] $ManualExternalDocsUrl,
-        [ValidateNotNullOrEmpty()]
-        [string] $Command = "Get-MgUser",
-        [Hashtable] $OpenApiContent,
-        [System.Object] $Method = "GET",
-        [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\v1.0\examples")
-    )
-    if ($GenerationMode -eq "manual") {
-
-        if (-not([string]::IsNullOrEmpty($ManualExternalDocsUrl))) {
-    
-            Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ManualExternalDocsUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath -Module $Module
-        }
-
-    }
-    else {
-        if ($UriPath) {
-    
-            if ($OpenApiContent.openapi && $OpenApiContent.info.version) {
-                foreach ($Path in $OpenApiContent.paths) {
-                    $ExternalDocUrl = $null
-                    switch ($Method) {
-                        "GET" {
-                            $ExternalDocUrl = $path[$UriPath].get.externalDocs.url
-                            if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                #Try with microsoft.graph prefix on the last path segment
-                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
-                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].get.externalDocs.url
-                            }
-                        }
-                        "POST" {
-                            $ExternalDocUrl = $Path[$UriPath].post.externalDocs.url 
-                            if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                #Try with microsoft.graph prefix on the last path segment
-                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
-                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].post.externalDocs.url
-                            }
-                        }
-                        "PATCH" {
-                            $ExternalDocUrl = $Path[$UriPath].patch.externalDocs.url
-                            if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                #Try with microsoft.graph prefix on the last path segment
-                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
-                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].patch.externalDocs.url
-                            } 
-                        }
-                        "DELETE" {
-                            $ExternalDocUrl = $Path[$UriPath].delete.externalDocs.url
-                            if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                #Try with microsoft.graph prefix on the last path segment
-                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
-                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].delete.externalDocs.url
-                            }
-                        }
-                        "PUT" {
-                            $ExternalDocUrl = $Path[$UriPath].put.externalDocs.url
-                            if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                #Try with microsoft.graph prefix on the last path segment
-                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
-                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].put.externalDocs.url
-                            }
-                        }
-
-                    }
-                    if (-not([string]::IsNullOrEmpty($ExternalDocUrl))) {
-                        Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ExternalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath -Module $Module
-                    }
-                    else {
-                        # This step will still correct the examples if the external docs url is not found.
-                        $ExampleFile = "$GraphProfilePath/$Command.md"
-                        $boilerPlateCode = Select-String -Path $File -Pattern "Add title here"
-                        if ($boilerPlateCode.Length -eq 0){
-                            Retain-ExistingCorrectExamples -Content (Get-Content $ExampleFile) -File $ExampleFile -CommandPattern $Command
-                        }  
-                    }
-                }
-    
-            }
-        }
-    }
-
 }
 
 function Append-GraphPrefix {

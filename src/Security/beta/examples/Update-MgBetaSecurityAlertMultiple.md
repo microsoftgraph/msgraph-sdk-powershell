@@ -1,32 +1,37 @@
-### Example 1: Using the Update-MgBetaSecurityAlertMultiple Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Security
+
 $params = @{
-	Value = @(
+	value = @(
 		@{
-			AssignedTo = "String"
-			ClosedDateTime = [System.DateTime]::Parse("String (timestamp)")
-			Comments = @(
-				"String"
-			)
-			Feedback = @{
-				"@odata.type" = "microsoft.graph.alertFeedback"
-			}
-			Id = "String (identifier)"
-			Status = @{
-				"@odata.type" = "microsoft.graph.alertStatus"
-			}
-			Tags = @(
-				"String"
-			)
-			VendorInformation = @{
-				Provider = "String"
-				Vendor = "String"
-			}
+			assignedTo = "String"
+			closedDateTime = [System.DateTime]::Parse("String (timestamp)")
+			comments = @(
+			"String"
+		)
+		feedback = @{
+			"@odata.type" = "microsoft.graph.alertFeedback"
 		}
+		id = "String (identifier)"
+		status = @{
+			"@odata.type" = "microsoft.graph.alertStatus"
+		}
+		tags = @(
+		"String"
 	)
+	vendorInformation = @{
+		provider = "String"
+		vendor = "String"
+	}
 }
+)
+}
+
 Update-MgBetaSecurityAlertMultiple -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgBetaSecurityAlertMultiple Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

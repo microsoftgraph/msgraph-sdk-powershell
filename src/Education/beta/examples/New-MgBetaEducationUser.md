@@ -1,72 +1,42 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.educationUser"
-	primaryRole = "String"
-	middleName = "String"
-	externalSource = "String"
-	externalSourceDetail = "String"
-	residenceAddress = @{
-		"@odata.type" = "microsoft.graph.physicalAddress"
-	}
-	mailingAddress = @{
-		"@odata.type" = "microsoft.graph.physicalAddress"
-	}
-	student = @{
-		"@odata.type" = "microsoft.graph.educationStudent"
-	}
-	teacher = @{
-		"@odata.type" = "microsoft.graph.educationTeacher"
-	}
+	displayName = "Dion Matheson"
+	givenName = "Dion"
+	middleName = $null
+	surname = "Matheson"
+	mail = "DionM@contoso.com"
+	mobilePhone = "+1 (253) 555-0101"
 	createdBy = @{
-		"@odata.type" = "microsoft.graph.identitySet"
+		user = @{
+			displayName = "Susana Rocha"
+			id = "14012"
+		}
 	}
-	accountEnabled = "Boolean"
-	assignedLicenses = @(
-		@{
-			"@odata.type" = "microsoft.graph.assignedLicense"
-		}
-	)
-	assignedPlans = @(
-		@{
-			"@odata.type" = "microsoft.graph.assignedPlan"
-		}
-	)
-	businessPhones = @(
-		"String"
-	)
-	department = "String"
-	displayName = "String"
-	givenName = "String"
-	mail = "String"
-	mailNickname = "String"
-	mobilePhone = "String"
-	passwordPolicies = "String"
-	passwordProfile = @{
-		"@odata.type" = "microsoft.graph.passwordProfile"
+	externalSource = "sis"
+	mailingAddress = @{
+		city = "Los Angeles"
+		countryOrRegion = "United States"
+		postalCode = "98055"
+		state = "CA"
+		street = "12345 Main St."
 	}
-	officeLocation = "String"
-	preferredLanguage = "String"
-	provisionedPlans = @(
-		@{
-			"@odata.type" = "microsoft.graph.provisionedPlan"
-		}
-	)
-	refreshTokensValidFromDateTime = [System.DateTime]::Parse("String (timestamp)")
-	showInAddressList = "Boolean"
-	surname = "String"
-	usageLocation = "String"
-	userPrincipalName = "String"
-	userType = "String"
-	onPremisesInfo = @{
-		"@odata.type" = "microsoft.graph.educationOnPremisesInfo"
+	primaryRole = "student"
+	residenceAddress = @{
+		city = "Los Angeles"
+		countryOrRegion = "United States"
+		postalCode = "98055"
+		state = "CA"
+		street = "12345 Main St."
 	}
 }
 
 New-MgBetaEducationUser -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaEducationUser Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

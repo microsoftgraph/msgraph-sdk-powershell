@@ -1,11 +1,16 @@
-### Example 1: Using the New-MgBetaPlannerRosterMember Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Planner
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.plannerRosterMember"
-	UserId = "String"
+	userId = "String"
 }
+
 New-MgBetaPlannerRosterMember -PlannerRosterId $plannerRosterId -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaPlannerRosterMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
