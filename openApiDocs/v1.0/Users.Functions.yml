@@ -1773,6 +1773,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.chat.message.reply_delta
       parameters:
         - name: user-id
@@ -1866,6 +1870,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.chat.message_delta
       parameters:
         - name: user-id
@@ -1951,6 +1959,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
+      description: 'Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0
       operationId: user.chat_getAllMessage
       parameters:
         - name: user-id
@@ -2673,6 +2685,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: user.drive.item_delta
       parameters:
         - name: user-id
@@ -2867,6 +2883,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
+      description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: user.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
@@ -3071,6 +3091,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: user.drive.item_search
       parameters:
         - name: user-id
@@ -3169,6 +3193,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function isPublished
+      description: Check the publishing status of a contentType in a content type hub site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
       operationId: user.drive.list.contentType_isPublished
       parameters:
         - name: user-id
@@ -3216,6 +3244,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCompatibleHubContentTypes
+      description: 'Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
       operationId: user.drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: user-id
@@ -3497,11 +3529,197 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/drives/{drive-id}/list/items/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
+      operationId: user.drive.list.item_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/drives/{drive-id}/list/items/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: user.drive.list.item_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: token
+          in: path
+          description: 'Usage: token=''{token}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/drives/{drive-id}/microsoft.graph.recent()':
     get:
       tags:
         - users.Functions
       summary: Invoke function recent
+      description: "List a set of items that have been recently used by the signed in user.\nThis collection includes items that are in the user's drive and items they have access to from other drives."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
       operationId: user.drive_recent
       parameters:
         - name: user-id
@@ -3569,6 +3787,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: user.drive_search
       parameters:
         - name: user-id
@@ -3644,6 +3866,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function sharedWithMe
+      description: Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
       operationId: user.drive_sharedGraphWPreMe
       parameters:
         - name: user-id
@@ -3899,6 +4125,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: user.drive.root_delta
       parameters:
         - name: user-id
@@ -4077,6 +4307,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
+      description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: user.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
@@ -4265,6 +4499,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: user.drive.root_search
       parameters:
         - name: user-id
@@ -4557,6 +4795,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_delta
       parameters:
         - name: user-id
@@ -4658,6 +4900,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_delta
       parameters:
         - name: user-id
@@ -4751,6 +4997,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function doesUserHaveAccess
+      description: Determine whether a user has access to a shared channel.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_doesUserHaveAccess
       parameters:
         - name: user-id
@@ -4822,6 +5072,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
+      description: 'Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_getAllMessage
       parameters:
         - name: user-id
@@ -4911,6 +5165,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_delta
       parameters:
         - name: user-id
@@ -5004,6 +5262,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_delta
       parameters:
         - name: user-id
@@ -5089,6 +5351,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function doesUserHaveAccess
+      description: Determine whether a user has access to a shared channel.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_doesUserHaveAccess
       parameters:
         - name: user-id
@@ -5228,6 +5494,35 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/licenseDetails/microsoft.graph.getTeamsLicensingDetails()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getTeamsLicensingDetails
+      description: Get the license status of a user in Microsoft Teams.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-1.0
+      operationId: user.licenseDetail_getTeamsLicensingDetail
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsLicensingDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/microsoft.graph.delta()':
     get:
       tags:
@@ -5754,6 +6049,9 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppDiagnosticStatuses
       description: Gets diagnostics validation status for a given user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0
       operationId: user_getManagedAppDiagnosticStatus
       parameters:
         - name: user-id
@@ -5784,6 +6082,9 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppPolicies
       description: Gets app restrictions for a given user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedapppolicies?view=graph-rest-1.0
       operationId: user_getManagedAppPolicy
       parameters:
         - name: user-id
@@ -5844,6 +6145,9 @@ paths:
         - users.Functions
       summary: Invoke function getManagedDevicesWithAppFailures
       description: Retrieves the list of devices with failed apps
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-troubleshooting-user-getmanageddeviceswithappfailures?view=graph-rest-1.0
       operationId: user_getManagedDevicesGraphWPreAppFailure
       parameters:
         - name: user-id
@@ -5873,6 +6177,9 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function reminderView
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-1.0
       operationId: user_reminderView
       parameters:
         - name: user-id
@@ -6023,6 +6330,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getRecentNotebooks
+      description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0
       operationId: user.onenote.notebook_getRecentNotebook
       parameters:
         - name: user-id
@@ -6197,6 +6508,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getVirtualAppointmentJoinWebUrl
+      description: 'Get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0
       operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: user-id
@@ -6376,6 +6691,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user''s todoTask resources without having to fetch the entire set from the server every time.  '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0
       operationId: user.todo.list.task_delta
       parameters:
         - name: user-id
@@ -6461,6 +6780,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: "Get a set of todoTaskList resources that have been added, deleted, or removed in Microsoft To Do. A delta function call for todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, \nyou can query for incremental changes in the todoTaskList. This allows you to maintain and synchronize a local store of a user's todoTaskList without having to fetch all the todoTaskList from the server every time."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/todotasklist-delta?view=graph-rest-1.0
       operationId: user.todo.list_delta
       parameters:
         - name: user-id
@@ -6538,6 +6861,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted users without having to perform a full read of the entire user collection. See change tracking for details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-delta?view=graph-rest-1.0
       operationId: user_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7288,13 +7615,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -7382,6 +7709,48 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions for this content type.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.listItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: listItem
+          type: object
+          properties:
+            contentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            sharepointIds:
+              $ref: '#/components/schemas/microsoft.graph.sharepointIds'
+            analytics:
+              $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
+            documentSetVersions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
+              description: Version information for a document set version created by a user.
+              x-ms-navigationProperty: true
+            driveItem:
+              $ref: '#/components/schemas/microsoft.graph.driveItem'
+            fields:
+              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+              description: The list of previous versions of the list item.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsLicensingDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsLicensingDetails
+          type: object
+          properties:
+            hasTeamsLicense:
+              type: boolean
+              description: Indicates whether the user has a valid license to use Microsoft Teams.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.message:
@@ -9632,36 +10001,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
           additionalProperties:
             type: object
-    microsoft.graph.listItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: listItem
-          type: object
-          properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            sharepointIds:
-              $ref: '#/components/schemas/microsoft.graph.sharepointIds'
-            analytics:
-              $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
-            documentSetVersions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
-              description: Version information for a document set version created by a user.
-              x-ms-navigationProperty: true
-            driveItem:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-            fields:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-            versions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-              description: The list of previous versions of the list item.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.permission:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9933,11 +10272,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
           nullable: true
         id:
           type: string
@@ -9953,13 +10292,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -10056,7 +10395,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -10088,6 +10427,66 @@ components:
               $ref: '#/components/schemas/microsoft.graph.columnValidation'
             sourceColumn:
               $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.documentSetVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+        - title: documentSetVersion
+          type: object
+          properties:
+            comment:
+              type: string
+              description: Comment about the captured version.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this version was created.
+              format: date-time
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
+              description: Items within the document set that are captured as part of this version.
+            shouldCaptureMinorVersion:
+              type: boolean
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.fieldValueSet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: fieldValueSet
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.listItemVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItemVersion'
+        - title: listItemVersion
+          type: object
+          properties:
+            fields:
+              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
           additionalProperties:
             type: object
     microsoft.graph.followupFlag:
@@ -10993,7 +11392,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -11105,6 +11504,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -11464,6 +11864,11 @@ components:
               type: string
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
+              readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
               readOnly: true
             ethernetMacAddress:
               type: string
@@ -11986,6 +12391,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -12464,7 +12877,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -12525,66 +12938,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.documentSetVersion:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-        - title: documentSetVersion
-          type: object
-          properties:
-            comment:
-              type: string
-              description: Comment about the captured version.
-              nullable: true
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this version was created.
-              format: date-time
-              nullable: true
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
-              description: Items within the document set that are captured as part of this version.
-            shouldCaptureMinorVersion:
-              type: boolean
-              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.fieldValueSet:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: fieldValueSet
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.listItemVersion:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.baseItemVersion'
-        - title: listItemVersion
-          type: object
-          properties:
-            fields:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -13176,6 +13529,24 @@ components:
         formula:
           type: string
           description: 'The formula to validate column value. For examples, see Examples of common formulas in lists.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.documentSetVersionItem:
+      title: documentSetVersionItem
+      type: object
+      properties:
+        itemId:
+          type: string
+          description: The unique identifier for the item.
+          nullable: true
+        title:
+          type: string
+          description: The title of the item.
+          nullable: true
+        versionId:
+          type: string
+          description: The version ID of the item.
           nullable: true
       additionalProperties:
         type: object
@@ -14074,6 +14445,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -14548,6 +14920,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -16479,24 +16852,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
-    microsoft.graph.documentSetVersionItem:
-      title: documentSetVersionItem
-      type: object
-      properties:
-        itemId:
-          type: string
-          description: The unique identifier for the item.
-          nullable: true
-        title:
-          type: string
-          description: The title of the item.
-          nullable: true
-        versionId:
-          type: string
-          description: The version ID of the item.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -17016,6 +17371,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -17027,9 +17383,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string

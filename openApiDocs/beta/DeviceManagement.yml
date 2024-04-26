@@ -166,11 +166,8 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: List browserSiteLists
-      description: Get a list of the browserSiteList objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-1.0
+      summary: Get siteLists from admin
+      description: A collection of site lists to support Internet Explorer mode.
       operationId: admin.edge.internetExplorerMode_ListSiteList
       parameters:
         - $ref: '#/components/parameters/top'
@@ -220,11 +217,7 @@ paths:
     post:
       tags:
         - admin.edge
-      summary: Create browserSiteList
-      description: Create a new browserSiteList object to support Internet Explorer mode.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/internetexplorermode-post-sitelists?view=graph-rest-1.0
+      summary: Create new navigation property to siteLists for admin
       operationId: admin.edge.internetExplorerMode_CreateSiteList
       requestBody:
         description: New navigation property
@@ -247,11 +240,8 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get browserSiteList
-      description: Get a browserSiteList that contains browserSite and browserSharedCookie resources.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0
+      summary: Get siteLists from admin
+      description: A collection of site lists to support Internet Explorer mode.
       operationId: admin.edge.internetExplorerMode_GetSiteList
       parameters:
         - name: browserSiteList-id
@@ -295,11 +285,7 @@ paths:
     patch:
       tags:
         - admin.edge
-      summary: Update browserSiteList
-      description: Update the properties of a browserSiteList object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0
+      summary: Update the navigation property siteLists in admin
       operationId: admin.edge.internetExplorerMode_UpdateSiteList
       parameters:
         - name: browserSiteList-id
@@ -330,11 +316,7 @@ paths:
     delete:
       tags:
         - admin.edge
-      summary: Delete browserSiteList
-      description: Delete a browserSiteList object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0
+      summary: Delete navigation property siteLists for admin
       operationId: admin.edge.internetExplorerMode_DeleteSiteList
       parameters:
         - name: browserSiteList-id
@@ -361,11 +343,8 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: List browserSharedCookies
-      description: Get a list of the browserSharedCookie objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-1.0
+      summary: Get sharedCookies from admin
+      description: A collection of shared cookies defined for the site list.
       operationId: admin.edge.internetExplorerMode.siteList_ListSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -423,11 +402,7 @@ paths:
     post:
       tags:
         - admin.edge
-      summary: Create browserSharedCookie
-      description: Create a new browserSharedCookie object in a browserSiteList.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersitelist-post-sharedcookies?view=graph-rest-1.0
+      summary: Create new navigation property to sharedCookies for admin
       operationId: admin.edge.internetExplorerMode.siteList_CreateSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -459,11 +434,8 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get browserSharedCookie
-      description: 'Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0
+      summary: Get sharedCookies from admin
+      description: A collection of shared cookies defined for the site list.
       operationId: admin.edge.internetExplorerMode.siteList_GetSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -515,11 +487,7 @@ paths:
     patch:
       tags:
         - admin.edge
-      summary: Update browserSharedCookie
-      description: Update the properties of a browserSharedCookie object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0
+      summary: Update the navigation property sharedCookies in admin
       operationId: admin.edge.internetExplorerMode.siteList_UpdateSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -558,11 +526,7 @@ paths:
     delete:
       tags:
         - admin.edge
-      summary: Delete browserSharedCookie
-      description: Delete a browserSharedCookie from a browserSiteList.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0
+      summary: Delete navigation property sharedCookies for admin
       operationId: admin.edge.internetExplorerMode.siteList_DeleteSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -619,11 +583,8 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: List browserSites
-      description: Get a list of the browserSite objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
+      summary: Get sites from admin
+      description: A collection of sites defined for the site list.
       operationId: admin.edge.internetExplorerMode.siteList_ListSite
       parameters:
         - name: browserSiteList-id
@@ -681,11 +642,7 @@ paths:
     post:
       tags:
         - admin.edge
-      summary: Create browserSite
-      description: Create a new browserSite object in a browserSiteList.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
+      summary: Create new navigation property to sites for admin
       operationId: admin.edge.internetExplorerMode.siteList_CreateSite
       parameters:
         - name: browserSiteList-id
@@ -717,11 +674,8 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get browserSite
-      description: Get a browserSite that resides on a browserSiteList.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
+      summary: Get sites from admin
+      description: A collection of sites defined for the site list.
       operationId: admin.edge.internetExplorerMode.siteList_GetSite
       parameters:
         - name: browserSiteList-id
@@ -773,11 +727,7 @@ paths:
     patch:
       tags:
         - admin.edge
-      summary: Update browserSite
-      description: Update the properties of a browserSite object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
+      summary: Update the navigation property sites in admin
       operationId: admin.edge.internetExplorerMode.siteList_UpdateSite
       parameters:
         - name: browserSiteList-id
@@ -816,11 +766,7 @@ paths:
     delete:
       tags:
         - admin.edge
-      summary: Delete browserSite
-      description: Delete a browserSite from a browserSiteList.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
+      summary: Delete navigation property sites for admin
       operationId: admin.edge.internetExplorerMode.siteList_DeleteSite
       parameters:
         - name: browserSiteList-id
@@ -27522,7 +27468,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: The collection property of AppLogUploadRequest.
+      description: Indicates collection of App Log Upload Request.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_ListAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -27613,7 +27559,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: The collection property of AppLogUploadRequest.
+      description: Indicates collection of App Log Upload Request.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_GetAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -27852,11 +27798,8 @@ paths:
     get:
       tags:
         - deviceManagement.monitoring
-      summary: List alertRecords
-      description: Get a list of the alertRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-list?view=graph-rest-1.0
+      summary: Get alertRecords from deviceManagement
+      description: The collection of records of alert events.
       operationId: deviceManagement.monitoring_ListAlertRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -27929,11 +27872,8 @@ paths:
     get:
       tags:
         - deviceManagement.monitoring
-      summary: Get alertRecord
-      description: Read the properties and relationships of an alertRecord object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-get?view=graph-rest-1.0
+      summary: Get alertRecords from deviceManagement
+      description: The collection of records of alert events.
       operationId: deviceManagement.monitoring_GetAlertRecord
       parameters:
         - name: alertRecord-id
@@ -28049,11 +27989,8 @@ paths:
     get:
       tags:
         - deviceManagement.monitoring
-      summary: List alertRules
-      description: Get a list of the alertRule objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-1.0
+      summary: Get alertRules from deviceManagement
+      description: The collection of alert rules.
       operationId: deviceManagement.monitoring_ListAlertRule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -28103,11 +28040,7 @@ paths:
     post:
       tags:
         - deviceManagement.monitoring
-      summary: Create alertRule
-      description: Create an alertRule object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-1.0
+      summary: Create new navigation property to alertRules for deviceManagement
       operationId: deviceManagement.monitoring_CreateAlertRule
       requestBody:
         description: New navigation property
@@ -28130,11 +28063,8 @@ paths:
     get:
       tags:
         - deviceManagement.monitoring
-      summary: Get alertRule
-      description: Read the properties and relationships of an alertRule object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-1.0
+      summary: Get alertRules from deviceManagement
+      description: The collection of alert rules.
       operationId: deviceManagement.monitoring_GetAlertRule
       parameters:
         - name: alertRule-id
@@ -28178,11 +28108,7 @@ paths:
     patch:
       tags:
         - deviceManagement.monitoring
-      summary: Update alertRule
-      description: Update the properties of an alertRule object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-1.0
+      summary: Update the navigation property alertRules in deviceManagement
       operationId: deviceManagement.monitoring_UpdateAlertRule
       parameters:
         - name: alertRule-id
@@ -42815,7 +42741,7 @@ components:
             intuneAccountId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Intune Account ID for given tenant
+              description: Intune Account Id for given tenant
               format: uuid
             intuneBrand:
               $ref: '#/components/schemas/microsoft.graph.intuneBrand'
@@ -42835,7 +42761,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Maximum number of DEP tokens allowed per-tenant.
+              description: Maximum number of dep tokens allowed per-tenant.
               format: int32
             settings:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementSettings'
@@ -45278,26 +45204,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specify category in which the setting is under. Support $filters.
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
               nullable: true
             description:
               type: string
-              description: Description of the setting.
+              description: Description of the item
               nullable: true
             displayName:
               type: string
-              description: 'Name of the setting. For example: Allow Toast.'
+              description: Display name of the item
               nullable: true
             helpText:
               type: string
-              description: Help text of the setting. Give more details of the setting.
+              description: Help text of the item
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at.
+              description: List of links more info for the setting can be found at
             keywords:
               type: array
               items:
@@ -45321,7 +45247,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition id if the setting is a child setting.
+              description: Root setting definition if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -48249,7 +48175,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -53297,58 +53223,58 @@ components:
           properties:
             configurationFileContent:
               type: string
-              description: File content of the hardware configuration
+              description: The file content contains custom hardware settings that will be applied to the assigned devices' BIOS. Max allowed file size is 5KB. Represented as bytes. Required.
               format: base64url
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the hardware configuration was created. This property is read-only.
+              description: 'The date and time  of when the BIOS configuration profile was created. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-Only. This property is read-only.'
               format: date-time
               readOnly: true
             description:
               type: string
-              description: Description of the hardware configuration
+              description: 'The description of the hardware configuration. Use this to provide context, purpose, applications, etc of the BIOS configuration profile for your organization''s admins. Max length is 1000 characters. Optional.'
               nullable: true
             displayName:
               type: string
-              description: Name of the hardware configuration
+              description: The name of the hardware BIOS configuration profile. It serves as user-friendly name to identify hardware BIOS configuration profiles. Max length is 150 characters. Required. Read-Only.
             fileName:
               type: string
-              description: File name of the hardware configuration
+              description: The file name for the BIOS configuration profile's ConfigurationFileContent. Max length is 150 characters. Required.
             hardwareConfigurationFormat:
               $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationFormat'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the hardware configuration was modified. This property is read-only.
+              description: 'The date and time  of when the BIOS configuration profile was last modified. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-Only. Read-Only. This property is read-only.'
               format: date-time
               readOnly: true
             perDevicePasswordDisabled:
               type: boolean
-              description: A value indicating whether per devcive pasword disabled
+              description: 'When TRUE, indicates whether the policy-assigned devices'' passwords are disabled. When FALSE, indicates they are enabled. Default is FALSE. Required.'
             roleScopeTagIds:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of Scope Tag IDs for the hardware configuration
+              description: A list of unique Scope Tag IDs associated with the hardware configuration. Optional.
             version:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Version of the hardware configuration (E.g. 1, 2, 3 ...)'
+              description: 'The version of the hardware configuration (E.g. 1, 2, 3 ...). This is incremented after a change to the BIOS configuration profile''s settings file name (FileName property), settings file content (ConfigurationFileContent property), or the PerDevicePasswordDisabled property. Read-Only.'
               format: int32
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationAssignment'
-              description: List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+              description: A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
               x-ms-navigationProperty: true
             deviceRunStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationDeviceState'
-              description: List of run states for the hardware configuration across all devices
+              description: List of run states for the hardware configuration across all devices. Read-Only.
               x-ms-navigationProperty: true
             runSummary:
               $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationRunSummary'
@@ -53356,7 +53282,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationUserState'
-              description: List of run states for the hardware configuration across all users
+              description: List of run states for the hardware configuration across all users. Read-Only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -54539,7 +54465,7 @@ components:
               nullable: true
             managementServiceAppId:
               type: string
-              description: AzureAD management app ID used during client device-based enrollment discovery
+              description: 'The Entra management service App ID which gets used during client device-based enrollment discovery. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
               nullable: true
             outOfBoxExperienceSetting:
               $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSetting'
@@ -62547,11 +62473,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -68993,7 +68919,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -69803,11 +69729,11 @@ components:
               nullable: true
             managedAppRegistrationId:
               type: string
-              description: The unique identifier of the app instance for which diagnostic was collected.
+              description: The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
               nullable: true
             requestedBy:
               type: string
-              description: The user principal name associated with the request for the managed application log collection.
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
               nullable: true
             requestedByUserPrincipalName:
               type: string
@@ -69826,7 +69752,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppLogUpload'
-              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs.'
+              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.'
             userLogUploadConsent:
               $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadConsent'
             version:
@@ -70560,6 +70486,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -70570,7 +70497,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+              description: Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
               x-ms-navigationProperty: true
             rosterPlans:
               type: array
@@ -71919,9 +71846,9 @@ components:
           description: The ID of the audit resource.
         resourceType:
           type: string
+          description: The type of the audit resource.
         type:
           type: string
-          description: The type of the audit resource.
       additionalProperties:
         type: object
     microsoft.graph.cloudPcBulkActionSummary:
@@ -74705,13 +74632,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -74936,7 +74863,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -75138,7 +75065,7 @@ components:
               description: 'The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -76091,7 +76018,7 @@ components:
       properties:
         managedAppComponent:
           type: string
-          description: The Mobile Application Management (MAM) Logs Uploading Component.
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
           nullable: true
         managedAppComponentDescription:
           type: string
@@ -76099,7 +76026,7 @@ components:
           nullable: true
         referenceId:
           type: string
-          description: A provider-specific reference id for the uploaded logs.
+          description: A provider-specific reference id for the uploaded logs. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -78664,11 +78591,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -79464,11 +79391,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive.  See drive resource for values.
           nullable: true
         id:
           type: string
@@ -79484,13 +79411,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -84664,7 +84591,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object

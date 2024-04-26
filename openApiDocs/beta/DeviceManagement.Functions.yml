@@ -215,6 +215,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcRemoteActionResults
+      description: Check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta
       operationId: deviceManagement.comanagedDevice_getCloudPcRemoteActionResult
       parameters:
         - name: managedDevice-id
@@ -258,6 +262,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcReviewStatus
+      description: Get the review status of a specific Cloud PC device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/manageddevice-getcloudpcreviewstatus?view=graph-rest-beta
       operationId: deviceManagement.comanagedDevice_getCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
@@ -816,6 +824,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcRemoteActionResults
+      description: Check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta
       operationId: deviceManagement.managedDevice_getCloudPcRemoteActionResult
       parameters:
         - name: managedDevice-id
@@ -859,6 +871,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcReviewStatus
+      description: Get the review status of a specific Cloud PC device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/manageddevice-getcloudpcreviewstatus?view=graph-rest-beta
       operationId: deviceManagement.managedDevice_getCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
@@ -2115,6 +2131,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
+      description: Get audit activity types by tenant ID.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2151,6 +2171,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcConnectivityHistory
+      description: Get the connectivity history of a specific Cloud PC.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getcloudpcconnectivityhistory?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_getCloudPcConnectivityHistory
       parameters:
         - name: cloudPC-id
@@ -2194,6 +2218,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcLaunchInfo
+      description: Get the cloudPCLaunchInfo for the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_getCloudPcLaunchInfo
       parameters:
         - name: cloudPC-id
@@ -2219,6 +2247,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFrontlineCloudPcAccessState
+      description: 'Get the frontlineCloudPcAccessState of a frontline Cloud PC.  This API only supports shared-use licenses. For more information, see cloudPcProvisioningPolicy. Shared-use licenses allow three users per license, with one user signed in at a time. Callers can get the latest frontline Cloud PC accessState and determine whether the frontline Cloud PC is accessible to a user.  If a web client needs to connect to a frontline Cloud PC, the sharedCloudPcAccessState validates the bookmark scenario. If sharedCloudPcAccessState isn''t active/activating/standbyMode, the web client shows a bad bookmark.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getfrontlinecloudpcaccessstate?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_getFrontlineCloudPcAccessState
       parameters:
         - name: cloudPC-id
@@ -2244,6 +2276,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getShiftWorkCloudPcAccessState
+      description: 'Get the shiftWorkCloudPcAccessState of a shift work Cloud PC.  This API only supports shared-use licenses. For more information, see cloudPcProvisioningPolicy. Shared-use licenses allow three users per license, with one user signed in at a time. Callers can get the latest shift work Cloud PC accessState and determine whether the shift work Cloud PC is accessible to the user.  If a web client needs to connect to a shift work Cloud PC, the sharedCloudPcAccessState validates the bookmark scenario. If sharedCloudPcAccessState is not active/activating/standbyMode, the web client shows a ''bad bookmark''.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getshiftworkcloudpcaccessstate?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_getShiftWorkCloudPcAccessState
       parameters:
         - name: cloudPC-id
@@ -2275,6 +2311,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSupportedCloudPcRemoteActions
+      description: 'Get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_getSupportedCloudPcRemoteAction
       parameters:
         - name: cloudPC-id
@@ -2318,6 +2358,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getProvisionedCloudPCs
+      description: Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_getProvisionedCloudPC
       parameters:
         - name: groupId
@@ -2400,6 +2444,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSourceImages
+      description: Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2435,6 +2483,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
+      description: 'Get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn''t have access to.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_getEffectivePermission
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2471,6 +2523,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function retrieveScopedPermissions
+      description: Get the permissions and corresponding scope IDs for which the authenticated user has access.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-retrievescopedpermissions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_retrieveScopedPermission
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2522,6 +2578,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRealTimeRemoteConnectionLatency
+      description: Get the real-time connection latency information for a Cloud PC.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getrealtimeremoteconnectionlatency?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getRealTimeRemoteConnectionLatency
       parameters:
         - name: cloudPcId
@@ -2554,6 +2614,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRealTimeRemoteConnectionStatus
+      description: 'Get the real-time connection status information, such as signInStatus or daysSinceLastUse, for a Cloud PC.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getrealtimeremoteconnectionstatus?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getRealTimeRemoteConnectionStatus
       parameters:
         - name: cloudPcId
@@ -2586,6 +2650,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getStorageAccounts
+      description: List all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcsnapshot-getstorageaccounts?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.snapshot_getStorageAccount
       parameters:
         - name: subscriptionId
@@ -2629,6 +2697,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSubscriptions
+      description: List all subscriptions cloudPcSubscription that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcsnapshot-getsubscriptions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.snapshot_getSubscription
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3603,11 +3675,6 @@ components:
               description: 'Indicates the last DateTime that the request was modified. The value cannot be modified and is automatically populated whenever values in the request are updated. For example, when the ''status'' property changes from needsApproval to approved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. This property is read-only.'
               format: date-time
               readOnly: true
-            operationApprovalPolicies:
-              type: string
-              description: The operational approval policies used in the request. Indicates the policy and platform combinations that are required for this request to be approved or rejected. Read-only. This property is read-only.
-              nullable: true
-              readOnly: true
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -4344,25 +4411,25 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: Default. No platform type specified.
+            description: Indicates the settings contained in this configuration don't have a platform set.
             name: none
           - value: android
-            description: Settings for Android platform.
+            description: 'Indicates that the settings contained in associated configuration applies to the Android operating system. '
             name: android
           - value: iOS
-            description: Settings for iOS platform.
+            description: Indicates that the settings contained in associated configuration applies to the iOS operating system.
             name: iOS
           - value: macOS
-            description: Settings for MacOS platform.
+            description: Indicates that the settings contained in associated configuration applies to the MacOS operating system.
             name: macOS
           - value: windows10X
-            description: Windows 10 X.
+            description: Indicates that the settings contained in associated configuration applies to the Windows 10X operating system.
             name: windows10X
           - value: windows10
-            description: Settings for Windows 10 platform.
+            description: Indicates that the settings contained in associated configuration applies to the Windows 10 operating system.
             name: windows10
           - value: linux
-            description: Settings for Linux platform.
+            description: Indicates that the settings contained in associated configuration applies to the Linux operating system.
             name: linux
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
@@ -5612,11 +5679,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -5785,7 +5852,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
           nullable: true
       additionalProperties:
         type: object

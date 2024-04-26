@@ -11254,11 +11254,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List auditEvents
-      description: List all the cloudPcAuditEvent objects for the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0
+      summary: Get auditEvents from deviceManagement
+      description: Cloud PC audit event.
       operationId: deviceManagement.virtualEndpoint_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11331,11 +11328,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcAuditEvent
-      description: Read the properties and relationships of a cloudPcAuditEvent object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcauditevent-get?view=graph-rest-1.0
+      summary: Get auditEvents from deviceManagement
+      description: Cloud PC audit event.
       operationId: deviceManagement.virtualEndpoint_GetAuditEvent
       parameters:
         - name: cloudPcAuditEvent-id
@@ -11452,6 +11446,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get bulkActions from deviceManagement
+      description: Bulk actions applied to a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListBulkAction
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11525,6 +11520,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get bulkActions from deviceManagement
+      description: Bulk actions applied to a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetBulkAction
       parameters:
         - name: cloudPcBulkAction-id
@@ -11640,11 +11636,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPCs
-      description: List the cloudPC devices in a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-1.0
+      summary: Get cloudPCs from deviceManagement
+      description: Cloud managed virtual desktops.
       operationId: deviceManagement.virtualEndpoint_ListCloudPC
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11717,11 +11710,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPC
-      description: Read the properties and relationships of a specific cloudPC object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0
+      summary: Get cloudPCs from deviceManagement
+      description: Cloud managed virtual desktops.
       operationId: deviceManagement.virtualEndpoint_GetCloudPC
       parameters:
         - name: cloudPC-id
@@ -11837,11 +11827,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcCrossCloudGovernmentOrganizationMapping
-      description: Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-1.0
+      summary: Get crossCloudGovernmentOrganizationMapping from deviceManagement
+      description: Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
       operationId: deviceManagement.virtualEndpoint_GetCrossCloudGovernmentOrganizationMapping
       parameters:
         - name: $select
@@ -11918,11 +11905,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List deviceImages
-      description: List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0
+      summary: Get deviceImages from deviceManagement
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListDeviceImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11972,11 +11956,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcDeviceImage
-      description: Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0
+      summary: Create new navigation property to deviceImages for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateDeviceImage
       requestBody:
         description: New navigation property
@@ -11999,11 +11979,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcDeviceImage
-      description: Read the properties and relationships of a specific cloudPcDeviceImage object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-1.0
+      summary: Get deviceImages from deviceManagement
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetDeviceImage
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12078,11 +12055,7 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete cloudPcDeviceImage
-      description: Delete a cloudPcDeviceImage object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-1.0
+      summary: Delete navigation property deviceImages for deviceManagement
       operationId: deviceManagement.virtualEndpoint_DeleteDeviceImage
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12123,11 +12096,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPcExternalPartnerSettings
-      description: Get a list of the cloudPcExternalPartnerSetting objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-1.0
+      summary: Get externalPartnerSettings from deviceManagement
+      description: The external partner settings on a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12177,11 +12147,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcExternalPartnerSetting
-      description: Create a new cloudPcExternalPartnerSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-1.0
+      summary: Create new navigation property to externalPartnerSettings for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateExternalPartnerSetting
       requestBody:
         description: New navigation property
@@ -12204,11 +12170,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcExternalPartnerSetting
-      description: Read the properties and relationships of a cloudPcExternalPartnerSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcexternalpartnersetting-get?view=graph-rest-1.0
+      summary: Get externalPartnerSettings from deviceManagement
+      description: The external partner settings on a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetExternalPartnerSetting
       parameters:
         - name: cloudPcExternalPartnerSetting-id
@@ -12252,11 +12215,7 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update cloudPcExternalPartnerSetting
-      description: Update the properties of a cloudPcExternalPartnerSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcexternalpartnersetting-update?view=graph-rest-1.0
+      summary: Update the navigation property externalPartnerSettings in deviceManagement
       operationId: deviceManagement.virtualEndpoint_UpdateExternalPartnerSetting
       parameters:
         - name: cloudPcExternalPartnerSetting-id
@@ -12328,11 +12287,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPcFrontLineServicePlans
-      description: Get a list of the cloudPcFrontLineServicePlan objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-frontlineserviceplans?view=graph-rest-1.0
+      summary: Get frontLineServicePlans from deviceManagement
+      description: Front-line service plans for a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListFrontLineServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12405,11 +12361,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcFrontLineServicePlan
-      description: Get the properties and relationships of a cloudPcFrontLineServicePlan object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcfrontlineserviceplan-get?view=graph-rest-1.0
+      summary: Get frontLineServicePlans from deviceManagement
+      description: Front-line service plans for a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetFrontLineServicePlan
       parameters:
         - name: cloudPcFrontLineServicePlan-id
@@ -12525,11 +12478,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List galleryImages
-      description: List the properties and relationships of the cloudPcGalleryImage objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0
+      summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListGalleryImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12602,11 +12552,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcGalleryImage
-      description: Read the properties and relationships of a specific cloudPcGalleryImage object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-1.0
+      summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetGalleryImage
       parameters:
         - name: cloudPcGalleryImage-id
@@ -12722,11 +12669,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List onPremisesConnections
-      description: Get a list of the cloudPcOnPremisesConnection objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0
+      summary: Get onPremisesConnections from deviceManagement
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12776,11 +12720,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcOnPremisesConnection
-      description: Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0
+      summary: Create new navigation property to onPremisesConnections for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateOnPremisesConnection
       requestBody:
         description: New navigation property
@@ -12803,11 +12743,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcOnPremisesConnection
-      description: Read the properties and relationships of the cloudPcOnPremisesConnection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-1.0
+      summary: Get onPremisesConnections from deviceManagement
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_GetOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12851,11 +12788,7 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update cloudPcOnPremisesConnection
-      description: Update the properties of a cloudPcOnPremisesConnection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-1.0
+      summary: Update the navigation property onPremisesConnections in deviceManagement
       operationId: deviceManagement.virtualEndpoint_UpdateOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12886,11 +12819,7 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete cloudPcOnPremisesConnection
-      description: 'Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You can''t delete an Azure network connection when it''s in use, as indicated by the inUse property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-1.0
+      summary: Delete navigation property onPremisesConnections for deviceManagement
       operationId: deviceManagement.virtualEndpoint_DeleteOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12931,11 +12860,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcOrganizationSettings
-      description: Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-1.0
+      summary: Get organizationSettings from deviceManagement
+      description: The Cloud PC organization settings for a tenant.
       operationId: deviceManagement.virtualEndpoint_GetOrganizationSetting
       parameters:
         - name: $select
@@ -12971,11 +12897,7 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update cloudPcOrganizationSettings
-      description: Update the properties of the cloudPcOrganizationSettings object in a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-1.0
+      summary: Update the navigation property organizationSettings in deviceManagement
       operationId: deviceManagement.virtualEndpoint_UpdateOrganizationSetting
       requestBody:
         description: New navigation property values
@@ -13016,11 +12938,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List provisioningPolicies
-      description: List properties and relationships of the cloudPcProvisioningPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0
+      summary: Get provisioningPolicies from deviceManagement
+      description: Cloud PC provisioning policy.
       operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13076,11 +12995,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcProvisioningPolicy
-      description: Create a new cloudPcProvisioningPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0
+      summary: Create new navigation property to provisioningPolicies for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateProvisioningPolicy
       requestBody:
         description: New navigation property
@@ -13109,11 +13024,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcProvisioningPolicy
-      description: Read the properties and relationships of a cloudPcProvisioningPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-1.0
+      summary: Get provisioningPolicies from deviceManagement
+      description: Cloud PC provisioning policy.
       operationId: deviceManagement.virtualEndpoint_GetProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13163,11 +13075,7 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update cloudPcProvisioningPolicy
-      description: Update the properties of a cloudPcProvisioningPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property provisioningPolicies in deviceManagement
       operationId: deviceManagement.virtualEndpoint_UpdateProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13204,11 +13112,7 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete cloudPcProvisioningPolicy
-      description: Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-1.0
+      summary: Delete navigation property provisioningPolicies for deviceManagement
       operationId: deviceManagement.virtualEndpoint_DeleteProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -14037,8 +13941,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcExportJob
-      description: Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
+      summary: Get exportJobs from deviceManagement
+      description: The export jobs created for downloading reports.
       operationId: deviceManagement.virtualEndpoint.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14088,11 +13992,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcExportJob
-      description: 'Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property result is completed, the report has finished downloading to the location specified by the exportUrl property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-1.0
+      summary: Create new navigation property to exportJobs for deviceManagement
       operationId: deviceManagement.virtualEndpoint.report_CreateExportJob
       requestBody:
         description: New navigation property
@@ -14115,11 +14015,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcExportJob
-      description: Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcexportjob-get?view=graph-rest-1.0
+      summary: Get exportJobs from deviceManagement
+      description: The export jobs created for downloading reports.
       operationId: deviceManagement.virtualEndpoint.report_GetExportJob
       parameters:
         - name: cloudPcExportJob-id
@@ -14235,11 +14132,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List servicePlans
-      description: 'List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-1.0
+      summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_ListServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14429,11 +14323,7 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPcSharedUseServicePlans (deprecated)
-      description: Get a list of the cloudPcSharedUseServicePlan objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-1.0
+      summary: Get sharedUseServicePlans from deviceManagement
       operationId: deviceManagement.virtualEndpoint_ListSharedUseServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14518,11 +14408,7 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcSharedUseServicePlan (deprecated)
-      description: Read the properties and relationships of a cloudPcSharedUseServicePlan object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcshareduseserviceplan-get?view=graph-rest-1.0
+      summary: Get sharedUseServicePlans from deviceManagement
       operationId: deviceManagement.virtualEndpoint_GetSharedUseServicePlan
       parameters:
         - name: cloudPcSharedUseServicePlan-id
@@ -14662,11 +14548,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List snapshots
-      description: Get a list of cloudPcSnapshot objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-1.0
+      summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_ListSnapshot
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14739,11 +14622,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcSnapshot
-      description: Read the properties and relationships of a cloudPcSnapshot object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcsnapshot-get?view=graph-rest-1.0
+      summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_GetSnapshot
       parameters:
         - name: cloudPcSnapshot-id
@@ -14859,11 +14739,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List supportedRegions
-      description: List the supported regions that are available for creating Cloud PC connections.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-1.0
+      summary: Get supportedRegions from deviceManagement
+      description: Cloud PC supported regions.
       operationId: deviceManagement.virtualEndpoint_ListSupportedRegion
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15053,11 +14930,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List userSettings
-      description: Retrieve a list of cloudPcUserSetting objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0
+      summary: Get userSettings from deviceManagement
+      description: Cloud PC user settings.
       operationId: deviceManagement.virtualEndpoint_ListUserSetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15107,11 +14981,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcUserSetting
-      description: Create a new cloudPcUserSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0
+      summary: Create new navigation property to userSettings for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateUserSetting
       requestBody:
         description: New navigation property
@@ -15134,11 +15004,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcUserSetting
-      description: Read the properties and relationships of a cloudPcUserSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-get?view=graph-rest-1.0
+      summary: Get userSettings from deviceManagement
+      description: Cloud PC user settings.
       operationId: deviceManagement.virtualEndpoint_GetUserSetting
       parameters:
         - name: cloudPcUserSetting-id
@@ -15182,11 +15049,7 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update cloudPcUserSetting
-      description: Update the properties of a cloudPcUserSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-update?view=graph-rest-1.0
+      summary: Update the navigation property userSettings in deviceManagement
       operationId: deviceManagement.virtualEndpoint_UpdateUserSetting
       parameters:
         - name: cloudPcUserSetting-id
@@ -15217,11 +15080,7 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete cloudPcUserSetting
-      description: Delete a cloudPcUserSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-delete?view=graph-rest-1.0
+      summary: Delete navigation property userSettings for deviceManagement
       operationId: deviceManagement.virtualEndpoint_DeleteUserSetting
       parameters:
         - name: cloudPcUserSetting-id
@@ -17226,6 +17085,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcBulkAction'
+              description: Bulk actions applied to a Cloud PC.
               x-ms-navigationProperty: true
             cloudPCs:
               type: array
@@ -17363,12 +17223,15 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: Name of the bulk action.
             scheduledDuringMaintenanceWindow:
               type: boolean
+              description: 'Indicates whether the bulk actions can be initiated during maintenance window. When true, bulk action will use maintenance window to schedule action, When false means bulk action will not use the maintenance window. Default value is false.'
               nullable: true
           additionalProperties:
             type: object
@@ -18385,6 +18248,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The user's mail folders. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the user.
               x-ms-navigationProperty: true
             managedAppRegistrations:
               type: array
@@ -20320,9 +20189,9 @@ components:
           description: The ID of the audit resource.
         resourceType:
           type: string
+          description: The type of the audit resource.
         type:
           type: string
-          description: The type of the audit resource.
       additionalProperties:
         type: object
     microsoft.graph.cloudPcBulkActionSummary:
@@ -20333,26 +20202,31 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action failed.
           format: int32
         inProgressCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action is in progress.
           format: int32
         notSupportedCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action isn't supported.
           format: int32
         pendingCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action is pending.
           format: int32
         successfulCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action is successful.
           format: int32
       additionalProperties:
         type: object
@@ -22485,7 +22359,7 @@ components:
               nullable: true
             isRooted:
               type: boolean
-              description: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             kind:
               type: string
@@ -22637,7 +22511,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -23433,6 +23307,53 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.managedAppLogCollectionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppLogCollectionRequest
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+              nullable: true
+            managedAppRegistrationId:
+              type: string
+              description: The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
+              nullable: true
+            requestedBy:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
+              nullable: true
+            requestedByUserPrincipalName:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
+              nullable: true
+            requestedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was received. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+            status:
+              type: string
+              description: 'Indicates the status for the app log collection request - pending, completed or failed. Default is pending.'
+              nullable: true
+            uploadedLogs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogUpload'
+              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.'
+            userLogUploadConsent:
+              $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadConsent'
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The Managed App log collection response
     microsoft.graph.managedAppRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23515,6 +23436,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
               description: Zero or more policies admin intended for the app as of now.
+              x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the app.
               x-ms-navigationProperty: true
             operations:
               type: array
@@ -24607,6 +24534,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -24617,7 +24545,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+              description: Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
               x-ms-navigationProperty: true
             rosterPlans:
               type: array
@@ -28267,13 +28195,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -28498,7 +28426,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -28700,7 +28628,7 @@ components:
               description: 'The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -29647,6 +29575,50 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.managedAppLogUpload:
+      title: managedAppLogUpload
+      type: object
+      properties:
+        managedAppComponent:
+          type: string
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
+          nullable: true
+        managedAppComponentDescription:
+          type: string
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
+          nullable: true
+        referenceId:
+          type: string
+          description: A provider-specific reference id for the uploaded logs. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: 'A `managedAppLogUpload` represents the log upload result for a given Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.'
+    microsoft.graph.managedAppLogUploadConsent:
+      title: managedAppLogUploadConsent
+      enum:
+        - unknown
+        - declined
+        - accepted
+        - unknownFutureValue
+      type: string
+      description: Represents the current consent status of the associated `managedAppLogCollectionRequest`.
+      x-ms-enum:
+        name: managedAppLogUploadConsent
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Indicates app log consent state is 'Unknown'. This state is automatically assigned at request creation time and is updated when the log collection completes.
+            name: unknown
+          - value: declined
+            description: 'The User has Declined the Log Collection Request. The Log collection and uploads will not be initiated/triggered, and the log collection request will be abandoned.'
+            name: declined
+          - value: accepted
+            description: The User has Accepted the Log Collection Request. The log collection and upload will be initiated.
+            name: accepted
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
@@ -32223,7 +32195,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              description: 'The number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
             appliedCategories:
@@ -32232,19 +32204,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.'
               nullable: true
             assignments:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of checklist items that are present on the task.
+              description: The number of checklist items that are present on the task.
               format: int32
               nullable: true
             completedBy:
@@ -32252,19 +32224,19 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             conversationThreadId:
               type: string
-              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              description: The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             creationSource:
@@ -32272,12 +32244,12 @@ components:
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
               nullable: true
             isArchived:
               type: boolean
@@ -32294,13 +32266,13 @@ components:
               nullable: true
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.'
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              description: 'The percentage of task completion. When set to 100, the task is completed.'
               format: int32
               nullable: true
             planId:
@@ -32937,11 +32909,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -34285,11 +34257,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive.  See drive resource for values.
           nullable: true
         id:
           type: string
@@ -34305,13 +34277,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -35527,6 +35499,8 @@ components:
         - article
         - home
         - unknownFutureValue
+        - newsLink
+        - videoNewsLink
       type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
@@ -40322,7 +40296,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -44361,6 +44335,7 @@ components:
       properties:
         isApprovalRequired:
           type: boolean
+          description: 'Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.'
           nullable: true
       additionalProperties:
         type: object

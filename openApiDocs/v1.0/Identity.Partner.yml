@@ -10,11 +10,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminCustomer
-      summary: List delegatedAdminCustomers
-      description: Get a list of the delegatedAdminCustomer objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0
+      summary: Get delegatedAdminCustomers from tenantRelationships
+      description: The customer who has a delegated admin relationship with a Microsoft partner.
       operationId: tenantRelationship_ListDelegatedAdminCustomer
       parameters:
         - $ref: '#/components/parameters/top'
@@ -87,11 +84,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminCustomer
-      summary: Get delegatedAdminCustomer
-      description: Read the properties of a delegatedAdminCustomer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0
+      summary: Get delegatedAdminCustomers from tenantRelationships
+      description: The customer who has a delegated admin relationship with a Microsoft partner.
       operationId: tenantRelationship_GetDelegatedAdminCustomer
       parameters:
         - name: delegatedAdminCustomer-id
@@ -193,11 +187,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminCustomer
-      summary: List serviceManagementDetails
-      description: Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-1.0
+      summary: Get serviceManagementDetails from tenantRelationships
+      description: Contains the management details of a service in the customer tenant that's managed by delegated administration.
       operationId: tenantRelationship.delegatedAdminCustomer_ListServiceManagementDetail
       parameters:
         - name: delegatedAdminCustomer-id
@@ -450,11 +441,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: List delegatedAdminRelationships
-      description: Get a list of the delegatedAdminRelationship objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-1.0
+      summary: Get delegatedAdminRelationships from tenantRelationships
+      description: The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
       operationId: tenantRelationship_ListDelegatedAdminRelationship
       parameters:
         - $ref: '#/components/parameters/top'
@@ -504,11 +492,7 @@ paths:
     post:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Create delegatedAdminRelationship
-      description: Create a new delegatedAdminRelationship object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-1.0
+      summary: Create new navigation property to delegatedAdminRelationships for tenantRelationships
       operationId: tenantRelationship_CreateDelegatedAdminRelationship
       requestBody:
         description: New navigation property
@@ -531,11 +515,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Get delegatedAdminRelationship
-      description: Read the properties of a delegatedAdminRelationship object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0
+      summary: Get delegatedAdminRelationships from tenantRelationships
+      description: The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
       operationId: tenantRelationship_GetDelegatedAdminRelationship
       parameters:
         - name: delegatedAdminRelationship-id
@@ -579,11 +560,7 @@ paths:
     patch:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Update delegatedAdminRelationship
-      description: 'Update the properties of a delegatedAdminRelationship object. You can only update a relationship when it''s in the created status. However, you can update the autoExtendDuration property when the relationship is in either the created or active status.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0
+      summary: Update the navigation property delegatedAdminRelationships in tenantRelationships
       operationId: tenantRelationship_UpdateDelegatedAdminRelationship
       parameters:
         - name: delegatedAdminRelationship-id
@@ -614,11 +591,7 @@ paths:
     delete:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Delete delegatedAdminRelationship
-      description: 'Delete a delegatedAdminRelationship object. A relationship can only be deleted if it''s in the ''created'' status. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0
+      summary: Delete navigation property delegatedAdminRelationships for tenantRelationships
       operationId: tenantRelationship_DeleteDelegatedAdminRelationship
       parameters:
         - name: delegatedAdminRelationship-id
@@ -645,11 +618,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: List accessAssignments
-      description: Get a list of the delegatedAdminAccessAssignment objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-1.0
+      summary: Get accessAssignments from tenantRelationships
+      description: The access assignments associated with the delegated admin relationship.
       operationId: tenantRelationship.delegatedAdminRelationship_ListAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -707,11 +677,7 @@ paths:
     post:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Create accessAssignments
-      description: Create a new delegatedAdminAccessAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-1.0
+      summary: Create new navigation property to accessAssignments for tenantRelationships
       operationId: tenantRelationship.delegatedAdminRelationship_CreateAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -743,11 +709,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Get delegatedAdminAccessAssignment
-      description: Read the properties of a delegatedAdminAccessAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-1.0
+      summary: Get accessAssignments from tenantRelationships
+      description: The access assignments associated with the delegated admin relationship.
       operationId: tenantRelationship.delegatedAdminRelationship_GetAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -799,11 +762,7 @@ paths:
     patch:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Update delegatedAdminAccessAssignment
-      description: Update the properties of a delegatedAdminAccessAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-1.0
+      summary: Update the navigation property accessAssignments in tenantRelationships
       operationId: tenantRelationship.delegatedAdminRelationship_UpdateAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -842,11 +801,7 @@ paths:
     delete:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Delete delegatedAdminAccessAssignment
-      description: Delete a delegatedAdminAccessAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
+      summary: Delete navigation property accessAssignments for tenantRelationships
       operationId: tenantRelationship.delegatedAdminRelationship_DeleteAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -903,11 +858,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: List operations
-      description: Get a list of the delegatedAdminRelationshipOperation objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0
+      summary: Get operations from tenantRelationships
+      description: The long running operations associated with the delegated admin relationship.
       operationId: tenantRelationship.delegatedAdminRelationship_ListOperation
       parameters:
         - name: delegatedAdminRelationship-id
@@ -997,11 +949,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Get delegatedAdminRelationshipOperation
-      description: Read the properties of a delegatedAdminRelationshipOperation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0
+      summary: Get operations from tenantRelationships
+      description: The long running operations associated with the delegated admin relationship.
       operationId: tenantRelationship.delegatedAdminRelationship_GetOperation
       parameters:
         - name: delegatedAdminRelationship-id
@@ -1149,11 +1098,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: List requests
-      description: Get a list of the delegatedAdminRelationshipRequest objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0
+      summary: Get requests from tenantRelationships
+      description: The requests associated with the delegated admin relationship.
       operationId: tenantRelationship.delegatedAdminRelationship_ListRequest
       parameters:
         - name: delegatedAdminRelationship-id
@@ -1211,11 +1157,7 @@ paths:
     post:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Create requests
-      description: Create a new delegatedAdminRelationshipRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0
+      summary: Create new navigation property to requests for tenantRelationships
       operationId: tenantRelationship.delegatedAdminRelationship_CreateRequest
       parameters:
         - name: delegatedAdminRelationship-id
@@ -1247,11 +1189,8 @@ paths:
     get:
       tags:
         - tenantRelationships.delegatedAdminRelationship
-      summary: Get delegatedAdminRelationshipRequest
-      description: Read the properties and relationships of a delegatedAdminRelationshipRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/delegatedadminrelationshiprequest-get?view=graph-rest-1.0
+      summary: Get requests from tenantRelationships
+      description: The requests associated with the delegated admin relationship.
       operationId: tenantRelationship.delegatedAdminRelationship_GetRequest
       parameters:
         - name: delegatedAdminRelationship-id

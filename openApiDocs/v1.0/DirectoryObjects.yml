@@ -477,6 +477,10 @@ paths:
       tags:
         - directoryObjects.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0
       operationId: directoryObject_delta
       parameters:
         - $ref: '#/components/parameters/top'

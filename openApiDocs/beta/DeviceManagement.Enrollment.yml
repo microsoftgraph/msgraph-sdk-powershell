@@ -4981,11 +4981,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -5075,11 +5072,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRbacResourceAction
-      description: Read the properties and relationships of an unifiedRbacResourceAction object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespace_GetResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -5420,11 +5414,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.cloudPC_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5474,11 +5464,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.cloudPC_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -5501,11 +5487,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.cloudPC_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -5549,11 +5531,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Update unifiedRoleAssignmentMultiple
-      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
+      summary: Update the navigation property roleAssignments in roleManagement
       operationId: roleManagement.cloudPC_UpdateRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -5584,11 +5562,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Delete unifiedRoleAssignmentMultiple
-      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleAssignments for roleManagement
       operationId: roleManagement.cloudPC_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -6187,11 +6161,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.cloudPC_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6241,11 +6211,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.cloudPC_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -6268,11 +6234,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.cloudPC_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -6316,11 +6278,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Update unifiedRoleDefinition
-      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property roleDefinitions in roleManagement
       operationId: roleManagement.cloudPC_UpdateRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -6351,11 +6309,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Delete unifiedRoleDefinition
-      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleDefinitions for roleManagement
       operationId: roleManagement.cloudPC_DeleteRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -6889,11 +6843,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6983,11 +6934,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRbacResourceAction
-      description: Read the properties and relationships of an unifiedRbacResourceAction object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespace_GetResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -7328,11 +7276,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7382,11 +7326,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.deviceManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -7409,11 +7349,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.deviceManagement_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7457,11 +7393,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Update unifiedRoleAssignmentMultiple
-      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
+      summary: Update the navigation property roleAssignments in roleManagement
       operationId: roleManagement.deviceManagement_UpdateRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7492,11 +7424,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Delete unifiedRoleAssignmentMultiple
-      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleAssignments for roleManagement
       operationId: roleManagement.deviceManagement_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -8095,11 +8023,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8149,11 +8073,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -8176,11 +8096,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.deviceManagement_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8224,11 +8140,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Update unifiedRoleDefinition
-      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property roleDefinitions in roleManagement
       operationId: roleManagement.deviceManagement_UpdateRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8259,11 +8171,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Delete unifiedRoleDefinition
-      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleDefinitions for roleManagement
       operationId: roleManagement.deviceManagement_DeleteRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8621,11 +8529,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: List customAppScopes
-      description: Get a list of customAppScope objects for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacapplication-list-customappscopes?view=graph-rest-1.0
+      summary: Get customAppScopes from roleManagement
+      description: Workload-specific scope object that represents the resources for which the principal has been granted access.
       operationId: roleManagement.exchange_ListCustomAppScope
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8675,11 +8580,7 @@ paths:
     post:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Create customAppScope
-      description: Create a new customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacapplication-post-customappscope?view=graph-rest-1.0
+      summary: Create new navigation property to customAppScopes for roleManagement
       operationId: roleManagement.exchange_CreateCustomAppScope
       requestBody:
         description: New navigation property
@@ -8702,11 +8603,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Get customAppScope
-      description: Get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customappscope-get?view=graph-rest-1.0
+      summary: Get customAppScopes from roleManagement
+      description: Workload-specific scope object that represents the resources for which the principal has been granted access.
       operationId: roleManagement.exchange_GetCustomAppScope
       parameters:
         - name: customAppScope-id
@@ -8750,11 +8648,7 @@ paths:
     patch:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Update customAppScope
-      description: Update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customappscope-update?view=graph-rest-1.0
+      summary: Update the navigation property customAppScopes in roleManagement
       operationId: roleManagement.exchange_UpdateCustomAppScope
       parameters:
         - name: customAppScope-id
@@ -8785,11 +8679,7 @@ paths:
     delete:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Delete customAppScope
-      description: Delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customappscope-delete?view=graph-rest-1.0
+      summary: Delete navigation property customAppScopes for roleManagement
       operationId: roleManagement.exchange_DeleteCustomAppScope
       parameters:
         - name: customAppScope-id
@@ -9007,11 +8897,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.exchange.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -9101,11 +8988,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Get unifiedRbacResourceAction
-      description: Read the properties and relationships of an unifiedRbacResourceAction object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.exchange.resourceNamespace_GetResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -9446,11 +9330,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.exchange_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9500,11 +9381,7 @@ paths:
     post:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.exchange_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -9527,11 +9404,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Get unifiedRoleAssignment
-      description: Retrieve the properties and relationships of a unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.exchange_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignment-id
@@ -9606,11 +9480,7 @@ paths:
     delete:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Delete unifiedRoleAssignment
-      description: Delete a unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleAssignments for roleManagement
       operationId: roleManagement.exchange_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignment-id
@@ -9892,11 +9762,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: The roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.exchange_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9969,11 +9836,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: The roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.exchange_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -11713,6 +11577,10 @@ components:
             extractHardwareHash:
               type: boolean
               description: HardwareHash Extraction for the profile
+            hardwareHashExtractionEnabled:
+              type: boolean
+              description: 'Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
+              nullable: true
             language:
               type: string
               description: Language configured on the device
@@ -11722,12 +11590,22 @@ components:
               type: string
               description: Profile last modified time
               format: date-time
+            locale:
+              type: string
+              description: 'The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
+              nullable: true
             managementServiceAppId:
               type: string
-              description: AzureAD management app ID used during client device-based enrollment discovery
+              description: 'The Entra management service App ID which gets used during client device-based enrollment discovery. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
               nullable: true
+            outOfBoxExperienceSetting:
+              $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSetting'
             outOfBoxExperienceSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSettings'
+            preprovisioningAllowed:
+              type: boolean
+              description: 'Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.'
+              nullable: true
             roleScopeTagIds:
               type: array
               items:
@@ -13024,6 +12902,29 @@ components:
       additionalProperties:
         type: object
       description: Enrollment status screen setting
+    microsoft.graph.outOfBoxExperienceSetting:
+      title: outOfBoxExperienceSetting
+      type: object
+      properties:
+        deviceUsageType:
+          $ref: '#/components/schemas/microsoft.graph.windowsDeviceUsageType'
+        escapeLinkHidden:
+          type: boolean
+          description: 'When TRUE, the link that allows user to start over with a different account on company sign-in is hidden. When false, the link that allows user to start over with a different account on company sign-in is available. Default value is FALSE.'
+        eulaHidden:
+          type: boolean
+          description: 'When TRUE, EULA is hidden to the end user during OOBE. When FALSE, EULA is shown to the end user during OOBE. Default value is FALSE.'
+        keyboardSelectionPageSkipped:
+          type: boolean
+          description: 'When TRUE, the keyboard selection page is hidden to the end user during OOBE if Language and Region are set. When FALSE, the keyboard selection page is skipped during OOBE.'
+        privacySettingsHidden:
+          type: boolean
+          description: 'When TRUE, privacy settings is hidden to the end user during OOBE. When FALSE, privacy settings is shown to the end user during OOBE. Default value is FALSE.'
+        userType:
+          $ref: '#/components/schemas/microsoft.graph.windowsUserType'
+      additionalProperties:
+        type: object
+      description: 'The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
     microsoft.graph.outOfBoxExperienceSettings:
       title: outOfBoxExperienceSettings
       type: object
@@ -13046,7 +12947,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.windowsUserType'
       additionalProperties:
         type: object
-      description: Out of box experience setting
+      description: 'The Windows Autopilot Deployment Profile settings used by the Autopilot device for out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported. Read-Only. Starting from May 2024 this property will no longer be supported and will be marked as deprecated. Use outOfBoxExperienceSetting instead.'
     microsoft.graph.windowsAutopilotProfileAssignmentDetailedStatus:
       title: windowsAutopilotProfileAssignmentDetailedStatus
       enum:

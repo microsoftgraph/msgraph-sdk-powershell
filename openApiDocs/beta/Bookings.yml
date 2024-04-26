@@ -186,11 +186,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: List appointments
-      description: Get a list of bookingAppointment objects for the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
+      summary: Get appointments from bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusiness_ListAppointment
       parameters:
         - name: bookingBusiness-id
@@ -248,11 +245,7 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Create bookingAppointment
-      description: Create a new bookingAppointment for the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
+      summary: Create new navigation property to appointments for bookingBusinesses
       operationId: bookingBusiness_CreateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -284,11 +277,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Get bookingAppointment
-      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
+      summary: Get appointments from bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusiness_GetAppointment
       parameters:
         - name: bookingBusiness-id
@@ -340,11 +330,7 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Update bookingAppointment
-      description: Update the properties of a bookingAppointment object in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
+      summary: Update the navigation property appointments in bookingBusinesses
       operationId: bookingBusiness_UpdateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -383,11 +369,7 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Delete bookingAppointment
-      description: Delete a bookingAppointment in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
+      summary: Delete navigation property appointments for bookingBusinesses
       operationId: bookingBusiness_DeleteAppointment
       parameters:
         - name: bookingBusiness-id
@@ -426,7 +408,7 @@ paths:
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
       operationId: bookingBusiness.appointment_cancel
       parameters:
         - name: bookingBusiness-id
@@ -492,9 +474,6 @@ paths:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
       operationId: bookingBusiness_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -747,7 +726,7 @@ paths:
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
       operationId: bookingBusiness.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -811,11 +790,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: List customers
-      description: Get a list of bookingCustomer objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
+      summary: Get customers from bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusiness_ListCustomer
       parameters:
         - name: bookingBusiness-id
@@ -873,11 +849,7 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Create bookingCustomer
-      description: Create a new bookingCustomer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
+      summary: Create new navigation property to customers for bookingBusinesses
       operationId: bookingBusiness_CreateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -909,11 +881,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Get bookingCustomer
-      description: Get the properties and relationships of a bookingCustomer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
+      summary: Get customers from bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusiness_GetCustomer
       parameters:
         - name: bookingBusiness-id
@@ -965,11 +934,7 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Update bookingCustomer
-      description: Update the properties of a bookingCustomer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
+      summary: Update the navigation property customers in bookingBusinesses
       operationId: bookingBusiness_UpdateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1008,11 +973,7 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Delete bookingCustomer
-      description: Delete the specified bookingCustomer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
+      summary: Delete navigation property customers for bookingBusinesses
       operationId: bookingBusiness_DeleteCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1069,11 +1030,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: List customQuestions
-      description: Get the bookingCustomQuestion resources associated with a bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
+      summary: Get customQuestions from bookingBusinesses
+      description: All custom questions of this business.
       operationId: bookingBusiness_ListCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1131,11 +1089,7 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Create bookingCustomQuestion
-      description: Create a new bookingCustomQuestion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
+      summary: Create new navigation property to customQuestions for bookingBusinesses
       operationId: bookingBusiness_CreateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1167,11 +1121,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Get bookingCustomQuestion
-      description: Read the properties and relationships of a bookingCustomQuestion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
+      summary: Get customQuestions from bookingBusinesses
+      description: All custom questions of this business.
       operationId: bookingBusiness_GetCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1223,11 +1174,7 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Update bookingCustomQuestion
-      description: Update the properties of a bookingCustomQuestion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
+      summary: Update the navigation property customQuestions in bookingBusinesses
       operationId: bookingBusiness_UpdateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1266,11 +1213,7 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Delete bookingCustomQuestion
-      description: Delete the specified bookingCustomQuestion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
+      summary: Delete navigation property customQuestions for bookingBusinesses
       operationId: bookingBusiness_DeleteCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1331,7 +1274,7 @@ paths:
       description: Get the availability information of staff members of a Microsoft Bookings calendar.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
       operationId: bookingBusiness_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
@@ -1391,7 +1334,7 @@ paths:
       description: 'Make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-beta
       operationId: bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
@@ -1416,7 +1359,7 @@ paths:
       description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and publicUrl property to null.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-beta
       operationId: bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1437,11 +1380,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingService
-      summary: List services
-      description: Get a list of bookingService objects in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
+      summary: Get services from bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusiness_ListService
       parameters:
         - name: bookingBusiness-id
@@ -1499,11 +1439,7 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingService
-      summary: Create bookingService
-      description: Create a new bookingService for the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
+      summary: Create new navigation property to services for bookingBusinesses
       operationId: bookingBusiness_CreateService
       parameters:
         - name: bookingBusiness-id
@@ -1535,11 +1471,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingService
-      summary: Get bookingService
-      description: Get the properties and relationships of a bookingService object in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
+      summary: Get services from bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusiness_GetService
       parameters:
         - name: bookingBusiness-id
@@ -1591,11 +1524,7 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingService
-      summary: Update bookingservice
-      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any, time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
+      summary: Update the navigation property services in bookingBusinesses
       operationId: bookingBusiness_UpdateService
       parameters:
         - name: bookingBusiness-id
@@ -1634,11 +1563,7 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingService
-      summary: Delete bookingService
-      description: Delete a bookingService object in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
+      summary: Delete navigation property services for bookingBusinesses
       operationId: bookingBusiness_DeleteService
       parameters:
         - name: bookingBusiness-id
@@ -1695,11 +1620,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: List staffMembers
-      description: Get a list of bookingStaffMember objects in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
+      summary: Get staffMembers from bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusiness_ListStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -1757,11 +1679,7 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Create bookingStaffMember
-      description: Create a new staff member in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
+      summary: Create new navigation property to staffMembers for bookingBusinesses
       operationId: bookingBusiness_CreateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -1793,11 +1711,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Get bookingStaffMember
-      description: Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
+      summary: Get staffMembers from bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusiness_GetStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -1849,11 +1764,7 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Update bookingstaffmember
-      description: Update the properties of a bookingStaffMember in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
+      summary: Update the navigation property staffMembers in bookingBusinesses
       operationId: bookingBusiness_UpdateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -1892,11 +1803,7 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Delete bookingStaffMember
-      description: Delete a staff member in the specified bookingbusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
+      summary: Delete navigation property staffMembers for bookingBusinesses
       operationId: bookingBusiness_DeleteStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2363,11 +2270,7 @@ paths:
     delete:
       tags:
         - solutions.bookingBusiness
-      summary: Delete bookingBusiness
-      description: Delete a bookingBusiness object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
+      summary: Delete navigation property bookingBusinesses for solutions
       operationId: solution_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -2394,11 +2297,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: List appointments
-      description: Get a list of bookingAppointment objects for the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
+      summary: Get appointments from solutions
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: solution.bookingBusiness_ListAppointment
       parameters:
         - name: bookingBusiness-id
@@ -2456,11 +2356,7 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create bookingAppointment
-      description: Create a new bookingAppointment for the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
+      summary: Create new navigation property to appointments for solutions
       operationId: solution.bookingBusiness_CreateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -2492,11 +2388,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get bookingAppointment
-      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
+      summary: Get appointments from solutions
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: solution.bookingBusiness_GetAppointment
       parameters:
         - name: bookingBusiness-id
@@ -2548,11 +2441,7 @@ paths:
     patch:
       tags:
         - solutions.bookingBusiness
-      summary: Update bookingAppointment
-      description: Update the properties of a bookingAppointment object in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
+      summary: Update the navigation property appointments in solutions
       operationId: solution.bookingBusiness_UpdateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -2591,11 +2480,7 @@ paths:
     delete:
       tags:
         - solutions.bookingBusiness
-      summary: Delete bookingAppointment
-      description: Delete a bookingAppointment in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
+      summary: Delete navigation property appointments for solutions
       operationId: solution.bookingBusiness_DeleteAppointment
       parameters:
         - name: bookingBusiness-id
@@ -2634,7 +2519,7 @@ paths:
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
       operationId: solution.bookingBusiness.appointment_cancel
       parameters:
         - name: bookingBusiness-id
@@ -2700,9 +2585,6 @@ paths:
         - solutions.bookingBusiness
       summary: Get calendarView from solutions
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
       operationId: solution.bookingBusiness_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -2955,7 +2837,7 @@ paths:
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
       operationId: solution.bookingBusiness.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -3019,11 +2901,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: List customers
-      description: Get a list of bookingCustomer objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
+      summary: Get customers from solutions
+      description: All the customers of this business. Read-only. Nullable.
       operationId: solution.bookingBusiness_ListCustomer
       parameters:
         - name: bookingBusiness-id
@@ -3081,11 +2960,7 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create bookingCustomer
-      description: Create a new bookingCustomer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
+      summary: Create new navigation property to customers for solutions
       operationId: solution.bookingBusiness_CreateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -3117,11 +2992,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get bookingCustomer
-      description: Get the properties and relationships of a bookingCustomer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
+      summary: Get customers from solutions
+      description: All the customers of this business. Read-only. Nullable.
       operationId: solution.bookingBusiness_GetCustomer
       parameters:
         - name: bookingBusiness-id
@@ -3173,11 +3045,7 @@ paths:
     patch:
       tags:
         - solutions.bookingBusiness
-      summary: Update bookingCustomer
-      description: Update the properties of a bookingCustomer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
+      summary: Update the navigation property customers in solutions
       operationId: solution.bookingBusiness_UpdateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -3216,11 +3084,7 @@ paths:
     delete:
       tags:
         - solutions.bookingBusiness
-      summary: Delete bookingCustomer
-      description: Delete the specified bookingCustomer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
+      summary: Delete navigation property customers for solutions
       operationId: solution.bookingBusiness_DeleteCustomer
       parameters:
         - name: bookingBusiness-id
@@ -3277,11 +3141,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: List customQuestions
-      description: Get the bookingCustomQuestion resources associated with a bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
+      summary: Get customQuestions from solutions
+      description: All custom questions of this business.
       operationId: solution.bookingBusiness_ListCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -3339,11 +3200,7 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create bookingCustomQuestion
-      description: Create a new bookingCustomQuestion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
+      summary: Create new navigation property to customQuestions for solutions
       operationId: solution.bookingBusiness_CreateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -3375,11 +3232,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get bookingCustomQuestion
-      description: Read the properties and relationships of a bookingCustomQuestion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
+      summary: Get customQuestions from solutions
+      description: All custom questions of this business.
       operationId: solution.bookingBusiness_GetCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -3431,11 +3285,7 @@ paths:
     patch:
       tags:
         - solutions.bookingBusiness
-      summary: Update bookingCustomQuestion
-      description: Update the properties of a bookingCustomQuestion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
+      summary: Update the navigation property customQuestions in solutions
       operationId: solution.bookingBusiness_UpdateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -3474,11 +3324,7 @@ paths:
     delete:
       tags:
         - solutions.bookingBusiness
-      summary: Delete bookingCustomQuestion
-      description: Delete the specified bookingCustomQuestion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
+      summary: Delete navigation property customQuestions for solutions
       operationId: solution.bookingBusiness_DeleteCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -3539,7 +3385,7 @@ paths:
       description: Get the availability information of staff members of a Microsoft Bookings calendar.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
       operationId: solution.bookingBusiness_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
@@ -3599,7 +3445,7 @@ paths:
       description: 'Make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-beta
       operationId: solution.bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
@@ -3624,7 +3470,7 @@ paths:
       description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and publicUrl property to null.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-beta
       operationId: solution.bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -3645,11 +3491,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: List services
-      description: Get a list of bookingService objects in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
+      summary: Get services from solutions
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: solution.bookingBusiness_ListService
       parameters:
         - name: bookingBusiness-id
@@ -3707,11 +3550,7 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create bookingService
-      description: Create a new bookingService for the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
+      summary: Create new navigation property to services for solutions
       operationId: solution.bookingBusiness_CreateService
       parameters:
         - name: bookingBusiness-id
@@ -3743,11 +3582,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get bookingService
-      description: Get the properties and relationships of a bookingService object in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
+      summary: Get services from solutions
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: solution.bookingBusiness_GetService
       parameters:
         - name: bookingBusiness-id
@@ -3799,11 +3635,7 @@ paths:
     patch:
       tags:
         - solutions.bookingBusiness
-      summary: Update bookingservice
-      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any, time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
+      summary: Update the navigation property services in solutions
       operationId: solution.bookingBusiness_UpdateService
       parameters:
         - name: bookingBusiness-id
@@ -3842,11 +3674,7 @@ paths:
     delete:
       tags:
         - solutions.bookingBusiness
-      summary: Delete bookingService
-      description: Delete a bookingService object in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
+      summary: Delete navigation property services for solutions
       operationId: solution.bookingBusiness_DeleteService
       parameters:
         - name: bookingBusiness-id
@@ -3903,11 +3731,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: List staffMembers
-      description: Get a list of bookingStaffMember objects in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
+      summary: Get staffMembers from solutions
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solution.bookingBusiness_ListStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -3965,11 +3790,7 @@ paths:
     post:
       tags:
         - solutions.bookingBusiness
-      summary: Create bookingStaffMember
-      description: Create a new staff member in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
+      summary: Create new navigation property to staffMembers for solutions
       operationId: solution.bookingBusiness_CreateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -4001,11 +3822,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get bookingStaffMember
-      description: Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
+      summary: Get staffMembers from solutions
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solution.bookingBusiness_GetStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -4057,11 +3875,7 @@ paths:
     patch:
       tags:
         - solutions.bookingBusiness
-      summary: Update bookingstaffmember
-      description: Update the properties of a bookingStaffMember in the specified bookingBusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
+      summary: Update the navigation property staffMembers in solutions
       operationId: solution.bookingBusiness_UpdateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -4100,11 +3914,7 @@ paths:
     delete:
       tags:
         - solutions.bookingBusiness
-      summary: Delete bookingStaffMember
-      description: Delete a staff member in the specified bookingbusiness.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
+      summary: Delete navigation property staffMembers for solutions
       operationId: solution.bookingBusiness_DeleteStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -4175,11 +3985,7 @@ paths:
     get:
       tags:
         - solutions.bookingCurrency
-      summary: List bookingCurrencies
-      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
+      summary: Get bookingCurrencies from solutions
       operationId: solution_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4252,11 +4058,7 @@ paths:
     get:
       tags:
         - solutions.bookingCurrency
-      summary: Get bookingCurrency
-      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
+      summary: Get bookingCurrencies from solutions
       operationId: solution_GetBookingCurrency
       parameters:
         - name: bookingCurrency-id
@@ -4372,11 +4174,7 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: List businessScenarios
-      description: Get a list of all businessScenario objects in an organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0
+      summary: Get businessScenarios from solutions
       operationId: solution_ListBusinessScenario
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4426,11 +4224,7 @@ paths:
     post:
       tags:
         - solutions.businessScenario
-      summary: Create businessScenario
-      description: Create a new businessScenario object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0
+      summary: Create new navigation property to businessScenarios for solutions
       operationId: solution_CreateBusinessScenario
       requestBody:
         description: New navigation property
@@ -4453,11 +4247,7 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get businessScenario
-      description: Read the properties and relationships of a businessScenario object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0
+      summary: Get businessScenarios from solutions
       operationId: solution_GetBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -4501,11 +4291,7 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update businessScenario
-      description: Update the properties of a businessScenario object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0
+      summary: Update the navigation property businessScenarios in solutions
       operationId: solution_UpdateBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -4536,11 +4322,7 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete businessScenario
-      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0
+      summary: Delete navigation property businessScenarios for solutions
       operationId: solution_DeleteBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -4567,11 +4349,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get businessScenarioPlanner
-      description: Read the properties and relationships of a businessScenarioPlanner object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-1.0
+      summary: Get planner from solutions
+      description: Planner content related to the scenario.
       operationId: solution.businessScenario_GetPlanner
       parameters:
         - name: businessScenario-id
@@ -4677,7 +4456,7 @@ paths:
       description: 'Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn''t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-beta
       operationId: solution.businessScenario.planner_getPlan
       parameters:
         - name: businessScenario-id
@@ -4714,11 +4493,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get plannerPlanConfiguration
-      description: Read the properties and relationships of a plannerPlanConfiguration object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-1.0
+      summary: Get planConfiguration from solutions
+      description: The configuration of Planner plans that will be created for the scenario.
       operationId: solution.businessScenario.planner_GetPlanConfiguration
       parameters:
         - name: businessScenario-id
@@ -4762,11 +4538,7 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update plannerPlanConfiguration
-      description: Update the properties of a plannerPlanConfiguration object for a businessScenario.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-1.0
+      summary: Update the navigation property planConfiguration in solutions
       operationId: solution.businessScenario.planner_UpdatePlanConfiguration
       parameters:
         - name: businessScenario-id
@@ -4824,11 +4596,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: List plannerPlanConfigurationLocalizations
-      description: Get a list of the plannerPlanConfigurationLocalization objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-1.0
+      summary: Get localizations from solutions
+      description: Localized names for the plan configuration.
       operationId: solution.businessScenario.planner.planConfiguration_ListLocalization
       parameters:
         - name: businessScenario-id
@@ -4886,11 +4655,7 @@ paths:
     post:
       tags:
         - solutions.businessScenario
-      summary: Create plannerPlanConfigurationLocalization
-      description: Create a new plannerPlanConfigurationLocalization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-1.0
+      summary: Create new navigation property to localizations for solutions
       operationId: solution.businessScenario.planner.planConfiguration_CreateLocalization
       parameters:
         - name: businessScenario-id
@@ -4922,11 +4687,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get plannerPlanConfigurationLocalization
-      description: Read the properties and relationships of a plannerPlanConfigurationLocalization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0
+      summary: Get localizations from solutions
+      description: Localized names for the plan configuration.
       operationId: solution.businessScenario.planner.planConfiguration_GetLocalization
       parameters:
         - name: businessScenario-id
@@ -4978,11 +4740,7 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update plannerPlanConfigurationLocalization
-      description: Update the properties of a plannerPlanConfigurationLocalization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0
+      summary: Update the navigation property localizations in solutions
       operationId: solution.businessScenario.planner.planConfiguration_UpdateLocalization
       parameters:
         - name: businessScenario-id
@@ -5021,11 +4779,7 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete plannerPlanConfigurationLocalization
-      description: Delete a plannerPlanConfigurationLocalization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0
+      summary: Delete navigation property localizations for solutions
       operationId: solution.businessScenario.planner.planConfiguration_DeleteLocalization
       parameters:
         - name: businessScenario-id
@@ -5082,11 +4836,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get plannerTaskConfiguration
-      description: Read the properties and relationships of a plannerTaskConfiguration object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-1.0
+      summary: Get taskConfiguration from solutions
+      description: The configuration of Planner tasks that will be created for the scenario.
       operationId: solution.businessScenario.planner_GetTaskConfiguration
       parameters:
         - name: businessScenario-id
@@ -5130,11 +4881,7 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update plannerTaskConfiguration
-      description: Update the properties of a plannerTaskConfiguration object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-1.0
+      summary: Update the navigation property taskConfiguration in solutions
       operationId: solution.businessScenario.planner_UpdateTaskConfiguration
       parameters:
         - name: businessScenario-id
@@ -5192,11 +4939,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: List businessScenarioTasks
-      description: Get a list of the businessScenarioTask objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-1.0
+      summary: Get tasks from solutions
+      description: The Planner tasks for the scenario.
       operationId: solution.businessScenario.planner_ListTask
       parameters:
         - name: businessScenario-id
@@ -5254,11 +4998,7 @@ paths:
     post:
       tags:
         - solutions.businessScenario
-      summary: Create businessScenarioTask
-      description: Create a new businessScenarioTask object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-1.0
+      summary: Create new navigation property to tasks for solutions
       operationId: solution.businessScenario.planner_CreateTask
       parameters:
         - name: businessScenario-id
@@ -5290,11 +5030,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get businessScenarioTask
-      description: Read the properties and relationships of a businessScenarioTask object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-1.0
+      summary: Get tasks from solutions
+      description: The Planner tasks for the scenario.
       operationId: solution.businessScenario.planner_GetTask
       parameters:
         - name: businessScenario-id
@@ -5346,11 +5083,7 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update businessScenarioTask
-      description: Update the properties of a businessScenarioTask object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-1.0
+      summary: Update the navigation property tasks in solutions
       operationId: solution.businessScenario.planner_UpdateTask
       parameters:
         - name: businessScenario-id
@@ -5389,11 +5122,7 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete businessScenarioTask
-      description: Delete a businessScenarioTask object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-1.0
+      summary: Delete navigation property tasks for solutions
       operationId: solution.businessScenario.planner_DeleteTask
       parameters:
         - name: businessScenario-id
@@ -5428,11 +5157,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
+      summary: Get assignedToTaskBoardFormat from solutions
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
       operationId: solution.businessScenario.planner.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -5485,9 +5211,6 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update the navigation property assignedToTaskBoardFormat in solutions
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -5568,11 +5291,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
+      summary: Get bucketTaskBoardFormat from solutions
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
       operationId: solution.businessScenario.planner.task_GetBucketTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -5625,9 +5345,6 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update the navigation property bucketTaskBoardFormat in solutions
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -5708,11 +5425,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
+      summary: Get details from solutions
+      description: Read-only. Nullable. More details about the task.
       operationId: solution.businessScenario.planner.task_GetDetail
       parameters:
         - name: businessScenario-id
@@ -5765,9 +5479,6 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update the navigation property details in solutions
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_UpdateDetail
       parameters:
         - name: businessScenario-id
@@ -5848,11 +5559,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
+      summary: Get progressTaskBoardFormat from solutions
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
       operationId: solution.businessScenario.planner.task_GetProgressTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -5905,9 +5613,6 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update the navigation property progressTaskBoardFormat in solutions
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -6010,11 +5715,7 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get businessScenario
-      description: Read the properties and relationships of a businessScenario object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0
+      summary: Get businessScenarios from solutions
       operationId: solution.businessScenario_GetGraphBPreUniqueName
       parameters:
         - name: uniqueName
@@ -6058,11 +5759,7 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update businessScenario
-      description: Update the properties of a businessScenario object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0
+      summary: Update the navigation property businessScenarios in solutions
       operationId: solution.businessScenario_UpdateGraphBPreUniqueName
       parameters:
         - name: uniqueName
@@ -6093,11 +5790,7 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete businessScenario
-      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0
+      summary: Delete navigation property businessScenarios for solutions
       operationId: solution.businessScenario_DeleteGraphBPreUniqueName
       parameters:
         - name: uniqueName
@@ -7367,11 +7060,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from solutions
+      description: List of attendance records of an attendance report. Read-only.
       operationId: solution.virtualEvent.event.session.attendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEvent-id
@@ -9447,11 +9137,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from solutions
+      description: List of attendance records of an attendance report. Read-only.
       operationId: solution.virtualEvent.townhall.session.attendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEventTownhall-id
@@ -10570,11 +10257,7 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: List webinars
-      description: Get the list of all virtualEventWebinar objects created in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-1.0
+      summary: Get webinars from solutions
       operationId: solution.virtualEvent_ListWebinar
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10647,11 +10330,7 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventWebinar
-      description: Read the properties and relationships of a virtualEventWebinar object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-1.0
+      summary: Get webinars from solutions
       operationId: solution.virtualEvent_GetWebinar
       parameters:
         - name: virtualEventWebinar-id
@@ -11257,11 +10936,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: List virtualEventRegistrations
-      description: Get a list of all registration records of a webinar.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-1.0
+      summary: Get registrations from solutions
+      description: Registration records of the webinar.
       operationId: solution.virtualEvent.webinar_ListRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -11351,11 +11027,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventRegistration
-      description: Get the properties and relationships of a virtualEventRegistration object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-1.0
+      summary: Get registrations from solutions
+      description: Registration records of the webinar.
       operationId: solution.virtualEvent.webinar_GetRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -11700,11 +11373,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventRegistration
-      description: Get the properties and relationships of a virtualEventRegistration object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-1.0
+      summary: Get registrations from solutions
+      description: Registration records of the webinar.
       operationId: solution.virtualEvent.webinar.registration_GetGraphBPreEmail
       parameters:
         - name: virtualEventWebinar-id
@@ -11830,11 +11500,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventRegistration
-      description: Get the properties and relationships of a virtualEventRegistration object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-1.0
+      summary: Get registrations from solutions
+      description: Registration records of the webinar.
       operationId: solution.virtualEvent.webinar.registration_GetGraphBPreUserId
       parameters:
         - name: virtualEventWebinar-id
@@ -12458,11 +12125,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from solutions
+      description: List of attendance records of an attendance report. Read-only.
       operationId: solution.virtualEvent.webinar.session.attendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEventWebinar-id
@@ -13429,6 +13093,10 @@ paths:
       tags:
         - solutions.Functions
       summary: Invoke function getByUserIdAndRole
+      description: Get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuseridandrole?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar_getGraphBPreUserIdAndRole
       parameters:
         - name: userId
@@ -13509,6 +13177,10 @@ paths:
       tags:
         - solutions.Functions
       summary: Invoke function getByUserRole
+      description: Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar_getGraphBPreUserRole
       parameters:
         - name: role
@@ -15015,7 +14687,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              description: 'The number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
             appliedCategories:
@@ -15024,19 +14696,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.'
               nullable: true
             assignments:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of checklist items that are present on the task.
+              description: The number of checklist items that are present on the task.
               format: int32
               nullable: true
             completedBy:
@@ -15044,19 +14716,19 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             conversationThreadId:
               type: string
-              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              description: The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             creationSource:
@@ -15064,12 +14736,12 @@ components:
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
               nullable: true
             isArchived:
               type: boolean
@@ -15086,13 +14758,13 @@ components:
               nullable: true
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.'
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              description: 'The percentage of task completion. When set to 100, the task is completed.'
               format: int32
               nullable: true
             planId:
@@ -15272,11 +14944,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -16018,6 +15690,7 @@ components:
       properties:
         isApprovalRequired:
           type: boolean
+          description: 'Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.'
           nullable: true
       additionalProperties:
         type: object

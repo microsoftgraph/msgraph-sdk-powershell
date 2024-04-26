@@ -85,6 +85,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/userconsentrequest-filterByCurrentUser?view=graph-rest-beta
       operationId: user.appConsentRequestsGraphFPreApproval.userConsentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -174,6 +178,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: Retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/appconsentrequest-filterByCurrentUser?view=graph-rest-beta
       operationId: user.appConsentRequestsGraphFPreApproval_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -255,6 +263,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-beta
       operationId: user.approval_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -339,7 +351,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -452,7 +464,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -557,7 +569,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -670,7 +682,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
@@ -775,7 +787,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
@@ -872,7 +884,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -985,7 +997,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -1090,7 +1102,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -1203,7 +1215,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
@@ -1308,7 +1320,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event_delta
       parameters:
         - name: user-id
@@ -1455,7 +1467,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -1584,7 +1596,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -1705,7 +1717,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -1834,7 +1846,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
@@ -1955,7 +1967,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.calendarView_delta
       parameters:
         - name: user-id
@@ -2068,7 +2080,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.event.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -2197,7 +2209,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.event.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -2318,7 +2330,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.event.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -2447,7 +2459,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.event.instance_delta
       parameters:
         - name: user-id
@@ -2568,7 +2580,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarGroup.calendar.event_delta
       parameters:
         - name: user-id
@@ -2747,7 +2759,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -2868,7 +2880,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -2981,7 +2993,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -3102,7 +3114,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
@@ -3215,7 +3227,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
@@ -3320,7 +3332,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -3441,7 +3453,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -3554,7 +3566,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -3675,7 +3687,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
@@ -3788,7 +3800,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendar.event_delta
       parameters:
         - name: user-id
@@ -3951,7 +3963,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -4064,7 +4076,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarView.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -4169,7 +4181,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -4282,7 +4294,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarView.instance_delta
       parameters:
         - name: user-id
@@ -4387,7 +4399,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.calendarView_delta
       parameters:
         - name: user-id
@@ -4481,6 +4493,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin the to retrieve additional changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-beta
       operationId: user.chat.message.reply_delta
       parameters:
         - name: user-id
@@ -4574,6 +4590,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin the to retrieve additional changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-beta
       operationId: user.chat.message_delta
       parameters:
         - name: user-id
@@ -4814,6 +4834,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllRetainedMessages
+      description: 'Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-beta
       operationId: user.chat_getAllRetainedMessage
       parameters:
         - name: user-id
@@ -4888,6 +4912,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCloudPcConnectivityHistory
+      description: Get the connectivity history of a specific Cloud PC.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getcloudpcconnectivityhistory?view=graph-rest-beta
       operationId: user.cloudPC_getCloudPcConnectivityHistory
       parameters:
         - name: user-id
@@ -4939,6 +4967,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCloudPcLaunchInfo
+      description: Get the cloudPCLaunchInfo for the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-beta
       operationId: user.cloudPC_getCloudPcLaunchInfo
       parameters:
         - name: user-id
@@ -4972,6 +5004,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getFrontlineCloudPcAccessState
+      description: 'Get the frontlineCloudPcAccessState of a frontline Cloud PC.  This API only supports shared-use licenses. For more information, see cloudPcProvisioningPolicy. Shared-use licenses allow three users per license, with one user signed in at a time. Callers can get the latest frontline Cloud PC accessState and determine whether the frontline Cloud PC is accessible to a user.  If a web client needs to connect to a frontline Cloud PC, the sharedCloudPcAccessState validates the bookmark scenario. If sharedCloudPcAccessState isn''t active/activating/standbyMode, the web client shows a bad bookmark.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getfrontlinecloudpcaccessstate?view=graph-rest-beta
       operationId: user.cloudPC_getFrontlineCloudPcAccessState
       parameters:
         - name: user-id
@@ -5005,6 +5041,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getShiftWorkCloudPcAccessState
+      description: 'Get the shiftWorkCloudPcAccessState of a shift work Cloud PC.  This API only supports shared-use licenses. For more information, see cloudPcProvisioningPolicy. Shared-use licenses allow three users per license, with one user signed in at a time. Callers can get the latest shift work Cloud PC accessState and determine whether the shift work Cloud PC is accessible to the user.  If a web client needs to connect to a shift work Cloud PC, the sharedCloudPcAccessState validates the bookmark scenario. If sharedCloudPcAccessState is not active/activating/standbyMode, the web client shows a ''bad bookmark''.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getshiftworkcloudpcaccessstate?view=graph-rest-beta
       operationId: user.cloudPC_getShiftWorkCloudPcAccessState
       parameters:
         - name: user-id
@@ -5044,6 +5084,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getSupportedCloudPcRemoteActions
+      description: 'Get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta
       operationId: user.cloudPC_getSupportedCloudPcRemoteAction
       parameters:
         - name: user-id
@@ -5095,6 +5139,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getProvisionedCloudPCs
+      description: Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta
       operationId: user.cloudPC_getProvisionedCloudPC
       parameters:
         - name: user-id
@@ -5188,7 +5236,7 @@ paths:
       description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-beta
       operationId: user.contactFolder.childFolder.contact_delta
       parameters:
         - name: user-id
@@ -5285,7 +5333,7 @@ paths:
       description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-beta
       operationId: user.contactFolder.childFolder_delta
       parameters:
         - name: user-id
@@ -5374,7 +5422,7 @@ paths:
       description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-beta
       operationId: user.contactFolder.contact_delta
       parameters:
         - name: user-id
@@ -5463,7 +5511,7 @@ paths:
       description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-beta
       operationId: user.contactFolder_delta
       parameters:
         - name: user-id
@@ -5544,7 +5592,7 @@ paths:
       description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-beta
       operationId: user.contact_delta
       parameters:
         - name: user-id
@@ -5622,6 +5670,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-delta?view=graph-rest-beta
       operationId: user.device_delta
       parameters:
         - name: user-id
@@ -5813,6 +5865,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you finish receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state. Note: you should only delete a folder locally if it's empty after syncing all the changes."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-beta
       operationId: user.drive.item_delta
       parameters:
         - name: user-id
@@ -6007,6 +6063,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
+      description: Get itemActivityStats for the activities that took place under this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-beta
       operationId: user.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
@@ -6121,6 +6181,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-beta
       operationId: user.drive.item_search
       parameters:
         - name: user-id
@@ -6219,6 +6283,9 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function isPublished
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-beta
       operationId: user.drive.list.contentType_isPublished
       parameters:
         - name: user-id
@@ -6266,6 +6333,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCompatibleHubContentTypes
+      description: 'Get compatible content types in the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-beta
       operationId: user.drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: user-id
@@ -6462,6 +6533,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Deleted items are returned with the deleted facet. Deleted indicates that the item is deleted and can't be restored.\nItems with this property should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-beta
       operationId: user.drive.list.item_delta
       parameters:
         - name: user-id
@@ -6640,6 +6715,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function recent
+      description: "List a set of items recently used by the signed-in user.\nThis collection includes items that are in the user's drive and items they have access to from other drives."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-beta
       operationId: user.drive_recent
       parameters:
         - name: user-id
@@ -6707,6 +6786,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-beta
       operationId: user.drive_search
       parameters:
         - name: user-id
@@ -6782,6 +6865,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function sharedWithMe
+      description: Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they're items from a different drive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-beta
       operationId: user.drive_sharedGraphWPreMe
       parameters:
         - name: user-id
@@ -6955,6 +7042,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you finish receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state. Note: you should only delete a folder locally if it's empty after syncing all the changes."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-beta
       operationId: user.drive.root_delta
       parameters:
         - name: user-id
@@ -7133,6 +7224,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
+      description: Get itemActivityStats for the activities that took place under this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-beta
       operationId: user.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
@@ -7239,6 +7334,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-beta
       operationId: user.drive.root_search
       parameters:
         - name: user-id
@@ -7332,7 +7431,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.event.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -7445,7 +7544,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.event.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -7550,7 +7649,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.event.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -7663,7 +7762,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.event.instance_delta
       parameters:
         - name: user-id
@@ -7768,7 +7867,7 @@ paths:
       description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
       operationId: user.event_delta
       parameters:
         - name: user-id
@@ -7862,6 +7961,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. See Using Delta Query for details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delta?view=graph-rest-beta
       operationId: user.joinedGroup_delta
       parameters:
         - name: user-id
@@ -7939,6 +8042,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getTeamsLicensingDetails
+      description: Get the license status of a user in Microsoft Teams.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-beta
       operationId: user.licenseDetail_getTeamsLicensingDetail
       parameters:
         - name: user-id
@@ -7967,7 +8074,7 @@ paths:
       description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta
       operationId: user.mailFolder.childFolder.message_delta
       parameters:
         - name: user-id
@@ -8071,7 +8178,7 @@ paths:
       description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-beta
       operationId: user.mailFolder.childFolder_delta
       parameters:
         - name: user-id
@@ -8160,7 +8267,7 @@ paths:
       description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta
       operationId: user.mailFolder.message_delta
       parameters:
         - name: user-id
@@ -8256,7 +8363,7 @@ paths:
       description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-beta
       operationId: user.mailFolder_delta
       parameters:
         - name: user-id
@@ -8334,6 +8441,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCloudPcRemoteActionResults
+      description: Check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta
       operationId: user.managedDevice_getCloudPcRemoteActionResult
       parameters:
         - name: user-id
@@ -8385,6 +8496,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCloudPcReviewStatus
+      description: Get the review status of a specific Cloud PC device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/manageddevice-getcloudpcreviewstatus?view=graph-rest-beta
       operationId: user.managedDevice_getCloudPcReviewStatus
       parameters:
         - name: user-id
@@ -8562,7 +8677,7 @@ paths:
       description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta
       operationId: user.message_delta
       parameters:
         - name: user-id
@@ -8712,7 +8827,7 @@ paths:
       description: "Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.\nYou can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta
       operationId: user_findRoomList
       parameters:
         - name: user-id
@@ -9097,6 +9212,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function reminderView
+      description: Return a list of event reminders in a user calendar within the specified start and end times.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta
       operationId: user_reminderView
       parameters:
         - name: user-id
@@ -9247,6 +9366,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getRecentNotebooks
+      description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-beta
       operationId: user.onenote.notebook_getRecentNotebook
       parameters:
         - name: user-id
@@ -9421,6 +9544,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getVirtualAppointmentJoinWebUrl
+      description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
       operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: user-id
@@ -9630,6 +9757,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getVirtualAppointmentJoinWebUrl
+      description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
       operationId: user.onlineMeeting.joinWebUrl_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: user-id
@@ -9743,6 +9874,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllTranscripts
+      description: 'Get all transcripts from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call transcripts from channel meetings. You can apply the delta function on getAllTranscripts to synchronize and get callTranscript resources as they are added for onlineMeeting instances organized by the specified user. Delta query supports both full synchronization that gets all the transcripts for online meetings organized by the user, and incremental synchronization that gets transcripts that have been added since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that transcript view periodically. Find more information in the delta query documentation. For additional examples, see callTranscript: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta
       operationId: user.onlineMeeting_getAllTranscript
       parameters:
         - name: user-id
@@ -9820,7 +9955,7 @@ paths:
       description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by\ngetting the user's mailbox settings."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-beta
       operationId: user.outlook_supportedLanguage
       parameters:
         - name: user-id
@@ -9957,6 +10092,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta
       operationId: user.pendingAccessReviewInstance.decision.instance.stage.decision_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -10062,6 +10201,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: Return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewstage-filterbycurrentuser?view=graph-rest-beta
       operationId: user.pendingAccessReviewInstance.decision.instance.stage_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -10159,6 +10302,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta
       operationId: user.pendingAccessReviewInstance.decision_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -10248,6 +10395,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta
       operationId: user.pendingAccessReviewInstance.stage.decision.instance.decision_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -10353,6 +10504,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta
       operationId: user.pendingAccessReviewInstance.stage.decision_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -10450,6 +10605,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: Return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewstage-filterbycurrentuser?view=graph-rest-beta
       operationId: user.pendingAccessReviewInstance.stage_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -10539,6 +10698,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function filterByCurrentUser
+      description: Returns all accessReviewInstance objects on a given accessReviewScheduleDefinition where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewinstance-filterbycurrentuser?view=graph-rest-beta
       operationId: user.pendingAccessReviewInstance_filterGraphBPreCurrentUser
       parameters:
         - name: user-id
@@ -10620,6 +10783,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieves changes to objects that the user is subscribed to. This method allows your application to track changes to objects that the user can access from within Planner over time. The return value of this method might contain heterogeneous types of objects from Planner. For more information about tracking changes in Microsoft Graph data, see Use delta query to track changes in Microsoft Graph data.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta
       operationId: user.planner.all_delta
       parameters:
         - name: user-id
@@ -10697,6 +10864,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: user.planner.plan.bucket.task_delta
       parameters:
         - name: user-id
@@ -10790,6 +10961,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted buckets in a Planner plan without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
       operationId: user.planner.plan.bucket_delta
       parameters:
         - name: user-id
@@ -10875,6 +11050,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: user.planner.plan.task_delta
       parameters:
         - name: user-id
@@ -10960,6 +11139,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted Planner plans in either a group or a Planner roster without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta
       operationId: user.planner.plan_delta
       parameters:
         - name: user-id
@@ -11037,6 +11220,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: user.planner.task_delta
       parameters:
         - name: user-id
@@ -11276,6 +11463,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted users without having to perform a full read of the entire user collection. See change tracking for details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-delta?view=graph-rest-beta
       operationId: user_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12289,7 +12480,7 @@ components:
               nullable: true
             isRooted:
               type: boolean
-              description: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             kind:
               type: string
@@ -12561,13 +12752,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -13827,7 +14018,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              description: 'The number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
             appliedCategories:
@@ -13836,19 +14027,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.'
               nullable: true
             assignments:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of checklist items that are present on the task.
+              description: The number of checklist items that are present on the task.
               format: int32
               nullable: true
             completedBy:
@@ -13856,19 +14047,19 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             conversationThreadId:
               type: string
-              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              description: The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             creationSource:
@@ -13876,12 +14067,12 @@ components:
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
               nullable: true
             isArchived:
               type: boolean
@@ -13898,13 +14089,13 @@ components:
               nullable: true
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.'
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              description: 'The percentage of task completion. When set to 100, the task is completed.'
               format: int32
               nullable: true
             planId:
@@ -14680,6 +14871,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The user's mail folders. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the user.
               x-ms-navigationProperty: true
             managedAppRegistrations:
               type: array
@@ -16687,7 +16884,7 @@ components:
               description: 'The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -16917,11 +17114,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive.  See drive resource for values.
           nullable: true
         id:
           type: string
@@ -16937,13 +17134,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -17040,7 +17237,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -17362,7 +17559,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -19543,6 +19740,53 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.managedAppLogCollectionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppLogCollectionRequest
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+              nullable: true
+            managedAppRegistrationId:
+              type: string
+              description: The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
+              nullable: true
+            requestedBy:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
+              nullable: true
+            requestedByUserPrincipalName:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
+              nullable: true
+            requestedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was received. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+            status:
+              type: string
+              description: 'Indicates the status for the app log collection request - pending, completed or failed. Default is pending.'
+              nullable: true
+            uploadedLogs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogUpload'
+              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.'
+            userLogUploadConsent:
+              $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadConsent'
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The Managed App log collection response
     microsoft.graph.managedAppRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -19625,6 +19869,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
               description: Zero or more policies admin intended for the app as of now.
+              x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the app.
               x-ms-navigationProperty: true
             operations:
               type: array
@@ -20412,6 +20662,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -20422,7 +20673,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+              description: Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
               x-ms-navigationProperty: true
             rosterPlans:
               type: array
@@ -21316,7 +21567,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -24973,6 +25224,50 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.managedAppLogUpload:
+      title: managedAppLogUpload
+      type: object
+      properties:
+        managedAppComponent:
+          type: string
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
+          nullable: true
+        managedAppComponentDescription:
+          type: string
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
+          nullable: true
+        referenceId:
+          type: string
+          description: A provider-specific reference id for the uploaded logs. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: 'A `managedAppLogUpload` represents the log upload result for a given Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.'
+    microsoft.graph.managedAppLogUploadConsent:
+      title: managedAppLogUploadConsent
+      enum:
+        - unknown
+        - declined
+        - accepted
+        - unknownFutureValue
+      type: string
+      description: Represents the current consent status of the associated `managedAppLogCollectionRequest`.
+      x-ms-enum:
+        name: managedAppLogUploadConsent
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Indicates app log consent state is 'Unknown'. This state is automatically assigned at request creation time and is updated when the log collection completes.
+            name: unknown
+          - value: declined
+            description: 'The User has Declined the Log Collection Request. The Log collection and uploads will not be initiated/triggered, and the log collection request will be abandoned.'
+            name: declined
+          - value: accepted
+            description: The User has Accepted the Log Collection Request. The log collection and upload will be initiated.
+            name: accepted
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
@@ -28690,6 +28985,8 @@ components:
         - article
         - home
         - unknownFutureValue
+        - newsLink
+        - videoNewsLink
       type: string
     microsoft.graph.recycleBinItem:
       allOf:
@@ -29342,6 +29639,7 @@ components:
       properties:
         isApprovalRequired:
           type: boolean
+          description: 'Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.'
           nullable: true
       additionalProperties:
         type: object
