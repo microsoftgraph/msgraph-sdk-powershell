@@ -1,38 +1,43 @@
-### Example 1: Using the New-MgBetaUserProfileEducationalActivity Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.People
+
 $params = @{
-	CompletionMonthYear = "Date"
-	EndMonthYear = "Date"
-	Institution = @{
-		Description = $null
-		DisplayName = "Colorado State University"
-		Location = @{
-			Type = "business"
-			PostOfficeBox = $null
-			Street = "12000 E Prospect Rd"
-			City = "Fort Collins"
-			State = "Colorado"
-			CountryOrRegion = "USA"
-			PostalCode = "80525"
+	completionMonthYear = "Date"
+	endMonthYear = "Date"
+	institution = @{
+		description = $null
+		displayName = "Colorado State University"
+		location = @{
+			type = "business"
+			postOfficeBox = $null
+			street = "12000 E Prospect Rd"
+			city = "Fort Collins"
+			state = "Colorado"
+			countryOrRegion = "USA"
+			postalCode = "80525"
 		}
-		WebUrl = "https://www.colostate.edu"
+		webUrl = "https://www.colostate.edu"
 	}
-	Program = @{
-		Abbreviation = "MBA"
-		Activities = $null
-		Awards = $null
-		Description = "Master of Business Administration with a major in Entreprenuership and Finance."
-		DisplayName = "Master of Business Administration"
-		FieldsOfStudy = $null
-		Grade = "3.9"
-		Notes = $null
-		WebUrl = "https://biz.colostate.edu"
+	program = @{
+		abbreviation = "MBA"
+		activities = $null
+		awards = $null
+		description = "Master of Business Administration with a major in Entreprenuership and Finance."
+		displayName = "Master of Business Administration"
+		fieldsOfStudy = $null
+		grade = "3.9"
+		notes = $null
+		webUrl = "https://biz.colostate.edu"
 	}
-	StartMonthYear = "Date"
+	startMonthYear = "Date"
 }
+
 # A UPN can also be used as -UserId.
 New-MgBetaUserProfileEducationalActivity -UserId $userId -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaUserProfileEducationalActivity Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
