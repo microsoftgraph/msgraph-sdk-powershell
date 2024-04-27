@@ -32,7 +32,7 @@ Describe 'Connect-MgGraph ParameterSets' {
     It 'Should have AppCertificateParameterSet' {
         $AppCertificateParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppCertificateParameterSet'
         $AppCertificateParameterSet | Should -Not -BeNull
-        @('ClientId', 'TenantId', 'CertificateSubjectName', 'CertificateThumbprint', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppCertificateParameterSet.Parameters.Name
+        @('ClientId', 'TenantId', 'CertificateSubjectName', 'CertificateThumbprint', 'SendCertificateChain', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppCertificateParameterSet.Parameters.Name
         $MandatoryParameters = $AppCertificateParameterSet.Parameters | Where-Object IsMandatory
         $MandatoryParameters | Should -HaveCount 1
         $MandatoryParameters.Name | Should -Be 'ClientId'

@@ -1,50 +1,30 @@
-### Example 1: Using the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Compliance
+
 $params = @{
-	RedundancyDetection = @{
-		IsEnabled = $false
-		SimilarityThreshold = 70
-		MinWords = 12
-		MaxWords = 400000
+	redundancyDetection = @{
+		isEnabled = $false
+		similarityThreshold = 70
+		minWords = 12
+		maxWords = 400000
 	}
-	TopicModeling = @{
-		IsEnabled = $false
-		IgnoreNumbers = $false
-		TopicCount = 50
-		DynamicallyAdjustTopicCount = $false
+	topicModeling = @{
+		isEnabled = $false
+		ignoreNumbers = $false
+		topicCount = 50
+		dynamicallyAdjustTopicCount = $false
 	}
-	Ocr = @{
-		IsEnabled = $true
-		MaxImageSize = 12000
+	ocr = @{
+		isEnabled = $true
+		maxImageSize = 12000
 	}
 }
+
 Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Compliance
-$params = @{
-	RedundancyDetection = @{
-		IsEnabled = $false
-		SimilarityThreshold = 70
-		MinWords = 12
-		MaxWords = 400000
-	}
-	TopicModeling = @{
-		IsEnabled = $false
-		IgnoreNumbers = $false
-		TopicCount = 50
-		DynamicallyAdjustTopicCount = $false
-	}
-	Ocr = @{
-		IsEnabled = $true
-		MaxImageSize = 12000
-	}
-}
-Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
-```
-This example shows how to use the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

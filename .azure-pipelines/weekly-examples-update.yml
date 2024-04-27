@@ -1,94 +1,105 @@
-# Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
-
-trigger: none # disable triggers based on commits.
-pr: none # disable as a PR gate.
+# This Yaml Document has been converted by ESAI Yaml Pipeline Conversion Tool.
+# Please make sure to check all the converted content, it is your team's responsibility to make sure that the pipeline is still valid and functions as expected.
+# This pipeline will be extended to the OneESPT template
+# If you are not using the E+D shared hosted pool with windows-2022, replace the pool section with your hosted pool, os, and image name. If you are using a Linux image, you must specify an additional windows image for SDL: https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/1es-pipeline-templates/features/sdlanalysis/overview#how-to-specify-a-windows-pool-for-the-sdl-source-analysis-stage
+# The Task 'PublishBuildArtifacts@1' has been converted to an output named 'Publish Examples to be reviewed as artifact' in the templateContext section.
+trigger: none
+pr: none
 name: 'PowerShellExamplesUpdateV2 Check'
 schedules:
-  - cron: "0 3 * * FRI"  # every Friday at 3AM UTC (off hours for Redmond, Nairobi and Montréal)
-    displayName: 'PowerShellExamplesUpdateV2'
-    branches:
-      include:
-      - dev
-    always: true
+- cron: "0 3 * * FRI"
+  displayName: 'PowerShellExamplesUpdateV2'
+  branches:
+    include:
+    - dev
+  always: true
 parameters:
 - name: PipelineTimeout
   displayName: PipelineTimeout
   type: number
   default: 1200
-- name: BuildAgent
-  displayName: Build Agent
-  default: 1es-windows-ps-compute
-
 resources:
- repositories:     
-   - repository: msgraph-sdk-powershell
-     type: github
-     endpoint: MicrosoftDocs
-     name: microsoftgraph/msgraph-sdk-powershell
-     ref: dev
-
-jobs:
-- job: PowerShellExamplesUpdateV2
-  pool: 
-    name: ${{ parameters.BuildAgent }}
-  timeoutInMinutes: ${{ parameters.PipelineTimeout }}
-  steps:
-  - template: ./common-templates/install-sdk.yml
-  - task: PowerShell@2
-    name: "ComputeBranch"
-    displayName: "Compute weekly examples update branch name"
-    inputs:
-      targetType: inline
-      script: |
-        $branch = "{0}/{1}" -f "WeeklyExamplesUpdate", (Get-Date -Format yyyyMMddHHmm)
-        Write-Host "Compute branch: $branch"
-        Write-Host "##vso[task.setvariable variable=WeeklyExamplesBranch;isOutput=true]$branch"
-
-  - task: Bash@3
-    displayName: "Create weekly examples branch"
-    inputs:
-      targetType: inline
-      script: |
-        git status
-        git branch $(ComputeBranch.WeeklyExamplesBranch)
-        git checkout $(ComputeBranch.WeeklyExamplesBranch)
-        git status
-
-  - task: PowerShell@2
-    displayName: 'Import Examples From API reference - V2'
-    continueOnError: false
-    inputs:
-      targetType: 'filePath'
-      pwsh: true
-      filePath: tools\ImportExamples.ps1
-
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publish Examples to be reviewed as artifact'
-    inputs:
-      PathtoPublish: 'examplesreport'
-      ArtifactName: 'ExamplesToBeReviewed'
-      publishLocation: 'Container'
-      # StoreAsTar: true
-
-  - task: PowerShell@2
-    displayName: Pushing to github
-    env:
-      GITHUB_TOKEN: $(GITHUB_TOKEN)
-    inputs:
-      targetType: inline
-      pwsh: true
-      script: |
-        git config --global user.email "GraphTooling@service.microsoft.com"
-        git config --global user.name "Microsoft Graph DevX Tooling"
-        git status
-        git add .
-        git commit -m "Updating examples"
-        git push --set-upstream https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git $(ComputeBranch.WeeklyExamplesBranch)
-        git status
-
-  - template: ./common-templates/create-pr.yml
-    parameters:
-      BaseBranch: "dev"
-      TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
-      Title: "[v2] Examples Update"
-      Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+  repositories:
+  - repository: msgraph-sdk-powershell
+    type: github
+    endpoint: MicrosoftDocs
+    name: microsoftgraph/msgraph-sdk-powershell
+    ref: dev
+  - repository: 1ESPipelineTemplates
+    type: git
+    name: 1ESPipelineTemplates/1ESPipelineTemplates
+    ref: refs/tags/release
+extends:
+  template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
+  parameters:
+    pool:
+      name: Azure-Pipelines-1ESPT-ExDShared
+      image: windows-2022
+      os: windows
+    sdl:
+      credscan:
+        suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
+      policheck:
+        exclusionFile: $(Build.SourcesDirectory)/.azure-pipelines/config/policheck/policheck-exclusions.xml
+    customBuildTags:
+    - ES365AIMigrationTooling
+    stages:
+    - stage: stage
+      jobs:
+      - job: PowerShellExamplesUpdateV2
+        timeoutInMinutes: ${{ parameters.PipelineTimeout }}
+        templateContext:
+          outputs:
+          - output: pipelineArtifact
+            displayName: 'Publish Examples to be reviewed as artifact'
+            targetPath: 'examplesreport'
+            artifactName: 'ExamplesToBeReviewed'
+            publishLocation: 'Container'
+        steps:
+        - template: .azure-pipelines/common-templates/install-sdk.yml@self
+        - task: PowerShell@2
+          name: "ComputeBranch"
+          displayName: "Compute weekly examples update branch name"
+          inputs:
+            targetType: inline
+            script: |
+              $branch = "{0}/{1}" -f "WeeklyExamplesUpdate", (Get-Date -Format yyyyMMddHHmm)
+              Write-Host "Compute branch: $branch"
+              Write-Host "##vso[task.setvariable variable=WeeklyExamplesBranch;isOutput=true]$branch"
+        - task: Bash@3
+          displayName: "Create weekly examples branch"
+          inputs:
+            targetType: inline
+            script: |
+              git status
+              git branch $(ComputeBranch.WeeklyExamplesBranch)
+              git checkout $(ComputeBranch.WeeklyExamplesBranch)
+              git status
+        - task: PowerShell@2
+          displayName: 'Import Examples From API reference - V2'
+          continueOnError: false
+          inputs:
+            targetType: 'filePath'
+            pwsh: true
+            filePath: tools\ImportExamples.ps1
+        - task: PowerShell@2
+          displayName: Pushing to github
+          env:
+            GITHUB_TOKEN: $(GITHUB_TOKEN)
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              git config --global user.email "GraphTooling@service.microsoft.com"
+              git config --global user.name "Microsoft Graph DevX Tooling"
+              git status
+              git add .
+              git commit -m "Updating examples"
+              git push --set-upstream https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git $(ComputeBranch.WeeklyExamplesBranch)
+              git status
+        - template: .azure-pipelines/common-templates/create-pr.yml@self
+          parameters:
+            BaseBranch: "dev"
+            TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
+            Title: "[v2] Examples Update"
+            Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."

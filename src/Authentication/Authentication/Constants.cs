@@ -35,6 +35,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             public const string ClientId = "The client id of your application.";
             public const string CertificateSubjectName = "The subject distinguished name of a certificate. The Certificate will be retrieved from the current user's certificate store.";
             public const string CertificateThumbprint = "The thumbprint of your certificate. The Certificate will be retrieved from the current user's certificate store.";
+            public const string SendCertificateChain = "Include x5c header in client claims when acquiring a token to enable subject name / issuer based authentication using given certificate.";
             public const string Certificate = "An X.509 certificate supplied during invocation.";
             public const string ClientSecretCredential = "The PSCredential object provides the application ID and client secret for service principal credentials. For more information about the PSCredential object, type Get-Help Get-Credential.";
             public const string AccessToken = "Specifies a bearer token for Microsoft Graph service. Access tokens do timeout and you'll have to handle their refresh.";

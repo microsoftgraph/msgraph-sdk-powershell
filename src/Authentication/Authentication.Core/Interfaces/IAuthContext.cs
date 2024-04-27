@@ -47,6 +47,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string Account { get; set; }
         string CertificateThumbprint { get; set; }
         string CertificateSubjectName { get; set; }
+        bool SendCertificateChain {  get; set; }
         X509Certificate2 Certificate { get; set; }
         ContextScope ContextScope { get; set; }
         Version PSHostVersion { get; set; }

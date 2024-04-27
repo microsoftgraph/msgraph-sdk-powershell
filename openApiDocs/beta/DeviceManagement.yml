@@ -12074,6 +12074,197 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/deviceConfigurationProfiles:
+    get:
+      tags:
+        - deviceManagement.deviceConfigurationProfile
+      summary: Get deviceConfigurationProfiles from deviceManagement
+      description: Profile Id of the object.
+      operationId: deviceManagement_ListDeviceConfigurationProfile
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.deviceConfigurationProfileCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.deviceConfigurationProfile
+      summary: Create new navigation property to deviceConfigurationProfiles for deviceManagement
+      operationId: deviceManagement_CreateDeviceConfigurationProfile
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceConfigurationProfile'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/deviceConfigurationProfiles/{deviceConfigurationProfile-id}':
+    get:
+      tags:
+        - deviceManagement.deviceConfigurationProfile
+      summary: Get deviceConfigurationProfiles from deviceManagement
+      description: Profile Id of the object.
+      operationId: deviceManagement_GetDeviceConfigurationProfile
+      parameters:
+        - name: deviceConfigurationProfile-id
+          in: path
+          description: The unique identifier of deviceConfigurationProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfigurationProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.deviceConfigurationProfile
+      summary: Update the navigation property deviceConfigurationProfiles in deviceManagement
+      operationId: deviceManagement_UpdateDeviceConfigurationProfile
+      parameters:
+        - name: deviceConfigurationProfile-id
+          in: path
+          description: The unique identifier of deviceConfigurationProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfigurationProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceConfigurationProfile'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.deviceConfigurationProfile
+      summary: Delete navigation property deviceConfigurationProfiles for deviceManagement
+      operationId: deviceManagement_DeleteDeviceConfigurationProfile
+      parameters:
+        - name: deviceConfigurationProfile-id
+          in: path
+          description: The unique identifier of deviceConfigurationProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfigurationProfile
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/deviceConfigurationProfiles/$count:
+    get:
+      tags:
+        - deviceManagement.deviceConfigurationProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceConfigurationProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/deviceConfigurations:
     get:
       tags:
@@ -27331,7 +27522,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: Indicates collection of App Log Upload Request.
+      description: The collection property of AppLogUploadRequest.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_ListAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -27422,7 +27613,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: Indicates collection of App Log Upload Request.
+      description: The collection property of AppLogUploadRequest.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_GetAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -42874,6 +43065,12 @@ components:
               x-ms-navigationProperty: true
             deviceConfigurationDeviceStateSummaries:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationDeviceStateSummary'
+            deviceConfigurationProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationProfile'
+              description: Profile Id of the object.
+              x-ms-navigationProperty: true
             deviceConfigurationRestrictedAppsViolations:
               type: array
               items:
@@ -43003,6 +43200,18 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyUploadedDefinitionFile'
               description: The available group policy uploaded definition files for this account.
+              x-ms-navigationProperty: true
+            hardwareConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.hardwareConfiguration'
+              description: The hardware configurations for this account.
+              x-ms-navigationProperty: true
+            hardwarePasswordInfo:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.hardwarePasswordInfo'
+              description: The hardware password info for this account.
               x-ms-navigationProperty: true
             importedDeviceIdentities:
               type: array
@@ -45069,26 +45278,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              description: Specify category in which the setting is under. Support $filters.
               nullable: true
             description:
               type: string
-              description: Description of the item
+              description: Description of the setting.
               nullable: true
             displayName:
               type: string
-              description: Display name of the item
+              description: 'Name of the setting. For example: Allow Toast.'
               nullable: true
             helpText:
               type: string
-              description: Help text of the item
+              description: Help text of the setting. Give more details of the setting.
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at
+              description: List of links more info for the setting can be found at.
             keywords:
               type: array
               items:
@@ -45112,7 +45321,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition if the setting is a child setting.
+              description: Root setting definition id if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -45964,6 +46173,53 @@ components:
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.deviceConfigurationProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceConfigurationProfile
+          type: object
+          properties:
+            accountId:
+              type: string
+              description: Account Id.
+              nullable: true
+            configurationTechnologies:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Configuration Technologies for Settins Catalog Policies
+              format: int32
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the object was created.
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the entity was last modified.
+              format: date-time
+            platformType:
+              $ref: '#/components/schemas/microsoft.graph.platformType'
+            profileName:
+              type: string
+              description: Profile name
+              nullable: true
+            profileType:
+              $ref: '#/components/schemas/microsoft.graph.profileType'
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of scope tags for the configuration.
+            templateId:
+              type: string
+              description: TemplateId for Settings Catalog Policies
+              nullable: true
+          additionalProperties:
+            type: object
+          description: 'The listing service profile entity contains the meta data of an Intune configuration profile '
     microsoft.graph.deviceConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -47993,7 +48249,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -53033,6 +53289,100 @@ components:
           additionalProperties:
             type: object
           description: The entity represents an ADMX (Administrative Template) XML file uploaded by Administrator. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
+    microsoft.graph.hardwareConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hardwareConfiguration
+          type: object
+          properties:
+            configurationFileContent:
+              type: string
+              description: File content of the hardware configuration
+              format: base64url
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of when the hardware configuration was created. This property is read-only.
+              format: date-time
+              readOnly: true
+            description:
+              type: string
+              description: Description of the hardware configuration
+              nullable: true
+            displayName:
+              type: string
+              description: Name of the hardware configuration
+            fileName:
+              type: string
+              description: File name of the hardware configuration
+            hardwareConfigurationFormat:
+              $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationFormat'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of when the hardware configuration was modified. This property is read-only.
+              format: date-time
+              readOnly: true
+            perDevicePasswordDisabled:
+              type: boolean
+              description: A value indicating whether per devcive pasword disabled
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of Scope Tag IDs for the hardware configuration
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Version of the hardware configuration (E.g. 1, 2, 3 ...)'
+              format: int32
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationAssignment'
+              description: List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+              x-ms-navigationProperty: true
+            deviceRunStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationDeviceState'
+              description: List of run states for the hardware configuration across all devices
+              x-ms-navigationProperty: true
+            runSummary:
+              $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationRunSummary'
+            userRunStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationUserState'
+              description: List of run states for the hardware configuration across all users
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: 'BIOS configuration and other settings provides customers the ability to configure hardware/bios settings on the enrolled Windows 10/11 Entra ID joined devices by uploading a configuration file generated with their OEM tool (e.g. Dell Command tool). A BIOS configuration policy can be assigned to multiple devices, allowing admins to remotely control a device''s hardware properties (e.g. enable Secure Boot) from the Intune Portal.'
+    microsoft.graph.hardwarePasswordInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hardwarePasswordInfo
+          type: object
+          properties:
+            currentPassword:
+              type: string
+              description: Current device password
+              nullable: true
+            previousPasswords:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of previous device passwords
+            serialNumber:
+              type: string
+              description: Device serial number
+          additionalProperties:
+            type: object
+          description: Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices.
     microsoft.graph.importedDeviceIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -53458,11 +53808,6 @@ components:
               type: string
               description: 'Indicates the last DateTime that the request was modified. The value cannot be modified and is automatically populated whenever values in the request are updated. For example, when the ''status'' property changes from needsApproval to approved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. This property is read-only.'
               format: date-time
-              readOnly: true
-            operationApprovalPolicies:
-              type: string
-              description: The operational approval policies used in the request. Indicates the policy and platform combinations that are required for this request to be approved or rejected. Read-only. This property is read-only.
-              nullable: true
               readOnly: true
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -54061,6 +54406,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcBulkAction'
+              description: Bulk actions applied to a Cloud PC.
               x-ms-navigationProperty: true
             cloudPCs:
               type: array
@@ -54174,6 +54520,10 @@ components:
             extractHardwareHash:
               type: boolean
               description: HardwareHash Extraction for the profile
+            hardwareHashExtractionEnabled:
+              type: boolean
+              description: 'Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
+              nullable: true
             language:
               type: string
               description: Language configured on the device
@@ -54183,12 +54533,22 @@ components:
               type: string
               description: Profile last modified time
               format: date-time
+            locale:
+              type: string
+              description: 'The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
+              nullable: true
             managementServiceAppId:
               type: string
               description: AzureAD management app ID used during client device-based enrollment discovery
               nullable: true
+            outOfBoxExperienceSetting:
+              $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSetting'
             outOfBoxExperienceSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSettings'
+            preprovisioningAllowed:
+              type: boolean
+              description: 'Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.'
+              nullable: true
             roleScopeTagIds:
               type: array
               items:
@@ -56668,6 +57028,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The user's mail folders. Read-only. Nullable.
               x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the user.
+              x-ms-navigationProperty: true
             managedAppRegistrations:
               type: array
               items:
@@ -57819,25 +58185,25 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: Default. No platform type specified.
+            description: Indicates the settings contained in this configuration don't have a platform set.
             name: none
           - value: android
-            description: Settings for Android platform.
+            description: 'Indicates that the settings contained in associated configuration applies to the Android operating system. '
             name: android
           - value: iOS
-            description: Settings for iOS platform.
+            description: Indicates that the settings contained in associated configuration applies to the iOS operating system.
             name: iOS
           - value: macOS
-            description: Settings for MacOS platform.
+            description: Indicates that the settings contained in associated configuration applies to the MacOS operating system.
             name: macOS
           - value: windows10X
-            description: Windows 10 X.
+            description: Indicates that the settings contained in associated configuration applies to the Windows 10X operating system.
             name: windows10X
           - value: windows10
-            description: Settings for Windows 10 platform.
+            description: Indicates that the settings contained in associated configuration applies to the Windows 10 operating system.
             name: windows10
           - value: linux
-            description: Settings for Linux platform.
+            description: Indicates that the settings contained in associated configuration applies to the Linux operating system.
             name: linux
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
@@ -58043,7 +58409,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
           nullable: true
       additionalProperties:
         type: object
@@ -58394,6 +58760,80 @@ components:
           - value: remoteLock
             description: Remotely lock the device
             name: remoteLock
+    microsoft.graph.platformType:
+      title: platformType
+      enum:
+        - none
+        - android
+        - androidEnterprise
+        - iOS
+        - macOS
+        - windows10X
+        - windows10
+      type: string
+      description: Platform Type
+      x-ms-enum:
+        name: platformType
+        modelAsString: false
+        values:
+          - value: none
+            description: None Platform Type
+            name: none
+          - value: android
+            description: Android Platform Type
+            name: android
+          - value: androidEnterprise
+            description: Android Enterprise Platform Type
+            name: androidEnterprise
+          - value: iOS
+            description: iOS Platform Type
+            name: iOS
+          - value: macOS
+            description: MacOS Platform Type
+            name: macOS
+          - value: windows10X
+            description: Windows 10X Platform Type
+            name: windows10X
+          - value: windows10
+            description: Windows 10 Platform Type
+            name: windows10
+    microsoft.graph.profileType:
+      title: profileType
+      enum:
+        - settingsCatalog
+        - administrativeTemplates
+        - importedADMXTemplates
+        - oemAppConfig
+        - hardwareConfig
+        - dcV1EndpointProtection
+        - dcV1DeviceRestrictions
+      type: string
+      description: Profile Type
+      x-ms-enum:
+        name: profileType
+        modelAsString: false
+        values:
+          - value: settingsCatalog
+            description: Settings catalog profile type
+            name: settingsCatalog
+          - value: administrativeTemplates
+            description: Administrative Templates Profile Type
+            name: administrativeTemplates
+          - value: importedADMXTemplates
+            description: Imported Administrative Templates Profile Type
+            name: importedADMXTemplates
+          - value: oemAppConfig
+            description: OEM Device related App Config Profile Type
+            name: oemAppConfig
+          - value: hardwareConfig
+            description: Hardware Configuration Profile Type
+            name: hardwareConfig
+          - value: dcV1EndpointProtection
+            description: DCV1 Endpoint Protection Profile Type
+            name: dcV1EndpointProtection
+          - value: dcV1DeviceRestrictions
+            description: DCV1 Device Restrictions Profile Type
+            name: dcV1DeviceRestrictions
     microsoft.graph.deviceManagementApplicabilityRuleDeviceMode:
       title: deviceManagementApplicabilityRuleDeviceMode
       type: object
@@ -59493,6 +59933,7 @@ components:
         - pauseConfigurationRefresh
         - initiateDeviceAttestation
         - changeAssignments
+        - delete
       type: string
       description: Remote actions Intune supports.
       x-ms-enum:
@@ -59613,6 +60054,9 @@ components:
           - value: changeAssignments
             description: Indicates remote device action to override assignments for a Device.
             name: changeAssignments
+          - value: delete
+            description: Indicates remote device action to delete a device from Intune portal.
+            name: delete
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -60844,6 +61288,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.deviceConfigurationConflictSummary'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceConfigurationProfileCollectionResponse:
+      title: Collection of deviceConfigurationProfile
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationProfile'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -62090,11 +62547,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -63899,6 +64356,237 @@ components:
           additionalProperties:
             type: object
           description: The entity represents an group policy operation.
+    microsoft.graph.hardwareConfigurationFormat:
+      title: hardwareConfigurationFormat
+      enum:
+        - dell
+        - surface
+        - surfaceDock
+      type: string
+      description: Indicates the supported oems of hardware configuration
+      x-ms-enum:
+        name: hardwareConfigurationFormat
+        modelAsString: false
+        values:
+          - value: dell
+            description: Dell
+            name: dell
+          - value: surface
+            description: Surface
+            name: surface
+          - value: surfaceDock
+            description: Surface dock
+            name: surfaceDock
+    microsoft.graph.hardwareConfigurationAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hardwareConfigurationAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: Contains properties used to assign a hardware configuration to a group.
+    microsoft.graph.hardwareConfigurationDeviceState:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hardwareConfigurationDeviceState
+          type: object
+          properties:
+            assignmentFilterIds:
+              type: string
+              description: A list of identifier strings of different assignment filters applied
+              nullable: true
+            configurationError:
+              type: string
+              description: Error from the hardware configuration execution
+              nullable: true
+            configurationOutput:
+              type: string
+              description: Output of the hardware configuration execution
+              nullable: true
+            configurationState:
+              $ref: '#/components/schemas/microsoft.graph.runState'
+            deviceName:
+              type: string
+              description: The name of the device
+              nullable: true
+            internalVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The Policy internal version
+              format: int32
+            lastStateUpdateDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The last timestamp of when the hardware configuration executed
+              format: date-time
+            osVersion:
+              type: string
+              description: 'Operating system version of the device (E.g. 10.0.19042.1165, 10.0.19042.1288 etc.)'
+              nullable: true
+            upn:
+              type: string
+              description: User Principal Name (UPN).
+              nullable: true
+            userId:
+              type: string
+              description: The unique identifier of the Entra user associated with the device for which policy is applied. Read-Only.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Contains properties for device run state of the hardware configuration
+    microsoft.graph.hardwareConfigurationRunSummary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hardwareConfigurationRunSummary
+          type: object
+          properties:
+            errorDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of devices for which hardware configuration state is error
+              format: int32
+            errorUserCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of users for which hardware configuration state is error
+              format: int32
+            failedDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of devices for which hardware configuration found an issue
+              format: int32
+            failedUserCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of users for which hardware configuration found an issue
+              format: int32
+            lastRunDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last run time for the configuration across all devices
+              format: date-time
+              nullable: true
+            notApplicableDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of devices for which hardware configuration state is not applicable
+              format: int32
+            notApplicableUserCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of users for which hardware configuration state is not applicable
+              format: int32
+            pendingDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of devices for which hardware configuration is in pending state
+              format: int32
+            pendingUserCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of users for which hardware configuration is in pending state
+              format: int32
+            successfulDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of devices for which hardware configured without any issue
+              format: int32
+            successfulUserCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of users for which hardware configured without any issue
+              format: int32
+            unknownDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of devices for which hardware configuration state is unknown
+              format: int32
+            unknownUserCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of users for which hardware configuration state is unknown
+              format: int32
+          additionalProperties:
+            type: object
+          description: Contains properties for the run summary of a hardware configuration script.
+    microsoft.graph.hardwareConfigurationUserState:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hardwareConfigurationUserState
+          type: object
+          properties:
+            errorDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Error device count for specific user.
+              format: int32
+            failedDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Failed device count for specific user.
+              format: int32
+            lastStateUpdateDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last timestamp when the hardware configuration executed
+              format: date-time
+            notApplicableDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Not applicable device count for specific user.
+              format: int32
+            pendingDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Pending device count for specific user.
+              format: int32
+            successfulDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Success device count for specific user.
+              format: int32
+            unknownDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Unknown device count for specific user.
+              format: int32
+            upn:
+              type: string
+              description: User Principal Name (UPN).
+              nullable: true
+            userEmail:
+              type: string
+              description: User Email address.
+              nullable: true
+            userName:
+              type: string
+              description: User name
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Contains properties for User state of the hardware configuration
     microsoft.graph.importedDeviceIdentityType:
       title: importedDeviceIdentityType
       enum:
@@ -64765,12 +65453,15 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: Name of the bulk action.
             scheduledDuringMaintenanceWindow:
               type: boolean
+              description: 'Indicates whether the bulk actions can be initiated during maintenance window. When true, bulk action will use maintenance window to schedule action, When false means bulk action will not use the maintenance window. Default value is false.'
               nullable: true
           additionalProperties:
             type: object
@@ -65483,6 +66174,29 @@ components:
       additionalProperties:
         type: object
       description: Enrollment status screen setting
+    microsoft.graph.outOfBoxExperienceSetting:
+      title: outOfBoxExperienceSetting
+      type: object
+      properties:
+        deviceUsageType:
+          $ref: '#/components/schemas/microsoft.graph.windowsDeviceUsageType'
+        escapeLinkHidden:
+          type: boolean
+          description: 'When TRUE, the link that allows user to start over with a different account on company sign-in is hidden. When false, the link that allows user to start over with a different account on company sign-in is available. Default value is FALSE.'
+        eulaHidden:
+          type: boolean
+          description: 'When TRUE, EULA is hidden to the end user during OOBE. When FALSE, EULA is shown to the end user during OOBE. Default value is FALSE.'
+        keyboardSelectionPageSkipped:
+          type: boolean
+          description: 'When TRUE, the keyboard selection page is hidden to the end user during OOBE if Language and Region are set. When FALSE, the keyboard selection page is skipped during OOBE.'
+        privacySettingsHidden:
+          type: boolean
+          description: 'When TRUE, privacy settings is hidden to the end user during OOBE. When FALSE, privacy settings is shown to the end user during OOBE. Default value is FALSE.'
+        userType:
+          $ref: '#/components/schemas/microsoft.graph.windowsUserType'
+      additionalProperties:
+        type: object
+      description: 'The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
     microsoft.graph.outOfBoxExperienceSettings:
       title: outOfBoxExperienceSettings
       type: object
@@ -65505,7 +66219,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.windowsUserType'
       additionalProperties:
         type: object
-      description: Out of box experience setting
+      description: 'The Windows Autopilot Deployment Profile settings used by the Autopilot device for out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported. Read-Only. Starting from May 2024 this property will no longer be supported and will be marked as deprecated. Use outOfBoxExperienceSetting instead.'
     microsoft.graph.windowsAutopilotDeploymentProfileAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -68127,7 +68841,7 @@ components:
               nullable: true
             isRooted:
               type: boolean
-              description: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             kind:
               type: string
@@ -69075,6 +69789,53 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.managedAppLogCollectionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppLogCollectionRequest
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+              nullable: true
+            managedAppRegistrationId:
+              type: string
+              description: The unique identifier of the app instance for which diagnostic was collected.
+              nullable: true
+            requestedBy:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection.
+              nullable: true
+            requestedByUserPrincipalName:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
+              nullable: true
+            requestedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was received. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+            status:
+              type: string
+              description: 'Indicates the status for the app log collection request - pending, completed or failed. Default is pending.'
+              nullable: true
+            uploadedLogs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogUpload'
+              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs.'
+            userLogUploadConsent:
+              $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadConsent'
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The Managed App log collection response
     microsoft.graph.managedAppRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -69157,6 +69918,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
               description: Zero or more policies admin intended for the app as of now.
+              x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the app.
               x-ms-navigationProperty: true
             operations:
               type: array
@@ -71165,26 +71932,31 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action failed.
           format: int32
         inProgressCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action is in progress.
           format: int32
         notSupportedCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action isn't supported.
           format: int32
         pendingCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action is pending.
           format: int32
         successfulCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of Cloud PCs where the action is successful.
           format: int32
       additionalProperties:
         type: object
@@ -75313,6 +76085,50 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.managedAppLogUpload:
+      title: managedAppLogUpload
+      type: object
+      properties:
+        managedAppComponent:
+          type: string
+          description: The Mobile Application Management (MAM) Logs Uploading Component.
+          nullable: true
+        managedAppComponentDescription:
+          type: string
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
+          nullable: true
+        referenceId:
+          type: string
+          description: A provider-specific reference id for the uploaded logs.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: 'A `managedAppLogUpload` represents the log upload result for a given Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.'
+    microsoft.graph.managedAppLogUploadConsent:
+      title: managedAppLogUploadConsent
+      enum:
+        - unknown
+        - declined
+        - accepted
+        - unknownFutureValue
+      type: string
+      description: Represents the current consent status of the associated `managedAppLogCollectionRequest`.
+      x-ms-enum:
+        name: managedAppLogUploadConsent
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Indicates app log consent state is 'Unknown'. This state is automatically assigned at request creation time and is updated when the log collection completes.
+            name: unknown
+          - value: declined
+            description: 'The User has Declined the Log Collection Request. The Log collection and uploads will not be initiated/triggered, and the log collection request will be abandoned.'
+            name: declined
+          - value: accepted
+            description: The User has Accepted the Log Collection Request. The log collection and upload will be initiated.
+            name: accepted
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
@@ -76518,7 +77334,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              description: 'The number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
             appliedCategories:
@@ -76527,19 +77343,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.'
               nullable: true
             assignments:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of checklist items that are present on the task.
+              description: The number of checklist items that are present on the task.
               format: int32
               nullable: true
             completedBy:
@@ -76547,19 +77363,19 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             conversationThreadId:
               type: string
-              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              description: The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             creationSource:
@@ -76567,12 +77383,12 @@ components:
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
               nullable: true
             isArchived:
               type: boolean
@@ -76589,13 +77405,13 @@ components:
               nullable: true
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.'
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              description: 'The percentage of task completion. When set to 100, the task is completed.'
               format: int32
               nullable: true
             planId:
@@ -77848,11 +78664,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -79890,6 +80706,8 @@ components:
         - article
         - home
         - unknownFutureValue
+        - newsLink
+        - videoNewsLink
       type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
@@ -87460,6 +88278,7 @@ components:
       properties:
         isApprovalRequired:
           type: boolean
+          description: 'Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.'
           nullable: true
       additionalProperties:
         type: object
@@ -89050,6 +89869,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.deviceConfigurationConflictSummaryCollectionResponse'
+    microsoft.graph.deviceConfigurationProfileCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceConfigurationProfileCollectionResponse'
     microsoft.graph.deviceConfigurationCollectionResponse:
       description: Retrieved collection
       content:

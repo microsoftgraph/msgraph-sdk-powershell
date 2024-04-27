@@ -1,27 +1,40 @@
-### Example 1: Using the New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet
+### Example 1: Add a noncustodial data source user or group mailbox with an email
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Compliance
+
 $params = @{
-	ApplyHoldToSource = $true
-	DataSource = @{
+	applyHoldToSource = $true
+	dataSource = @{
 		"@odata.type" = "microsoft.graph.ediscovery.userSource"
-		Email = "adelev@contoso.com"
+		email = "adelev@contoso.com"
 	}
 }
+
 New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -CaseId $caseId -BodyParameter $params
+
 ```
-This example shows how to use the New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet
+This example will add a noncustodial data source user or group mailbox with an email
+
+### Example 2: Add a noncustodial data source site with a URL
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Compliance
+
 $params = @{
-	ApplyHoldToSource = $false
-	DataSource = @{
+	applyHoldToSource = $false
+	dataSource = @{
 		"@odata.type" = "microsoft.graph.ediscovery.siteSource"
+		site = @{
+			webUrl = "https://contoso.sharepoint.com/sites/SecretSite"
+		}
 	}
 }
+
 New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -CaseId $caseId -BodyParameter $params
+
 ```
-This example shows how to use the New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will add a noncustodial data source site with a url
+

@@ -1,24 +1,34 @@
-### Example 1: Using the New-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet
+### Example 1: Create unifiedGroupSource with group SMTP address
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Compliance
+
 $params = @{
-	Group = @{
-		Mail = "SecretGroup@contoso.com"
+	group = @{
+		mail = "SecretGroup@contoso.com"
 	}
-	IncludedSources = "mailbox, site"
+	includedSources = "mailbox, site"
 }
+
 New-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId $caseId -CustodianId $custodianId -BodyParameter $params
+
 ```
-This example shows how to use the New-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet
+This example will create unifiedgroupsource with group smtp address
+
+### Example 2: Create unifiedGroupSource with group@odata.bind
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Compliance
+
 $params = @{
-	"Group@odata.bind" = "https://graph.microsoft.com/v1.0/groups/b96f95c5-b1b3-4142-b039-8ac79e7d2c84"
-	IncludedSources = "mailbox, site"
+	"group@odata.bind" = "https://graph.microsoft.com/v1.0/groups/b96f95c5-b1b3-4142-b039-8ac79e7d2c84"
+	includedSources = "mailbox, site"
 }
+
 New-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource -CaseId $caseId -CustodianId $custodianId -BodyParameter $params
+
 ```
-This example shows how to use the New-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create unifiedgroupsource with group@odata.bind
+

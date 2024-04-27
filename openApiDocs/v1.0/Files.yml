@@ -6753,11 +6753,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: 'driveItem: setRetentionLabel'
-      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      summary: 'driveItem: lockOrUnlockRecord'
+      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
       operationId: drive.item_UpdateRetentionLabel
       parameters:
         - name: drive-id
@@ -18489,11 +18489,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: 'driveItem: setRetentionLabel'
-      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      summary: 'driveItem: lockOrUnlockRecord'
+      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
       operationId: drive.root_UpdateRetentionLabel
       parameters:
         - name: drive-id
@@ -25769,11 +25769,11 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: 'driveItem: setRetentionLabel'
-      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      summary: 'driveItem: lockOrUnlockRecord'
+      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
       operationId: group.drive.item_UpdateRetentionLabel
       parameters:
         - name: group-id
@@ -36838,11 +36838,11 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: 'driveItem: setRetentionLabel'
-      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      summary: 'driveItem: lockOrUnlockRecord'
+      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
       operationId: group.drive.root_UpdateRetentionLabel
       parameters:
         - name: group-id
@@ -52672,11 +52672,11 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: 'driveItem: setRetentionLabel'
-      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      summary: 'driveItem: lockOrUnlockRecord'
+      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
       operationId: user.drive.item_UpdateRetentionLabel
       parameters:
         - name: user-id
@@ -63741,11 +63741,11 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: 'driveItem: setRetentionLabel'
-      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      summary: 'driveItem: lockOrUnlockRecord'
+      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
       operationId: user.drive.root_UpdateRetentionLabel
       parameters:
         - name: user-id

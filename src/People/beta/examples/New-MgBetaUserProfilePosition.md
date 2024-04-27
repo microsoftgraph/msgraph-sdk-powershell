@@ -1,28 +1,33 @@
-### Example 1: Using the New-MgBetaUserProfilePosition Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.People
+
 $params = @{
-	Detail = @{
-		Company = @{
-			DisplayName = "Adventureworks Ltd."
-			Department = "Consulting"
-			OfficeLocation = "AW23/344"
-			Address = @{
-				Type = "business"
-				Street = "123 Patriachy Ponds"
-				City = "Moscow"
-				CountryOrRegion = "Russian Federation"
-				PostalCode = "RU-34621"
+	detail = @{
+		company = @{
+			displayName = "Adventureworks Ltd."
+			department = "Consulting"
+			officeLocation = "AW23/344"
+			address = @{
+				type = "business"
+				street = "123 Patriachy Ponds"
+				city = "Moscow"
+				countryOrRegion = "Russian Federation"
+				postalCode = "RU-34621"
 			}
-			WebUrl = "https://www.adventureworks.com"
+			webUrl = "https://www.adventureworks.com"
 		}
-		JobTitle = "Senior Product Branding Manager II"
-		Role = "consulting"
+		jobTitle = "Senior Product Branding Manager II"
+		role = "consulting"
 	}
-	IsCurrent = $true
+	isCurrent = $true
 }
+
 # A UPN can also be used as -UserId.
 New-MgBetaUserProfilePosition -UserId $userId -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaUserProfilePosition Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

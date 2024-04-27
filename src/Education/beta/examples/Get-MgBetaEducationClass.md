@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Education
 
-Get-MgBetaEducationClass -EducationClassId $educationClassId
+Get-MgBetaEducationClass
 
 ```
 This example shows how to use the Get-MgBetaEducationClass Cmdlet.
