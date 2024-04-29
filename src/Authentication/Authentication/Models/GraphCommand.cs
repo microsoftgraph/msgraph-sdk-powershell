@@ -73,6 +73,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// </summary>
         public string OutputType { get; set; }
         /// <summary>
+        /// The response type of the command.
+        /// </summary>
+        public string ApiReferenceLink { get; set; }
+        /// <summary>
         /// The parameter sets of the command.
         /// </summary>
         public string[] Variants { get; set; }
