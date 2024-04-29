@@ -87,11 +87,7 @@ paths:
     get:
       tags:
         - admin.sharepoint
-      summary: Get settings
-      description: Get the tenant-level settings for SharePoint and OneDrive.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sharepointsettings-get?view=graph-rest-1.0
+      summary: Get settings from admin
       operationId: admin.sharepoint_GetSetting
       parameters:
         - name: $select
@@ -127,11 +123,7 @@ paths:
     patch:
       tags:
         - admin.sharepoint
-      summary: Update settings
-      description: Update one or more tenant-level settings for SharePoint and OneDrive.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sharepointsettings-update?view=graph-rest-1.0
+      summary: Update the navigation property settings in admin
       operationId: admin.sharepoint_UpdateSetting
       requestBody:
         description: New navigation property values
@@ -1467,11 +1459,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List columns in a site
+      summary: Get columns from groups
       description: The collection of column definitions reusable across lists under this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0
       operationId: group.site_ListColumn
       parameters:
         - name: group-id
@@ -1537,10 +1526,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create columnDefinition for a site
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for groups
       operationId: group.site_CreateColumn
       parameters:
         - name: group-id
@@ -1823,11 +1809,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List contentTypes in a site
+      summary: Get contentTypes from groups
       description: The collection of content types defined for this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
       operationId: group.site_ListContentType
       parameters:
         - name: group-id
@@ -1893,11 +1876,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create contentType
-      description: 'Create a new [contentType][] for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
+      summary: Create new navigation property to contentTypes for groups
       operationId: group.site_CreateContentType
       parameters:
         - name: group-id
@@ -1937,11 +1916,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get contentType
-      description: 'Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-get?view=graph-rest-1.0
+      summary: Get contentTypes from groups
+      description: The collection of content types defined for this site.
       operationId: group.site_GetContentType
       parameters:
         - name: group-id
@@ -2001,10 +1977,7 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update contentType
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-update?view=graph-rest-1.0
+      summary: Update the navigation property contentTypes in groups
       operationId: group.site_UpdateContentType
       parameters:
         - name: group-id
@@ -2051,11 +2024,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete contentType
-      description: 'Remove a [content type][contentType] from a [list][] or a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-delete?view=graph-rest-1.0
+      summary: Delete navigation property contentTypes for groups
       operationId: group.site_DeleteContentType
       parameters:
         - name: group-id
@@ -2864,11 +2833,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List columns in a content type
+      summary: Get columns from groups
       description: The collection of column definitions for this content type.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
       operationId: group.site.contentType_ListColumn
       parameters:
         - name: group-id
@@ -2942,10 +2908,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create columnDefinition for a content type
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for groups
       operationId: group.site.contentType_CreateColumn
       parameters:
         - name: group-id
@@ -2993,11 +2956,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get columnDefinition
-      description: 'Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0
+      summary: Get columns from groups
+      description: The collection of column definitions for this content type.
       operationId: group.site.contentType_GetColumn
       parameters:
         - name: group-id
@@ -3065,10 +3025,7 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property columns in groups
       operationId: group.site.contentType_UpdateColumn
       parameters:
         - name: group-id
@@ -3123,10 +3080,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property columns for groups
       operationId: group.site.contentType_DeleteColumn
       parameters:
         - name: group-id
@@ -4109,11 +4063,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List recoveryKeys
-      description: 'Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the key property. For information about how to read the key property, see Get bitlockerRecoveryKey.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bitlocker-list-recoverykeys?view=graph-rest-1.0
+      summary: Get recoveryKeys from groups
+      description: The recovery keys associated with the bitlocker entity.
       operationId: group.site.informationProtection.bitlocker_ListRecoveryKey
       parameters:
         - name: group-id
@@ -4180,11 +4131,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get bitlockerRecoveryKey
-      description: 'Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation does not return the key property that represents the actual recovery key. To include the key property in the response, use the $select OData query parameter. Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log. You can find the log in Microsoft Entra audit logs under the KeyManagement category.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bitlockerrecoverykey-get?view=graph-rest-1.0
+      summary: Get recoveryKeys from groups
+      description: The recovery keys associated with the bitlocker entity.
       operationId: group.site.informationProtection.bitlocker_GetRecoveryKey
       parameters:
         - name: group-id
@@ -4705,11 +4653,7 @@ paths:
     get:
       tags:
         - groups.site
-      summary: 'informationProtectionLabel: listLabels (deprecated)'
-      description: Get a collection of information protection labels available to the user or to the organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionpolicy-list-labels?view=graph-rest-1.0
+      summary: Get labels from groups
       operationId: group.site.informationProtection.policy_ListLabel
       parameters:
         - name: group-id
@@ -4827,11 +4771,7 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get informationProtectionLabel (deprecated)
-      description: Retrieve the properties and relationships of an informationProtectionLabel object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-get?view=graph-rest-1.0
+      summary: Get labels from groups
       operationId: group.site.informationProtection.policy_GetLabel
       parameters:
         - name: group-id
@@ -5781,11 +5721,7 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List threatAssessmentRequests
-      description: 'Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotection-list-threatassessmentrequests?view=graph-rest-1.0
+      summary: Get threatAssessmentRequests from groups
       operationId: group.site.informationProtection_ListThreatAssessmentRequest
       parameters:
         - name: group-id
@@ -5851,11 +5787,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create threatAssessmentRequest
-      description: 'Create a new threat assessment request. A threat assessment request can be one of the following types:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotection-post-threatassessmentrequests?view=graph-rest-1.0
+      summary: Create new navigation property to threatAssessmentRequests for groups
       operationId: group.site.informationProtection_CreateThreatAssessmentRequest
       parameters:
         - name: group-id
@@ -5895,11 +5827,7 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get threatAssessmentRequest
-      description: 'Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/threatassessmentrequest-get?view=graph-rest-1.0
+      summary: Get threatAssessmentRequests from groups
       operationId: group.site.informationProtection_GetThreatAssessmentRequest
       parameters:
         - name: group-id
@@ -6816,11 +6744,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get lists in a site
-      description: "Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0
+      summary: Get lists from groups
+      description: The collection of lists under this site.
       operationId: group.site_ListList
       parameters:
         - name: group-id
@@ -6886,11 +6811,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create a new list
-      description: 'Create a new [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0
+      summary: Create new navigation property to lists for groups
       operationId: group.site_CreateList
       parameters:
         - name: group-id
@@ -6930,11 +6851,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List operations
-      description: Get the list of richLongRunningOperations associated with a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
+      summary: Get lists from groups
+      description: The collection of lists under this site.
       operationId: group.site_GetList
       parameters:
         - name: group-id
@@ -7207,11 +7125,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List columns in a list
+      summary: Get columns from groups
       description: The collection of field definitions for this list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
       operationId: group.site.list_ListColumn
       parameters:
         - name: group-id
@@ -7285,10 +7200,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for groups
       operationId: group.site.list_CreateColumn
       parameters:
         - name: group-id
@@ -7619,11 +7531,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List contentTypes in a list
+      summary: Get contentTypes from groups
       description: The collection of content types present in this list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
       operationId: group.site.list_ListContentType
       parameters:
         - name: group-id
@@ -8790,11 +8699,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List columns in a content type
+      summary: Get columns from groups
       description: The collection of column definitions for this content type.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
       operationId: group.site.list.contentType_ListColumn
       parameters:
         - name: group-id
@@ -8876,10 +8782,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create columnDefinition for a content type
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for groups
       operationId: group.site.list.contentType_CreateColumn
       parameters:
         - name: group-id
@@ -8935,11 +8838,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get columnDefinition
-      description: 'Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0
+      summary: Get columns from groups
+      description: The collection of column definitions for this content type.
       operationId: group.site.list.contentType_GetColumn
       parameters:
         - name: group-id
@@ -9015,10 +8915,7 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property columns in groups
       operationId: group.site.list.contentType_UpdateColumn
       parameters:
         - name: group-id
@@ -9081,10 +8978,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property columns for groups
       operationId: group.site.list.contentType_DeleteColumn
       parameters:
         - name: group-id
@@ -9648,11 +9542,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Enumerate items in a list
-      description: 'Get the collection of [items][item] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
+      summary: Get items from groups
+      description: All items contained in the list.
       operationId: group.site.list_ListItem
       parameters:
         - name: group-id
@@ -9725,11 +9616,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create a new item in a list
-      description: 'Create a new [listItem][] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
+      summary: Create new navigation property to items for groups
       operationId: group.site.list_CreateItem
       parameters:
         - name: group-id
@@ -9777,11 +9664,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get an item in a list
-      description: 'Returns the metadata for an [item][] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0
+      summary: Get items from groups
+      description: All items contained in the list.
       operationId: group.site.list_GetItem
       parameters:
         - name: group-id
@@ -9904,11 +9788,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete an item from a list
-      description: 'Removes an item from a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0
+      summary: Delete navigation property items for groups
       operationId: group.site.list_DeleteItem
       parameters:
         - name: group-id
@@ -11137,11 +11017,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: group.site.list.item_ListDocumentSetVersion
       parameters:
         - name: group-id
@@ -11223,11 +11100,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for groups
       operationId: group.site.list.item_CreateDocumentSetVersion
       parameters:
         - name: group-id
@@ -11283,11 +11156,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get documentSetVersion
-      description: Read the properties and relationships of a documentSetVersion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-1.0
+      summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: group.site.list.item_GetDocumentSetVersion
       parameters:
         - name: group-id
@@ -11426,11 +11296,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete documentSetVersion
-      description: Delete a version of a document set in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-1.0
+      summary: Delete navigation property documentSetVersions for groups
       operationId: group.site.list.item_DeleteDocumentSetVersion
       parameters:
         - name: group-id
@@ -11735,7 +11601,7 @@ paths:
       tags:
         - groups.site
       summary: Get driveItem from groups
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a driveItem'
       operationId: group.site.list.item_GetDriveItem
       parameters:
         - name: group-id
@@ -12090,11 +11956,7 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update an item in a list
-      description: 'Update the properties on a [listItem][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in groups
       operationId: group.site.list.item_UpdateField
       parameters:
         - name: group-id
@@ -14238,11 +14100,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List columns in a site
+      summary: Get columns from groups
       description: The collection of column definitions reusable across lists under this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0
       operationId: group.site.getGraphBPrePath_ListColumn
       parameters:
         - name: group-id
@@ -14316,10 +14175,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create columnDefinition for a site
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for groups
       operationId: group.site.getGraphBPrePath_CreateColumn
       parameters:
         - name: group-id
@@ -14367,11 +14223,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List contentTypes in a site
+      summary: Get contentTypes from groups
       description: The collection of content types defined for this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
       operationId: group.site.getGraphBPrePath_ListContentType
       parameters:
         - name: group-id
@@ -14445,11 +14298,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create contentType
-      description: 'Create a new [contentType][] for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
+      summary: Create new navigation property to contentTypes for groups
       operationId: group.site.getGraphBPrePath_CreateContentType
       parameters:
         - name: group-id
@@ -15059,11 +14908,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get lists in a site
-      description: "Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0
+      summary: Get lists from groups
+      description: The collection of lists under this site.
       operationId: group.site.getGraphBPrePath_ListList
       parameters:
         - name: group-id
@@ -15137,11 +14983,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create a new list
-      description: 'Create a new [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0
+      summary: Create new navigation property to lists for groups
       operationId: group.site.getGraphBPrePath_CreateList
       parameters:
         - name: group-id
@@ -15364,11 +15206,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List columns in a site
+      summary: Get columns from groups
       description: The collection of column definitions reusable across lists under this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0
       operationId: group.site.getGraphBPrePath_ListColumn
       parameters:
         - name: group-id
@@ -15450,10 +15289,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create columnDefinition for a site
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for groups
       operationId: group.site.getGraphBPrePath_CreateColumn
       parameters:
         - name: group-id
@@ -15509,11 +15345,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List contentTypes in a site
+      summary: Get contentTypes from groups
       description: The collection of content types defined for this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
       operationId: group.site.getGraphBPrePath_ListContentType
       parameters:
         - name: group-id
@@ -15595,11 +15428,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create contentType
-      description: 'Create a new [contentType][] for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
+      summary: Create new navigation property to contentTypes for groups
       operationId: group.site.getGraphBPrePath_CreateContentType
       parameters:
         - name: group-id
@@ -16289,11 +16118,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get lists in a site
-      description: "Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0
+      summary: Get lists from groups
+      description: The collection of lists under this site.
       operationId: group.site.getGraphBPrePath_ListList
       parameters:
         - name: group-id
@@ -16375,11 +16201,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create a new list
-      description: 'Create a new [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0
+      summary: Create new navigation property to lists for groups
       operationId: group.site.getGraphBPrePath_CreateList
       parameters:
         - name: group-id
@@ -16609,11 +16431,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List operations
-      description: Get the list of richLongRunningOperations associated with a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0
+      summary: Get operations from groups
+      description: The collection of long running operations for the site.
       operationId: group.site.getGraphBPrePath_ListOperation
       parameters:
         - name: group-id
@@ -16751,11 +16570,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List baseSitePages
-      description: 'Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The collection of pages in the baseSitePages list on this site.
       operationId: group.site.getGraphBPrePath_ListPage
       parameters:
         - name: group-id
@@ -16837,11 +16653,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create a page in the site pages list of a site
-      description: 'Create a new [sitePage][] in the site pages [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0
+      summary: Create new navigation property to pages for groups
       operationId: group.site.getGraphBPrePath_CreatePage
       parameters:
         - name: group-id
@@ -16897,11 +16709,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List permissions
-      description: Get the permission resources from the permissions navigation property on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from groups
+      description: The permissions associated with the site. Nullable.
       operationId: group.site.getGraphBPrePath_ListPermission
       parameters:
         - name: group-id
@@ -16983,11 +16792,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create permission
-      description: Create a new permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
+      summary: Create new navigation property to permissions for groups
       operationId: group.site.getGraphBPrePath_CreatePermission
       parameters:
         - name: group-id
@@ -17218,11 +17023,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List subsites for a site
-      description: 'Get a collection of subsites defined for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0
+      summary: Get sites from groups
+      description: The collection of the sub-sites under this site.
       operationId: group.site.getGraphBPrePath_ListSite
       parameters:
         - name: group-id
@@ -17305,11 +17107,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get store
-      description: Read the properties and relationships of a store object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
+      summary: Get termStore from groups
+      description: The termStore under this site.
       operationId: group.site.getGraphBPrePath_GetTermStore
       parameters:
         - name: group-id
@@ -17633,11 +17432,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List operations
-      description: Get the list of richLongRunningOperations associated with a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0
+      summary: Get operations from groups
+      description: The collection of long running operations for the site.
       operationId: group.site.getGraphBPrePath_ListOperation
       parameters:
         - name: group-id
@@ -17759,11 +17555,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List baseSitePages
-      description: 'Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The collection of pages in the baseSitePages list on this site.
       operationId: group.site.getGraphBPrePath_ListPage
       parameters:
         - name: group-id
@@ -17837,11 +17630,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create a page in the site pages list of a site
-      description: 'Create a new [sitePage][] in the site pages [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0
+      summary: Create new navigation property to pages for groups
       operationId: group.site.getGraphBPrePath_CreatePage
       parameters:
         - name: group-id
@@ -17889,11 +17678,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List permissions
-      description: Get the permission resources from the permissions navigation property on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from groups
+      description: The permissions associated with the site. Nullable.
       operationId: group.site.getGraphBPrePath_ListPermission
       parameters:
         - name: group-id
@@ -17967,11 +17753,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create permission
-      description: Create a new permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
+      summary: Create new navigation property to permissions for groups
       operationId: group.site.getGraphBPrePath_CreatePermission
       parameters:
         - name: group-id
@@ -18170,11 +17952,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List subsites for a site
-      description: 'Get a collection of subsites defined for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0
+      summary: Get sites from groups
+      description: The collection of the sub-sites under this site.
       operationId: group.site.getGraphBPrePath_ListSite
       parameters:
         - name: group-id
@@ -18249,11 +18028,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get store
-      description: Read the properties and relationships of a store object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
+      summary: Get termStore from groups
+      description: The termStore under this site.
       operationId: group.site.getGraphBPrePath_GetTermStore
       parameters:
         - name: group-id
@@ -18529,11 +18305,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List notebooks
-      description: Retrieve a list of notebook objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
+      summary: Get notebooks from groups
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: group.site.onenote_ListNotebook
       parameters:
         - name: group-id
@@ -18599,11 +18372,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create notebook
-      description: Create a new OneNote notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
+      summary: Create new navigation property to notebooks for groups
       operationId: group.site.onenote_CreateNotebook
       parameters:
         - name: group-id
@@ -18643,11 +18412,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get notebook
-      description: Retrieve the properties and relationships of a notebook object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-get?view=graph-rest-1.0
+      summary: Get notebooks from groups
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: group.site.onenote_GetNotebook
       parameters:
         - name: group-id
@@ -18797,11 +18563,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in the notebook. Read-only. Nullable.
       operationId: group.site.onenote.notebook_ListSectionGroup
       parameters:
         - name: group-id
@@ -18875,11 +18638,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create sectionGroup
-      description: Create a new section group in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
+      summary: Create new navigation property to sectionGroups for groups
       operationId: group.site.onenote.notebook_CreateSectionGroup
       parameters:
         - name: group-id
@@ -19242,11 +19001,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in the section. Read-only. Nullable.
       operationId: group.site.onenote.notebook.sectionGroup_ListSectionGroup
       parameters:
         - name: group-id
@@ -19453,11 +19209,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in the section group. Read-only. Nullable.
       operationId: group.site.onenote.notebook.sectionGroup_ListSection
       parameters:
         - name: group-id
@@ -19539,11 +19292,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create section
-      description: Create a new section in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for groups
       operationId: group.site.onenote.notebook.sectionGroup_CreateSection
       parameters:
         - name: group-id
@@ -20782,11 +20531,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sections
-      description: Retrieve a list of section objects from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in the notebook. Read-only. Nullable.
       operationId: group.site.onenote.notebook_ListSection
       parameters:
         - name: group-id
@@ -20860,11 +20606,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create section
-      description: Create a new section in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for groups
       operationId: group.site.onenote.notebook_CreateSection
       parameters:
         - name: group-id
@@ -21959,8 +21701,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. The status applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
+      summary: Get operations from groups
+      description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: group.site.onenote_ListOperation
       parameters:
         - name: group-id
@@ -22066,11 +21808,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. The status applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenoteoperation-get?view=graph-rest-1.0
+      summary: Get operations from groups
+      description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: group.site.onenote_GetOperation
       parameters:
         - name: group-id
@@ -22465,11 +22204,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete page
-      description: Delete a OneNote page.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
+      summary: Delete navigation property pages for groups
       operationId: group.site.onenote_DeletePage
       parameters:
         - name: group-id
@@ -23136,11 +22871,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.site.onenote_ListSectionGroup
       parameters:
         - name: group-id
@@ -23246,11 +22978,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get sectionGroup
-      description: Retrieve the properties and relationships of a sectionGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-get?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.site.onenote_GetSectionGroup
       parameters:
         - name: group-id
@@ -23524,11 +23253,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in the section. Read-only. Nullable.
       operationId: group.site.onenote.sectionGroup_ListSectionGroup
       parameters:
         - name: group-id
@@ -23711,11 +23437,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in the section group. Read-only. Nullable.
       operationId: group.site.onenote.sectionGroup_ListSection
       parameters:
         - name: group-id
@@ -23789,11 +23512,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create section
-      description: Create a new section in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for groups
       operationId: group.site.onenote.sectionGroup_CreateSection
       parameters:
         - name: group-id
@@ -24888,11 +24607,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sections
-      description: Retrieve a list of section objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.site.onenote_ListSection
       parameters:
         - name: group-id
@@ -24998,11 +24714,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get section
-      description: Retrieve the properties and relationships of a section object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-get?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.site.onenote_GetSection
       parameters:
         - name: group-id
@@ -25890,11 +25603,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List operations
-      description: Get the list of richLongRunningOperations associated with a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0
+      summary: Get operations from groups
+      description: The collection of long running operations for the site.
       operationId: group.site_ListOperation
       parameters:
         - name: group-id
@@ -26000,11 +25710,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get richLongRunningOperation
-      description: Read the properties of a richLongRunningOperation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0
+      summary: Get operations from groups
+      description: The collection of long running operations for the site.
       operationId: group.site_GetOperation
       parameters:
         - name: group-id
@@ -26184,11 +25891,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List baseSitePages
-      description: 'Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The collection of pages in the baseSitePages list on this site.
       operationId: group.site_ListPage
       parameters:
         - name: group-id
@@ -26254,11 +25958,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create a page in the site pages list of a site
-      description: 'Create a new [sitePage][] in the site pages [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0
+      summary: Create new navigation property to pages for groups
       operationId: group.site_CreatePage
       parameters:
         - name: group-id
@@ -26298,11 +25998,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get baseSitePage
-      description: 'Get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/basesitepage-get?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The collection of pages in the baseSitePages list on this site.
       operationId: group.site_GetPage
       parameters:
         - name: group-id
@@ -29888,11 +29585,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List permissions
-      description: Get the permission resources from the permissions navigation property on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from groups
+      description: The permissions associated with the site. Nullable.
       operationId: group.site_ListPermission
       parameters:
         - name: group-id
@@ -29958,11 +29652,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create permission
-      description: Create a new permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
+      summary: Create new navigation property to permissions for groups
       operationId: group.site_CreatePermission
       parameters:
         - name: group-id
@@ -30002,11 +29692,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get permission
-      description: Retrieve the properties and relationships of a permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-get-permission?view=graph-rest-1.0
+      summary: Get permissions from groups
+      description: The permissions associated with the site. Nullable.
       operationId: group.site_GetPermission
       parameters:
         - name: group-id
@@ -30066,11 +29753,7 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update permission
-      description: Update the permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-update-permission?view=graph-rest-1.0
+      summary: Update the navigation property permissions in groups
       operationId: group.site_UpdatePermission
       parameters:
         - name: group-id
@@ -30558,11 +30241,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List items
-      description: Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/recyclebin-list-items?view=graph-rest-1.0
+      summary: Get items from groups
+      description: List of the recycleBinItems deleted by a user.
       operationId: group.site.recycleBin_ListItem
       parameters:
         - name: group-id
@@ -31652,11 +31332,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List subsites for a site
-      description: 'Get a collection of subsites defined for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0
+      summary: Get sites from groups
+      description: The collection of the sub-sites under this site.
       operationId: group.site_ListSite
       parameters:
         - name: group-id
@@ -31815,11 +31492,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get store
-      description: Read the properties and relationships of a store object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
+      summary: Get termStore from groups
+      description: The termStore under this site.
       operationId: group.site_GetTermStore
       parameters:
         - name: group-id
@@ -31945,11 +31619,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get termStore group
-      description: Read the properties and relationships of a term store group object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-1.0
+      summary: Get groups from groups
+      description: Collection of all groups available in the term store.
       operationId: group.site.termStore_ListGroup
       parameters:
         - name: group-id
@@ -32015,11 +31686,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create group
-      description: Create a new group object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-post?view=graph-rest-1.0
+      summary: Create new navigation property to groups for groups
       operationId: group.site.termStore_CreateGroup
       parameters:
         - name: group-id
@@ -32059,11 +31726,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get termStore group
-      description: Read the properties and relationships of a term store group object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0
+      summary: Get groups from groups
+      description: Collection of all groups available in the term store.
       operationId: group.site.termStore_GetGroup
       parameters:
         - name: group-id
@@ -32170,11 +31834,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete group
-      description: 'Delete a group object in a term [store].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-delete?view=graph-rest-1.0
+      summary: Delete navigation property groups for groups
       operationId: group.site.termStore_DeleteGroup
       parameters:
         - name: group-id
@@ -32217,11 +31877,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sets
-      description: Get a list of the set objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
+      summary: Get sets from groups
+      description: 'All sets under the group in a term [store].'
       operationId: group.site.termStore.group_ListSet
       parameters:
         - name: group-id
@@ -32518,11 +32175,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List children
-      description: 'Get the first level children of a [set] or [term] resource using the children navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
+      summary: Get children from groups
+      description: 'Children terms of set in term [store].'
       operationId: group.site.termStore.group.set_ListChild
       parameters:
         - name: group-id
@@ -32604,11 +32258,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create term
-      description: Create a new term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
+      summary: Create new navigation property to children for groups
       operationId: group.site.termStore.group.set_CreateChild
       parameters:
         - name: group-id
@@ -35132,11 +34782,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List relations
-      description: 'Get the different relation of a [term] or [set] from the relations navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0
+      summary: Get relations from groups
+      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: group.site.termStore.group.set_ListRelation
       parameters:
         - name: group-id
@@ -35753,8 +35400,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get term
-      description: Read the properties and relationships of a term object.
+      summary: Get terms from groups
+      description: All the terms under the set.
       operationId: group.site.termStore.group.set_ListTerm
       parameters:
         - name: group-id
@@ -35892,11 +35539,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get term
-      description: Read the properties and relationships of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
+      summary: Get terms from groups
+      description: All the terms under the set.
       operationId: group.site.termStore.group.set_GetTerm
       parameters:
         - name: group-id
@@ -35972,11 +35616,7 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update term
-      description: Update the properties of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
+      summary: Update the navigation property terms in groups
       operationId: group.site.termStore.group.set_UpdateTerm
       parameters:
         - name: group-id
@@ -36039,11 +35679,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete term
-      description: Delete a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
+      summary: Delete navigation property terms for groups
       operationId: group.site.termStore.group.set_DeleteTerm
       parameters:
         - name: group-id
@@ -38264,8 +37900,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get set
-      description: Read the properties and relationships of a set object.
+      summary: Get sets from groups
+      description: Collection of all sets available in the term store.
       operationId: group.site.termStore_ListSet
       parameters:
         - name: group-id
@@ -38371,11 +38007,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get set
-      description: Read the properties and relationships of a set object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-set-get?view=graph-rest-1.0
+      summary: Get sets from groups
+      description: Collection of all sets available in the term store.
       operationId: group.site.termStore_GetSet
       parameters:
         - name: group-id
@@ -38435,11 +38068,7 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update set
-      description: Update the properties of a set object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-set-update?view=graph-rest-1.0
+      summary: Update the navigation property sets in groups
       operationId: group.site.termStore_UpdateSet
       parameters:
         - name: group-id
@@ -38486,11 +38115,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete set
-      description: Delete a set object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-set-delete?view=graph-rest-1.0
+      summary: Delete navigation property sets for groups
       operationId: group.site.termStore_DeleteSet
       parameters:
         - name: group-id
@@ -38533,11 +38158,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List children
-      description: 'Get the first level children of a [set] or [term] resource using the children navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
+      summary: Get children from groups
+      description: 'Children terms of set in term [store].'
       operationId: group.site.termStore.set_ListChild
       parameters:
         - name: group-id
@@ -38611,11 +38233,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create term
-      description: Create a new term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
+      summary: Create new navigation property to children for groups
       operationId: group.site.termStore.set_CreateChild
       parameters:
         - name: group-id
@@ -40867,11 +40485,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List sets
-      description: Get a list of the set objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
+      summary: Get sets from groups
+      description: 'All sets under the group in a term [store].'
       operationId: group.site.termStore.set.parentGroup_ListSet
       parameters:
         - name: group-id
@@ -41168,11 +40783,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List children
-      description: 'Get the first level children of a [set] or [term] resource using the children navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
+      summary: Get children from groups
+      description: 'Children terms of set in term [store].'
       operationId: group.site.termStore.set.parentGroup.set_ListChild
       parameters:
         - name: group-id
@@ -41254,11 +40866,7 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create term
-      description: Create a new term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
+      summary: Create new navigation property to children for groups
       operationId: group.site.termStore.set.parentGroup.set_CreateChild
       parameters:
         - name: group-id
@@ -43607,11 +43215,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List relations
-      description: 'Get the different relation of a [term] or [set] from the relations navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0
+      summary: Get relations from groups
+      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: group.site.termStore.set.parentGroup.set_ListRelation
       parameters:
         - name: group-id
@@ -44228,8 +43833,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get term
-      description: Read the properties and relationships of a term object.
+      summary: Get terms from groups
+      description: All the terms under the set.
       operationId: group.site.termStore.set.parentGroup.set_ListTerm
       parameters:
         - name: group-id
@@ -44367,11 +43972,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get term
-      description: Read the properties and relationships of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
+      summary: Get terms from groups
+      description: All the terms under the set.
       operationId: group.site.termStore.set.parentGroup.set_GetTerm
       parameters:
         - name: group-id
@@ -44447,11 +44049,7 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update term
-      description: Update the properties of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
+      summary: Update the navigation property terms in groups
       operationId: group.site.termStore.set.parentGroup.set_UpdateTerm
       parameters:
         - name: group-id
@@ -44514,11 +44112,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete term
-      description: Delete a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
+      summary: Delete navigation property terms for groups
       operationId: group.site.termStore.set.parentGroup.set_DeleteTerm
       parameters:
         - name: group-id
@@ -46709,11 +46303,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List relations
-      description: 'Get the different relation of a [term] or [set] from the relations navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0
+      summary: Get relations from groups
+      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: group.site.termStore.set_ListRelation
       parameters:
         - name: group-id
@@ -47258,8 +46849,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get term
-      description: Read the properties and relationships of a term object.
+      summary: Get terms from groups
+      description: All the terms under the set.
       operationId: group.site.termStore.set_ListTerm
       parameters:
         - name: group-id
@@ -47381,11 +46972,8 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get term
-      description: Read the properties and relationships of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
+      summary: Get terms from groups
+      description: All the terms under the set.
       operationId: group.site.termStore.set_GetTerm
       parameters:
         - name: group-id
@@ -47453,11 +47041,7 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update term
-      description: Update the properties of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
+      summary: Update the navigation property terms in groups
       operationId: group.site.termStore.set_UpdateTerm
       parameters:
         - name: group-id
@@ -47512,11 +47096,7 @@ paths:
     delete:
       tags:
         - groups.site
-      summary: Delete term
-      description: Delete a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
+      summary: Delete navigation property terms for groups
       operationId: group.site.termStore.set_DeleteTerm
       parameters:
         - name: group-id
@@ -49497,11 +49077,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Search for sites
-      description: 'Search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.'
+      summary: List sites
+      description: "List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.\nIf you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-search?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/site-list?view=graph-rest-beta
       operationId: site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -49553,10 +49133,10 @@ paths:
       tags:
         - sites.site
       summary: Get a site resource
-      description: "Retrieve properties and relationships for a [site][] resource.\nA site resource represents a team site in SharePoint."
+      description: "Retrieve properties and relationships for a site resource.\nA site resource represents a team site in SharePoint."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/site-get?view=graph-rest-beta
       operationId: site_GetSite
       parameters:
         - name: site-id
@@ -50598,11 +50178,8 @@ paths:
     get:
       tags:
         - sites.columnDefinition
-      summary: List columns in a site
+      summary: Get columns from sites
       description: The collection of column definitions reusable across lists under this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0
       operationId: site_ListColumn
       parameters:
         - name: site-id
@@ -50660,10 +50237,7 @@ paths:
     post:
       tags:
         - sites.columnDefinition
-      summary: Create columnDefinition for a site
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for sites
       operationId: site_CreateColumn
       parameters:
         - name: site-id
@@ -50898,11 +50472,8 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: List contentTypes in a site
+      summary: Get contentTypes from sites
       description: The collection of content types defined for this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
       operationId: site_ListContentType
       parameters:
         - name: site-id
@@ -50960,11 +50531,7 @@ paths:
     post:
       tags:
         - sites.contentType
-      summary: Create contentType
-      description: 'Create a new [contentType][] for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
+      summary: Create new navigation property to contentTypes for sites
       operationId: site_CreateContentType
       parameters:
         - name: site-id
@@ -50996,11 +50563,8 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: Get contentType
-      description: 'Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-get?view=graph-rest-1.0
+      summary: Get contentTypes from sites
+      description: The collection of content types defined for this site.
       operationId: site_GetContentType
       parameters:
         - name: site-id
@@ -51052,10 +50616,7 @@ paths:
     patch:
       tags:
         - sites.contentType
-      summary: Update contentType
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-update?view=graph-rest-1.0
+      summary: Update the navigation property contentTypes in sites
       operationId: site_UpdateContentType
       parameters:
         - name: site-id
@@ -51094,11 +50655,7 @@ paths:
     delete:
       tags:
         - sites.contentType
-      summary: Delete contentType
-      description: 'Remove a [content type][contentType] from a [list][] or a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-delete?view=graph-rest-1.0
+      summary: Delete navigation property contentTypes for sites
       operationId: site_DeleteContentType
       parameters:
         - name: site-id
@@ -51795,11 +51352,8 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: List columns in a content type
+      summary: Get columns from sites
       description: The collection of column definitions for this content type.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
       operationId: site.contentType_ListColumn
       parameters:
         - name: site-id
@@ -51865,10 +51419,7 @@ paths:
     post:
       tags:
         - sites.contentType
-      summary: Create columnDefinition for a content type
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for sites
       operationId: site.contentType_CreateColumn
       parameters:
         - name: site-id
@@ -51908,11 +51459,8 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: Get columnDefinition
-      description: 'Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0
+      summary: Get columns from sites
+      description: The collection of column definitions for this content type.
       operationId: site.contentType_GetColumn
       parameters:
         - name: site-id
@@ -51972,10 +51520,7 @@ paths:
     patch:
       tags:
         - sites.contentType
-      summary: Update columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property columns in sites
       operationId: site.contentType_UpdateColumn
       parameters:
         - name: site-id
@@ -52022,10 +51567,7 @@ paths:
     delete:
       tags:
         - sites.contentType
-      summary: Delete columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property columns for sites
       operationId: site.contentType_DeleteColumn
       parameters:
         - name: site-id
@@ -52163,7 +51705,7 @@ paths:
       summary: Invoke action associateWithHubSites
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-beta
       operationId: site.contentType_associateGraphWPreHubSite
       parameters:
         - name: site-id
@@ -52213,7 +51755,7 @@ paths:
       summary: Invoke action copyToDefaultContentLocation
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-beta
       operationId: site.contentType_copyToDefaultContentLocation
       parameters:
         - name: site-id
@@ -52258,6 +51800,9 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function isPublished
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-beta
       operationId: site.contentType_isPublished
       parameters:
         - name: site-id
@@ -52299,7 +51844,7 @@ paths:
       summary: Invoke action publish
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-beta
       operationId: site.contentType_publish
       parameters:
         - name: site-id
@@ -52331,7 +51876,7 @@ paths:
       summary: Invoke action unpublish
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-beta
       operationId: site.contentType_unpublish
       parameters:
         - name: site-id
@@ -52385,7 +51930,7 @@ paths:
       summary: Invoke action addCopy
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-beta
       operationId: site.contentType_addCopy
       parameters:
         - name: site-id
@@ -52426,7 +51971,7 @@ paths:
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-beta
       operationId: site.contentType_addCopyFromContentTypeHub
       parameters:
         - name: site-id
@@ -52464,6 +52009,10 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getCompatibleHubContentTypes
+      description: 'Get compatible content types in the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-beta
       operationId: site.contentType_getCompatibleHubContentType
       parameters:
         - name: site-id
@@ -53089,7 +52638,7 @@ paths:
       description: 'Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-beta
       operationId: site.informationProtection.policy.label_evaluateApplication
       parameters:
         - name: site-id
@@ -53151,7 +52700,7 @@ paths:
       description: 'Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-beta
       operationId: site.informationProtection.policy.label_evaluateClassificationResult
       parameters:
         - name: site-id
@@ -53215,7 +52764,7 @@ paths:
       description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta
       operationId: site.informationProtection.policy.label_evaluateRemoval
       parameters:
         - name: site-id
@@ -53277,7 +52826,7 @@ paths:
       description: 'Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-beta
       operationId: site.informationProtection.policy.label_extractLabel
       parameters:
         - name: site-id
@@ -53410,11 +52959,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get lists in a site
-      description: "Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0
+      summary: Get lists from sites
+      description: The collection of lists under this site.
       operationId: site_ListList
       parameters:
         - name: site-id
@@ -53472,11 +53018,7 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create a new list
-      description: 'Create a new [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0
+      summary: Create new navigation property to lists for sites
       operationId: site_CreateList
       parameters:
         - name: site-id
@@ -53508,11 +53050,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: List operations
-      description: Get the list of richLongRunningOperations associated with a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
+      summary: Get lists from sites
+      description: The collection of lists under this site.
       operationId: site_GetList
       parameters:
         - name: site-id
@@ -53745,11 +53284,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: List columns in a list
+      summary: Get columns from sites
       description: The collection of field definitions for this list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
       operationId: site.list_ListColumn
       parameters:
         - name: site-id
@@ -53815,10 +53351,7 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for sites
       operationId: site.list_CreateColumn
       parameters:
         - name: site-id
@@ -54101,11 +53634,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: List contentTypes in a list
+      summary: Get contentTypes from sites
       description: The collection of content types present in this list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
       operationId: site.list_ListContentType
       parameters:
         - name: site-id
@@ -55128,11 +54658,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: List columns in a content type
+      summary: Get columns from sites
       description: The collection of column definitions for this content type.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
       operationId: site.list.contentType_ListColumn
       parameters:
         - name: site-id
@@ -55206,10 +54733,7 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create columnDefinition for a content type
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for sites
       operationId: site.list.contentType_CreateColumn
       parameters:
         - name: site-id
@@ -55257,11 +54781,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get columnDefinition
-      description: 'Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0
+      summary: Get columns from sites
+      description: The collection of column definitions for this content type.
       operationId: site.list.contentType_GetColumn
       parameters:
         - name: site-id
@@ -55329,10 +54850,7 @@ paths:
     patch:
       tags:
         - sites.list
-      summary: Update columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property columns in sites
       operationId: site.list.contentType_UpdateColumn
       parameters:
         - name: site-id
@@ -55387,10 +54905,7 @@ paths:
     delete:
       tags:
         - sites.list
-      summary: Delete columnDefinition
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property columns for sites
       operationId: site.list.contentType_DeleteColumn
       parameters:
         - name: site-id
@@ -55552,7 +55067,7 @@ paths:
       summary: Invoke action associateWithHubSites
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-beta
       operationId: site.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: site-id
@@ -55610,7 +55125,7 @@ paths:
       summary: Invoke action copyToDefaultContentLocation
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-beta
       operationId: site.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: site-id
@@ -55663,6 +55178,9 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function isPublished
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-beta
       operationId: site.list.contentType_isPublished
       parameters:
         - name: site-id
@@ -55712,7 +55230,7 @@ paths:
       summary: Invoke action publish
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-beta
       operationId: site.list.contentType_publish
       parameters:
         - name: site-id
@@ -55752,7 +55270,7 @@ paths:
       summary: Invoke action unpublish
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-beta
       operationId: site.list.contentType_unpublish
       parameters:
         - name: site-id
@@ -55822,7 +55340,7 @@ paths:
       summary: Invoke action addCopy
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-beta
       operationId: site.list.contentType_addCopy
       parameters:
         - name: site-id
@@ -55871,7 +55389,7 @@ paths:
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-beta
       operationId: site.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: site-id
@@ -55917,6 +55435,10 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getCompatibleHubContentTypes
+      description: 'Get compatible content types in the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-beta
       operationId: site.list.contentType_getCompatibleHubContentType
       parameters:
         - name: site-id
@@ -56293,11 +55815,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Enumerate items in a list
-      description: 'Get the collection of [items][item] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
+      summary: Get items from sites
+      description: All items contained in the list.
       operationId: site.list_ListItem
       parameters:
         - name: site-id
@@ -56362,11 +55881,7 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create a new item in a list
-      description: 'Create a new [listItem][] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
+      summary: Create new navigation property to items for sites
       operationId: site.list_CreateItem
       parameters:
         - name: site-id
@@ -56406,11 +55921,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get an item in a list
-      description: 'Returns the metadata for an [item][] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0
+      summary: Get items from sites
+      description: All items contained in the list.
       operationId: site.list_GetItem
       parameters:
         - name: site-id
@@ -56517,11 +56029,7 @@ paths:
     delete:
       tags:
         - sites.list
-      summary: Delete an item from a list
-      description: 'Removes an item from a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0
+      summary: Delete navigation property items for sites
       operationId: site.list_DeleteItem
       parameters:
         - name: site-id
@@ -57598,11 +57106,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from sites
+      description: Version information for a document set version created by a user.
       operationId: site.list.item_ListDocumentSetVersion
       parameters:
         - name: site-id
@@ -57676,11 +57181,7 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for sites
       operationId: site.list.item_CreateDocumentSetVersion
       parameters:
         - name: site-id
@@ -57728,11 +57229,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get documentSetVersion
-      description: Read the properties and relationships of a documentSetVersion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-1.0
+      summary: Get documentSetVersions from sites
+      description: Version information for a document set version created by a user.
       operationId: site.list.item_GetDocumentSetVersion
       parameters:
         - name: site-id
@@ -57855,11 +57353,7 @@ paths:
     delete:
       tags:
         - sites.list
-      summary: Delete documentSetVersion
-      description: Delete a version of a document set in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-1.0
+      summary: Delete navigation property documentSetVersions for sites
       operationId: site.list.item_DeleteDocumentSetVersion
       parameters:
         - name: site-id
@@ -58089,7 +57583,7 @@ paths:
       description: Restore a document set version.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-beta
       operationId: site.list.item.documentSetVersion_restore
       parameters:
         - name: site-id
@@ -58173,7 +57667,7 @@ paths:
       tags:
         - sites.list
       summary: Get driveItem from sites
-      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a driveItem'
       operationId: site.list.item_GetDriveItem
       parameters:
         - name: site-id
@@ -58480,11 +57974,7 @@ paths:
     patch:
       tags:
         - sites.list
-      summary: Update an item in a list
-      description: 'Update the properties on a [listItem][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in sites
       operationId: site.list.item_UpdateField
       parameters:
         - name: site-id
@@ -58859,7 +58349,7 @@ paths:
       description: "Create a sharing link for a listItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link. listItem resources inherit sharing permissions from the list the item resides in."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-createlink?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/listitem-createlink?view=graph-rest-beta
       operationId: site.list.item_createLink
       parameters:
         - name: site-id
@@ -59610,6 +59100,10 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function delta
+      description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Deleted items are returned with the deleted facet. Deleted indicates that the item is deleted and can't be restored.\nItems with this property should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-beta
       operationId: site.list.item_delta
       parameters:
         - name: site-id
@@ -60578,7 +60072,7 @@ paths:
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-beta
       operationId: site.list.subscription_reauthorize
       parameters:
         - name: site-id
@@ -60766,6 +60260,10 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getApplicableContentTypesForList
+      description: Get site contentTypes that can be added to a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-beta
       operationId: site_getApplicableContentTypesGraphFPreList
       parameters:
         - name: site-id
@@ -61006,11 +60504,8 @@ paths:
     get:
       tags:
         - sites.columnDefinition
-      summary: List columns in a site
+      summary: Get columns from sites
       description: The collection of column definitions reusable across lists under this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0
       operationId: site.getGraphBPrePath_ListColumn
       parameters:
         - name: site-id
@@ -61076,10 +60571,7 @@ paths:
     post:
       tags:
         - sites.columnDefinition
-      summary: Create columnDefinition for a site
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for sites
       operationId: site.getGraphBPrePath_CreateColumn
       parameters:
         - name: site-id
@@ -61119,11 +60611,8 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: List contentTypes in a site
+      summary: Get contentTypes from sites
       description: The collection of content types defined for this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
       operationId: site.getGraphBPrePath_ListContentType
       parameters:
         - name: site-id
@@ -61189,11 +60678,7 @@ paths:
     post:
       tags:
         - sites.contentType
-      summary: Create contentType
-      description: 'Create a new [contentType][] for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
+      summary: Create new navigation property to contentTypes for sites
       operationId: site.getGraphBPrePath_CreateContentType
       parameters:
         - name: site-id
@@ -61423,11 +60908,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get lists in a site
-      description: "Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0
+      summary: Get lists from sites
+      description: The collection of lists under this site.
       operationId: site.getGraphBPrePath_ListList
       parameters:
         - name: site-id
@@ -61493,11 +60975,7 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create a new list
-      description: 'Create a new [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0
+      summary: Create new navigation property to lists for sites
       operationId: site.getGraphBPrePath_CreateList
       parameters:
         - name: site-id
@@ -61644,6 +61122,10 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getApplicableContentTypesForList
+      description: Get site contentTypes that can be added to a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-beta
       operationId: site.getGraphBPrePath_getApplicableContentTypesGraphFPreList
       parameters:
         - name: site-id
@@ -61924,11 +61406,8 @@ paths:
     get:
       tags:
         - sites.columnDefinition
-      summary: List columns in a site
+      summary: Get columns from sites
       description: The collection of column definitions reusable across lists under this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0
       operationId: site.getGraphBPrePath_ListColumn
       parameters:
         - name: site-id
@@ -62002,10 +61481,7 @@ paths:
     post:
       tags:
         - sites.columnDefinition
-      summary: Create columnDefinition for a site
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for sites
       operationId: site.getGraphBPrePath_CreateColumn
       parameters:
         - name: site-id
@@ -62053,11 +61529,8 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: List contentTypes in a site
+      summary: Get contentTypes from sites
       description: The collection of content types defined for this site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
       operationId: site.getGraphBPrePath_ListContentType
       parameters:
         - name: site-id
@@ -62131,11 +61604,7 @@ paths:
     post:
       tags:
         - sites.contentType
-      summary: Create contentType
-      description: 'Create a new [contentType][] for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
+      summary: Create new navigation property to contentTypes for sites
       operationId: site.getGraphBPrePath_CreateContentType
       parameters:
         - name: site-id
@@ -62397,11 +61866,8 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get lists in a site
-      description: "Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0
+      summary: Get lists from sites
+      description: The collection of lists under this site.
       operationId: site.getGraphBPrePath_ListList
       parameters:
         - name: site-id
@@ -62475,11 +61941,7 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create a new list
-      description: 'Create a new [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0
+      summary: Create new navigation property to lists for sites
       operationId: site.getGraphBPrePath_CreateList
       parameters:
         - name: site-id
@@ -62527,11 +61989,8 @@ paths:
     get:
       tags:
         - sites.richLongRunningOperation
-      summary: List operations
-      description: Get the list of richLongRunningOperations associated with a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0
+      summary: Get operations from sites
+      description: The collection of long running operations for the site.
       operationId: site.getGraphBPrePath_ListOperation
       parameters:
         - name: site-id
@@ -62653,11 +62112,8 @@ paths:
     get:
       tags:
         - sites.baseSitePage
-      summary: List baseSitePages
-      description: 'Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The collection of pages in the baseSitePages list on this site.
       operationId: site.getGraphBPrePath_ListPage
       parameters:
         - name: site-id
@@ -62731,11 +62187,7 @@ paths:
     post:
       tags:
         - sites.baseSitePage
-      summary: Create a page in the site pages list of a site
-      description: 'Create a new [sitePage][] in the site pages [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0
+      summary: Create new navigation property to pages for sites
       operationId: site.getGraphBPrePath_CreatePage
       parameters:
         - name: site-id
@@ -62783,11 +62235,8 @@ paths:
     get:
       tags:
         - sites.permission
-      summary: List permissions
-      description: Get the permission resources from the permissions navigation property on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from sites
+      description: The permissions associated with the site. Nullable.
       operationId: site.getGraphBPrePath_ListPermission
       parameters:
         - name: site-id
@@ -62861,11 +62310,7 @@ paths:
     post:
       tags:
         - sites.permission
-      summary: Create permission
-      description: Create a new permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
+      summary: Create new navigation property to permissions for sites
       operationId: site.getGraphBPrePath_CreatePermission
       parameters:
         - name: site-id
@@ -62913,11 +62358,8 @@ paths:
     get:
       tags:
         - sites.site
-      summary: List subsites for a site
-      description: 'Get a collection of subsites defined for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0
+      summary: Get sites from sites
+      description: The collection of the sub-sites under this site.
       operationId: site.getGraphBPrePath_ListSite
       parameters:
         - name: site-id
@@ -62992,11 +62434,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get store
-      description: Read the properties and relationships of a store object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
+      summary: Get termStore from sites
+      description: The termStore under this site.
       operationId: site.getGraphBPrePath_GetTermStore
       parameters:
         - name: site-id
@@ -63146,11 +62585,8 @@ paths:
     get:
       tags:
         - sites.richLongRunningOperation
-      summary: List operations
-      description: Get the list of richLongRunningOperations associated with a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0
+      summary: Get operations from sites
+      description: The collection of long running operations for the site.
       operationId: site.getGraphBPrePath_ListOperation
       parameters:
         - name: site-id
@@ -63256,11 +62692,8 @@ paths:
     get:
       tags:
         - sites.baseSitePage
-      summary: List baseSitePages
-      description: 'Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The collection of pages in the baseSitePages list on this site.
       operationId: site.getGraphBPrePath_ListPage
       parameters:
         - name: site-id
@@ -63326,11 +62759,7 @@ paths:
     post:
       tags:
         - sites.baseSitePage
-      summary: Create a page in the site pages list of a site
-      description: 'Create a new [sitePage][] in the site pages [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0
+      summary: Create new navigation property to pages for sites
       operationId: site.getGraphBPrePath_CreatePage
       parameters:
         - name: site-id
@@ -63370,11 +62799,8 @@ paths:
     get:
       tags:
         - sites.permission
-      summary: List permissions
-      description: Get the permission resources from the permissions navigation property on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from sites
+      description: The permissions associated with the site. Nullable.
       operationId: site.getGraphBPrePath_ListPermission
       parameters:
         - name: site-id
@@ -63440,11 +62866,7 @@ paths:
     post:
       tags:
         - sites.permission
-      summary: Create permission
-      description: Create a new permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
+      summary: Create new navigation property to permissions for sites
       operationId: site.getGraphBPrePath_CreatePermission
       parameters:
         - name: site-id
@@ -63484,11 +62906,8 @@ paths:
     get:
       tags:
         - sites.site
-      summary: List subsites for a site
-      description: 'Get a collection of subsites defined for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0
+      summary: Get sites from sites
+      description: The collection of the sub-sites under this site.
       operationId: site.getGraphBPrePath_ListSite
       parameters:
         - name: site-id
@@ -63555,11 +62974,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get store
-      description: Read the properties and relationships of a store object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
+      summary: Get termStore from sites
+      description: The termStore under this site.
       operationId: site.getGraphBPrePath_GetTermStore
       parameters:
         - name: site-id
@@ -63689,7 +63105,7 @@ paths:
       description: 'Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn''t exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-beta
       operationId: site.onenote.notebook_copyNotebook
       parameters:
         - name: site-id
@@ -63751,7 +63167,7 @@ paths:
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: site.onenote.notebook.sectionGroup.section_copyToNotebook
       parameters:
         - name: site-id
@@ -63829,7 +63245,7 @@ paths:
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: site.onenote.notebook.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: site-id
@@ -63907,7 +63323,7 @@ paths:
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.notebook.sectionGroup.section.page_copyToSection
       parameters:
         - name: site-id
@@ -64114,7 +63530,7 @@ paths:
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: site.onenote.notebook.section_copyToNotebook
       parameters:
         - name: site-id
@@ -64184,7 +63600,7 @@ paths:
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: site.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: site-id
@@ -64254,7 +63670,7 @@ paths:
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.notebook.section.page_copyToSection
       parameters:
         - name: site-id
@@ -64437,7 +63853,7 @@ paths:
       description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-beta
       operationId: site.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: site-id
@@ -64476,6 +63892,10 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getRecentNotebooks
+      description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-beta
       operationId: site.onenote.notebook_getRecentNotebook
       parameters:
         - name: site-id
@@ -64530,7 +63950,7 @@ paths:
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.page_copyToSection
       parameters:
         - name: site-id
@@ -64665,7 +64085,7 @@ paths:
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: site.onenote.sectionGroup.section_copyToNotebook
       parameters:
         - name: site-id
@@ -64735,7 +64155,7 @@ paths:
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: site.onenote.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: site-id
@@ -64805,7 +64225,7 @@ paths:
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.sectionGroup.section.page_copyToSection
       parameters:
         - name: site-id
@@ -64988,7 +64408,7 @@ paths:
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: site.onenote.section_copyToNotebook
       parameters:
         - name: site-id
@@ -65050,7 +64470,7 @@ paths:
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: site.onenote.section_copyToSectionGroup
       parameters:
         - name: site-id
@@ -65112,7 +64532,7 @@ paths:
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.section.page_copyToSection
       parameters:
         - name: site-id
@@ -65267,11 +64687,8 @@ paths:
     get:
       tags:
         - sites.richLongRunningOperation
-      summary: List operations
-      description: Get the list of richLongRunningOperations associated with a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0
+      summary: Get operations from sites
+      description: The collection of long running operations for the site.
       operationId: site_ListOperation
       parameters:
         - name: site-id
@@ -65361,11 +64778,8 @@ paths:
     get:
       tags:
         - sites.richLongRunningOperation
-      summary: Get richLongRunningOperation
-      description: Read the properties of a richLongRunningOperation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0
+      summary: Get operations from sites
+      description: The collection of long running operations for the site.
       operationId: site_GetOperation
       parameters:
         - name: site-id
@@ -65513,11 +64927,8 @@ paths:
     get:
       tags:
         - sites.baseSitePage
-      summary: List baseSitePages
-      description: 'Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The collection of pages in the baseSitePages list on this site.
       operationId: site_ListPage
       parameters:
         - name: site-id
@@ -65575,11 +64986,7 @@ paths:
     post:
       tags:
         - sites.baseSitePage
-      summary: Create a page in the site pages list of a site
-      description: 'Create a new [sitePage][] in the site pages [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0
+      summary: Create new navigation property to pages for sites
       operationId: site_CreatePage
       parameters:
         - name: site-id
@@ -65611,11 +65018,8 @@ paths:
     get:
       tags:
         - sites.baseSitePage
-      summary: Get baseSitePage
-      description: 'Get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/basesitepage-get?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The collection of pages in the baseSitePages list on this site.
       operationId: site_GetPage
       parameters:
         - name: site-id
@@ -68836,11 +68240,8 @@ paths:
     get:
       tags:
         - sites.permission
-      summary: List permissions
-      description: Get the permission resources from the permissions navigation property on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from sites
+      description: The permissions associated with the site. Nullable.
       operationId: site_ListPermission
       parameters:
         - name: site-id
@@ -68898,11 +68299,7 @@ paths:
     post:
       tags:
         - sites.permission
-      summary: Create permission
-      description: Create a new permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
+      summary: Create new navigation property to permissions for sites
       operationId: site_CreatePermission
       parameters:
         - name: site-id
@@ -68934,11 +68331,8 @@ paths:
     get:
       tags:
         - sites.permission
-      summary: Get permission
-      description: Retrieve the properties and relationships of a permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-get-permission?view=graph-rest-1.0
+      summary: Get permissions from sites
+      description: The permissions associated with the site. Nullable.
       operationId: site_GetPermission
       parameters:
         - name: site-id
@@ -68990,11 +68384,7 @@ paths:
     patch:
       tags:
         - sites.permission
-      summary: Update permission
-      description: Update the permission object on a site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-update-permission?view=graph-rest-1.0
+      summary: Update the navigation property permissions in sites
       operationId: site_UpdatePermission
       parameters:
         - name: site-id
@@ -69069,10 +68459,10 @@ paths:
       tags:
         - sites.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
+      description: Grant users access to a link represented by a permission.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta
       operationId: site.permission_grant
       parameters:
         - name: site-id
@@ -69139,10 +68529,10 @@ paths:
       tags:
         - sites.Actions
       summary: Invoke action revokeGrants
-      description: 'Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.'
+      description: Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta
       operationId: site.permission_revokeGrant
       parameters:
         - name: site-id
@@ -69211,11 +68601,8 @@ paths:
     get:
       tags:
         - sites.site
-      summary: List subsites for a site
-      description: 'Get a collection of subsites defined for a [site][].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0
+      summary: Get sites from sites
+      description: The collection of the sub-sites under this site.
       operationId: site_ListSite
       parameters:
         - name: site-id
@@ -69350,11 +68737,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get store
-      description: Read the properties and relationships of a store object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
+      summary: Get termStore from sites
+      description: The termStore under this site.
       operationId: site_GetTermStore
       parameters:
         - name: site-id
@@ -69456,11 +68840,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get termStore group
-      description: Read the properties and relationships of a term store group object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-1.0
+      summary: Get groups from sites
+      description: Collection of all groups available in the term store.
       operationId: site.termStore_ListGroup
       parameters:
         - name: site-id
@@ -69518,11 +68899,7 @@ paths:
     post:
       tags:
         - sites.store
-      summary: Create group
-      description: Create a new group object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-post?view=graph-rest-1.0
+      summary: Create new navigation property to groups for sites
       operationId: site.termStore_CreateGroup
       parameters:
         - name: site-id
@@ -69554,11 +68931,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get termStore group
-      description: Read the properties and relationships of a term store group object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0
+      summary: Get groups from sites
+      description: Collection of all groups available in the term store.
       operationId: site.termStore_GetGroup
       parameters:
         - name: site-id
@@ -69649,11 +69023,7 @@ paths:
     delete:
       tags:
         - sites.store
-      summary: Delete group
-      description: 'Delete a group object in a term [store].'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-delete?view=graph-rest-1.0
+      summary: Delete navigation property groups for sites
       operationId: site.termStore_DeleteGroup
       parameters:
         - name: site-id
@@ -69688,11 +69058,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: List sets
-      description: Get a list of the set objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
+      summary: Get sets from sites
+      description: 'All sets under the group in a term [store].'
       operationId: site.termStore.group_ListSet
       parameters:
         - name: site-id
@@ -69949,11 +69316,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: List children
-      description: 'Get the first level children of a [set] or [term] resource using the children navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
+      summary: Get children from sites
+      description: 'Children terms of set in term [store].'
       operationId: site.termStore.group.set_ListChild
       parameters:
         - name: site-id
@@ -70027,11 +69391,7 @@ paths:
     post:
       tags:
         - sites.store
-      summary: Create term
-      description: Create a new term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
+      summary: Create new navigation property to children for sites
       operationId: site.termStore.group.set_CreateChild
       parameters:
         - name: site-id
@@ -72283,11 +71643,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: List relations
-      description: 'Get the different relation of a [term] or [set] from the relations navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0
+      summary: Get relations from sites
+      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: site.termStore.group.set_ListRelation
       parameters:
         - name: site-id
@@ -72832,8 +72189,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get term
-      description: Read the properties and relationships of a term object.
+      summary: Get terms from sites
+      description: All the terms under the set.
       operationId: site.termStore.group.set_ListTerm
       parameters:
         - name: site-id
@@ -72955,11 +72312,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get term
-      description: Read the properties and relationships of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
+      summary: Get terms from sites
+      description: All the terms under the set.
       operationId: site.termStore.group.set_GetTerm
       parameters:
         - name: site-id
@@ -73027,11 +72381,7 @@ paths:
     patch:
       tags:
         - sites.store
-      summary: Update term
-      description: Update the properties of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
+      summary: Update the navigation property terms in sites
       operationId: site.termStore.group.set_UpdateTerm
       parameters:
         - name: site-id
@@ -73086,11 +72436,7 @@ paths:
     delete:
       tags:
         - sites.store
-      summary: Delete term
-      description: Delete a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
+      summary: Delete navigation property terms for sites
       operationId: site.termStore.group.set_DeleteTerm
       parameters:
         - name: site-id
@@ -75071,8 +74417,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get set
-      description: Read the properties and relationships of a set object.
+      summary: Get sets from sites
+      description: Collection of all sets available in the term store.
       operationId: site.termStore_ListSet
       parameters:
         - name: site-id
@@ -75162,11 +74508,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get set
-      description: Read the properties and relationships of a set object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-set-get?view=graph-rest-1.0
+      summary: Get sets from sites
+      description: Collection of all sets available in the term store.
       operationId: site.termStore_GetSet
       parameters:
         - name: site-id
@@ -75218,11 +74561,7 @@ paths:
     patch:
       tags:
         - sites.store
-      summary: Update set
-      description: Update the properties of a set object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-set-update?view=graph-rest-1.0
+      summary: Update the navigation property sets in sites
       operationId: site.termStore_UpdateSet
       parameters:
         - name: site-id
@@ -75261,11 +74600,7 @@ paths:
     delete:
       tags:
         - sites.store
-      summary: Delete set
-      description: Delete a set object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-set-delete?view=graph-rest-1.0
+      summary: Delete navigation property sets for sites
       operationId: site.termStore_DeleteSet
       parameters:
         - name: site-id
@@ -75300,11 +74635,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: List children
-      description: 'Get the first level children of a [set] or [term] resource using the children navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
+      summary: Get children from sites
+      description: 'Children terms of set in term [store].'
       operationId: site.termStore.set_ListChild
       parameters:
         - name: site-id
@@ -75370,11 +74702,7 @@ paths:
     post:
       tags:
         - sites.store
-      summary: Create term
-      description: Create a new term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
+      summary: Create new navigation property to children for sites
       operationId: site.termStore.set_CreateChild
       parameters:
         - name: site-id
@@ -77354,11 +76682,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: List sets
-      description: Get a list of the set objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
+      summary: Get sets from sites
+      description: 'All sets under the group in a term [store].'
       operationId: site.termStore.set.parentGroup_ListSet
       parameters:
         - name: site-id
@@ -77615,11 +76940,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: List children
-      description: 'Get the first level children of a [set] or [term] resource using the children navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
+      summary: Get children from sites
+      description: 'Children terms of set in term [store].'
       operationId: site.termStore.set.parentGroup.set_ListChild
       parameters:
         - name: site-id
@@ -77693,11 +77015,7 @@ paths:
     post:
       tags:
         - sites.store
-      summary: Create term
-      description: Create a new term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
+      summary: Create new navigation property to children for sites
       operationId: site.termStore.set.parentGroup.set_CreateChild
       parameters:
         - name: site-id
@@ -79798,11 +79116,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: List relations
-      description: 'Get the different relation of a [term] or [set] from the relations navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0
+      summary: Get relations from sites
+      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: site.termStore.set.parentGroup.set_ListRelation
       parameters:
         - name: site-id
@@ -80347,8 +79662,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get term
-      description: Read the properties and relationships of a term object.
+      summary: Get terms from sites
+      description: All the terms under the set.
       operationId: site.termStore.set.parentGroup.set_ListTerm
       parameters:
         - name: site-id
@@ -80470,11 +79785,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get term
-      description: Read the properties and relationships of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
+      summary: Get terms from sites
+      description: All the terms under the set.
       operationId: site.termStore.set.parentGroup.set_GetTerm
       parameters:
         - name: site-id
@@ -80542,11 +79854,7 @@ paths:
     patch:
       tags:
         - sites.store
-      summary: Update term
-      description: Update the properties of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
+      summary: Update the navigation property terms in sites
       operationId: site.termStore.set.parentGroup.set_UpdateTerm
       parameters:
         - name: site-id
@@ -80601,11 +79909,7 @@ paths:
     delete:
       tags:
         - sites.store
-      summary: Delete term
-      description: Delete a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
+      summary: Delete navigation property terms for sites
       operationId: site.termStore.set.parentGroup.set_DeleteTerm
       parameters:
         - name: site-id
@@ -82564,11 +81868,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: List relations
-      description: 'Get the different relation of a [term] or [set] from the relations navigation property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0
+      summary: Get relations from sites
+      description: Indicates which terms have been pinned or reused directly under the set.
       operationId: site.termStore.set_ListRelation
       parameters:
         - name: site-id
@@ -83041,8 +82342,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get term
-      description: Read the properties and relationships of a term object.
+      summary: Get terms from sites
+      description: All the terms under the set.
       operationId: site.termStore.set_ListTerm
       parameters:
         - name: site-id
@@ -83148,11 +82449,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get term
-      description: Read the properties and relationships of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
+      summary: Get terms from sites
+      description: All the terms under the set.
       operationId: site.termStore.set_GetTerm
       parameters:
         - name: site-id
@@ -83212,11 +82510,7 @@ paths:
     patch:
       tags:
         - sites.store
-      summary: Update term
-      description: Update the properties of a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
+      summary: Update the navigation property terms in sites
       operationId: site.termStore.set_UpdateTerm
       parameters:
         - name: site-id
@@ -83263,11 +82557,7 @@ paths:
     delete:
       tags:
         - sites.store
-      summary: Delete term
-      description: Delete a term object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
+      summary: Delete navigation property terms for sites
       operationId: site.termStore.set_DeleteTerm
       parameters:
         - name: site-id
@@ -85012,7 +84302,7 @@ paths:
       description: Follow a user's site or multiple sites.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta
       operationId: site_add
       requestBody:
         description: Action parameters
@@ -85057,6 +84347,10 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function delta
+      description: "Get a set of newly created, updated, or deleted sites without having to perform a full read of the entire sites collection. A delta function call for sites is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, \nyou can query for incremental changes in the sites. It allows you to maintain and synchronize a local store of a user's sites without having to fetch all the sites from the server every time.\nThe application calls the API without specifying any parameters.\nThe service begins enumerating sites and returns pages of changes to these sites, accompanied by either an @odata.nextLink or an @odata.deltaLink.\nYour application should continue making calls using the @odata.nextLink until there's an @odata.deltaLink  in the response. After you receive all the changes, you can apply them to your local state.\nTo monitor future changes, call the delta API by using the @odata.deltaLink in the previous response. Any resources marked as deleted should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-delta?view=graph-rest-beta
       operationId: site_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -85126,6 +84420,10 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function getAllSites
+      description: 'List sites across geographies in an organization. For more details, see Best practices for discovering files and detecting changes at scale.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-beta
       operationId: site_getAllSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -85195,7 +84493,7 @@ paths:
       description: Unfollow a user's site or multiple sites.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-beta
       operationId: site_remove
       requestBody:
         description: Action parameters
@@ -85239,11 +84537,7 @@ paths:
     get:
       tags:
         - users.site
-      summary: List followed sites
-      description: List the sites that have been followed by the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sites-list-followed?view=graph-rest-1.0
+      summary: Get followedSites from users
       operationId: user_ListFollowedSite
       parameters:
         - name: user-id
@@ -85799,13 +85093,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -85875,7 +85169,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -86759,7 +86053,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -87426,7 +86720,7 @@ components:
               description: 'The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -87953,11 +87247,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive.  See drive resource for values.
           nullable: true
         id:
           type: string
@@ -87973,13 +87267,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -92087,11 +91381,11 @@ components:
               nullable: true
             managedAppRegistrationId:
               type: string
-              description: The unique identifier of the app instance for which diagnostic was collected.
+              description: The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
               nullable: true
             requestedBy:
               type: string
-              description: The user principal name associated with the request for the managed application log collection.
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
               nullable: true
             requestedByUserPrincipalName:
               type: string
@@ -92110,7 +91404,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppLogUpload'
-              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs.'
+              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.'
             userLogUploadConsent:
               $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadConsent'
             version:
@@ -92841,7 +92135,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -93256,6 +92550,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -93266,7 +92561,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+              description: Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
               x-ms-navigationProperty: true
             rosterPlans:
               type: array
@@ -94324,11 +93619,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -95064,11 +94359,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -95078,7 +94373,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -98174,7 +97469,7 @@ components:
       properties:
         managedAppComponent:
           type: string
-          description: The Mobile Application Management (MAM) Logs Uploading Component.
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
           nullable: true
         managedAppComponentDescription:
           type: string
@@ -98182,7 +97477,7 @@ components:
           nullable: true
         referenceId:
           type: string
-          description: A provider-specific reference id for the uploaded logs.
+          description: A provider-specific reference id for the uploaded logs. Read-only.
           nullable: true
       additionalProperties:
         type: object

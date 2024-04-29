@@ -88,11 +88,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List aggregatedPolicyCompliances
-      description: Get a list of the aggregatedPolicyCompliance objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-aggregatedpolicycompliances?view=graph-rest-1.0
+      summary: Get aggregatedPolicyCompliances from tenantRelationships
+      description: Aggregate view of device compliance policies across managed tenants.
       operationId: tenantRelationship.managedTenant_ListAggregatedPolicyCompliance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -471,11 +468,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List auditEvents
-      description: Get a list of the auditEvent objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-auditevents?view=graph-rest-1.0
+      summary: Get auditEvents from tenantRelationships
+      description: The collection of audit events across managed tenants.
       operationId: tenantRelationship.managedTenant_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -548,11 +542,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get auditEvent
-      description: Read the properties and relationships of an auditEvent object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-auditevent-get?view=graph-rest-1.0
+      summary: Get auditEvents from tenantRelationships
+      description: The collection of audit events across managed tenants.
       operationId: tenantRelationship.managedTenant_GetAuditEvent
       parameters:
         - name: auditEvent-id
@@ -668,11 +659,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List cloudPcConnections
-      description: Get a list of the cloudPcConnection objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-1.0
+      summary: Get cloudPcConnections from tenantRelationships
+      description: The collection of cloud PC connections across managed tenants.
       operationId: tenantRelationship.managedTenant_ListCloudPcConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -745,11 +733,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get cloudPcConnection
-      description: Read the properties and relationships of a cloudPcConnection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-cloudpcconnection-get?view=graph-rest-1.0
+      summary: Get cloudPcConnections from tenantRelationships
+      description: The collection of cloud PC connections across managed tenants.
       operationId: tenantRelationship.managedTenant_GetCloudPcConnection
       parameters:
         - name: cloudPcConnection-id
@@ -865,11 +850,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List cloudPcDevices
-      description: Get a list of the cloudPcDevice objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcdevices?view=graph-rest-1.0
+      summary: Get cloudPcDevices from tenantRelationships
+      description: The collection of cloud PC devices across managed tenants.
       operationId: tenantRelationship.managedTenant_ListCloudPcDevice
       parameters:
         - $ref: '#/components/parameters/top'
@@ -942,11 +924,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get cloudPcDevice
-      description: Read the properties and relationships of a cloudPcDevice object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-cloudpcdevice-get?view=graph-rest-1.0
+      summary: Get cloudPcDevices from tenantRelationships
+      description: The collection of cloud PC devices across managed tenants.
       operationId: tenantRelationship.managedTenant_GetCloudPcDevice
       parameters:
         - name: cloudPcDevice-id
@@ -1062,11 +1041,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List cloudPcOverviews
-      description: Get a list of the cloudPcOverview objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcsoverview?view=graph-rest-1.0
+      summary: Get cloudPcsOverview from tenantRelationships
+      description: Overview of cloud PC information across managed tenants.
       operationId: tenantRelationship.managedTenant_ListCloudPcsOverview
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1139,11 +1115,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get cloudPcOverview
-      description: Read the properties and relationships of a cloudPcOverview object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-cloudpcoverview-get?view=graph-rest-1.0
+      summary: Get cloudPcsOverview from tenantRelationships
+      description: Overview of cloud PC information across managed tenants.
       operationId: tenantRelationship.managedTenant_GetCloudPcsOverview
       parameters:
         - name: cloudPcOverview-tenantId
@@ -1259,11 +1232,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List conditionalAccessPolicyCoverages
-      description: Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-conditionalaccesspolicycoverages?view=graph-rest-1.0
+      summary: Get conditionalAccessPolicyCoverages from tenantRelationships
+      description: Aggregate view of conditional access policy coverage across managed tenants.
       operationId: tenantRelationship.managedTenant_ListConditionalAccessPolicyCoverage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1336,11 +1306,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get conditionalAccessPolicyCoverage
-      description: Read the properties and relationships of a conditionalAccessPolicyCoverage object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-conditionalaccesspolicycoverage-get?view=graph-rest-1.0
+      summary: Get conditionalAccessPolicyCoverages from tenantRelationships
+      description: Aggregate view of conditional access policy coverage across managed tenants.
       operationId: tenantRelationship.managedTenant_GetConditionalAccessPolicyCoverage
       parameters:
         - name: conditionalAccessPolicyCoverage-id
@@ -1456,11 +1423,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List credentialUserRegistrationsSummaries
-      description: Get a list of the credentialUserRegistrationsSummary objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-credentialuserregistrationssummaries?view=graph-rest-1.0
+      summary: Get credentialUserRegistrationsSummaries from tenantRelationships
+      description: Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
       operationId: tenantRelationship.managedTenant_ListCredentialUserRegistrationsSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1533,11 +1497,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get credentialUserRegistrationsSummary
-      description: Read the properties and relationships of a credentialUserRegistrationsSummary object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-credentialuserregistrationssummary-get?view=graph-rest-1.0
+      summary: Get credentialUserRegistrationsSummaries from tenantRelationships
+      description: Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
       operationId: tenantRelationship.managedTenant_GetCredentialUserRegistrationsSummary
       parameters:
         - name: credentialUserRegistrationsSummary-id
@@ -1842,11 +1803,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List deviceCompliancePolicySettingStateSummary
-      description: Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-devicecompliancepolicysettingstatesummary?view=graph-rest-1.0
+      summary: Get deviceCompliancePolicySettingStateSummaries from tenantRelationships
+      description: Summary information for device compliance policy setting states across managed tenants.
       operationId: tenantRelationship.managedTenant_ListDeviceCompliancePolicySettingStateSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1919,11 +1877,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get deviceCompliancePolicySettingStateSummary
-      description: Read the properties and relationships of a deviceCompliancePolicySettingStateSummary object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-devicecompliancepolicysettingstatesummary-get?view=graph-rest-1.0
+      summary: Get deviceCompliancePolicySettingStateSummaries from tenantRelationships
+      description: Summary information for device compliance policy setting states across managed tenants.
       operationId: tenantRelationship.managedTenant_GetDeviceCompliancePolicySettingStateSummary
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -2228,11 +2183,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managedDeviceCompliances
-      description: Get a list of the managedDeviceCompliance objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliances?view=graph-rest-1.0
+      summary: Get managedDeviceCompliances from tenantRelationships
+      description: The collection of compliance for managed devices across managed tenants.
       operationId: tenantRelationship.managedTenant_ListManagedDeviceCompliance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2305,11 +2257,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managedDeviceCompliance
-      description: Read the properties and relationships of a managedDeviceCompliance object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-manageddevicecompliance-get?view=graph-rest-1.0
+      summary: Get managedDeviceCompliances from tenantRelationships
+      description: The collection of compliance for managed devices across managed tenants.
       operationId: tenantRelationship.managedTenant_GetManagedDeviceCompliance
       parameters:
         - name: managedDeviceCompliance-id
@@ -2425,11 +2374,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managedDeviceComplianceTrends
-      description: Get a list of the managedDeviceComplianceTrend objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliancetrends?view=graph-rest-1.0
+      summary: Get managedDeviceComplianceTrends from tenantRelationships
+      description: Trend insights for device compliance across managed tenants.
       operationId: tenantRelationship.managedTenant_ListManagedDeviceComplianceTrend
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2502,11 +2448,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managedDeviceComplianceTrend
-      description: Read the properties and relationships of a managedDeviceComplianceTrend object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-manageddevicecompliancetrend-get?view=graph-rest-1.0
+      summary: Get managedDeviceComplianceTrends from tenantRelationships
+      description: Trend insights for device compliance across managed tenants.
       operationId: tenantRelationship.managedTenant_GetManagedDeviceComplianceTrend
       parameters:
         - name: managedDeviceComplianceTrend-id
@@ -4840,11 +4783,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managementActions
-      description: Get a list of the managementAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactions?view=graph-rest-1.0
+      summary: Get managementActions from tenantRelationships
+      description: The collection of baseline management actions across managed tenants.
       operationId: tenantRelationship.managedTenant_ListManagementAction
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4917,11 +4857,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managementAction
-      description: Read the properties and relationships of a managementAction object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managementaction-get?view=graph-rest-1.0
+      summary: Get managementActions from tenantRelationships
+      description: The collection of baseline management actions across managed tenants.
       operationId: tenantRelationship.managedTenant_GetManagementAction
       parameters:
         - name: managementAction-id
@@ -5037,11 +4974,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managementActionTenantDeploymentStatus
-      description: Get a list of the managementActionTenantDeploymentStatus objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactiontenantdeploymentstatuses?view=graph-rest-1.0
+      summary: Get managementActionTenantDeploymentStatuses from tenantRelationships
+      description: The tenant level status of management actions across managed tenants.
       operationId: tenantRelationship.managedTenant_ListManagementActionTenantDeploymentStatus
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5114,11 +5048,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managementActionTenantDeploymentStatus
-      description: Read the properties and relationships of a managementActionTenantDeploymentStatus object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managementactiontenantdeploymentstatus-get?view=graph-rest-1.0
+      summary: Get managementActionTenantDeploymentStatuses from tenantRelationships
+      description: The tenant level status of management actions across managed tenants.
       operationId: tenantRelationship.managedTenant_GetManagementActionTenantDeploymentStatus
       parameters:
         - name: managementActionTenantDeploymentStatus-id
@@ -5234,11 +5165,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managementIntents
-      description: Get a list of the managementIntent objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementintents?view=graph-rest-1.0
+      summary: Get managementIntents from tenantRelationships
+      description: The collection of baseline management intents across managed tenants.
       operationId: tenantRelationship.managedTenant_ListManagementIntent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5311,11 +5239,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managementIntent
-      description: Read the properties and relationships of a managementIntent object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managementintent-get?view=graph-rest-1.0
+      summary: Get managementIntents from tenantRelationships
+      description: The collection of baseline management intents across managed tenants.
       operationId: tenantRelationship.managedTenant_GetManagementIntent
       parameters:
         - name: managementIntent-id
@@ -5943,11 +5868,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managementTemplates
-      description: Get a list of the managementTemplate objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementtemplates?view=graph-rest-1.0
+      summary: Get managementTemplates from tenantRelationships
+      description: The collection of baseline management templates across managed tenants.
       operationId: tenantRelationship.managedTenant_ListManagementTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6020,11 +5942,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get managementTemplate
-      description: Read the properties and relationships of a managementTemplate object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managementtemplate-get?view=graph-rest-1.0
+      summary: Get managementTemplates from tenantRelationships
+      description: The collection of baseline management templates across managed tenants.
       operationId: tenantRelationship.managedTenant_GetManagementTemplate
       parameters:
         - name: managementTemplate-id
@@ -7580,11 +7499,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List myRoles
-      description: "Get the roles that a signed-in user has through a delegated relationship across managed tenants. For information on the types of delegated relationships between a Managed Service Provider (MSP) who uses Microsoft 365 Lighthouse, and their business customers with Microsoft 365 Business Premium tenants, see the following articles on the Partner Center:\n- Delegated administration privileges (DAP)\n- Granular delegated admin privileges (GDAP)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-myroles?view=graph-rest-1.0
+      summary: Get myRoles from tenantRelationships
+      description: The collection of role assignments to a signed-in user for a managed tenant.
       operationId: tenantRelationship.managedTenant_ListMyRole
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7774,11 +7690,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenantGroups
-      description: Get a list of the tenantGroup objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantgroups?view=graph-rest-1.0
+      summary: Get tenantGroups from tenantRelationships
+      description: The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
       operationId: tenantRelationship.managedTenant_ListTenantGroup
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7851,11 +7764,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenantGroup
-      description: Read the properties and relationships of a tenantGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-tenantgroup-get?view=graph-rest-1.0
+      summary: Get tenantGroups from tenantRelationships
+      description: The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
       operationId: tenantRelationship.managedTenant_GetTenantGroup
       parameters:
         - name: tenantGroup-id
@@ -7971,11 +7881,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenants
-      description: Get a list of the tenant objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenants?view=graph-rest-1.0
+      summary: Get tenants from tenantRelationships
+      description: The collection of tenants associated with the managing entity.
       operationId: tenantRelationship.managedTenant_ListTenant
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8048,11 +7955,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenant
-      description: Read the properties and relationships of a tenant object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-tenant-get?view=graph-rest-1.0
+      summary: Get tenants from tenantRelationships
+      description: The collection of tenants associated with the managing entity.
       operationId: tenantRelationship.managedTenant_GetTenant
       parameters:
         - name: tenant-id
@@ -8168,11 +8072,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenantCustomizedInformation
-      description: Get a list of the tenantCustomizedInformation objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantscustomizedinformation?view=graph-rest-1.0
+      summary: Get tenantsCustomizedInformation from tenantRelationships
+      description: The collection of tenant level customized information across managed tenants.
       operationId: tenantRelationship.managedTenant_ListTenantsCustomizedInformation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8245,11 +8146,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenantCustomizedInformation
-      description: Read the properties and relationships of a tenantCustomizedInformation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-tenantcustomizedinformation-get?view=graph-rest-1.0
+      summary: Get tenantsCustomizedInformation from tenantRelationships
+      description: The collection of tenant level customized information across managed tenants.
       operationId: tenantRelationship.managedTenant_GetTenantsCustomizedInformation
       parameters:
         - name: tenantCustomizedInformation-id
@@ -8293,11 +8191,7 @@ paths:
     patch:
       tags:
         - tenantRelationships.managedTenant
-      summary: Update tenantCustomizedInformation
-      description: Update the properties of a tenantCustomizedInformation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-tenantcustomizedinformation-update?view=graph-rest-1.0
+      summary: Update the navigation property tenantsCustomizedInformation in tenantRelationships
       operationId: tenantRelationship.managedTenant_UpdateTenantsCustomizedInformation
       parameters:
         - name: tenantCustomizedInformation-id
@@ -8369,11 +8263,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenantDetailedInformation
-      description: Get a list of the tenantDetailedInformation objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantsdetailedinformation?view=graph-rest-1.0
+      summary: Get tenantsDetailedInformation from tenantRelationships
+      description: The collection tenant level detailed information across managed tenants.
       operationId: tenantRelationship.managedTenant_ListTenantsDetailedInformation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8446,11 +8337,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenantDetailedInformation
-      description: Read the properties and relationships of a tenantDetailedInformation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-tenantdetailedinformation-get?view=graph-rest-1.0
+      summary: Get tenantsDetailedInformation from tenantRelationships
+      description: The collection tenant level detailed information across managed tenants.
       operationId: tenantRelationship.managedTenant_GetTenantsDetailedInformation
       parameters:
         - name: tenantDetailedInformation-id
@@ -8566,11 +8454,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenantTags
-      description: Get a list of the tenantTag objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenanttags?view=graph-rest-1.0
+      summary: Get tenantTags from tenantRelationships
+      description: The collection of tenant tags across managed tenants.
       operationId: tenantRelationship.managedTenant_ListTenantTag
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8620,11 +8505,7 @@ paths:
     post:
       tags:
         - tenantRelationships.managedTenant
-      summary: Create tenantTag
-      description: Create a new tenantTag object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-post-tenanttags?view=graph-rest-1.0
+      summary: Create new navigation property to tenantTags for tenantRelationships
       operationId: tenantRelationship.managedTenant_CreateTenantTag
       requestBody:
         description: New navigation property
@@ -8647,11 +8528,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get tenantTag
-      description: Read the properties and relationships of a tenantTag object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-get?view=graph-rest-1.0
+      summary: Get tenantTags from tenantRelationships
+      description: The collection of tenant tags across managed tenants.
       operationId: tenantRelationship.managedTenant_GetTenantTag
       parameters:
         - name: tenantTag-id
@@ -8695,11 +8573,7 @@ paths:
     patch:
       tags:
         - tenantRelationships.managedTenant
-      summary: Update tenantTag
-      description: Update the properties of a tenantTag object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-update?view=graph-rest-1.0
+      summary: Update the navigation property tenantTags in tenantRelationships
       operationId: tenantRelationship.managedTenant_UpdateTenantTag
       parameters:
         - name: tenantTag-id
@@ -8730,11 +8604,7 @@ paths:
     delete:
       tags:
         - tenantRelationships.managedTenant
-      summary: Delete tenantTag
-      description: Delete a tenantTag object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-delete?view=graph-rest-1.0
+      summary: Delete navigation property tenantTags for tenantRelationships
       operationId: tenantRelationship.managedTenant_DeleteTenantTag
       parameters:
         - name: tenantTag-id
@@ -8775,11 +8645,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List windowsDeviceMalwareStates
-      description: Get a list of the windowsDeviceMalwareState objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsdevicemalwarestates?view=graph-rest-1.0
+      summary: Get windowsDeviceMalwareStates from tenantRelationships
+      description: 'The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
       operationId: tenantRelationship.managedTenant_ListWindowsDeviceMalwareState
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8852,11 +8719,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get windowsDeviceMalwareState
-      description: Read the properties and relationships of a windowsDeviceMalwareState object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-windowsdevicemalwarestate-get?view=graph-rest-1.0
+      summary: Get windowsDeviceMalwareStates from tenantRelationships
+      description: 'The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
       operationId: tenantRelationship.managedTenant_GetWindowsDeviceMalwareState
       parameters:
         - name: windowsDeviceMalwareState-id
@@ -8972,11 +8836,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List windowsProtectionStates
-      description: Get a list of the windowsProtectionState objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsprotectionstates?view=graph-rest-1.0
+      summary: Get windowsProtectionStates from tenantRelationships
+      description: 'The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
       operationId: tenantRelationship.managedTenant_ListWindowsProtectionState
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9049,11 +8910,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: Get windowsProtectionState
-      description: Read the properties and relationships of a windowsProtectionState object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/managedtenants-windowsprotectionstate-get?view=graph-rest-1.0
+      summary: Get windowsProtectionStates from tenantRelationships
+      description: 'The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
       operationId: tenantRelationship.managedTenant_GetWindowsProtectionState
       parameters:
         - name: windowsProtectionState-id

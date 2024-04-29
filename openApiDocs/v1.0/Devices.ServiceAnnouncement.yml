@@ -137,11 +137,8 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: List healthOverviews
-      description: Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
+      summary: Get healthOverviews from admin
+      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListHealthOverview
       parameters:
         - $ref: '#/components/parameters/top'
@@ -214,11 +211,8 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get serviceHealth
-      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
+      summary: Get healthOverviews from admin
+      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetHealthOverview
       parameters:
         - name: serviceHealth-id
@@ -539,6 +533,10 @@ paths:
       tags:
         - admin.Functions
       summary: Invoke function incidentReport
+      description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.healthOverview.issue_incidentReport
       parameters:
         - name: serviceHealth-id
@@ -614,11 +612,8 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: List issues
-      description: Retrieve serviceHealthIssue resources from the issues navigation property. This operation retrieves information about all service health issues that exist for the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
+      summary: Get issues from admin
+      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListIssue
       parameters:
         - $ref: '#/components/parameters/top'
@@ -691,11 +686,8 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get serviceHealthIssue
-      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
+      summary: Get issues from admin
+      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetIssue
       parameters:
         - name: serviceHealthIssue-id
@@ -798,6 +790,10 @@ paths:
       tags:
         - admin.Functions
       summary: Invoke function incidentReport
+      description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.issue_incidentReport
       parameters:
         - name: serviceHealthIssue-id
@@ -843,11 +839,8 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: List serviceAnnouncement messages
-      description: Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
+      summary: Get messages from admin
+      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_ListMessage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -920,11 +913,8 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get serviceUpdateMessage
-      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0
+      summary: Get messages from admin
+      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetMessage
       parameters:
         - name: serviceUpdateMessage-id
@@ -1026,11 +1016,8 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: List attachments
-      description: Get the list of attachments associated with a service message.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from admin
+      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.message_ListAttachment
       parameters:
         - name: serviceUpdateMessage-id
@@ -1120,11 +1107,8 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get serviceAnnouncementAttachment
-      description: Read the properties and relationships of a serviceAnnouncementAttachment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
+      summary: Get attachments from admin
+      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.message_GetAttachment
       parameters:
         - name: serviceUpdateMessage-id
@@ -1252,9 +1236,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Get content for the navigation property attachments from admin
       description: The attachment content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_GetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
@@ -1353,9 +1334,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Get attachmentsArchive for the navigation property messages from admin
       description: The zip file that contains all attachments for a message.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id

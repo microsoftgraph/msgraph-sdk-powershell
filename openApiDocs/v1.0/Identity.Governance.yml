@@ -151,11 +151,8 @@ paths:
     get:
       tags:
         - agreements.agreementAcceptance
-      summary: List acceptances
-      description: Get the details about the acceptance records for a specific agreement.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0
+      summary: Get acceptances from agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreement_ListAcceptance
       parameters:
         - name: agreement-id
@@ -394,11 +391,8 @@ paths:
     get:
       tags:
         - agreements.agreementFile
-      summary: Get agreementFile
-      description: 'Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0
+      summary: Get file from agreements
+      description: Default PDF linked to this agreement.
       operationId: agreement_GetFile
       parameters:
         - name: agreement-id
@@ -500,11 +494,8 @@ paths:
     get:
       tags:
         - agreements.agreementFile
-      summary: List agreementFileLocalizations
-      description: Get a list of the default and localized agreement files.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0
+      summary: Get localizations from agreements
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreement.file_ListLocalization
       parameters:
         - name: agreement-id
@@ -1090,11 +1081,7 @@ paths:
     post:
       tags:
         - agreements.agreementFileLocalization
-      summary: Create agreementFileLocalization
-      description: Create a new localized agreement file.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0
+      summary: Create new navigation property to files for agreements
       operationId: agreement_CreateFile
       parameters:
         - name: agreement-id
@@ -1699,11 +1686,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: List definitions
-      description: Get a list of the accessReviewScheduleDefinition objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0
+      summary: Get definitions from identityGovernance
+      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReview_ListDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1753,11 +1737,7 @@ paths:
     post:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Create definitions
-      description: Create a new accessReviewScheduleDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0
+      summary: Create new navigation property to definitions for identityGovernance
       operationId: identityGovernance.accessReview_CreateDefinition
       requestBody:
         description: New navigation property
@@ -1780,11 +1760,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Get accessReviewScheduleDefinition
-      description: 'Read the properties and relationships of an accessReviewScheduleDefinition object. To retrieve the instances of the access review series, use the list accessReviewInstance API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-get?view=graph-rest-1.0
+      summary: Get definitions from identityGovernance
+      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReview_GetDefinition
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -1859,11 +1836,7 @@ paths:
     delete:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Delete accessReviewScheduleDefinition
-      description: Deletes an accessReviewScheduleDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property definitions for identityGovernance
       operationId: identityGovernance.accessReview_DeleteDefinition
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -1890,11 +1863,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: List instances
-      description: Get a list of the accessReviewInstance objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-list-instances?view=graph-rest-1.0
+      summary: Get instances from identityGovernance
+      description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that doesn''t recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource has a unique instance for each recurrence.'
       operationId: identityGovernance.accessReview.definition_ListInstance
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -1984,11 +1954,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Get accessReviewInstance
-      description: Read the properties and relationships of an accessReviewInstance object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-get?view=graph-rest-1.0
+      summary: Get instances from identityGovernance
+      description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that doesn''t recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource has a unique instance for each recurrence.'
       operationId: identityGovernance.accessReview.definition_GetInstance
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2040,11 +2007,7 @@ paths:
     patch:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Update accessReviewInstance
-      description: 'Update the properties of an accessReviewInstance object. Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body. You can only add reviewers to the fallbackReviewers property but can''t remove existing fallbackReviewers. To update an accessReviewInstance, it''s status must be InProgress.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-update?view=graph-rest-1.0
+      summary: Update the navigation property instances in identityGovernance
       operationId: identityGovernance.accessReview.definition_UpdateInstance
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2118,11 +2081,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: List contactedReviewers
-      description: 'Get the reviewers for an access review instance, irrespective of whether or not they have received a notification. The reviewers are represented by an accessReviewReviewer object. A list of zero or more objects are returned, including all of their nested properties.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-contactedreviewers?view=graph-rest-1.0
+      summary: Get contactedReviewers from identityGovernance
+      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
       operationId: identityGovernance.accessReview.definition.instance_ListContactedReviewer
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2409,11 +2369,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: List decisions
-      description: 'Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-decisions?view=graph-rest-1.0
+      summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReview.definition.instance_ListDecision
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2519,11 +2476,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Get accessReviewInstanceDecisionItem
-      description: Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0
+      summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReview.definition.instance_GetDecision
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3040,6 +2994,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance.decision_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3348,11 +3306,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: List stages (of an access review)
-      description: Retrieve the stages in a multi-stage access review instance.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-stages?view=graph-rest-1.0
+      summary: Get stages from identityGovernance
+      description: 'If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.'
       operationId: identityGovernance.accessReview.definition.instance_ListStage
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3458,11 +3413,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Get accessReviewStage
-      description: Retrieve the properties and relationships of an accessReviewStage object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewstage-get?view=graph-rest-1.0
+      summary: Get stages from identityGovernance
+      description: 'If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.'
       operationId: identityGovernance.accessReview.definition.instance_GetStage
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3522,11 +3474,7 @@ paths:
     patch:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Update accessReviewStage
-      description: 'Update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can''t remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewstage-update?view=graph-rest-1.0
+      summary: Update the navigation property stages in identityGovernance
       operationId: identityGovernance.accessReview.definition.instance_UpdateStage
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3616,11 +3564,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: List decisions (from a multi-stage access review)
-      description: Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewstage-list-decisions?view=graph-rest-1.0
+      summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReview.definition.instance.stage_ListDecision
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3742,11 +3687,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Get accessReviewInstanceDecisionItem
-      description: Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0
+      summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReview.definition.instance.stage_GetDecision
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3814,11 +3756,7 @@ paths:
     patch:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Update accessReviewInstanceDecisionItem
-      description: 'Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-1.0
+      summary: Update the navigation property decisions in identityGovernance
       operationId: identityGovernance.accessReview.definition.instance.stage_UpdateDecision
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -4347,6 +4285,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance.stage.decision_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -4515,6 +4457,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: Return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewstage-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance.stage_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -4626,6 +4572,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: Retrieve all accessReviewInstance objects on a given accessReviewScheduleDefinition where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -4742,6 +4692,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: Returns accessReviewScheduleDefinition objects where the calling user is a reviewer on one or more accessReviewInstance objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -4814,11 +4768,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: List historyDefinitions
-      description: 'Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewset-list-historydefinitions?view=graph-rest-1.0
+      summary: Get historyDefinitions from identityGovernance
+      description: Represents a collection of access review history data and the scopes used to collect that data.
       operationId: identityGovernance.accessReview_ListHistoryDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4868,11 +4819,7 @@ paths:
     post:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Create historyDefinitions
-      description: Create a new accessReviewHistoryDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewset-post-historydefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to historyDefinitions for identityGovernance
       operationId: identityGovernance.accessReview_CreateHistoryDefinition
       requestBody:
         description: New navigation property
@@ -4895,11 +4842,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Get accessReviewHistoryDefinition
-      description: 'Retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewhistorydefinition-get?view=graph-rest-1.0
+      summary: Get historyDefinitions from identityGovernance
+      description: Represents a collection of access review history data and the scopes used to collect that data.
       operationId: identityGovernance.accessReview_GetHistoryDefinition
       parameters:
         - name: accessReviewHistoryDefinition-id
@@ -5001,11 +4945,8 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: List instances (of an accessReviewHistoryDefinition)
-      description: Retrieve the instances of an access review history definition created in the last 30 days.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewhistorydefinition-list-instances?view=graph-rest-1.0
+      summary: Get instances from identityGovernance
+      description: 'If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn''t recur will have exactly one instance.'
       operationId: identityGovernance.accessReview.historyDefinition_ListInstance
       parameters:
         - name: accessReviewHistoryDefinition-id
@@ -5372,11 +5313,8 @@ paths:
     get:
       tags:
         - identityGovernance.appConsentApprovalRoute
-      summary: List appConsentRequests
-      description: Retrieve appConsentRequest objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/appconsentapprovalroute-list-appconsentrequests?view=graph-rest-1.0
+      summary: Get appConsentRequests from identityGovernance
+      description: A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
       operationId: identityGovernance.appConsent_ListAppConsentRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5449,11 +5387,8 @@ paths:
     get:
       tags:
         - identityGovernance.appConsentApprovalRoute
-      summary: Get appConsentRequest
-      description: Read the properties and relationships of an appConsentRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/appconsentrequest-get?view=graph-rest-1.0
+      summary: Get appConsentRequests from identityGovernance
+      description: A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
       operationId: identityGovernance.appConsent_GetAppConsentRequest
       parameters:
         - name: appConsentRequest-id
@@ -5555,11 +5490,8 @@ paths:
     get:
       tags:
         - identityGovernance.appConsentApprovalRoute
-      summary: List userConsentRequests
-      description: Retrieve a collection of userConsentRequest objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/appconsentrequest-list-userconsentrequests?view=graph-rest-1.0
+      summary: Get userConsentRequests from identityGovernance
+      description: A list of pending user consent requests. Supports $filter (eq).
       operationId: identityGovernance.appConsent.appConsentRequest_ListUserConsentRequest
       parameters:
         - name: appConsentRequest-id
@@ -5649,11 +5581,8 @@ paths:
     get:
       tags:
         - identityGovernance.appConsentApprovalRoute
-      summary: Get userConsentRequest
-      description: Read the properties and relationships of a userConsentRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0
+      summary: Get userConsentRequests from identityGovernance
+      description: A list of pending user consent requests. Supports $filter (eq).
       operationId: identityGovernance.appConsent.appConsentRequest_GetUserConsentRequest
       parameters:
         - name: appConsentRequest-id
@@ -5906,11 +5835,8 @@ paths:
     get:
       tags:
         - identityGovernance.appConsentApprovalRoute
-      summary: List approval stages
-      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
+      summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest.approval_ListStage
       parameters:
         - name: appConsentRequest-id
@@ -6016,11 +5942,8 @@ paths:
     get:
       tags:
         - identityGovernance.appConsentApprovalRoute
-      summary: Get approvalStage
-      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
+      summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest.approval_GetStage
       parameters:
         - name: appConsentRequest-id
@@ -6080,11 +6003,7 @@ paths:
     patch:
       tags:
         - identityGovernance.appConsentApprovalRoute
-      summary: Update approvalStage
-      description: Approve or deny an approvalStage object in an approval.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
+      summary: Update the navigation property stages in identityGovernance
       operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest.approval_UpdateStage
       parameters:
         - name: appConsentRequest-id
@@ -6227,6 +6146,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/userconsentrequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: appConsentRequest-id
@@ -6322,6 +6245,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: Retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/appconsentrequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.appConsent.appConsentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -6471,8 +6398,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get approval
-      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
+      summary: Get accessPackageAssignmentApprovals from identityGovernance
+      description: Approval stages for decisions associated with access package assignment requests.
       operationId: identityGovernance.entitlementManagement_ListAccessPackageAssignmentApproval
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6545,11 +6472,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get approval
-      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approval-get?view=graph-rest-1.0
+      summary: Get accessPackageAssignmentApprovals from identityGovernance
+      description: Approval stages for decisions associated with access package assignment requests.
       operationId: identityGovernance.entitlementManagement_GetAccessPackageAssignmentApproval
       parameters:
         - name: approval-id
@@ -6651,11 +6575,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List approval stages
-      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
+      summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_ListStage
       parameters:
         - name: approval-id
@@ -6745,11 +6666,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get approvalStage
-      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
+      summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_GetStage
       parameters:
         - name: approval-id
@@ -6801,11 +6719,7 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update approvalStage
-      description: Approve or deny an approvalStage object in an approval.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
+      summary: Update the navigation property stages in identityGovernance
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_UpdateStage
       parameters:
         - name: approval-id
@@ -6916,6 +6830,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -6988,11 +6906,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List accessPackages
-      description: 'Retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackages?view=graph-rest-1.0
+      summary: Get accessPackages from identityGovernance
+      description: Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
       operationId: identityGovernance.entitlementManagement_ListAccessPackage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7042,11 +6957,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Create accessPackage
-      description: Create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-accesspackages?view=graph-rest-1.0
+      summary: Create new navigation property to accessPackages for identityGovernance
       operationId: identityGovernance.entitlementManagement_CreateAccessPackage
       requestBody:
         description: New navigation property
@@ -7069,11 +6980,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackage
-      description: Retrieve the properties and relationships of an accessPackage object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
+      summary: Get accessPackages from identityGovernance
+      description: Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
       operationId: identityGovernance.entitlementManagement_GetAccessPackage
       parameters:
         - name: accessPackage-id
@@ -7117,11 +7025,7 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackage
-      description: 'Update an existing accessPackage object to change one or more of its properties, such as the display name or description.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-update?view=graph-rest-1.0
+      summary: Update the navigation property accessPackages in identityGovernance
       operationId: identityGovernance.entitlementManagement_UpdateAccessPackage
       parameters:
         - name: accessPackage-id
@@ -7152,11 +7056,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackage
-      description: Delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-delete?view=graph-rest-1.0
+      summary: Delete navigation property accessPackages for identityGovernance
       operationId: identityGovernance.entitlementManagement_DeleteAccessPackage
       parameters:
         - name: accessPackage-id
@@ -7183,11 +7083,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List accessPackagesIncompatibleWith
-      description: Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-1.0
+      summary: Get accessPackagesIncompatibleWith from identityGovernance
+      description: The access packages that are incompatible with this package. Read-only.
       operationId: identityGovernance.entitlementManagement.accessPackage_ListAccessPackagesIncompatibleGraphWPre
       parameters:
         - name: accessPackage-id
@@ -8354,11 +8251,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List incompatibleAccessPackages
-      description: 'Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
+      summary: Get incompatibleAccessPackages from identityGovernance
+      description: The access packages whose assigned users are ineligible to be assigned this access package.
       operationId: identityGovernance.entitlementManagement.accessPackage_ListIncompatibleAccessPackage
       parameters:
         - name: accessPackage-id
@@ -8417,11 +8311,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Remove accessPackage from incompatibleAccessPackages
-      description: 'Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatibleaccesspackage?view=graph-rest-1.0
+      summary: Delete ref of navigation property incompatibleAccessPackages for identityGovernance
       operationId: identityGovernance.entitlementManagement.accessPackage.incompatibleAccessPackage_DeleteAccessPackageGraphBPreRef
       parameters:
         - name: accessPackage-id
@@ -8478,11 +8368,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List incompatibleAccessPackages
-      description: 'Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
+      summary: Get ref of incompatibleAccessPackages from identityGovernance
+      description: The access packages whose assigned users are ineligible to be assigned this access package.
       operationId: identityGovernance.entitlementManagement.accessPackage_ListIncompatibleAccessPackageGraphBPreRef
       parameters:
         - name: accessPackage-id
@@ -8520,11 +8407,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Add accessPackage to incompatibleAccessPackages
-      description: 'Add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-post-incompatibleaccesspackage?view=graph-rest-1.0
+      summary: Create new navigation property ref to incompatibleAccessPackages for identityGovernance
       operationId: identityGovernance.entitlementManagement.accessPackage_CreateIncompatibleAccessPackageGraphBPreRef
       parameters:
         - name: accessPackage-id
@@ -8546,11 +8429,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Remove accessPackage from incompatibleAccessPackages
-      description: 'Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatibleaccesspackage?view=graph-rest-1.0
+      summary: Delete ref of navigation property incompatibleAccessPackages for identityGovernance
       operationId: identityGovernance.entitlementManagement.accessPackage_DeleteIncompatibleAccessPackageGraphBPreRef
       parameters:
         - name: accessPackage-id
@@ -8585,11 +8464,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List incompatibleGroups
-      description: 'Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
+      summary: Get incompatibleGroups from identityGovernance
+      description: The groups whose members are ineligible to be assigned this access package.
       operationId: identityGovernance.entitlementManagement.accessPackage_ListIncompatibleGroup
       parameters:
         - name: accessPackage-id
@@ -8648,11 +8524,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Remove group from incompatibleGroups
-      description: 'Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatiblegroup?view=graph-rest-1.0
+      summary: Delete ref of navigation property incompatibleGroups for identityGovernance
       operationId: identityGovernance.entitlementManagement.accessPackage.incompatibleGroup_DeleteGroupGraphBPreRef
       parameters:
         - name: accessPackage-id
@@ -8806,11 +8678,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List incompatibleGroups
-      description: 'Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
+      summary: Get ref of incompatibleGroups from identityGovernance
+      description: The groups whose members are ineligible to be assigned this access package.
       operationId: identityGovernance.entitlementManagement.accessPackage_ListIncompatibleGroupGraphBPreRef
       parameters:
         - name: accessPackage-id
@@ -8848,11 +8717,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Add group to incompatibleGroups
-      description: 'Add a group to the list of groups that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-post-incompatiblegroup?view=graph-rest-1.0
+      summary: Create new navigation property ref to incompatibleGroups for identityGovernance
       operationId: identityGovernance.entitlementManagement.accessPackage_CreateIncompatibleGroupGraphBPreRef
       parameters:
         - name: accessPackage-id
@@ -8874,11 +8739,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Remove group from incompatibleGroups
-      description: 'Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatiblegroup?view=graph-rest-1.0
+      summary: Delete ref of navigation property incompatibleGroups for identityGovernance
       operationId: identityGovernance.entitlementManagement.accessPackage_DeleteIncompatibleGroupGraphBPreRef
       parameters:
         - name: accessPackage-id
@@ -9014,11 +8875,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Create resourceRoleScope
-      description: 'Create a new accessPackageResourceRoleScope for adding a resource role to an access package. The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles. Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0
+      summary: Create new navigation property to resourceRoleScopes for identityGovernance
       operationId: identityGovernance.entitlementManagement.accessPackage_CreateResourceRoleScope
       parameters:
         - name: accessPackage-id
@@ -9142,11 +8999,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Remove resourceRoleScope from an accessPackage
-      description: Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-delete-resourcerolescopes?view=graph-rest-1.0
+      summary: Delete navigation property resourceRoleScopes for identityGovernance
       operationId: identityGovernance.entitlementManagement.accessPackage_DeleteResourceRoleScope
       parameters:
         - name: accessPackage-id
@@ -12078,6 +11931,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accesspackage-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.accessPackage_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -12150,11 +12007,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List assignmentPolicies
-      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including $expand=assignmentPolicies as a query parameter.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignmentpolicies?view=graph-rest-1.0
+      summary: Get assignmentPolicies from identityGovernance
+      description: Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
       operationId: identityGovernance.entitlementManagement_ListAssignmentPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12204,11 +12058,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Create assignmentPolicies
-      description: 'In Microsoft Entra entitlement management, create a new accessPackageAssignmentPolicy object.  The request will include a reference to the accessPackage that will contain this policy, which must already exist.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentpolicies?view=graph-rest-1.0
+      summary: Create new navigation property to assignmentPolicies for identityGovernance
       operationId: identityGovernance.entitlementManagement_CreateAssignmentPolicy
       requestBody:
         description: New navigation property
@@ -12231,11 +12081,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentPolicy
-      description: "In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-1.0
+      summary: Get assignmentPolicies from identityGovernance
+      description: Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
       operationId: identityGovernance.entitlementManagement_GetAssignmentPolicy
       parameters:
         - name: accessPackageAssignmentPolicy-id
@@ -12310,11 +12157,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentPolicy
-      description: 'In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-delete?view=graph-rest-1.0
+      summary: Delete navigation property assignmentPolicies for identityGovernance
       operationId: identityGovernance.entitlementManagement_DeleteAssignmentPolicy
       parameters:
         - name: accessPackageAssignmentPolicy-id
@@ -12981,11 +12824,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List assignmentRequests
-      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignmentrequests?view=graph-rest-1.0
+      summary: Get assignmentRequests from identityGovernance
+      description: Access package assignment requests created by or on behalf of a subject.
       operationId: identityGovernance.entitlementManagement_ListAssignmentRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13035,11 +12875,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Create accessPackageAssignmentRequest
-      description: 'In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0
+      summary: Create new navigation property to assignmentRequests for identityGovernance
       operationId: identityGovernance.entitlementManagement_CreateAssignmentRequest
       requestBody:
         description: New navigation property
@@ -13062,11 +12898,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentRequest
-      description: 'In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-get?view=graph-rest-1.0
+      summary: Get assignmentRequests from identityGovernance
+      description: Access package assignment requests created by or on behalf of a subject.
       operationId: identityGovernance.entitlementManagement_GetAssignmentRequest
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -13141,11 +12974,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentRequest
-      description: Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-delete?view=graph-rest-1.0
+      summary: Delete navigation property assignmentRequests for identityGovernance
       operationId: identityGovernance.entitlementManagement_DeleteAssignmentRequest
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -13418,6 +13247,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignmentRequest objects filtered on the signed-in user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignmentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -13490,11 +13323,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List assignments
-      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignment objects. For directory-wide administrators, the resulting list includes all the assignments, current and well as expired, that the caller has access to read, across all catalogs and access packages.  If the caller is on behalf of a delegated user who is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: $filter=accessPackage/id eq ''a914b616-e04e-476b-aa37-91038f0b165b''.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignments?view=graph-rest-1.0
+      summary: Get assignments from identityGovernance
+      description: The assignment of an access package to a subject for a period of time.
       operationId: identityGovernance.entitlementManagement_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13567,11 +13397,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignment
-      description: 'In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignment-get?view=graph-rest-1.0
+      summary: Get assignments from identityGovernance
+      description: The assignment of an access package to a subject for a period of time.
       operationId: identityGovernance.entitlementManagement_GetAssignment
       parameters:
         - name: accessPackageAssignment-id
@@ -13851,6 +13678,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function additionalAccess
+      description: 'In Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  This can be used to prepare to configure the incompatible access packages for a specific access package.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignment_additionalAccess
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13999,6 +13830,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignment objects filtered on the signed-in user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accesspackageassignment-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignment_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -14071,11 +13906,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List catalogs
-      description: Retrieve a list of accessPackageCatalog objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-catalogs?view=graph-rest-1.0
+      summary: Get catalogs from identityGovernance
+      description: A container for access packages.
       operationId: identityGovernance.entitlementManagement_ListCatalog
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14125,11 +13957,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Create accessPackageCatalog
-      description: Create a new accessPackageCatalog object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-catalogs?view=graph-rest-1.0
+      summary: Create new navigation property to catalogs for identityGovernance
       operationId: identityGovernance.entitlementManagement_CreateCatalog
       requestBody:
         description: New navigation property
@@ -14152,11 +13980,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageCatalog
-      description: Retrieve the properties and relationships of an accessPackageCatalog object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-1.0
+      summary: Get catalogs from identityGovernance
+      description: A container for access packages.
       operationId: identityGovernance.entitlementManagement_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -14200,11 +14025,7 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageCatalog
-      description: 'Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-update?view=graph-rest-1.0
+      summary: Update the navigation property catalogs in identityGovernance
       operationId: identityGovernance.entitlementManagement_UpdateCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -14235,11 +14056,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageCatalog
-      description: Delete an accessPackageCatalog.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-1.0
+      summary: Delete navigation property catalogs for identityGovernance
       operationId: identityGovernance.entitlementManagement_DeleteCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -14402,11 +14219,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List accessPackageCustomWorkflowExtensions
-      description: Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-1.0
+      summary: Get customWorkflowExtensions from identityGovernance
       operationId: identityGovernance.entitlementManagement.catalog_ListCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14464,11 +14277,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Create accessPackageCustomWorkflowExtension
-      description: Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object. You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-post-accesspackagecustomworkflowextensions?view=graph-rest-1.0
+      summary: Create new navigation property to customWorkflowExtensions for identityGovernance
       operationId: identityGovernance.entitlementManagement.catalog_CreateCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14500,11 +14309,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentRequestWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
+      summary: Get customWorkflowExtensions from identityGovernance
       operationId: identityGovernance.entitlementManagement.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14556,11 +14361,7 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
+      summary: Update the navigation property customWorkflowExtensions in identityGovernance
       operationId: identityGovernance.entitlementManagement.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14599,11 +14400,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
+      summary: Delete navigation property customWorkflowExtensions for identityGovernance
       operationId: identityGovernance.entitlementManagement.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14660,11 +14457,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List resourceRoles
-      description: 'Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resourceroles?view=graph-rest-1.0
+      summary: Get resourceRoles from identityGovernance
       operationId: identityGovernance.entitlementManagement.catalog_ListResourceRole
       parameters:
         - name: accessPackageCatalog-id
@@ -16206,11 +15999,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List resources
-      description: Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0
+      summary: Get resources from identityGovernance
+      description: Access package resources in this catalog.
       operationId: identityGovernance.entitlementManagement.catalog_ListResource
       parameters:
         - name: accessPackageCatalog-id
@@ -20219,11 +20009,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List connectedOrganizations
-      description: Retrieve a list of connectedOrganization objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-connectedorganizations?view=graph-rest-1.0
+      summary: Get connectedOrganizations from identityGovernance
+      description: References to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_ListConnectedOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20273,11 +20060,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Create connectedOrganization
-      description: Create a new connectedOrganization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-connectedorganizations?view=graph-rest-1.0
+      summary: Create new navigation property to connectedOrganizations for identityGovernance
       operationId: identityGovernance.entitlementManagement_CreateConnectedOrganization
       requestBody:
         description: New navigation property
@@ -20300,11 +20083,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get connectedOrganization
-      description: Retrieve the properties and relationships of a connectedOrganization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-get?view=graph-rest-1.0
+      summary: Get connectedOrganizations from identityGovernance
+      description: References to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_GetConnectedOrganization
       parameters:
         - name: connectedOrganization-id
@@ -20348,11 +20128,7 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update connectedOrganization
-      description: Update a connectedOrganization object to change one or more of its properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-update?view=graph-rest-1.0
+      summary: Update the navigation property connectedOrganizations in identityGovernance
       operationId: identityGovernance.entitlementManagement_UpdateConnectedOrganization
       parameters:
         - name: connectedOrganization-id
@@ -20383,11 +20159,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete connectedOrganization
-      description: Delete a connectedOrganization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-delete?view=graph-rest-1.0
+      summary: Delete navigation property connectedOrganizations for identityGovernance
       operationId: identityGovernance.entitlementManagement_DeleteConnectedOrganization
       parameters:
         - name: connectedOrganization-id
@@ -20414,11 +20186,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List externalSponsors
-      description: Retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-1.0
+      summary: Get externalSponsors from identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization_ListExternalSponsor
       parameters:
         - name: connectedOrganization-id
@@ -20477,11 +20245,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Remove externalSponsors
-      description: Remove a user or a group from the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0
+      summary: Delete ref of navigation property externalSponsors for identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization.externalSponsor_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: connectedOrganization-id
@@ -20538,11 +20302,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List externalSponsors
-      description: Retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-1.0
+      summary: Get ref of externalSponsors from identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization_ListExternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
@@ -20580,11 +20340,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Add externalSponsors
-      description: Add a user or a group to the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-post-externalsponsors?view=graph-rest-1.0
+      summary: Create new navigation property ref to externalSponsors for identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization_CreateExternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
@@ -20606,11 +20362,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Remove externalSponsors
-      description: Remove a user or a group from the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0
+      summary: Delete ref of navigation property externalSponsors for identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization_DeleteExternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
@@ -20645,11 +20397,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List internalSponsors
-      description: Retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-1.0
+      summary: Get internalSponsors from identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization_ListInternalSponsor
       parameters:
         - name: connectedOrganization-id
@@ -20708,11 +20456,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Remove internalSponsors
-      description: Remove a user or a group from the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-1.0
+      summary: Delete ref of navigation property internalSponsors for identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization.internalSponsor_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: connectedOrganization-id
@@ -20769,11 +20513,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List internalSponsors
-      description: Retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-1.0
+      summary: Get ref of internalSponsors from identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization_ListInternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
@@ -20811,11 +20551,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Add internalSponsors
-      description: Add a user or a group to the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-post-internalsponsors?view=graph-rest-1.0
+      summary: Create new navigation property ref to internalSponsors for identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization_CreateInternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
@@ -20837,11 +20573,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Remove internalSponsors
-      description: Remove a user or a group from the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-1.0
+      summary: Delete ref of navigation property internalSponsors for identityGovernance
       operationId: identityGovernance.entitlementManagement.connectedOrganization_DeleteInternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
@@ -20890,11 +20622,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List accessPackageResourceEnvironments
-      description: Retrieve a list of accessPackageResourceEnvironment objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-resourceenvironments?view=graph-rest-1.0
+      summary: Get resourceEnvironments from identityGovernance
+      description: A reference to the geolocation environments in which a resource is located.
       operationId: identityGovernance.entitlementManagement_ListResourceEnvironment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -23538,11 +23267,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List accessPackageResourceRequests
-      description: Retrieve a list of accessPackageResourceRequest objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-resourcerequests?view=graph-rest-1.0
+      summary: Get resourceRequests from identityGovernance
+      description: Represents a request to add or remove a resource to or from a catalog respectively.
       operationId: identityGovernance.entitlementManagement_ListResourceRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -23592,11 +23318,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Create accessPackageResourceRequest
-      description: 'Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.  A resource must be included in an access package catalog before a role of that resource can be added to an access package.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0
+      summary: Create new navigation property to resourceRequests for identityGovernance
       operationId: identityGovernance.entitlementManagement_CreateResourceRequest
       requestBody:
         description: New navigation property
@@ -23960,11 +23682,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List accessPackageCustomWorkflowExtensions
-      description: Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-1.0
+      summary: Get customWorkflowExtensions from identityGovernance
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_ListCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -24022,11 +23740,7 @@ paths:
     post:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Create accessPackageCustomWorkflowExtension
-      description: Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object. You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-post-accesspackagecustomworkflowextensions?view=graph-rest-1.0
+      summary: Create new navigation property to customWorkflowExtensions for identityGovernance
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_CreateCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -24058,11 +23772,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentRequestWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
+      summary: Get customWorkflowExtensions from identityGovernance
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -24114,11 +23824,7 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
+      summary: Update the navigation property customWorkflowExtensions in identityGovernance
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -24157,11 +23863,7 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
+      summary: Delete navigation property customWorkflowExtensions for identityGovernance
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -24218,11 +23920,7 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List resourceRoles
-      description: 'Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resourceroles?view=graph-rest-1.0
+      summary: Get resourceRoles from identityGovernance
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_ListResourceRole
       parameters:
         - name: accessPackageResourceRequest-id
@@ -25764,11 +25462,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List resources
-      description: Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0
+      summary: Get resources from identityGovernance
+      description: Access package resources in this catalog.
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_ListResource
       parameters:
         - name: accessPackageResourceRequest-id
@@ -36427,11 +36122,8 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get entitlementManagementSettings
-      description: Retrieve the properties of an entitlementManagementSettings object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-1.0
+      summary: Get settings from identityGovernance
+      description: The settings that control the behavior of Microsoft Entra entitlement management.
       operationId: identityGovernance.entitlementManagement_GetSetting
       parameters:
         - name: $select
@@ -36467,11 +36159,7 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update entitlementManagementSettings
-      description: Update an existing entitlementManagementSettings object to change one or more of its properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-update?view=graph-rest-1.0
+      summary: Update the navigation property settings in identityGovernance
       operationId: identityGovernance.entitlementManagement_UpdateSetting
       requestBody:
         description: New navigation property values
@@ -36589,11 +36277,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List customTaskExtensions
-      description: Get a list of the customTaskExtension objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-customtaskextensions?view=graph-rest-1.0
+      summary: Get customTaskExtensions from identityGovernance
+      description: The customTaskExtension instance.
       operationId: identityGovernance.lifecycleWorkflow_ListCustomTaskExtension
       parameters:
         - $ref: '#/components/parameters/top'
@@ -36643,11 +36328,7 @@ paths:
     post:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Create customTaskExtensions
-      description: Create a new customTaskExtension object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-customtaskextensions?view=graph-rest-1.0
+      summary: Create new navigation property to customTaskExtensions for identityGovernance
       operationId: identityGovernance.lifecycleWorkflow_CreateCustomTaskExtension
       requestBody:
         description: New navigation property
@@ -36670,11 +36351,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get customTaskExtension
-      description: Read the properties and relationships of a customTaskExtension object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-get?view=graph-rest-1.0
+      summary: Get customTaskExtensions from identityGovernance
+      description: The customTaskExtension instance.
       operationId: identityGovernance.lifecycleWorkflow_GetCustomTaskExtension
       parameters:
         - name: customTaskExtension-id
@@ -36718,11 +36396,7 @@ paths:
     patch:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Update customTaskExtension
-      description: Update the properties of a customTaskExtension object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-update?view=graph-rest-1.0
+      summary: Update the navigation property customTaskExtensions in identityGovernance
       operationId: identityGovernance.lifecycleWorkflow_UpdateCustomTaskExtension
       parameters:
         - name: customTaskExtension-id
@@ -36753,11 +36427,7 @@ paths:
     delete:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Delete customTaskExtension
-      description: Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-delete?view=graph-rest-1.0
+      summary: Delete navigation property customTaskExtensions for identityGovernance
       operationId: identityGovernance.lifecycleWorkflow_DeleteCustomTaskExtension
       parameters:
         - name: customTaskExtension-id
@@ -37258,11 +36928,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List deletedItems (deleted lifecycle workflows)
-      description: Get a list of the deleted workflow objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-deleteditems?view=graph-rest-1.0
+      summary: Get workflows from identityGovernance
+      description: Deleted workflows that end up in the deletedItemsContainer.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem_ListWorkflow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -37313,11 +36980,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get deletedItemContainer (a deleted lifecycle workflow)
-      description: Retrieve a deleted workflow object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-deleteditemcontainer-get?view=graph-rest-1.0
+      summary: Get workflows from identityGovernance
+      description: Deleted workflows that end up in the deletedItemsContainer.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem_GetWorkflow
       parameters:
         - name: workflow-id
@@ -37361,11 +37025,7 @@ paths:
     delete:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Delete deletedItemContainer (permanently delete a deleted lifecycle workflow)
-      description: Delete a workflow object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-deletedItemcontainer-delete?view=graph-rest-1.0
+      summary: Delete navigation property workflows for identityGovernance
       operationId: identityGovernance.lifecycleWorkflow.deletedItem_DeleteWorkflow
       parameters:
         - name: workflow-id
@@ -38041,11 +37701,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List runs
-      description: Get a list of the run objects and their properties for a lifecycle workflow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-1.0
+      summary: Get runs from identityGovernance
+      description: Workflow runs.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_ListRun
       parameters:
         - name: workflow-id
@@ -38104,11 +37761,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get run
-      description: Read the properties and relationships of a run object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-run-get?view=graph-rest-1.0
+      summary: Get runs from identityGovernance
+      description: Workflow runs.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_GetRun
       parameters:
         - name: workflow-id
@@ -38161,11 +37815,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskProcessingResults
-      description: Get the taskProcessingResult resources for a run.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-run-list-taskprocessingresults?view=graph-rest-1.0
+      summary: Get taskProcessingResults from identityGovernance
+      description: The related taskProcessingResults.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run_ListTaskProcessingResult
       parameters:
         - name: workflow-id
@@ -38727,11 +38378,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List userProcessingResults
-      description: Get user processing results of a workflow run object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-run-list-userprocessingresults?view=graph-rest-1.0
+      summary: Get userProcessingResults from identityGovernance
+      description: The associated individual user execution.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run_ListUserProcessingResult
       parameters:
         - name: workflow-id
@@ -38798,11 +38446,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get userProcessingResult
-      description: Get the user processing result of a user processing result of a run.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0
+      summary: Get userProcessingResults from identityGovernance
+      description: The associated individual user execution.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run_GetUserProcessingResult
       parameters:
         - name: workflow-id
@@ -39145,11 +38790,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskProcessingResults
-      description: Get the task processing result from a userProcessingResult either directly or through a run.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-list-taskprocessingresults?view=graph-rest-1.0
+      summary: Get taskProcessingResults from identityGovernance
+      description: The associated individual task execution.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run.userProcessingResult_ListTaskProcessingResult
       parameters:
         - name: workflow-id
@@ -39937,11 +39579,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskReports
-      description: Get a list of the taskReport objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-taskreports?view=graph-rest-1.0
+      summary: Get taskReports from identityGovernance
+      description: Represents the aggregation of task execution data for tasks within a workflow object.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_ListTaskReport
       parameters:
         - name: workflow-id
@@ -40162,11 +39801,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskProcessingResult (for a taskReport)
-      description: Get the task processing result resources from the taskReport.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskreport-list-taskprocessingresults?view=graph-rest-1.0
+      summary: Get taskProcessingResults from identityGovernance
+      description: The related lifecycle workflow taskProcessingResults.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.taskReport_ListTaskProcessingResult
       parameters:
         - name: workflow-id
@@ -41596,11 +41232,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List userProcessingResults
-      description: Get the userProcessingResult resources for a workflow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-userprocessingresults?view=graph-rest-1.0
+      summary: Get userProcessingResults from identityGovernance
+      description: Per-user workflow execution results.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_ListUserProcessingResult
       parameters:
         - name: workflow-id
@@ -41955,11 +41588,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskProcessingResults
-      description: Get the task processing result from a userProcessingResult either directly or through a run.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-list-taskprocessingresults?view=graph-rest-1.0
+      summary: Get taskProcessingResults from identityGovernance
+      description: The associated individual task execution.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.userProcessingResult_ListTaskProcessingResult
       parameters:
         - name: workflow-id
@@ -42586,11 +42216,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List workflowVersions
-      description: Get a list of the workflowVersion objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-versions?view=graph-rest-1.0
+      summary: Get versions from identityGovernance
+      description: The workflow versions that are available.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_ListVersion
       parameters:
         - name: workflow-id
@@ -42649,11 +42276,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get workflowVersion
-      description: Read the properties and relationships of a workflowVersion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0
+      summary: Get versions from identityGovernance
+      description: The workflow versions that are available.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_GetVersion
       parameters:
         - name: workflow-id
@@ -44238,11 +43862,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get lifecycleManagementSettings
-      description: Read the properties and relationships of a lifecycleManagementSettings object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-get?view=graph-rest-1.0
+      summary: Get settings from identityGovernance
+      description: The settings of the lifecycle workflows instance.
       operationId: identityGovernance.lifecycleWorkflow_GetSetting
       parameters:
         - name: $select
@@ -44278,11 +43899,7 @@ paths:
     patch:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Update lifecycleManagementSettings
-      description: Update the properties of a lifecycleManagementSettings object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-update?view=graph-rest-1.0
+      summary: Update the navigation property settings in identityGovernance
       operationId: identityGovernance.lifecycleWorkflow_UpdateSetting
       requestBody:
         description: New navigation property values
@@ -44305,11 +43922,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskDefinitions
-      description: Get a list of the taskDefinition objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-taskdefinitions?view=graph-rest-1.0
+      summary: Get taskDefinitions from identityGovernance
+      description: The definition of tasks within the lifecycle workflows instance.
       operationId: identityGovernance.lifecycleWorkflow_ListTaskDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -44360,11 +43974,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get taskDefinition
-      description: Read the details of a built-in workflow task.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskdefinition-get?view=graph-rest-1.0
+      summary: Get taskDefinitions from identityGovernance
+      description: The definition of tasks within the lifecycle workflows instance.
       operationId: identityGovernance.lifecycleWorkflow_GetTaskDefinition
       parameters:
         - name: taskDefinition-id
@@ -44423,11 +44034,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List workflows
-      description: Get a list of workflow resources that are associated with lifecycle workflows.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-1.0
+      summary: Get workflows from identityGovernance
+      description: The workflows in the lifecycle workflows instance.
       operationId: identityGovernance.lifecycleWorkflow_ListWorkflow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -44477,11 +44085,7 @@ paths:
     post:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Create workflow
-      description: Create a new workflow object. You can create up to 50 workflows in a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows?view=graph-rest-1.0
+      summary: Create new navigation property to workflows for identityGovernance
       operationId: identityGovernance.lifecycleWorkflow_CreateWorkflow
       requestBody:
         description: New navigation property
@@ -44504,11 +44108,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get workflow
-      description: Read the properties and relationships of a workflow object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-get?view=graph-rest-1.0
+      summary: Get workflows from identityGovernance
+      description: The workflows in the lifecycle workflows instance.
       operationId: identityGovernance.lifecycleWorkflow_GetWorkflow
       parameters:
         - name: workflow-id
@@ -44552,11 +44153,7 @@ paths:
     patch:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Update workflow
-      description: 'Update the properties of a workflow object. Only the properties listed in the request body table can be updated. To update any other workflow properties, see workflow: createNewVersion.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-update?view=graph-rest-1.0
+      summary: Update the navigation property workflows in identityGovernance
       operationId: identityGovernance.lifecycleWorkflow_UpdateWorkflow
       parameters:
         - name: workflow-id
@@ -44587,11 +44184,7 @@ paths:
     delete:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Delete workflow
-      description: 'Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-delete?view=graph-rest-1.0
+      summary: Delete navigation property workflows for identityGovernance
       operationId: identityGovernance.lifecycleWorkflow_DeleteWorkflow
       parameters:
         - name: workflow-id
@@ -45267,11 +44860,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List runs
-      description: Get a list of the run objects and their properties for a lifecycle workflow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-1.0
+      summary: Get runs from identityGovernance
+      description: Workflow runs.
       operationId: identityGovernance.lifecycleWorkflow.workflow_ListRun
       parameters:
         - name: workflow-id
@@ -45330,11 +44920,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get run
-      description: Read the properties and relationships of a run object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-run-get?view=graph-rest-1.0
+      summary: Get runs from identityGovernance
+      description: Workflow runs.
       operationId: identityGovernance.lifecycleWorkflow.workflow_GetRun
       parameters:
         - name: workflow-id
@@ -45387,11 +44974,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskProcessingResults
-      description: Get the taskProcessingResult resources for a run.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-run-list-taskprocessingresults?view=graph-rest-1.0
+      summary: Get taskProcessingResults from identityGovernance
+      description: The related taskProcessingResults.
       operationId: identityGovernance.lifecycleWorkflow.workflow.run_ListTaskProcessingResult
       parameters:
         - name: workflow-id
@@ -45953,11 +45537,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List userProcessingResults
-      description: Get user processing results of a workflow run object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-run-list-userprocessingresults?view=graph-rest-1.0
+      summary: Get userProcessingResults from identityGovernance
+      description: The associated individual user execution.
       operationId: identityGovernance.lifecycleWorkflow.workflow.run_ListUserProcessingResult
       parameters:
         - name: workflow-id
@@ -46024,11 +45605,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get userProcessingResult
-      description: Get the user processing result of a user processing result of a run.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0
+      summary: Get userProcessingResults from identityGovernance
+      description: The associated individual user execution.
       operationId: identityGovernance.lifecycleWorkflow.workflow.run_GetUserProcessingResult
       parameters:
         - name: workflow-id
@@ -46371,11 +45949,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskProcessingResults
-      description: Get the task processing result from a userProcessingResult either directly or through a run.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-list-taskprocessingresults?view=graph-rest-1.0
+      summary: Get taskProcessingResults from identityGovernance
+      description: The associated individual task execution.
       operationId: identityGovernance.lifecycleWorkflow.workflow.run.userProcessingResult_ListTaskProcessingResult
       parameters:
         - name: workflow-id
@@ -47163,11 +46738,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskReports
-      description: Get a list of the taskReport objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-taskreports?view=graph-rest-1.0
+      summary: Get taskReports from identityGovernance
+      description: Represents the aggregation of task execution data for tasks within a workflow object.
       operationId: identityGovernance.lifecycleWorkflow.workflow_ListTaskReport
       parameters:
         - name: workflow-id
@@ -47388,11 +46960,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskProcessingResult (for a taskReport)
-      description: Get the task processing result resources from the taskReport.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskreport-list-taskprocessingresults?view=graph-rest-1.0
+      summary: Get taskProcessingResults from identityGovernance
+      description: The related lifecycle workflow taskProcessingResults.
       operationId: identityGovernance.lifecycleWorkflow.workflow.taskReport_ListTaskProcessingResult
       parameters:
         - name: workflow-id
@@ -48822,11 +48391,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List userProcessingResults
-      description: Get the userProcessingResult resources for a workflow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-userprocessingresults?view=graph-rest-1.0
+      summary: Get userProcessingResults from identityGovernance
+      description: Per-user workflow execution results.
       operationId: identityGovernance.lifecycleWorkflow.workflow_ListUserProcessingResult
       parameters:
         - name: workflow-id
@@ -49181,11 +48747,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List taskProcessingResults
-      description: Get the task processing result from a userProcessingResult either directly or through a run.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-list-taskprocessingresults?view=graph-rest-1.0
+      summary: Get taskProcessingResults from identityGovernance
+      description: The associated individual task execution.
       operationId: identityGovernance.lifecycleWorkflow.workflow.userProcessingResult_ListTaskProcessingResult
       parameters:
         - name: workflow-id
@@ -49812,11 +49375,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List workflowVersions
-      description: Get a list of the workflowVersion objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-versions?view=graph-rest-1.0
+      summary: Get versions from identityGovernance
+      description: The workflow versions that are available.
       operationId: identityGovernance.lifecycleWorkflow.workflow_ListVersion
       parameters:
         - name: workflow-id
@@ -49875,11 +49435,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get workflowVersion
-      description: Read the properties and relationships of a workflowVersion object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0
+      summary: Get versions from identityGovernance
+      description: The workflow versions that are available.
       operationId: identityGovernance.lifecycleWorkflow.workflow_GetVersion
       parameters:
         - name: workflow-id
@@ -51464,11 +51021,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: List workflowTemplates
-      description: Get a list of the workflowTemplate objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflowtemplates?view=graph-rest-1.0
+      summary: Get workflowTemplates from identityGovernance
+      description: The workflow templates in the lifecycle workflow instance.
       operationId: identityGovernance.lifecycleWorkflow_ListWorkflowTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -51519,11 +51073,8 @@ paths:
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
-      summary: Get workflowTemplate
-      description: Read the properties and relationships of a workflowTemplate object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflowtemplate-get?view=graph-rest-1.0
+      summary: Get workflowTemplates from identityGovernance
+      description: The workflow templates in the lifecycle workflow instance.
       operationId: identityGovernance.lifecycleWorkflow_GetWorkflowTemplate
       parameters:
         - name: workflowTemplate-id
@@ -52611,11 +52162,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: List approval stages
-      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
+      summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.privilegedAccess.group.assignmentApproval_ListStage
       parameters:
         - name: approval-id
@@ -52705,11 +52253,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get approvalStage
-      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
+      summary: Get stages from identityGovernance
+      description: A collection of stages in the approval decision.
       operationId: identityGovernance.privilegedAccess.group.assignmentApproval_GetStage
       parameters:
         - name: approval-id
@@ -52761,11 +52306,7 @@ paths:
     patch:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Update approvalStage
-      description: Approve or deny an approvalStage object in an approval.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
+      summary: Update the navigation property stages in identityGovernance
       operationId: identityGovernance.privilegedAccess.group.assignmentApproval_UpdateStage
       parameters:
         - name: approval-id
@@ -52876,6 +52417,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentApproval_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -52948,11 +52493,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: List assignmentScheduleInstances
-      description: Get a list of the privilegedAccessGroupAssignmentScheduleInstance objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentscheduleinstances?view=graph-rest-1.0
+      summary: Get assignmentScheduleInstances from identityGovernance
+      description: The instances of assignment schedules to activate a just-in-time access.
       operationId: identityGovernance.privilegedAccess.group_ListAssignmentScheduleInstance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -53025,11 +52567,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get privilegedAccessGroupAssignmentScheduleInstance
-      description: Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-get?view=graph-rest-1.0
+      summary: Get assignmentScheduleInstances from identityGovernance
+      description: The instances of assignment schedules to activate a just-in-time access.
       operationId: identityGovernance.privilegedAccess.group_GetAssignmentScheduleInstance
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleInstance-id
@@ -53365,6 +52904,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -53437,11 +52980,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: List assignmentScheduleRequests
-      description: Get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedulerequests?view=graph-rest-1.0
+      summary: Get assignmentScheduleRequests from identityGovernance
+      description: 'The schedule requests for operations to create, update, delete, extend, and renew an assignment.'
       operationId: identityGovernance.privilegedAccess.group_ListAssignmentScheduleRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -53491,11 +53031,7 @@ paths:
     post:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Create assignmentScheduleRequest
-      description: Create a new privilegedAccessGroupAssignmentScheduleRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-assignmentschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to assignmentScheduleRequests for identityGovernance
       operationId: identityGovernance.privilegedAccess.group_CreateAssignmentScheduleRequest
       requestBody:
         description: New navigation property
@@ -53518,11 +53054,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get privilegedAccessGroupAssignmentScheduleRequest
-      description: Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-get?view=graph-rest-1.0
+      summary: Get assignmentScheduleRequests from identityGovernance
+      description: 'The schedule requests for operations to create, update, delete, extend, and renew an assignment.'
       operationId: identityGovernance.privilegedAccess.group_GetAssignmentScheduleRequest
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -53929,6 +53462,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In PIM for groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -54001,11 +53538,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: List assignmentSchedules
-      description: Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedules?view=graph-rest-1.0
+      summary: Get assignmentSchedules from identityGovernance
+      description: The assignment schedules to activate a just-in-time access.
       operationId: identityGovernance.privilegedAccess.group_ListAssignmentSchedule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -54078,11 +53612,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get privilegedAccessGroupAssignmentSchedule
-      description: Read the properties and relationships of a privilegedAccessGroupAssignmentSchedule object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedule-get?view=graph-rest-1.0
+      summary: Get assignmentSchedules from identityGovernance
+      description: The assignment schedules to activate a just-in-time access.
       operationId: identityGovernance.privilegedAccess.group_GetAssignmentSchedule
       parameters:
         - name: privilegedAccessGroupAssignmentSchedule-id
@@ -54418,6 +53949,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In PIM for groups, retrieve the schedules for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentSchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -54490,11 +54025,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: List eligibilityScheduleInstances
-      description: Get a list of the privilegedAccessGroupEligibilityScheduleInstance objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityscheduleinstances?view=graph-rest-1.0
+      summary: Get eligibilityScheduleInstances from identityGovernance
+      description: The instances of eligibility schedules to activate a just-in-time access.
       operationId: identityGovernance.privilegedAccess.group_ListEligibilityScheduleInstance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -54567,11 +54099,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get privilegedAccessGroupEligibilityScheduleInstance
-      description: Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityscheduleinstance-get?view=graph-rest-1.0
+      summary: Get eligibilityScheduleInstances from identityGovernance
+      description: The instances of eligibility schedules to activate a just-in-time access.
       operationId: identityGovernance.privilegedAccess.group_GetEligibilityScheduleInstance
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleInstance-id
@@ -54861,6 +54390,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: Return instances of membership and ownership eligibility schedules for the calling principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -54933,11 +54466,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: List eligibilityScheduleRequests
-      description: Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedulerequests?view=graph-rest-1.0
+      summary: Get eligibilityScheduleRequests from identityGovernance
+      description: 'The schedule requests for operations to create, update, delete, extend, and renew an eligibility.'
       operationId: identityGovernance.privilegedAccess.group_ListEligibilityScheduleRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -54987,11 +54517,7 @@ paths:
     post:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Create eligibilityScheduleRequest
-      description: Create a new privilegedAccessGroupEligibilityScheduleRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-eligibilityschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to eligibilityScheduleRequests for identityGovernance
       operationId: identityGovernance.privilegedAccess.group_CreateEligibilityScheduleRequest
       requestBody:
         description: New navigation property
@@ -55014,11 +54540,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get privilegedAccessGroupEligibilityScheduleRequest
-      description: Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-get?view=graph-rest-1.0
+      summary: Get eligibilityScheduleRequests from identityGovernance
+      description: 'The schedule requests for operations to create, update, delete, extend, and renew an eligibility.'
       operationId: identityGovernance.privilegedAccess.group_GetEligibilityScheduleRequest
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleRequest-id
@@ -55379,6 +54902,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -55451,11 +54978,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: List eligibilitySchedules
-      description: Get a list of the privilegedAccessGroupEligibilitySchedule objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedules?view=graph-rest-1.0
+      summary: Get eligibilitySchedules from identityGovernance
+      description: The eligibility schedules to activate a just-in-time access.
       operationId: identityGovernance.privilegedAccess.group_ListEligibilitySchedule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -55528,11 +55052,8 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get privilegedAccessGroupEligibilitySchedule
-      description: Read the properties and relationships of a privilegedAccessGroupEligibilitySchedule object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedule-get?view=graph-rest-1.0
+      summary: Get eligibilitySchedules from identityGovernance
+      description: The eligibility schedules to activate a just-in-time access.
       operationId: identityGovernance.privilegedAccess.group_GetEligibilitySchedule
       parameters:
         - name: privilegedAccessGroupEligibilitySchedule-id
@@ -55822,6 +55343,10 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function filterByCurrentUser
+      description: Retrieve schedules of membership and ownership eligibility requests for the calling principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.eligibilitySchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -56162,11 +55687,8 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: List agreements
-      description: Retrieve a list of agreement objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-1.0
+      summary: Get agreements from identityGovernance
+      description: Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID Governance.
       operationId: identityGovernance.termsGraphOPreUse_ListAgreement
       parameters:
         - $ref: '#/components/parameters/top'
@@ -56216,11 +55738,7 @@ paths:
     post:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: Create agreement
-      description: Create a new agreement object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/termsofusecontainer-post-agreements?view=graph-rest-1.0
+      summary: Create new navigation property to agreements for identityGovernance
       operationId: identityGovernance.termsGraphOPreUse_CreateAgreement
       requestBody:
         description: New navigation property
@@ -56243,11 +55761,8 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: List files (terms of use agreement files)
-      description: Retrieve all files related to an agreement. This includes the default file and all localized files.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0
+      summary: Get agreements from identityGovernance
+      description: Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID Governance.
       operationId: identityGovernance.termsGraphOPreUse_GetAgreement
       parameters:
         - name: agreement-id
@@ -56291,11 +55806,7 @@ paths:
     patch:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: Update agreement
-      description: Update the properties of an agreement object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-update?view=graph-rest-1.0
+      summary: Update the navigation property agreements in identityGovernance
       operationId: identityGovernance.termsGraphOPreUse_UpdateAgreement
       parameters:
         - name: agreement-id
@@ -56326,11 +55837,7 @@ paths:
     delete:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: Delete agreement
-      description: Delete an agreement object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-delete?view=graph-rest-1.0
+      summary: Delete navigation property agreements for identityGovernance
       operationId: identityGovernance.termsGraphOPreUse_DeleteAgreement
       parameters:
         - name: agreement-id
@@ -56357,11 +55864,8 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: List acceptances
-      description: Get the details about the acceptance records for a specific agreement.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0
+      summary: Get acceptances from identityGovernance
+      description: Read-only. Information about acceptances of this agreement.
       operationId: identityGovernance.termsGraphOPreUse.agreement_ListAcceptance
       parameters:
         - name: agreement-id
@@ -56600,11 +56104,8 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: Get agreementFile
-      description: 'Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0
+      summary: Get file from identityGovernance
+      description: Default PDF linked to this agreement.
       operationId: identityGovernance.termsGraphOPreUse.agreement_GetFile
       parameters:
         - name: agreement-id
@@ -56706,11 +56207,8 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: List agreementFileLocalizations
-      description: Get a list of the default and localized agreement files.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0
+      summary: Get localizations from identityGovernance
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: identityGovernance.termsGraphOPreUse.agreement.file_ListLocalization
       parameters:
         - name: agreement-id
@@ -57296,11 +56794,7 @@ paths:
     post:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: Create agreementFileLocalization
-      description: Create a new localized agreement file.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0
+      summary: Create new navigation property to files for identityGovernance
       operationId: identityGovernance.termsGraphOPreUse.agreement_CreateFile
       parameters:
         - name: agreement-id
@@ -58287,11 +57781,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra entitlement management)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -58341,11 +57832,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.directory_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -58368,11 +57855,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleAssignment
-      description: Retrieve the properties and relationships of a unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignment-id
@@ -58447,11 +57931,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplication
-      summary: Delete unifiedRoleAssignment
-      description: Delete a unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleAssignments for roleManagement
       operationId: roleManagement.directory_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignment-id
@@ -58733,11 +58213,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleInstances
-      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleInstance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -58810,11 +58287,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleAssignmentScheduleInstance
-      description: Get the instance of an active role assignment.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentscheduleinstance-get?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.directory_GetRoleAssignmentScheduleInstance
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -59161,6 +58635,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: Get the instances of active role assignments for the calling principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -59233,11 +58711,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleRequests
-      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -59287,11 +58762,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleAssignmentScheduleRequests
-      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignmentScheduleRequests for roleManagement
       operationId: roleManagement.directory_CreateRoleAssignmentScheduleRequest
       requestBody:
         description: New navigation property
@@ -59314,11 +58785,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleAssignmentScheduleRequest
-      description: 'In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-get?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.directory_GetRoleAssignmentScheduleRequest
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -59736,6 +59204,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In PIM, retrieve the requests for active role assignments for a particular principal. The principal can be the creator or approver of the unifiedRoleAssignmentScheduleRequest object, or they can be the target of the assignment.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -59808,11 +59280,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentSchedules
-      description: Get the schedules for active role assignment operations.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
+      summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.directory_ListRoleAssignmentSchedule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -59885,11 +59354,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleAssignmentSchedule
-      description: Retrieve the schedule for an active role assignment operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-get?view=graph-rest-1.0
+      summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.directory_GetRoleAssignmentSchedule
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -60236,6 +59702,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: Retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentSchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -60308,11 +59778,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -60362,11 +59829,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.directory_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -60389,11 +59852,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleDefinition
-      description: 'Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -60437,11 +59897,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplication
-      summary: Update unifiedRoleDefinition
-      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property roleDefinitions in roleManagement
       operationId: roleManagement.directory_UpdateRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -60472,11 +59928,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplication
-      summary: Delete unifiedRoleDefinition
-      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleDefinitions for roleManagement
       operationId: roleManagement.directory_DeleteRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -60757,11 +60209,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleInstances
-      description: Get the instances of role eligibilities.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleInstance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -60834,11 +60283,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleEligibilityScheduleInstance
-      description: Get the instance of a role eligibility.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-get?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.directory_GetRoleEligibilityScheduleInstance
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
@@ -61139,6 +60585,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: Get the instances of eligible roles for the calling principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilityScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -61211,11 +60661,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleRequests
-      description: 'In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -61265,11 +60712,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleEligibilityScheduleRequest
-      description: 'In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleEligibilityScheduleRequests for roleManagement
       operationId: roleManagement.directory_CreateRoleEligibilityScheduleRequest
       requestBody:
         description: New navigation property
@@ -61292,11 +60735,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleEligibilityScheduleRequest
-      description: 'In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-get?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.directory_GetRoleEligibilityScheduleRequest
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -61668,6 +61108,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In PIM, retrieve the requests for role eligibilities for a particular principal. The principal can be the creator or approver of the unifiedRoleEligibilityScheduleRequest object, or they can be the target of the role eligibility.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilityScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -61740,11 +61184,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilitySchedules
-      description: Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
+      summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.directory_ListRoleEligibilitySchedule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -61817,11 +61258,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleEligibilitySchedule
-      description: Retrieve the schedule for a role eligibility operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedule-get?view=graph-rest-1.0
+      summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.directory_GetRoleEligibilitySchedule
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
@@ -62122,6 +61560,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: Retrieve the schedules for role eligibilities for which the signed-in user is the principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilitySchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -62699,11 +62141,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra entitlement management)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -62753,11 +62192,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -62780,11 +62215,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleAssignment
-      description: Retrieve the properties and relationships of a unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignment-id
@@ -62859,11 +62291,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplication
-      summary: Delete unifiedRoleAssignment
-      description: Delete a unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleAssignments for roleManagement
       operationId: roleManagement.entitlementManagement_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignment-id
@@ -63145,11 +62573,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleInstances
-      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleInstance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -63222,11 +62647,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleAssignmentScheduleInstance
-      description: Get the instance of an active role assignment.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentscheduleinstance-get?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentScheduleInstance
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
@@ -63573,6 +62995,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: Get the instances of active role assignments for the calling principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -63645,11 +63071,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleRequests
-      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -63699,11 +63122,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleAssignmentScheduleRequests
-      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignmentScheduleRequests for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleAssignmentScheduleRequest
       requestBody:
         description: New navigation property
@@ -63726,11 +63145,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleAssignmentScheduleRequest
-      description: 'In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-get?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentScheduleRequest
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -64148,6 +63564,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In PIM, retrieve the requests for active role assignments for a particular principal. The principal can be the creator or approver of the unifiedRoleAssignmentScheduleRequest object, or they can be the target of the assignment.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -64220,11 +63640,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentSchedules
-      description: Get the schedules for active role assignment operations.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
+      summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentSchedule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -64297,11 +63714,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleAssignmentSchedule
-      description: Retrieve the schedule for an active role assignment operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-get?view=graph-rest-1.0
+      summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.entitlementManagement_GetRoleAssignmentSchedule
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
@@ -64648,6 +64062,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: Retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentSchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -64720,11 +64138,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -64774,11 +64189,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -64801,11 +64212,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleDefinition
-      description: 'Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -64849,11 +64257,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplication
-      summary: Update unifiedRoleDefinition
-      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property roleDefinitions in roleManagement
       operationId: roleManagement.entitlementManagement_UpdateRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -64884,11 +64288,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplication
-      summary: Delete unifiedRoleDefinition
-      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleDefinitions for roleManagement
       operationId: roleManagement.entitlementManagement_DeleteRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -65169,11 +64569,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleInstances
-      description: Get the instances of role eligibilities.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleInstance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -65246,11 +64643,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleEligibilityScheduleInstance
-      description: Get the instance of a role eligibility.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-get?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilityScheduleInstance
       parameters:
         - name: unifiedRoleEligibilityScheduleInstance-id
@@ -65551,6 +64945,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: Get the instances of eligible roles for the calling principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -65623,11 +65021,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleRequests
-      description: 'In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -65677,11 +65072,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleEligibilityScheduleRequest
-      description: 'In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleEligibilityScheduleRequests for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleEligibilityScheduleRequest
       requestBody:
         description: New navigation property
@@ -65704,11 +65095,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleEligibilityScheduleRequest
-      description: 'In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-get?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilityScheduleRequest
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -66080,6 +65468,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: 'In PIM, retrieve the requests for role eligibilities for a particular principal. The principal can be the creator or approver of the unifiedRoleEligibilityScheduleRequest object, or they can be the target of the role eligibility.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -66152,11 +65544,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilitySchedules
-      description: Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
+      summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilitySchedule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -66229,11 +65618,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: Get unifiedRoleEligibilitySchedule
-      description: Retrieve the schedule for a role eligibility operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedule-get?view=graph-rest-1.0
+      summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.entitlementManagement_GetRoleEligibilitySchedule
       parameters:
         - name: unifiedRoleEligibilitySchedule-id
@@ -66534,6 +65920,10 @@ paths:
       tags:
         - roleManagement.Functions
       summary: Invoke function filterByCurrentUser
+      description: Retrieve the schedules for role eligibilities for which the signed-in user is the principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilitySchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -66606,11 +65996,8 @@ paths:
     get:
       tags:
         - users.agreementAcceptance
-      summary: List agreementAcceptances
-      description: Retrieve the signed-in user's agreementAcceptance objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-agreementacceptances?view=graph-rest-1.0
+      summary: Get agreementAcceptances from users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: user_ListAgreementAcceptance
       parameters:
         - name: user-id
@@ -69689,6 +69076,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -72263,7 +71651,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -72382,6 +71770,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -72812,6 +72201,11 @@ components:
               type: string
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
+              readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
               readOnly: true
             ethernetMacAddress:
               type: string
@@ -73488,6 +72882,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -76219,13 +75621,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -76445,7 +75847,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -76600,6 +76002,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -79186,6 +78589,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -79197,9 +78601,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
@@ -79706,11 +79112,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
           nullable: true
         id:
           type: string
@@ -79726,13 +79132,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -83379,7 +82785,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object

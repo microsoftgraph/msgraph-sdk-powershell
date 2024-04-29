@@ -7938,7 +7938,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
+      description: 'Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
@@ -8221,7 +8221,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][]."
+      description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
@@ -8568,7 +8568,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
+      description: Grant users access to a link represented by a permission.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
@@ -8752,7 +8752,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a published [content type][contentType] present in a content type hub with a list of hub sites.'
+      description: Associate a published content type present in a content type hub with a list of hub sites.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
@@ -8811,7 +8811,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
+      description: Copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
@@ -8867,7 +8867,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in the content type hub site.'
+      description: Publishes a contentType present in the content type hub site.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
@@ -8908,7 +8908,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
+      description: Unpublish a contentType from a content type hub site.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
@@ -8949,7 +8949,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
+      description: Add a copy of a content type from a site to a list.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
@@ -9549,7 +9549,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
+      description: 'Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
@@ -9792,7 +9792,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][]."
+      description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
@@ -10091,7 +10091,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
+      description: Grant users access to a link represented by a permission.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
@@ -12006,7 +12006,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they'll see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
+      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
@@ -15609,7 +15609,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action exportPersonalData
-      description: 'Submit a data policy operation request from a company administrator or an application to export an organizational user''s data. This data includes the user''s data stored in OneDrive and their activity reports. For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.'
+      description: 'Submit a data policy operation request from a company administrator or an application to export an organizational user''s data. This data includes the user''s data stored in OneDrive and their activity reports. For more information about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-exportpersonaldata?view=graph-rest-1.0
@@ -18207,11 +18207,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
           nullable: true
         id:
           type: string
@@ -18227,13 +18227,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -18329,13 +18329,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -18554,6 +18554,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -20309,7 +20310,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -20381,7 +20382,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -20538,6 +20539,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -21840,7 +21842,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -24837,6 +24839,11 @@ components:
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
+              readOnly: true
             ethernetMacAddress:
               type: string
               description: 'Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.'
@@ -25284,6 +25291,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -27230,6 +27245,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -29290,6 +29306,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -29301,9 +29318,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string

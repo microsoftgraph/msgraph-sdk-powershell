@@ -193,11 +193,7 @@ paths:
     delete:
       tags:
         - users.userActivity
-      summary: Delete an activity
-      description: Delete an existing user activity for your app.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
+      summary: Delete navigation property activities for users
       operationId: user_DeleteActivity
       parameters:
         - name: user-id
@@ -400,11 +396,7 @@ paths:
     patch:
       tags:
         - users.userActivity
-      summary: Delete a historyItem
-      description: Delete an existing history item for an existing user activity.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0
+      summary: Update the navigation property historyItems in users
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id
@@ -1462,9 +1454,6 @@ paths:
         - users.device
       summary: Get memberOf from users
       description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: user.device_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -2027,9 +2016,6 @@ paths:
         - users.device
       summary: Get registeredOwners from users
       description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: user.device_ListRegisteredOwner
       parameters:
         - name: user-id
@@ -2106,11 +2092,7 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete registeredOwner
-      description: Remove a user as a registered owner of the device.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
+      summary: Delete ref of navigation property registeredOwners for users
       operationId: user.device.registeredOwner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: user-id
@@ -2405,9 +2387,6 @@ paths:
         - users.device
       summary: Get ref of registeredOwners from users
       description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: user.device_ListRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
@@ -2463,11 +2442,7 @@ paths:
     post:
       tags:
         - users.device
-      summary: Create registeredOwner
-      description: Add a user as a registered owner of the device.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
+      summary: Create new navigation property ref to registeredOwners for users
       operationId: user.device_CreateRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
@@ -2497,11 +2472,7 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete registeredOwner
-      description: Remove a user as a registered owner of the device.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
+      summary: Delete ref of navigation property registeredOwners for users
       operationId: user.device_DeleteRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
@@ -2894,9 +2865,6 @@ paths:
         - users.device
       summary: Get registeredUsers from users
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: user.device_ListRegisteredUser
       parameters:
         - name: user-id
@@ -2973,11 +2941,7 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete registeredUser
-      description: Remove a user as a registered user of the device.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
+      summary: Delete ref of navigation property registeredUsers for users
       operationId: user.device.registeredUser_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: user-id
@@ -3272,9 +3236,6 @@ paths:
         - users.device
       summary: Get ref of registeredUsers from users
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: user.device_ListRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
@@ -3330,11 +3291,7 @@ paths:
     post:
       tags:
         - users.device
-      summary: Create registeredUser
-      description: Add a registered user for the device.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
+      summary: Create new navigation property ref to registeredUsers for users
       operationId: user.device_CreateRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
@@ -3364,11 +3321,7 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete registeredUser
-      description: Remove a user as a registered user of the device.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
+      summary: Delete ref of navigation property registeredUsers for users
       operationId: user.device_DeleteRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
@@ -3761,9 +3714,6 @@ paths:
         - users.device
       summary: Get transitiveMemberOf from users
       description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: user.device_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -4324,11 +4274,8 @@ paths:
     get:
       tags:
         - users.device
-      summary: List device usageRights
-      description: Retrieve a list of usageRight objects for a given device.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
+      summary: Get usageRights from users
+      description: Represents the usage rights a device has been granted.
       operationId: user.device_ListUsageRight
       parameters:
         - name: user-id
@@ -7221,7 +7168,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -9261,11 +9208,11 @@ components:
               nullable: true
             managedAppRegistrationId:
               type: string
-              description: The unique identifier of the app instance for which diagnostic was collected.
+              description: The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
               nullable: true
             requestedBy:
               type: string
-              description: The user principal name associated with the request for the managed application log collection.
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
               nullable: true
             requestedByUserPrincipalName:
               type: string
@@ -9284,7 +9231,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppLogUpload'
-              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs.'
+              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.'
             userLogUploadConsent:
               $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadConsent'
             version:
@@ -10015,7 +9962,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -10342,6 +10289,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -10352,7 +10300,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+              description: Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
               x-ms-navigationProperty: true
             rosterPlans:
               type: array
@@ -10862,11 +10810,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -11451,13 +11399,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -11904,7 +11852,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -12106,7 +12054,7 @@ components:
               description: 'The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -12755,11 +12703,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -14369,7 +14317,7 @@ components:
       properties:
         managedAppComponent:
           type: string
-          description: The Mobile Application Management (MAM) Logs Uploading Component.
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
           nullable: true
         managedAppComponentDescription:
           type: string
@@ -14377,7 +14325,7 @@ components:
           nullable: true
         referenceId:
           type: string
-          description: A provider-specific reference id for the uploaded logs.
+          description: A provider-specific reference id for the uploaded logs. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -18130,11 +18078,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive.  See drive resource for values.
           nullable: true
         id:
           type: string
@@ -18150,13 +18098,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -24134,7 +24082,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object

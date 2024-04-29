@@ -10,11 +10,8 @@ paths:
     get:
       tags:
         - users.userActivity
-      summary: Get user activities
-      description: 'Get activities for a given user. Unlike the recent OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application''s activities, use the nextLink property to paginate.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-get-activities?view=graph-rest-1.0
+      summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: user_ListActivity
       parameters:
         - name: user-id
@@ -196,11 +193,7 @@ paths:
     delete:
       tags:
         - users.userActivity
-      summary: Delete an activity
-      description: Delete an existing user activity for your app.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
+      summary: Delete navigation property activities for users
       operationId: user_DeleteActivity
       parameters:
         - name: user-id
@@ -403,11 +396,7 @@ paths:
     patch:
       tags:
         - users.userActivity
-      summary: Create or replace a historyItem
-      description: Create a new or replace an existing history item for an existing user activity.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0
+      summary: Update the navigation property historyItems in users
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id

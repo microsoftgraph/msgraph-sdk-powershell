@@ -77,7 +77,7 @@ paths:
       description: Create a new user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-create?view=graph-rest-1.0
       operationId: user_CreateUser
       requestBody:
         description: New entity
@@ -104,7 +104,7 @@ paths:
       description: Read properties and relationships of the user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-get?view=graph-rest-1.0
       operationId: user_GetUser
       parameters:
         - name: user-id
@@ -149,10 +149,10 @@ paths:
       tags:
         - users.user
       summary: Update user
-      description: Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. Customers through Microsoft Entra ID for customers can also use this API operation to update their details. See Default user permissions in customer tenants for the list of properties they can update.
+      description: Update the properties of a user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0
       operationId: user_UpdateUser
       parameters:
         - name: user-id
@@ -214,11 +214,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List createdObjects
-      description: 'Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn''t in any administrator role; otherwise, it returns an empty object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
+      summary: Get createdObjects from users
+      description: Directory objects that the user created. Read-only. Nullable.
       operationId: user_ListCreatedObject
       parameters:
         - name: user-id
@@ -487,9 +484,6 @@ paths:
         - users.directoryObject
       summary: Get directReports from users
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0
       operationId: user_ListDirectReport
       parameters:
         - name: user-id
@@ -1218,11 +1212,8 @@ paths:
     get:
       tags:
         - users.licenseDetails
-      summary: List licenseDetails
-      description: Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
+      summary: Get licenseDetails from users
+      description: A collection of this user's license details. Read-only.
       operationId: user_ListLicenseDetail
       parameters:
         - name: user-id
@@ -1536,11 +1527,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+      summary: Get manager from users
+      description: The user or contact that is this user's manager. Read-only. Supports $expand.
       operationId: user_GetManager
       parameters:
         - name: user-id
@@ -1585,11 +1573,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+      summary: Get ref of manager from users
+      description: The user or contact that is this user's manager. Read-only. Supports $expand.
       operationId: user_GetManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -1613,11 +1598,7 @@ paths:
     put:
       tags:
         - users.directoryObject
-      summary: Assign manager
-      description: Assign a user's manager.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
+      summary: Update the ref of navigation property manager in users
       operationId: user_SetManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -1639,11 +1620,7 @@ paths:
     delete:
       tags:
         - users.directoryObject
-      summary: Remove manager
-      description: Remove a user's manager.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
+      summary: Delete ref of navigation property manager for users
       operationId: user_DeleteManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -1672,9 +1649,6 @@ paths:
         - users.directoryObject
       summary: Get memberOf from users
       description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
       operationId: user_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -2325,11 +2299,7 @@ paths:
     get:
       tags:
         - users.oAuth2PermissionGrant
-      summary: List a user's oauth2PermissionGrants
-      description: 'Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
+      summary: Get oauth2PermissionGrants from users
       operationId: user_ListOauth2PermissionGrant
       parameters:
         - name: user-id
@@ -2498,11 +2468,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List masterCategories
-      description: Get all the categories that have been defined for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
+      summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: user.outlook_ListMasterCategory
       parameters:
         - name: user-id
@@ -2549,11 +2516,7 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create Outlook category
-      description: Create an outlookCategory object in the user's master list of categories.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
+      summary: Create new navigation property to masterCategories for users
       operationId: user.outlook_CreateMasterCategory
       parameters:
         - name: user-id
@@ -2585,11 +2548,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get Outlook category
-      description: Get the properties and relationships of the specified outlookCategory object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0
+      summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: user.outlook_GetMasterCategory
       parameters:
         - name: user-id
@@ -2631,11 +2591,7 @@ paths:
     patch:
       tags:
         - users.outlookUser
-      summary: Update outlookCategory
-      description: 'Update the writable property, color, of the specified outlookCategory object. You can''t modify the displayName property once you have created the category.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
+      summary: Update the navigation property masterCategories in users
       operationId: user.outlook_UpdateMasterCategory
       parameters:
         - name: user-id
@@ -2674,11 +2630,7 @@ paths:
     delete:
       tags:
         - users.outlookUser
-      summary: Delete outlookCategory
-      description: Delete the specified outlookCategory object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0
+      summary: Delete navigation property masterCategories for users
       operationId: user.outlook_DeleteMasterCategory
       parameters:
         - name: user-id
@@ -2736,9 +2688,6 @@ paths:
         - users.directoryObject
       summary: Get ownedDevices from users
       description: 'Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
       operationId: user_ListOwnedDevice
       parameters:
         - name: user-id
@@ -3391,9 +3340,6 @@ paths:
         - users.directoryObject
       summary: Get ownedObjects from users
       description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
       operationId: user_ListOwnedObject
       parameters:
         - name: user-id
@@ -4044,11 +3990,8 @@ paths:
     get:
       tags:
         - users.profilePhoto
-      summary: Get profilePhoto
-      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they're stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.\nIf the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
+      summary: Get photo from users
+      description: The user's profile photo. Read-only.
       operationId: user_GetPhoto
       parameters:
         - name: user-id
@@ -4141,9 +4084,6 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get media content for the navigation property photo from users
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
       operationId: user_GetPhotoContent
       parameters:
         - name: user-id
@@ -4361,9 +4301,6 @@ paths:
         - users.directoryObject
       summary: Get registeredDevices from users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
       operationId: user_ListRegisteredDevice
       parameters:
         - name: user-id
@@ -5014,11 +4951,7 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get settings
-      description: "Read the user and organization userSettings object.\nTo learn how to update the properties of the userSettings object, see update user settings."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/usersettings-get?view=graph-rest-1.0
+      summary: Get settings from users
       operationId: user_GetSetting
       parameters:
         - name: user-id
@@ -5062,11 +4995,7 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update userSettings
-      description: "Update the properties of the userSettings object. \nUsers in the same organization can have different settings based on their preference or on the organization policies. \nTo get the user current settings, see current user settings. "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/usersettings-update?view=graph-rest-1.0
+      summary: Update the navigation property settings in users
       operationId: user_UpdateSetting
       parameters:
         - name: user-id
@@ -5124,11 +5053,7 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get shiftPreferences
-      description: Retrieve the properties and relationships of a shiftPreferences object by ID.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
+      summary: Get shiftPreferences from users
       operationId: user.setting_GetShiftPreference
       parameters:
         - name: user-id
@@ -5172,11 +5097,7 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update shiftPreferences
-      description: Update the properties and relationships of a shiftPreferences object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
+      summary: Update the navigation property shiftPreferences in users
       operationId: user.setting_UpdateShiftPreference
       parameters:
         - name: user-id
@@ -5234,11 +5155,7 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: List Windows settings
-      description: Get a list of windowsSetting objects and their properties for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/usersettings-list-windows?view=graph-rest-1.0
+      summary: Get windows from users
       operationId: user.setting_ListWindow
       parameters:
         - name: user-id
@@ -5328,11 +5245,7 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get windowsSetting
-      description: Read the properties and relationships of a windowsSetting object by passing the ID of the setting in the URL. This method gets the setting for the signed-in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowssetting-get?view=graph-rest-1.0
+      summary: Get windows from users
       operationId: user.setting_GetWindow
       parameters:
         - name: user-id
@@ -5458,11 +5371,8 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: List Windows setting instances
-      description: Get a list of windowsSettingInstance objects and their properties for the signed-in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowssetting-list-instances?view=graph-rest-1.0
+      summary: Get instances from users
+      description: A collection of setting values for a given windowsSetting.
       operationId: user.setting.window_ListInstance
       parameters:
         - name: user-id
@@ -5568,11 +5478,8 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get windowsSettingInstance
-      description: Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL. This method gets a windowsSettingInstance for the signed-in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowssettinginstance-get?view=graph-rest-1.0
+      summary: Get instances from users
+      description: A collection of setting values for a given windowsSetting.
       operationId: user.setting.window_GetInstance
       parameters:
         - name: user-id
@@ -5774,11 +5681,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List sponsors
-      description: Get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0
+      summary: Get sponsors from users
+      description: 'The users and groups responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
       operationId: user_ListSponsor
       parameters:
         - name: user-id
@@ -6016,11 +5920,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List lists
-      description: Get a list of the todoTaskList objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0
+      summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: user.todo_ListList
       parameters:
         - name: user-id
@@ -6078,11 +5979,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create todoTaskList
-      description: Create a new lists object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0
+      summary: Create new navigation property to lists for users
       operationId: user.todo_CreateList
       parameters:
         - name: user-id
@@ -6114,11 +6011,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get todoTaskList
-      description: Read the properties and relationships of a todoTaskList object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0
+      summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: user.todo_GetList
       parameters:
         - name: user-id
@@ -6170,11 +6064,7 @@ paths:
     patch:
       tags:
         - users.todo
-      summary: Update todoTaskList
-      description: Update the properties of a todoTaskList object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0
+      summary: Update the navigation property lists in users
       operationId: user.todo_UpdateList
       parameters:
         - name: user-id
@@ -6213,11 +6103,7 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete todoTaskList
-      description: Deletes a todoTaskList object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0
+      summary: Delete navigation property lists for users
       operationId: user.todo_DeleteList
       parameters:
         - name: user-id
@@ -6540,11 +6426,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List tasks
-      description: Get the todoTask resources from the tasks navigation property of a specified todoTaskList.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0
+      summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: user.todo.list_ListTask
       parameters:
         - name: user-id
@@ -6610,11 +6493,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create todoTask
-      description: Create a new task object in a specified todoTaskList.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0
+      summary: Create new navigation property to tasks for users
       operationId: user.todo.list_CreateTask
       parameters:
         - name: user-id
@@ -6654,11 +6533,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get todoTask
-      description: Read the properties and relationships of a todoTask object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0
+      summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: user.todo.list_GetTask
       parameters:
         - name: user-id
@@ -6718,11 +6594,7 @@ paths:
     patch:
       tags:
         - users.todo
-      summary: Update todoTask
-      description: Update the properties of a todoTask object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-update?view=graph-rest-1.0
+      summary: Update the navigation property tasks in users
       operationId: user.todo.list_UpdateTask
       parameters:
         - name: user-id
@@ -6769,11 +6641,7 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete todoTask
-      description: Deletes a todoTask object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-delete?view=graph-rest-1.0
+      summary: Delete navigation property tasks for users
       operationId: user.todo.list_DeleteTask
       parameters:
         - name: user-id
@@ -6816,11 +6684,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List taskFileAttachments
-      description: Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: A collection of file attachments for the task.
       operationId: user.todo.list.task_ListAttachment
       parameters:
         - name: user-id
@@ -6883,11 +6748,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create taskFileAttachment
-      description: 'Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.todo.list.task_CreateAttachment
       parameters:
         - name: user-id
@@ -6935,11 +6796,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get taskFileAttachment
-      description: Read the properties and relationships of a taskFileAttachment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: A collection of file attachments for the task.
       operationId: user.todo.list.task_GetAttachment
       parameters:
         - name: user-id
@@ -6997,11 +6855,7 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete taskFileAttachment
-      description: Delete a taskFileAttachment object from a todoTask resource.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
+      summary: Delete navigation property attachments for users
       operationId: user.todo.list.task_DeleteAttachment
       parameters:
         - name: user-id
@@ -7053,9 +6907,6 @@ paths:
       tags:
         - users.todo
       summary: Get media content for the navigation property attachments from users
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
       operationId: user.todo.list.task_GetAttachmentsContent
       parameters:
         - name: user-id
@@ -7567,11 +7418,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List checklistItems
-      description: Get the checklistItem resources associated to a todoTask from the checklistItems navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
+      summary: Get checklistItems from users
+      description: A collection of checklistItems linked to a task.
       operationId: user.todo.list.task_ListChecklistItem
       parameters:
         - name: user-id
@@ -7645,11 +7493,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create checklistItem
-      description: Create a new checklistItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
+      summary: Create new navigation property to checklistItems for users
       operationId: user.todo.list.task_CreateChecklistItem
       parameters:
         - name: user-id
@@ -7697,11 +7541,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get checklistItem
-      description: Read the properties and relationships of a checklistItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0
+      summary: Get checklistItems from users
+      description: A collection of checklistItems linked to a task.
       operationId: user.todo.list.task_GetChecklistItem
       parameters:
         - name: user-id
@@ -7769,11 +7610,7 @@ paths:
     patch:
       tags:
         - users.todo
-      summary: Update checklistItem
-      description: Update the properties of a checklistItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/checklistitem-update?view=graph-rest-1.0
+      summary: Update the navigation property checklistItems in users
       operationId: user.todo.list.task_UpdateChecklistItem
       parameters:
         - name: user-id
@@ -7828,11 +7665,7 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete checklistItem
-      description: Delete a checklistItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/checklistitem-delete?view=graph-rest-1.0
+      summary: Delete navigation property checklistItems for users
       operationId: user.todo.list.task_DeleteChecklistItem
       parameters:
         - name: user-id
@@ -8257,11 +8090,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List linkedResources
-      description: 'Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
+      summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: user.todo.list.task_ListLinkedResource
       parameters:
         - name: user-id
@@ -8335,11 +8165,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create linkedResource
-      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association. You can also create a linkedResource object while creating a task.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
+      summary: Create new navigation property to linkedResources for users
       operationId: user.todo.list.task_CreateLinkedResource
       parameters:
         - name: user-id
@@ -8387,11 +8213,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get linkedResource
-      description: Read the properties and relationships of a linkedResource object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
+      summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: user.todo.list.task_GetLinkedResource
       parameters:
         - name: user-id
@@ -8459,11 +8282,7 @@ paths:
     patch:
       tags:
         - users.todo
-      summary: Update linkedResource
-      description: Update the properties of a linkedResource object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
+      summary: Update the navigation property linkedResources in users
       operationId: user.todo.list.task_UpdateLinkedResource
       parameters:
         - name: user-id
@@ -8518,11 +8337,7 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete linkedResource
-      description: Delete a linkedResource object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
+      summary: Delete navigation property linkedResources for users
       operationId: user.todo.list.task_DeleteLinkedResource
       parameters:
         - name: user-id
@@ -8665,9 +8480,6 @@ paths:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
       description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0
       operationId: user_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -10565,6 +10377,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -10869,6 +10682,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -10880,9 +10694,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
@@ -11052,7 +10868,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
+              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique. You can use the default value provided, which is in the form api://<appId>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
@@ -11129,6 +10945,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to an application and used as an alternate key. Immutable. Read-only.
               nullable: true
             verifiedPublisher:
               $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
@@ -12635,7 +12452,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -12747,6 +12564,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -13154,6 +12972,11 @@ components:
               type: string
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
+              readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
               readOnly: true
             ethernetMacAddress:
               type: string
@@ -13747,6 +13570,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -14096,7 +13927,7 @@ components:
               description: 'The URL of the external identity provider, which must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique within the app. It has a limit of 600 characters. Required.'
             name:
               type: string
-              description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it''s created. Required. Not nullable. Supports $filter (eq).'
+              description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it''s created. Alternate key. Required. Not nullable. Supports $filter (eq).'
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format; each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique within the app. It has a limit of 600 characters. Supports $filter (eq).'
@@ -16332,13 +16163,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -16558,7 +16389,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -16713,6 +16544,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -19800,11 +19632,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
           nullable: true
         id:
           type: string
@@ -19820,13 +19652,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -23447,7 +23279,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
