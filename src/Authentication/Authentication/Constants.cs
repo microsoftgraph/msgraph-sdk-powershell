@@ -18,6 +18,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal const string AppSecretCredentialParameterSet = nameof(AppSecretCredentialParameterSet);
         internal const string AccessTokenParameterSet = nameof(AccessTokenParameterSet);
         internal const string IdentityParameterSet = nameof(IdentityParameterSet);
+        internal const string SafeRolloutParameterSet = nameof(SafeRolloutParameterSet);
         internal const string EnvironmentVariableParameterSet = nameof(EnvironmentVariableParameterSet);
         internal static readonly string ContextSettingsPath = Path.Combine(Core.Constants.GraphDirectoryPath, "mg.context.json");
         internal const int MAX_RETRY_DELAY_IN_SECONDS = 180;
@@ -48,6 +49,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
             public const string Identity = "Login using a Managed Identity.";
             public const string EnvironmentVariable = "Allows for authentication using environment variables configured on the host machine. See https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/identity/Azure.Identity#environment-variables.";
             public const string ManagedIdentityClientId = "The client id to authenticate for a user assigned managed identity. For more information on user assigned managed identities see: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#how-a-user-assigned-managed-identity-works-with-an-azure-vmId. To use the SystemAssigned identity, leave this field blank.";
+
+            //Help message for safe rollout during torus migration
+            public const string SafeRollout = "Use this parameter to enable safe rollout of the app owners to use the app in destination tenant based on their deployment strategy. This will allow you to test the app without affecting the existing functionality. Once the migration has been finalized, you can remove this parameter.";
         }
     }
 }

@@ -56,6 +56,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Alias("SecretCredential", "Credential")]
         public PSCredential ClientSecretCredential { get; set; }
 
+        /*
+        Torus migration changes for client based rollout
+        */
+
+        [Parameter(Mandatory = false, ParameterSetName = Constants.SafeRolloutParameterSet, HelpMessage = HelpMessages.SafeRollout)]
+        [Alias("ValidateRollout")]
+        public bool SafeRollOut { get; set; }
+        
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, Position = 1, Mandatory = true, HelpMessage = HelpMessages.AccessToken)]
         public SecureString AccessToken { get; set; }
 
@@ -127,6 +135,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 environment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global];
             }
+            
         }
         protected override void ProcessRecord()
         {
@@ -167,7 +176,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version, Environment = environment?.Name };
                 if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout)))
                     GraphSession.Instance.RequestContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
-
+                if(SafeRollOut)
+                {
+                    environment.AzureADEndpoint = $"{environment.AzureADEndpoint}?safe_rollout=apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc";
+                }
+                WriteDebug($"Connecting to {environment.Name} environment. Azure AD endpoint: {environment.AzureADEndpoint} Graph endpoint: {environment.GraphEndpoint}");
                 GraphSession.Instance.Environment = environment;
                 GraphSession.Instance.GraphHttpClient = null;
                 if (GraphSession.Instance.InMemoryTokenCache is null)
