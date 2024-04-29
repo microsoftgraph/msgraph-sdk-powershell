@@ -16,15 +16,13 @@ Create new navigation property to cloudPcConnections for tenantRelationships
 ```
 New-MgBetaTenantRelationshipManagedTenantCloudPcConnection [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-HealthCheckStatus <String>] [-Id <String>] [-LastRefreshedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-TenantDisplayName <String>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantDisplayName <String>] [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantCloudPcConnection
- -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcConnection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcConnection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,21 +94,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HealthCheckStatus
 The health status of the cloud PC connection.
 Possible values are: pending, running, passed, failed, unknownFutureValue.
@@ -154,21 +137,6 @@ Read-only.
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -248,8 +216,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

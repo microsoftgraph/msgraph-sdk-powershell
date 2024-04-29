@@ -20,21 +20,20 @@ New-MgBetaFinancialCompanyVendor -CompanyId <String> [-AdditionalProperties <Has
  [-Email <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-PaymentMethod <IMicrosoftGraphPaymentMethod>] [-PaymentMethodId <String>]
  [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
- [-Picture <IMicrosoftGraphPicture[]>] [-ResponseHeadersVariable <String>] [-TaxLiable]
- [-TaxRegistrationNumber <String>] [-Website <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Picture <IMicrosoftGraphPicture[]>] [-TaxLiable] [-TaxRegistrationNumber <String>] [-Website <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaFinancialCompanyVendor -CompanyId <String> -BodyParameter <IMicrosoftGraphVendor>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaFinancialCompanyVendor -CompanyId <String> -BodyParameter <IMicrosoftGraphVendor> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaFinancialCompanyVendor -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphVendor>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -45,9 +44,8 @@ New-MgBetaFinancialCompanyVendor -InputObject <IFinancialsIdentity> [-Additional
  [-Email <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-PaymentMethod <IMicrosoftGraphPaymentMethod>] [-PaymentMethodId <String>]
  [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
- [-Picture <IMicrosoftGraphPicture[]>] [-ResponseHeadersVariable <String>] [-TaxLiable]
- [-TaxRegistrationNumber <String>] [-Website <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Picture <IMicrosoftGraphPicture[]>] [-TaxLiable] [-TaxRegistrationNumber <String>] [-Website <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -239,21 +237,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -408,21 +391,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TaxLiable
 .
 
@@ -507,8 +475,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVendor
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

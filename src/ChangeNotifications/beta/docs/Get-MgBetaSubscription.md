@@ -15,20 +15,18 @@ See the table in the Permissions section for the list of resources that support 
 
 ### List (Default)
 ```
-Get-MgBetaSubscription [-Property <String[]>] [-Search <String>] [-ResponseHeadersVariable <String>] [-All]
- [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgBetaSubscription [-Property <String[]>] [-Search <String>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgBetaSubscription -SubscriptionId <String> [-Property <String[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgBetaSubscription -SubscriptionId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaSubscription -InputObject <IChangeNotificationsIdentity> [-Property <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgBetaSubscription -InputObject <IChangeNotificationsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -74,21 +72,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -138,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Search
 Search items by search phrases
 
@@ -190,8 +158,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IChangeNotificationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSubscription
@@ -209,10 +175,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[SubscriptionId <String>]`: The unique identifier of subscription
 
 ## RELATED LINKS
-
-
-
-
-
-
 

@@ -18,24 +18,21 @@ Update-MgServiceAnnouncementMessage -ServiceUpdateMessageId <String> [-ActionReq
  [-AdditionalProperties <Hashtable>] [-Attachments <IMicrosoftGraphServiceAnnouncementAttachment[]>]
  [-AttachmentsArchiveInputFile <String>] [-Body <IMicrosoftGraphItemBody>] [-Category <String>]
  [-Details <IMicrosoftGraphKeyValuePair[]>] [-EndDateTime <DateTime>] [-HasAttachments] [-Id <String>]
- [-IsMajorChange] [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-Services <String[]>] [-Severity <String>] [-StartDateTime <DateTime>] [-Tags <String[]>] [-Title <String>]
- [-ViewPoint <IMicrosoftGraphServiceUpdateMessageViewpoint>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsMajorChange] [-LastModifiedDateTime <DateTime>] [-Services <String[]>] [-Severity <String>]
+ [-StartDateTime <DateTime>] [-Tags <String[]>] [-Title <String>]
+ [-ViewPoint <IMicrosoftGraphServiceUpdateMessageViewpoint>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgServiceAnnouncementMessage -ServiceUpdateMessageId <String>
- -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementIdentity>
- -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,10 +42,9 @@ Update-MgServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementIde
  [-Attachments <IMicrosoftGraphServiceAnnouncementAttachment[]>] [-AttachmentsArchiveInputFile <String>]
  [-Body <IMicrosoftGraphItemBody>] [-Category <String>] [-Details <IMicrosoftGraphKeyValuePair[]>]
  [-EndDateTime <DateTime>] [-HasAttachments] [-Id <String>] [-IsMajorChange]
- [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Services <String[]>]
- [-Severity <String>] [-StartDateTime <DateTime>] [-Tags <String[]>] [-Title <String>]
- [-ViewPoint <IMicrosoftGraphServiceUpdateMessageViewpoint>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Services <String[]>] [-Severity <String>] [-StartDateTime <DateTime>]
+ [-Tags <String[]>] [-Title <String>] [-ViewPoint <IMicrosoftGraphServiceUpdateMessageViewpoint>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -227,21 +223,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -296,21 +277,6 @@ The last modified time of the service event.
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -465,8 +431,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

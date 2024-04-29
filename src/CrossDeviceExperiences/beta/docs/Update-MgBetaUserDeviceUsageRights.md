@@ -15,31 +15,27 @@ Update the navigation property usageRights in users
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaUserDeviceUsageRights -DeviceId <String> -UsageRightId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-ServiceIdentifier <String>] [-State <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-Id <String>] [-ServiceIdentifier <String>]
+ [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserDeviceUsageRights -DeviceId <String> -UsageRightId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphUsageRight> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUsageRight> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserDeviceUsageRights -InputObject <ICrossDeviceExperiencesIdentity>
- -BodyParameter <IMicrosoftGraphUsageRight> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUsageRight> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaUserDeviceUsageRights -InputObject <ICrossDeviceExperiencesIdentity>
- [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-ServiceIdentifier <String>] [-State <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-Id <String>] [-ServiceIdentifier <String>]
+ [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +120,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -168,21 +149,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -285,8 +251,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsageRight
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -11,21 +11,21 @@ schema: 2.0.0
 Retrieve a list of events in a calendar.
 The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 The list of events contains single instance meetings and series masters.
-To get expanded event instances, you can get the calendar view, or\nget the instances of an event.
+To get expanded event instances, you can get the calendar view, or \nget the instances of an event.
 
 ## SYNTAX
 
 ```
 Get-MgUserDefaultCalendarEvent -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ResponseHeadersVariable <String>]
- [-All] [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Retrieve a list of events in a calendar.
 The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 The list of events contains single instance meetings and series masters.
-To get expanded event instances, you can get the calendar view, or\nget the instances of an event.
+To get expanded event instances, you can get the calendar view, or \nget the instances of an event.
 
 ## EXAMPLES
 
@@ -106,21 +106,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -PageSize
 Sets the page size of results.
 
@@ -143,21 +128,6 @@ Select properties to be returned
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -231,8 +201,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
@@ -242,8 +210,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-
-
-
-
 

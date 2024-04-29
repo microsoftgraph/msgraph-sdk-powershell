@@ -16,30 +16,28 @@ Update the navigation property authorizationSystems in external
 ```
 Update-MgBetaExternalAuthorizationSystem -AuthorizationSystemId <String> [-AdditionalProperties <Hashtable>]
  [-AuthorizationSystemId1 <String>] [-AuthorizationSystemName <String>] [-AuthorizationSystemType <String>]
- [-DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaExternalAuthorizationSystem -AuthorizationSystemId <String>
- -BodyParameter <IMicrosoftGraphAuthorizationSystem> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthorizationSystem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaExternalAuthorizationSystem -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphAuthorizationSystem> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthorizationSystem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaExternalAuthorizationSystem -InputObject <ISearchIdentity> [-AuthorizationSystemId <String>]
  [-AdditionalProperties <Hashtable>] [-AuthorizationSystemName <String>] [-AuthorizationSystemType <String>]
- [-DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,21 +172,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -218,21 +201,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -275,8 +243,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthorizationSystem
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

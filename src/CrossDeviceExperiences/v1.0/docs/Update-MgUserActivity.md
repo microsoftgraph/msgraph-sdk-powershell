@@ -19,22 +19,20 @@ Update-MgUserActivity -UserActivityId <String> -UserId <String> [-ActivationUrl 
  [-AppDisplayName <String>] [-ContentInfo <Hashtable>] [-ContentUrl <String>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-FallbackUrl <String>]
  [-HistoryItems <IMicrosoftGraphActivityHistoryItem[]>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Status <String>] [-UserTimezone <String>]
- [-VisualElements <IMicrosoftGraphVisualInfo>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Status <String>] [-UserTimezone <String>] [-VisualElements <IMicrosoftGraphVisualInfo>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserActivity -UserActivityId <String> -UserId <String> -BodyParameter <IMicrosoftGraphUserActivity>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserActivity -InputObject <ICrossDeviceExperiencesIdentity>
- -BodyParameter <IMicrosoftGraphUserActivity> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserActivity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,9 +42,8 @@ Update-MgUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-Activatio
  [-AppDisplayName <String>] [-ContentInfo <Hashtable>] [-ContentUrl <String>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-FallbackUrl <String>]
  [-HistoryItems <IMicrosoftGraphActivityHistoryItem[]>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Status <String>] [-UserTimezone <String>]
- [-VisualElements <IMicrosoftGraphVisualInfo>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Status <String>] [-UserTimezone <String>] [-VisualElements <IMicrosoftGraphVisualInfo>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -251,21 +248,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HistoryItems
 Optional.
 NavigationProperty/Containment; navigation property to the activity's historyItems.
@@ -323,21 +305,6 @@ DateTime in UTC when the object was modified on the server.
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -462,8 +429,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

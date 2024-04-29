@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: 341787ad-7662-4130-ba6b-6f7d37f3a0ec
+Module Guid: 33ce9f67-4ae2-472f-a0dd-04af338de932
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Beta.Groups Cmdlets
 ### [Add-MgBetaGroupDriveListContentTypeCopy](Add-MgBetaGroupDriveListContentTypeCopy.md)
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgBetaGroupDriveListContentTypeCopyFromContentTypeHub](Add-MgBetaGroupDriveListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
@@ -28,7 +28,7 @@ Supported for Microsoft 365 groups only.
 Follow a user's site or multiple sites.
 
 ### [Add-MgBetaGroupSiteContentTypeCopy](Add-MgBetaGroupSiteContentTypeCopy.md)
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgBetaGroupSiteContentTypeCopyFromContentTypeHub](Add-MgBetaGroupSiteContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
@@ -37,7 +37,7 @@ The method allows users to pull content types directly from the content type hub
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
 ### [Add-MgBetaGroupSiteListContentTypeCopy](Add-MgBetaGroupSiteListContentTypeCopy.md)
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub](Add-MgBetaGroupSiteListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
@@ -68,7 +68,8 @@ Invoke action verifySignature
 Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ### [Copy-MgBetaGroupDriveListContentTypeToDefaultContentLocation](Copy-MgBetaGroupDriveListContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ### [Copy-MgBetaGroupDriveRoot](Copy-MgBetaGroupDriveRoot.md)
 Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
@@ -91,10 +92,12 @@ Copies a section to a specific section group.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ### [Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation](Copy-MgBetaGroupSiteContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ### [Copy-MgBetaGroupSiteListContentTypeToDefaultContentLocation](Copy-MgBetaGroupSiteListContentTypeToDefaultContentLocation.md)
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ### [Get-MgBetaAllGroupSite](Get-MgBetaAllGroupSite.md)
 Invoke function getAllSites
@@ -144,7 +147,7 @@ The following table lists the differences between the delta function on events a
 Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
 
 ### [Get-MgBetaGroupConversation](Get-MgBetaGroupConversation.md)
-Retrieve the properties and relationships of conversation object.
+Get a conversation object.
 
 ### [Get-MgBetaGroupConversationCount](Get-MgBetaGroupConversationCount.md)
 Get the number of the resource
@@ -160,7 +163,7 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupConversationThreadPost](Get-MgBetaGroupConversationThreadPost.md)
 Get the properties and relationships of a post in a specified thread.
-You can specify both the parent\nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
+You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
 Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
 
 ### [Get-MgBetaGroupConversationThreadPostAttachment](Get-MgBetaGroupConversationThreadPostAttachment.md)
@@ -471,9 +474,6 @@ Get the number of the resource
 ### [Get-MgBetaGroupOwnerCountAsUser](Get-MgBetaGroupOwnerCountAsUser.md)
 Get the number of the resource
 
-### [Get-MgBetaGroupPasswordSingleSignOnCredential](Get-MgBetaGroupPasswordSingleSignOnCredential.md)
-Invoke action getPasswordSingleSignOnCredentials
-
 ### [Get-MgBetaGroupPermissionGrant](Get-MgBetaGroupPermissionGrant.md)
 The permissions granted for a group to a specific application.
 Supports $expand.
@@ -534,15 +534,6 @@ Invoke function getCompatibleHubContentTypes
 ### [Get-MgBetaGroupSiteDelta](Get-MgBetaGroupSiteDelta.md)
 Invoke function delta
 
-### [Get-MgBetaGroupSiteGetByPathApplicableContentTypeForList](Get-MgBetaGroupSiteGetByPathApplicableContentTypeForList.md)
-Invoke function getApplicableContentTypesForList
-
-### [Get-MgBetaGroupSiteGetGraphBPrePathActivityByInterval](Get-MgBetaGroupSiteGetGraphBPrePathActivityByInterval.md)
-Invoke function getActivitiesByInterval
-
-### [Get-MgBetaGroupSiteGetGraphBPrePathByPath](Get-MgBetaGroupSiteGetGraphBPrePathByPath.md)
-Invoke function getByPath
-
 ### [Get-MgBetaGroupSiteListContentTypeCompatibleHubContentType](Get-MgBetaGroupSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
@@ -552,15 +543,6 @@ Invoke function getActivitiesByInterval
 ### [Get-MgBetaGroupSiteListItemDelta](Get-MgBetaGroupSiteListItemDelta.md)
 Invoke function delta
 
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
 ### [Get-MgBetaGroupThread](Get-MgBetaGroupThread.md)
 Get a thread object.
 
@@ -569,7 +551,7 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupThreadPost](Get-MgBetaGroupThreadPost.md)
 Get the properties and relationships of a post in a specified thread.
-You can specify both the parent\nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
+You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
 Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
 
 ### [Get-MgBetaGroupThreadPostAttachment](Get-MgBetaGroupThreadPostAttachment.md)
@@ -715,9 +697,6 @@ Tentatively accept the specified event in a user calendar.
 If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
-### [Invoke-MgBetaArchiveGroupPlannerPlan](Invoke-MgBetaArchiveGroupPlannerPlan.md)
-Invoke action archive
-
 ### [Invoke-MgBetaBufferGroupSiteInformationProtectionDecrypt](Invoke-MgBetaBufferGroupSiteInformationProtectionDecrypt.md)
 Invoke action decryptBuffer
 
@@ -772,8 +751,8 @@ Follow a driveItem.
 Follow a driveItem.
 
 ### [Invoke-MgBetaForwardGroupCalendarEvent](Invoke-MgBetaForwardGroupCalendarEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgBetaForwardGroupConversationThreadPost](Invoke-MgBetaForwardGroupConversationThreadPost.md)
@@ -785,8 +764,8 @@ Forward a post to a recipient.
 You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgBetaForwardGroupEvent](Invoke-MgBetaForwardGroupEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgBetaForwardGroupThreadPost](Invoke-MgBetaForwardGroupThreadPost.md)
@@ -805,10 +784,10 @@ Supported for Microsoft 365 groups only.
 Invoke function sharedWithMe
 
 ### [Invoke-MgBetaInviteGroupDriveItem](Invoke-MgBetaInviteGroupDriveItem.md)
-Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ### [Invoke-MgBetaInviteGroupDriveRoot](Invoke-MgBetaInviteGroupDriveRoot.md)
-Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ### [Invoke-MgBetaPreviewGroupDriveItem](Invoke-MgBetaPreviewGroupDriveItem.md)
 Invoke action preview
@@ -843,9 +822,8 @@ Renew a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ### [Invoke-MgBetaReplyGroupConversationThread](Invoke-MgBetaReplyGroupConversationThread.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgBetaReplyGroupConversationThreadPost](Invoke-MgBetaReplyGroupConversationThreadPost.md)
 Invoke action reply
@@ -854,9 +832,8 @@ Invoke action reply
 Invoke action reply
 
 ### [Invoke-MgBetaReplyGroupThread](Invoke-MgBetaReplyGroupThread.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgBetaReplyGroupThreadPost](Invoke-MgBetaReplyGroupThreadPost.md)
 Invoke action reply
@@ -880,9 +857,6 @@ Postpone a reminder for an event in a user calendar until a new time.
 Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
 
-### [Invoke-MgBetaUnarchiveGroupPlannerPlan](Invoke-MgBetaUnarchiveGroupPlannerPlan.md)
-Invoke action unarchive
-
 ### [Invoke-MgBetaUnfollowGroupDriveItem](Invoke-MgBetaUnfollowGroupDriveItem.md)
 Unfollow a driveItem.
 
@@ -890,17 +864,16 @@ Unfollow a driveItem.
 Unfollow a driveItem.
 
 ### [Join-MgBetaGroupDriveListContentTypeWithHubSite](Join-MgBetaGroupDriveListContentTypeWithHubSite.md)
-Invoke action associateWithHubSites
+Associate a [content type][contentType] with a list of hub sites.
 
 ### [Join-MgBetaGroupSiteContentTypeWithHubSite](Join-MgBetaGroupSiteContentTypeWithHubSite.md)
-Invoke action associateWithHubSites
+Associate a [content type][contentType] with a list of hub sites.
 
 ### [Join-MgBetaGroupSiteListContentTypeWithHubSite](Join-MgBetaGroupSiteListContentTypeWithHubSite.md)
-Invoke action associateWithHubSites
+Associate a [content type][contentType] with a list of hub sites.
 
 ### [Move-MgBetaGroupPlannerPlanToContainer](Move-MgBetaGroupPlannerPlanToContainer.md)
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ### [New-MgBetaGroup](New-MgBetaGroup.md)
 Create a new group as specified in the request body.
@@ -916,9 +889,8 @@ Users in the accepted senders list can post to conversations of the group.
 Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
 
 ### [New-MgBetaGroupConversation](New-MgBetaGroupConversation.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Create a new conversation by including a thread and a post.
+Use reply thread or reply post to further post to that conversation.
 
 ### [New-MgBetaGroupConversationThread](New-MgBetaGroupConversationThread.md)
 Create a new thread in the specified conversation.
@@ -966,12 +938,13 @@ Create new navigation property to mentions for groups
 Create new navigation property to mentions for groups
 
 ### [New-MgBetaGroupDriveItemLink](New-MgBetaGroupDriveItemLink.md)
-Create a link to share a driveItem driveItem.\nThe createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned.
+You can use createLink action to share a driveItem via a sharing link.
+The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
 ### [New-MgBetaGroupDriveItemListItemLink](New-MgBetaGroupDriveItemListItemLink.md)
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaGroupDriveItemUploadSession](New-MgBetaGroupDriveItemUploadSession.md)
@@ -979,16 +952,17 @@ Invoke action createUploadSession
 
 ### [New-MgBetaGroupDriveListItemLink](New-MgBetaGroupDriveListItemLink.md)
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaGroupDriveRootLink](New-MgBetaGroupDriveRootLink.md)
-Create a link to share a driveItem driveItem.\nThe createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned.
+You can use createLink action to share a driveItem via a sharing link.
+The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
 ### [New-MgBetaGroupDriveRootListItemLink](New-MgBetaGroupDriveRootListItemLink.md)
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaGroupDriveRootUploadSession](New-MgBetaGroupDriveRootUploadSession.md)
@@ -1034,7 +1008,7 @@ The template named Group.Unified can be used to configure tenant-wide Microsoft 
 
 ### [New-MgBetaGroupSiteListItemLink](New-MgBetaGroupSiteListItemLink.md)
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaGroupThread](New-MgBetaGroupThread.md)
@@ -1082,13 +1056,13 @@ Create new navigation property to mentions for groups
 Create new navigation property to mentions for groups
 
 ### [Publish-MgBetaGroupDriveListContentType](Publish-MgBetaGroupDriveListContentType.md)
-Invoke action publish
+Publishes a [contentType][] present in a content type hub site.
 
 ### [Publish-MgBetaGroupSiteContentType](Publish-MgBetaGroupSiteContentType.md)
-Invoke action publish
+Publishes a [contentType][] present in a content type hub site.
 
 ### [Publish-MgBetaGroupSiteListContentType](Publish-MgBetaGroupSiteListContentType.md)
-Invoke action publish
+Publishes a [contentType][] present in a content type hub site.
 
 ### [Remove-MgBetaGroup](Remove-MgBetaGroup.md)
 Deletes a group.
@@ -1098,9 +1072,6 @@ This isn't applicable to Security groups and Distribution groups that are perman
 To learn more, see deletedItems.
 
 ### [Remove-MgBetaGroupAcceptedSenderByRef](Remove-MgBetaGroupAcceptedSenderByRef.md)
-Remove a user or group from the accepted-senders list of the specified group.
-
-### [Remove-MgBetaGroupAcceptedSenderDirectoryObjectByRef](Remove-MgBetaGroupAcceptedSenderDirectoryObjectByRef.md)
 Remove a user or group from the accepted-senders list of the specified group.
 
 ### [Remove-MgBetaGroupByUniqueName](Remove-MgBetaGroupByUniqueName.md)
@@ -1160,31 +1131,14 @@ Delete a groupLifecyclePolicy.
 Remove a member from a group via the members navigation property.
 You can't remove a member from groups with dynamic memberships.
 
-### [Remove-MgBetaGroupMemberDirectoryObjectByRef](Remove-MgBetaGroupMemberDirectoryObjectByRef.md)
-Remove a member from a group via the members navigation property.
-You can't remove a member from groups with dynamic memberships.
-
 ### [Remove-MgBetaGroupOwnerByRef](Remove-MgBetaGroupOwnerByRef.md)
 Use this API to remove an owner from a Microsoft 365 group or a security group through the owners navigation property.
 When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
 
-### [Remove-MgBetaGroupOwnerDirectoryObjectByRef](Remove-MgBetaGroupOwnerDirectoryObjectByRef.md)
-Use this API to remove an owner from a Microsoft 365 group or a security group through the owners navigation property.
-When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
-
-### [Remove-MgBetaGroupPasswordSingleSignOnCredential](Remove-MgBetaGroupPasswordSingleSignOnCredential.md)
-Invoke action deletePasswordSingleSignOnCredentials
-
 ### [Remove-MgBetaGroupPermissionGrant](Remove-MgBetaGroupPermissionGrant.md)
 Delete navigation property permissionGrants for groups
 
-### [Remove-MgBetaGroupPhoto](Remove-MgBetaGroupPhoto.md)
-Delete navigation property photo for groups
-
 ### [Remove-MgBetaGroupRejectedSenderByRef](Remove-MgBetaGroupRejectedSenderByRef.md)
-Remove a user or group from the rejected-senders list of the specified group.
-
-### [Remove-MgBetaGroupRejectedSenderDirectoryObjectByRef](Remove-MgBetaGroupRejectedSenderDirectoryObjectByRef.md)
 Remove a user or group from the rejected-senders list of the specified group.
 
 ### [Remove-MgBetaGroupSetting](Remove-MgBetaGroupSetting.md)
@@ -1359,23 +1313,19 @@ Invoke action evaluate
 Invoke function isPublished
 
 ### [Unpublish-MgBetaGroupDriveListContentType](Unpublish-MgBetaGroupDriveListContentType.md)
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Unpublish-MgBetaGroupSiteContentType](Unpublish-MgBetaGroupSiteContentType.md)
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Unpublish-MgBetaGroupSiteListContentType](Unpublish-MgBetaGroupSiteListContentType.md)
-Invoke action unpublish
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgBetaGroup](Update-MgBetaGroup.md)
-Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group.
-For a list of properties that are returned by default, see thethe Properties section of the group resource.
-To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
+Update the properties of a group object.
 
 ### [Update-MgBetaGroupByUniqueName](Update-MgBetaGroupByUniqueName.md)
-Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group.
-For a list of properties that are returned by default, see thethe Properties section of the group resource.
-To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
+Update the properties of a group object.
 
 ### [Update-MgBetaGroupConversationThread](Update-MgBetaGroupConversationThread.md)
 Update the navigation property threads in groups

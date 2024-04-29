@@ -17,21 +17,19 @@ Create new navigation property to paymentTerms for financials
 New-MgBetaFinancialCompanyPaymentTerm -CompanyId <String> [-AdditionalProperties <Hashtable>]
  [-CalculateDiscountOnCreditMemos] [-Code <String>] [-DiscountDateCalculation <String>]
  [-DiscountPercent <Decimal>] [-DisplayName <String>] [-DueDateCalculation <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaFinancialCompanyPaymentTerm -CompanyId <String> -BodyParameter <IMicrosoftGraphPaymentTerm>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaFinancialCompanyPaymentTerm -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphPaymentTerm> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPaymentTerm> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,8 +37,7 @@ New-MgBetaFinancialCompanyPaymentTerm -InputObject <IFinancialsIdentity>
 New-MgBetaFinancialCompanyPaymentTerm -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-CalculateDiscountOnCreditMemos] [-Code <String>] [-DiscountDateCalculation <String>]
  [-DiscountPercent <Decimal>] [-DisplayName <String>] [-DueDateCalculation <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -200,21 +197,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -253,21 +235,6 @@ Accept wildcard characters: False
 Type: System.DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -315,8 +282,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentTerm
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

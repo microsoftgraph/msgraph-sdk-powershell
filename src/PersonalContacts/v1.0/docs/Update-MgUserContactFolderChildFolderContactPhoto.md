@@ -16,29 +16,27 @@ Update the navigation property photo in users
 ```
 Update-MgUserContactFolderChildFolderContactPhoto -ContactFolderId <String> -ContactFolderId1 <String>
  -ContactId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Height <Int32>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Width <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Width <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserContactFolderChildFolderContactPhoto -ContactFolderId <String> -ContactFolderId1 <String>
- -ContactId <String> -UserId <String> -BodyParameter <IMicrosoftGraphProfilePhoto>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -ContactId <String> -UserId <String> -BodyParameter <IMicrosoftGraphProfilePhoto> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserContactFolderChildFolderContactPhoto -InputObject <IPersonalContactsIdentity>
- -BodyParameter <IMicrosoftGraphProfilePhoto> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphProfilePhoto> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserContactFolderChildFolderContactPhoto -InputObject <IPersonalContactsIdentity>
- [-AdditionalProperties <Hashtable>] [-Height <Int32>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Width <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,21 +136,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Height
 The height of the photo.
 Read-only.
@@ -198,21 +181,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -286,8 +254,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
 
 ### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

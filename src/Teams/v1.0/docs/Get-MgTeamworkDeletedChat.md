@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedChat
 
 ## SYNOPSIS
-Read the properties and relationships of a deletedChat object.
+Get deletedChats from teamwork
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgTeamworkDeletedChat -InputObject <ITeamsIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a deletedChat object.
+Get deletedChats from teamwork
 
 ## EXAMPLES
 
@@ -324,8 +324,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkforceIntegrationId <String>]`: The unique identifier of workforceIntegration
 
 ## RELATED LINKS
-
-
-
-
 

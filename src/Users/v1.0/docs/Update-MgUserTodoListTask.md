@@ -23,21 +23,20 @@ Update-MgUserTodoListTask -TodoTaskId <String> -TodoTaskListId <String> -UserId 
  [-Extensions <IMicrosoftGraphExtension[]>] [-HasAttachments] [-Id <String>] [-Importance <String>]
  [-IsReminderOn] [-LastModifiedDateTime <DateTime>] [-LinkedResources <IMicrosoftGraphLinkedResource[]>]
  [-Recurrence <IMicrosoftGraphPatternedRecurrence>] [-ReminderDateTime <IMicrosoftGraphDateTimeZone>]
- [-ResponseHeadersVariable <String>] [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>]
- [-Title <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Title <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserTodoListTask -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphTodoTask> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTodoTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserTodoListTask -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTask>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserTodoListTask -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTask> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -50,8 +49,8 @@ Update-MgUserTodoListTask -InputObject <IUsersIdentity> [-AdditionalProperties <
  [-Extensions <IMicrosoftGraphExtension[]>] [-HasAttachments] [-Id <String>] [-Importance <String>]
  [-IsReminderOn] [-LastModifiedDateTime <DateTime>] [-LinkedResources <IMicrosoftGraphLinkedResource[]>]
  [-Recurrence <IMicrosoftGraphPatternedRecurrence>] [-ReminderDateTime <IMicrosoftGraphDateTimeZone>]
- [-ResponseHeadersVariable <String>] [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>]
- [-Title <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Title <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -289,21 +288,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -425,21 +409,6 @@ To construct, see NOTES section for REMINDERDATETIME properties and create a has
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -579,8 +548,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask
@@ -636,8 +603,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CheckedDateTime <DateTime?>]`: The date and time when the checklistItem was finished.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the checklistItem was created.
-    - `[DisplayName <String>]`: Indicates the title of the checklistItem.
-    - `[IsChecked <Boolean?>]`: State that indicates whether the item is checked off or not.
+    - `[DisplayName <String>]`: Field indicating the title of checklistItem.
+    - `[IsChecked <Boolean?>]`: State indicating whether the item is checked off or not.
   - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
@@ -683,8 +650,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CheckedDateTime <DateTime?>]`: The date and time when the checklistItem was finished.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the checklistItem was created.
-  - `[DisplayName <String>]`: Indicates the title of the checklistItem.
-  - `[IsChecked <Boolean?>]`: State that indicates whether the item is checked off or not.
+  - `[DisplayName <String>]`: Field indicating the title of checklistItem.
+  - `[IsChecked <Boolean?>]`: State indicating whether the item is checked off or not.
 
 `COMPLETEDDATETIME <IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -713,8 +680,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TodoTaskId <String>]`: The unique identifier of todoTask
   - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[UserId <String>]`: The unique identifier of user
-  - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
-  - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 `LINKEDRESOURCES <IMicrosoftGraphLinkedResource[]>`: A collection of resources linked to the task.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -753,8 +718,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 ## RELATED LINKS
-
-
-
-
 

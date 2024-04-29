@@ -19,8 +19,7 @@ This allows transfer to be resumed, in case the network connection is dropped du
 ```
 New-MgPrintShareJobDocumentUploadSession -PrintDocumentId <String> -PrinterShareId <String>
  -PrintJobId <String> [-AdditionalProperties <Hashtable>]
- [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -28,21 +27,21 @@ New-MgPrintShareJobDocumentUploadSession -PrintDocumentId <String> -PrinterShare
 New-MgPrintShareJobDocumentUploadSession -PrintDocumentId <String> -PrinterShareId <String>
  -PrintJobId <String>
  -BodyParameter <IPathsCv1Pi3PrintSharesPrintershareIdJobsPrintjobIdDocumentsPrintdocumentIdMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgPrintShareJobDocumentUploadSession -InputObject <IDevicesCloudPrintIdentity>
  -BodyParameter <IPathsCv1Pi3PrintSharesPrintershareIdJobsPrintjobIdDocumentsPrintdocumentIdMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgPrintShareJobDocumentUploadSession -InputObject <IDevicesCloudPrintIdentity>
- [-AdditionalProperties <Hashtable>] [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,21 +93,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -192,21 +176,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -246,8 +215,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPathsCv1Pi3PrintSharesPrintershareIdJobsPrintjobIdDocumentsPrintdocumentIdMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -292,8 +259,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Size <Int64?>]`: The document's size in bytes.
 
 ## RELATED LINKS
-
-
-
-
 

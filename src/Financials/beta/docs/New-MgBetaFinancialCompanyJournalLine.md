@@ -18,21 +18,19 @@ New-MgBetaFinancialCompanyJournalLine -CompanyId <String> [-Account <IMicrosoftG
  [-AccountId <String>] [-AccountNumber <String>] [-AdditionalProperties <Hashtable>] [-Amount <Decimal>]
  [-Comment <String>] [-Description <String>] [-DocumentNumber <String>] [-ExternalDocumentNumber <String>]
  [-Id <String>] [-JournalDisplayName <String>] [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>]
- [-PostingDate <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PostingDate <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaFinancialCompanyJournalLine -CompanyId <String> -BodyParameter <IMicrosoftGraphJournalLine>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalId <String>
- -BodyParameter <IMicrosoftGraphJournalLine> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphJournalLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded1
@@ -41,22 +39,20 @@ New-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalId <String>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AccountNumber <String>]
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-Comment <String>] [-Description <String>]
  [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
- [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphJournalLine> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphJournalLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphJournalLine> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphJournalLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -65,8 +61,7 @@ New-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-Accou
  [-AccountId <String>] [-AccountNumber <String>] [-AdditionalProperties <Hashtable>] [-Amount <Decimal>]
  [-Comment <String>] [-Description <String>] [-DocumentNumber <String>] [-ExternalDocumentNumber <String>]
  [-Id <String>] [-JournalDisplayName <String>] [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>]
- [-PostingDate <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PostingDate <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
@@ -75,8 +70,7 @@ New-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-Accou
  [-AccountId <String>] [-AccountNumber <String>] [-AdditionalProperties <Hashtable>] [-Amount <Decimal>]
  [-Comment <String>] [-Description <String>] [-DocumentNumber <String>] [-ExternalDocumentNumber <String>]
  [-Id <String>] [-JournalDisplayName <String>] [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>]
- [-PostingDate <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PostingDate <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -267,21 +261,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -388,21 +367,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -442,8 +406,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournalLine
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

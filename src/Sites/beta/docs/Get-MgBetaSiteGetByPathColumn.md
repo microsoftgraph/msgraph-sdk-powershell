@@ -8,28 +8,27 @@ schema: 2.0.0
 # Get-MgBetaSiteGetByPathColumn
 
 ## SYNOPSIS
-The collection of column definitions reusable across lists under this site.
+Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
 
 ## SYNTAX
 
 ### List (Default)
 ```
 Get-MgBetaSiteGetByPathColumn -Path <String> -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-ResponseHeadersVariable <String>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### List1
 ```
 Get-MgBetaSiteGetByPathColumn -Path <String> -Path1 <String> -SiteId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-ResponseHeadersVariable <String>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of column definitions reusable across lists under this site.
+Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
 
 ## EXAMPLES
 
@@ -185,21 +184,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Search
 Search items by search phrases
 
@@ -291,8 +275,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-
-
-
-
 

@@ -15,14 +15,13 @@ Get media content for the navigation property bulkUpload from applications
 ### Get (Default)
 ```
 Get-MgApplicationSynchronizationJobBulkUploadContent -ApplicationId <String> -SynchronizationJobId <String>
- -OutFile <String> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+ -OutFile <String> [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgApplicationSynchronizationJobBulkUploadContent -InputObject <IApplicationsIdentity> -OutFile <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SynchronizationJobId
 The unique identifier of synchronizationJob
 
@@ -164,6 +148,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### System.Boolean
+
+### System.Collections.Hashtable
 
 ## NOTES
 

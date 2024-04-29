@@ -19,22 +19,20 @@ For more information, see Update b2cIdentityUserFlow.
 Update-MgBetaIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> [-AdditionalProperties <Hashtable>]
  [-DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>] [-DisplayName <String>] [-Id <String>] [-IsEnabled]
- [-OverridesPages <IMicrosoftGraphUserFlowLanguagePage[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OverridesPages <IMicrosoftGraphUserFlowLanguagePage[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityB2CUserFlowLanguage -B2CIdentityUserFlowId <String>
  -UserFlowLanguageConfigurationId <String> -BodyParameter <IMicrosoftGraphUserFlowLanguageConfiguration>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphUserFlowLanguageConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserFlowLanguageConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,7 +40,7 @@ Update-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
 Update-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>]
  [-DisplayName <String>] [-Id <String>] [-IsEnabled] [-OverridesPages <IMicrosoftGraphUserFlowLanguagePage[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -147,21 +145,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -226,21 +209,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserFlowLanguageConfigurationId
 The unique identifier of userFlowLanguageConfiguration
 
@@ -295,8 +263,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserFlowLanguageConfiguration
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -406,8 +372,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 ## RELATED LINKS
-
-
-
-
 

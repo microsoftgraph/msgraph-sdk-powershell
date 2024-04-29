@@ -15,30 +15,27 @@ Create new navigation property to verificationDnsRecords for domains
 ### CreateExpanded (Default)
 ```
 New-MgDomainVerificationDnsRecord -DomainId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-IsOptional] [-Label <String>] [-RecordType <String>] [-ResponseHeadersVariable <String>]
- [-SupportedService <String>] [-Ttl <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsOptional] [-Label <String>] [-RecordType <String>] [-SupportedService <String>] [-Ttl <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDomainVerificationDnsRecord -DomainId <String> -BodyParameter <IMicrosoftGraphDomainDnsRecord>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphDomainDnsRecord> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDomainDnsRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsOptional] [-Label <String>] [-RecordType <String>]
- [-ResponseHeadersVariable <String>] [-SupportedService <String>] [-Ttl <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SupportedService <String>] [-Ttl <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,17 +45,10 @@ Create new navigation property to verificationDnsRecords for domains
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgDomainVerificationDnsRecord -DomainId $domainId
 
 ## PARAMETERS
 
@@ -105,21 +95,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -201,21 +176,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SupportedService
 Microsoft Online Service or feature that has a dependency on this DNS record.
 Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
@@ -287,8 +247,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

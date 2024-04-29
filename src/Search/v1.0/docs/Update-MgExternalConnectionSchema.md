@@ -15,29 +15,27 @@ Create a new schema object.
 ### UpdateExpanded (Default)
 ```
 Update-MgExternalConnectionSchema -ExternalConnectionId <String> [-AdditionalProperties <Hashtable>]
- [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgExternalConnectionSchema -ExternalConnectionId <String>
- -BodyParameter <IMicrosoftGraphExternalConnectorsSchema> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsSchema> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgExternalConnectionSchema -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphExternalConnectorsSchema> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsSchema> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgExternalConnectionSchema -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
- [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -116,21 +114,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -180,21 +163,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -235,8 +203,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISearchIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsSchema
@@ -265,15 +231,12 @@ To create the parameters described below, construct a hash table containing the 
     - `[Type <String>]`: propertyType
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
-  - `[AcronymId <String>]`: The unique identifier of acronym
-  - `[BookmarkId <String>]`: The unique identifier of bookmark
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
   - `[ExternalActivityId <String>]`: The unique identifier of externalActivity
   - `[ExternalConnectionId <String>]`: The unique identifier of externalConnection
   - `[ExternalGroupId <String>]`: The unique identifier of externalGroup
   - `[ExternalItemId <String>]`: The unique identifier of externalItem
   - `[IdentityId <String>]`: The unique identifier of identity
-  - `[QnaId <String>]`: The unique identifier of qna
 
 `PROPERTIES <IMicrosoftGraphExternalConnectorsProperty[]>`: The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
   - `[Aliases <String[]>]`: A set of aliases or a friendly name for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^. Optional.
@@ -286,8 +249,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Type <String>]`: propertyType
 
 ## RELATED LINKS
-
-
-
-
 

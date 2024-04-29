@@ -16,14 +16,14 @@ The following entities support extension properties:
 ### GetExpanded (Default)
 ```
 Get-MgDirectoryObjectAvailableExtensionProperty [-AdditionalProperties <Hashtable>] [-IsSyncedFromOnPremises]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgDirectoryObjectAvailableExtensionProperty
  -BodyParameter <IPaths1Izu2OlDirectoryobjectsMicrosoftGraphGetavailableextensionpropertiesPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,10 +37,7 @@ The following entities support extension properties:
 Import-Module Microsoft.Graph.DirectoryObjects
 ```
 
-$params = @{
-}
-
-Get-MgDirectoryObjectAvailableExtensionProperty -BodyParameter $params
+Get-MgDirectoryObjectAvailableExtensionProperty
 
 ## PARAMETERS
 
@@ -75,21 +72,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -IsSyncedFromOnPremises
 .
 
@@ -97,21 +79,6 @@ Accept wildcard characters: False
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GetExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -158,8 +125,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1Izu2OlDirectoryobjectsMicrosoftGraphGetavailableextensionpropertiesPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
@@ -178,8 +143,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsSyncedFromOnPremises <Boolean?>]`: 
 
 ## RELATED LINKS
-
-
-
-
 

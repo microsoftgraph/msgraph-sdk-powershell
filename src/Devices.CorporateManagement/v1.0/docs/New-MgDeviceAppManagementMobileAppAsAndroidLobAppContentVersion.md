@@ -16,22 +16,20 @@ Create new navigation property to contentVersions for deviceAppManagement
 ```
 New-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersion -MobileAppId <String>
  [-AdditionalProperties <Hashtable>] [-ContainedApps <IMicrosoftGraphMobileContainedApp[]>]
- [-Files <IMicrosoftGraphMobileAppContentFile[]>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Files <IMicrosoftGraphMobileAppContentFile[]>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersion -MobileAppId <String>
- -BodyParameter <IMicrosoftGraphMobileAppContent> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMobileAppContent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersion
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphMobileAppContent>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,8 +37,7 @@ New-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersion
 New-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersion
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ContainedApps <IMicrosoftGraphMobileContainedApp[]>] [-Files <IMicrosoftGraphMobileAppContentFile[]>]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +125,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -190,21 +172,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -245,8 +212,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppContent
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppContent
@@ -269,6 +234,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Files <IMicrosoftGraphMobileAppContentFile[]>]`: The list of files for this app content version.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[AzureStorageUri <String>]`: The Azure Storage URI.
+    - `[AzureStorageUriExpirationDateTime <DateTime?>]`: The time the Azure storage Uri expires.
+    - `[CreatedDateTime <DateTime?>]`: The time the file was created.
+    - `[IsCommitted <Boolean?>]`: A value indicating whether the file is committed.
     - `[Manifest <Byte[]>]`: The manifest information.
     - `[Name <String>]`: the file name.
     - `[Size <Int64?>]`: The size of the file prior to encryption.
@@ -280,6 +249,10 @@ To create the parameters described below, construct a hash table containing the 
 
 `FILES <IMicrosoftGraphMobileAppContentFile[]>`: The list of files for this app content version.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[AzureStorageUri <String>]`: The Azure Storage URI.
+  - `[AzureStorageUriExpirationDateTime <DateTime?>]`: The time the Azure storage Uri expires.
+  - `[CreatedDateTime <DateTime?>]`: The time the file was created.
+  - `[IsCommitted <Boolean?>]`: A value indicating whether the file is committed.
   - `[Manifest <Byte[]>]`: The manifest information.
   - `[Name <String>]`: the file name.
   - `[Size <Int64?>]`: The size of the file prior to encryption.

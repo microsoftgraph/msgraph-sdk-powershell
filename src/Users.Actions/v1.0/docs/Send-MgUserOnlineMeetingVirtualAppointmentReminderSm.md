@@ -8,8 +8,7 @@ schema: 2.0.0
 # Send-MgUserOnlineMeetingVirtualAppointmentReminderSm
 
 ## SYNOPSIS
-Send an SMS reminder to external attendees for a Teams virtual appointment.
-This feature requires Teams premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ## SYNTAX
 
@@ -17,37 +16,34 @@ This feature requires Teams premium and attendees must have a valid United State
 ```
 Send-MgUserOnlineMeetingVirtualAppointmentReminderSm -OnlineMeetingId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-RemindBeforeTimeInMinutesType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RemindBeforeTimeInMinutesType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Send
 ```
 Send-MgUserOnlineMeetingVirtualAppointmentReminderSm -OnlineMeetingId <String> -UserId <String>
  -BodyParameter <IPaths1Mid4FyUsersUserIdOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
 Send-MgUserOnlineMeetingVirtualAppointmentReminderSm -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Mid4FyUsersUserIdOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentityExpanded
 ```
 Send-MgUserOnlineMeetingVirtualAppointmentReminderSm -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-RemindBeforeTimeInMinutesType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RemindBeforeTimeInMinutesType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Send an SMS reminder to external attendees for a Teams virtual appointment.
-This feature requires Teams premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ## EXAMPLES
 
@@ -190,21 +186,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -276,14 +257,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `ATTENDEES <IMicrosoftGraphAttendeeNotificationInfo[]>`: .
-  - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-  - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
+  - `[PhoneNumber <String>]`: 
+  - `[TimeZone <String>]`: 
 
 `BODYPARAMETER <IPaths1Mid4FyUsersUserIdOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]`: 
-    - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-    - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
+    - `[PhoneNumber <String>]`: 
+    - `[TimeZone <String>]`: 
   - `[RemindBeforeTimeInMinutesType <String>]`: remindBeforeTimeInMinutesType
 
 `INPUTOBJECT <IUsersActionsIdentity>`: Identity Parameter
@@ -319,8 +300,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

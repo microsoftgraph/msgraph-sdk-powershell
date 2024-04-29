@@ -31,11 +31,9 @@ Update-MgBetaDeviceAppManagement [-AdditionalProperties <Hashtable>]
  [-MicrosoftStoreForBusinessLastCompletedApplicationSyncTime <DateTime>]
  [-MicrosoftStoreForBusinessLastSuccessfulSyncDateTime <DateTime>]
  [-MicrosoftStoreForBusinessPortalSelection <MicrosoftStoreForBusinessPortalSelectionOptions>]
- [-MobileAppCatalogPackages <IMicrosoftGraphMobileAppCatalogPackage[]>]
  [-MobileAppCategories <IMicrosoftGraphMobileAppCategory[]>]
  [-MobileAppConfigurations <IMicrosoftGraphManagedDeviceMobileAppConfiguration[]>]
  [-MobileApps <IMicrosoftGraphMobileApp[]>] [-PolicySets <IMicrosoftGraphPolicySet[]>]
- [-ResponseHeadersVariable <String>]
  [-SymantecCodeSigningCertificate <IMicrosoftGraphSymantecCodeSigningCertificate>]
  [-TargetedManagedAppConfigurations <IMicrosoftGraphTargetedManagedAppConfiguration[]>]
  [-VppTokens <IMicrosoftGraphVppToken[]>]
@@ -44,14 +42,13 @@ Update-MgBetaDeviceAppManagement [-AdditionalProperties <Hashtable>]
  [-WindowsInformationProtectionPolicies <IMicrosoftGraphWindowsInformationProtectionPolicy[]>]
  [-WindowsInformationProtectionWipeActions <IMicrosoftGraphWindowsInformationProtectionWipeAction[]>]
  [-WindowsManagedAppProtections <IMicrosoftGraphWindowsManagedAppProtection[]>]
- [-WindowsManagementApp <IMicrosoftGraphWindowsManagementApp>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-WindowsManagementApp <IMicrosoftGraphWindowsManagementApp>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaDeviceAppManagement -BodyParameter <IMicrosoftGraphDeviceAppManagement>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaDeviceAppManagement -BodyParameter <IMicrosoftGraphDeviceAppManagement> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -167,21 +164,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -409,22 +391,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MobileAppCatalogPackages
-MobileAppCatalogPackage entities.
-To construct, see NOTES section for MOBILEAPPCATALOGPACKAGES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppCatalogPackage[]
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -MobileAppCategories
 The mobile app categories.
 To construct, see NOTES section for MOBILEAPPCATEGORIES properties and create a hash table.
@@ -481,21 +447,6 @@ To construct, see NOTES section for POLICYSETS properties and create a hash tabl
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySet[]
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -686,8 +637,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAppManagement
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAppManagement
@@ -800,12 +749,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ConfigurationDeployedUserCount <Int32?>]`: 
-    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+    - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
       - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
-    - `[DisplayName <String>]`: 
-    - `[LastRefreshTime <DateTime?>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
   - `[DeviceLockRequired <Boolean?>]`: Defines if any kind of lock must be required on android device
   - `[DisableAppEncryptionIfDeviceEncryptionIsEnabled <Boolean?>]`: When this setting is enabled, app level encryption is disabled if device level encryption is enabled
@@ -930,12 +879,12 @@ To create the parameters described below, construct a hash table containing the 
     - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[ConfigurationDeployedUserCount <Int32?>]`: 
-      - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+      - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+      - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
         - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
         - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
-      - `[DisplayName <String>]`: 
-      - `[LastRefreshTime <DateTime?>]`: 
+      - `[DisplayName <String>]`: Not yet documented
+      - `[LastRefreshTime <DateTime?>]`: Not yet documented
       - `[Version <String>]`: Version of the entity.
     - `[DeviceLockRequired <Boolean?>]`: Defines if any kind of lock must be required on android device
     - `[DisableAppEncryptionIfDeviceEncryptionIsEnabled <Boolean?>]`: When this setting is enabled, app level encryption is disabled if device level encryption is enabled
@@ -1191,7 +1140,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AppActionIfIosDeviceModelNotAllowed <ManagedAppRemediationAction?>]`: An admin initiated action to be applied on a managed app.
     - `[AppDataEncryptionType <ManagedAppDataEncryptionType?>]`: Represents the level to which app data is encrypted for managed apps
     - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
-    - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+    - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS.
     - `[CustomDialerAppProtocol <String>]`: Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
     - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
     - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
@@ -1355,11 +1304,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftStoreForBusinessLastCompletedApplicationSyncTime <DateTime?>]`: The last time an application sync from the Microsoft Store for Business was completed.
   - `[MicrosoftStoreForBusinessLastSuccessfulSyncDateTime <DateTime?>]`: The last time the apps from the Microsoft Store for Business were synced successfully for the account.
   - `[MicrosoftStoreForBusinessPortalSelection <MicrosoftStoreForBusinessPortalSelectionOptions?>]`: Portal to which admin syncs available Microsoft Store for Business apps. This is available in the Intune Admin Console.
-  - `[MobileAppCatalogPackages <IMicrosoftGraphMobileAppCatalogPackage[]>]`: MobileAppCatalogPackage entities.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[MobileAppCategories <IMicrosoftGraphMobileAppCategory[]>]`: The mobile app categories.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the app category.
+    - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
   - `[MobileAppConfigurations <IMicrosoftGraphManagedDeviceMobileAppConfiguration[]>]`: The Managed Device Mobile Application Configurations.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>]`: The list of group assignemenets for app configration.
@@ -1405,24 +1353,35 @@ To create the parameters described below, construct a hash table containing the 
       - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
+      - `[SourceId <String>]`: The identifier of the source of the assignment.
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
+    - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
+    - `[DependentAppCount <Int32?>]`: The total number of dependencies the child app has.
     - `[Description <String>]`: The description of the app.
     - `[Developer <String>]`: The developer of the app.
     - `[DisplayName <String>]`: The admin provided or imported title of the app.
     - `[InformationUrl <String>]`: The more information Url.
+    - `[IsAssigned <Boolean?>]`: The value indicating whether the app is assigned to at least one group.
     - `[IsFeatured <Boolean?>]`: The value indicating whether the app is marked as featured by the admin.
     - `[LargeIcon <IMicrosoftGraphMimeContent>]`: Contains properties for a generic mime content.
+    - `[LastModifiedDateTime <DateTime?>]`: The date and time the app was last modified.
     - `[Notes <String>]`: Notes for the app.
     - `[Owner <String>]`: The owner of the app.
     - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
     - `[Publisher <String>]`: The publisher of the app.
     - `[PublishingState <MobileAppPublishingState?>]`: Indicates the publishing state of an app.
-    - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: The set of direct relationships for this app.
+    - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[TargetDisplayName <String>]`: The target mobile app's display name.
+      - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
       - `[TargetId <String>]`: The target mobile app's app id.
+      - `[TargetPublisher <String>]`: The target mobile app's publisher.
       - `[TargetType <MobileAppRelationshipType?>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
     - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
+    - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
+    - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
+    - `[UploadState <Int32?>]`: The upload state.
   - `[PolicySets <IMicrosoftGraphPolicySet[]>]`: The PolicySet of Policies and Applications
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Assignments <IMicrosoftGraphPolicySetAssignment[]>]`: Assignments of the PolicySet.
@@ -1473,11 +1432,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[Platform <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
           - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
         - `[BaseUri <String>]`: Base CSP Path
-        - `[CategoryId <String>]`: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
-        - `[Description <String>]`: Description of the item
-        - `[DisplayName <String>]`: Display name of the item
-        - `[HelpText <String>]`: Help text of the item
-        - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at
+        - `[CategoryId <String>]`: Specify category in which the setting is under. Support $filters.
+        - `[Description <String>]`: Description of the setting.
+        - `[DisplayName <String>]`: Name of the setting. For example: Allow Toast.
+        - `[HelpText <String>]`: Help text of the setting. Give more details of the setting.
+        - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at.
         - `[Keywords <String[]>]`: Tokens which to search settings on
         - `[Name <String>]`: Name of the item
         - `[Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>]`: deviceManagementConfigurationSettingOccurrence
@@ -1486,8 +1445,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
         - `[OffsetUri <String>]`: Offset CSP Path from Base
         - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
-          - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting.
-        - `[RootDefinitionId <String>]`: Root setting definition if the setting is a child setting.
+          - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
+        - `[RootDefinitionId <String>]`: Root setting definition id if the setting is a child setting.
         - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
         - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX
         - `[Version <String>]`: Item Version
@@ -1762,12 +1721,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ConfigurationDeployedUserCount <Int32?>]`: 
-    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+    - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
       - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
-    - `[DisplayName <String>]`: 
-    - `[LastRefreshTime <DateTime?>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
   - `[DeviceLockRequired <Boolean?>]`: Defines if any kind of lock must be required on device. (android only)
   - `[DisableAppEncryptionIfDeviceEncryptionIsEnabled <Boolean?>]`: When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
@@ -1937,18 +1896,18 @@ To create the parameters described below, construct a hash table containing the 
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS.
   - `[CustomDialerAppProtocol <String>]`: Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ConfigurationDeployedUserCount <Int32?>]`: 
-    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+    - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
       - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
-    - `[DisplayName <String>]`: 
-    - `[LastRefreshTime <DateTime?>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
   - `[DisableProtectionOfManagedOutboundOpenInData <Boolean?>]`: Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.
   - `[ExemptedAppProtocols <IMicrosoftGraphKeyValuePair[]>]`: Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
@@ -2135,12 +2094,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[Version <String>]`: Version of the entity.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
-`MOBILEAPPCATALOGPACKAGES <IMicrosoftGraphMobileAppCatalogPackage[]>`: MobileAppCatalogPackage entities.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-
 `MOBILEAPPCATEGORIES <IMicrosoftGraphMobileAppCategory[]>`: The mobile app categories.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The name of the app category.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
 
 `MOBILEAPPCONFIGURATIONS <IMicrosoftGraphManagedDeviceMobileAppConfiguration[]>`: The Managed Device Mobile Application Configurations.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -2206,6 +2163,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
+    - `[SourceId <String>]`: The identifier of the source of the assignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -2213,25 +2171,36 @@ To create the parameters described below, construct a hash table containing the 
   - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the app category.
+    - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
+  - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
+  - `[DependentAppCount <Int32?>]`: The total number of dependencies the child app has.
   - `[Description <String>]`: The description of the app.
   - `[Developer <String>]`: The developer of the app.
   - `[DisplayName <String>]`: The admin provided or imported title of the app.
   - `[InformationUrl <String>]`: The more information Url.
+  - `[IsAssigned <Boolean?>]`: The value indicating whether the app is assigned to at least one group.
   - `[IsFeatured <Boolean?>]`: The value indicating whether the app is marked as featured by the admin.
   - `[LargeIcon <IMicrosoftGraphMimeContent>]`: Contains properties for a generic mime content.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String>]`: Indicates the content mime type.
     - `[Value <Byte[]>]`: The byte array that contains the actual content.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time the app was last modified.
   - `[Notes <String>]`: Notes for the app.
   - `[Owner <String>]`: The owner of the app.
   - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
   - `[Publisher <String>]`: The publisher of the app.
   - `[PublishingState <MobileAppPublishingState?>]`: Indicates the publishing state of an app.
-  - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: The set of direct relationships for this app.
+  - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[TargetDisplayName <String>]`: The target mobile app's display name.
+    - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
     - `[TargetId <String>]`: The target mobile app's app id.
+    - `[TargetPublisher <String>]`: The target mobile app's publisher.
     - `[TargetType <MobileAppRelationshipType?>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
   - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
+  - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
+  - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
+  - `[UploadState <Int32?>]`: The upload state.
 
 `POLICYSETS <IMicrosoftGraphPolicySet[]>`: The PolicySet of Policies and Applications
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -2290,11 +2259,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[Platform <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
         - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
       - `[BaseUri <String>]`: Base CSP Path
-      - `[CategoryId <String>]`: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
-      - `[Description <String>]`: Description of the item
-      - `[DisplayName <String>]`: Display name of the item
-      - `[HelpText <String>]`: Help text of the item
-      - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at
+      - `[CategoryId <String>]`: Specify category in which the setting is under. Support $filters.
+      - `[Description <String>]`: Description of the setting.
+      - `[DisplayName <String>]`: Name of the setting. For example: Allow Toast.
+      - `[HelpText <String>]`: Help text of the setting. Give more details of the setting.
+      - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at.
       - `[Keywords <String[]>]`: Tokens which to search settings on
       - `[Name <String>]`: Name of the item
       - `[Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>]`: deviceManagementConfigurationSettingOccurrence
@@ -2303,8 +2272,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
       - `[OffsetUri <String>]`: Offset CSP Path from Base
       - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
-        - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting.
-      - `[RootDefinitionId <String>]`: Root setting definition if the setting is a child setting.
+        - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
+      - `[RootDefinitionId <String>]`: Root setting definition id if the setting is a child setting.
       - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
       - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX
       - `[Version <String>]`: Item Version
@@ -2340,12 +2309,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ConfigurationDeployedUserCount <Int32?>]`: 
-    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+    - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
       - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
-    - `[DisplayName <String>]`: 
-    - `[LastRefreshTime <DateTime?>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
   - `[IsAssigned <Boolean?>]`: Indicates if the policy is deployed to any inclusion groups or not.
   - `[TargetedAppManagementLevels <AppManagementLevel?>]`: Management levels for apps

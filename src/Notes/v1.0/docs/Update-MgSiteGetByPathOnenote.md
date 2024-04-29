@@ -17,22 +17,20 @@ Update the navigation property onenote in sites
 Update-MgSiteGetByPathOnenote -Path <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>] [-Operations <IMicrosoftGraphOnenoteOperation[]>]
  [-Pages <IMicrosoftGraphOnenotePage[]>] [-Resources <IMicrosoftGraphOnenoteResource[]>]
- [-ResponseHeadersVariable <String>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
- [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSiteGetByPathOnenote -Path <String> -Path1 <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphOnenote> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnenote> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgSiteGetByPathOnenote -Path <String> -SiteId <String> -BodyParameter <IMicrosoftGraphOnenote>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded
@@ -40,21 +38,21 @@ Update-MgSiteGetByPathOnenote -Path <String> -SiteId <String> -BodyParameter <IM
 Update-MgSiteGetByPathOnenote -Path <String> -Path1 <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>]
  [-Operations <IMicrosoftGraphOnenoteOperation[]>] [-Pages <IMicrosoftGraphOnenotePage[]>]
- [-Resources <IMicrosoftGraphOnenoteResource[]>] [-ResponseHeadersVariable <String>]
- [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphOnenoteResource[]>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
+ [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSiteGetByPathOnenote -InputObject <INotesIdentity> -BodyParameter <IMicrosoftGraphOnenote>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgSiteGetByPathOnenote -InputObject <INotesIdentity> -BodyParameter <IMicrosoftGraphOnenote>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -62,9 +60,8 @@ Update-MgSiteGetByPathOnenote -InputObject <INotesIdentity> -BodyParameter <IMic
 Update-MgSiteGetByPathOnenote -InputObject <INotesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Notebooks <IMicrosoftGraphNotebook[]>] [-Operations <IMicrosoftGraphOnenoteOperation[]>]
  [-Pages <IMicrosoftGraphOnenotePage[]>] [-Resources <IMicrosoftGraphOnenoteResource[]>]
- [-ResponseHeadersVariable <String>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
- [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -72,9 +69,8 @@ Update-MgSiteGetByPathOnenote -InputObject <INotesIdentity> [-AdditionalProperti
 Update-MgSiteGetByPathOnenote -InputObject <INotesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Notebooks <IMicrosoftGraphNotebook[]>] [-Operations <IMicrosoftGraphOnenoteOperation[]>]
  [-Pages <IMicrosoftGraphOnenotePage[]>] [-Resources <IMicrosoftGraphOnenoteResource[]>]
- [-ResponseHeadersVariable <String>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
- [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -272,21 +268,6 @@ To construct, see NOTES section for RESOURCES properties and create a hash table
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteResource[]
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

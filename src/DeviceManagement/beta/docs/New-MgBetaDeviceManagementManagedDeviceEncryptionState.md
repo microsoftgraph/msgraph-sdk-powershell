@@ -18,16 +18,14 @@ New-MgBetaDeviceManagementManagedDeviceEncryptionState [-AdditionalProperties <H
  [-AdvancedBitLockerStates <AdvancedBitLockerState>] [-DeviceName <String>] [-DeviceType <DeviceTypes>]
  [-EncryptionPolicySettingState <String>] [-EncryptionReadinessState <EncryptionReadinessState>]
  [-EncryptionState <EncryptionState>] [-FileVaultStates <FileVaultState>] [-Id <String>] [-OSVersion <String>]
- [-PolicyDetails <IMicrosoftGraphEncryptionReportPolicyDetails[]>] [-ResponseHeadersVariable <String>]
- [-TpmSpecificationVersion <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-PolicyDetails <IMicrosoftGraphEncryptionReportPolicyDetails[]>] [-TpmSpecificationVersion <String>]
+ [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementManagedDeviceEncryptionState
- -BodyParameter <IMicrosoftGraphManagedDeviceEncryptionState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedDeviceEncryptionState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -187,21 +185,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -241,21 +224,6 @@ To construct, see NOTES section for POLICYDETAILS properties and create a hash t
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEncryptionReportPolicyDetails[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -331,8 +299,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceEncryptionState
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -17,23 +17,20 @@ Update the navigation property riskyServicePrincipals in identityProtection
 Update-MgBetaRiskyServicePrincipal -RiskyServicePrincipalId <String> [-AccountEnabled]
  [-AdditionalProperties <Hashtable>] [-AppId <String>] [-DisplayName <String>]
  [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>] [-Id <String>] [-IsEnabled] [-IsProcessing]
- [-ResponseHeadersVariable <String>] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>]
- [-RiskLevel <String>] [-RiskState <String>] [-ServicePrincipalType <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
+ [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaRiskyServicePrincipal -RiskyServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphRiskyServicePrincipal> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyServicePrincipal> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaRiskyServicePrincipal -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphRiskyServicePrincipal> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyServicePrincipal> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,9 +38,8 @@ Update-MgBetaRiskyServicePrincipal -InputObject <IIdentitySignInsIdentity>
 Update-MgBetaRiskyServicePrincipal -InputObject <IIdentitySignInsIdentity> [-AccountEnabled]
  [-AdditionalProperties <Hashtable>] [-AppId <String>] [-DisplayName <String>]
  [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>] [-Id <String>] [-IsEnabled] [-IsProcessing]
- [-ResponseHeadersVariable <String>] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>]
- [-RiskLevel <String>] [-RiskState <String>] [-ServicePrincipalType <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
+ [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -143,21 +139,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -History
 Represents the risk history of Microsoft Entra service principals.
 To construct, see NOTES section for HISTORY properties and create a hash table.
@@ -228,21 +209,6 @@ Indicates whether Microsoft Entra ID Protection is currently processing the serv
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -384,8 +350,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipal
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

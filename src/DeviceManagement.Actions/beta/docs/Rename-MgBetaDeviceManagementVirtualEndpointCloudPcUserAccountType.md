@@ -15,16 +15,15 @@ Change the account type of the user on a specific Cloud PC.
 ### ChangeExpanded (Default)
 ```
 Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType -CloudPcId <String>
- [-AdditionalProperties <Hashtable>] [-ResponseHeadersVariable <String>] [-UserAccountType <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-UserAccountType <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Change
 ```
 Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType -CloudPcId <String>
  -BodyParameter <IPathsFjf5ZaDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentity
@@ -32,16 +31,14 @@ Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType -CloudPcId <S
 Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsFjf5ZaDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentityExpanded
 ```
 Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-ResponseHeadersVariable <String>] [-UserAccountType <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserAccountType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +105,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -146,21 +128,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -224,8 +191,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsFjf5ZaDevicemanagementVirtualendpointCloudpcsCloudpcIdMicrosoftGraphChangeuseraccounttypePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -287,7 +252,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OperationApprovalRequestId <String>]`: The unique identifier of operationApprovalRequest
   - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
@@ -299,8 +263,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[ZebraFotaDeploymentId <String>]`: The unique identifier of zebraFotaDeployment
 
 ## RELATED LINKS
-
-
-
-
 

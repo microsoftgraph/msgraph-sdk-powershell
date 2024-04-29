@@ -15,15 +15,14 @@ Validate that a set of cloudPC devices meet the requirements to be bulk resized.
 ### ValidateExpanded (Default)
 ```
 Test-MgBetaDeviceManagementVirtualEndpointCloudPcBulkResize [-AdditionalProperties <Hashtable>]
- [-CloudPcIds <String[]>] [-ResponseHeadersVariable <String>] [-TargetServicePlanId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CloudPcIds <String[]>] [-TargetServicePlanId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate
 ```
 Test-MgBetaDeviceManagementVirtualEndpointCloudPcBulkResize
  -BodyParameter <IPathsLvwgawDevicemanagementVirtualendpointCloudpcsMicrosoftGraphValidatebulkresizePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,36 +92,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TargetServicePlanId
 .
 
@@ -176,8 +145,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsLvwgawDevicemanagementVirtualendpointCloudpcsMicrosoftGraphValidatebulkresizePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcResizeValidationResult
@@ -197,8 +164,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetServicePlanId <String>]`: 
 
 ## RELATED LINKS
-
-
-
-
 

@@ -8,40 +8,38 @@ schema: 2.0.0
 # Add-MgBetaShareListContentTypeCopy
 
 ## SYNOPSIS
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ## SYNTAX
 
 ### AddExpanded (Default)
 ```
 Add-MgBetaShareListContentTypeCopy -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>]
- [-ContentType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ContentType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
 Add-MgBetaShareListContentTypeCopy -SharedDriveItemId <String>
  -BodyParameter <IPaths1Bpb7SxSharesShareddriveitemIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
 Add-MgBetaShareListContentTypeCopy -InputObject <IFilesIdentity>
  -BodyParameter <IPaths1Bpb7SxSharesShareddriveitemIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
 Add-MgBetaShareListContentTypeCopy -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-ContentType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ContentType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action addCopy
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ## EXAMPLES
 
@@ -107,21 +105,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -135,21 +118,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -208,8 +176,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Bpb7SxSharesShareddriveitemIdListContenttypesMicrosoftGraphAddcopyPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContentType
@@ -254,8 +220,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

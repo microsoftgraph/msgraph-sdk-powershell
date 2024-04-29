@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: a91c9929-f787-4c3b-a833-bba8a245254e
+Module Guid: 8cf472d2-6b8e-4fb3-b932-cb717b5d182d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -72,13 +72,13 @@ Get the number of the resource
 Read properties and relationships of the managedAppPolicyDeploymentSummary object.
 
 ### [Get-MgDeviceAppManagementManagedAppPolicy](Get-MgDeviceAppManagementManagedAppPolicy.md)
-Read properties and relationships of the managedAppProtection object.
+Read properties and relationships of the managedAppPolicy object.
 
 ### [Get-MgDeviceAppManagementManagedAppPolicyCount](Get-MgDeviceAppManagementManagedAppPolicyCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedAppRegistration](Get-MgDeviceAppManagementManagedAppRegistration.md)
-Read properties and relationships of the androidManagedAppRegistration object.
+Read properties and relationships of the iosManagedAppRegistration object.
 
 ### [Get-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy](Get-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy.md)
 Zero or more policys already applied on the registered app when it last synchronized with managment service.
@@ -105,7 +105,7 @@ Get the number of the resource
 Invoke function getUserIdsWithFlaggedAppRegistration
 
 ### [Get-MgDeviceAppManagementManagedAppStatus](Get-MgDeviceAppManagementManagedAppStatus.md)
-Read properties and relationships of the managedAppStatus object.
+Read properties and relationships of the managedAppStatusRaw object.
 
 ### [Get-MgDeviceAppManagementManagedAppStatusCount](Get-MgDeviceAppManagementManagedAppStatusCount.md)
 Get the number of the resource
@@ -114,7 +114,7 @@ Get the number of the resource
 Read properties and relationships of the managedEBook object.
 
 ### [Get-MgDeviceAppManagementManagedEBookAssignment](Get-MgDeviceAppManagementManagedEBookAssignment.md)
-Read properties and relationships of the iosVppEBookAssignment object.
+Read properties and relationships of the managedEBookAssignment object.
 
 ### [Get-MgDeviceAppManagementManagedEBookAssignmentCount](Get-MgDeviceAppManagementManagedEBookAssignmentCount.md)
 Get the number of the resource
@@ -168,7 +168,7 @@ Another way to input protected apps through xml files
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileApp](Get-MgDeviceAppManagementMobileApp.md)
-Read properties and relationships of the androidLobApp object.
+Read properties and relationships of the mobileLobApp object.
 
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidLobApp](Get-MgDeviceAppManagementMobileAppAsAndroidLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidLobApp
@@ -176,14 +176,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidLobApp
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignment](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppCategory](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersion](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersion.md)
 The list of content versions for this app.
@@ -191,17 +185,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionCount](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidStoreApp](Get-MgDeviceAppManagementMobileAppAsAndroidStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidStoreApp
@@ -209,14 +194,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidStoreAp
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidStoreAppAssignment](Get-MgDeviceAppManagementMobileAppAsAndroidStoreAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsAndroidStoreAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsAndroidStoreAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidStoreAppCategory](Get-MgDeviceAppManagementMobileAppAsAndroidStoreAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsAndroidStoreAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsAndroidStoreAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsiOSLobApp](Get-MgDeviceAppManagementMobileAppAsiOSLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosLobApp
@@ -224,14 +203,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosLobApp
 ### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment](Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategory](Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion](Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion.md)
 The list of content versions for this app.
@@ -239,17 +212,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionCount](Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile](Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsIoStoreApp](Get-MgDeviceAppManagementMobileAppAsIoStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
@@ -257,14 +221,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
 ### [Get-MgDeviceAppManagementMobileAppAsIoStoreAppAssignment](Get-MgDeviceAppManagementMobileAppAsIoStoreAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsIoStoreAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsIoStoreAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsIoStoreAppCategory](Get-MgDeviceAppManagementMobileAppAsIoStoreAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsIoStoreAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsIoStoreAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsIoVppApp](Get-MgDeviceAppManagementMobileAppAsIoVppApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosVppApp
@@ -272,14 +230,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosVppApp
 ### [Get-MgDeviceAppManagementMobileAppAsIoVppAppAssignment](Get-MgDeviceAppManagementMobileAppAsIoVppAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsIoVppAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsIoVppAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsIoVppAppCategory](Get-MgDeviceAppManagementMobileAppAsIoVppAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsIoVppAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsIoVppAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgApp](Get-MgDeviceAppManagementMobileAppAsMacOSDmgApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSDmgApp
@@ -287,14 +239,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSDmgApp
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppAssignment](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppCategory](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion.md)
 The list of content versions for this app.
@@ -302,17 +248,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionCount](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSLobApp](Get-MgDeviceAppManagementMobileAppAsMacOSLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSLobApp
@@ -320,14 +257,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSLobApp
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppAssignment](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppCategory](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersion](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersion.md)
 The list of content versions for this app.
@@ -335,17 +266,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionCount](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobApp](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedAndroidLobApp
@@ -353,14 +275,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedAndroid
 ### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppCategory](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion.md)
 The list of content versions for this app.
@@ -368,17 +284,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionCount](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobApp](Get-MgDeviceAppManagementMobileAppAsManagediOSLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
@@ -386,14 +293,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobA
 ### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppCategory](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion.md)
 The list of content versions for this app.
@@ -401,17 +302,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionCount](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobApp](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
@@ -419,14 +311,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileL
 ### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppCategory](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion.md)
 The list of content versions for this app.
@@ -434,17 +320,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionCount](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessApp](Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.microsoftStoreForBusinessApp
@@ -452,14 +329,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.microsoftStore
 ### [Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment](Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategory](Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAssignment](Get-MgDeviceAppManagementMobileAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
@@ -473,14 +344,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.win32LobApp
 ### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppAssignment](Get-MgDeviceAppManagementMobileAppAsWin32LobAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsWin32LobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppCategory](Get-MgDeviceAppManagementMobileAppAsWin32LobAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsWin32LobAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersion](Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersion.md)
 The list of content versions for this app.
@@ -488,17 +353,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionCount](Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile](Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsAppX](Get-MgDeviceAppManagementMobileAppAsWindowsAppX.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsAppX
@@ -506,14 +362,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsAppX
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXAssignment](Get-MgDeviceAppManagementMobileAppAsWindowsAppXAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXAssignmentCount](Get-MgDeviceAppManagementMobileAppAsWindowsAppXAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXCategory](Get-MgDeviceAppManagementMobileAppAsWindowsAppXCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXCategoryCount](Get-MgDeviceAppManagementMobileAppAsWindowsAppXCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersion](Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersion.md)
 The list of content versions for this app.
@@ -521,17 +371,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionCount](Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile](Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsi](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsi.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsMobileMSI
@@ -539,14 +380,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsMobileM
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignmentCount](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiCategory](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiCategoryCount](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion.md)
 The list of content versions for this app.
@@ -554,17 +389,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionCount](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppX](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppX.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsUniversalAppX
@@ -572,20 +398,11 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsUnivers
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignmentCount](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXCategory](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXCategory.md)
 The list of categories for this app.
 
-### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXCategoryCount](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp.md)
 The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedAppCount](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedAppCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion.md)
 The list of content versions for this app.
@@ -593,17 +410,8 @@ The list of content versions for this app.
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionCount](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile.md)
 The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFileCount](Get-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsWebApp](Get-MgDeviceAppManagementMobileAppAsWindowsWebApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsWebApp
@@ -611,14 +419,8 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsWebApp
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsWebAppAssignment](Get-MgDeviceAppManagementMobileAppAsWindowsWebAppAssignment.md)
 Read properties and relationships of the mobileAppAssignment object.
 
-### [Get-MgDeviceAppManagementMobileAppAsWindowsWebAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAsWindowsWebAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppAsWindowsWebAppCategory](Get-MgDeviceAppManagementMobileAppAsWindowsWebAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgDeviceAppManagementMobileAppAsWindowsWebAppCategoryCount](Get-MgDeviceAppManagementMobileAppAsWindowsWebAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppCategory](Get-MgDeviceAppManagementMobileAppCategory.md)
 Read properties and relationships of the mobileAppCategory object.
@@ -626,8 +428,11 @@ Read properties and relationships of the mobileAppCategory object.
 ### [Get-MgDeviceAppManagementMobileAppCategoryCount](Get-MgDeviceAppManagementMobileAppCategoryCount.md)
 Get the number of the resource
 
+### [Get-MgDeviceAppManagementMobileAppCommittedContainedAppCount](Get-MgDeviceAppManagementMobileAppCommittedContainedAppCount.md)
+Get the number of the resource
+
 ### [Get-MgDeviceAppManagementMobileAppConfiguration](Get-MgDeviceAppManagementMobileAppConfiguration.md)
-Read properties and relationships of the iosMobileAppConfiguration object.
+Read properties and relationships of the managedDeviceMobileAppConfiguration object.
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationAssignment](Get-MgDeviceAppManagementMobileAppConfigurationAssignment.md)
 Read properties and relationships of the managedDeviceMobileAppConfigurationAssignment object.
@@ -655,6 +460,15 @@ Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary](Get-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
 Read properties and relationships of the managedDeviceMobileAppConfigurationUserSummary object.
+
+### [Get-MgDeviceAppManagementMobileAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppContentVersionContainedAppCount.md)
+Get the number of the resource
+
+### [Get-MgDeviceAppManagementMobileAppContentVersionCount](Get-MgDeviceAppManagementMobileAppContentVersionCount.md)
+Get the number of the resource
+
+### [Get-MgDeviceAppManagementMobileAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppContentVersionFileCount.md)
+Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppCount](Get-MgDeviceAppManagementMobileAppCount.md)
 Get the number of the resource
@@ -933,7 +747,7 @@ Create new navigation property to managedAppStatuses for deviceAppManagement
 Create a new iosVppEBook object.
 
 ### [New-MgDeviceAppManagementManagedEBookAssignment](New-MgDeviceAppManagementManagedEBookAssignment.md)
-Create a new iosVppEBookAssignment object.
+Create a new managedEBookAssignment object.
 
 ### [New-MgDeviceAppManagementManagedEBookDeviceState](New-MgDeviceAppManagementManagedEBookDeviceState.md)
 Create a new deviceInstallState object.
@@ -957,7 +771,7 @@ Create new navigation property to exemptAppLockerFiles for deviceAppManagement
 Create new navigation property to protectedAppLockerFiles for deviceAppManagement
 
 ### [New-MgDeviceAppManagementMobileApp](New-MgDeviceAppManagementMobileApp.md)
-Create a new iosLobApp object.
+Create a new managedAndroidStoreApp object.
 
 ### [New-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignment](New-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignment.md)
 Create a new mobileAppAssignment object.
@@ -1224,7 +1038,7 @@ Delete navigation property managedAppStatuses for deviceAppManagement
 Deletes a iosVppEBook.
 
 ### [Remove-MgDeviceAppManagementManagedEBookAssignment](Remove-MgDeviceAppManagementManagedEBookAssignment.md)
-Deletes a managedEBookAssignment.
+Deletes a iosVppEBookAssignment.
 
 ### [Remove-MgDeviceAppManagementManagedEBookDeviceState](Remove-MgDeviceAppManagementManagedEBookDeviceState.md)
 Deletes a deviceInstallState.
@@ -1251,7 +1065,7 @@ Delete navigation property exemptAppLockerFiles for deviceAppManagement
 Delete navigation property protectedAppLockerFiles for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementMobileApp](Remove-MgDeviceAppManagementMobileApp.md)
-Deletes a macOSOfficeSuiteApp.
+Deletes a iosVppApp.
 
 ### [Remove-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignment](Remove-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignment.md)
 Deletes a mobileAppAssignment.
@@ -1482,7 +1296,7 @@ Deletes a windowsDeviceMalwareState.
 Not yet documented
 
 ### [Set-MgDeviceAppManagementMobileApp](Set-MgDeviceAppManagementMobileApp.md)
-Invoke action assign
+Not yet documented
 
 ### [Set-MgDeviceAppManagementMobileAppConfiguration](Set-MgDeviceAppManagementMobileAppConfiguration.md)
 Not yet documented
@@ -1581,7 +1395,7 @@ Update the navigation property exemptAppLockerFiles in deviceAppManagement
 Update the navigation property protectedAppLockerFiles in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementMobileApp](Update-MgDeviceAppManagementMobileApp.md)
-Update the properties of a win32LobApp object.
+Update the properties of a managedAndroidLobApp object.
 
 ### [Update-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignment](Update-MgDeviceAppManagementMobileAppAsAndroidLobAppAssignment.md)
 Update the properties of a mobileAppAssignment object.

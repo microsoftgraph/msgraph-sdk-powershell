@@ -15,15 +15,15 @@ Invoke action searchExistingIdentities
 ### SearchExpanded (Default)
 ```
 Search-MgBetaDeviceManagementImportedDeviceIdentityExistingIdentity [-AdditionalProperties <Hashtable>]
- [-ImportedDeviceIdentities <IMicrosoftGraphImportedDeviceIdentity[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ImportedDeviceIdentities <IMicrosoftGraphImportedDeviceIdentity[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Search
 ```
 Search-MgBetaDeviceManagementImportedDeviceIdentityExistingIdentity
  -BodyParameter <IPathsHi19O6DevicemanagementImporteddeviceidentitiesMicrosoftGraphSearchexistingidentitiesPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -78,21 +78,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -ImportedDeviceIdentities
 .
 To construct, see NOTES section for IMPORTEDDEVICEIDENTITIES properties and create a hash table.
@@ -101,21 +86,6 @@ To construct, see NOTES section for IMPORTEDDEVICEIDENTITIES properties and crea
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImportedDeviceIdentity[]
 Parameter Sets: SearchExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -161,8 +131,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsHi19O6DevicemanagementImporteddeviceidentitiesMicrosoftGraphSearchexistingidentitiesPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

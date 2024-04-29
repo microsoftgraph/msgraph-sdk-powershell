@@ -17,14 +17,14 @@ Update the properties of a cross-tenant access policy.
 Update-MgPolicyCrossTenantAccessPolicy [-AdditionalProperties <Hashtable>] [-AllowedCloudEndpoints <String[]>]
  [-Default <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-Partners <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Partners <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPolicyCrossTenantAccessPolicy -BodyParameter <IMicrosoftGraphCrossTenantAccessPolicy>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPolicyCrossTenantAccessPolicy -BodyParameter <IMicrosoftGraphCrossTenantAccessPolicy> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -159,21 +159,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -198,21 +183,6 @@ To construct, see NOTES section for PARTNERS properties and create a hash table.
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner[]
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -259,8 +229,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicy
@@ -305,11 +273,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsCompliantDeviceAccepted <Boolean?>]`: Specifies whether compliant devices from external Microsoft Entra organizations are trusted.
       - `[IsHybridAzureAdJoinedDeviceAccepted <Boolean?>]`: Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.
       - `[IsMfaAccepted <Boolean?>]`: Specifies whether MFA from external Microsoft Entra organizations is trusted.
-    - `[InvitationRedemptionIdentityProviderConfiguration <IMicrosoftGraphDefaultInvitationRedemptionIdentityProviderConfiguration>]`: defaultInvitationRedemptionIdentityProviderConfiguration
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[FallbackIdentityProvider <String>]`: b2bIdentityProvidersType
-      - `[PrimaryIdentityProviderPrecedenceOrder <String[]>]`: Collection of identity providers in priority order of preference to be used for guest invitation redemption. Possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.
-    - `[IsServiceDefault <Boolean?>]`: If true, the default configuration is set to the system default configuration. If false, the default settings are customized.
+    - `[IsServiceDefault <Boolean?>]`: If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
   - `[Partners <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner[]>]`: Defines partner-specific configurations for external Microsoft Entra organizations.
     - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
     - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
@@ -351,11 +315,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsCompliantDeviceAccepted <Boolean?>]`: Specifies whether compliant devices from external Microsoft Entra organizations are trusted.
     - `[IsHybridAzureAdJoinedDeviceAccepted <Boolean?>]`: Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.
     - `[IsMfaAccepted <Boolean?>]`: Specifies whether MFA from external Microsoft Entra organizations is trusted.
-  - `[InvitationRedemptionIdentityProviderConfiguration <IMicrosoftGraphDefaultInvitationRedemptionIdentityProviderConfiguration>]`: defaultInvitationRedemptionIdentityProviderConfiguration
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[FallbackIdentityProvider <String>]`: b2bIdentityProvidersType
-    - `[PrimaryIdentityProviderPrecedenceOrder <String[]>]`: Collection of identity providers in priority order of preference to be used for guest invitation redemption. Possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.
-  - `[IsServiceDefault <Boolean?>]`: If true, the default configuration is set to the system default configuration. If false, the default settings are customized.
+  - `[IsServiceDefault <Boolean?>]`: If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
 
 `PARTNERS <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner[]>`: Defines partner-specific configurations for external Microsoft Entra organizations.
   - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
@@ -390,8 +350,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[TenantId <String>]`: The tenant identifier for the partner Microsoft Entra organization. Read-only. Key.
 
 ## RELATED LINKS
-
-
-
-
 

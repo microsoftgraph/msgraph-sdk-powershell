@@ -16,34 +16,30 @@ Create new navigation property to instances for identityGovernance
 ```
 New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance -AccessReviewHistoryDefinitionId <String>
  [-AdditionalProperties <Hashtable>] [-DownloadUri <String>] [-ExpirationDateTime <DateTime>]
- [-FulfilledDateTime <DateTime>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-ReviewHistoryPeriodEndDateTime <DateTime>] [-ReviewHistoryPeriodStartDateTime <DateTime>]
- [-RunDateTime <DateTime>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-FulfilledDateTime <DateTime>] [-Id <String>] [-ReviewHistoryPeriodEndDateTime <DateTime>]
+ [-ReviewHistoryPeriodStartDateTime <DateTime>] [-RunDateTime <DateTime>] [-Status <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance -AccessReviewHistoryDefinitionId <String>
- -BodyParameter <IMicrosoftGraphAccessReviewHistoryInstance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewHistoryInstance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessReviewHistoryInstance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewHistoryInstance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-DownloadUri <String>] [-ExpirationDateTime <DateTime>]
- [-FulfilledDateTime <DateTime>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-ReviewHistoryPeriodEndDateTime <DateTime>] [-ReviewHistoryPeriodStartDateTime <DateTime>]
- [-RunDateTime <DateTime>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-FulfilledDateTime <DateTime>] [-Id <String>] [-ReviewHistoryPeriodEndDateTime <DateTime>]
+ [-ReviewHistoryPeriodStartDateTime <DateTime>] [-RunDateTime <DateTime>] [-Status <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +151,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -199,21 +180,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -317,8 +283,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryInstance
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryInstance
@@ -380,6 +344,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule

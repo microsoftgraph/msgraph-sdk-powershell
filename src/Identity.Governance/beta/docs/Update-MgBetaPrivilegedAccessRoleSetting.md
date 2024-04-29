@@ -18,25 +18,21 @@ Update-MgBetaPrivilegedAccessRoleSetting -GovernanceRoleSettingId <String> -Priv
  [-AdditionalProperties <Hashtable>] [-AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]
  [-AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>] [-Id <String>] [-IsDefault]
  [-LastUpdatedBy <String>] [-LastUpdatedDateTime <DateTime>] [-Resource <IMicrosoftGraphGovernanceResource>]
- [-ResourceId <String>] [-ResponseHeadersVariable <String>]
- [-RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>] [-RoleDefinitionId <String>]
- [-UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]
- [-UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResourceId <String>] [-RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]
+ [-RoleDefinitionId <String>] [-UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]
+ [-UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPrivilegedAccessRoleSetting -GovernanceRoleSettingId <String> -PrivilegedAccessId <String>
- -BodyParameter <IMicrosoftGraphGovernanceRoleSetting> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGovernanceRoleSetting> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPrivilegedAccessRoleSetting -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphGovernanceRoleSetting> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGovernanceRoleSetting> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,11 +41,9 @@ Update-MgBetaPrivilegedAccessRoleSetting -InputObject <IIdentityGovernanceIdenti
  [-AdditionalProperties <Hashtable>] [-AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]
  [-AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>] [-Id <String>] [-IsDefault]
  [-LastUpdatedBy <String>] [-LastUpdatedDateTime <DateTime>] [-Resource <IMicrosoftGraphGovernanceResource>]
- [-ResourceId <String>] [-ResponseHeadersVariable <String>]
- [-RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>] [-RoleDefinitionId <String>]
- [-UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]
- [-UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResourceId <String>] [-RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]
+ [-RoleDefinitionId <String>] [-UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]
+ [-UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,21 +144,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -297,21 +276,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RoleDefinition
 governanceRoleDefinition
 To construct, see NOTES section for ROLEDEFINITION properties and create a hash table.
@@ -417,8 +381,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting
@@ -486,8 +448,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
-          - `[Key <String>]`: Contains the name of the field that a value is associated with.
-          - `[Value <String>]`: Contains the corresponding value for the specified key.
+          - `[Key <String>]`: Key.
+          - `[Value <String>]`: Value.
         - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -573,9 +535,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
@@ -676,8 +638,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
       - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with.
-        - `[Value <String>]`: Contains the corresponding value for the specified key.
+        - `[Key <String>]`: Key.
+        - `[Value <String>]`: Value.
       - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
     - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -742,8 +704,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
-          - `[Key <String>]`: Contains the name of the field that a value is associated with.
-          - `[Value <String>]`: Contains the corresponding value for the specified key.
+          - `[Key <String>]`: Key.
+          - `[Value <String>]`: Value.
         - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -801,8 +763,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Setting <String>]`: The settings of the rule. The value is a JSON string with a list of pairs in the format of ParameterName:ParameterValue. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
 
 ## RELATED LINKS
-
-
-
-
 

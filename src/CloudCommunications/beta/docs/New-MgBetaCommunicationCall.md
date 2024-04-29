@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
-You need to register the calling bot and go through the list of permissions needed.
+You will need to register the calling bot and go through the list of permissions needed.
 
 ## SYNTAX
 
@@ -24,23 +24,21 @@ New-MgBetaCommunicationCall [-ActiveModalities <String[]>] [-AdditionalPropertie
  [-MediaState <IMicrosoftGraphCallMediaState>] [-MeetingCapability <IMicrosoftGraphMeetingCapability>]
  [-MeetingInfo <IMicrosoftGraphMeetingInfo>] [-MyParticipantId <String>]
  [-Operations <IMicrosoftGraphCommsOperation[]>] [-Participants <IMicrosoftGraphParticipant[]>]
- [-RequestedModalities <String[]>] [-ResponseHeadersVariable <String>]
- [-ResultInfo <IMicrosoftGraphResultInfo>] [-RingingTimeoutInSeconds <Int32>] [-RoutingPolicies <String[]>]
- [-Source <IMicrosoftGraphParticipantInfo>] [-State <String>] [-Subject <String>]
- [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>] [-TenantId <String>] [-TerminationReason <String>]
- [-ToneInfo <IMicrosoftGraphToneInfo>] [-Transcription <IMicrosoftGraphCallTranscriptionInfo>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RequestedModalities <String[]>] [-ResultInfo <IMicrosoftGraphResultInfo>]
+ [-RingingTimeoutInSeconds <Int32>] [-RoutingPolicies <String[]>] [-Source <IMicrosoftGraphParticipantInfo>]
+ [-State <String>] [-Subject <String>] [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>]
+ [-TenantId <String>] [-TerminationReason <String>] [-ToneInfo <IMicrosoftGraphToneInfo>]
+ [-Transcription <IMicrosoftGraphCallTranscriptionInfo>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaCommunicationCall -BodyParameter <IMicrosoftGraphCall> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaCommunicationCall -BodyParameter <IMicrosoftGraphCall> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
-You need to register the calling bot and go through the list of permissions needed.
+You will need to register the calling bot and go through the list of permissions needed.
 
 ## EXAMPLES
 
@@ -743,21 +741,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -908,21 +891,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -1138,8 +1106,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCall
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -1466,8 +1432,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[State <String>]`: callTranscriptionState
 
 ## RELATED LINKS
-
-
-
-
 

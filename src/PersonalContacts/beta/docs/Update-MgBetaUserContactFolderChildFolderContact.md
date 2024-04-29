@@ -26,25 +26,23 @@ Update-MgBetaUserContactFolderChildFolderContact -ContactFolderId <String> -Cont
  [-OfficeLocation <String>] [-ParentFolderId <String>] [-PersonalNotes <String>]
  [-Phones <IMicrosoftGraphPhone[]>] [-Photo <IMicrosoftGraphProfilePhoto>]
  [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <String>]
- [-ResponseHeadersVariable <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-Surname <String>] [-Title <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <DateTime>]
- [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
- -ContactId <String> -UserId <String> -BodyParameter <IMicrosoftGraphContact>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -ContactId <String> -UserId <String> -BodyParameter <IMicrosoftGraphContact> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
- -BodyParameter <IMicrosoftGraphContact> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphContact> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -61,11 +59,10 @@ Update-MgBetaUserContactFolderChildFolderContact -InputObject <IPersonalContacts
  [-OfficeLocation <String>] [-ParentFolderId <String>] [-PersonalNotes <String>]
  [-Phones <IMicrosoftGraphPhone[]>] [-Photo <IMicrosoftGraphProfilePhoto>]
  [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <String>]
- [-ResponseHeadersVariable <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-Surname <String>] [-Title <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <DateTime>]
- [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -415,21 +412,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -447,7 +429,7 @@ Accept wildcard characters: False
 ```
 
 ### -ImAddresses
-The contact's instant messaging (IM) addresses.
+.
 
 ```yaml
 Type: System.String[]
@@ -462,7 +444,7 @@ Accept wildcard characters: False
 ```
 
 ### -Initials
-The contact's initials.
+.
 
 ```yaml
 Type: System.String
@@ -508,7 +490,7 @@ Accept wildcard characters: False
 ```
 
 ### -JobTitle
-The contact’s job title.
+.
 
 ```yaml
 Type: System.String
@@ -539,7 +521,7 @@ Accept wildcard characters: False
 ```
 
 ### -Manager
-The name of the contact's manager.
+.
 
 ```yaml
 Type: System.String
@@ -554,7 +536,7 @@ Accept wildcard characters: False
 ```
 
 ### -MiddleName
-The contact's middle name.
+.
 
 ```yaml
 Type: System.String
@@ -587,7 +569,7 @@ Accept wildcard characters: False
 ```
 
 ### -NickName
-The contact's nickname.
+.
 
 ```yaml
 Type: System.String
@@ -602,7 +584,7 @@ Accept wildcard characters: False
 ```
 
 ### -OfficeLocation
-The location of the contact's office.
+.
 
 ```yaml
 Type: System.String
@@ -617,7 +599,7 @@ Accept wildcard characters: False
 ```
 
 ### -ParentFolderId
-The ID of the contact's parent folder.
+.
 
 ```yaml
 Type: System.String
@@ -632,7 +614,7 @@ Accept wildcard characters: False
 ```
 
 ### -PersonalNotes
-The user's notes about the contact.
+.
 
 ```yaml
 Type: System.String
@@ -647,7 +629,7 @@ Accept wildcard characters: False
 ```
 
 ### -Phones
-Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.
+.
 To construct, see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
@@ -679,7 +661,7 @@ Accept wildcard characters: False
 ```
 
 ### -PostalAddresses
-Addresses associated with the contact, for example, home address and business address.
+.
 To construct, see NOTES section for POSTALADDRESSES properties and create a hash table.
 
 ```yaml
@@ -695,27 +677,12 @@ Accept wildcard characters: False
 ```
 
 ### -Profession
-The contact's profession.
+.
 
 ```yaml
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -743,7 +710,7 @@ Accept wildcard characters: False
 ```
 
 ### -SpouseName
-The name of the contact's spouse/partner.
+.
 
 ```yaml
 Type: System.String
@@ -758,7 +725,7 @@ Accept wildcard characters: False
 ```
 
 ### -Surname
-The contact's surname.
+.
 
 ```yaml
 Type: System.String
@@ -773,7 +740,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-The contact's title.
+.
 
 ```yaml
 Type: System.String
@@ -803,7 +770,7 @@ Accept wildcard characters: False
 ```
 
 ### -Websites
-Web sites associated with the contact.
+.
 To construct, see NOTES section for WEBSITES properties and create a hash table.
 
 ```yaml
@@ -819,7 +786,7 @@ Accept wildcard characters: False
 ```
 
 ### -WeddingAnniversary
-The contact's wedding anniversary.
+.
 
 ```yaml
 Type: System.DateTime
@@ -834,7 +801,7 @@ Accept wildcard characters: False
 ```
 
 ### -YomiCompanyName
-The phonetic Japanese company name of the contact.
+.
 
 ```yaml
 Type: System.String
@@ -849,7 +816,7 @@ Accept wildcard characters: False
 ```
 
 ### -YomiGivenName
-The phonetic Japanese given name (first name) of the contact.
+.
 
 ```yaml
 Type: System.String
@@ -864,7 +831,7 @@ Accept wildcard characters: False
 ```
 
 ### -YomiSurname
-The phonetic Japanese surname (last name) of the contact.
+.
 
 ```yaml
 Type: System.String
@@ -918,8 +885,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContact
@@ -966,20 +931,20 @@ To create the parameters described below, construct a hash table containing the 
   - `[Gender <String>]`: The contact's gender.
   - `[Generation <String>]`: The contact's generation.
   - `[GivenName <String>]`: The contact's given name.
-  - `[ImAddresses <String[]>]`: The contact's instant messaging (IM) addresses.
-  - `[Initials <String>]`: The contact's initials.
+  - `[ImAddresses <String[]>]`: 
+  - `[Initials <String>]`: 
   - `[IsFavorite <Boolean?>]`: 
-  - `[JobTitle <String>]`: The contact’s job title.
-  - `[Manager <String>]`: The name of the contact's manager.
-  - `[MiddleName <String>]`: The contact's middle name.
+  - `[JobTitle <String>]`: 
+  - `[Manager <String>]`: 
+  - `[MiddleName <String>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Value <String[]>]`: A collection of property values.
-  - `[NickName <String>]`: The contact's nickname.
-  - `[OfficeLocation <String>]`: The location of the contact's office.
-  - `[ParentFolderId <String>]`: The ID of the contact's parent folder.
-  - `[PersonalNotes <String>]`: The user's notes about the contact.
-  - `[Phones <IMicrosoftGraphPhone[]>]`: Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.
+  - `[NickName <String>]`: 
+  - `[OfficeLocation <String>]`: 
+  - `[ParentFolderId <String>]`: 
+  - `[PersonalNotes <String>]`: 
+  - `[Phones <IMicrosoftGraphPhone[]>]`: 
     - `[Number <String>]`: The phone number.
     - `[Type <String>]`: phoneType
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
@@ -987,7 +952,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Height <Int32?>]`: The height of the photo. Read-only.
     - `[Width <Int32?>]`: The width of the photo. Read-only.
-  - `[PostalAddresses <IMicrosoftGraphPhysicalAddress[]>]`: Addresses associated with the contact, for example, home address and business address.
+  - `[PostalAddresses <IMicrosoftGraphPhysicalAddress[]>]`: 
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[PostOfficeBox <String>]`: The post office box number.
@@ -995,21 +960,21 @@ To create the parameters described below, construct a hash table containing the 
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.
     - `[Type <String>]`: physicalAddressType
-  - `[Profession <String>]`: The contact's profession.
+  - `[Profession <String>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Value <String>]`: A property value.
-  - `[SpouseName <String>]`: The name of the contact's spouse/partner.
-  - `[Surname <String>]`: The contact's surname.
-  - `[Title <String>]`: The contact's title.
-  - `[Websites <IMicrosoftGraphWebsite[]>]`: Web sites associated with the contact.
+  - `[SpouseName <String>]`: 
+  - `[Surname <String>]`: 
+  - `[Title <String>]`: 
+  - `[Websites <IMicrosoftGraphWebsite[]>]`: 
     - `[Address <String>]`: The URL of the website.
     - `[DisplayName <String>]`: The display name of the web site.
     - `[Type <String>]`: websiteType
-  - `[WeddingAnniversary <DateTime?>]`: The contact's wedding anniversary.
-  - `[YomiCompanyName <String>]`: The phonetic Japanese company name of the contact.
-  - `[YomiGivenName <String>]`: The phonetic Japanese given name (first name) of the contact.
-  - `[YomiSurname <String>]`: The phonetic Japanese surname (last name)  of the contact.
+  - `[WeddingAnniversary <DateTime?>]`: 
+  - `[YomiCompanyName <String>]`: 
+  - `[YomiGivenName <String>]`: 
+  - `[YomiSurname <String>]`: 
 
 `EMAILADDRESSES <IMicrosoftGraphTypedEmailAddress[]>`: The contact's email addresses.
   - `[Address <String>]`: The email address of an entity instance.
@@ -1041,7 +1006,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Value <String[]>]`: A collection of property values.
 
-`PHONES <IMicrosoftGraphPhone[]>`: Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.
+`PHONES <IMicrosoftGraphPhone[]>`: .
   - `[Number <String>]`: The phone number.
   - `[Type <String>]`: phoneType
 
@@ -1051,7 +1016,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Height <Int32?>]`: The height of the photo. Read-only.
   - `[Width <Int32?>]`: The width of the photo. Read-only.
 
-`POSTALADDRESSES <IMicrosoftGraphPhysicalAddress[]>`: Addresses associated with the contact, for example, home address and business address.
+`POSTALADDRESSES <IMicrosoftGraphPhysicalAddress[]>`: .
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[PostOfficeBox <String>]`: The post office box number.
@@ -1064,7 +1029,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Value <String>]`: A property value.
 
-`WEBSITES <IMicrosoftGraphWebsite[]>`: Web sites associated with the contact.
+`WEBSITES <IMicrosoftGraphWebsite[]>`: .
   - `[Address <String>]`: The URL of the website.
   - `[DisplayName <String>]`: The display name of the web site.
   - `[Type <String>]`: websiteType

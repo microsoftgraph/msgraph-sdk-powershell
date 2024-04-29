@@ -15,14 +15,13 @@ Get a specific commercial subscription that an organization has acquired.
 ### Get (Default)
 ```
 Get-MgBetaDirectorySubscriptionByOcpSubscriptionId -OcpSubscriptionId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaDirectorySubscriptionByOcpSubscriptionId -InputObject <IIdentityDirectoryManagementIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -180,7 +164,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DomainDnsRecordId <String>]`: The unique identifier of domainDnsRecord
   - `[DomainId <String>]`: The unique identifier of domain
   - `[ExtensionId <String>]`: The unique identifier of extension
-  - `[ExternalUserProfileId <String>]`: The unique identifier of externalUserProfile
   - `[FeatureRolloutPolicyId <String>]`: The unique identifier of featureRolloutPolicy
   - `[IdentityProviderBaseId <String>]`: The unique identifier of identityProviderBase
   - `[ImpactedResourceId <String>]`: The unique identifier of impactedResource
@@ -194,7 +177,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OrganizationId <String>]`: The unique identifier of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: The unique identifier of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: The unique identifier of outboundSharedUserProfile
-  - `[PendingExternalUserProfileId <String>]`: The unique identifier of pendingExternalUserProfile
   - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RecommendationId <String>]`: The unique identifier of recommendation
   - `[RoleTemplateId <String>]`: Alternate key of directoryRole
@@ -209,8 +191,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

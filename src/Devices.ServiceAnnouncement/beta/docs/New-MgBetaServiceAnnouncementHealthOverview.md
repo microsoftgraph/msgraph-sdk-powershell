@@ -15,14 +15,14 @@ Create new navigation property to healthOverviews for admin
 ### CreateExpanded (Default)
 ```
 New-MgBetaServiceAnnouncementHealthOverview [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Issues <IMicrosoftGraphServiceHealthIssue[]>] [-ResponseHeadersVariable <String>] [-Service <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Issues <IMicrosoftGraphServiceHealthIssue[]>] [-Service <String>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaServiceAnnouncementHealthOverview -BodyParameter <IMicrosoftGraphServiceHealth>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaServiceAnnouncementHealthOverview -BodyParameter <IMicrosoftGraphServiceHealth> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,17 +32,17 @@ Create new navigation property to healthOverviews for admin
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 ```
 
-
+Get-MgBetaServiceAnnouncementHealthOverview
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 ```
 
-
+Get-MgBetaServiceAnnouncementHealthOverview -ExpandProperty "issues"
 
 ## PARAMETERS
 
@@ -77,21 +77,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -116,21 +101,6 @@ To construct, see NOTES section for ISSUES properties and create a hash table.
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealthIssue[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -207,8 +177,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealth
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

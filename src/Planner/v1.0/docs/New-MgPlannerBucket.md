@@ -15,14 +15,12 @@ Create a new plannerBucket object.
 ### CreateExpanded (Default)
 ```
 New-MgPlannerBucket [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-OrderHint <String>]
- [-PlanId <String>] [-ResponseHeadersVariable <String>] [-Tasks <IMicrosoftGraphPlannerTask[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PlanId <String>] [-Tasks <IMicrosoftGraphPlannerTask[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPlannerBucket -BodyParameter <IMicrosoftGraphPlannerBucket> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgPlannerBucket -BodyParameter <IMicrosoftGraphPlannerBucket> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,21 +68,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -153,21 +136,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Tasks
 Read-only.
 Nullable.
@@ -223,8 +191,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -358,8 +324,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Title <String>]`: Title of the task.
 
 ## RELATED LINKS
-
-
-
-
 

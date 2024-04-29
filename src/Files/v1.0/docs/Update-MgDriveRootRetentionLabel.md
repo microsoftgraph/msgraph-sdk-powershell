@@ -8,9 +8,11 @@ schema: 2.0.0
 # Update-MgDriveRootRetentionLabel
 
 ## SYNOPSIS
-Lock or unlock a retention label on a driveItem that classifies content as records.
+Apply (set) a retention label on a driveItem (files and folders).
+Retention labels don't need to be published in a retention label policy to be applied using this method.
+When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
+For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
-For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ## SYNTAX
 
@@ -18,37 +20,36 @@ For more information about how you can lock and unlock retention labels, see Use
 ```
 Update-MgDriveRootRetentionLabel -DriveId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-IsLabelAppliedExplicitly] [-LabelAppliedBy <IMicrosoftGraphIdentitySet>] [-LabelAppliedDateTime <DateTime>]
- [-Name <String>] [-ResponseHeadersVariable <String>]
- [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-Name <String>] [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDriveRootRetentionLabel -DriveId <String> -BodyParameter <IMicrosoftGraphItemRetentionLabel>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDriveRootRetentionLabel -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDriveRootRetentionLabel -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-IsLabelAppliedExplicitly] [-LabelAppliedBy <IMicrosoftGraphIdentitySet>]
- [-LabelAppliedDateTime <DateTime>] [-Name <String>] [-ResponseHeadersVariable <String>]
- [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LabelAppliedDateTime <DateTime>] [-Name <String>]
+ [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Lock or unlock a retention label on a driveItem that classifies content as records.
+Apply (set) a retention label on a driveItem (files and folders).
+Retention labels don't need to be published in a retention label policy to be applied using this method.
+When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
+For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
-For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ## EXAMPLES
 
@@ -111,21 +112,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -228,21 +214,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RetentionSettings
 retentionLabelSettings
 To construct, see NOTES section for RETENTIONSETTINGS properties and create a hash table.
@@ -298,8 +269,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemRetentionLabel
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -382,8 +351,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsRecordLocked <Boolean?>]`: Specifies whether the item is locked. Read-write.
 
 ## RELATED LINKS
-
-
-
-
 

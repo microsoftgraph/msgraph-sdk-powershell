@@ -8,16 +8,14 @@ schema: 2.0.0
 # Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm
 
 ## SYNOPSIS
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ## SYNTAX
 
 ### SendExpanded (Default)
 ```
 Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm -OnlineMeetingId <String>
- [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-RemindBeforeTimeInMinutesType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
+ [-AdditionalProperties <Hashtable>] [-PhoneNumbers <String[]>] [-RemindBeforeTimeInMinutesType <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -25,29 +23,25 @@ Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm -OnlineMeeting
 ```
 Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm -OnlineMeetingId <String>
  -BodyParameter <IPaths1Hwkb04CommunicationsOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
 Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths1Hwkb04CommunicationsOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentityExpanded
 ```
 Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-RemindBeforeTimeInMinutesType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
+ [-AdditionalProperties <Hashtable>] [-PhoneNumbers <String[]>] [-RemindBeforeTimeInMinutesType <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ## EXAMPLES
 
@@ -82,22 +76,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Attendees
-.
-To construct, see NOTES section for ATTENDEES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttendeeNotificationInfo[]
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -BodyParameter
 .
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -108,21 +86,6 @@ Parameter Sets: Send, SendViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -175,11 +138,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RemindBeforeTimeInMinutesType
-remindBeforeTimeInMinutesType
+### -PhoneNumbers
+.
 
 ```yaml
-Type: System.String
+Type: System.String[]
 Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
@@ -190,13 +153,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
+### -RemindBeforeTimeInMinutesType
+remindBeforeTimeInMinutesType
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Aliases:
 
 Required: False
 Position: Named
@@ -245,8 +208,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Hwkb04CommunicationsOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -260,15 +221,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ATTENDEES <IMicrosoftGraphAttendeeNotificationInfo[]>`: .
-  - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-  - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
-
 `BODYPARAMETER <IPaths1Hwkb04CommunicationsOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]`: 
-    - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-    - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
+  - `[PhoneNumbers <String[]>]`: 
   - `[RemindBeforeTimeInMinutesType <String>]`: remindBeforeTimeInMinutesType
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
@@ -281,7 +236,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
@@ -293,8 +247,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

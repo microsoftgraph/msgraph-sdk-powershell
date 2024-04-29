@@ -16,14 +16,13 @@ Create a new acronym object.
 ```
 New-MgBetaSearchAcronym [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphSearchIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-StandsFor <String>] [-State <String>] [-WebUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StandsFor <String>] [-State <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSearchAcronym -BodyParameter <IMicrosoftGraphSearchAcronym> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSearchAcronym -BodyParameter <IMicrosoftGraphSearchAcronym> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,17 +33,17 @@ Create a new acronym object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Search
+$params = @{
+	DisplayName = "DNN"
+	StandsFor = "Deep Neural Network"
+	Description = "A deep neural network is a neural network with a certain level of complexity, a neural network with more than two layers."
+	WebUrl = "http://microsoft.com/deep-neural-network"
+	State = "draft"
+}
+New-MgBetaSearchAcronym -BodyParameter $params
 ```
 
-$params = @{
-	displayName = "DNN"
-	standsFor = "Deep Neural Network"
-	description = "A deep neural network is a neural network with a certain level of complexity, a neural network with more than two layers."
-	webUrl = "http://microsoft.com/deep-neural-network"
-	state = "draft"
-}
 
-New-MgBetaSearchAcronym -BodyParameter $params
 
 ## PARAMETERS
 
@@ -80,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The search answer description that is shown on the search results page.
+Search answer description shown on search results page.
 
 ```yaml
 Type: System.String
@@ -95,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The search answer name that is displayed in search results.
+Search answer name displayed in search results.
 
 ```yaml
 Type: System.String
@@ -106,21 +105,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -157,30 +141,13 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-Date and time when the search answer was created or last edited.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+Timestamp of when the search answer is created or edited.
 Read-only.
 
 ```yaml
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -220,8 +187,8 @@ Accept wildcard characters: False
 ```
 
 ### -WebUrl
-The URL link for the search answer.
-When users select this search answer from the search results, they're directed to the specified URL.
+Search answer URL link.
+When users click this search answer in search results, they'll go to this URL.
 
 ```yaml
 Type: System.String
@@ -273,8 +240,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAcronym
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAcronym
@@ -290,8 +255,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphSearchAcronym>`: acronym
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Description <String>]`: The search answer description that is shown on the search results page.
-  - `[DisplayName <String>]`: The search answer name that is displayed in search results.
+  - `[Description <String>]`: Search answer description shown on search results page.
+  - `[DisplayName <String>]`: Search answer name displayed in search results.
   - `[LastModifiedBy <IMicrosoftGraphSearchIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphSearchIdentity>]`: identity
@@ -300,8 +265,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: 
     - `[Device <IMicrosoftGraphSearchIdentity>]`: identity
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  - `[WebUrl <String>]`: The URL link for the search answer. When users select this search answer from the search results, they're directed to the specified URL.
+  - `[LastModifiedDateTime <DateTime?>]`: Timestamp of when the search answer is created or edited. Read-only.
+  - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they'll go to this URL.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[StandsFor <String>]`: What the acronym stands for.
   - `[State <String>]`: answerState
@@ -316,8 +281,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[User <IMicrosoftGraphSearchIdentity>]`: identity
 
 ## RELATED LINKS
-
-
-
-
 

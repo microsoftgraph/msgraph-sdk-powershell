@@ -18,23 +18,20 @@ Update-MgBetaIdentityGovernanceTermsOfUseAgreement -AgreementId <String>
  [-Acceptances <IMicrosoftGraphAgreementAcceptance[]>] [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-File <IMicrosoftGraphAgreementFile>]
  [-Files <IMicrosoftGraphAgreementFileLocalization[]>] [-Id <String>] [-IsPerDeviceAcceptanceRequired]
- [-IsViewingBeforeAcceptanceRequired] [-ResponseHeadersVariable <String>]
- [-TermsExpiration <IMicrosoftGraphTermsExpiration>] [-UserReacceptRequiredFrequency <TimeSpan>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsViewingBeforeAcceptanceRequired] [-TermsExpiration <IMicrosoftGraphTermsExpiration>]
+ [-UserReacceptRequiredFrequency <TimeSpan>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityGovernanceTermsOfUseAgreement -AgreementId <String>
- -BodyParameter <IMicrosoftGraphAgreement> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAgreement> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaIdentityGovernanceTermsOfUseAgreement -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAgreement> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAgreement> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,9 +40,8 @@ Update-MgBetaIdentityGovernanceTermsOfUseAgreement -InputObject <IIdentityGovern
  [-Acceptances <IMicrosoftGraphAgreementAcceptance[]>] [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-File <IMicrosoftGraphAgreementFile>]
  [-Files <IMicrosoftGraphAgreementFileLocalization[]>] [-Id <String>] [-IsPerDeviceAcceptanceRequired]
- [-IsViewingBeforeAcceptanceRequired] [-ResponseHeadersVariable <String>]
- [-TermsExpiration <IMicrosoftGraphTermsExpiration>] [-UserReacceptRequiredFrequency <TimeSpan>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsViewingBeforeAcceptanceRequired] [-TermsExpiration <IMicrosoftGraphTermsExpiration>]
+ [-UserReacceptRequiredFrequency <TimeSpan>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -134,7 +130,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 Display name of the agreement.
-The display name is used for internal tracking of the agreement but isn't shown to end users who view the agreement.
+The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.
 Supports $filter (eq).
 
 ```yaml
@@ -183,21 +179,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -231,8 +212,8 @@ Accept wildcard characters: False
 ```
 
 ### -IsPerDeviceAcceptanceRequired
-This setting enables you to require end users to accept this agreement on every device that they're accessing it from.
-The end user is required to register their device in Microsoft Entra ID, if they haven't already done so.
+This setting enables you to require end users to accept this agreement on every device that they are accessing it from.
+The end user will be required to register their device in Microsoft Entra ID, if they haven't already done so.
 Supports $filter (eq).
 
 ```yaml
@@ -263,21 +244,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TermsExpiration
 termsExpiration
 To construct, see NOTES section for TERMSEXPIRATION properties and create a hash table.
@@ -295,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserReacceptRequiredFrequency
-The duration after which the user must reaccept the terms of use.
+The duration after which the user must re-accept the terms of use.
 The value is represented in ISO 8601 format for durations.
 
 ```yaml
@@ -350,8 +316,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreement
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreement
@@ -399,7 +363,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
     - `[UserId <String>]`: ID of the user who accepted the agreement. Supports $filter (eq).
     - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
-  - `[DisplayName <String>]`: Display name of the agreement. The display name is used for internal tracking of the agreement but isn't shown to end users who view the agreement. Supports $filter (eq).
+  - `[DisplayName <String>]`: Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
   - `[File <IMicrosoftGraphAgreementFile>]`: agreementFile
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -431,13 +395,13 @@ To create the parameters described below, construct a hash table containing the 
         - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Files <IMicrosoftGraphAgreementFileLocalization[]>]`: PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
-  - `[IsPerDeviceAcceptanceRequired <Boolean?>]`: This setting enables you to require end users to accept this agreement on every device that they're accessing it from. The end user is required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
+  - `[IsPerDeviceAcceptanceRequired <Boolean?>]`: This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
   - `[IsViewingBeforeAcceptanceRequired <Boolean?>]`: Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
   - `[TermsExpiration <IMicrosoftGraphTermsExpiration>]`: termsExpiration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Frequency <TimeSpan?>]`: Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of one month.
     - `[StartDateTime <DateTime?>]`: The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[UserReacceptRequiredFrequency <TimeSpan?>]`: The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations.
+  - `[UserReacceptRequiredFrequency <TimeSpan?>]`: The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
 
 `FILE <IMicrosoftGraphAgreementFile>`: agreementFile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -540,9 +504,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
@@ -598,8 +562,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <DateTime?>]`: The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ## RELATED LINKS
-
-
-
-
 

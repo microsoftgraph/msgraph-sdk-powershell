@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSearchBookmark
 
 ## SYNOPSIS
-Delete a bookmark object.
+Delete navigation property bookmarks for search
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSearchBookmark -InputObject <ISearchIdentity> [-IfMatch <String>] [-Res
 ```
 
 ## DESCRIPTION
-Delete a bookmark object.
+Delete navigation property bookmarks for search
 
 ## EXAMPLES
 
@@ -201,8 +201,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[QnaId <String>]`: The unique identifier of qna
 
 ## RELATED LINKS
-
-
-
-
 

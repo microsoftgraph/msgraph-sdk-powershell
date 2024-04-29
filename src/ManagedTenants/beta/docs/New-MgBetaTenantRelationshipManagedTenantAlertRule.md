@@ -18,18 +18,17 @@ New-MgBetaTenantRelationshipManagedTenantAlertRule [-AdditionalProperties <Hasht
  [-AlertDisplayName <String>] [-Alerts <IMicrosoftGraphManagedTenantsManagedTenantAlert[]>]
  [-AlertTtl <Int32>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
- [-LastRunDateTime <DateTime>] [-NotificationFinalDestinations <String>] [-ResponseHeadersVariable <String>]
+ [-LastRunDateTime <DateTime>] [-NotificationFinalDestinations <String>]
  [-RuleDefinition <IMicrosoftGraphManagedTenantsManagedTenantAlertRuleDefinition>] [-Severity <String>]
  [-Targets <IMicrosoftGraphManagedTenantsNotificationTarget[]>]
- [-TenantIds <IMicrosoftGraphManagedTenantsTenantInfo[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TenantIds <IMicrosoftGraphManagedTenantsTenantInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantAlertRule
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlertRule> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlertRule> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -190,21 +189,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -273,21 +257,6 @@ notificationDestination
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -396,8 +365,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlertRule
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

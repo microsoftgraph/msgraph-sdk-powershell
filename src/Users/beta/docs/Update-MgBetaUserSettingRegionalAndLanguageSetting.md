@@ -19,7 +19,7 @@ Update-MgBetaUserSettingRegionalAndLanguageSetting -UserId <String> [-Additional
  [-DefaultRegionalFormat <IMicrosoftGraphLocaleInfo>]
  [-DefaultSpeechInputLanguage <IMicrosoftGraphLocaleInfo>]
  [-DefaultTranslationLanguage <IMicrosoftGraphLocaleInfo>] [-Id <String>]
- [-RegionalFormatOverrides <IMicrosoftGraphRegionalFormatOverrides>] [-ResponseHeadersVariable <String>]
+ [-RegionalFormatOverrides <IMicrosoftGraphRegionalFormatOverrides>]
  [-TranslationPreferences <IMicrosoftGraphTranslationPreferences>] [-Headers <IDictionary>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -27,15 +27,15 @@ Update-MgBetaUserSettingRegionalAndLanguageSetting -UserId <String> [-Additional
 ### Update
 ```
 Update-MgBetaUserSettingRegionalAndLanguageSetting -UserId <String>
- -BodyParameter <IMicrosoftGraphRegionalAndLanguageSettings> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRegionalAndLanguageSettings> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity>
- -BodyParameter <IMicrosoftGraphRegionalAndLanguageSettings> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRegionalAndLanguageSettings> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,7 +45,7 @@ Update-MgBetaUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity>
  [-DefaultDisplayLanguage <IMicrosoftGraphLocaleInfo>] [-DefaultRegionalFormat <IMicrosoftGraphLocaleInfo>]
  [-DefaultSpeechInputLanguage <IMicrosoftGraphLocaleInfo>]
  [-DefaultTranslationLanguage <IMicrosoftGraphLocaleInfo>] [-Id <String>]
- [-RegionalFormatOverrides <IMicrosoftGraphRegionalFormatOverrides>] [-ResponseHeadersVariable <String>]
+ [-RegionalFormatOverrides <IMicrosoftGraphRegionalFormatOverrides>]
  [-TranslationPreferences <IMicrosoftGraphTranslationPreferences>] [-Headers <IDictionary>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -346,6 +346,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRegionalAndLanguageSettings
 
+### System.Collections.Hashtable
+
 ## NOTES
 
 ALIASES
@@ -407,7 +409,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Locale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
@@ -424,15 +425,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
-  - `[ServiceStorageQuotaBreakdownId <String>]`: The unique identifier of serviceStorageQuotaBreakdown
   - `[SharedInsightId <String>]`: The unique identifier of sharedInsight
   - `[TodoTaskId <String>]`: The unique identifier of todoTask
   - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[TrendingId <String>]`: The unique identifier of trending
   - `[UsedInsightId <String>]`: The unique identifier of usedInsight
   - `[UserId <String>]`: The unique identifier of user
-  - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
-  - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 `REGIONALFORMATOVERRIDES <IMicrosoftGraphRegionalFormatOverrides>`: regionalFormatOverrides
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -27,17 +27,17 @@ Update-MgDeviceAppManagement [-AdditionalProperties <Hashtable>]
  [-MicrosoftStoreForBusinessLastSuccessfulSyncDateTime <DateTime>]
  [-MobileAppCategories <IMicrosoftGraphMobileAppCategory[]>]
  [-MobileAppConfigurations <IMicrosoftGraphManagedDeviceMobileAppConfiguration[]>]
- [-MobileApps <IMicrosoftGraphMobileApp[]>] [-ResponseHeadersVariable <String>]
+ [-MobileApps <IMicrosoftGraphMobileApp[]>]
  [-TargetedManagedAppConfigurations <IMicrosoftGraphTargetedManagedAppConfiguration[]>]
  [-VppTokens <IMicrosoftGraphVppToken[]>]
- [-WindowsInformationProtectionPolicies <IMicrosoftGraphWindowsInformationProtectionPolicy[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WindowsInformationProtectionPolicies <IMicrosoftGraphWindowsInformationProtectionPolicy[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDeviceAppManagement -BodyParameter <IMicrosoftGraphDeviceAppManagement>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgDeviceAppManagement -BodyParameter <IMicrosoftGraphDeviceAppManagement> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +121,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -363,21 +348,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TargetedManagedAppConfigurations
 Targeted managed app configurations.
 To construct, see NOTES section for TARGETEDMANAGEDAPPCONFIGURATIONS properties and create a hash table.
@@ -463,8 +433,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAppManagement
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -839,6 +807,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[MobileAppCategories <IMicrosoftGraphMobileAppCategory[]>]`: The mobile app categories.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the app category.
+    - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
   - `[MobileAppConfigurations <IMicrosoftGraphManagedDeviceMobileAppConfiguration[]>]`: The Managed Device Mobile Application Configurations.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>]`: The list of group assignemenets for app configration.
@@ -895,12 +864,14 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
+    - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
     - `[Description <String>]`: The description of the app.
     - `[Developer <String>]`: The developer of the app.
     - `[DisplayName <String>]`: The admin provided or imported title of the app.
     - `[InformationUrl <String>]`: The more information Url.
     - `[IsFeatured <Boolean?>]`: The value indicating whether the app is marked as featured by the admin.
     - `[LargeIcon <IMicrosoftGraphMimeContent>]`: Contains properties for a generic mime content.
+    - `[LastModifiedDateTime <DateTime?>]`: The date and time the app was last modified.
     - `[Notes <String>]`: Notes for the app.
     - `[Owner <String>]`: The owner of the app.
     - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
@@ -1250,6 +1221,7 @@ To create the parameters described below, construct a hash table containing the 
 `MOBILEAPPCATEGORIES <IMicrosoftGraphMobileAppCategory[]>`: The mobile app categories.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The name of the app category.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
 
 `MOBILEAPPCONFIGURATIONS <IMicrosoftGraphManagedDeviceMobileAppConfiguration[]>`: The Managed Device Mobile Application Configurations.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1312,6 +1284,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the app category.
+    - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
+  - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
   - `[Description <String>]`: The description of the app.
   - `[Developer <String>]`: The developer of the app.
   - `[DisplayName <String>]`: The admin provided or imported title of the app.
@@ -1321,6 +1295,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String>]`: Indicates the content mime type.
     - `[Value <Byte[]>]`: The byte array that contains the actual content.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time the app was last modified.
   - `[Notes <String>]`: Notes for the app.
   - `[Owner <String>]`: The owner of the app.
   - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
@@ -1445,8 +1420,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsHelloForBusinessBlocked <Boolean?>]`: Boolean value that sets Windows Hello for Business as a method for signing into Windows.
 
 ## RELATED LINKS
-
-
-
-
 

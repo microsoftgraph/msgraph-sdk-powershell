@@ -15,45 +15,39 @@ Invoke action applyHold
 ### ApplyExpanded (Default)
 ```
 Add-MgBetaComplianceEdiscoveryCaseCustodianHold -CaseId <String> [-AdditionalProperties <Hashtable>]
- [-Ids <String[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Apply
 ```
-Add-MgBetaComplianceEdiscoveryCaseCustodianHold -CaseId <String> -CustodianId <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Add-MgBetaComplianceEdiscoveryCaseCustodianHold -CaseId <String> -CustodianId <String> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Apply1
 ```
 Add-MgBetaComplianceEdiscoveryCaseCustodianHold -CaseId <String>
  -BodyParameter <IPathsWwm7HsComplianceEdiscoveryCasesCaseIdCustodiansMicrosoftGraphEdiscoveryApplyholdPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ApplyViaIdentity
 ```
-Add-MgBetaComplianceEdiscoveryCaseCustodianHold -InputObject <IComplianceIdentity>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Add-MgBetaComplianceEdiscoveryCaseCustodianHold -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### ApplyViaIdentity1
 ```
 Add-MgBetaComplianceEdiscoveryCaseCustodianHold -InputObject <IComplianceIdentity>
  -BodyParameter <IPathsWwm7HsComplianceEdiscoveryCasesCaseIdCustodiansMicrosoftGraphEdiscoveryApplyholdPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ApplyViaIdentityExpanded
 ```
 Add-MgBetaComplianceEdiscoveryCaseCustodianHold -InputObject <IComplianceIdentity>
- [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,21 +132,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Ids
 .
 
@@ -191,21 +170,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -253,8 +217,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsWwm7HsComplianceEdiscoveryCasesCaseIdCustodiansMicrosoftGraphEdiscoveryApplyholdPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

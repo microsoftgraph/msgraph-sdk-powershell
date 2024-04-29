@@ -24,8 +24,7 @@ To learn more about configuring naming policies, see Configure naming policy.
 ### ValidateExpanded (Default)
 ```
 Test-MgDirectoryDeletedItemProperty [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
- [-EntityType <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ [-EntityType <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -33,8 +32,7 @@ Test-MgDirectoryDeletedItemProperty [-AdditionalProperties <Hashtable>] [-Displa
 ```
 Test-MgDirectoryDeletedItemProperty
  -BodyParameter <IPaths12Jg47YDirectoryDeleteditemsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,17 +51,17 @@ To learn more about configuring naming policies, see Configure naming policy.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.DirectoryObjects
 ```
 
+$params = @{
+	EntityType = "Group"
+	DisplayName = "Myprefix_test_mysuffix"
+	MailNickname = "Myprefix_test_mysuffix"
+	OnBehalfOfUserId = "onBehalfOfUserId-value"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Test-MgDirectoryObjectProperty -BodyParameter $params
 
 ## PARAMETERS
 
@@ -128,21 +126,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -MailNickname
 .
 
@@ -180,21 +163,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -241,8 +209,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths12Jg47YDirectoryDeleteditemsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -264,8 +230,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnBehalfOfUserId <String>]`: 
 
 ## RELATED LINKS
-
-
-
-
 

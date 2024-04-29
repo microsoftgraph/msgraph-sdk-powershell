@@ -18,9 +18,8 @@ For more information, see: Lifecycle Workflows extensibility approach.
 ```
 Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult -TaskId <String>
  -TaskProcessingResultId <String> -WorkflowId <String> [-AdditionalProperties <Hashtable>]
- [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>]
- [-ResponseHeadersVariable <String>] [-Source <String>] [-Type <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Resume
@@ -28,25 +27,22 @@ Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult -TaskId <String
 Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult -TaskId <String>
  -TaskProcessingResultId <String> -WorkflowId <String>
  -BodyParameter <IPathsO6Ec5IIdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentity
 ```
 Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPathsO6Ec5IIdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentityExpanded
 ```
 Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>]
- [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>]
- [-ResponseHeadersVariable <String>] [-Source <String>] [-Type <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -119,21 +115,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -157,21 +138,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -295,8 +261,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPathsO6Ec5IIdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -359,6 +323,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
@@ -392,8 +357,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkflowVersionNumber <Int32?>]`: The unique identifier of workflowVersion
 
 ## RELATED LINKS
-
-
-
-
 

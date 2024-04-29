@@ -17,32 +17,30 @@ This feature requires Teams Premium and attendees must have a valid United State
 ```
 Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm -JoinWebUrl <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-RemindBeforeTimeInMinutesType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RemindBeforeTimeInMinutesType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Send
 ```
 Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm -JoinWebUrl <String> -UserId <String>
  -BodyParameter <IPaths1Iwum32UsersUserIdOnlinemeetingsJoinweburlMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
 Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Iwum32UsersUserIdOnlinemeetingsJoinweburlMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentityExpanded
 ```
 Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-RemindBeforeTimeInMinutesType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RemindBeforeTimeInMinutesType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -190,21 +188,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -276,14 +259,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `ATTENDEES <IMicrosoftGraphAttendeeNotificationInfo[]>`: .
-  - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-  - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
+  - `[PhoneNumber <String>]`: 
+  - `[TimeZone <String>]`: 
 
 `BODYPARAMETER <IPaths1Iwum32UsersUserIdOnlinemeetingsJoinweburlMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]`: 
-    - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-    - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
+    - `[PhoneNumber <String>]`: 
+    - `[TimeZone <String>]`: 
   - `[RemindBeforeTimeInMinutesType <String>]`: remindBeforeTimeInMinutesType
 
 `INPUTOBJECT <IUsersActionsIdentity>`: Identity Parameter
@@ -330,8 +313,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

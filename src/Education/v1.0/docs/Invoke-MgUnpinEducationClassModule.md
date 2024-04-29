@@ -8,28 +8,24 @@ schema: 2.0.0
 # Invoke-MgUnpinEducationClassModule
 
 ## SYNOPSIS
-Unpin an educationModule in the classwork list.
-This action sets the isPinned property to false for an educationModule.
-Only teachers in the class can perform this operation.
+Invoke action unpin
 
 ## SYNTAX
 
 ### Unpin (Default)
 ```
 Invoke-MgUnpinEducationClassModule -EducationClassId <String> -EducationModuleId <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnpinViaIdentity
 ```
-Invoke-MgUnpinEducationClassModule -InputObject <IEducationIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgUnpinEducationClassModule -InputObject <IEducationIdentity> [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Unpin an educationModule in the classwork list.
-This action sets the isPinned property to false for an educationModule.
-Only teachers in the class can perform this operation.
+Invoke action unpin
 
 ## EXAMPLES
 
@@ -110,21 +106,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -194,8 +175,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationUserId <String>]`: The unique identifier of educationUser
 
 ## RELATED LINKS
-
-
-
-
 

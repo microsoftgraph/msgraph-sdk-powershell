@@ -17,31 +17,27 @@ For details about how to use this API to add pull printing support to Universal 
 ```
 Update-MgPrintTaskDefinitionTask -PrintTaskDefinitionId <String> -PrintTaskId <String>
  [-AdditionalProperties <Hashtable>] [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Id <String>]
- [-ParentUrl <String>] [-ResponseHeadersVariable <String>] [-Status <IMicrosoftGraphPrintTaskStatus>]
- [-Trigger <IMicrosoftGraphPrintTaskTrigger>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ParentUrl <String>] [-Status <IMicrosoftGraphPrintTaskStatus>] [-Trigger <IMicrosoftGraphPrintTaskTrigger>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPrintTaskDefinitionTask -PrintTaskDefinitionId <String> -PrintTaskId <String>
- -BodyParameter <IMicrosoftGraphPrintTask> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPrintTaskDefinitionTask -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintTask> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgPrintTaskDefinitionTask -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
  [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Id <String>] [-ParentUrl <String>]
- [-ResponseHeadersVariable <String>] [-Status <IMicrosoftGraphPrintTaskStatus>]
- [-Trigger <IMicrosoftGraphPrintTaskTrigger>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-Status <IMicrosoftGraphPrintTaskStatus>] [-Trigger <IMicrosoftGraphPrintTaskTrigger>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -111,21 +107,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -208,21 +189,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Status
 printTaskStatus
 To construct, see NOTES section for STATUS properties and create a hash table.
@@ -294,8 +260,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTask
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -404,8 +368,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Event <String>]`: printEvent
 
 ## RELATED LINKS
-
-
-
-
 

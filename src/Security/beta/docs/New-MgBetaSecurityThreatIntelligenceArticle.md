@@ -17,15 +17,14 @@ Create new navigation property to articles for security
 New-MgBetaSecurityThreatIntelligenceArticle [-AdditionalProperties <Hashtable>]
  [-Body <IMicrosoftGraphSecurityFormattedContent>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-ImageUrl <String>] [-Indicators <IMicrosoftGraphSecurityArticleIndicator[]>] [-IsFeatured]
- [-LastUpdatedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-Summary <IMicrosoftGraphSecurityFormattedContent>] [-Tags <String[]>] [-Title <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastUpdatedDateTime <DateTime>] [-Summary <IMicrosoftGraphSecurityFormattedContent>] [-Tags <String[]>]
+ [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityThreatIntelligenceArticle -BodyParameter <IMicrosoftGraphSecurityArticle>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityThreatIntelligenceArticle -BodyParameter <IMicrosoftGraphSecurityArticle> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,21 +112,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -199,21 +183,6 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -305,8 +274,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityArticle
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

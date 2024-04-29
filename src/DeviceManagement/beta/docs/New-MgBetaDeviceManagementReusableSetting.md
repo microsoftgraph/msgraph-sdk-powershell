@@ -20,18 +20,16 @@ New-MgBetaDeviceManagementReusableSetting [-AccessTypes <String>] [-AdditionalPr
  [-InfoUrls <String[]>] [-Keywords <String[]>] [-Name <String>]
  [-Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>] [-OffsetUri <String>]
  [-ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]
- [-ResponseHeadersVariable <String>] [-RootDefinitionId <String>]
- [-SettingUsage <DeviceManagementConfigurationSettingUsage>]
+ [-RootDefinitionId <String>] [-SettingUsage <DeviceManagementConfigurationSettingUsage>]
  [-UxBehavior <DeviceManagementConfigurationControlType>] [-Version <String>]
- [-Visibility <DeviceManagementConfigurationSettingVisibility>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Visibility <DeviceManagementConfigurationSettingVisibility>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementReusableSetting
- -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -179,21 +177,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HelpText
 Help text of the setting.
 Give more details of the setting.
@@ -318,21 +301,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RootDefinitionId
 Root setting definition id if the setting is a child setting.
 
@@ -445,8 +413,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -8,42 +8,39 @@ schema: 2.0.0
 # Remove-MgDirectoryDeletedItem
 
 ## SYNOPSIS
-Delete navigation property deletedItems for directory
+Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items.
+After an item is permanently deleted, it cannot be restored.
+Administrative units cannot be permanently deleted by using the deletedItems API.
+Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-MgDirectoryDeletedItem -DirectoryObjectId <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgDirectoryDeletedItem -DirectoryObjectId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property deletedItems for directory
+Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items.
+After an item is permanently deleted, it cannot be restored.
+Administrative units cannot be permanently deleted by using the deletedItems API.
+Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Remove-MgDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
 
 ## PARAMETERS
 
@@ -59,21 +56,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -123,21 +105,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -175,8 +142,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -218,8 +183,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

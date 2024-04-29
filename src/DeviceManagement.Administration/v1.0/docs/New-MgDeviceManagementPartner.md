@@ -17,16 +17,15 @@ Create a new deviceManagementPartner object.
 New-MgDeviceManagementPartner [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-GroupsRequiringPartnerEnrollment <IMicrosoftGraphDeviceManagementPartnerAssignment[]>] [-Id <String>]
  [-IsConfigured] [-LastHeartbeatDateTime <DateTime>] [-PartnerAppType <DeviceManagementPartnerAppType>]
- [-PartnerState <DeviceManagementPartnerTenantState>] [-ResponseHeadersVariable <String>]
- [-SingleTenantAppId <String>] [-WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime <DateTime>]
- [-WhenPartnerDevicesWillBeRemovedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PartnerState <DeviceManagementPartnerTenantState>] [-SingleTenantAppId <String>]
+ [-WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime <DateTime>]
+ [-WhenPartnerDevicesWillBeRemovedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementPartner -BodyParameter <IMicrosoftGraphDeviceManagementPartner>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDeviceManagementPartner -BodyParameter <IMicrosoftGraphDeviceManagementPartner> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -112,21 +111,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -195,21 +179,6 @@ Partner state of this tenant.
 Type: Microsoft.Graph.PowerShell.Support.DeviceManagementPartnerTenantState
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -301,8 +270,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPartner
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPartner
@@ -336,8 +303,4 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
-
-
-
-
 

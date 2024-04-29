@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
-Module Guid: da4e11a1-29af-4b5d-b0b5-62b4ee0b3c0a
+Module Guid: 7279faba-0b1f-4fb3-8ad7-a54f239c20d3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -109,18 +109,6 @@ Invoke function getNonCompliantSettings
 
 ### [Get-MgBetaDeviceManagementMonitoringAlertRecordPortalNotification](Get-MgBetaDeviceManagementMonitoringAlertRecordPortalNotification.md)
 Invoke function getPortalNotifications
-
-### [Get-MgBetaDeviceManagementOperationApprovalPolicyApprovableOperation](Get-MgBetaDeviceManagementOperationApprovalPolicyApprovableOperation.md)
-Invoke function getApprovableOperations
-
-### [Get-MgBetaDeviceManagementOperationApprovalPolicyOperationRequiringApproval](Get-MgBetaDeviceManagementOperationApprovalPolicyOperationRequiringApproval.md)
-Invoke function getOperationsRequiringApproval
-
-### [Get-MgBetaDeviceManagementOperationApprovalRequestMyRequest](Get-MgBetaDeviceManagementOperationApprovalRequestMyRequest.md)
-Invoke function retrieveMyRequests
-
-### [Get-MgBetaDeviceManagementOperationApprovalRequestMyRequestById](Get-MgBetaDeviceManagementOperationApprovalRequestMyRequestById.md)
-Invoke function retrieveMyRequestById
 
 ### [Get-MgBetaDeviceManagementResourceOperationScopeForUser](Get-MgBetaDeviceManagementResourceOperationScopeForUser.md)
 Invoke function getScopesForUser

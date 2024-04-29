@@ -22,23 +22,20 @@ Update-MgBetaDeviceManagementManagedDeviceWindowsProtectionState -ManagedDeviceI
  [-LastFullScanSignatureVersion <String>] [-LastQuickScanDateTime <DateTime>]
  [-LastQuickScanSignatureVersion <String>] [-LastReportedDateTime <DateTime>] [-MalwareProtectionEnabled]
  [-NetworkInspectionSystemEnabled] [-ProductStatus <WindowsDefenderProductStatus>] [-QuickScanOverdue]
- [-RealTimeProtectionEnabled] [-RebootRequired] [-ResponseHeadersVariable <String>] [-SignatureUpdateOverdue]
- [-SignatureVersion <String>] [-TamperProtectionEnabled] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RealTimeProtectionEnabled] [-RebootRequired] [-SignatureUpdateOverdue] [-SignatureVersion <String>]
+ [-TamperProtectionEnabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementManagedDeviceWindowsProtectionState -ManagedDeviceId <String>
- -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementManagedDeviceWindowsProtectionState -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -51,9 +48,8 @@ Update-MgBetaDeviceManagementManagedDeviceWindowsProtectionState -InputObject <I
  [-LastFullScanSignatureVersion <String>] [-LastQuickScanDateTime <DateTime>]
  [-LastQuickScanSignatureVersion <String>] [-LastReportedDateTime <DateTime>] [-MalwareProtectionEnabled]
  [-NetworkInspectionSystemEnabled] [-ProductStatus <WindowsDefenderProductStatus>] [-QuickScanOverdue]
- [-RealTimeProtectionEnabled] [-RebootRequired] [-ResponseHeadersVariable <String>] [-SignatureUpdateOverdue]
- [-SignatureVersion <String>] [-TamperProtectionEnabled] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RealTimeProtectionEnabled] [-RebootRequired] [-SignatureUpdateOverdue] [-SignatureVersion <String>]
+ [-TamperProtectionEnabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -198,21 +194,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -448,21 +429,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SignatureUpdateOverdue
 When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date.
 Defaults to setting on client device.
@@ -549,8 +515,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsProtectionState
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -643,7 +607,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceConfigurationDeviceStatusId <String>]`: The unique identifier of deviceConfigurationDeviceStatus
   - `[DeviceConfigurationGroupAssignmentId <String>]`: The unique identifier of deviceConfigurationGroupAssignment
   - `[DeviceConfigurationId <String>]`: The unique identifier of deviceConfiguration
-  - `[DeviceConfigurationProfileId <String>]`: The unique identifier of deviceConfigurationProfile
   - `[DeviceConfigurationStateId <String>]`: The unique identifier of deviceConfigurationState
   - `[DeviceConfigurationUserStatusId <String>]`: The unique identifier of deviceConfigurationUserStatus
   - `[DeviceHealthScriptAssignmentId <String>]`: The unique identifier of deviceHealthScriptAssignment
@@ -695,7 +658,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

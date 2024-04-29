@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Send activity feed notifications to multiple users, in bulk.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ## SYNTAX
 
@@ -17,23 +17,21 @@ For more information, see sending Teams activity notifications.
 ```
 Send-MgTeamworkActivityNotificationToRecipient [-ActivityType <String>] [-AdditionalProperties <Hashtable>]
  [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>]
- [-Recipients <IMicrosoftGraphTeamworkNotificationRecipient[]>] [-ResponseHeadersVariable <String>]
- [-TeamsAppId <String>] [-TemplateParameters <IMicrosoftGraphKeyValuePair[]>]
- [-Topic <IMicrosoftGraphTeamworkActivityTopic>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Recipients <IMicrosoftGraphTeamworkNotificationRecipient[]>] [-TeamsAppId <String>]
+ [-TemplateParameters <IMicrosoftGraphKeyValuePair[]>] [-Topic <IMicrosoftGraphTeamworkActivityTopic>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Send
 ```
 Send-MgTeamworkActivityNotificationToRecipient
  -BodyParameter <IPaths1T8Q21HTeamworkMicrosoftGraphSendactivitynotificationtorecipientsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Send activity feed notifications to multiple users, in bulk.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ## EXAMPLES
 
@@ -139,21 +137,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -192,21 +175,6 @@ Accept wildcard characters: False
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkNotificationRecipient[]
 Parameter Sets: SendExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -300,8 +268,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1T8Q21HTeamworkMicrosoftGraphSendactivitynotificationtorecipientsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -350,8 +316,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WebUrl <String>]`: The link the user clicks when they select the notification. Optional when source is entityUrl; required when source is text.
 
 ## RELATED LINKS
-
-
-
-
 

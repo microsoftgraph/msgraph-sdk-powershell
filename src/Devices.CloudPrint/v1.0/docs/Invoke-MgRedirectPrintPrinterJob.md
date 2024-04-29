@@ -17,29 +17,29 @@ For details about how to use this API to add pull printing support to Universal 
 ### RedirectExpanded (Default)
 ```
 Invoke-MgRedirectPrintPrinterJob -PrinterId <String> -PrintJobId <String> [-AdditionalProperties <Hashtable>]
- [-Configuration <IMicrosoftGraphPrintJobConfiguration>] [-DestinationPrinterId <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Configuration <IMicrosoftGraphPrintJobConfiguration>] [-DestinationPrinterId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Redirect
 ```
 Invoke-MgRedirectPrintPrinterJob -PrinterId <String> -PrintJobId <String>
  -BodyParameter <IPathsB8DgksPrintPrintersPrinterIdJobsPrintjobIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentity
 ```
 Invoke-MgRedirectPrintPrinterJob -InputObject <IDevicesCloudPrintIdentity>
  -BodyParameter <IPathsB8DgksPrintPrintersPrinterIdJobsPrintjobIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentityExpanded
 ```
 Invoke-MgRedirectPrintPrinterJob -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
- [-Configuration <IMicrosoftGraphPrintJobConfiguration>] [-DestinationPrinterId <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Configuration <IMicrosoftGraphPrintJobConfiguration>] [-DestinationPrinterId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -127,21 +127,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -188,21 +173,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -242,8 +212,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPathsB8DgksPrintPrintersPrinterIdJobsPrintjobIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -335,8 +303,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

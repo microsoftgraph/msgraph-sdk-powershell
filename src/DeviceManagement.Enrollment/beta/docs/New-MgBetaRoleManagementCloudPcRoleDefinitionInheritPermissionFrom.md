@@ -17,23 +17,22 @@ Create new navigation property to inheritsPermissionsFrom for roleManagement
 New-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom -UnifiedRoleDefinitionId <String>
  [-AdditionalProperties <Hashtable>] [-AllowedPrincipalTypes <String>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]
- [-IsBuiltIn] [-IsEnabled] [-IsPrivileged] [-ResourceScopes <String[]>] [-ResponseHeadersVariable <String>]
+ [-IsBuiltIn] [-IsEnabled] [-IsPrivileged] [-ResourceScopes <String[]>]
  [-RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>] [-TemplateId <String>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom -UnifiedRoleDefinitionId <String>
- -BodyParameter <IMicrosoftGraphUnifiedRoleDefinition> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom
  -InputObject <IDeviceManagementEnrollmentIdentity> -BodyParameter <IMicrosoftGraphUnifiedRoleDefinition>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,9 +41,8 @@ New-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom
  -InputObject <IDeviceManagementEnrollmentIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedPrincipalTypes <String>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>] [-IsBuiltIn] [-IsEnabled] [-IsPrivileged]
- [-ResourceScopes <String[]>] [-ResponseHeadersVariable <String>]
- [-RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>] [-TemplateId <String>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceScopes <String[]>] [-RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]
+ [-TemplateId <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -145,21 +143,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -285,21 +268,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RolePermissions
 List of permissions included in the role.
 Read-only when isBuiltIn is true.
@@ -406,8 +374,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleDefinition
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleDefinition
@@ -462,7 +428,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppScopeId <String>]`: The unique identifier of appScope
   - `[AppleEnrollmentProfileAssignmentId <String>]`: The unique identifier of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: The unique identifier of appleUserInitiatedEnrollmentProfile
-  - `[CustomAppScopeId <String>]`: The unique identifier of customAppScope
   - `[DepOnboardingSettingId <String>]`: The unique identifier of depOnboardingSetting
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: The unique identifier of deviceManagementAutopilotEvent
@@ -475,7 +440,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of importedWindowsAutopilotDeviceIdentity
   - `[UnifiedRbacResourceActionId <String>]`: The unique identifier of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: The unique identifier of unifiedRbacResourceNamespace
-  - `[UnifiedRoleAssignmentId <String>]`: The unique identifier of unifiedRoleAssignment
   - `[UnifiedRoleAssignmentMultipleId <String>]`: The unique identifier of unifiedRoleAssignmentMultiple
   - `[UnifiedRoleDefinitionId <String>]`: The unique identifier of unifiedRoleDefinition
   - `[UnifiedRoleDefinitionId1 <String>]`: The unique identifier of unifiedRoleDefinition

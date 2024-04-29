@@ -15,14 +15,13 @@ Create a new mobileAppCategory object.
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppManagementMobileAppCategory [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppManagementMobileAppCategory -BodyParameter <IMicrosoftGraphMobileAppCategory>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDeviceAppManagementMobileAppCategory -BodyParameter <IMicrosoftGraphMobileAppCategory> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,21 +91,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -123,13 +107,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
+### -LastModifiedDateTime
+The date and time the mobileAppCategory was last modified.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
+Type: System.DateTime
+Parameter Sets: CreateExpanded
+Aliases:
 
 Required: False
 Position: Named
@@ -176,8 +160,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory
@@ -197,10 +179,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The name of the app category.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
 
 ## RELATED LINKS
-
-
-
-
 

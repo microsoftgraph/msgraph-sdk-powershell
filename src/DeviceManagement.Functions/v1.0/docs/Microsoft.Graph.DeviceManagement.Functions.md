@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-Module Guid: c02e4584-8962-4a1f-9531-4a654dc37e30
+Module Guid: 9c59a381-d3f4-4e74-8bdf-d2247209b97a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -25,12 +25,6 @@ Invoke function getOmaSettingPlainTextValue
 
 ### [Get-MgDeviceManagementEffectivePermission](Get-MgDeviceManagementEffectivePermission.md)
 Retrieves the effective permissions of the currently authenticated user
-
-### [Get-MgDeviceManagementVirtualEndpointAuditEventAuditActivityType](Get-MgDeviceManagementVirtualEndpointAuditEventAuditActivityType.md)
-Invoke function getAuditActivityTypes
-
-### [Get-MgDeviceManagementVirtualEndpointDeviceImageSourceImage](Get-MgDeviceManagementVirtualEndpointDeviceImageSourceImage.md)
-Invoke function getSourceImages
 
 ### [Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest](Invoke-MgDownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest.md)
 Download Apple push notification certificate signing request

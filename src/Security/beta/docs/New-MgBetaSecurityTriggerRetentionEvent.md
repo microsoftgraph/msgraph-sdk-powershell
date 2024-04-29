@@ -20,15 +20,14 @@ New-MgBetaSecurityTriggerRetentionEvent [-AdditionalProperties <Hashtable>]
  [-EventQueries <IMicrosoftGraphSecurityEventQuery[]>]
  [-EventStatus <IMicrosoftGraphSecurityRetentionEventStatus>] [-EventTriggerDateTime <DateTime>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-LastStatusUpdateDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-RetentionEventType <IMicrosoftGraphSecurityRetentionEventType>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastStatusUpdateDateTime <DateTime>] [-RetentionEventType <IMicrosoftGraphSecurityRetentionEventType>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityTriggerRetentionEvent -BodyParameter <IMicrosoftGraphSecurityRetentionEvent>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityTriggerRetentionEvent -BodyParameter <IMicrosoftGraphSecurityRetentionEvent> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventQueries
-.
+Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
 To construct, see NOTES section for EVENTQUERIES properties and create a hash table.
 
 ```yaml
@@ -221,21 +220,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -301,21 +285,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RetentionEventType
 retentionEventType
 To construct, see NOTES section for RETENTIONEVENTTYPE properties and create a hash table.
@@ -370,8 +339,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityRetentionEvent
@@ -392,8 +359,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date time when the retentionEvent was created.
@@ -404,8 +371,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[ServiceName <String>]`: The name of the workload associated with the event.
     - `[Status <String>]`: eventPropagationStatus
     - `[StatusInformation <String>]`: Additional information about the status of the event creation request.
-  - `[EventQueries <IMicrosoftGraphSecurityEventQuery[]>]`: 
-    - `[Query <String>]`: Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
+  - `[EventQueries <IMicrosoftGraphSecurityEventQuery[]>]`: Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
+    - `[Query <String>]`: 
     - `[QueryType <String>]`: queryType
   - `[EventStatus <IMicrosoftGraphSecurityRetentionEventStatus>]`: retentionEventStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -443,8 +410,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -454,8 +421,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: eventPropagationStatus
   - `[StatusInformation <String>]`: Additional information about the status of the event creation request.
 
-`EVENTQUERIES <IMicrosoftGraphSecurityEventQuery[]>`: .
-  - `[Query <String>]`: Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
+`EVENTQUERIES <IMicrosoftGraphSecurityEventQuery[]>`: Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
+  - `[Query <String>]`: 
   - `[QueryType <String>]`: queryType
 
 `EVENTSTATUS <IMicrosoftGraphSecurityRetentionEventStatus>`: retentionEventStatus
@@ -481,8 +448,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -493,8 +460,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date time when the retentionEventType was created.
@@ -504,8 +471,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastModifiedDateTime <DateTime?>]`: The latest date time when the retentionEventType was modified.
 
 ## RELATED LINKS
-
-
-
-
 

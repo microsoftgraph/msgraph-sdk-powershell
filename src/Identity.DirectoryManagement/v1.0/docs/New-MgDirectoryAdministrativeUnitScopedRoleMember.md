@@ -16,31 +16,27 @@ For a list of roles that can be assigned with administrative unit scope, see Ass
 ### CreateExpanded (Default)
 ```
 New-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String>
- [-AdditionalProperties <Hashtable>] [-AdministrativeUnitId1 <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-RoleId <String>] [-RoleMemberInfo <IMicrosoftGraphIdentity>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AdministrativeUnitId1 <String>] [-Id <String>] [-RoleId <String>]
+ [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String>
- -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDirectoryAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgDirectoryAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdministrativeUnitId <String>] [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-RoleId <String>] [-RoleMemberInfo <IMicrosoftGraphIdentity>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdministrativeUnitId <String>] [-AdditionalProperties <Hashtable>] [-Id <String>] [-RoleId <String>]
+ [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +122,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -170,21 +151,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -259,8 +225,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
@@ -316,8 +280,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: Unique identifier for the identity.
 
 ## RELATED LINKS
-
-
-
-
 

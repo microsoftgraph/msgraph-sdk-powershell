@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Update the properties of a iosDeviceFeaturesConfiguration object.
+Update the properties of a sharedPCConfiguration object.
 
 ## SYNTAX
 
@@ -20,24 +20,22 @@ Update-MgDeviceManagementDeviceConfiguration -DeviceConfigurationId <String>
  [-DeviceSettingStateSummaries <IMicrosoftGraphSettingStateDeviceSummary[]>]
  [-DeviceStatuses <IMicrosoftGraphDeviceConfigurationDeviceStatus[]>]
  [-DeviceStatusOverview <IMicrosoftGraphDeviceConfigurationDeviceOverview>] [-DisplayName <String>]
- [-Id <String>] [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-UserStatuses <IMicrosoftGraphDeviceConfigurationUserStatus[]>]
- [-UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview>] [-Version <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementDeviceConfiguration -DeviceConfigurationId <String>
- -BodyParameter <IMicrosoftGraphDeviceConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -48,14 +46,14 @@ Update-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIden
  [-DeviceSettingStateSummaries <IMicrosoftGraphSettingStateDeviceSummary[]>]
  [-DeviceStatuses <IMicrosoftGraphDeviceConfigurationDeviceStatus[]>]
  [-DeviceStatusOverview <IMicrosoftGraphDeviceConfigurationDeviceOverview>] [-DisplayName <String>]
- [-Id <String>] [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-UserStatuses <IMicrosoftGraphDeviceConfigurationUserStatus[]>]
- [-UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview>] [-Version <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of a iosDeviceFeaturesConfiguration object.
+Update the properties of a sharedPCConfiguration object.
 
 ## EXAMPLES
 
@@ -230,21 +228,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -284,21 +267,6 @@ DateTime the object was last modified.
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -393,8 +361,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfiguration
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -583,8 +549,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[SuccessCount <Int32?>]`: Number of succeeded Users
 
 ## RELATED LINKS
-
-
-
-
 

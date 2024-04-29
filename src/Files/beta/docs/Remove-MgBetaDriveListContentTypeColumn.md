@@ -8,26 +8,24 @@ schema: 2.0.0
 # Remove-MgBetaDriveListContentTypeColumn
 
 ## SYNOPSIS
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
 Remove-MgBetaDriveListContentTypeColumn -ColumnDefinitionId <String> -ContentTypeId <String> -DriveId <String>
- [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaDriveListContentTypeColumn -InputObject <IFilesIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgBetaDriveListContentTypeColumn -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete columnDefinition
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ## EXAMPLES
 
@@ -92,21 +90,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -IfMatch
 ETag
 
@@ -153,21 +136,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -205,8 +173,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -248,8 +214,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

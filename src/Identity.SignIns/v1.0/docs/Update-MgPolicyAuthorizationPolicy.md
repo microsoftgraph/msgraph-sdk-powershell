@@ -18,14 +18,14 @@ Update-MgPolicyAuthorizationPolicy [-AdditionalProperties <Hashtable>]
  [-AllowedToSignUpEmailBasedSubscriptions] [-AllowedToUseSspr] [-AllowEmailVerifiedUsersToJoinOrganization]
  [-AllowInvitesFrom <String>] [-AllowUserConsentForRiskyApps] [-BlockMsolPowerShell]
  [-DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions>] [-DeletedDateTime <DateTime>]
- [-Description <String>] [-DisplayName <String>] [-GuestUserRoleId <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Description <String>] [-DisplayName <String>] [-GuestUserRoleId <String>] [-Id <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPolicyAuthorizationPolicy -BodyParameter <IMicrosoftGraphAuthorizationPolicy>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPolicyAuthorizationPolicy -BodyParameter <IMicrosoftGraphAuthorizationPolicy> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -80,8 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedToUseSspr
-Indicates whether administrators of the tenant can use the Self-Service Password Reset (SSPR).
-For more information, see Self-service password reset for administrators.
+Indicates whether users can use the Self-Service Password Reset feature on the tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -240,7 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -GuestUserRoleId
-Represents role templateId for the role that should be granted to guests.
+Represents role templateId for the role that should be granted to guest user.
 Currently following roles are supported: User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 
 ```yaml
@@ -255,21 +254,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -278,21 +262,6 @@ Read-only.
 Type: System.String
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -339,8 +308,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy
@@ -364,7 +331,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
   - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. We recommend keeping allowUserConsentForRiskyApps as false. Default value is false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
-  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether administrators of the tenant can use the Self-Service Password Reset (SSPR). For more information, see Self-service password reset for administrators.
+  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether users can use the Self-Service Password Reset feature on the tenant.
   - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
   - `[DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions>]`: defaultUserRolePermissions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -374,7 +341,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AllowedToReadBitlockerKeysForOwnedDevice <Boolean?>]`: Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
     - `[AllowedToReadOtherUsers <Boolean?>]`: Indicates whether the default user role can read other users. DO NOT SET THIS VALUE TO false.
     - `[PermissionGrantPoliciesAssigned <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
-  - `[GuestUserRoleId <String>]`: Represents role templateId for the role that should be granted to guests. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
+  - `[GuestUserRoleId <String>]`: Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 
 `DEFAULTUSERROLEPERMISSIONS <IMicrosoftGraphDefaultUserRolePermissions>`: defaultUserRolePermissions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -386,8 +353,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[PermissionGrantPoliciesAssigned <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
 
 ## RELATED LINKS
-
-
-
-
 

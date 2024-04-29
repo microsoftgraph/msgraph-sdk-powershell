@@ -23,17 +23,16 @@ Update-MgBetaAdminSharepointSetting [-AdditionalProperties <Hashtable>]
  [-IsResharingByExternalUsersEnabled] [-IsSharePointMobileNotificationEnabled] [-IsSharePointNewsfeedEnabled]
  [-IsSiteCreationEnabled] [-IsSiteCreationUiEnabled] [-IsSitePagesCreationEnabled]
  [-IsSitesStorageLimitAutomatic] [-IsSyncButtonHiddenOnPersonalSite] [-IsUnmanagedSyncAppForTenantRestricted]
- [-PersonalSiteDefaultStorageLimitInMb <Int64>] [-ResponseHeadersVariable <String>]
- [-SharingAllowedDomainList <String[]>] [-SharingBlockedDomainList <String[]>] [-SharingCapability <String>]
- [-SharingDomainRestrictionMode <String>] [-SiteCreationDefaultManagedPath <String>]
- [-SiteCreationDefaultStorageLimitInMb <Int32>] [-TenantDefaultTimezone <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PersonalSiteDefaultStorageLimitInMb <Int64>] [-SharingAllowedDomainList <String[]>]
+ [-SharingBlockedDomainList <String[]>] [-SharingCapability <String>] [-SharingDomainRestrictionMode <String>]
+ [-SiteCreationDefaultManagedPath <String>] [-SiteCreationDefaultStorageLimitInMb <Int32>]
+ [-TenantDefaultTimezone <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaAdminSharepointSetting -BodyParameter <IMicrosoftGraphSharepointSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaAdminSharepointSetting -BodyParameter <IMicrosoftGraphSharepointSettings> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -146,21 +145,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -452,21 +436,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SharingAllowedDomainList
 Collection of email domains that are allowed for sharing outside the organization.
 
@@ -613,8 +582,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharepointSettings
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharepointSettings
@@ -672,8 +639,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WarnAfterInSeconds <Int64?>]`: Number of seconds of inactivity after which a user is notified that they'll be signed out.
 
 ## RELATED LINKS
-
-
-
-
 

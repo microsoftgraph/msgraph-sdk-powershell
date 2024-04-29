@@ -16,14 +16,14 @@ A delegated permission grant authorizes a client service principal (representing
 ### CreateExpanded (Default)
 ```
 New-MgOauth2PermissionGrant [-AdditionalProperties <Hashtable>] [-ClientId <String>] [-ConsentType <String>]
- [-Id <String>] [-PrincipalId <String>] [-ResourceId <String>] [-ResponseHeadersVariable <String>]
- [-Scope <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-PrincipalId <String>] [-ResourceId <String>] [-Scope <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgOauth2PermissionGrant -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgOauth2PermissionGrant -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -117,21 +117,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -175,21 +160,6 @@ Supports $filter (eq only).
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -254,8 +224,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant
@@ -279,8 +247,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.
 
 ## RELATED LINKS
-
-
-
-
 

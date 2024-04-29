@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaSiteColumn
 
 ## SYNOPSIS
-Create columnDefinition for a site
+Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
 
 ## SYNTAX
 
@@ -22,23 +22,22 @@ New-MgBetaSiteColumn -SiteId <String> [-AdditionalProperties <Hashtable>] [-Bool
  [-HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>] [-Id <String>] [-Indexed] [-IsDeletable]
  [-IsReorderable] [-IsSealed] [-Lookup <IMicrosoftGraphLookupColumn>] [-Name <String>]
  [-Number <IMicrosoftGraphNumberColumn>] [-PersonOrGroup <IMicrosoftGraphPersonOrGroupColumn>]
- [-PropagateChanges] [-ReadOnly] [-Required] [-ResponseHeadersVariable <String>]
- [-SourceColumn <IMicrosoftGraphColumnDefinition>] [-SourceContentType <IMicrosoftGraphContentTypeInfo>]
- [-Term <IMicrosoftGraphTermColumn>] [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>]
- [-Type <String>] [-Validation <IMicrosoftGraphColumnValidation>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition>]
+ [-SourceContentType <IMicrosoftGraphContentTypeInfo>] [-Term <IMicrosoftGraphTermColumn>]
+ [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>] [-Type <String>]
+ [-Validation <IMicrosoftGraphColumnValidation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSiteColumn -SiteId <String> -BodyParameter <IMicrosoftGraphColumnDefinition>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSiteColumn -SiteId <String> -BodyParameter <IMicrosoftGraphColumnDefinition> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgBetaSiteColumn -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSiteColumn -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -51,15 +50,14 @@ New-MgBetaSiteColumn -InputObject <ISitesIdentity> [-AdditionalProperties <Hasht
  [-HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>] [-Id <String>] [-Indexed] [-IsDeletable]
  [-IsReorderable] [-IsSealed] [-Lookup <IMicrosoftGraphLookupColumn>] [-Name <String>]
  [-Number <IMicrosoftGraphNumberColumn>] [-PersonOrGroup <IMicrosoftGraphPersonOrGroupColumn>]
- [-PropagateChanges] [-ReadOnly] [-Required] [-ResponseHeadersVariable <String>]
- [-SourceColumn <IMicrosoftGraphColumnDefinition>] [-SourceContentType <IMicrosoftGraphContentTypeInfo>]
- [-Term <IMicrosoftGraphTermColumn>] [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>]
- [-Type <String>] [-Validation <IMicrosoftGraphColumnValidation>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition>]
+ [-SourceContentType <IMicrosoftGraphContentTypeInfo>] [-Term <IMicrosoftGraphTermColumn>]
+ [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>] [-Type <String>]
+ [-Validation <IMicrosoftGraphColumnValidation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create columnDefinition for a site
+Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
 
 ## EXAMPLES
 
@@ -303,21 +301,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Hidden
 Specifies whether the column is displayed in the user interface.
 
@@ -551,21 +534,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SiteId
 The unique identifier of site
 
@@ -730,8 +698,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -925,8 +891,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupId1 <String>]`: The unique identifier of group
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
@@ -942,7 +906,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation
@@ -963,7 +926,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ThreatAssessmentResultId <String>]`: The unique identifier of threatAssessmentResult
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 `LOOKUP <IMicrosoftGraphLookupColumn>`: lookupColumn
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1192,8 +1154,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
 
 ## RELATED LINKS
-
-
-
-
 

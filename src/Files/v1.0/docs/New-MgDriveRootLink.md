@@ -17,32 +17,29 @@ DriveItem resources inherit sharing permissions from their ancestors.
 ### CreateExpanded (Default)
 ```
 New-MgDriveRootLink -DriveId <String> [-AdditionalProperties <Hashtable>] [-ExpirationDateTime <DateTime>]
- [-Message <String>] [-Password <String>] [-Recipients <IMicrosoftGraphDriveRecipient[]>]
- [-ResponseHeadersVariable <String>] [-RetainInheritedPermissions] [-Scope <String>] [-SendNotification]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Message <String>] [-Password <String>] [-RetainInheritedPermissions] [-Scope <String>] [-Type <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDriveRootLink -DriveId <String>
  -BodyParameter <IPaths1T5Tf59DrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDriveRootLink -InputObject <IFilesIdentity>
  -BodyParameter <IPaths1T5Tf59DrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgDriveRootLink -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-ResponseHeadersVariable <String>]
- [-RetainInheritedPermissions] [-Scope <String>] [-SendNotification] [-Type <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>] [-RetainInheritedPermissions]
+ [-Scope <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -129,21 +126,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -190,37 +172,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Recipients
-.
-To construct, see NOTES section for RECIPIENTS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RetainInheritedPermissions
 .
 
@@ -241,21 +192,6 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SendNotification
-.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -321,8 +257,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1T5Tf59DrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission
@@ -341,13 +275,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExpirationDateTime <DateTime?>]`: 
   - `[Message <String>]`: 
   - `[Password <String>]`: 
-  - `[Recipients <IMicrosoftGraphDriveRecipient[]>]`: 
-    - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
-    - `[Email <String>]`: The email address for the recipient, if the recipient has an associated email address.
-    - `[ObjectId <String>]`: The unique identifier for the recipient in the directory.
   - `[RetainInheritedPermissions <Boolean?>]`: 
   - `[Scope <String>]`: 
-  - `[SendNotification <Boolean?>]`: 
   - `[Type <String>]`: 
 
 `INPUTOBJECT <IFilesIdentity>`: Identity Parameter
@@ -376,14 +305,5 @@ To create the parameters described below, construct a hash table containing the 
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: The unique identifier of user
 
-`RECIPIENTS <IMicrosoftGraphDriveRecipient[]>`: .
-  - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
-  - `[Email <String>]`: The email address for the recipient, if the recipient has an associated email address.
-  - `[ObjectId <String>]`: The unique identifier for the recipient in the directory.
-
 ## RELATED LINKS
-
-
-
-
 

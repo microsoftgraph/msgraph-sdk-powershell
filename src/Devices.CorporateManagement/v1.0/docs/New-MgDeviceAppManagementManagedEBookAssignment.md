@@ -8,41 +8,38 @@ schema: 2.0.0
 # New-MgDeviceAppManagementManagedEBookAssignment
 
 ## SYNOPSIS
-Create a new iosVppEBookAssignment object.
+Create a new managedEBookAssignment object.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppManagementManagedEBookAssignment -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-InstallIntent <InstallIntent>] [-ResponseHeadersVariable <String>] [-Target <Hashtable>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-InstallIntent <InstallIntent>] [-Target <Hashtable>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceAppManagementManagedEBookAssignment -ManagedEBookId <String>
- -BodyParameter <IMicrosoftGraphManagedEBookAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedEBookAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDeviceAppManagementManagedEBookAssignment -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedEBookAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedEBookAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgDeviceAppManagementManagedEBookAssignment -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-InstallIntent <InstallIntent>]
- [-ResponseHeadersVariable <String>] [-Target <Hashtable>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-InstallIntent <InstallIntent>] [-Target <Hashtable>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new iosVppEBookAssignment object.
+Create a new managedEBookAssignment object.
 
 ## EXAMPLES
 
@@ -87,21 +84,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -170,21 +152,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Target
 Base type for assignment targets.
 
@@ -239,8 +206,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -302,8 +267,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsInformationProtectionPolicyId <String>]`: The unique identifier of windowsInformationProtectionPolicy
 
 ## RELATED LINKS
-
-
-
-
 

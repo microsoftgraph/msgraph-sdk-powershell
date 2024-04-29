@@ -15,15 +15,14 @@ Not yet documented
 ### Create (Default)
 ```
 New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequestDownloadUrl
- -AppLogCollectionRequestId <String> -MobileAppTroubleshootingEventId <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -AppLogCollectionRequestId <String> -MobileAppTroubleshootingEventId <String> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequestDownloadUrl
- -InputObject <IDeviceManagementActionsIdentity> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IDeviceManagementActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,21 +61,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -102,21 +86,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -161,8 +130,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppLogCollectionDownloadDetails
@@ -178,10 +145,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <IDeviceManagementActionsIdentity>`: Identity Parameter
   - `[AppLogCollectionRequestId <String>]`: The unique identifier of appLogCollectionRequest
-  - `[CloudPcId <String>]`: The unique identifier of cloudPC
-  - `[CloudPcOnPremisesConnectionId <String>]`: The unique identifier of cloudPcOnPremisesConnection
-  - `[CloudPcProvisioningPolicyId <String>]`: The unique identifier of cloudPcProvisioningPolicy
-  - `[CloudPcUserSettingId <String>]`: The unique identifier of cloudPcUserSetting
   - `[DeviceCompliancePolicyId <String>]`: The unique identifier of deviceCompliancePolicy
   - `[DeviceConfigurationId <String>]`: The unique identifier of deviceConfiguration
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
@@ -195,8 +158,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of windowsAutopilotDeviceIdentity
 
 ## RELATED LINKS
-
-
-
-
 

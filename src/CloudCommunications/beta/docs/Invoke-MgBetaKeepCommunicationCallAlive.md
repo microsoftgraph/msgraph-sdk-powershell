@@ -9,35 +9,33 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
-A call that doesn't receive this request within 45 minutes is considered inactive and ends.
+A call that does not receive this request within 45 minutes is considered inactive and will subsequently end.
 At least one successful request must be made within 45 minutes of the previous request, or the start of the call.
 We recommend that you send a request in shorter time intervals (every 15 minutes).
 Make sure that these requests are successful to prevent the call from timing out and ending.
-Attempting to send a request to a call that ended results in a 404 Not Found error.
+Attempting to send a request to a call that has already ended will result in a 404 Not-Found error.
 The resources related to the call should be cleaned up on the application side.
 
 ## SYNTAX
 
 ### Keep (Default)
 ```
-Invoke-MgBetaKeepCommunicationCallAlive -CallId <String> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaKeepCommunicationCallAlive -CallId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### KeepViaIdentity
 ```
-Invoke-MgBetaKeepCommunicationCallAlive -InputObject <ICloudCommunicationsIdentity>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-MgBetaKeepCommunicationCallAlive -InputObject <ICloudCommunicationsIdentity> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
-A call that doesn't receive this request within 45 minutes is considered inactive and ends.
+A call that does not receive this request within 45 minutes is considered inactive and will subsequently end.
 At least one successful request must be made within 45 minutes of the previous request, or the start of the call.
 We recommend that you send a request in shorter time intervals (every 15 minutes).
 Make sure that these requests are successful to prevent the call from timing out and ending.
-Attempting to send a request to a call that ended results in a 404 Not Found error.
+Attempting to send a request to a call that has already ended will result in a 404 Not-Found error.
 The resources related to the call should be cleaned up on the application side.
 
 ## EXAMPLES
@@ -66,21 +64,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -104,21 +87,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -165,8 +133,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -190,7 +156,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
@@ -202,8 +167,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

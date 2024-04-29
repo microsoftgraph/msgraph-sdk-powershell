@@ -16,30 +16,28 @@ Update the navigation property microsoftTunnelHealthThresholds in deviceManageme
 ```
 Update-MgBetaDeviceManagementMicrosoftTunnelHealthThreshold -MicrosoftTunnelHealthThresholdId <String>
  [-AdditionalProperties <Hashtable>] [-DefaultHealthyThreshold <Int64>] [-DefaultUnhealthyThreshold <Int64>]
- [-HealthyThreshold <Int64>] [-Id <String>] [-ResponseHeadersVariable <String>] [-UnhealthyThreshold <Int64>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-HealthyThreshold <Int64>] [-Id <String>] [-UnhealthyThreshold <Int64>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementMicrosoftTunnelHealthThreshold -MicrosoftTunnelHealthThresholdId <String>
- -BodyParameter <IMicrosoftGraphMicrosoftTunnelHealthThreshold> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMicrosoftTunnelHealthThreshold> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementMicrosoftTunnelHealthThreshold -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphMicrosoftTunnelHealthThreshold> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMicrosoftTunnelHealthThreshold> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementMicrosoftTunnelHealthThreshold -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DefaultHealthyThreshold <Int64>] [-DefaultUnhealthyThreshold <Int64>]
- [-HealthyThreshold <Int64>] [-Id <String>] [-ResponseHeadersVariable <String>] [-UnhealthyThreshold <Int64>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-HealthyThreshold <Int64>] [-Id <String>] [-UnhealthyThreshold <Int64>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +124,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HealthyThreshold
 The threshold for being healthy based on default health status metrics: CPU usage healthy \< 50%, Memory usage healthy \< 50%, Disk space healthy \> 5GB, Latency healthy \< 10ms, health metrics can be customized.
 
@@ -203,21 +186,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UnhealthyThreshold
 The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy \> 75%, Memory usage unhealthy \> 75%, Disk space \< 3GB, Latency Unhealthy \> 20ms, health metrics can be customized.
 
@@ -273,8 +241,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelHealthThreshold
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelHealthThreshold
@@ -325,7 +291,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceConfigurationDeviceStatusId <String>]`: The unique identifier of deviceConfigurationDeviceStatus
   - `[DeviceConfigurationGroupAssignmentId <String>]`: The unique identifier of deviceConfigurationGroupAssignment
   - `[DeviceConfigurationId <String>]`: The unique identifier of deviceConfiguration
-  - `[DeviceConfigurationProfileId <String>]`: The unique identifier of deviceConfigurationProfile
   - `[DeviceConfigurationStateId <String>]`: The unique identifier of deviceConfigurationState
   - `[DeviceConfigurationUserStatusId <String>]`: The unique identifier of deviceConfigurationUserStatus
   - `[DeviceHealthScriptAssignmentId <String>]`: The unique identifier of deviceHealthScriptAssignment
@@ -377,7 +342,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

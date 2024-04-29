@@ -16,29 +16,29 @@ Update the properties and relationships of a shiftPreferences object.
 ```
 Update-MgUserSettingShiftPreference -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Availability <IMicrosoftGraphShiftAvailability[]>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserSettingShiftPreference -UserId <String> -BodyParameter <IMicrosoftGraphShiftPreferences>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserSettingShiftPreference -InputObject <IUsersIdentity>
- -BodyParameter <IMicrosoftGraphShiftPreferences> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphShiftPreferences> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserSettingShiftPreference -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-Availability <IMicrosoftGraphShiftAvailability[]>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -266,6 +266,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShiftPreferences
 
+### System.Collections.Hashtable
+
 ## NOTES
 
 ALIASES
@@ -348,8 +350,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TodoTaskId <String>]`: The unique identifier of todoTask
   - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[UserId <String>]`: The unique identifier of user
-  - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
-  - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 `LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>`: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

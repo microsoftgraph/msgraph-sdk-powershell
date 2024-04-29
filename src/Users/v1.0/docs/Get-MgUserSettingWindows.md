@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgUserSettingWindows
 
 ## SYNOPSIS
-Read the properties and relationships of a windowsSetting object by passing the ID of the setting in the URL.
-This method gets the setting for the signed-in user.
+Get windows from users
 
 ## SYNTAX
 
@@ -34,8 +33,7 @@ Get-MgUserSettingWindows -InputObject <IUsersIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a windowsSetting object by passing the ID of the setting in the URL.
-This method gets the setting for the signed-in user.
+Get windows from users
 
 ## EXAMPLES
 
@@ -322,10 +320,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 ## RELATED LINKS
-
-
-
-
-
-
 

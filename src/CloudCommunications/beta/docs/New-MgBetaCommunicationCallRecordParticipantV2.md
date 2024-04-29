@@ -15,31 +15,26 @@ Create new navigation property to participants_v2 for communications
 ### CreateExpanded (Default)
 ```
 New-MgBetaCommunicationCallRecordParticipantV2 -CallRecordId <String> [-AdditionalProperties <Hashtable>]
- [-AdministrativeUnitInfos <IMicrosoftGraphCallRecordsAdministrativeUnitInfo[]>] [-Id <String>]
- [-Identity <IMicrosoftGraphCommunicationsIdentitySet>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Identity <IMicrosoftGraphCallRecordsUserIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaCommunicationCallRecordParticipantV2 -CallRecordId <String> -BodyParameter <Hashtable>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaCommunicationCallRecordParticipantV2 -CallRecordId <String> -BodyParameter <Hashtable> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaCommunicationCallRecordParticipantV2 -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <Hashtable> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaCommunicationCallRecordParticipantV2 -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>]
- [-AdministrativeUnitInfos <IMicrosoftGraphCallRecordsAdministrativeUnitInfo[]>] [-Id <String>]
- [-Identity <IMicrosoftGraphCommunicationsIdentitySet>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Identity <IMicrosoftGraphCallRecordsUserIdentity>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,22 +63,6 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AdministrativeUnitInfos
-List of administrativeUnitInfo of the call participant.
-To construct, see NOTES section for ADMINISTRATIVEUNITINFOS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsAdministrativeUnitInfo[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -124,21 +103,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -156,11 +120,11 @@ Accept wildcard characters: False
 ```
 
 ### -Identity
-communicationsIdentitySet
+userIdentity
 To construct, see NOTES section for IDENTITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommunicationsIdentitySet
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsUserIdentity
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -184,21 +148,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -242,8 +191,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecordsParticipant
@@ -257,25 +204,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ADMINISTRATIVEUNITINFOS <IMicrosoftGraphCallRecordsAdministrativeUnitInfo[]>`: List of administrativeUnitInfo of the call participant.
-  - `[Id <String>]`: Unique identifier for the administrative unit.
-
-`IDENTITY <IMicrosoftGraphCommunicationsIdentitySet>`: communicationsIdentitySet
+`IDENTITY <IMicrosoftGraphCallRecordsUserIdentity>`: userIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Application <IMicrosoftGraphIdentity>]`: identity
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
-  - `[Device <IMicrosoftGraphIdentity>]`: identity
-  - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[ApplicationInstance <IMicrosoftGraphIdentity>]`: identity
-  - `[AssertedIdentity <IMicrosoftGraphIdentity>]`: identity
-  - `[AzureCommunicationServicesUser <IMicrosoftGraphIdentity>]`: identity
-  - `[Encrypted <IMicrosoftGraphIdentity>]`: identity
-  - `[EndpointType <String>]`: endpointType
-  - `[Guest <IMicrosoftGraphIdentity>]`: identity
-  - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
-  - `[Phone <IMicrosoftGraphIdentity>]`: identity
+  - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+  - `[UserPrincipalName <String>]`: 
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
@@ -287,7 +220,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion

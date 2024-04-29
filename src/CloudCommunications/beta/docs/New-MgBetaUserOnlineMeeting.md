@@ -26,26 +26,24 @@ New-MgBetaUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-IsEndToEndEncryptionEnabled] [-IsEntryExitAnnounced] [-JoinInformation <IMicrosoftGraphItemBody>]
  [-JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>] [-JoinUrl <String>] [-JoinWebUrl <String>]
  [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
- [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>] [-MeetingTemplateId <String>]
+ [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]
  [-Participants <IMicrosoftGraphMeetingParticipants>] [-RecordAutomatically] [-RecordingInputFile <String>]
  [-Recordings <IMicrosoftGraphCallRecording[]>] [-Registration <IMicrosoftGraphMeetingRegistration>]
- [-ResponseHeadersVariable <String>] [-ShareMeetingChatHistoryDefault <String>] [-StartDateTime <DateTime>]
- [-Subject <String>] [-Transcripts <IMicrosoftGraphCallTranscript[]>] [-VideoTeleconferenceId <String>]
- [-WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ShareMeetingChatHistoryDefault <String>] [-StartDateTime <DateTime>] [-Subject <String>]
+ [-Transcripts <IMicrosoftGraphCallTranscript[]>] [-VideoTeleconferenceId <String>]
+ [-WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphOnlineMeeting> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnlineMeeting> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -62,13 +60,12 @@ New-MgBetaUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-Additi
  [-IsEndToEndEncryptionEnabled] [-IsEntryExitAnnounced] [-JoinInformation <IMicrosoftGraphItemBody>]
  [-JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>] [-JoinUrl <String>] [-JoinWebUrl <String>]
  [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
- [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>] [-MeetingTemplateId <String>]
+ [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]
  [-Participants <IMicrosoftGraphMeetingParticipants>] [-RecordAutomatically] [-RecordingInputFile <String>]
  [-Recordings <IMicrosoftGraphCallRecording[]>] [-Registration <IMicrosoftGraphMeetingRegistration>]
- [-ResponseHeadersVariable <String>] [-ShareMeetingChatHistoryDefault <String>] [-StartDateTime <DateTime>]
- [-Subject <String>] [-Transcripts <IMicrosoftGraphCallTranscript[]>] [-VideoTeleconferenceId <String>]
- [-WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ShareMeetingChatHistoryDefault <String>] [-StartDateTime <DateTime>] [-Subject <String>]
+ [-Transcripts <IMicrosoftGraphCallTranscript[]>] [-VideoTeleconferenceId <String>]
+ [-WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -436,7 +433,6 @@ Accept wildcard characters: False
 
 ### -EndDateTime
 The meeting end time in UTC.
-Required when you create an online meeting.
 
 ```yaml
 Type: System.DateTime
@@ -464,21 +460,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -654,21 +635,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MeetingTemplateId
-The ID of the meeting template.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Participants
 meetingParticipants
 To construct, see NOTES section for PARTICIPANTS properties and create a hash table.
@@ -748,21 +714,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ShareMeetingChatHistoryDefault
 meetingChatHistoryDefaultMode
 
@@ -780,7 +731,6 @@ Accept wildcard characters: False
 
 ### -StartDateTime
 The meeting start time in UTC.
-Required when you create an online meeting.
 
 ```yaml
 Type: System.DateTime
@@ -913,8 +863,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnlineMeeting
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnlineMeeting
@@ -1002,7 +950,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowTextOnly <Boolean?>]`: Indicates whether only text is allowed in the meeting chat. Optional.
+    - `[AllowTextOnly <Boolean?>]`: 
   - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
   - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
   - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
@@ -1045,12 +993,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsVideoOnDemandEnabled <Boolean?>]`: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
   - `[Capabilities <String[]>]`: 
   - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
-  - `[EndDateTime <DateTime?>]`: The meeting end time in UTC. Required when you create an online meeting.
+  - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
   - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
   - `[IsBroadcast <Boolean?>]`: 
   - `[JoinUrl <String>]`: 
   - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
-  - `[MeetingTemplateId <String>]`: The ID of the meeting template.
   - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
@@ -1095,7 +1042,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DisplayName <String>]`: Display name of the speaker.
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the meeting.
-  - `[StartDateTime <DateTime?>]`: The meeting start time in UTC. Required when you create an online meeting.
+  - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
   - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Content <Byte[]>]`: The content of the transcript. Read-only.
@@ -1127,7 +1074,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `CHATRESTRICTIONS <IMicrosoftGraphChatRestrictions>`: chatRestrictions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AllowTextOnly <Boolean?>]`: Indicates whether only text is allowed in the meeting chat. Optional.
+  - `[AllowTextOnly <Boolean?>]`: 
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
@@ -1139,7 +1086,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
@@ -1266,8 +1212,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
 
 ## RELATED LINKS
-
-
-
-
 

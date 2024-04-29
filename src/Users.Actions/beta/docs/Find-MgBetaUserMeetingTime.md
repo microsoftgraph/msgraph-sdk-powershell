@@ -9,7 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters.
-If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.\nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
+If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.
+\nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
 
@@ -20,23 +21,22 @@ In scenarios like test environments where the input parameters and calendar data
 Find-MgBetaUserMeetingTime -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Attendees <IMicrosoftGraphAttendeeBase[]>] [-IsOrganizerOptional]
  [-LocationConstraint <IMicrosoftGraphLocationConstraint>] [-MaxCandidates <Int32>]
- [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ResponseHeadersVariable <String>]
- [-ReturnSuggestionReasons] [-TimeConstraint <IMicrosoftGraphTimeConstraint>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons]
+ [-TimeConstraint <IMicrosoftGraphTimeConstraint>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Find
 ```
 Find-MgBetaUserMeetingTime -UserId <String>
  -BodyParameter <IComponents1H459T5RequestbodiesFindmeetingtimesrequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### FindViaIdentity
 ```
 Find-MgBetaUserMeetingTime -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents1H459T5RequestbodiesFindmeetingtimesrequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### FindViaIdentityExpanded
@@ -44,14 +44,14 @@ Find-MgBetaUserMeetingTime -InputObject <IUsersActionsIdentity>
 Find-MgBetaUserMeetingTime -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Attendees <IMicrosoftGraphAttendeeBase[]>] [-IsOrganizerOptional]
  [-LocationConstraint <IMicrosoftGraphLocationConstraint>] [-MaxCandidates <Int32>]
- [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ResponseHeadersVariable <String>]
- [-ReturnSuggestionReasons] [-TimeConstraint <IMicrosoftGraphTimeConstraint>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons]
+ [-TimeConstraint <IMicrosoftGraphTimeConstraint>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters.
-If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.\nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
+If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.
+\nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
 
@@ -155,21 +155,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -254,21 +239,6 @@ Accept wildcard characters: False
 Type: System.Double
 Parameter Sets: FindExpanded, FindViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -363,8 +333,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingTimeSuggestionsResult
@@ -455,7 +423,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder
@@ -519,8 +486,4 @@ To create the parameters described below, construct a hash table containing the 
     - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 ## RELATED LINKS
-
-
-
-
 

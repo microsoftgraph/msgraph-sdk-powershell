@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
+Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 
 ## SYNTAX
 
@@ -17,22 +17,20 @@ Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration obj
 Update-MgDeviceManagementDeviceEnrollmentConfiguration -DeviceEnrollmentConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Priority <Int32>] [-ResponseHeadersVariable <String>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Priority <Int32>] [-Version <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementDeviceEnrollmentConfiguration -DeviceEnrollmentConfigurationId <String>
- -BodyParameter <IMicrosoftGraphDeviceEnrollmentConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceEnrollmentConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementDeviceEnrollmentConfiguration -InputObject <IDeviceManagementEnrollmentIdentity>
- -BodyParameter <IMicrosoftGraphDeviceEnrollmentConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceEnrollmentConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,12 +38,12 @@ Update-MgDeviceManagementDeviceEnrollmentConfiguration -InputObject <IDeviceMana
 Update-MgDeviceManagementDeviceEnrollmentConfiguration -InputObject <IDeviceManagementEnrollmentIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Priority <Int32>] [-ResponseHeadersVariable <String>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Priority <Int32>] [-Version <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
+Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 
 ## EXAMPLES
 
@@ -172,21 +170,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -250,21 +233,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Version
 The version of the device enrollment configuration
 
@@ -320,8 +288,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceEnrollmentConfiguration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceEnrollmentConfiguration
@@ -361,8 +327,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of windowsAutopilotDeviceIdentity
 
 ## RELATED LINKS
-
-
-
-
 

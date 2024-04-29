@@ -16,22 +16,20 @@ Update entity in directoryRoles by roleTemplateId
 ```
 Update-MgDirectoryRoleByRoleTemplateId -RoleTemplateId <String> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-Members <IMicrosoftGraphDirectoryObject[]>] [-ResponseHeadersVariable <String>] [-RoleTemplateId1 <String>]
- [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Members <IMicrosoftGraphDirectoryObject[]>] [-RoleTemplateId1 <String>]
+ [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDirectoryRoleByRoleTemplateId -RoleTemplateId <String> -BodyParameter <IMicrosoftGraphDirectoryRole>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDirectoryRoleByRoleTemplateId -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphDirectoryRole> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDirectoryRole> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,8 +37,7 @@ Update-MgDirectoryRoleByRoleTemplateId -InputObject <IIdentityDirectoryManagemen
 Update-MgDirectoryRoleByRoleTemplateId -InputObject <IIdentityDirectoryManagementIdentity>
  [-RoleTemplateId <String>] [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-Members <IMicrosoftGraphDirectoryObject[]>]
- [-ResponseHeadersVariable <String>] [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -145,21 +142,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -204,21 +186,6 @@ To construct, see NOTES section for MEMBERS properties and create a hash table.
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -317,8 +284,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

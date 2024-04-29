@@ -15,16 +15,14 @@ Get media content for the navigation property overridesPages from identity
 ### Get (Default)
 ```
 Get-MgIdentityB2XUserFlowLanguageOverridePageContent -B2XIdentityUserFlowId <String>
- -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> -OutFile <String>
- [-Format <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
+ -UserFlowLanguageConfigurationId <String> -UserFlowLanguagePageId <String> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgIdentityB2XUserFlowLanguageOverridePageContent -InputObject <IIdentitySignInsIdentity> -OutFile <String>
- [-Format <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,36 +58,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Format
-Format of the content
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -139,21 +107,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserFlowLanguageConfigurationId
 The unique identifier of userFlowLanguageConfiguration
 
@@ -190,8 +143,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -264,8 +215,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: The unique identifier of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
-
-
-
-
 

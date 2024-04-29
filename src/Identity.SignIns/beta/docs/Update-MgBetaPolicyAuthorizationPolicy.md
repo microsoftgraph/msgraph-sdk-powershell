@@ -21,21 +21,19 @@ Update-MgBetaPolicyAuthorizationPolicy -AuthorizationPolicyId <String> [-Additio
  [-DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-EnabledPreviewFeatures <String[]>]
  [-GuestUserRoleId <String>] [-Id <String>] [-PermissionGrantPolicyIdsAssignedToDefaultUserRole <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPolicyAuthorizationPolicy -AuthorizationPolicyId <String>
- -BodyParameter <IMicrosoftGraphAuthorizationPolicy> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthorizationPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPolicyAuthorizationPolicy -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphAuthorizationPolicy> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthorizationPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -47,7 +45,7 @@ Update-MgBetaPolicyAuthorizationPolicy -InputObject <IIdentitySignInsIdentity>
  [-DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-EnabledPreviewFeatures <String[]>]
  [-GuestUserRoleId <String>] [-Id <String>] [-PermissionGrantPolicyIdsAssignedToDefaultUserRole <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,8 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedToUseSspr
-Indicates whether administrators of the tenant can use the Self-Service Password Reset (SSPR).
-For more information, see Self-service password reset for administrators.
+Indicates whether users can use the Self-Service Password Reset feature on the tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -181,7 +178,7 @@ Accept wildcard characters: False
 
 ### -BlockMsolPowerShell
 To disable the use of the MSOnline PowerShell module set this property to true.
-This also disables user-based access to the legacy service endpoint used by the MSOnline PowerShell module.
+This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module.
 This doesn't affect Microsoft Entra Connect or Microsoft Graph.
 
 ```yaml
@@ -324,21 +321,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -388,21 +370,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -443,8 +410,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthorizationPolicy
@@ -468,8 +433,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
   - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. Default value is false. We recommend that you keep the value set to false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
-  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether administrators of the tenant can use the Self-Service Password Reset (SSPR). For more information, see Self-service password reset for administrators.
-  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This also disables user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
+  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether users can use the Self-Service Password Reset feature on the tenant.
+  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
   - `[DefaultUserRoleOverrides <IMicrosoftGraphDefaultUserRoleOverride[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[IsDefault <Boolean?>]`: 

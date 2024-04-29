@@ -29,15 +29,14 @@ New-MgBetaSecurityTiIndicator [-Action <String>] [-ActivityGroupNames <String[]>
  [-NetworkDestinationPort <Int32>] [-NetworkIPv4 <String>] [-NetworkIPv6 <String>] [-NetworkPort <Int32>]
  [-NetworkProtocol <Int32>] [-NetworkSourceAsn <Int64>] [-NetworkSourceCidrBlock <String>]
  [-NetworkSourceIPv4 <String>] [-NetworkSourceIPv6 <String>] [-NetworkSourcePort <Int32>] [-PassiveOnly]
- [-ResponseHeadersVariable <String>] [-Severity <Int32>] [-Tags <String[]>] [-TargetProduct <String>]
- [-ThreatType <String>] [-TlpLevel <String>] [-Url <String>] [-UserAgent <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Severity <Int32>] [-Tags <String[]>] [-TargetProduct <String>] [-ThreatType <String>] [-TlpLevel <String>]
+ [-Url <String>] [-UserAgent <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityTiIndicator -BodyParameter <IMicrosoftGraphTiIndicator> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityTiIndicator -BodyParameter <IMicrosoftGraphTiIndicator> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -551,21 +550,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -924,21 +908,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Severity
 An integer representing the severity of the malicious behavior identified by the data within the indicator.
 Acceptable values are 0 – 5 where 5 is the most severe and zero isn't severe at all.
@@ -1088,8 +1057,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTiIndicator
@@ -1166,8 +1133,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserAgent <String>]`: 
 
 ## RELATED LINKS
-
-
-
-
 

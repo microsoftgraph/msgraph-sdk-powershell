@@ -17,15 +17,14 @@ Create a new deviceManagementExchangeConnector object.
 New-MgDeviceManagementExchangeConnector [-AdditionalProperties <Hashtable>] [-ConnectorServerName <String>]
  [-ExchangeAlias <String>] [-ExchangeConnectorType <DeviceManagementExchangeConnectorType>]
  [-ExchangeOrganization <String>] [-Id <String>] [-LastSyncDateTime <DateTime>] [-PrimarySmtpAddress <String>]
- [-ResponseHeadersVariable <String>] [-ServerName <String>]
- [-Status <DeviceManagementExchangeConnectorStatus>] [-Version <String>] [-Headers <IDictionary>] [-Confirm]
+ [-ServerName <String>] [-Status <DeviceManagementExchangeConnectorStatus>] [-Version <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceManagementExchangeConnector -BodyParameter <IMicrosoftGraphDeviceManagementExchangeConnector>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,21 +139,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -193,21 +177,6 @@ Email address used to configure the Service To Service Exchange Connector.
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -299,8 +268,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
@@ -328,8 +295,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Version <String>]`: The version of the ExchangeConnectorAgent
 
 ## RELATED LINKS
-
-
-
-
 

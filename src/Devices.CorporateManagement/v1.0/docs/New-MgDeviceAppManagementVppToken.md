@@ -17,15 +17,14 @@ Create a new vppToken object.
 New-MgDeviceAppManagementVppToken [-AdditionalProperties <Hashtable>] [-AppleId <String>]
  [-AutomaticallyUpdateApps] [-CountryOrRegion <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-LastSyncDateTime <DateTime>] [-LastSyncStatus <VppTokenSyncStatus>]
- [-OrganizationName <String>] [-ResponseHeadersVariable <String>] [-State <VppTokenState>] [-Token <String>]
- [-VppTokenAccountType <VppTokenAccountType>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OrganizationName <String>] [-State <VppTokenState>] [-Token <String>]
+ [-VppTokenAccountType <VppTokenAccountType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppManagementVppToken -BodyParameter <IMicrosoftGraphVppToken> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDeviceAppManagementVppToken -BodyParameter <IMicrosoftGraphVppToken> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -143,21 +142,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -226,21 +210,6 @@ The organization associated with the Apple Volume Purchase Program Token
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -332,8 +301,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken
@@ -365,8 +332,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[VppTokenAccountType <VppTokenAccountType?>]`: Possible types of an Apple Volume Purchase Program token.
 
 ## RELATED LINKS
-
-
-
-
 

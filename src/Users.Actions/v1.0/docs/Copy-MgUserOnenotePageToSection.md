@@ -16,29 +16,29 @@ For copy operations, you follow an asynchronous calling pattern:  First call the
 ### CopyExpanded (Default)
 ```
 Copy-MgUserOnenotePageToSection -OnenotePageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-GroupId <String>] [-Id <String>] [-ResponseHeadersVariable <String>] [-SiteCollectionId <String>]
- [-SiteId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GroupId <String>] [-Id <String>] [-SiteCollectionId <String>] [-SiteId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Copy
 ```
 Copy-MgUserOnenotePageToSection -OnenotePageId <String> -UserId <String>
  -BodyParameter <IPathsEy9Pr2UsersUserIdOnenotePagesOnenotepageIdMicrosoftGraphCopytosectionPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
 Copy-MgUserOnenotePageToSection -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsEy9Pr2UsersUserIdOnenotePagesOnenotepageIdMicrosoftGraphCopytosectionPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
 Copy-MgUserOnenotePageToSection -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-GroupId <String>] [-Id <String>] [-ResponseHeadersVariable <String>] [-SiteCollectionId <String>]
- [-SiteId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GroupId <String>] [-Id <String>] [-SiteCollectionId <String>] [-SiteId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +108,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -163,21 +148,6 @@ Parameter Sets: Copy, CopyExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -269,8 +239,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteOperation
@@ -314,7 +282,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
   - `[SubscriptionId <String>]`: The unique identifier of subscription
@@ -324,8 +291,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

@@ -16,16 +16,14 @@ Update the navigation property billing in reports
 ```
 Update-MgReportPartnerBilling [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Manifests <IMicrosoftGraphPartnersBillingManifest[]>]
- [-Operations <IMicrosoftGraphPartnersBillingOperation[]>]
- [-Reconciliation <IMicrosoftGraphPartnersBillingReconciliation>] [-ResponseHeadersVariable <String>]
- [-Usage <IMicrosoftGraphPartnersBillingAzureUsage>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Operations <IMicrosoftGraphPartnersBillingOperation[]>] [-Usage <IMicrosoftGraphPartnersBillingAzureUsage>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgReportPartnerBilling -BodyParameter <IMicrosoftGraphPartnersBilling>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgReportPartnerBilling -BodyParameter <IMicrosoftGraphPartnersBilling> [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -143,37 +141,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Reconciliation
-billingReconciliation
-To construct, see NOTES section for RECONCILIATION properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPartnersBillingReconciliation
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Usage
 azureUsage
 To construct, see NOTES section for USAGE properties and create a hash table.
@@ -265,12 +232,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[LastActionDateTime <DateTime?>]`: The time of the last action of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Status <String>]`: longRunningOperationStatus
-  - `[Reconciliation <IMicrosoftGraphPartnersBillingReconciliation>]`: billingReconciliation
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Billed <IMicrosoftGraphPartnersBillingBilledReconciliation>]`: billedReconciliation
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Usage <IMicrosoftGraphPartnersBillingAzureUsage>]`: azureUsage
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -301,13 +262,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[LastActionDateTime <DateTime?>]`: The time of the last action of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Status <String>]`: longRunningOperationStatus
-
-`RECONCILIATION <IMicrosoftGraphPartnersBillingReconciliation>`: billingReconciliation
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Billed <IMicrosoftGraphPartnersBillingBilledReconciliation>]`: billedReconciliation
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 `USAGE <IMicrosoftGraphPartnersBillingAzureUsage>`: azureUsage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

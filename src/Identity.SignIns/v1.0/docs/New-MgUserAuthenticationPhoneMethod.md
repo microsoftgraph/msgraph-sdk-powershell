@@ -20,29 +20,27 @@ Additionally, if a user is enabled by policy to use SMS sign-in and a mobile num
 ### CreateExpanded (Default)
 ```
 New-MgUserAuthenticationPhoneMethod -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-PhoneNumber <String>] [-PhoneType <String>] [-ResponseHeadersVariable <String>] [-SmsSignInState <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PhoneNumber <String>] [-PhoneType <String>] [-SmsSignInState <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserAuthenticationPhoneMethod -UserId <String> -BodyParameter <IMicrosoftGraphPhoneAuthenticationMethod>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphPhoneAuthenticationMethod> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPhoneAuthenticationMethod> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-PhoneNumber <String>] [-PhoneType <String>]
- [-ResponseHeadersVariable <String>] [-SmsSignInState <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SmsSignInState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,21 +92,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -172,21 +155,6 @@ authenticationPhoneType
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -264,8 +232,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhoneAuthenticationMethod
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -345,8 +311,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: The unique identifier of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
-
-
-
-
 

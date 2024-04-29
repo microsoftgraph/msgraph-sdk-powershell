@@ -19,15 +19,14 @@ To allow for asynchronous processing, you must wait a minimum of 2 hours between
 ```
 Update-MgBetaTenantRelationshipMultiTenantOrganization [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-JoinRequest <IMicrosoftGraphMultiTenantOrganizationJoinRequestRecord>] [-ResponseHeadersVariable <String>]
- [-State <String>] [-Tenants <IMicrosoftGraphMultiTenantOrganizationMember[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-JoinRequest <IMicrosoftGraphMultiTenantOrganizationJoinRequestRecord>] [-State <String>]
+ [-Tenants <IMicrosoftGraphMultiTenantOrganizationMember[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipMultiTenantOrganization -BodyParameter <IMicrosoftGraphMultiTenantOrganization>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -131,21 +130,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -170,21 +154,6 @@ To construct, see NOTES section for JOINREQUEST properties and create a hash tab
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiTenantOrganizationJoinRequestRecord
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -261,8 +230,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiTenantOrganization
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -342,8 +309,4 @@ To create the parameters described below, construct a hash table containing the 
     - `[Status <String>]`: multiTenantOrganizationMemberProcessingStatus
 
 ## RELATED LINKS
-
-
-
-
 

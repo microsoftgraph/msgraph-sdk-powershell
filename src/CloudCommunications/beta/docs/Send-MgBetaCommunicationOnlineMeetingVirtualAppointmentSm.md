@@ -8,17 +8,14 @@ schema: 2.0.0
 # Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm
 
 ## SYNOPSIS
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
+Invoke action sendVirtualAppointmentSms
 
 ## SYNTAX
 
 ### SendExpanded (Default)
 ```
 Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm -OnlineMeetingId <String>
- [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-MessageType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
+ [-AdditionalProperties <Hashtable>] [-PhoneNumbers <String[]>] [-SmsType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -26,30 +23,25 @@ Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm -OnlineMeetingId <Stri
 ```
 Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm -OnlineMeetingId <String>
  -BodyParameter <IPaths17Lqpb4CommunicationsOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentsmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
 Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths17Lqpb4CommunicationsOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentsmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentityExpanded
 ```
 Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-MessageType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
+ [-AdditionalProperties <Hashtable>] [-PhoneNumbers <String[]>] [-SmsType <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
+Invoke action sendVirtualAppointmentSms
 
 ## EXAMPLES
 
@@ -84,22 +76,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Attendees
-.
-To construct, see NOTES section for ATTENDEES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttendeeNotificationInfo[]
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -BodyParameter
 .
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -110,21 +86,6 @@ Parameter Sets: Send, SendViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -144,21 +105,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -MessageType
-virtualAppointmentMessageType
-
-```yaml
-Type: System.String
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -192,13 +138,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
+### -PhoneNumbers
+.
+
+```yaml
+Type: System.String[]
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SmsType
+virtualAppointmentSmsType
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Aliases:
 
 Required: False
 Position: Named
@@ -247,8 +208,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths17Lqpb4CommunicationsOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentsmsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -262,16 +221,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ATTENDEES <IMicrosoftGraphAttendeeNotificationInfo[]>`: .
-  - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-  - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
-
 `BODYPARAMETER <IPaths17Lqpb4CommunicationsOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentsmsPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]`: 
-    - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-    - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
-  - `[MessageType <String>]`: virtualAppointmentMessageType
+  - `[PhoneNumbers <String[]>]`: 
+  - `[SmsType <String>]`: virtualAppointmentSmsType
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
@@ -283,7 +236,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
@@ -295,8 +247,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

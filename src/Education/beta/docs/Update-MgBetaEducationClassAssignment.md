@@ -22,28 +22,24 @@ Update-MgBetaEducationClassAssignment -EducationAssignmentId <String> -Education
  [-AllowLateSubmissions] [-AllowStudentsToAddResourcesToSubmission] [-AssignTo <Hashtable>]
  [-Categories <IMicrosoftGraphEducationCategory[]>] [-ClassId <String>] [-CloseDateTime <DateTime>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>] [-DueDateTime <DateTime>]
- [-Grading <Hashtable>] [-GradingCategory <IMicrosoftGraphEducationGradingCategory>]
- [-GradingScheme <IMicrosoftGraphEducationGradingScheme>] [-Id <String>]
+ [-Grading <Hashtable>] [-GradingCategory <IMicrosoftGraphEducationGradingCategory>] [-Id <String>]
  [-Instructions <IMicrosoftGraphEducationItemBody>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-ModuleUrl <String>] [-NotificationChannelUrl <String>]
- [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-ResponseHeadersVariable <String>]
- [-Rubric <IMicrosoftGraphEducationRubric>] [-Status <String>]
- [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-Rubric <IMicrosoftGraphEducationRubric>]
+ [-Status <String>] [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaEducationClassAssignment -EducationAssignmentId <String> -EducationClassId <String>
- -BodyParameter <IMicrosoftGraphEducationAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaEducationClassAssignment -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -53,13 +49,11 @@ Update-MgBetaEducationClassAssignment -InputObject <IEducationIdentity> [-AddedS
  [-AllowStudentsToAddResourcesToSubmission] [-AssignTo <Hashtable>]
  [-Categories <IMicrosoftGraphEducationCategory[]>] [-ClassId <String>] [-CloseDateTime <DateTime>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>] [-DueDateTime <DateTime>]
- [-Grading <Hashtable>] [-GradingCategory <IMicrosoftGraphEducationGradingCategory>]
- [-GradingScheme <IMicrosoftGraphEducationGradingScheme>] [-Id <String>]
+ [-Grading <Hashtable>] [-GradingCategory <IMicrosoftGraphEducationGradingCategory>] [-Id <String>]
  [-Instructions <IMicrosoftGraphEducationItemBody>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-ModuleUrl <String>] [-NotificationChannelUrl <String>]
- [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-ResponseHeadersVariable <String>]
- [-Rubric <IMicrosoftGraphEducationRubric>] [-Status <String>]
- [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-Rubric <IMicrosoftGraphEducationRubric>]
+ [-Status <String>] [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -138,7 +132,7 @@ Accept wildcard characters: False
 
 ### -AllowLateSubmissions
 Identifies whether students can submit after the due date.
-If this property isn't specified during create, it defaults to true.
+If this property is not specified during create, it defaults to true.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -217,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClassId
-Class to which this assignment belongs.
+Class which this assignment belongs.
 
 ```yaml
 Type: System.String
@@ -233,7 +227,7 @@ Accept wildcard characters: False
 
 ### -CloseDateTime
 Date when the assignment will be closed for submissions.
-This is an optional field that can be null if the assignment doesn't allowLateSubmissions or when the closeDateTime is the same as the dueDateTime.
+This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime.
 But if specified, then the closeDateTime must be greater than or equal to the dueDateTime.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -359,37 +353,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -GradingScheme
-educationGradingScheme
-To construct, see NOTES section for GRADINGSCHEME properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationGradingScheme
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -473,7 +436,7 @@ Accept wildcard characters: False
 Optional field to specify the URL of the channel to post the assignment publish notification.
 If not specified or null, defaults to the General channel.
 This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient.
-Updating the notificationChannelUrl isn't allowed after the assignment has been published.
+Updating the notificationChannelUrl is not allowed after the assignment has been published.
 
 ```yaml
 Type: System.String
@@ -497,21 +460,6 @@ To construct, see NOTES section for RESOURCES properties and create a hash table
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentResource[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -609,8 +557,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
@@ -629,21 +575,21 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AddToCalendarAction <String>]`: educationAddToCalendarOptions
   - `[AddedStudentAction <String>]`: educationAddedStudentAction
-  - `[AllowLateSubmissions <Boolean?>]`: Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
+  - `[AllowLateSubmissions <Boolean?>]`: Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.
   - `[AllowStudentsToAddResourcesToSubmission <Boolean?>]`: Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
   - `[AssignTo <IMicrosoftGraphEducationAssignmentRecipient>]`: educationAssignmentRecipient
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Categories <IMicrosoftGraphEducationCategory[]>]`: When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: Unique identifier for the category.
-  - `[ClassId <String>]`: Class to which this assignment belongs.
-  - `[CloseDateTime <DateTime?>]`: Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment doesn't allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[ClassId <String>]`: Class which this assignment belongs.
+  - `[CloseDateTime <DateTime?>]`: Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[DisplayName <String>]`: Name of the assignment.
@@ -655,22 +601,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the grading category.
     - `[PercentageWeight <Int32?>]`: The weight of the category; an integer between 0 and 100.
-  - `[GradingScheme <IMicrosoftGraphEducationGradingScheme>]`: educationGradingScheme
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[DisplayName <String>]`: The name of the grading scheme.
-    - `[Grades <IMicrosoftGraphEducationGradingSchemeGrade[]>]`: The grades that make up the scheme.
-      - `[DefaultPercentage <Single?>]`: The midpoint of the grade range.
-      - `[DisplayName <String>]`: The name of the grading scheme.
-      - `[MinPercentage <Single?>]`: The minimum percentage of the total points needed to achieve this grade.
-    - `[HidePointsDuringGrading <Boolean?>]`: The display setting for the UI. Indicates whether teachers can grade with points in addition to letter grades.
   - `[Instructions <IMicrosoftGraphEducationItemBody>]`: educationItemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: 
     - `[ContentType <String>]`: bodyType
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[ModuleUrl <String>]`: The URL of the module from which to access the assignment.
-  - `[NotificationChannelUrl <String>]`: Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
+  - `[NotificationChannelUrl <String>]`: Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
   - `[Resources <IMicrosoftGraphEducationAssignmentResource[]>]`: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DependentResources <IMicrosoftGraphEducationAssignmentResource[]>]`: 
@@ -730,8 +667,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -741,16 +678,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: The name of the grading category.
   - `[PercentageWeight <Int32?>]`: The weight of the category; an integer between 0 and 100.
 
-`GRADINGSCHEME <IMicrosoftGraphEducationGradingScheme>`: educationGradingScheme
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: The name of the grading scheme.
-  - `[Grades <IMicrosoftGraphEducationGradingSchemeGrade[]>]`: The grades that make up the scheme.
-    - `[DefaultPercentage <Single?>]`: The midpoint of the grade range.
-    - `[DisplayName <String>]`: The name of the grading scheme.
-    - `[MinPercentage <Single?>]`: The minimum percentage of the total points needed to achieve this grade.
-  - `[HidePointsDuringGrading <Boolean?>]`: The display setting for the UI. Indicates whether teachers can grade with points in addition to letter grades.
-
 `INPUTOBJECT <IEducationIdentity>`: Identity Parameter
   - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment
   - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
@@ -758,7 +685,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationGradingSchemeId <String>]`: The unique identifier of educationGradingScheme
   - `[EducationModuleId <String>]`: The unique identifier of educationModule
   - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
@@ -780,8 +706,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -795,8 +721,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[DisplayName <String>]`: Display name of resource.
@@ -809,8 +735,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
@@ -840,8 +766,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Outcomes <IMicrosoftGraphEducationOutcome[]>]`: 
@@ -867,8 +793,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UnsubmittedBy <IMicrosoftGraphIdentitySet>]`: identitySet
 
 ## RELATED LINKS
-
-
-
-
 

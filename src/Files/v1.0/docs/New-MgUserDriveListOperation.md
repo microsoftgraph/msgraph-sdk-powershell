@@ -17,22 +17,20 @@ Create new navigation property to operations for users
 New-MgUserDriveListOperation -DriveId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-ResponseHeadersVariable <String>] [-Status <String>] [-StatusDetail <String>]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserDriveListOperation -DriveId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserDriveListOperation -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +38,8 @@ New-MgUserDriveListOperation -InputObject <IFilesIdentity>
 New-MgUserDriveListOperation -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-ResponseHeadersVariable <String>] [-Status <String>] [-StatusDetail <String>]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,21 +142,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -245,21 +228,6 @@ URI of the resource that the operation is performed on.
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -367,8 +335,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -17,23 +17,21 @@ Update the navigation property tenants in tenantRelationships
 Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId <String>
  [-AddedByTenantId <String>] [-AddedDateTime <DateTime>] [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-JoinedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Role <String>] [-State <String>] [-TenantId <String>]
- [-TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Role <String>] [-State <String>] [-TenantId <String>]
+ [-TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant -MultiTenantOrganizationMemberId <String>
- -BodyParameter <IMicrosoftGraphMultiTenantOrganizationMember> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMultiTenantOrganizationMember> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphMultiTenantOrganizationMember> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMultiTenantOrganizationMember> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,9 +39,9 @@ Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant -InputObject <IIden
 Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant -InputObject <IIdentitySignInsIdentity>
  [-AddedByTenantId <String>] [-AddedDateTime <DateTime>] [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-JoinedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Role <String>] [-State <String>] [-TenantId <String>]
- [-TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Role <String>] [-State <String>] [-TenantId <String>]
+ [-TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,21 +159,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -233,21 +216,6 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -356,8 +324,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiTenantOrganizationMember
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

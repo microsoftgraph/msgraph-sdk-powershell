@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementVirtualEndpointUserSetting
 
 ## SYNOPSIS
-Assign a cloudPcUserSetting to user groups.
+Invoke action assign
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Set-MgDeviceManagementVirtualEndpointUserSetting -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-Assign a cloudPcUserSetting to user groups.
+Invoke action assign
 
 ## EXAMPLES
 
@@ -245,7 +245,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `ASSIGNMENTS <IMicrosoftGraphCloudPcUserSettingAssignment[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: The date and time when this assignment was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[CreatedDateTime <DateTime?>]`: 
   - `[Target <IMicrosoftGraphCloudPcManagementAssignmentTarget>]`: cloudPcManagementAssignmentTarget
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
@@ -253,14 +253,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphCloudPcUserSettingAssignment[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: The date and time when this assignment was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[CreatedDateTime <DateTime?>]`: 
     - `[Target <IMicrosoftGraphCloudPcManagementAssignmentTarget>]`: cloudPcManagementAssignmentTarget
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 `INPUTOBJECT <IDeviceManagementActionsIdentity>`: Identity Parameter
   - `[AppLogCollectionRequestId <String>]`: The unique identifier of appLogCollectionRequest
-  - `[CloudPcId <String>]`: The unique identifier of cloudPC
-  - `[CloudPcOnPremisesConnectionId <String>]`: The unique identifier of cloudPcOnPremisesConnection
   - `[CloudPcProvisioningPolicyId <String>]`: The unique identifier of cloudPcProvisioningPolicy
   - `[CloudPcUserSettingId <String>]`: The unique identifier of cloudPcUserSetting
   - `[DeviceCompliancePolicyId <String>]`: The unique identifier of deviceCompliancePolicy
@@ -276,8 +274,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of windowsAutopilotDeviceIdentity
 
 ## RELATED LINKS
-
-
-
-
 

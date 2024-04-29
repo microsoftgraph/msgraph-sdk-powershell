@@ -15,29 +15,27 @@ Update the navigation property members in external
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaExternalConnectionGroupMember -ExternalConnectionId <String> -ExternalGroupId <String>
- -IdentityId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -IdentityId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Type <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaExternalConnectionGroupMember -ExternalConnectionId <String> -ExternalGroupId <String>
- -IdentityId <String> -BodyParameter <IMicrosoftGraphExternalConnectorsIdentity>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -IdentityId <String> -BodyParameter <IMicrosoftGraphExternalConnectorsIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaExternalConnectionGroupMember -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphExternalConnectorsIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaExternalConnectionGroupMember -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-Type <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +120,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -181,21 +164,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -253,8 +221,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

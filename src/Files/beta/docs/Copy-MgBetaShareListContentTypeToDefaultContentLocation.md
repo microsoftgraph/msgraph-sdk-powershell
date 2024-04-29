@@ -8,44 +8,42 @@ schema: 2.0.0
 # Copy-MgBetaShareListContentTypeToDefaultContentLocation
 
 ## SYNOPSIS
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ## SYNTAX
 
 ### CopyExpanded (Default)
 ```
 Copy-MgBetaShareListContentTypeToDefaultContentLocation -ContentTypeId <String> -SharedDriveItemId <String>
- [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>] [-ResponseHeadersVariable <String>]
- [-SourceFile <IMicrosoftGraphItemReference>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
+ [-SourceFile <IMicrosoftGraphItemReference>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Copy
 ```
 Copy-MgBetaShareListContentTypeToDefaultContentLocation -ContentTypeId <String> -SharedDriveItemId <String>
  -BodyParameter <IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
 Copy-MgBetaShareListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
  -BodyParameter <IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
 Copy-MgBetaShareListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
- [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>] [-ResponseHeadersVariable <String>]
- [-SourceFile <IMicrosoftGraphItemReference>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
+ [-SourceFile <IMicrosoftGraphItemReference>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action copyToDefaultContentLocation
+Copy a file to a default content location in a [content type][contentType].
+The file can then be added as a default file or template via a POST operation.
 
 ## EXAMPLES
 
@@ -126,21 +124,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -164,21 +147,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -257,8 +225,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -341,8 +307,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[SiteId <String>]`: For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 
 ## RELATED LINKS
-
-
-
-
 

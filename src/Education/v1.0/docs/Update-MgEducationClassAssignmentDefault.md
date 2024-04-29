@@ -17,30 +17,26 @@ Only teachers can update these settings.
 ```
 Update-MgEducationClassAssignmentDefault -EducationClassId <String> [-AddedStudentAction <String>]
  [-AdditionalProperties <Hashtable>] [-AddToCalendarAction <String>] [-DueTime <String>] [-Id <String>]
- [-NotificationChannelUrl <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-NotificationChannelUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEducationClassAssignmentDefault -EducationClassId <String>
- -BodyParameter <IMicrosoftGraphEducationAssignmentDefaults> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationAssignmentDefaults> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgEducationClassAssignmentDefault -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationAssignmentDefaults> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationAssignmentDefaults> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgEducationClassAssignmentDefault -InputObject <IEducationIdentity> [-AddedStudentAction <String>]
  [-AdditionalProperties <Hashtable>] [-AddToCalendarAction <String>] [-DueTime <String>] [-Id <String>]
- [-NotificationChannelUrl <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-NotificationChannelUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +151,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -203,28 +184,13 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationChannelUrl
-Default Teams channel to which notifications are sent.
+Default Teams channel to which notifications will be sent.
 Default value is null.
 
 ```yaml
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -273,8 +239,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentDefaults
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentDefaults
@@ -294,16 +258,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[AddToCalendarAction <String>]`: educationAddToCalendarOptions
   - `[AddedStudentAction <String>]`: educationAddedStudentAction
   - `[DueTime <String>]`: Class-level default value for due time field. Default value is 23:59:00.
-  - `[NotificationChannelUrl <String>]`: Default Teams channel to which notifications are sent. Default value is null.
+  - `[NotificationChannelUrl <String>]`: Default Teams channel to which notifications will be sent. Default value is null.
 
 `INPUTOBJECT <IEducationIdentity>`: Identity Parameter
   - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment
   - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
-  - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationModuleId <String>]`: The unique identifier of educationModule
-  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool
@@ -312,8 +273,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationUserId <String>]`: The unique identifier of educationUser
 
 ## RELATED LINKS
-
-
-
-
 

@@ -16,32 +16,30 @@ Update the properties of a windowsInformationProtectionNetworkLearningSummary ob
 ```
 Update-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary
  -WindowsInformationProtectionNetworkLearningSummaryId <String> [-AdditionalProperties <Hashtable>]
- [-DeviceCount <Int32>] [-Id <String>] [-ResponseHeadersVariable <String>] [-Url <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DeviceCount <Int32>] [-Id <String>] [-Url <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary
  -WindowsInformationProtectionNetworkLearningSummaryId <String>
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary
  -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-DeviceCount <Int32>]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-Url <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Url <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +109,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -155,21 +138,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -242,8 +210,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -321,8 +287,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsMalwareInformationId <String>]`: The unique identifier of windowsMalwareInformation
 
 ## RELATED LINKS
-
-
-
-
 

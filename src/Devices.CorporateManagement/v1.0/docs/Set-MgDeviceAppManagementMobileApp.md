@@ -8,43 +8,40 @@ schema: 2.0.0
 # Set-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Invoke action assign
+Not yet documented
 
 ## SYNTAX
 
 ### AssignExpanded (Default)
 ```
 Set-MgDeviceAppManagementMobileApp -MobileAppId <String> [-AdditionalProperties <Hashtable>]
- [-MobileAppAssignments <IMicrosoftGraphMobileAppAssignment[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MobileAppAssignments <IMicrosoftGraphMobileAppAssignment[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Assign
 ```
 Set-MgDeviceAppManagementMobileApp -MobileAppId <String>
  -BodyParameter <IPaths12NzrcrDeviceappmanagementMobileappsMobileappIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
 Set-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPaths12NzrcrDeviceappmanagementMobileappsMobileappIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
 Set-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-MobileAppAssignments <IMicrosoftGraphMobileAppAssignment[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action assign
+Not yet documented
 
 ## EXAMPLES
 
@@ -89,21 +86,6 @@ Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -172,21 +154,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -226,8 +193,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPaths12NzrcrDeviceappmanagementMobileappsMobileappIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

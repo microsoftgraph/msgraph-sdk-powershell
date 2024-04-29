@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-Module Guid: a0867f53-6898-4b49-9b36-52d4b078e550
+Module Guid: 79de5119-ca54-4aae-9020-3e1443933c78
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,9 +13,6 @@ Microsoft Graph PowerShell Cmdlets
 ## Microsoft.Graph.Beta.Devices.CorporateManagement Cmdlets
 ### [Clear-MgBetaDeviceAppManagementWindowsInformationProtectionDeviceRegistration](Clear-MgBetaDeviceAppManagementWindowsInformationProtectionDeviceRegistration.md)
 Invoke action wipe
-
-### [Convert-MgBetaDeviceAppManagementMobileAppFromMobileAppCatalogPackage](Convert-MgBetaDeviceAppManagementMobileAppFromMobileAppCatalogPackage.md)
-Invoke function convertFromMobileAppCatalogPackage
 
 ### [Get-MgBetaDeviceAppManagement](Get-MgBetaDeviceAppManagement.md)
 Get deviceAppManagement
@@ -224,20 +221,11 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidForWork
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidLobApp
@@ -245,39 +233,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidLobApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidManagedStoreApp
@@ -285,20 +254,11 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidManaged
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidStoreApp
@@ -306,20 +266,11 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidStoreAp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobApp](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosLobApp
@@ -327,39 +278,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosLobApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
@@ -367,20 +299,11 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppApp](Get-MgBetaDeviceAppManagementMobileAppAsIoVppApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosVppApp
@@ -388,26 +311,14 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosVppApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense.md)
 The licenses assigned to this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicenseCount](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicenseCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment.md)
 The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignmentCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSDmgApp
@@ -415,39 +326,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSDmgApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSLobApp
@@ -455,39 +347,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSLobApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSPkgApp
@@ -495,39 +368,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSPkgApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedAndroidLobApp
@@ -535,39 +389,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedAndroid
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobApp](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
@@ -575,39 +410,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobA
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
@@ -615,39 +431,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileL
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessApp](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.microsoftStoreForBusinessApp
@@ -655,25 +452,16 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.microsoftStore
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategory.md)
 The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp.md)
 The collection of contained apps in a mobileApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedAppCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship.md)
-The set of direct relationships for this app.
+List of relationships for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationshipCount.md)
+### [Get-MgBetaDeviceAppManagementMobileAppAssignedLicenseCount](Get-MgBetaDeviceAppManagementMobileAppAssignedLicenseCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAssignment.md)
@@ -688,39 +476,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.win32LobApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppX](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppX.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsAppX
@@ -728,39 +497,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsAppX
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsi](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsi.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsMobileMSI
@@ -768,39 +518,20 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsMobileM
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsStoreApp
@@ -808,20 +539,11 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsStoreAp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppX](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppX.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsUniversalAppX
@@ -829,46 +551,23 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsUnivers
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp.md)
 The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
-This property is read-only.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedAppCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion.md)
 The list of content versions for this app.
-This property is read-only.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp.md)
 The collection of contained apps in a MobileLobApp acting as a package.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile.md)
 The list of files for this app content version.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsWebApp
@@ -876,20 +575,11 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsWebApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationshipCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetApp](Get-MgBetaDeviceAppManagementMobileAppAsWinGetApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.winGetApp
@@ -897,31 +587,19 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.winGetApp
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment.md)
 The list of group assignments for this mobile app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignmentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppCategory.md)
 The list of categories for this app.
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppCategoryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship.md)
-The set of direct relationships for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationshipCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppCatalogPackage](Get-MgBetaDeviceAppManagementMobileAppCatalogPackage.md)
-MobileAppCatalogPackage entities.
-
-### [Get-MgBetaDeviceAppManagementMobileAppCatalogPackageCount](Get-MgBetaDeviceAppManagementMobileAppCatalogPackageCount.md)
-Get the number of the resource
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppCategory](Get-MgBetaDeviceAppManagementMobileAppCategory.md)
 The mobile app categories.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppCategoryCount.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCommittedContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppCommittedContainedAppCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppConfiguration](Get-MgBetaDeviceAppManagementMobileAppConfiguration.md)
@@ -953,6 +631,18 @@ Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary](Get-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
 App configuration user status summary.
+
+### [Get-MgBetaDeviceAppManagementMobileAppContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppContainedAppCount.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppContentVersionContainedAppCount.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppContentVersionCount.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppContentVersionFileCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppCount](Get-MgBetaDeviceAppManagementMobileAppCount.md)
 Get the number of the resource
@@ -1021,7 +711,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppRelationship](Get-MgBetaDeviceAppManagementMobileAppRelationship.md)
-The set of direct relationships for this app.
+List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppRelationshipCount.md)
 Get the number of the resource
@@ -1283,7 +973,7 @@ Get the number of the resource
 The list of mobile app troubleshooting events for this user.
 
 ### [Get-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest](Get-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
-Indicates collection of App Log Upload Request.
+The collection property of AppLogUploadRequest.
 
 ### [Get-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequestCount](Get-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequestCount.md)
 Get the number of the resource
@@ -1740,9 +1430,6 @@ Create new navigation property to assignments for deviceAppManagement
 
 ### [New-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship.md)
 Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppCatalogPackage](New-MgBetaDeviceAppManagementMobileAppCatalogPackage.md)
-Create new navigation property to mobileAppCatalogPackages for deviceAppManagement
 
 ### [New-MgBetaDeviceAppManagementMobileAppCategory](New-MgBetaDeviceAppManagementMobileAppCategory.md)
 Create new navigation property to mobileAppCategories for deviceAppManagement
@@ -2223,9 +1910,6 @@ Delete navigation property assignments for deviceAppManagement
 
 ### [Remove-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship.md)
 Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppCatalogPackage](Remove-MgBetaDeviceAppManagementMobileAppCatalogPackage.md)
-Delete navigation property mobileAppCatalogPackages for deviceAppManagement
 
 ### [Remove-MgBetaDeviceAppManagementMobileAppCategory](Remove-MgBetaDeviceAppManagementMobileAppCategory.md)
 Delete navigation property mobileAppCategories for deviceAppManagement
@@ -2769,9 +2453,6 @@ Update the navigation property assignments in deviceAppManagement
 
 ### [Update-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship.md)
 Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppCatalogPackage](Update-MgBetaDeviceAppManagementMobileAppCatalogPackage.md)
-Update the navigation property mobileAppCatalogPackages in deviceAppManagement
 
 ### [Update-MgBetaDeviceAppManagementMobileAppCategory](Update-MgBetaDeviceAppManagementMobileAppCategory.md)
 Update the navigation property mobileAppCategories in deviceAppManagement

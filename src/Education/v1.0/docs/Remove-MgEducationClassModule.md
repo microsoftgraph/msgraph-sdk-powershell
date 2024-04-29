@@ -8,28 +8,24 @@ schema: 2.0.0
 # Remove-MgEducationClassModule
 
 ## SYNOPSIS
-Delete an existing module in a class.
-Only teachers within a class can delete modules.
+Delete navigation property modules for education
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
 Remove-MgEducationClassModule -EducationClassId <String> -EducationModuleId <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationClassModule -InputObject <IEducationIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgEducationClassModule -InputObject <IEducationIdentity> [-IfMatch <String>] [-Headers <IDictionary>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete an existing module in a class.
-Only teachers within a class can delete modules.
+Delete navigation property modules for education
 
 ## EXAMPLES
 
@@ -140,21 +136,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -224,8 +205,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationUserId <String>]`: The unique identifier of educationUser
 
 ## RELATED LINKS
-
-
-
-
 

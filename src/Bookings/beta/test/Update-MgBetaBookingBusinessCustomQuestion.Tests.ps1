@@ -19,27 +19,11 @@ Describe 'Update-MgBetaBookingBusinessCustomQuestion' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'UpdateExpanded1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'Update1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'Update' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'UpdateViaIdentityExpanded1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'UpdateViaIdentityExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'UpdateViaIdentity1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

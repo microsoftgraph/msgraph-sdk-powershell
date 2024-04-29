@@ -17,22 +17,22 @@ Create new navigation property to operations for groups
 New-MgBetaGroupSiteGetByPathOperation -GroupId <String> -Path <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-ResponseHeadersVariable <String>] [-Status <String>] [-StatusDetail <String>]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaGroupSiteGetByPathOperation -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgBetaGroupSiteGetByPathOperation -GroupId <String> -Path <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateExpanded
@@ -40,22 +40,22 @@ New-MgBetaGroupSiteGetByPathOperation -GroupId <String> -Path <String> -SiteId <
 New-MgBetaGroupSiteGetByPathOperation -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-ResponseHeadersVariable <String>] [-Status <String>] [-StatusDetail <String>]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaGroupSiteGetByPathOperation -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgBetaGroupSiteGetByPathOperation -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -63,8 +63,8 @@ New-MgBetaGroupSiteGetByPathOperation -InputObject <ISitesIdentity>
 New-MgBetaGroupSiteGetByPathOperation -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-ResponseHeadersVariable <String>] [-Status <String>] [-StatusDetail <String>]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
@@ -72,8 +72,8 @@ New-MgBetaGroupSiteGetByPathOperation -InputObject <ISitesIdentity> [-Additional
 New-MgBetaGroupSiteGetByPathOperation -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-ResponseHeadersVariable <String>] [-Status <String>] [-StatusDetail <String>]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -307,21 +307,6 @@ URI of the resource that the operation is performed on.
 Type: System.String
 Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

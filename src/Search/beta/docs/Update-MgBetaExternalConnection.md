@@ -22,24 +22,24 @@ Update-MgBetaExternalConnection -ExternalConnectionId <String>
  [-Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>] [-Id <String>] [-IngestedItemsCount <Int64>]
  [-Items <IMicrosoftGraphExternalConnectorsExternalItem[]>] [-Name <String>]
  [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
- [-Quota <IMicrosoftGraphExternalConnectorsConnectionQuota>] [-ResponseHeadersVariable <String>]
+ [-Quota <IMicrosoftGraphExternalConnectorsConnectionQuota>]
  [-Schema <IMicrosoftGraphExternalConnectorsSchema>]
- [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaExternalConnection -ExternalConnectionId <String>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaExternalConnection -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -52,10 +52,10 @@ Update-MgBetaExternalConnection -InputObject <ISearchIdentity>
  [-Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>] [-Id <String>] [-IngestedItemsCount <Int64>]
  [-Items <IMicrosoftGraphExternalConnectorsExternalItem[]>] [-Name <String>]
  [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
- [-Quota <IMicrosoftGraphExternalConnectorsConnectionQuota>] [-ResponseHeadersVariable <String>]
+ [-Quota <IMicrosoftGraphExternalConnectorsConnectionQuota>]
  [-Schema <IMicrosoftGraphExternalConnectorsSchema>]
- [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -234,21 +234,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -363,21 +348,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Schema
 schema
 To construct, see NOTES section for SCHEMA properties and create a hash table.
@@ -464,8 +434,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -705,8 +673,4 @@ To create the parameters described below, construct a hash table containing the 
       - `[ValuesJoinedBy <String>]`: binaryOperator
 
 ## RELATED LINKS
-
-
-
-
 

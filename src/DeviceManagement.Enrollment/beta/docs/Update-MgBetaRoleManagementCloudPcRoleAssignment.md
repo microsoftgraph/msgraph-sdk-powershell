@@ -20,22 +20,20 @@ Update-MgBetaRoleManagementCloudPcRoleAssignment -UnifiedRoleAssignmentMultipleI
  [-Condition <String>] [-Description <String>] [-DirectoryScopeIds <String[]>]
  [-DirectoryScopes <IMicrosoftGraphDirectoryObject[]>] [-DisplayName <String>] [-Id <String>]
  [-PrincipalIds <String[]>] [-Principals <IMicrosoftGraphDirectoryObject[]>]
- [-ResponseHeadersVariable <String>] [-RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]
- [-RoleDefinitionId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>] [-RoleDefinitionId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaRoleManagementCloudPcRoleAssignment -UnifiedRoleAssignmentMultipleId <String>
- -BodyParameter <IMicrosoftGraphUnifiedRoleAssignmentMultiple> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleAssignmentMultiple> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaRoleManagementCloudPcRoleAssignment -InputObject <IDeviceManagementEnrollmentIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRoleAssignmentMultiple> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleAssignmentMultiple> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,8 +43,8 @@ Update-MgBetaRoleManagementCloudPcRoleAssignment -InputObject <IDeviceManagement
  [-Condition <String>] [-Description <String>] [-DirectoryScopeIds <String[]>]
  [-DirectoryScopes <IMicrosoftGraphDirectoryObject[]>] [-DisplayName <String>] [-Id <String>]
  [-PrincipalIds <String[]>] [-Principals <IMicrosoftGraphDirectoryObject[]>]
- [-ResponseHeadersVariable <String>] [-RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]
- [-RoleDefinitionId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>] [-RoleDefinitionId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -222,21 +220,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -296,21 +279,6 @@ To construct, see NOTES section for PRINCIPALS properties and create a hash tabl
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -405,8 +373,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleAssignmentMultiple
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleAssignmentMultiple
@@ -471,7 +437,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppScopeId <String>]`: The unique identifier of appScope
   - `[AppleEnrollmentProfileAssignmentId <String>]`: The unique identifier of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: The unique identifier of appleUserInitiatedEnrollmentProfile
-  - `[CustomAppScopeId <String>]`: The unique identifier of customAppScope
   - `[DepOnboardingSettingId <String>]`: The unique identifier of depOnboardingSetting
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: The unique identifier of deviceManagementAutopilotEvent
@@ -484,7 +449,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of importedWindowsAutopilotDeviceIdentity
   - `[UnifiedRbacResourceActionId <String>]`: The unique identifier of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: The unique identifier of unifiedRbacResourceNamespace
-  - `[UnifiedRoleAssignmentId <String>]`: The unique identifier of unifiedRoleAssignment
   - `[UnifiedRoleAssignmentMultipleId <String>]`: The unique identifier of unifiedRoleAssignmentMultiple
   - `[UnifiedRoleDefinitionId <String>]`: The unique identifier of unifiedRoleDefinition
   - `[UnifiedRoleDefinitionId1 <String>]`: The unique identifier of unifiedRoleDefinition
@@ -517,8 +481,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Version <String>]`: Indicates the version of the unifiedRoleDefinition object. Read-only when isBuiltIn is true.
 
 ## RELATED LINKS
-
-
-
-
 

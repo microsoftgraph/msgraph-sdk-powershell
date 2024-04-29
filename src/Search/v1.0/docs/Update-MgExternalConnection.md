@@ -19,24 +19,24 @@ Update-MgExternalConnection -ExternalConnectionId <String>
  [-Configuration <IMicrosoftGraphExternalConnectorsConfiguration>] [-ConnectorId <String>]
  [-Description <String>] [-Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>] [-Id <String>]
  [-Items <IMicrosoftGraphExternalConnectorsExternalItem[]>] [-Name <String>]
- [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>] [-ResponseHeadersVariable <String>]
+ [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
  [-Schema <IMicrosoftGraphExternalConnectorsSchema>]
- [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgExternalConnection -ExternalConnectionId <String>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgExternalConnection -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,10 +46,10 @@ Update-MgExternalConnection -InputObject <ISearchIdentity>
  [-Configuration <IMicrosoftGraphExternalConnectorsConfiguration>] [-ConnectorId <String>]
  [-Description <String>] [-Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>] [-Id <String>]
  [-Items <IMicrosoftGraphExternalConnectorsExternalItem[]>] [-Name <String>]
- [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>] [-ResponseHeadersVariable <String>]
+ [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
  [-Schema <IMicrosoftGraphExternalConnectorsSchema>]
- [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -197,21 +197,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -285,21 +270,6 @@ To construct, see NOTES section for OPERATIONS properties and create a hash tabl
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionOperation[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -394,8 +364,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection
 
 ### Microsoft.Graph.PowerShell.Models.ISearchIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -510,15 +478,12 @@ To create the parameters described below, construct a hash table containing the 
     - `[Type <String>]`: identityType
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
-  - `[AcronymId <String>]`: The unique identifier of acronym
-  - `[BookmarkId <String>]`: The unique identifier of bookmark
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
   - `[ExternalActivityId <String>]`: The unique identifier of externalActivity
   - `[ExternalConnectionId <String>]`: The unique identifier of externalConnection
   - `[ExternalGroupId <String>]`: The unique identifier of externalGroup
   - `[ExternalItemId <String>]`: The unique identifier of externalItem
   - `[IdentityId <String>]`: The unique identifier of identity
-  - `[QnaId <String>]`: The unique identifier of qna
 
 `ITEMS <IMicrosoftGraphExternalConnectorsExternalItem[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -588,8 +553,4 @@ To create the parameters described below, construct a hash table containing the 
       - `[ValuesJoinedBy <String>]`: binaryOperator
 
 ## RELATED LINKS
-
-
-
-
 

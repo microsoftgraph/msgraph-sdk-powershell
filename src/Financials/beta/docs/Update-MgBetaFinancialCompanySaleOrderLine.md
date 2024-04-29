@@ -21,24 +21,22 @@ Update-MgBetaFinancialCompanySaleOrderLine -CompanyId <String> -SalesOrderLineId
  [-Id <String>] [-InvoiceDiscountAllocation <Decimal>] [-InvoicedQuantity <Decimal>]
  [-InvoiceQuantity <Decimal>] [-Item <IMicrosoftGraphItem>] [-ItemId <String>] [-LineType <String>]
  [-NetAmount <Decimal>] [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>] [-Quantity <Decimal>]
- [-ResponseHeadersVariable <String>] [-Sequence <Int32>] [-ShipmentDate <DateTime>]
- [-ShippedQuantity <Decimal>] [-ShipQuantity <Decimal>] [-TaxCode <String>] [-TaxPercent <Decimal>]
- [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>] [-UnitPrice <Decimal>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sequence <Int32>] [-ShipmentDate <DateTime>] [-ShippedQuantity <Decimal>] [-ShipQuantity <Decimal>]
+ [-TaxCode <String>] [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>]
+ [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleOrderLine -CompanyId <String> -SalesOrderLineId <String>
- -BodyParameter <IMicrosoftGraphSalesOrderLine> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesOrderLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaFinancialCompanySaleOrderLine -CompanyId <String> -SalesOrderId <String>
- -SalesOrderLineId <String> -BodyParameter <IMicrosoftGraphSalesOrderLine> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SalesOrderLineId <String> -BodyParameter <IMicrosoftGraphSalesOrderLine> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
@@ -50,24 +48,21 @@ Update-MgBetaFinancialCompanySaleOrderLine -CompanyId <String> -SalesOrderId <St
  [-DocumentId <String>] [-Id <String>] [-InvoiceDiscountAllocation <Decimal>] [-InvoicedQuantity <Decimal>]
  [-InvoiceQuantity <Decimal>] [-Item <IMicrosoftGraphItem>] [-ItemId <String>] [-LineType <String>]
  [-NetAmount <Decimal>] [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>] [-Quantity <Decimal>]
- [-ResponseHeadersVariable <String>] [-Sequence <Int32>] [-ShipmentDate <DateTime>]
- [-ShippedQuantity <Decimal>] [-ShipQuantity <Decimal>] [-TaxCode <String>] [-TaxPercent <Decimal>]
- [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>] [-UnitPrice <Decimal>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sequence <Int32>] [-ShipmentDate <DateTime>] [-ShippedQuantity <Decimal>] [-ShipQuantity <Decimal>]
+ [-TaxCode <String>] [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>]
+ [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleOrderLine -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphSalesOrderLine> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesOrderLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaFinancialCompanySaleOrderLine -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphSalesOrderLine> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesOrderLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -79,10 +74,9 @@ Update-MgBetaFinancialCompanySaleOrderLine -InputObject <IFinancialsIdentity>
  [-Id <String>] [-InvoiceDiscountAllocation <Decimal>] [-InvoicedQuantity <Decimal>]
  [-InvoiceQuantity <Decimal>] [-Item <IMicrosoftGraphItem>] [-ItemId <String>] [-LineType <String>]
  [-NetAmount <Decimal>] [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>] [-Quantity <Decimal>]
- [-ResponseHeadersVariable <String>] [-Sequence <Int32>] [-ShipmentDate <DateTime>]
- [-ShippedQuantity <Decimal>] [-ShipQuantity <Decimal>] [-TaxCode <String>] [-TaxPercent <Decimal>]
- [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>] [-UnitPrice <Decimal>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sequence <Int32>] [-ShipmentDate <DateTime>] [-ShippedQuantity <Decimal>] [-ShipQuantity <Decimal>]
+ [-TaxCode <String>] [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>]
+ [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -94,10 +88,9 @@ Update-MgBetaFinancialCompanySaleOrderLine -InputObject <IFinancialsIdentity>
  [-Id <String>] [-InvoiceDiscountAllocation <Decimal>] [-InvoicedQuantity <Decimal>]
  [-InvoiceQuantity <Decimal>] [-Item <IMicrosoftGraphItem>] [-ItemId <String>] [-LineType <String>]
  [-NetAmount <Decimal>] [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>] [-Quantity <Decimal>]
- [-ResponseHeadersVariable <String>] [-Sequence <Int32>] [-ShipmentDate <DateTime>]
- [-ShippedQuantity <Decimal>] [-ShipQuantity <Decimal>] [-TaxCode <String>] [-TaxPercent <Decimal>]
- [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>] [-UnitPrice <Decimal>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sequence <Int32>] [-ShipmentDate <DateTime>] [-ShippedQuantity <Decimal>] [-ShipQuantity <Decimal>]
+ [-TaxCode <String>] [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>]
+ [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -303,21 +296,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -493,21 +471,6 @@ Accept wildcard characters: False
 Type: System.Decimal
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -720,8 +683,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesOrderLine
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -16,31 +16,30 @@ Update the navigation property authenticationMethodConfigurations in policies
 ```
 Update-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration
  -AuthenticationMethodConfigurationId <String> [-AdditionalProperties <Hashtable>]
- [-ExcludeTargets <IMicrosoftGraphExcludeTarget[]>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-State <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExcludeTargets <IMicrosoftGraphExcludeTarget[]>] [-Id <String>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration
  -AuthenticationMethodConfigurationId <String>
- -BodyParameter <IMicrosoftGraphAuthenticationMethodConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthenticationMethodConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration
  -InputObject <IIdentitySignInsIdentity> -BodyParameter <IMicrosoftGraphAuthenticationMethodConfiguration>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration
  -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
- [-ExcludeTargets <IMicrosoftGraphExcludeTarget[]>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-State <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExcludeTargets <IMicrosoftGraphExcludeTarget[]>] [-Id <String>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,21 +160,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -205,21 +189,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -277,8 +246,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

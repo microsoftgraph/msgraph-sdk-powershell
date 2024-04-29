@@ -8,29 +8,24 @@ schema: 2.0.0
 # Update-MgBetaAdminPeopleItemInsight
 
 ## SYNOPSIS
-Update privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+Update the navigation property itemInsights in admin
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaAdminPeopleItemInsight [-AdditionalProperties <Hashtable>] [-DisabledForGroup <String>]
- [-Id <String>] [-IsEnabledInOrganization] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IsEnabledInOrganization] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaAdminPeopleItemInsight -BodyParameter <IMicrosoftGraphInsightsSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaAdminPeopleItemInsight -BodyParameter <IMicrosoftGraphInsightsSettings> [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+Update the navigation property itemInsights in admin
 
 ## EXAMPLES
 
@@ -130,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsEnabledInOrganization
-true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions.
+true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions.
 Default is true.
 Optional.
 
@@ -138,21 +133,6 @@ Optional.
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -218,11 +198,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisabledForGroup <String>]`: The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
-  - `[IsEnabledInOrganization <Boolean?>]`: true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.
+  - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 
 ## RELATED LINKS
-
-
-
-
 

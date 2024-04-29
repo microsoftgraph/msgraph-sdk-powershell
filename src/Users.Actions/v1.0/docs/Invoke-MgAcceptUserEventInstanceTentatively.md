@@ -18,32 +18,28 @@ For more information on how to propose a time, and how to receive and accept a n
 ```
 Invoke-MgAcceptUserEventInstanceTentatively -EventId <String> -EventId1 <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>]
- [-ResponseHeadersVariable <String>] [-SendResponse] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Accept
 ```
 Invoke-MgAcceptUserEventInstanceTentatively -EventId <String> -EventId1 <String> -UserId <String>
  -BodyParameter <IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentity
 ```
 Invoke-MgAcceptUserEventInstanceTentatively -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentityExpanded
 ```
 Invoke-MgAcceptUserEventInstanceTentatively -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>]
- [-ResponseHeadersVariable <String>] [-SendResponse] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +151,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -209,21 +190,6 @@ To construct, see NOTES section for PROPOSEDNEWTIME properties and create a hash
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeSlot
 Parameter Sets: AcceptExpanded, AcceptViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -302,8 +268,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -352,7 +316,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
   - `[SubscriptionId <String>]`: The unique identifier of subscription
@@ -370,8 +333,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 ## RELATED LINKS
-
-
-
-
 

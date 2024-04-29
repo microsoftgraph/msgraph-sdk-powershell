@@ -15,15 +15,15 @@ Update the properties of a lifecycleManagementSettings object.
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting [-AdditionalProperties <Hashtable>]
- [-EmailSettings <IMicrosoftGraphEmailSettings>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-WorkflowScheduleIntervalInHours <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EmailSettings <IMicrosoftGraphEmailSettings>] [-Id <String>] [-WorkflowScheduleIntervalInHours <Int32>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting
- -BodyParameter <IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,21 +96,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -119,21 +104,6 @@ Read-only.
 Type: System.String
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -197,8 +167,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings
@@ -227,8 +195,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UseCompanyBranding <Boolean?>]`: Specifies if the organization’s banner logo should be included in email notifications. The banner logo will replace the Microsoft logo at the top of the email notification. If true the banner logo will be taken from the tenant’s branding settings. This value can only be set to true if the organizationalBranding bannerLogo property is set.
 
 ## RELATED LINKS
-
-
-
-
 

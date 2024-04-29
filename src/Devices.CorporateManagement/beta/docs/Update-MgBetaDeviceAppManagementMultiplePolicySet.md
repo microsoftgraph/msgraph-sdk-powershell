@@ -17,24 +17,22 @@ Invoke action update
 Update-MgBetaDeviceAppManagementMultiplePolicySet -PolicySetId <String>
  [-AddedPolicySetItems <IMicrosoftGraphPolicySetItem[]>] [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphPolicySetAssignment[]>] [-DeletedPolicySetItems <String[]>]
- [-ResponseHeadersVariable <String>] [-UpdatedPolicySetItems <IMicrosoftGraphPolicySetItem[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UpdatedPolicySetItems <IMicrosoftGraphPolicySetItem[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaDeviceAppManagementMultiplePolicySet -PolicySetId <String>
  -BodyParameter <IPathsNb5PtwDeviceappmanagementPolicysetsPolicysetIdMicrosoftGraphUpdatePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaDeviceAppManagementMultiplePolicySet -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPathsNb5PtwDeviceappmanagementPolicysetsPolicysetIdMicrosoftGraphUpdatePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -42,8 +40,8 @@ Update-MgBetaDeviceAppManagementMultiplePolicySet -InputObject <IDevicesCorporat
 Update-MgBetaDeviceAppManagementMultiplePolicySet -InputObject <IDevicesCorporateManagementIdentity>
  [-AddedPolicySetItems <IMicrosoftGraphPolicySetItem[]>] [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphPolicySetAssignment[]>] [-DeletedPolicySetItems <String[]>]
- [-ResponseHeadersVariable <String>] [-UpdatedPolicySetItems <IMicrosoftGraphPolicySetItem[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UpdatedPolicySetItems <IMicrosoftGraphPolicySetItem[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -145,21 +143,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -200,21 +183,6 @@ Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -276,8 +244,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsNb5PtwDeviceappmanagementPolicysetsPolicysetIdMicrosoftGraphUpdatePostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -375,7 +341,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent

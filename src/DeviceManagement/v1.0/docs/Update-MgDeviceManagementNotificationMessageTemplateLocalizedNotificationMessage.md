@@ -17,32 +17,29 @@ Update the properties of a localizedNotificationMessage object.
 Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -LocalizedNotificationMessageId <String> -NotificationMessageTemplateId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault] [-LastModifiedDateTime <DateTime>]
- [-Locale <String>] [-MessageTemplate <String>] [-ResponseHeadersVariable <String>] [-Subject <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Locale <String>] [-MessageTemplate <String>] [-Subject <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -LocalizedNotificationMessageId <String> -NotificationMessageTemplateId <String>
- -BodyParameter <IMicrosoftGraphLocalizedNotificationMessage> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphLocalizedNotificationMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphLocalizedNotificationMessage>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault]
- [-LastModifiedDateTime <DateTime>] [-Locale <String>] [-MessageTemplate <String>]
- [-ResponseHeadersVariable <String>] [-Subject <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Locale <String>] [-MessageTemplate <String>] [-Subject <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,21 +88,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -236,21 +218,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Subject
 The Message Template Subject.
 
@@ -305,8 +272,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -387,8 +352,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsMalwareInformationId <String>]`: The unique identifier of windowsMalwareInformation
 
 ## RELATED LINKS
-
-
-
-
 

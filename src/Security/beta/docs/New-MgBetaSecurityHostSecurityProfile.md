@@ -19,15 +19,14 @@ New-MgBetaSecurityHostSecurityProfile [-AdditionalProperties <Hashtable>] [-Azur
  [-IsAzureAdRegistered] [-IsHybridAzureDomainJoined] [-LastSeenDateTime <DateTime>]
  [-LogonUsers <IMicrosoftGraphLogonUser[]>] [-NetBiosName <String>]
  [-NetworkInterfaces <IMicrosoftGraphNetworkInterface[]>] [-OS <String>] [-OSVersion <String>]
- [-ParentHost <String>] [-RelatedHostIds <String[]>] [-ResponseHeadersVariable <String>] [-RiskScore <String>]
- [-Tags <String[]>] [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ParentHost <String>] [-RelatedHostIds <String[]>] [-RiskScore <String>] [-Tags <String[]>]
+ [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityHostSecurityProfile -BodyParameter <IMicrosoftGraphHostSecurityProfile>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityHostSecurityProfile -BodyParameter <IMicrosoftGraphHostSecurityProfile> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -139,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -340,21 +324,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RiskScore
 .
 
@@ -438,8 +407,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHostSecurityProfile
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

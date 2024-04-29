@@ -16,29 +16,28 @@ Create a new directory extension definition, represented by an extensionProperty
 ```
 New-MgApplicationExtensionProperty -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>] [-IsMultiValued]
- [-IsSyncedFromOnPremises] [-Name <String>] [-ResponseHeadersVariable <String>] [-TargetObjects <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsSyncedFromOnPremises] [-Name <String>] [-TargetObjects <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgApplicationExtensionProperty -ApplicationId <String> -BodyParameter <IMicrosoftGraphExtensionProperty>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphExtensionProperty> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExtensionProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>] [-IsMultiValued]
- [-IsSyncedFromOnPremises] [-Name <String>] [-ResponseHeadersVariable <String>] [-TargetObjects <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsSyncedFromOnPremises] [-Name <String>] [-TargetObjects <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,8 +55,8 @@ $params = @{
 	dataType = "String"
 	isMultiValued = $true
 	targetObjects = @(
-	"User"
-)
+		"User"
+	)
 }
 
 New-MgApplicationExtensionProperty -ApplicationId $applicationId -BodyParameter $params
@@ -129,9 +128,9 @@ Accept wildcard characters: False
 ### -DataType
 Specifies the data type of the value the extension property can hold.
 Following values are supported.
+Not nullable.
 Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format.
-Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximumNot nullable.
-For multivalued directory extensions, these limits apply per value in the collection.
+Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
 
 ```yaml
 Type: System.String
@@ -158,21 +157,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -210,7 +194,7 @@ Accept wildcard characters: False
 
 ### -IsMultiValued
 Defines the directory extension as a multi-valued property.
-When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of string types such as 'extensionb7b1c57b532f40b8b5ed4b7a7ba67401jobGroupTracker': ['String 1', 'String 2'].
+When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers.
 The default value is false.
 Supports $filter (eq).
 
@@ -251,21 +235,6 @@ Supports $filter (eq).
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -331,8 +300,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
@@ -351,8 +318,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
-  - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximumNot nullable. For multivalued directory extensions, these limits apply per value in the collection.
-  - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of string types such as 'extensionb7b1c57b532f40b8b5ed4b7a7ba67401jobGroupTracker': ['String 1', 'String 2']. The default value is false. Supports $filter (eq).
+  - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+  - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
   - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
   - `[Name <String>]`: Name of the extension property. Not nullable. Supports $filter (eq).
   - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
@@ -379,12 +346,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

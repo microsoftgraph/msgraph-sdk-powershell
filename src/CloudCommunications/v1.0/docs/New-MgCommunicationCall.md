@@ -23,17 +23,15 @@ New-MgCommunicationCall [-AdditionalProperties <Hashtable>]
  [-MediaConfig <Hashtable>] [-MediaState <IMicrosoftGraphCallMediaState>] [-MeetingInfo <Hashtable>]
  [-MyParticipantId <String>] [-Operations <IMicrosoftGraphCommsOperation[]>]
  [-Participants <IMicrosoftGraphParticipant[]>] [-RequestedModalities <String[]>]
- [-ResponseHeadersVariable <String>] [-ResultInfo <IMicrosoftGraphResultInfo>]
- [-Source <IMicrosoftGraphParticipantInfo>] [-State <String>] [-Subject <String>]
- [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>] [-TenantId <String>]
- [-ToneInfo <IMicrosoftGraphToneInfo>] [-Transcription <IMicrosoftGraphCallTranscriptionInfo>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResultInfo <IMicrosoftGraphResultInfo>] [-Source <IMicrosoftGraphParticipantInfo>] [-State <String>]
+ [-Subject <String>] [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>] [-TenantId <String>]
+ [-ToneInfo <IMicrosoftGraphToneInfo>] [-Transcription <IMicrosoftGraphCallTranscriptionInfo>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgCommunicationCall -BodyParameter <IMicrosoftGraphCall> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgCommunicationCall -BodyParameter <IMicrosoftGraphCall> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -506,8 +504,8 @@ Accept wildcard characters: False
 ```
 
 ### -CallbackUri
-The callback URL on which callbacks are delivered.
-Must be an HTTPS URL.
+The callback URL on which callbacks will be delivered.
+Must be https.
 
 ```yaml
 Type: System.String
@@ -523,7 +521,7 @@ Accept wildcard characters: False
 
 ### -CallChainId
 A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.
-This identifier must be copied over from Microsoft.Graph.Call.CallChainId.
+This needs to be copied over from Microsoft.Graph.Call.CallChainId.
 
 ```yaml
 Type: System.String
@@ -614,21 +612,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -765,21 +748,6 @@ Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
 Type: System.String[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -952,8 +920,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCall
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCall
@@ -981,7 +947,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Receivers <String[]>]`: List of receiving participant ids.
     - `[RoutingMode <String>]`: routingMode
     - `[Sources <String[]>]`: List of source participant ids.
-  - `[CallChainId <String>]`: A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This identifier must be copied over from Microsoft.Graph.Call.CallChainId.
+  - `[CallChainId <String>]`: A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
   - `[CallOptions <IMicrosoftGraphCallOptions>]`: callOptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[HideBotAfterEscalation <Boolean?>]`: Indicates whether to hide the app after the call is escalated.
@@ -997,7 +963,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[Original <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[RoutingType <String>]`: routingType
-  - `[CallbackUri <String>]`: The callback URL on which callbacks are delivered. Must be an HTTPS URL.
+  - `[CallbackUri <String>]`: The callback URL on which callbacks will be delivered. Must be https.
   - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
@@ -1054,12 +1020,12 @@ To create the parameters described below, construct a hash table containing the 
       - `[RecordingStatus <String>]`: recordingStatus
     - `[RemovedState <IMicrosoftGraphRemovedState>]`: removedState
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Reason <String>]`: The removal reason for the participant resource.
+      - `[Reason <String>]`: 
     - `[RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>]`: onlineMeetingRestricted
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ContentSharingDisabled <String>]`: onlineMeetingContentSharingDisabledReason
       - `[VideoDisabled <String>]`: onlineMeetingVideoDisabledReason
-    - `[RosterSequenceNumber <Int64?>]`: Indicates the roster sequence number in which the participant was last updated.
+    - `[RosterSequenceNumber <Int64?>]`: 
   - `[RequestedModalities <String[]>]`: The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
   - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
   - `[Source <IMicrosoftGraphParticipantInfo>]`: participantInfo
@@ -1167,12 +1133,12 @@ To create the parameters described below, construct a hash table containing the 
     - `[RecordingStatus <String>]`: recordingStatus
   - `[RemovedState <IMicrosoftGraphRemovedState>]`: removedState
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Reason <String>]`: The removal reason for the participant resource.
+    - `[Reason <String>]`: 
   - `[RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>]`: onlineMeetingRestricted
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ContentSharingDisabled <String>]`: onlineMeetingContentSharingDisabledReason
     - `[VideoDisabled <String>]`: onlineMeetingVideoDisabledReason
-  - `[RosterSequenceNumber <Int64?>]`: Indicates the roster sequence number in which the participant was last updated.
+  - `[RosterSequenceNumber <Int64?>]`: 
 
 `RESULTINFO <IMicrosoftGraphResultInfo>`: resultInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1221,8 +1187,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[State <String>]`: callTranscriptionState
 
 ## RELATED LINKS
-
-
-
-
 

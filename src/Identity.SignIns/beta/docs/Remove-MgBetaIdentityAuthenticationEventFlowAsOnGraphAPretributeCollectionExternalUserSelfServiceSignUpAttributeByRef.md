@@ -15,11 +15,26 @@ Delete ref of navigation property attributes for identity
 ### Delete (Default)
 ```
 Remove-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef
+ -AuthenticationEventsFlowId <String> -IdentityUserFlowAttributeId <String> [-IfMatch <String>]
+ [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### Delete1
+```
+Remove-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef
  -AuthenticationEventsFlowId <String> -Id <String> [-IfMatch <String>] [-ResponseHeadersVariable <String>]
  [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
+```
+Remove-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef
+ -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-ResponseHeadersVariable <String>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### DeleteViaIdentity1
 ```
 Remove-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef
  -InputObject <IIdentitySignInsIdentity> -Id <String> [-IfMatch <String>] [-ResponseHeadersVariable <String>]
@@ -52,7 +67,7 @@ The unique identifier of authenticationEventsFlow
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete, Delete1
 Aliases:
 
 Required: True
@@ -82,7 +97,22 @@ The delete Uri
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Delete1, DeleteViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IdentityUserFlowAttributeId
+The unique identifier of identityUserFlowAttribute
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -113,7 +143,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
 Aliases:
 
 Required: True

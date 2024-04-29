@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The occurrences of a recurring series, if the event is a series master.
-This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
@@ -20,27 +20,24 @@ Nullable.
 ```
 Get-MgBetaGroupEventExceptionOccurrenceInstance -EventId <String> -EventId1 <String> -GroupId <String>
  -EndDateTime <String> -StartDateTime <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-ResponseHeadersVariable <String>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaGroupEventExceptionOccurrenceInstance -EventId <String> -EventId1 <String> -EventId2 <String>
- -GroupId <String> -EndDateTime <String> -StartDateTime <String> [-Property <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ -GroupId <String> -EndDateTime <String> -StartDateTime <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaGroupEventExceptionOccurrenceInstance -InputObject <ICalendarIdentity> -EndDateTime <String>
- -StartDateTime <String> [-Property <String[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -StartDateTime <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 The occurrences of a recurring series, if the event is a series master.
-This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
@@ -185,21 +182,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -238,21 +220,6 @@ Select properties to be returned
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -329,8 +296,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEvent
@@ -360,8 +325,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkspaceId <String>]`: The unique identifier of workspace
 
 ## RELATED LINKS
-
-
-
-
 

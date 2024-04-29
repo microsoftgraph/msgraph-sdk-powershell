@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSearchQna
 
 ## SYNOPSIS
-Read the properties and relationships of a qna object.
+Get qnas from search
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSearchQna -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Pr
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a qna object.
+Get qnas from search
 
 ## EXAMPLES
 
@@ -298,10 +298,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[QnaId <String>]`: The unique identifier of qna
 
 ## RELATED LINKS
-
-
-
-
-
-
 

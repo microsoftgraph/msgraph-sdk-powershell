@@ -16,15 +16,15 @@ Create new navigation property to roleDefinitions for deviceManagement
 ```
 New-MgBetaDeviceManagementRoleDefinition [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsBuiltIn] [-IsBuiltInRoleDefinition]
- [-Permissions <IMicrosoftGraphRolePermission[]>] [-ResponseHeadersVariable <String>]
- [-RoleAssignments <IMicrosoftGraphRoleAssignment[]>] [-RolePermissions <IMicrosoftGraphRolePermission[]>]
- [-RoleScopeTagIds <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Permissions <IMicrosoftGraphRolePermission[]>] [-RoleAssignments <IMicrosoftGraphRoleAssignment[]>]
+ [-RolePermissions <IMicrosoftGraphRolePermission[]>] [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDeviceManagementRoleDefinition -BodyParameter <IMicrosoftGraphRoleDefinition>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDeviceManagementRoleDefinition -BodyParameter <IMicrosoftGraphRoleDefinition> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,21 +115,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -187,21 +172,6 @@ To construct, see NOTES section for PERMISSIONS properties and create a hash tab
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRolePermission[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -295,8 +265,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleDefinition
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

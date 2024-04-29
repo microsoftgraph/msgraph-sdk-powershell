@@ -17,31 +17,30 @@ Update the properties of a appLogCollectionRequest object.
 Update-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
  -AppLogCollectionRequestId <String> -MobileAppTroubleshootingEventId <String>
  [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>] [-CustomLogFolders <String[]>]
- [-ErrorMessage <String>] [-Id <String>] [-ResponseHeadersVariable <String>] [-Status <AppLogUploadState>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ErrorMessage <String>] [-Id <String>] [-Status <AppLogUploadState>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
  -AppLogCollectionRequestId <String> -MobileAppTroubleshootingEventId <String>
- -BodyParameter <IMicrosoftGraphAppLogCollectionRequest> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAppLogCollectionRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
- -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphAppLogCollectionRequest>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphAppLogCollectionRequest> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>]
- [-CustomLogFolders <String[]>] [-ErrorMessage <String>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Status <AppLogUploadState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CustomLogFolders <String[]>] [-ErrorMessage <String>] [-Id <String>] [-Status <AppLogUploadState>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,21 +155,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -212,21 +196,6 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -287,8 +256,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -368,8 +335,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsMalwareInformationId <String>]`: The unique identifier of windowsMalwareInformation
 
 ## RELATED LINKS
-
-
-
-
 

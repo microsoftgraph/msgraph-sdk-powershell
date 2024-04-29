@@ -17,23 +17,20 @@ Update (override) the synchronization template associated with a given applicati
 Update-MgBetaApplicationSynchronizationTemplate -ApplicationId <String> -SynchronizationTemplateId <String>
  [-AdditionalProperties <Hashtable>] [-ApplicationId1 <String>] [-Default] [-Description <String>]
  [-Discoverable] [-FactoryTag <String>] [-Id <String>]
- [-Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>] [-ResponseHeadersVariable <String>]
- [-Schema <IMicrosoftGraphSynchronizationSchema>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>] [-Schema <IMicrosoftGraphSynchronizationSchema>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaApplicationSynchronizationTemplate -ApplicationId <String> -SynchronizationTemplateId <String>
- -BodyParameter <IMicrosoftGraphSynchronizationTemplate> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSynchronizationTemplate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaApplicationSynchronizationTemplate -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphSynchronizationTemplate> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSynchronizationTemplate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,8 +38,7 @@ Update-MgBetaApplicationSynchronizationTemplate -InputObject <IApplicationsIdent
 Update-MgBetaApplicationSynchronizationTemplate -InputObject <IApplicationsIdentity> [-ApplicationId <String>]
  [-AdditionalProperties <Hashtable>] [-Default] [-Description <String>] [-Discoverable] [-FactoryTag <String>]
  [-Id <String>] [-Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]
- [-ResponseHeadersVariable <String>] [-Schema <IMicrosoftGraphSynchronizationSchema>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Schema <IMicrosoftGraphSynchronizationSchema>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -188,21 +184,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -244,21 +225,6 @@ To construct, see NOTES section for METADATA properties and create a hash table.
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationMetadataEntry[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -338,8 +304,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
@@ -402,11 +366,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
       - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+        - `[IncludedContainers <String[]>]`: 
       - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
       - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+        - `[IncludedGroups <String[]>]`: 
       - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
       - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
       - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -469,7 +433,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[HomeRealmDiscoveryPolicyId <String>]`: The unique identifier of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
-  - `[Name <String>]`: Alternate key of federatedIdentityCredential
   - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: The unique identifier of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: The unique identifier of onPremisesAgentGroup
@@ -527,11 +490,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
     - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+      - `[IncludedContainers <String[]>]`: 
     - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
     - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+      - `[IncludedGroups <String[]>]`: 
     - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
     - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
     - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -577,8 +540,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Version <String>]`: The version of the schema, updated automatically with every schema change.
 
 ## RELATED LINKS
-
-
-
-
 

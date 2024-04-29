@@ -18,14 +18,13 @@ New-MgDeviceManagementNotificationMessageTemplate [-AdditionalProperties <Hashta
  [-BrandingOptions <NotificationTemplateBrandingOptions>] [-DefaultLocale <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>]
- [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceManagementNotificationMessageTemplate -BodyParameter <IMicrosoftGraphNotificationMessageTemplate>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +127,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -182,21 +166,6 @@ To construct, see NOTES section for LOCALIZEDNOTIFICATIONMESSAGES properties and
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -258,8 +227,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate
@@ -298,8 +265,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Subject <String>]`: The Message Template Subject.
 
 ## RELATED LINKS
-
-
-
-
 

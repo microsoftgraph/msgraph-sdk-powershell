@@ -17,23 +17,21 @@ Create new navigation property to history for identityProtection
 New-MgRiskyServicePrincipalHistory -RiskyServicePrincipalId <String>
  [-Activity <IMicrosoftGraphRiskServicePrincipalActivity>] [-AdditionalProperties <Hashtable>]
  [-AppId <String>] [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]
- [-Id <String>] [-InitiatedBy <String>] [-IsEnabled] [-IsProcessing] [-ResponseHeadersVariable <String>]
- [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
- [-ServicePrincipalType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-InitiatedBy <String>] [-IsEnabled] [-IsProcessing] [-RiskDetail <String>]
+ [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
+ [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgRiskyServicePrincipalHistory -RiskyServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgRiskyServicePrincipalHistory -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,9 +39,9 @@ New-MgRiskyServicePrincipalHistory -InputObject <IIdentitySignInsIdentity>
 New-MgRiskyServicePrincipalHistory -InputObject <IIdentitySignInsIdentity>
  [-Activity <IMicrosoftGraphRiskServicePrincipalActivity>] [-AdditionalProperties <Hashtable>]
  [-AppId <String>] [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]
- [-Id <String>] [-InitiatedBy <String>] [-IsEnabled] [-IsProcessing] [-ResponseHeadersVariable <String>]
- [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
- [-ServicePrincipalType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-InitiatedBy <String>] [-IsEnabled] [-IsProcessing] [-RiskDetail <String>]
+ [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
+ [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,21 +142,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -History
 Represents the risk history of Microsoft Entra service principals.
 To construct, see NOTES section for HISTORY properties and create a hash table.
@@ -244,21 +227,6 @@ Indicates whether Microsoft Entra ID is currently processing the service princip
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -400,8 +368,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

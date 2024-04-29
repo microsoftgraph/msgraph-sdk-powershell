@@ -19,15 +19,7 @@ Describe 'New-MgBetaBookingCurrency' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Create1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'Create' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'CreateExpanded1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

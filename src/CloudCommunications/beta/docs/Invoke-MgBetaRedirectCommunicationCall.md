@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBetaRedirectCommunicationCall
 
 ## SYNOPSIS
-Redirect an incoming call that wasn't answered or rejected yet.
+Redirect an incoming call that hasn't been answered or rejected yet.
 The terms 'redirecting' and 'forwarding' a call are used interchangeably.
 The bot is expected to redirect the call before the call times out.
 The current timeout value is 15 seconds.
@@ -18,38 +18,35 @@ The current timeout value is 15 seconds.
 ### RedirectExpanded (Default)
 ```
 Invoke-MgBetaRedirectCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>]
- [-CallbackUri <String>] [-MaskCallee] [-MaskCaller] [-ResponseHeadersVariable <String>]
- [-TargetDisposition <String>] [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>] [-Timeout <Int32>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CallbackUri <String>] [-MaskCallee] [-MaskCaller] [-TargetDisposition <String>]
+ [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>] [-Timeout <Int32>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Redirect
 ```
 Invoke-MgBetaRedirectCommunicationCall -CallId <String>
  -BodyParameter <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentity
 ```
 Invoke-MgBetaRedirectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentityExpanded
 ```
 Invoke-MgBetaRedirectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-CallbackUri <String>] [-MaskCallee] [-MaskCaller]
- [-ResponseHeadersVariable <String>] [-TargetDisposition <String>]
- [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>] [-Timeout <Int32>] [-Headers <IDictionary>]
+ [-TargetDisposition <String>] [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>] [-Timeout <Int32>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Redirect an incoming call that wasn't answered or rejected yet.
+Redirect an incoming call that hasn't been answered or rejected yet.
 The terms 'redirecting' and 'forwarding' a call are used interchangeably.
 The bot is expected to redirect the call before the call times out.
 The current timeout value is 15 seconds.
@@ -142,21 +139,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -210,21 +192,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -319,8 +286,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -366,7 +331,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
@@ -393,8 +357,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[ReplacesCallId <String>]`: Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 
 ## RELATED LINKS
-
-
-
-
 

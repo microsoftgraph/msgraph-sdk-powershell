@@ -23,19 +23,18 @@ Update-MgBetaSecurityThreatIntelligence [-AdditionalProperties <Hashtable>]
  [-HostTrackers <IMicrosoftGraphSecurityHostTracker[]>] [-Id <String>]
  [-IntelligenceProfileIndicators <IMicrosoftGraphSecurityIntelligenceProfileIndicator[]>]
  [-IntelProfiles <IMicrosoftGraphSecurityIntelligenceProfile[]>]
- [-PassiveDnsRecords <IMicrosoftGraphSecurityPassiveDnsRecord[]>] [-ResponseHeadersVariable <String>]
+ [-PassiveDnsRecords <IMicrosoftGraphSecurityPassiveDnsRecord[]>]
  [-SslCertificates <IMicrosoftGraphSecuritySslCertificate[]>]
  [-Subdomains <IMicrosoftGraphSecuritySubdomain[]>]
  [-Vulnerabilities <IMicrosoftGraphSecurityVulnerability[]>]
  [-WhoisHistoryRecords <IMicrosoftGraphSecurityWhoisHistoryRecord[]>]
- [-WhoisRecords <IMicrosoftGraphSecurityWhoisRecord[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-WhoisRecords <IMicrosoftGraphSecurityWhoisRecord[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaSecurityThreatIntelligence -BodyParameter <IMicrosoftGraphSecurityThreatIntelligence>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaSecurityThreatIntelligence -BodyParameter <IMicrosoftGraphSecurityThreatIntelligence> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -116,21 +115,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -313,21 +297,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SslCertificates
 Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.
 To construct, see NOTES section for SSLCERTIFICATES properties and create a hash table.
@@ -445,8 +414,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityThreatIntelligence
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -23,16 +23,14 @@ New-MgBetaTenantRelationshipManagedTenantAlert [-AdditionalProperties <Hashtable
  [-AssignedToUserId <String>] [-CorrelationCount <Int32>] [-CorrelationId <String>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-EmailNotifications <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification[]>] [-Id <String>]
- [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Message <String>]
- [-ResponseHeadersVariable <String>] [-Severity <String>] [-Status <String>] [-TenantId <String>]
- [-Title <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Message <String>] [-Severity <String>]
+ [-Status <String>] [-TenantId <String>] [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantAlert
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlert> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlert> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -273,21 +271,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -341,21 +324,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -461,8 +429,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

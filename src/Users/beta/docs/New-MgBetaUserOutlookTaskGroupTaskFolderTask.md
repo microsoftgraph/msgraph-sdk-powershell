@@ -23,24 +23,22 @@ New-MgBetaUserOutlookTaskGroupTaskFolderTask -OutlookTaskFolderId <String> -Outl
  [-IsReminderOn] [-LastModifiedDateTime <DateTime>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-Owner <String>]
  [-ParentFolderId <String>] [-Recurrence <IMicrosoftGraphPatternedRecurrence>]
- [-ReminderDateTime <IMicrosoftGraphDateTimeZone>] [-ResponseHeadersVariable <String>] [-Sensitivity <String>]
+ [-ReminderDateTime <IMicrosoftGraphDateTimeZone>] [-Sensitivity <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Subject <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Subject <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserOutlookTaskGroupTaskFolderTask -OutlookTaskFolderId <String> -OutlookTaskGroupId <String>
- -UserId <String> -BodyParameter <IMicrosoftGraphOutlookTask> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UserId <String> -BodyParameter <IMicrosoftGraphOutlookTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserOutlookTaskGroupTaskFolderTask -InputObject <IUsersIdentity>
- -BodyParameter <IMicrosoftGraphOutlookTask> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOutlookTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -52,10 +50,10 @@ New-MgBetaUserOutlookTaskGroupTaskFolderTask -InputObject <IUsersIdentity> [-Add
  [-Importance <String>] [-IsReminderOn] [-LastModifiedDateTime <DateTime>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-Owner <String>]
  [-ParentFolderId <String>] [-Recurrence <IMicrosoftGraphPatternedRecurrence>]
- [-ReminderDateTime <IMicrosoftGraphDateTimeZone>] [-ResponseHeadersVariable <String>] [-Sensitivity <String>]
+ [-ReminderDateTime <IMicrosoftGraphDateTimeZone>] [-Sensitivity <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Subject <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Subject <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -254,21 +252,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -317,7 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsReminderOn
-Set to true if an alert is set to remind the user of the task.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -396,7 +379,7 @@ Accept wildcard characters: False
 ```
 
 ### -Owner
-The name of the person who created the task.
+.
 
 ```yaml
 Type: System.String
@@ -411,7 +394,7 @@ Accept wildcard characters: False
 ```
 
 ### -ParentFolderId
-The unique identifier for the task's parent folder.
+.
 
 ```yaml
 Type: System.String
@@ -449,21 +432,6 @@ To construct, see NOTES section for REMINDERDATETIME properties and create a has
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -537,7 +505,7 @@ Accept wildcard characters: False
 ```
 
 ### -Subject
-A brief description or title of the task.
+.
 
 ```yaml
 Type: System.String
@@ -606,8 +574,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTask
@@ -660,12 +626,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[HasAttachments <Boolean?>]`: Set to true if the task has attachments.
   - `[Importance <String>]`: importance
-  - `[IsReminderOn <Boolean?>]`: Set to true if an alert is set to remind the user of the task.
+  - `[IsReminderOn <Boolean?>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Value <String[]>]`: A collection of property values.
-  - `[Owner <String>]`: The name of the person who created the task.
-  - `[ParentFolderId <String>]`: The unique identifier for the task's parent folder.
+  - `[Owner <String>]`: 
+  - `[ParentFolderId <String>]`: 
   - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Pattern <IMicrosoftGraphRecurrencePattern>]`: recurrencePattern
@@ -691,7 +657,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Value <String>]`: A property value.
   - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Status <String>]`: taskStatus
-  - `[Subject <String>]`: A brief description or title of the task.
+  - `[Subject <String>]`: 
 
 `COMPLETEDDATETIME <IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -704,7 +670,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
@@ -721,15 +686,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
-  - `[ServiceStorageQuotaBreakdownId <String>]`: The unique identifier of serviceStorageQuotaBreakdown
   - `[SharedInsightId <String>]`: The unique identifier of sharedInsight
   - `[TodoTaskId <String>]`: The unique identifier of todoTask
   - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[TrendingId <String>]`: The unique identifier of trending
   - `[UsedInsightId <String>]`: The unique identifier of usedInsight
   - `[UserId <String>]`: The unique identifier of user
-  - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
-  - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 `MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>`: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -769,8 +731,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
 
 ## RELATED LINKS
-
-
-
-
 

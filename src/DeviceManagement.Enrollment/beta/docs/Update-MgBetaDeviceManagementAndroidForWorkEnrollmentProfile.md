@@ -18,23 +18,20 @@ Update-MgBetaDeviceManagementAndroidForWorkEnrollmentProfile -AndroidForWorkEnro
  [-AccountId <String>] [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-EnrolledDeviceCount <Int32>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-QrCodeContent <String>] [-QrCodeImage <IMicrosoftGraphMimeContent>]
- [-ResponseHeadersVariable <String>] [-TokenExpirationDateTime <DateTime>] [-TokenValue <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TokenExpirationDateTime <DateTime>] [-TokenValue <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementAndroidForWorkEnrollmentProfile -AndroidForWorkEnrollmentProfileId <String>
- -BodyParameter <IMicrosoftGraphAndroidForWorkEnrollmentProfile> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAndroidForWorkEnrollmentProfile> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementAndroidForWorkEnrollmentProfile
  -InputObject <IDeviceManagementEnrollmentIdentity>
- -BodyParameter <IMicrosoftGraphAndroidForWorkEnrollmentProfile> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAndroidForWorkEnrollmentProfile> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,9 +40,8 @@ Update-MgBetaDeviceManagementAndroidForWorkEnrollmentProfile
  -InputObject <IDeviceManagementEnrollmentIdentity> [-AccountId <String>] [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-EnrolledDeviceCount <Int32>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-QrCodeContent <String>]
- [-QrCodeImage <IMicrosoftGraphMimeContent>] [-ResponseHeadersVariable <String>]
- [-TokenExpirationDateTime <DateTime>] [-TokenValue <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-QrCodeImage <IMicrosoftGraphMimeContent>] [-TokenExpirationDateTime <DateTime>] [-TokenValue <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -190,21 +186,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -283,21 +264,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TokenExpirationDateTime
 Date time the most recently created token will expire.
 
@@ -368,8 +334,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkEnrollmentProfile
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidForWorkEnrollmentProfile
@@ -406,7 +370,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppScopeId <String>]`: The unique identifier of appScope
   - `[AppleEnrollmentProfileAssignmentId <String>]`: The unique identifier of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: The unique identifier of appleUserInitiatedEnrollmentProfile
-  - `[CustomAppScopeId <String>]`: The unique identifier of customAppScope
   - `[DepOnboardingSettingId <String>]`: The unique identifier of depOnboardingSetting
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: The unique identifier of deviceManagementAutopilotEvent
@@ -419,7 +382,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of importedWindowsAutopilotDeviceIdentity
   - `[UnifiedRbacResourceActionId <String>]`: The unique identifier of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: The unique identifier of unifiedRbacResourceNamespace
-  - `[UnifiedRoleAssignmentId <String>]`: The unique identifier of unifiedRoleAssignment
   - `[UnifiedRoleAssignmentMultipleId <String>]`: The unique identifier of unifiedRoleAssignmentMultiple
   - `[UnifiedRoleDefinitionId <String>]`: The unique identifier of unifiedRoleDefinition
   - `[UnifiedRoleDefinitionId1 <String>]`: The unique identifier of unifiedRoleDefinition

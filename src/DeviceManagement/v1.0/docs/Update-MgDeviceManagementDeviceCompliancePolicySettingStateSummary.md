@@ -19,24 +19,23 @@ Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummary
  [-CompliantDeviceCount <Int32>] [-ConflictDeviceCount <Int32>]
  [-DeviceComplianceSettingStates <IMicrosoftGraphDeviceComplianceSettingState[]>] [-ErrorDeviceCount <Int32>]
  [-Id <String>] [-NonCompliantDeviceCount <Int32>] [-NotApplicableDeviceCount <Int32>]
- [-PlatformType <PolicyPlatformType>] [-RemediatedDeviceCount <Int32>] [-ResponseHeadersVariable <String>]
- [-Setting <String>] [-SettingName <String>] [-UnknownDeviceCount <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-PlatformType <PolicyPlatformType>] [-RemediatedDeviceCount <Int32>] [-Setting <String>]
+ [-SettingName <String>] [-UnknownDeviceCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummary
  -DeviceCompliancePolicySettingStateSummaryId <String>
- -BodyParameter <IMicrosoftGraphDeviceCompliancePolicySettingStateSummary> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceCompliancePolicySettingStateSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummary -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceCompliancePolicySettingStateSummary> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceCompliancePolicySettingStateSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,9 +44,8 @@ Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummary -InputObject 
  [-AdditionalProperties <Hashtable>] [-CompliantDeviceCount <Int32>] [-ConflictDeviceCount <Int32>]
  [-DeviceComplianceSettingStates <IMicrosoftGraphDeviceComplianceSettingState[]>] [-ErrorDeviceCount <Int32>]
  [-Id <String>] [-NonCompliantDeviceCount <Int32>] [-NotApplicableDeviceCount <Int32>]
- [-PlatformType <PolicyPlatformType>] [-RemediatedDeviceCount <Int32>] [-ResponseHeadersVariable <String>]
- [-Setting <String>] [-SettingName <String>] [-UnknownDeviceCount <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-PlatformType <PolicyPlatformType>] [-RemediatedDeviceCount <Int32>] [-Setting <String>]
+ [-SettingName <String>] [-UnknownDeviceCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,21 +176,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -285,21 +268,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Setting
 The setting class name and property name.
 
@@ -384,8 +352,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicySettingStateSummary
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -498,8 +464,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsMalwareInformationId <String>]`: The unique identifier of windowsMalwareInformation
 
 ## RELATED LINKS
-
-
-
-
 

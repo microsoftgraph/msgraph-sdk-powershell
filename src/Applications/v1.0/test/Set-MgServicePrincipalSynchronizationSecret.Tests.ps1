@@ -15,15 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Set-MgServicePrincipalSynchro
 }
 
 Describe 'Set-MgServicePrincipalSynchronizationSecret' {
-    It 'SetExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'Set' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'SetViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

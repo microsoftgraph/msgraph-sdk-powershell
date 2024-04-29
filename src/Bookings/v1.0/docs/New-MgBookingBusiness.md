@@ -22,15 +22,15 @@ New-MgBookingBusiness [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftG
  [-Customers <IMicrosoftGraphBookingCustomerBase[]>]
  [-CustomQuestions <IMicrosoftGraphBookingCustomQuestion[]>] [-DefaultCurrencyIso <String>]
  [-DisplayName <String>] [-Email <String>] [-Id <String>] [-LanguageTag <String>] [-Phone <String>]
- [-ResponseHeadersVariable <String>] [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>]
- [-Services <IMicrosoftGraphBookingService[]>] [-StaffMembers <IMicrosoftGraphBookingStaffMemberBase[]>]
- [-WebSiteUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>] [-Services <IMicrosoftGraphBookingService[]>]
+ [-StaffMembers <IMicrosoftGraphBookingStaffMemberBase[]>] [-WebSiteUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBookingBusiness -BodyParameter <IMicrosoftGraphBookingBusiness> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBookingBusiness -BodyParameter <IMicrosoftGraphBookingBusiness> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -262,21 +262,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -316,21 +301,6 @@ The phone property, together with address and webSiteUrl, appear in the footer o
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -444,8 +414,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -763,8 +731,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 ## RELATED LINKS
-
-
-
-
 

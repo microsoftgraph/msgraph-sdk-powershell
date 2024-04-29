@@ -18,23 +18,20 @@ A threat assessment request can be one of the following types:
 New-MgBetaUserInformationProtectionThreatAssessmentRequest -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Category <String>] [-ContentType <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-ExpectedAssessment <String>]
- [-Id <String>] [-RequestSource <String>] [-ResponseHeadersVariable <String>]
- [-Results <IMicrosoftGraphThreatAssessmentResult[]>] [-Status <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-RequestSource <String>] [-Results <IMicrosoftGraphThreatAssessmentResult[]>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserInformationProtectionThreatAssessmentRequest -UserId <String>
- -BodyParameter <IMicrosoftGraphThreatAssessmentRequest> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphThreatAssessmentRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserInformationProtectionThreatAssessmentRequest -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphThreatAssessmentRequest> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphThreatAssessmentRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,9 +39,8 @@ New-MgBetaUserInformationProtectionThreatAssessmentRequest -InputObject <IIdenti
 New-MgBetaUserInformationProtectionThreatAssessmentRequest -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Category <String>] [-ContentType <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-ExpectedAssessment <String>]
- [-Id <String>] [-RequestSource <String>] [-ResponseHeadersVariable <String>]
- [-Results <IMicrosoftGraphThreatAssessmentResult[]>] [-Status <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-RequestSource <String>] [-Results <IMicrosoftGraphThreatAssessmentResult[]>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -177,21 +173,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -231,21 +212,6 @@ threatAssessmentRequestSource
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -341,8 +307,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -475,8 +439,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[ResultType <String>]`: threatAssessmentResultType
 
 ## RELATED LINKS
-
-
-
-
 

@@ -19,23 +19,21 @@ Update-MgAdminEdgeInternetExplorerModeSiteListSite -BrowserSiteId <String> -Brow
  [-CompatibilityMode <BrowserSiteCompatibilityMode>] [-CreatedDateTime <DateTime>]
  [-DeletedDateTime <DateTime>] [-History <IMicrosoftGraphBrowserSiteHistory[]>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-MergeType <BrowserSiteMergeType>] [-ResponseHeadersVariable <String>] [-Status <BrowserSiteStatus>]
- [-TargetEnvironment <BrowserSiteTargetEnvironment>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-MergeType <BrowserSiteMergeType>] [-Status <BrowserSiteStatus>]
+ [-TargetEnvironment <BrowserSiteTargetEnvironment>] [-WebUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgAdminEdgeInternetExplorerModeSiteListSite -BrowserSiteId <String> -BrowserSiteListId <String>
- -BodyParameter <IMicrosoftGraphBrowserSite> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSite> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgAdminEdgeInternetExplorerModeSiteListSite -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphBrowserSite> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSite> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,9 +43,9 @@ Update-MgAdminEdgeInternetExplorerModeSiteListSite -InputObject <IDeviceManageme
  [-CompatibilityMode <BrowserSiteCompatibilityMode>] [-CreatedDateTime <DateTime>]
  [-DeletedDateTime <DateTime>] [-History <IMicrosoftGraphBrowserSiteHistory[]>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-MergeType <BrowserSiteMergeType>] [-ResponseHeadersVariable <String>] [-Status <BrowserSiteStatus>]
- [-TargetEnvironment <BrowserSiteTargetEnvironment>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-MergeType <BrowserSiteMergeType>] [-Status <BrowserSiteStatus>]
+ [-TargetEnvironment <BrowserSiteTargetEnvironment>] [-WebUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -208,21 +206,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -History
 The history of modifications applied to the site.
 To construct, see NOTES section for HISTORY properties and create a hash table.
@@ -317,21 +300,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Status
 browserSiteStatus
 
@@ -416,8 +384,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBrowserSite
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -544,8 +510,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
 ## RELATED LINKS
-
-
-
-
 

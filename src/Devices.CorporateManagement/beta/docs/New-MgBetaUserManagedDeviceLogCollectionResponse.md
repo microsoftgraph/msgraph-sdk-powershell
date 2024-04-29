@@ -18,22 +18,19 @@ New-MgBetaUserManagedDeviceLogCollectionResponse -ManagedDeviceId <String> -User
  [-AdditionalProperties <Hashtable>] [-EnrolledByUser <String>] [-ErrorCode <Int64>]
  [-ExpirationDateTimeUtc <DateTime>] [-Id <String>] [-InitiatedByUserPrincipalName <String>]
  [-ManagedDeviceId1 <String>] [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>]
- [-ResponseHeadersVariable <String>] [-Size <Double>] [-SizeInKb <Double>] [-Status <AppLogUploadState>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Size <Double>] [-SizeInKb <Double>] [-Status <AppLogUploadState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserManagedDeviceLogCollectionResponse -ManagedDeviceId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,8 +39,7 @@ New-MgBetaUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporate
  [-ManagedDeviceId <String>] [-AdditionalProperties <Hashtable>] [-EnrolledByUser <String>]
  [-ErrorCode <Int64>] [-ExpirationDateTimeUtc <DateTime>] [-Id <String>]
  [-InitiatedByUserPrincipalName <String>] [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>]
- [-ResponseHeadersVariable <String>] [-Size <Double>] [-SizeInKb <Double>] [-Status <AppLogUploadState>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Size <Double>] [-SizeInKb <Double>] [-Status <AppLogUploadState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +137,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -266,21 +247,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Size
 The size of the logs.
 Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -383,8 +349,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
@@ -452,7 +416,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent

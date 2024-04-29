@@ -15,31 +15,27 @@ Modify sources and receivers of an audioRoutingGroup.
 ### UpdateExpanded (Default)
 ```
 Update-MgCommunicationCallAudioRoutingGroup -AudioRoutingGroupId <String> -CallId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Receivers <String[]>]
- [-ResponseHeadersVariable <String>] [-RoutingMode <String>] [-Sources <String[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Receivers <String[]>] [-RoutingMode <String>]
+ [-Sources <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgCommunicationCallAudioRoutingGroup -AudioRoutingGroupId <String> -CallId <String>
- -BodyParameter <IMicrosoftGraphAudioRoutingGroup> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAudioRoutingGroup> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphAudioRoutingGroup> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAudioRoutingGroup> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Receivers <String[]>]
- [-ResponseHeadersVariable <String>] [-RoutingMode <String>] [-Sources <String[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Receivers <String[]>] [-RoutingMode <String>]
+ [-Sources <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,22 +45,17 @@ Modify sources and receivers of an audioRoutingGroup.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+{{ Add code here }}
 ```
 
-$params = @{
-	id = "oneToOne"
-	routingMode = "oneToOne"
-	sources = @(
-	"632899f8-2ea1-4604-8413-27bd2892079f"
-)
-receivers = @(
-"550fae72-d251-43ec-868c-373732c2704f"
-"72f988bf-86f1-41af-91ab-2d7cd011db47"
-)
-}
+{{ Add output here }}
 
-Update-MgCommunicationCallAudioRoutingGroup -CallId $callId -AudioRoutingGroupId $audioRoutingGroupId -BodyParameter $params
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 
@@ -129,21 +120,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -183,21 +159,6 @@ List of receiving participant ids.
 Type: System.String[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -276,8 +237,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioRoutingGroup
@@ -315,8 +274,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

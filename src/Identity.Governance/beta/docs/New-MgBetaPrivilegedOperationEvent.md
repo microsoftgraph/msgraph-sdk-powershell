@@ -17,15 +17,14 @@ Add new entity to privilegedOperationEvents
 New-MgBetaPrivilegedOperationEvent [-AdditionalInformation <String>] [-AdditionalProperties <Hashtable>]
  [-CreationDateTime <DateTime>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-ReferenceKey <String>]
  [-ReferenceSystem <String>] [-RequestorId <String>] [-RequestorName <String>] [-RequestType <String>]
- [-ResponseHeadersVariable <String>] [-RoleId <String>] [-RoleName <String>] [-TenantId <String>]
- [-UserId <String>] [-UserMail <String>] [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RoleId <String>] [-RoleName <String>] [-TenantId <String>] [-UserId <String>] [-UserMail <String>]
+ [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaPrivilegedOperationEvent -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPrivilegedOperationEvent -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,21 +124,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -223,21 +207,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -373,8 +342,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedOperationEvent
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

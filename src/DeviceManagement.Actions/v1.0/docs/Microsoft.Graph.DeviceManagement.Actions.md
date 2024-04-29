@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 113dedf8-0e3e-4372-8411-93d9eecd513c
+Module Guid: 3cbc04de-68a8-4917-b129-b6278d0731fb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -105,10 +105,6 @@ Not yet documented
 ### [Invoke-MgTerminateDeviceManagementPartner](Invoke-MgTerminateDeviceManagementPartner.md)
 Not yet documented
 
-### [Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc](Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc.md)
-Troubleshoot a specific cloudPC object.
-Use this API to check the health status of the Cloud PC and the session host.
-
 ### [Invoke-MgUnassignDeviceManagementWindowsAutopilotDeviceIdentityUserFromDevice](Invoke-MgUnassignDeviceManagementWindowsAutopilotDeviceIdentityUserFromDevice.md)
 Unassigns the user from an Autopilot device.
 
@@ -127,10 +123,6 @@ Not yet documented
 ### [Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice](Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice.md)
 Delete user from shared Apple device
 
-### [Rename-MgDeviceManagementVirtualEndpointCloudPc](Rename-MgDeviceManagementVirtualEndpointCloudPc.md)
-Rename a specific cloudPC object.
-Use this API to update the displayName of a Cloud PC entity.
-
 ### [Request-MgDeviceManagementManagedDeviceRemoteAssistance](Request-MgDeviceManagementManagedDeviceRemoteAssistance.md)
 Request remote assistance
 
@@ -140,15 +132,8 @@ Reset passcode
 ### [Restart-MgDeviceManagementManagedDeviceNow](Restart-MgDeviceManagementManagedDeviceNow.md)
 Reboot device
 
-### [Restart-MgDeviceManagementVirtualEndpointCloudPc](Restart-MgDeviceManagementVirtualEndpointCloudPc.md)
-Reboot a specific cloudPC object.
-
 ### [Restore-MgDeviceManagementManagedDevicePasscode](Restore-MgDeviceManagementManagedDevicePasscode.md)
 Recover passcode
-
-### [Restore-MgDeviceManagementVirtualEndpointCloudPc](Restore-MgDeviceManagementVirtualEndpointCloudPc.md)
-Restore a specific cloudPC object to a previous state from a snapshot.
-Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
 
 ### [Send-MgDeviceManagementNotificationMessageTemplateTestMessage](Send-MgDeviceManagementNotificationMessageTemplateTestMessage.md)
 Sends test message using the specified notificationMessageTemplate in the default locale
@@ -165,27 +150,11 @@ Not yet documented
 ### [Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority](Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority.md)
 Not yet documented
 
-### [Set-MgDeviceManagementVirtualEndpointProvisioningPolicy](Set-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
-Assign a cloudPcProvisioningPolicy to user groups.
-
-### [Set-MgDeviceManagementVirtualEndpointUserSetting](Set-MgDeviceManagementVirtualEndpointUserSetting.md)
-Assign a cloudPcUserSetting to user groups.
-
 ### [Set-MgDeviceManagementWindowsAutopilotDeviceIdentityUserToDevice](Set-MgDeviceManagementWindowsAutopilotDeviceIdentityUserToDevice.md)
 Assigns user to Autopilot devices.
 
 ### [Skip-MgDeviceManagementManagedDeviceActivationLock](Skip-MgDeviceManagementManagedDeviceActivationLock.md)
 Bypass activation lock
-
-### [Start-MgDeviceManagementVirtualEndpointOnPremiseConnectionHealthCheck](Start-MgDeviceManagementVirtualEndpointOnPremiseConnectionHealthCheck.md)
-Run health checks on the cloudPcOnPremisesConnection object.
-It triggers a new health check for the cloudPcOnPremisesConnection (../resources/cloudpconpremisesconnection.md) object and changes the healthCheckStatus and [healthCheckStatusDetail properties when check finished.
-
-### [Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod](Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod.md)
-End the grace period for a specific cloudPC object.
-The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned.
-It allows users to access Cloud PCs for up to seven days before deprovisioning occurs.
-Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
 
 ### [Sync-MgDeviceManagementExchangeConnector](Sync-MgDeviceManagementExchangeConnector.md)
 Not yet documented

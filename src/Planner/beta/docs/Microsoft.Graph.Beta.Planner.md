@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Planner
-Module Guid: e8811019-8d41-4853-8546-f6deac4b37f6
+Module Guid: 267c0ba4-d2b0-4fc9-b473-da609a35d694
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -120,12 +120,6 @@ Returns the plannerPlans that the user marked as favorites.
 ### [Get-MgBetaUserPlannerFavoritePlanCount](Get-MgBetaUserPlannerFavoritePlanCount.md)
 Get the number of the resource
 
-### [Get-MgBetaUserPlannerMyDayTask](Get-MgBetaUserPlannerMyDayTask.md)
-Get myDayTasks from users
-
-### [Get-MgBetaUserPlannerMyDayTaskCount](Get-MgBetaUserPlannerMyDayTaskCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaUserPlannerPlan](Get-MgBetaUserPlannerPlan.md)
 Retrieve a list of plannerplan objects shared with a user object.
 
@@ -148,21 +142,14 @@ Get the number of the resource
 ### [Get-MgBetaUserPlannerTask](Get-MgBetaUserPlannerTask.md)
 Retrieve a list of plannertask objects assigned to a User.
 
-### [Invoke-MgBetaArchivePlannerPlan](Invoke-MgBetaArchivePlannerPlan.md)
-Invoke action archive
-
-### [Invoke-MgBetaUnarchivePlannerPlan](Invoke-MgBetaUnarchivePlannerPlan.md)
-Invoke action unarchive
-
 ### [Move-MgBetaPlannerPlanToContainer](Move-MgBetaPlannerPlanToContainer.md)
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ### [New-MgBetaPlannerBucket](New-MgBetaPlannerBucket.md)
 Create a new plannerBucket object.
 
 ### [New-MgBetaPlannerPlan](New-MgBetaPlannerPlan.md)
-Create a new plannerPlan object.
+Create a new plannerPlan.
 
 ### [New-MgBetaPlannerRoster](New-MgBetaPlannerRoster.md)
 Create a new plannerRoster object.

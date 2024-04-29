@@ -17,22 +17,19 @@ Update the properties of a an eDiscovery caseSettings object.
 Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Ocr <IMicrosoftGraphEdiscoveryOcrSettings>]
  [-RedundancyDetection <IMicrosoftGraphEdiscoveryRedundancyDetectionSettings>]
- [-ResponseHeadersVariable <String>] [-TopicModeling <IMicrosoftGraphEdiscoveryTopicModelingSettings>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TopicModeling <IMicrosoftGraphEdiscoveryTopicModelingSettings>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId <String>
- -BodyParameter <IMicrosoftGraphEdiscoveryCaseSettings> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryCaseSettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity>
- -BodyParameter <IMicrosoftGraphEdiscoveryCaseSettings> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryCaseSettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgBetaComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity>
 Update-MgBetaComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Ocr <IMicrosoftGraphEdiscoveryOcrSettings>]
  [-RedundancyDetection <IMicrosoftGraphEdiscoveryRedundancyDetectionSettings>]
- [-ResponseHeadersVariable <String>] [-TopicModeling <IMicrosoftGraphEdiscoveryTopicModelingSettings>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TopicModeling <IMicrosoftGraphEdiscoveryTopicModelingSettings>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -149,21 +145,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -228,21 +209,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TopicModeling
 topicModelingSettings
 To construct, see NOTES section for TOPICMODELING properties and create a hash table.
@@ -298,8 +264,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryCaseSettings
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -375,8 +339,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[TopicCount <Int32?>]`: To learn more, see Maximum number of themes.
 
 ## RELATED LINKS
-
-
-
-
 

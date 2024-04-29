@@ -8,50 +8,38 @@ schema: 2.0.0
 # Reset-MgBetaUserAuthenticationMethodPassword
 
 ## SYNOPSIS
-Initiate a reset for the password associated with a password authentication method object.
-This can only be done by an administrator with appropriate permissions and can't be performed on a user's own account.
-This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback.
-The admin can either provide a new password or have the system generate one.
-The user is prompted to change their password on their next sign in.
-This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
+Invoke action resetPassword
 
 ## SYNTAX
 
 ### ResetExpanded (Default)
 ```
 Reset-MgBetaUserAuthenticationMethodPassword -AuthenticationMethodId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-NewPassword <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-NewPassword <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Reset
 ```
 Reset-MgBetaUserAuthenticationMethodPassword -AuthenticationMethodId <String> -UserId <String>
  -BodyParameter <IPaths1KjcdupUsersUserIdAuthenticationMethodsAuthenticationmethodIdMicrosoftGraphResetpasswordPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
 Reset-MgBetaUserAuthenticationMethodPassword -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1KjcdupUsersUserIdAuthenticationMethodsAuthenticationmethodIdMicrosoftGraphResetpasswordPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResetViaIdentityExpanded
 ```
 Reset-MgBetaUserAuthenticationMethodPassword -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-NewPassword <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-NewPassword <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Initiate a reset for the password associated with a password authentication method object.
-This can only be done by an administrator with appropriate permissions and can't be performed on a user's own account.
-This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback.
-The admin can either provide a new password or have the system generate one.
-The user is prompted to change their password on their next sign in.
-This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
+Invoke action resetPassword
 
 ## EXAMPLES
 
@@ -117,21 +105,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -155,21 +128,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: ResetExpanded, ResetViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -233,8 +191,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.String
@@ -271,7 +227,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder
@@ -296,8 +251,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

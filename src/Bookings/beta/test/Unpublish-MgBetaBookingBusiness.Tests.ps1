@@ -19,14 +19,6 @@ Describe 'Unpublish-MgBetaBookingBusiness' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Unpublish1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'UnpublishViaIdentity1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'UnpublishViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }

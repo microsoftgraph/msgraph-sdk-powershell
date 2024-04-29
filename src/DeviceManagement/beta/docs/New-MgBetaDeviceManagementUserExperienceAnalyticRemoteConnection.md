@@ -18,15 +18,14 @@ New-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection [-AdditionalPro
  [-CloudPcFailurePercentage <Double>] [-CloudPcRoundTripTime <Double>] [-CloudPcSignInTime <Double>]
  [-CoreBootTime <Double>] [-CoreSignInTime <Double>] [-DeviceCount <Int32>] [-DeviceId <String>]
  [-DeviceName <String>] [-Id <String>] [-Manufacturer <String>] [-Model <String>] [-RemoteSignInTime <Double>]
- [-ResponseHeadersVariable <String>] [-UserPrincipalName <String>] [-VirtualNetwork <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserPrincipalName <String>] [-VirtualNetwork <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticRemoteConnection
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsRemoteConnection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsRemoteConnection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -207,21 +206,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -276,21 +260,6 @@ Valid values 0 to 1.79769313486232E+308
 Type: System.Double
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -366,8 +335,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRemoteConnection
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

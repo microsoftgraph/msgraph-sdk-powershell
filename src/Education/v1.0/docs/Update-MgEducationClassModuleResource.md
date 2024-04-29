@@ -8,9 +8,7 @@ schema: 2.0.0
 # Update-MgEducationClassModuleResource
 
 ## SYNOPSIS
-Update a resource in a module.
-Only teachers can perform this operation.
-The only one property that can be updated is displayName, for all resource types.
+Update the navigation property resources in education
 
 ## SYNTAX
 
@@ -18,35 +16,33 @@ The only one property that can be updated is displayName, for all resource types
 ```
 Update-MgEducationClassModuleResource -EducationClassId <String> -EducationModuleId <String>
  -EducationModuleResourceId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Resource <IMicrosoftGraphEducationResource>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resource <IMicrosoftGraphEducationResource>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEducationClassModuleResource -EducationClassId <String> -EducationModuleId <String>
  -EducationModuleResourceId <String> -BodyParameter <IMicrosoftGraphEducationModuleResource>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgEducationClassModuleResource -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationModuleResource> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationModuleResource> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgEducationClassModuleResource -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update a resource in a module.
-Only teachers can perform this operation.
-The only one property that can be updated is displayName, for all resource types.
+Update the navigation property resources in education
 
 ## EXAMPLES
 
@@ -205,21 +201,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -320,8 +301,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
 
 ## RELATED LINKS
-
-
-
-
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+Create a new deviceEnrollmentLimitConfiguration object.
 
 ## SYNTAX
 
@@ -17,19 +17,17 @@ Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 New-MgDeviceManagementDeviceEnrollmentConfiguration [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-Priority <Int32>] [-ResponseHeadersVariable <String>] [-Version <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Priority <Int32>] [-Version <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceManagementDeviceEnrollmentConfiguration
- -BodyParameter <IMicrosoftGraphDeviceEnrollmentConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceEnrollmentConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+Create a new deviceEnrollmentLimitConfiguration object.
 
 ## EXAMPLES
 
@@ -141,21 +139,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -195,21 +178,6 @@ Users are subject only to the configuration with the lowest priority value.
 Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -271,8 +239,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceEnrollmentConfiguration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceEnrollmentConfiguration
@@ -306,8 +272,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Version <Int32?>]`: The version of the device enrollment configuration
 
 ## RELATED LINKS
-
-
-
-
 

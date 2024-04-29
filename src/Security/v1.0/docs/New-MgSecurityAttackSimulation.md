@@ -24,15 +24,14 @@ New-MgSecurityAttackSimulation [-AdditionalProperties <Hashtable>] [-AttackTechn
  [-LandingPage <IMicrosoftGraphLandingPage>] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
  [-LastModifiedDateTime <DateTime>] [-LaunchDateTime <DateTime>] [-LoginPage <IMicrosoftGraphLoginPage>]
  [-OAuthConsentAppDetail <IMicrosoftGraphOAuthConsentAppDetail>] [-Payload <IMicrosoftGraphPayload>]
- [-PayloadDeliveryPlatform <String>] [-Report <IMicrosoftGraphSimulationReport>]
- [-ResponseHeadersVariable <String>] [-Status <String>] [-TrainingSetting <IMicrosoftGraphTrainingSetting>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PayloadDeliveryPlatform <String>] [-Report <IMicrosoftGraphSimulationReport>] [-Status <String>]
+ [-TrainingSetting <IMicrosoftGraphTrainingSetting>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,26 +59,21 @@ $params = @{
 		"@odata.type" = "#microsoft.graph.addressBookAccountTargetContent"
 		type = "addressBook"
 		accountTargetEmails = @(
-		"john@contoso.com"
-	)
-}
-trainingSetting = @{
-	settingType = "noTraining"
-}
-endUserNotificationSetting = @{
-	notificationPreference = "microsoft"
-	settingType = "noTraining"
-	positiveReinforcement = @{
-		deliveryPreference = "deliverAfterCampaignEnd"
-		endUserNotification = "https://graph.microsoft.com/v1.0/security/attacksimulation/endUserNotifications/1ewer3678-9abc-def0-123456789a"
-		defaultLanguage = "en"
+			"john@contoso.com"
+		)
 	}
-	simulationNotification = @{
-		targettedUserType = "compromised"
-		"endUserNotification@odata.bind" = "https://graph.microsoft.com/v1.0/security/attacksimulation/endUserNotifications/12wer3678-9abc-def0-123456789a"
-		defaultLanguage = "en"
+	trainingSetting = @{
+		settingType = "noTraining"
 	}
-}
+	endUserNotificationSetting = @{
+		notificationPreference = "microsoft"
+		settingType = "noTraining"
+		positiveReinforcement = @{
+			deliveryPreference = "deliverAfterCampaignEnd"
+			endUserNotification = "https://graph.microsoft.com/v1.0/security/attacksimulation/endUserNotifications/1ewer3678-9abc-def0-123456789a"
+			defaultLanguage = "en"
+		}
+	}
 }
 
 New-MgSecurityAttackSimulation -BodyParameter $params
@@ -287,21 +281,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -492,21 +471,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Status
 simulationStatus
 
@@ -575,8 +539,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulation
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -980,8 +942,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[SettingType <String>]`: trainingSettingType
 
 ## RELATED LINKS
-
-
-
-
 

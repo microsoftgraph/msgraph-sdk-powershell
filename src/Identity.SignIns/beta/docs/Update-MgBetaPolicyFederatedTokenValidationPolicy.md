@@ -8,27 +8,25 @@ schema: 2.0.0
 # Update-MgBetaPolicyFederatedTokenValidationPolicy
 
 ## SYNOPSIS
-Update the properties of a federatedTokenValidationPolicy object.
+Update the navigation property federatedTokenValidationPolicy in policies
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaPolicyFederatedTokenValidationPolicy [-AdditionalProperties <Hashtable>]
- [-DeletedDateTime <DateTime>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-ValidatingDomains <IMicrosoftGraphValidatingDomains>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DeletedDateTime <DateTime>] [-Id <String>] [-ValidatingDomains <IMicrosoftGraphValidatingDomains>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPolicyFederatedTokenValidationPolicy
- -BodyParameter <IMicrosoftGraphFederatedTokenValidationPolicy> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphFederatedTokenValidationPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of a federatedTokenValidationPolicy object.
+Update the navigation property federatedTokenValidationPolicy in policies
 
 ## EXAMPLES
 
@@ -95,21 +93,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -118,21 +101,6 @@ Read-only.
 Type: System.String
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -195,8 +163,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFederatedTokenValidationPolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFederatedTokenValidationPolicy
@@ -223,8 +189,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[RootDomains <String>]`: rootDomains
 
 ## RELATED LINKS
-
-
-
-
 

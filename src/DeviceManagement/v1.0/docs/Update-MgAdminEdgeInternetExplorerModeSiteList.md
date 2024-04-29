@@ -17,23 +17,21 @@ Update the properties of a browserSiteList object.
 Update-MgAdminEdgeInternetExplorerModeSiteList -BrowserSiteListId <String> [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-PublishedBy <IMicrosoftGraphIdentitySet>]
- [-PublishedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Revision <String>]
- [-SharedCookies <IMicrosoftGraphBrowserSharedCookie[]>] [-Sites <IMicrosoftGraphBrowserSite[]>]
- [-Status <BrowserSiteListStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PublishedDateTime <DateTime>] [-Revision <String>] [-SharedCookies <IMicrosoftGraphBrowserSharedCookie[]>]
+ [-Sites <IMicrosoftGraphBrowserSite[]>] [-Status <BrowserSiteListStatus>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgAdminEdgeInternetExplorerModeSiteList -BrowserSiteListId <String>
- -BodyParameter <IMicrosoftGraphBrowserSiteList> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSiteList> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgAdminEdgeInternetExplorerModeSiteList -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphBrowserSiteList> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSiteList> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,10 +39,9 @@ Update-MgAdminEdgeInternetExplorerModeSiteList -InputObject <IDeviceManagementId
 Update-MgAdminEdgeInternetExplorerModeSiteList -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-PublishedBy <IMicrosoftGraphIdentitySet>] [-PublishedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Revision <String>]
+ [-PublishedBy <IMicrosoftGraphIdentitySet>] [-PublishedDateTime <DateTime>] [-Revision <String>]
  [-SharedCookies <IMicrosoftGraphBrowserSharedCookie[]>] [-Sites <IMicrosoftGraphBrowserSite[]>]
- [-Status <BrowserSiteListStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <BrowserSiteListStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,21 +141,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -245,21 +227,6 @@ The date and time when the site list was published.
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -369,8 +336,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBrowserSiteList
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -581,8 +546,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WebUrl <String>]`: The URL of the site.
 
 ## RELATED LINKS
-
-
-
-
 

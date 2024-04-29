@@ -18,4 +18,8 @@ Describe 'Get-MgGroupSiteGetByPath' {
     It 'List' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
+
+    It 'List1' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
 }

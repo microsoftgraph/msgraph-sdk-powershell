@@ -16,23 +16,21 @@ Update the navigation property roleDefinitions in deviceManagement
 ```
 Update-MgBetaDeviceManagementRoleDefinition -RoleDefinitionId <String> [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsBuiltIn] [-IsBuiltInRoleDefinition]
- [-Permissions <IMicrosoftGraphRolePermission[]>] [-ResponseHeadersVariable <String>]
- [-RoleAssignments <IMicrosoftGraphRoleAssignment[]>] [-RolePermissions <IMicrosoftGraphRolePermission[]>]
- [-RoleScopeTagIds <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Permissions <IMicrosoftGraphRolePermission[]>] [-RoleAssignments <IMicrosoftGraphRoleAssignment[]>]
+ [-RolePermissions <IMicrosoftGraphRolePermission[]>] [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementRoleDefinition -RoleDefinitionId <String>
- -BodyParameter <IMicrosoftGraphRoleDefinition> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRoleDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementRoleDefinition -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphRoleDefinition> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRoleDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,9 +38,8 @@ Update-MgBetaDeviceManagementRoleDefinition -InputObject <IDeviceManagementAdmin
 Update-MgBetaDeviceManagementRoleDefinition -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-IsBuiltIn] [-IsBuiltInRoleDefinition] [-Permissions <IMicrosoftGraphRolePermission[]>]
- [-ResponseHeadersVariable <String>] [-RoleAssignments <IMicrosoftGraphRoleAssignment[]>]
- [-RolePermissions <IMicrosoftGraphRolePermission[]>] [-RoleScopeTagIds <String[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RoleAssignments <IMicrosoftGraphRoleAssignment[]>] [-RolePermissions <IMicrosoftGraphRolePermission[]>]
+ [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -133,21 +130,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -221,21 +203,6 @@ To construct, see NOTES section for PERMISSIONS properties and create a hash tab
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRolePermission[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -346,8 +313,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleDefinition
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

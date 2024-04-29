@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Directory objects that are owners of this servicePrincipal.
-The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
 Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
@@ -19,13 +19,12 @@ Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 
 ```
 Get-MgServicePrincipalOwner -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-ConsistencyLevel <String>] [-ResponseHeadersVariable <String>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Directory objects that are owners of this servicePrincipal.
-The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
 Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
@@ -120,21 +119,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -PageSize
 Sets the page size of results.
 
@@ -157,21 +141,6 @@ Select properties to be returned
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -260,8 +229,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
@@ -271,8 +238,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-
-
-
-
 

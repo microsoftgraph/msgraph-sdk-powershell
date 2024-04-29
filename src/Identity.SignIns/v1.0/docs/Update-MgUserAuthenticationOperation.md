@@ -16,32 +16,28 @@ Update the navigation property operations in users
 ```
 Update-MgUserAuthenticationOperation -LongRunningOperationId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-LastActionDateTime <DateTime>] [-ResourceLocation <String>] [-ResponseHeadersVariable <String>]
- [-Status <String>] [-StatusDetail <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastActionDateTime <DateTime>] [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserAuthenticationOperation -LongRunningOperationId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphLongRunningOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphLongRunningOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserAuthenticationOperation -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphLongRunningOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphLongRunningOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserAuthenticationOperation -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-LastActionDateTime <DateTime>] [-ResourceLocation <String>] [-ResponseHeadersVariable <String>]
- [-Status <String>] [-StatusDetail <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastActionDateTime <DateTime>] [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,21 +106,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -199,21 +180,6 @@ URI of the resource that the operation is performed on.
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -306,8 +272,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLongRunningOperation
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

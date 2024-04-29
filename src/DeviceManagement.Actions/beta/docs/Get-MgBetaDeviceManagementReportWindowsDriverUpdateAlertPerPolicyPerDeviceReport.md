@@ -16,17 +16,15 @@ Invoke action getWindowsDriverUpdateAlertsPerPolicyPerDeviceReport
 ```
 Get-MgBetaDeviceManagementReportWindowsDriverUpdateAlertPerPolicyPerDeviceReport -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Name <String>]
- [-Property <String[]>] [-ResponseHeadersVariable <String>] [-Search <String>] [-SessionId <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-SessionId <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaDeviceManagementReportWindowsDriverUpdateAlertPerPolicyPerDeviceReport
  -BodyParameter <IPaths1Eykbp2DevicemanagementReportsMicrosoftGraphGetwindowsdriverupdatealertsperpolicyperdevicereportPostRequestbodyContentApplicationJsonSchema>
- -OutFile <String> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +109,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Name
 .
 
@@ -178,21 +161,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: GetExpanded
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -313,8 +281,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Eykbp2DevicemanagementReportsMicrosoftGraphGetwindowsdriverupdatealertsperpolicyperdevicereportPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

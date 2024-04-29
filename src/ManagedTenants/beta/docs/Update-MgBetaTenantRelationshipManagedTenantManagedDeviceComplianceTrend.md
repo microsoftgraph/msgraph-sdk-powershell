@@ -17,25 +17,24 @@ Update the navigation property managedDeviceComplianceTrends in tenantRelationsh
 Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend
  -ManagedDeviceComplianceTrendId <String> [-AdditionalProperties <Hashtable>] [-CompliantDeviceCount <Int32>]
  [-ConfigManagerDeviceCount <Int32>] [-CountDateTime <String>] [-ErrorDeviceCount <Int32>] [-Id <String>]
- [-InGracePeriodDeviceCount <Int32>] [-NoncompliantDeviceCount <Int32>] [-ResponseHeadersVariable <String>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-UnknownDeviceCount <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InGracePeriodDeviceCount <Int32>] [-NoncompliantDeviceCount <Int32>] [-TenantDisplayName <String>]
+ [-TenantId <String>] [-UnknownDeviceCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend
  -ManagedDeviceComplianceTrendId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend
  -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,9 +42,8 @@ Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend
 Update-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend
  -InputObject <IManagedTenantsIdentity> [-AdditionalProperties <Hashtable>] [-CompliantDeviceCount <Int32>]
  [-ConfigManagerDeviceCount <Int32>] [-CountDateTime <String>] [-ErrorDeviceCount <Int32>] [-Id <String>]
- [-InGracePeriodDeviceCount <Int32>] [-NoncompliantDeviceCount <Int32>] [-ResponseHeadersVariable <String>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-UnknownDeviceCount <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InGracePeriodDeviceCount <Int32>] [-NoncompliantDeviceCount <Int32>] [-TenantDisplayName <String>]
+ [-TenantId <String>] [-UnknownDeviceCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -168,21 +166,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -256,21 +239,6 @@ Read-only.
 Type: System.Int32
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -369,8 +337,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceComplianceTrend
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

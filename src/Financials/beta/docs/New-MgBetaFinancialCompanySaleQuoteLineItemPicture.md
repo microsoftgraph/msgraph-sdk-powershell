@@ -16,60 +16,53 @@ Create new navigation property to picture for financials
 ```
 New-MgBetaFinancialCompanySaleQuoteLineItemPicture -CompanyId <String> -SalesQuoteLineId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-Width <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaFinancialCompanySaleQuoteLineItemPicture -CompanyId <String> -SalesQuoteLineId <String>
- -BodyParameter <IMicrosoftGraphPicture> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgBetaFinancialCompanySaleQuoteLineItemPicture -CompanyId <String> -SalesQuoteId <String>
- -SalesQuoteLineId <String> -BodyParameter <IMicrosoftGraphPicture> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SalesQuoteLineId <String> -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded1
 ```
 New-MgBetaFinancialCompanySaleQuoteLineItemPicture -CompanyId <String> -SalesQuoteId <String>
  -SalesQuoteLineId <String> [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>]
- [-ContentType <String>] [-Height <Int32>] [-Id <String>] [-ResponseHeadersVariable <String>] [-Width <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ContentType <String>] [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaFinancialCompanySaleQuoteLineItemPicture -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphPicture> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgBetaFinancialCompanySaleQuoteLineItemPicture -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphPicture> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaFinancialCompanySaleQuoteLineItemPicture -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-Width <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
 New-MgBetaFinancialCompanySaleQuoteLineItemPicture -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-Width <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -169,21 +162,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Height
 .
 
@@ -227,21 +205,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -329,8 +292,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

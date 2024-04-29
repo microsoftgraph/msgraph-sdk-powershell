@@ -17,22 +17,20 @@ Create new navigation property to myDecisions for accessReviews
 New-MgBetaAccessReviewMyDecision -AccessReviewId <String> [-AccessRecommendation <String>]
  [-AccessReviewId1 <String>] [-AdditionalProperties <Hashtable>] [-AppliedBy <IMicrosoftGraphUserIdentity>]
  [-AppliedDateTime <DateTime>] [-ApplyResult <String>] [-Id <String>] [-Justification <String>]
- [-ResponseHeadersVariable <String>] [-ReviewedBy <IMicrosoftGraphUserIdentity>]
- [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ReviewedBy <IMicrosoftGraphUserIdentity>] [-ReviewedDateTime <DateTime>] [-ReviewResult <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaAccessReviewMyDecision -AccessReviewId <String> -BodyParameter <IMicrosoftGraphAccessReviewDecision>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaAccessReviewMyDecision -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessReviewDecision> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewDecision> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,9 +38,8 @@ New-MgBetaAccessReviewMyDecision -InputObject <IIdentityGovernanceIdentity>
 New-MgBetaAccessReviewMyDecision -InputObject <IIdentityGovernanceIdentity> [-AccessReviewId <String>]
  [-AccessRecommendation <String>] [-AdditionalProperties <Hashtable>]
  [-AppliedBy <IMicrosoftGraphUserIdentity>] [-AppliedDateTime <DateTime>] [-ApplyResult <String>]
- [-Id <String>] [-Justification <String>] [-ResponseHeadersVariable <String>]
- [-ReviewedBy <IMicrosoftGraphUserIdentity>] [-ReviewedDateTime <DateTime>] [-ReviewResult <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Justification <String>] [-ReviewedBy <IMicrosoftGraphUserIdentity>]
+ [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,7 +64,7 @@ Create new navigation property to myDecisions for accessReviews
 ## PARAMETERS
 
 ### -AccessRecommendation
-The feature- generated recommendation shown to the reviewer, one of: Approve, Deny, NotAvailable.
+The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
 
 ```yaml
 Type: System.String
@@ -158,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplyResult
-The outcome of applying the decision, one of: NotApplied, Success, Failed, NotFound, NotSupported.
+The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
 
 ```yaml
 Type: System.String
@@ -182,21 +179,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -242,21 +224,6 @@ The reviewer's business justification, if supplied.
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -351,8 +318,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewDecision
@@ -368,24 +333,24 @@ To create the parameters described below, construct a hash table containing the 
 
 `APPLIEDBY <IMicrosoftGraphUserIdentity>`: userIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-  - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+  - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
   - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
 
 `BODYPARAMETER <IMicrosoftGraphAccessReviewDecision>`: accessReviewDecision
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AccessRecommendation <String>]`: The feature- generated recommendation shown to the reviewer, one of: Approve, Deny, NotAvailable.
+  - `[AccessRecommendation <String>]`: The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
   - `[AccessReviewId <String>]`: The feature-generated ID of the access review.
   - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
     - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
   - `[AppliedDateTime <DateTime?>]`: The date and time when the review decision was applied.
-  - `[ApplyResult <String>]`: The outcome of applying the decision, one of: NotApplied, Success, Failed, NotFound, NotSupported.
+  - `[ApplyResult <String>]`: The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
   - `[Justification <String>]`: The reviewer's business justification, if supplied.
   - `[ReviewResult <String>]`: The result of the review, one of NotReviewed, Deny, DontKnow or Approve.
   - `[ReviewedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
@@ -440,9 +405,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
@@ -494,8 +459,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `REVIEWEDBY <IMicrosoftGraphUserIdentity>`: userIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-  - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+  - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
   - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
 

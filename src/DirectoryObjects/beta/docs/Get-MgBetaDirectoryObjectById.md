@@ -15,16 +15,15 @@ Some common uses for this function are to:
 
 ### GetExpanded (Default)
 ```
-Get-MgBetaDirectoryObjectById [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
- [-ResponseHeadersVariable <String>] [-Types <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgBetaDirectoryObjectById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Types <String[]>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaDirectoryObjectById
  -BodyParameter <IPathsG5Xp0HDirectoryobjectsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,16 +39,16 @@ Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	ids = @(
-	"84b80893-8749-40a3-97b7-68513b600544"
-"5d6059b6-368d-45f8-91e1-8e07d485f1d0"
-"0b944de3-e0fc-4774-a49a-b135213725ef"
-"b75a5ab2-fe55-4463-bd31-d21ad555c6e0"
-)
-types = @(
-"user"
-"group"
-"device"
-)
+		"84b80893-8749-40a3-97b7-68513b600544"
+		"5d6059b6-368d-45f8-91e1-8e07d485f1d0"
+		"0b944de3-e0fc-4774-a49a-b135213725ef"
+		"b75a5ab2-fe55-4463-bd31-d21ad555c6e0"
+	)
+	types = @(
+		"user"
+		"group"
+		"device"
+	)
 }
 
 Get-MgBetaDirectoryObjectById -BodyParameter $params
@@ -87,21 +86,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Ids
 .
 
@@ -109,21 +93,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: GetExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -185,8 +154,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsG5Xp0HDirectoryobjectsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
@@ -206,8 +173,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[Types <String[]>]`: 
 
 ## RELATED LINKS
-
-
-
-
 

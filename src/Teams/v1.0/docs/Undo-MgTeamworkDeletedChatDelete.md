@@ -8,7 +8,7 @@ schema: 2.0.0
 # Undo-MgTeamworkDeletedChatDelete
 
 ## SYNOPSIS
-Restore a  deletedChat to an active chat.
+Invoke action undoDelete
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Undo-MgTeamworkDeletedChatDelete -InputObject <ITeamsIdentity> [-ResponseHeaders
 ```
 
 ## DESCRIPTION
-Restore a  deletedChat to an active chat.
+Invoke action undoDelete
 
 ## EXAMPLES
 
@@ -210,8 +210,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkforceIntegrationId <String>]`: The unique identifier of workforceIntegration
 
 ## RELATED LINKS
-
-
-
-
 

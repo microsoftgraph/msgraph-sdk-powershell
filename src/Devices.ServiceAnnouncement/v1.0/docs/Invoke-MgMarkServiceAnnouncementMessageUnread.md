@@ -15,14 +15,14 @@ Mark a list of serviceUpdateMessages as unread for the signed in user.
 ### MarkExpanded (Default)
 ```
 Invoke-MgMarkServiceAnnouncementMessageUnread [-AdditionalProperties <Hashtable>] [-MessageIds <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Mark
 ```
 Invoke-MgMarkServiceAnnouncementMessageUnread
  -BodyParameter <IPathsX0Td2HAdminServiceannouncementMessagesMicrosoftGraphMarkunreadPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,9 +37,9 @@ Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
 
 $params = @{
 	messageIds = @(
-	"MC172851"
-"MC167983"
-)
+		"MC172851"
+		"MC167983"
+	)
 }
 
 Invoke-MgMarkServiceAnnouncementMessageUnread -BodyParameter $params
@@ -77,21 +77,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -MessageIds
 .
 
@@ -99,21 +84,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: MarkExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -160,8 +130,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPathsX0Td2HAdminServiceannouncementMessagesMicrosoftGraphMarkunreadPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -180,8 +148,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[MessageIds <String[]>]`: 
 
 ## RELATED LINKS
-
-
-
-
 

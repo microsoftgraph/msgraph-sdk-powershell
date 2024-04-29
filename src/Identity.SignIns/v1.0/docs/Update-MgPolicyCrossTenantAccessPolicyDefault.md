@@ -20,16 +20,15 @@ Update-MgPolicyCrossTenantAccessPolicyDefault [-AdditionalProperties <Hashtable>
  [-B2BCollaborationOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BDirectConnectInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]
  [-B2BDirectConnectOutbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>] [-Id <String>]
- [-InboundTrust <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>]
- [-InvitationRedemptionIdentityProviderConfiguration <Hashtable>] [-IsServiceDefault]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InboundTrust <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>] [-IsServiceDefault] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPolicyCrossTenantAccessPolicyDefault
- -BodyParameter <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -180,21 +179,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -227,44 +211,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InvitationRedemptionIdentityProviderConfiguration
-defaultInvitationRedemptionIdentityProviderConfiguration
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -IsServiceDefault
 If true, the default configuration is set to the system default configuration.
-If false, the default settings are customized.
+If false, the default settings have been customized.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -310,8 +264,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -395,11 +347,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsCompliantDeviceAccepted <Boolean?>]`: Specifies whether compliant devices from external Microsoft Entra organizations are trusted.
     - `[IsHybridAzureAdJoinedDeviceAccepted <Boolean?>]`: Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.
     - `[IsMfaAccepted <Boolean?>]`: Specifies whether MFA from external Microsoft Entra organizations is trusted.
-  - `[InvitationRedemptionIdentityProviderConfiguration <IMicrosoftGraphDefaultInvitationRedemptionIdentityProviderConfiguration>]`: defaultInvitationRedemptionIdentityProviderConfiguration
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[FallbackIdentityProvider <String>]`: b2bIdentityProvidersType
-    - `[PrimaryIdentityProviderPrecedenceOrder <String[]>]`: Collection of identity providers in priority order of preference to be used for guest invitation redemption. Possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.
-  - `[IsServiceDefault <Boolean?>]`: If true, the default configuration is set to the system default configuration. If false, the default settings are customized.
+  - `[IsServiceDefault <Boolean?>]`: If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
 
 `INBOUNDTRUST <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>`: crossTenantAccessPolicyInboundTrust
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -408,8 +356,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsMfaAccepted <Boolean?>]`: Specifies whether MFA from external Microsoft Entra organizations is trusted.
 
 ## RELATED LINKS
-
-
-
-
 

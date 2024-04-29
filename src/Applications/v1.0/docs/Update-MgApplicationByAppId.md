@@ -32,27 +32,27 @@ Update-MgApplicationByAppId -AppId <String> [-AddIns <IMicrosoftGraphAddIn[]>]
  [-PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]
  [-PublicClient <IMicrosoftGraphPublicClientApplication>] [-PublisherDomain <String>]
  [-RequestSignatureVerification <IMicrosoftGraphRequestSignatureVerification>]
- [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-ResponseHeadersVariable <String>]
- [-SamlMetadataUrl <String>] [-ServiceManagementReference <String>]
+ [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-SamlMetadataUrl <String>]
+ [-ServiceManagementReference <String>]
  [-ServicePrincipalLockConfiguration <IMicrosoftGraphServicePrincipalLockConfiguration>]
  [-SignInAudience <String>] [-Spa <IMicrosoftGraphSpaApplication>]
  [-Synchronization <IMicrosoftGraphSynchronization>] [-Tags <String[]>] [-TokenEncryptionKeyId <String>]
  [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]
- [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>] [-UniqueName <String>]
- [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Web <IMicrosoftGraphWebApplication>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>]
+ [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Web <IMicrosoftGraphWebApplication>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgApplicationByAppId -AppId <String> -BodyParameter <IMicrosoftGraphApplication>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgApplicationByAppId -AppId <String> -BodyParameter <IMicrosoftGraphApplication> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgApplicationByAppId -InputObject <IApplicationsIdentity> -BodyParameter <IMicrosoftGraphApplication>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -75,15 +75,15 @@ Update-MgApplicationByAppId -InputObject <IApplicationsIdentity> [-AppId <String
  [-PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]
  [-PublicClient <IMicrosoftGraphPublicClientApplication>] [-PublisherDomain <String>]
  [-RequestSignatureVerification <IMicrosoftGraphRequestSignatureVerification>]
- [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-ResponseHeadersVariable <String>]
- [-SamlMetadataUrl <String>] [-ServiceManagementReference <String>]
+ [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-SamlMetadataUrl <String>]
+ [-ServiceManagementReference <String>]
  [-ServicePrincipalLockConfiguration <IMicrosoftGraphServicePrincipalLockConfiguration>]
  [-SignInAudience <String>] [-Spa <IMicrosoftGraphSpaApplication>]
  [-Synchronization <IMicrosoftGraphSynchronization>] [-Tags <String[]>] [-TokenEncryptionKeyId <String>]
  [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]
- [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>] [-UniqueName <String>]
- [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Web <IMicrosoftGraphWebApplication>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>]
+ [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Web <IMicrosoftGraphWebApplication>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,8 +109,8 @@ Update the properties of an application object.
 
 ### -AddIns
 Defines custom behavior that a consuming service can use to call an app in specific contexts.
-For example, applications that can render file streams can set the addIns property for its 'FileHandler' functionality.
-This lets services like Microsoft 365 call the application in the context of a document the user is working on.
+For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality.
+This will let services like Office 365 call the application in the context of a document the user is working on.
 To construct, see NOTES section for ADDINS properties and create a hash table.
 
 ```yaml
@@ -193,8 +193,6 @@ Accept wildcard characters: False
 ### -ApplicationTemplateId
 Unique identifier of the applicationTemplate.
 Supports $filter (eq, not, ne).
-Read-only.
-null if the app wasn't created from an application template.
 
 ```yaml
 Type: System.String
@@ -342,7 +340,7 @@ Accept wildcard characters: False
 
 ### -Description
 Free text field to provide a description of the application object to end users.
-The maximum allowed size is 1,024 characters.
+The maximum allowed size is 1024 characters.
 Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 
 ```yaml
@@ -359,7 +357,7 @@ Accept wildcard characters: False
 
 ### -DisabledByMicrosoftStatus
 Specifies whether Microsoft has disabled the registered application.
-Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
 Supports $filter (eq, ne, not).
 
 ```yaml
@@ -441,21 +439,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HomeRealmDiscoveryPolicies
 .
 To construct, see NOTES section for HOMEREALMDISCOVERYPOLICIES properties and create a hash table.
@@ -490,7 +473,7 @@ Accept wildcard characters: False
 
 ### -IdentifierUris
 Also known as App ID URI, this value is set when an application is used as a resource app.
-The identifierUris acts as the prefix for the scopes you reference in your API's code, and it must be globally unique.
+The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique.
 You can use the default value provided, which is in the form api://\<application-client-id\>, or specify a more readable URI like https://contoso.com/api.
 For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices.
 Not nullable.
@@ -558,10 +541,10 @@ Accept wildcard characters: False
 
 ### -IsFallbackPublicClient
 Specifies the fallback application type as public client, such as an installed application running on a mobile device.
-The default value is false, which means the fallback application type is confidential client such as a web app.
-There are certain scenarios where Microsoft Entra ID can't determine the client application type.
-For example, the ROPC flow where it's configured without specifying a redirect URI.
-In those cases, Microsoft Entra ID interprets the application type based on the value of this property.
+The default value is false which means the fallback application type is confidential client such as a web app.
+There are certain scenarios where Microsoft Entra ID cannot determine the client application type.
+For example, the ROPC flow where it is configured without specifying a redirect URI.
+In those cases Microsoft Entra ID interprets the application type based on the value of this property.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -780,21 +763,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SamlMetadataUrl
 The URL where the service exposes SAML metadata for federation.
 This property is valid only for single-tenant applications.
@@ -846,12 +814,12 @@ Accept wildcard characters: False
 
 ### -SignInAudience
 Specifies the Microsoft accounts that are supported for the current application.
-The possible values are: AzureADMyOrg (default), AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, and PersonalMicrosoftAccount.
+The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount.
 See more in the table.
 The value of this object also limits the number of permissions an app can request.
 For more information, see Limits on requested permissions per app.
 The value for this property has implications on other app object properties.
-As a result, if you change this property, you might need to change other properties first.
+As a result, if you change this property, you may need to change other properties first.
 For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
 
 ```yaml
@@ -964,21 +932,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UniqueName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -VerifiedPublisher
 verifiedPublisher
 To construct, see NOTES section for VERIFIEDPUBLISHER properties and create a hash table.
@@ -1051,8 +1004,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication
@@ -1066,7 +1017,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ADDINS <IMicrosoftGraphAddIn[]>`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams can set the addIns property for its 'FileHandler' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.
+`ADDINS <IMicrosoftGraphAddIn[]>`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
   - `[Id <String>]`: 
   - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
     - `[Key <String>]`: Key for the key-value pair.
@@ -1125,7 +1076,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams can set the addIns property for its 'FileHandler' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.
+  - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
     - `[Id <String>]`: 
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
       - `[Key <String>]`: Key for the key-value pair.
@@ -1177,7 +1128,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsEnabled <Boolean?>]`: When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
     - `[Origin <String>]`: Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
     - `[Value <String>]`: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
-  - `[ApplicationTemplateId <String>]`: Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne). Read-only. null if the app wasn't created from an application template.
+  - `[ApplicationTemplateId <String>]`: Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
   - `[Certification <IMicrosoftGraphCertification>]`: certification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CertificationExpirationDateTime <DateTime?>]`: The timestamp when the current certification for the application expires.
@@ -1186,15 +1137,15 @@ To create the parameters described below, construct a hash table containing the 
   - `[CreatedDateTime <DateTime?>]`: The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.
   - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
   - `[DefaultRedirectUri <String>]`: 
-  - `[Description <String>]`: Free text field to provide a description of the application object to end users. The maximum allowed size is 1,024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
-  - `[DisabledByMicrosoftStatus <String>]`: Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
+  - `[Description <String>]`: Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+  - `[DisabledByMicrosoftStatus <String>]`: Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
   - `[DisplayName <String>]`: The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
   - `[ExtensionProperties <IMicrosoftGraphExtensionProperty[]>]`: Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
-    - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximumNot nullable. For multivalued directory extensions, these limits apply per value in the collection.
-    - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of string types such as 'extensionb7b1c57b532f40b8b5ed4b7a7ba67401jobGroupTracker': ['String 1', 'String 2']. The default value is false. Supports $filter (eq).
+    - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+    - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
     - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
     - `[Name <String>]`: Name of the extension property. Not nullable. Supports $filter (eq).
     - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
@@ -1214,7 +1165,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: Display name for this policy. Required.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IdentifierUris <String[]>]`: Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
+  - `[IdentifierUris <String[]>]`: Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
   - `[Info <IMicrosoftGraphInformationalUrl>]`: informationalUrl
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[LogoUrl <String>]`: CDN URL to the application's logo, Read-only.
@@ -1223,7 +1174,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SupportUrl <String>]`: Link to the application's support page. For example, https://www.contoso.com/app/support
     - `[TermsOfServiceUrl <String>]`: Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
   - `[IsDeviceOnlyAuthSupported <Boolean?>]`: Specifies whether this application supports device authentication without a user. The default is false.
-  - `[IsFallbackPublicClient <Boolean?>]`: Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where it's configured without specifying a redirect URI. In those cases, Microsoft Entra ID interprets the application type based on the value of this property.
+  - `[IsFallbackPublicClient <Boolean?>]`: Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
   - `[KeyCredentials <IMicrosoftGraphKeyCredential[]>]`: The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
     - `[CustomKeyIdentifier <Byte[]>]`: A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
     - `[DisplayName <String>]`: Friendly name for the key. Optional.
@@ -1280,7 +1231,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[CredentialsWithUsageVerify <Boolean?>]`: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
     - `[IsEnabled <Boolean?>]`: Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
     - `[TokenEncryptionKeyId <Boolean?>]`: Locks the tokenEncryptionKeyId property for modification on the service principal.
-  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg (default), AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you might need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
+  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
   - `[Spa <IMicrosoftGraphSpaApplication>]`: spaApplication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RedirectUris <String[]>]`: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
@@ -1289,9 +1240,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[BulkUpload <IMicrosoftGraphBulkUpload>]`: bulkUpload
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Schedule <IMicrosoftGraphSynchronizationSchedule>]`: synchronizationSchedule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Expiration <DateTime?>]`: Date and time when this job expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -1465,7 +1413,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: Display name for this policy. Required.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[UniqueName <String>]`: 
   - `[VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>]`: verifiedPublisher
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AddedDateTime <DateTime?>]`: The timestamp when the verified publisher was first added or most recently updated.
@@ -1499,8 +1446,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
-  - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximumNot nullable. For multivalued directory extensions, these limits apply per value in the collection.
-  - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of string types such as 'extensionb7b1c57b532f40b8b5ed4b7a7ba67401jobGroupTracker': ['String 1', 'String 2']. The default value is false. Supports $filter (eq).
+  - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+  - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
   - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
   - `[Name <String>]`: Name of the extension property. Not nullable. Supports $filter (eq).
   - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
@@ -1554,7 +1501,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 `KEYCREDENTIALS <IMicrosoftGraphKeyCredential[]>`: The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
@@ -1627,9 +1573,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[BulkUpload <IMicrosoftGraphBulkUpload>]`: bulkUpload
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Schedule <IMicrosoftGraphSynchronizationSchedule>]`: synchronizationSchedule
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Expiration <DateTime?>]`: Date and time when this job expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -1828,8 +1771,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[RedirectUris <String[]>]`: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 
 ## RELATED LINKS
-
-
-
-
 

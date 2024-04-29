@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSearchAcronym
 
 ## SYNOPSIS
-Read the properties and relationships of an acronym object.
+Get acronyms from search
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSearchAcronym -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an acronym object.
+Get acronyms from search
 
 ## EXAMPLES
 
@@ -298,10 +298,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[QnaId <String>]`: The unique identifier of qna
 
 ## RELATED LINKS
-
-
-
-
-
-
 

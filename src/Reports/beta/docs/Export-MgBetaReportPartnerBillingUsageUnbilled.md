@@ -8,26 +8,26 @@ schema: 2.0.0
 # Export-MgBetaReportPartnerBillingUsageUnbilled
 
 ## SYNOPSIS
-Export unbilled Azure usage data for a specific billing period and currency.
+Export the unbilled Azure usage data for a specific billing period and a given currency.
 
 ## SYNTAX
 
 ### ExportExpanded (Default)
 ```
 Export-MgBetaReportPartnerBillingUsageUnbilled [-AdditionalProperties <Hashtable>] [-AttributeSet <String>]
- [-BillingPeriod <String>] [-CurrencyCode <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BillingPeriod <String>] [-CurrencyCode <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Export
 ```
 Export-MgBetaReportPartnerBillingUsageUnbilled
  -BodyParameter <IPaths1Ajo9DhReportsPartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Export unbilled Azure usage data for a specific billing period and currency.
+Export the unbilled Azure usage data for a specific billing period and a given currency.
 
 ## EXAMPLES
 
@@ -138,21 +138,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -213,8 +198,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[CurrencyCode <String>]`: 
 
 ## RELATED LINKS
-
-
-
-
 

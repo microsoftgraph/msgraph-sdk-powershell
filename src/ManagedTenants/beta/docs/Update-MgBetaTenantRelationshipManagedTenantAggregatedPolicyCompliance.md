@@ -18,23 +18,22 @@ Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance -Aggregat
  [-AdditionalProperties <Hashtable>] [-CompliancePolicyId <String>] [-CompliancePolicyName <String>]
  [-CompliancePolicyPlatform <String>] [-CompliancePolicyType <String>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-NumberOfCompliantDevices <Int64>] [-NumberOfErrorDevices <Int64>]
- [-NumberOfNonCompliantDevices <Int64>] [-PolicyModifiedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-TenantDisplayName <String>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NumberOfNonCompliantDevices <Int64>] [-PolicyModifiedDateTime <DateTime>] [-TenantDisplayName <String>]
+ [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance -AggregatedPolicyComplianceId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,9 +42,8 @@ Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance -InputObj
  [-AdditionalProperties <Hashtable>] [-CompliancePolicyId <String>] [-CompliancePolicyName <String>]
  [-CompliancePolicyPlatform <String>] [-CompliancePolicyType <String>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-NumberOfCompliantDevices <Int64>] [-NumberOfErrorDevices <Int64>]
- [-NumberOfNonCompliantDevices <Int64>] [-PolicyModifiedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-TenantDisplayName <String>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NumberOfNonCompliantDevices <Int64>] [-PolicyModifiedDateTime <DateTime>] [-TenantDisplayName <String>]
+ [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -184,21 +182,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -316,21 +299,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TenantDisplayName
 The display name for the managed tenant.
 Optional.
@@ -404,8 +372,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

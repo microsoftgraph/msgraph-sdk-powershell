@@ -18,14 +18,14 @@ New-MgBetaWindowsUpdatesPolicy [-AdditionalProperties <Hashtable>]
  [-Audience <IMicrosoftGraphWindowsUpdatesDeploymentAudience>]
  [-ComplianceChangeRules <IMicrosoftGraphWindowsUpdatesComplianceChangeRule[]>]
  [-ComplianceChanges <IMicrosoftGraphWindowsUpdatesComplianceChange[]>] [-CreatedDateTime <DateTime>]
- [-DeploymentSettings <IMicrosoftGraphWindowsUpdatesDeploymentSettings>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DeploymentSettings <IMicrosoftGraphWindowsUpdatesDeploymentSettings>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaWindowsUpdatesPolicy -BodyParameter <IMicrosoftGraphWindowsUpdatesUpdatePolicy>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaWindowsUpdatesPolicy -BodyParameter <IMicrosoftGraphWindowsUpdatesUpdatePolicy> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,21 +161,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -184,21 +169,6 @@ Read-only.
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -245,8 +215,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatePolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesUpdatePolicy
@@ -272,9 +240,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[DeployableUntilDateTime <DateTime?>]`: The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[DisplayName <String>]`: The display name of the content. Read-only.
       - `[ReleaseDateTime <DateTime?>]`: The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    - `[CatalogEntryId <String>]`: ID of the catalog entry for the applicable content.
     - `[MatchedDevices <IMicrosoftGraphWindowsUpdatesApplicableContentDeviceMatch[]>]`: Collection of devices and recommendations for applicable catalog content.
-      - `[DeviceId <String>]`: Collection of vendors who recommend the content.
+      - `[DeviceId <String>]`: 
       - `[RecommendedBy <String[]>]`: Collection of vendors who recommend the content.
   - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -293,9 +260,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[DeployableUntilDateTime <DateTime?>]`: The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[DisplayName <String>]`: The display name of the content. Read-only.
         - `[ReleaseDateTime <DateTime?>]`: The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-      - `[CatalogEntryId <String>]`: ID of the catalog entry for the applicable content.
       - `[MatchedDevices <IMicrosoftGraphWindowsUpdatesApplicableContentDeviceMatch[]>]`: Collection of devices and recommendations for applicable catalog content.
-        - `[DeviceId <String>]`: Collection of vendors who recommend the content.
+        - `[DeviceId <String>]`: 
         - `[RecommendedBy <String[]>]`: Collection of vendors who recommend the content.
     - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -323,7 +289,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
-      - `[IsReadinessTest <Boolean?>]`: True indicates that the deployment is an expedite readiness test.
+      - `[IsReadinessTest <Boolean?>]`: 
     - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'
@@ -339,8 +305,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[UserExperience <IMicrosoftGraphWindowsUpdatesUserExperienceSettings>]`: userExperienceSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
-      - `[IsHotpatchEnabled <Boolean?>]`: 
-      - `[OfferAsOptional <Boolean?>]`: Specifies whether the update is offered as Optional rather than Required.
 
 `COMPLIANCECHANGERULES <IMicrosoftGraphWindowsUpdatesComplianceChangeRule[]>`: Rules for governing the automatic creation of compliance changes.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the rule was created.
@@ -365,9 +329,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[DeployableUntilDateTime <DateTime?>]`: The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
           - `[DisplayName <String>]`: The display name of the content. Read-only.
           - `[ReleaseDateTime <DateTime?>]`: The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        - `[CatalogEntryId <String>]`: ID of the catalog entry for the applicable content.
         - `[MatchedDevices <IMicrosoftGraphWindowsUpdatesApplicableContentDeviceMatch[]>]`: Collection of devices and recommendations for applicable catalog content.
-          - `[DeviceId <String>]`: Collection of vendors who recommend the content.
+          - `[DeviceId <String>]`: 
           - `[RecommendedBy <String[]>]`: Collection of vendors who recommend the content.
       - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -390,7 +353,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
-        - `[IsReadinessTest <Boolean?>]`: True indicates that the deployment is an expedite readiness test.
+        - `[IsReadinessTest <Boolean?>]`: 
       - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'
@@ -406,8 +369,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[UserExperience <IMicrosoftGraphWindowsUpdatesUserExperienceSettings>]`: userExperienceSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
-        - `[IsHotpatchEnabled <Boolean?>]`: 
-        - `[OfferAsOptional <Boolean?>]`: Specifies whether the update is offered as Optional rather than Required.
 
 `DEPLOYMENTSETTINGS <IMicrosoftGraphWindowsUpdatesDeploymentSettings>`: deploymentSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -421,7 +382,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
-    - `[IsReadinessTest <Boolean?>]`: True indicates that the deployment is an expedite readiness test.
+    - `[IsReadinessTest <Boolean?>]`: 
   - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'
@@ -437,12 +398,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserExperience <IMicrosoftGraphWindowsUpdatesUserExperienceSettings>]`: userExperienceSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
-    - `[IsHotpatchEnabled <Boolean?>]`: 
-    - `[OfferAsOptional <Boolean?>]`: Specifies whether the update is offered as Optional rather than Required.
 
 ## RELATED LINKS
-
-
-
-
 

@@ -18,32 +18,28 @@ Attendees must have a valid United States phone number to receive these SMS noti
 ```
 Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentSm -JoinWebUrl <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-MessageType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-MessageType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Send
 ```
 Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentSm -JoinWebUrl <String> -UserId <String>
  -BodyParameter <IPaths1CzvlytUsersUserIdOnlinemeetingsJoinweburlMicrosoftGraphSendvirtualappointmentsmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
 Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentSm -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1CzvlytUsersUserIdOnlinemeetingsJoinweburlMicrosoftGraphSendvirtualappointmentsmsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentityExpanded
 ```
 Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentSm -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-MessageType <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-MessageType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -192,21 +188,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -278,14 +259,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `ATTENDEES <IMicrosoftGraphAttendeeNotificationInfo[]>`: .
-  - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-  - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
+  - `[PhoneNumber <String>]`: 
+  - `[TimeZone <String>]`: 
 
 `BODYPARAMETER <IPaths1CzvlytUsersUserIdOnlinemeetingsJoinweburlMicrosoftGraphSendvirtualappointmentsmsPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]`: 
-    - `[PhoneNumber <String>]`: The phone number of the external attendee. Required.
-    - `[TimeZone <String>]`: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
+    - `[PhoneNumber <String>]`: 
+    - `[TimeZone <String>]`: 
   - `[MessageType <String>]`: virtualAppointmentMessageType
 
 `INPUTOBJECT <IUsersActionsIdentity>`: Identity Parameter
@@ -332,8 +313,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
-
-
-
-
 

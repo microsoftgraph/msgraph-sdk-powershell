@@ -8,25 +8,24 @@ schema: 2.0.0
 # Get-MgBetaTeamPrimaryChannelFileFolderContent
 
 ## SYNOPSIS
-Get content for the navigation property filesFolder from teams
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-MgBetaTeamPrimaryChannelFileFolderContent -TeamId <String> -OutFile <String> [-Format <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgBetaTeamPrimaryChannelFileFolderContent -TeamId <String> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaTeamPrimaryChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <String>
- [-Format <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
+Get-MgBetaTeamPrimaryChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get content for the navigation property filesFolder from teams
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 
@@ -45,36 +44,6 @@ Get content for the navigation property filesFolder from teams
 
 
 ## PARAMETERS
-
-### -Format
-Format of the content
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -122,21 +91,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TeamId
 The unique identifier of team
 
@@ -158,8 +112,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -194,12 +146,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift
-  - `[ShiftsRoleDefinitionId <String>]`: The unique identifier of shiftsRoleDefinition
   - `[SwapShiftsChangeRequestId <String>]`: The unique identifier of swapShiftsChangeRequest
   - `[TeamId <String>]`: The unique identifier of team
   - `[TeamTemplateDefinitionId <String>]`: The unique identifier of teamTemplateDefinition
   - `[TeamTemplateId <String>]`: The unique identifier of teamTemplate
-  - `[TeamsAppDashboardCardDefinitionId <String>]`: The unique identifier of teamsAppDashboardCardDefinition
   - `[TeamsAppDefinitionId <String>]`: The unique identifier of teamsAppDefinition
   - `[TeamsAppId <String>]`: The unique identifier of teamsApp
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation
@@ -218,8 +168,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkforceIntegrationId <String>]`: The unique identifier of workforceIntegration
 
 ## RELATED LINKS
-
-
-
-
 

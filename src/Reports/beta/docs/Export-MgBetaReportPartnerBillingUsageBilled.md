@@ -15,15 +15,14 @@ Export the billed Azure usage data.
 ### ExportExpanded (Default)
 ```
 Export-MgBetaReportPartnerBillingUsageBilled [-AdditionalProperties <Hashtable>] [-AttributeSet <String>]
- [-InvoiceId <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-InvoiceId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Export
 ```
 Export-MgBetaReportPartnerBillingUsageBilled
  -BodyParameter <IPaths1Ij96IaReportsPartnersBillingUsageBilledMicrosoftGraphPartnersBillingExportPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,21 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -197,8 +181,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[InvoiceId <String>]`: 
 
 ## RELATED LINKS
-
-
-
-
 

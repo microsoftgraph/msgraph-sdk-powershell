@@ -38,21 +38,20 @@ New-MgBetaServicePrincipal [-AccountEnabled] [-AddIns <IMicrosoftGraphAddIn[]>]
  [-PreferredTokenSigningKeyThumbprint <String>]
  [-PublishedPermissionScopes <IMicrosoftGraphPermissionScope[]>] [-PublisherName <String>]
  [-RemoteDesktopSecurityConfiguration <IMicrosoftGraphRemoteDesktopSecurityConfiguration>]
- [-ReplyUrls <String[]>] [-ResponseHeadersVariable <String>] [-SamlMetadataUrl <String>]
+ [-ReplyUrls <String[]>] [-SamlMetadataUrl <String>]
  [-SamlSingleSignOnSettings <IMicrosoftGraphSamlSingleSignOnSettings>] [-ServicePrincipalNames <String[]>]
  [-ServicePrincipalType <String>] [-SignInAudience <String>]
  [-Synchronization <IMicrosoftGraphSynchronization>] [-Tags <String[]>] [-TokenEncryptionKeyId <String>]
  [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]
  [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>]
  [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]
- [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaServicePrincipal -BodyParameter <IMicrosoftGraphServicePrincipal>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaServicePrincipal -BodyParameter <IMicrosoftGraphServicePrincipal> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -78,7 +77,7 @@ SignInAudience : AzureADandPersonalMicrosoftAccount
 
 ### -AccountEnabled
 true if the service principal account is enabled; otherwise, false.
-If set to false, then no users are able to sign in to this app, even if they're assigned to it.
+If set to false, then no users will be able to sign in to this app, even if they are assigned to it.
 Supports $filter (eq, ne, not, in).
 
 ```yaml
@@ -96,7 +95,7 @@ Accept wildcard characters: False
 ### -AddIns
 Defines custom behavior that a consuming service can use to call an app in specific contexts.
 For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality.
-This lets services like Microsoft 365 call the application in the context of a document the user is working on.
+This will let services like Microsoft 365 call the application in the context of a document the user is working on.
 To construct, see NOTES section for ADDINS properties and create a hash table.
 
 ```yaml
@@ -127,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -AlternativeNames
-Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities.
+Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities.
 Supports $filter (eq, not, ge, le, startsWith).
 
 ```yaml
@@ -190,10 +189,9 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationTemplateId
-Unique identifier of the applicationTemplate.
-Supports $filter (eq, not, ne).
+Unique identifier of the applicationTemplate that the servicePrincipal was created from.
 Read-only.
-null if the app wasn't created from an application template.
+Supports $filter (eq, ne, NOT, startsWith).
 
 ```yaml
 Type: System.String
@@ -224,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppOwnerOrganizationId
-Contains the tenant ID where the application is registered.
+Contains the tenant id where the application is registered.
 This is applicable only to service principals backed by applications.
 Supports $filter (eq, ne, NOT, ge, le).
 
@@ -293,7 +291,7 @@ Accept wildcard characters: False
 
 ### -AppRoles
 The roles exposed by the application, which this service principal represents.
-For more information, see the appRoles property definition on the application entity.
+For more information see the appRoles property definition on the application entity.
 Not nullable.
 To construct, see NOTES section for APPROLES properties and create a hash table.
 
@@ -410,8 +408,8 @@ Accept wildcard characters: False
 
 ### -Description
 Free text field to provide an internal end-user facing description of the service principal.
-End-user portals such MyApps displays the application description in this field.
-The maximum allowed size is 1,024 characters.
+End-user portals such MyApps will display the application description in this field.
+The maximum allowed size is 1024 characters.
 Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 
 ```yaml
@@ -505,21 +503,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -640,7 +623,7 @@ Accept wildcard characters: False
 ```
 
 ### -LogoutUrl
-Specifies the URL that the Microsoft's authorization service uses to sign out a user using OpenId Connect front-channel, back-channel, or SAML sign out protocols.
+Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
 
 ```yaml
 Type: System.String
@@ -675,7 +658,7 @@ Accept wildcard characters: False
 
 ### -Notes
 Free text field to capture information about the service principal, typically used for operational purposes.
-Maximum allowed size is 1,024 characters.
+Maximum allowed size is 1024 characters.
 
 ```yaml
 Type: System.String
@@ -744,7 +727,7 @@ Accept wildcard characters: False
 
 ### -Owners
 Directory objects that are owners of this servicePrincipal.
-The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
 Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
@@ -814,7 +797,7 @@ Accept wildcard characters: False
 
 ### -PreferredTokenSigningKeyEndDateTime
 Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.
-Updating this attribute isn't currently supported.
+Updating this attribute is not currentlysupported.
 For details, see ServicePrincipal property differences.
 
 ```yaml
@@ -831,7 +814,7 @@ Accept wildcard characters: False
 
 ### -PreferredTokenSigningKeyThumbprint
 This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses.
-For applications that aren't SAML, don't write or otherwise rely on this property.
+For applications that are not SAML, do not write or otherwise rely on this property.
 
 ```yaml
 Type: System.String
@@ -847,7 +830,7 @@ Accept wildcard characters: False
 
 ### -PublishedPermissionScopes
 The delegated permissions exposed by the application.
-For more information, see the oauth2PermissionScopes property on the application entity's api property.
+For more information see the oauth2PermissionScopes property on the application entity's api property.
 Not nullable.
 Note: This property is named oauth2PermissionScopes in v1.0.
 To construct, see NOTES section for PUBLISHEDPERMISSIONSCOPES properties and create a hash table.
@@ -911,21 +894,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SamlMetadataUrl
 The url where the service exposes SAML metadata for federation.
 
@@ -959,9 +927,9 @@ Accept wildcard characters: False
 
 ### -ServicePrincipalNames
 Contains the list of identifiersUris, copied over from the associated application.
-More values can be added to hybrid applications.
+Additional values can be added to hybrid applications.
 These values can be used to identify the permissions exposed by this app within Microsoft Entra ID.
-For example,Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties.
+For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties.
 Not nullable.
 Supports $filter (eq, not, ge, le, startsWith).
 
@@ -981,7 +949,7 @@ Accept wildcard characters: False
 Identifies if the service principal represents an application or a managed identity.
 This is set by Microsoft Entra ID internally.
 For a service principal that represents an application this is set as Application.
-For a service principal that represents a managed identity this is set as ManagedIdentity.
+For a service principal that represent a managed identity this is set as ManagedIdentity.
 The SocialIdp type is for internal use.
 
 ```yaml
@@ -999,7 +967,7 @@ Accept wildcard characters: False
 ### -SignInAudience
 Specifies the Microsoft accounts that are supported for the current application.
 Read-only.
-Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multitenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
 
 ```yaml
 Type: System.String
@@ -1167,8 +1135,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipal
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipal
@@ -1182,7 +1148,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ADDINS <IMicrosoftGraphAddIn[]>`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.
+`ADDINS <IMicrosoftGraphAddIn[]>`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
   - `[Id <String>]`: 
   - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
     - `[Key <String>]`: Key.
@@ -1230,7 +1196,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
   - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
 
-`APPROLES <IMicrosoftGraphAppRole[]>`: The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.
+`APPROLES <IMicrosoftGraphAppRole[]>`: The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
   - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
   - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
   - `[DisplayName <String>]`: Display name for the permission that appears in the app role assignment and consent experiences.
@@ -1243,14 +1209,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they're assigned to it. Supports $filter (eq, ne, not, in).
-  - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.
+  - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
+  - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
     - `[Id <String>]`: 
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
       - `[Key <String>]`: Key.
       - `[Value <String>]`: Value.
     - `[Type <String>]`: 
-  - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities. Supports $filter (eq, not, ge, le, startsWith).
+  - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
   - `[AppDescription <String>]`: The description exposed by the associated application.
   - `[AppDisplayName <String>]`: The display name exposed by the associated application.
   - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
@@ -1274,7 +1240,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[MaxLifetime <TimeSpan?>]`: 
         - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
         - `[RestrictionType <String>]`: appCredentialRestrictionType
-  - `[AppOwnerOrganizationId <String>]`: Contains the tenant ID where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
+  - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
   - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
@@ -1286,7 +1252,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
   - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
   - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
-  - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.
+  - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
     - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
     - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
     - `[DisplayName <String>]`: Display name for the permission that appears in the app role assignment and consent experiences.
@@ -1294,7 +1260,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsEnabled <Boolean?>]`: When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
     - `[Origin <String>]`: Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
     - `[Value <String>]`: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
-  - `[ApplicationTemplateId <String>]`: Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne). Read-only. null if the app wasn't created from an application template.
+  - `[ApplicationTemplateId <String>]`: Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
   - `[ClaimsMappingPolicies <IMicrosoftGraphClaimsMappingPolicy[]>]`: The claimsMappingPolicies assigned to this service principal. Supports $expand.
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -1311,7 +1277,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Classification <String>]`: permissionClassificationType
     - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
     - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Doesn't support $filter.
-  - `[Description <String>]`: Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps displays the application description in this field. The maximum allowed size is 1,024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+  - `[Description <String>]`: Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
   - `[DisabledByMicrosoftStatus <String>]`: Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
   - `[DisplayName <String>]`: The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
   - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
@@ -1328,7 +1294,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
     - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
     - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
-    - `[Name <String>]`: The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Alternate key. Required. Not nullable. Supports $filter (eq).
+    - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
     - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
   - `[HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>]`: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
@@ -1357,17 +1323,17 @@ To create the parameters described below, construct a hash table containing the 
     - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
   - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only. Not nullable.
+    - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
       - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are: User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
       - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
       - `[ServicePlanId <String>]`: The unique identifier of the service plan.
       - `[ServicePlanName <String>]`: The name of the service plan.
-    - `[SkuId <String>]`: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
-    - `[SkuPartNumber <String>]`: Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.
+    - `[SkuId <String>]`: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+    - `[SkuPartNumber <String>]`: Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
   - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
-  - `[LogoutUrl <String>]`: Specifies the URL that the Microsoft's authorization service uses to sign out a user using OpenId Connect front-channel, back-channel, or SAML sign out protocols.
+  - `[LogoutUrl <String>]`: Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
   - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
-  - `[Notes <String>]`: Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1,024 characters.
+  - `[Notes <String>]`: Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
   - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
   - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1379,7 +1345,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.
     - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
   - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-  - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+  - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
   - `[PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]`: The collection of password credentials associated with the service principal. Not nullable.
     - `[CustomKeyIdentifier <Byte[]>]`: Do not use.
     - `[DisplayName <String>]`: Friendly name for the password. Optional.
@@ -1396,9 +1362,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[FieldId <String>]`: Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
       - `[Type <String>]`: Type of the credential. The values can be text, password.
   - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
-  - `[PreferredTokenSigningKeyEndDateTime <DateTime?>]`: Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute isn't currently supported. For details, see ServicePrincipal property differences.
-  - `[PreferredTokenSigningKeyThumbprint <String>]`: This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that aren't SAML, don't write or otherwise rely on this property.
-  - `[PublishedPermissionScopes <IMicrosoftGraphPermissionScope[]>]`: The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
+  - `[PreferredTokenSigningKeyEndDateTime <DateTime?>]`: Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
+  - `[PreferredTokenSigningKeyThumbprint <String>]`: This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
+  - `[PublishedPermissionScopes <IMicrosoftGraphPermissionScope[]>]`: The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
     - `[AdminConsentDescription <String>]`: A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.
     - `[AdminConsentDisplayName <String>]`: The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
     - `[Id <String>]`: Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
@@ -1421,9 +1387,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[SamlSingleSignOnSettings <IMicrosoftGraphSamlSingleSignOnSettings>]`: samlSingleSignOnSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RelayState <String>]`: The relative URI the service provider would redirect to after completion of the single sign-on flow.
-  - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. More values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
-  - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represents a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
-  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multitenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+  - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+  - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
   - `[Synchronization <IMicrosoftGraphSynchronization>]`: synchronization
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1475,11 +1441,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
           - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+            - `[IncludedContainers <String[]>]`: 
           - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
           - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+            - `[IncludedGroups <String[]>]`: 
           - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
           - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
           - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -1647,7 +1613,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
   - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
   - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
-  - `[Name <String>]`: The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Alternate key. Required. Not nullable. Supports $filter (eq).
+  - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
   - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
 
 `HOMEREALMDISCOVERYPOLICIES <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>`: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
@@ -1681,13 +1647,13 @@ To create the parameters described below, construct a hash table containing the 
 
 `LICENSEDETAILS <IMicrosoftGraphLicenseDetails[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only. Not nullable.
+  - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
     - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are: User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
     - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
     - `[ServicePlanId <String>]`: The unique identifier of the service plan.
     - `[ServicePlanName <String>]`: The name of the service plan.
-  - `[SkuId <String>]`: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
-  - `[SkuPartNumber <String>]`: Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.
+  - `[SkuId <String>]`: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+  - `[SkuPartNumber <String>]`: Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
 
 `MEMBEROF <IMicrosoftGraphDirectoryObject[]>`: Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1707,7 +1673,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
-`OWNERS <IMicrosoftGraphDirectoryObject[]>`: Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+`OWNERS <IMicrosoftGraphDirectoryObject[]>`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
@@ -1728,7 +1694,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[FieldId <String>]`: Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
     - `[Type <String>]`: Type of the credential. The values can be text, password.
 
-`PUBLISHEDPERMISSIONSCOPES <IMicrosoftGraphPermissionScope[]>`: The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
+`PUBLISHEDPERMISSIONSCOPES <IMicrosoftGraphPermissionScope[]>`: The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
   - `[AdminConsentDescription <String>]`: A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.
   - `[AdminConsentDisplayName <String>]`: The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
   - `[Id <String>]`: Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
@@ -1802,11 +1768,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
         - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+          - `[IncludedContainers <String[]>]`: 
         - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
         - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+          - `[IncludedGroups <String[]>]`: 
         - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
         - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
         - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -1948,8 +1914,4 @@ To create the parameters described below, construct a hash table containing the 
   - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
 
 ## RELATED LINKS
-
-
-
-
 
