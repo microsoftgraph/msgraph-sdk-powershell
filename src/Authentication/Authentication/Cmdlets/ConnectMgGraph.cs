@@ -180,8 +180,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     environment.AzureADEndpoint = $"{environment.AzureADEndpoint}?safe_rollout=apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc";
                 }
-                WriteDebug($"Connecting to {environment.Name} environment. Azure AD endpoint: {environment.AzureADEndpoint} Graph endpoint: {environment.GraphEndpoint}");
                 GraphSession.Instance.Environment = environment;
+                WriteDebug($"Environment: {GraphSession.Instance.Environment.Name} Azure AD endpoint: {GraphSession.Instance.Environment.AzureADEndpoint} Graph endpoint: {GraphSession.Instance.Environment.GraphEndpoint}");
                 GraphSession.Instance.GraphHttpClient = null;
                 if (GraphSession.Instance.InMemoryTokenCache is null)
                     GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
