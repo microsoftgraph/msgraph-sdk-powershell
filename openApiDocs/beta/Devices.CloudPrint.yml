@@ -69,11 +69,8 @@ paths:
     get:
       tags:
         - print.printConnector
-      summary: List printConnectors
-      description: Retrieve a list of print connectors.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-connectors?view=graph-rest-1.0
+      summary: Get connectors from print
+      description: The list of available print connectors.
       operationId: print_ListConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -146,11 +143,8 @@ paths:
     get:
       tags:
         - print.printConnector
-      summary: Get printConnector
-      description: Retrieve the properties and relationships of a printConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0
+      summary: Get connectors from print
+      description: The list of available print connectors.
       operationId: print_GetConnector
       parameters:
         - name: printConnector-id
@@ -194,11 +188,7 @@ paths:
     patch:
       tags:
         - print.printConnector
-      summary: Update printConnector
-      description: Update the properties of a printConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0
+      summary: Update the navigation property connectors in print
       operationId: print_UpdateConnector
       parameters:
         - name: printConnector-id
@@ -229,11 +219,7 @@ paths:
     delete:
       tags:
         - print.printConnector
-      summary: Delete printConnector
-      description: Delete (unregister) a printConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0
+      summary: Delete navigation property connectors for print
       operationId: print_DeleteConnector
       parameters:
         - name: printConnector-id
@@ -274,8 +260,7 @@ paths:
     get:
       tags:
         - print.printOperation
-      summary: Get printOperation
-      description: Retrieve the properties and relationships of a printOperation object.
+      summary: Get operations from print
       operationId: print_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -348,11 +333,7 @@ paths:
     get:
       tags:
         - print.printOperation
-      summary: Get printOperation
-      description: Retrieve the properties and relationships of a printOperation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printoperation-get?view=graph-rest-1.0
+      summary: Get operations from print
       operationId: print_GetOperation
       parameters:
         - name: printOperation-id
@@ -468,11 +449,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: List printers
-      description: Retrieve the list of printers that are registered in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-printers?view=graph-rest-1.0
+      summary: Get printers from print
+      description: The list of printers registered in the tenant.
       operationId: print_ListPrinter
       parameters:
         - $ref: '#/components/parameters/top'
@@ -545,11 +523,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: Get printer
-      description: Retrieve the properties and relationships of a printer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-get?view=graph-rest-1.0
+      summary: Get printers from print
+      description: The list of printers registered in the tenant.
       operationId: print_GetPrinter
       parameters:
         - name: printer-id
@@ -593,11 +568,7 @@ paths:
     patch:
       tags:
         - print.printer
-      summary: Update printer
-      description: Update the properties of a printer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-update?view=graph-rest-1.0
+      summary: Update the navigation property printers in print
       operationId: print_UpdatePrinter
       parameters:
         - name: printer-id
@@ -628,11 +599,7 @@ paths:
     delete:
       tags:
         - print.printer
-      summary: Delete printer
-      description: Delete (unregister) a printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-delete?view=graph-rest-1.0
+      summary: Delete navigation property printers for print
       operationId: print_DeletePrinter
       parameters:
         - name: printer-id
@@ -659,11 +626,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: List printConnectors for printer
-      description: Retrieve a list of connectors associated with the printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0
+      summary: Get connectors from print
+      description: The connectors that are associated with the printer.
       operationId: print.printer_ListConnector
       parameters:
         - name: printer-id
@@ -1360,7 +1324,7 @@ paths:
       description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-beta
       operationId: print.printer.job.document_createUploadSession
       parameters:
         - name: printer-id
@@ -1447,7 +1411,7 @@ paths:
       description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-beta
       operationId: print.printer.job_abort
       parameters:
         - name: printer-id
@@ -1493,7 +1457,7 @@ paths:
       description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-beta
       operationId: print.printer.job_cancel
       parameters:
         - name: printer-id
@@ -1561,7 +1525,7 @@ paths:
       description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-beta
       operationId: print.printer.job_redirect
       parameters:
         - name: printer-id
@@ -2115,6 +2079,10 @@ paths:
       tags:
         - print.Functions
       summary: Invoke function getCapabilities
+      description: Get a list of capabilities for the printer.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/printer-getcapabilities?view=graph-rest-beta
       operationId: print.printer_getCapability
       parameters:
         - name: printer-id
@@ -2176,7 +2144,7 @@ paths:
       description: Restore a printer's default settings to the values specified by the manufacturer.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-beta
       operationId: print.printer_restoreFactoryDefault
       parameters:
         - name: printer-id
@@ -2384,11 +2352,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: List taskTriggers
-      description: 'Retrieve a list of task triggers associated with the printer. The list of task triggers defines which tasks will be triggered as a result of events that occur during printing. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-list-tasktriggers?view=graph-rest-1.0
+      summary: Get taskTriggers from print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printer_ListTaskTrigger
       parameters:
         - name: printer-id
@@ -2446,11 +2411,7 @@ paths:
     post:
       tags:
         - print.printer
-      summary: Create taskTrigger
-      description: 'Create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-post-tasktriggers?view=graph-rest-1.0
+      summary: Create new navigation property to taskTriggers for print
       operationId: print.printer_CreateTaskTrigger
       parameters:
         - name: printer-id
@@ -2482,11 +2443,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: Get taskTrigger
-      description: 'Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0
+      summary: Get taskTriggers from print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printer_GetTaskTrigger
       parameters:
         - name: printer-id
@@ -2577,11 +2535,7 @@ paths:
     delete:
       tags:
         - print.printer
-      summary: Delete taskTrigger
-      description: Delete a printer's task trigger to prevent related print events from triggering tasks on the specified printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0
+      summary: Delete navigation property taskTriggers for print
       operationId: print.printer_DeleteTaskTrigger
       parameters:
         - name: printer-id
@@ -2710,7 +2664,7 @@ paths:
       description: 'Create (register) a printer with the Universal Print service. This is a long-running operation and as such, it returns a printerCreateOperation that can be used to track and verify the registration of the printer.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printer-create?view=graph-rest-beta
       operationId: print.printer_create
       requestBody:
         description: Action parameters
@@ -2955,11 +2909,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedGroups for printerShare
-      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
+      summary: Get allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.printerShare_ListAllowedGroup
       parameters:
         - name: printerShare-id
@@ -3024,11 +2975,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedGroup from printerShare
-      description: Revoke the specified group's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedGroups for print
       operationId: print.printerShare.allowedGroup_DeleteGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3206,11 +3153,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedGroups for printerShare
-      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
+      summary: Get ref of allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.printerShare_ListAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3254,11 +3198,7 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create allowedGroup for printerShare
-      description: Grant the specified group access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0
+      summary: Create new navigation property ref to allowedGroups for print
       operationId: print.printerShare_CreateAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3286,11 +3226,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedGroup from printerShare
-      description: Revoke the specified group's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedGroups for print
       operationId: print.printerShare_DeleteAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3331,11 +3267,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedUsers for printerShare
-      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
+      summary: Get allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.printerShare_ListAllowedUser
       parameters:
         - name: printerShare-id
@@ -3400,11 +3333,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedUser from printerShare
-      description: Revoke the specified user's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedUsers for print
       operationId: print.printerShare.allowedUser_DeleteUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3685,11 +3614,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedUsers for printerShare
-      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
+      summary: Get ref of allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.printerShare_ListAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3733,11 +3659,7 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create allowedUser for printerShare
-      description: Grant the specified user access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-post-allowedusers?view=graph-rest-1.0
+      summary: Create new navigation property ref to allowedUsers for print
       operationId: print.printerShare_CreateAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3765,11 +3687,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedUser from printerShare
-      description: Revoke the specified user's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedUsers for print
       operationId: print.printerShare_DeleteAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -4444,7 +4362,7 @@ paths:
       description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-beta
       operationId: print.printerShare.job.document_createUploadSession
       parameters:
         - name: printerShare-id
@@ -4543,7 +4461,7 @@ paths:
       description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-beta
       operationId: print.printerShare.job_abort
       parameters:
         - name: printerShare-id
@@ -4595,7 +4513,7 @@ paths:
       description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-beta
       operationId: print.printerShare.job_cancel
       parameters:
         - name: printerShare-id
@@ -4669,7 +4587,7 @@ paths:
       description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-beta
       operationId: print.printerShare.job_redirect
       parameters:
         - name: printerShare-id
@@ -5360,11 +5278,8 @@ paths:
     get:
       tags:
         - print.printService
-      summary: List printServices
-      description: Retrieve a list of printService objects that represent the services available to your tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0
+      summary: Get services from print
+      description: The list of available Universal Print service endpoints.
       operationId: print_ListService
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5437,11 +5352,8 @@ paths:
     get:
       tags:
         - print.printService
-      summary: Get printService
-      description: Retrieve the properties and relationships of a print service.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printservice-get?view=graph-rest-1.0
+      summary: Get services from print
+      description: The list of available Universal Print service endpoints.
       operationId: print_GetService
       parameters:
         - name: printService-id
@@ -5543,11 +5455,8 @@ paths:
     get:
       tags:
         - print.printService
-      summary: List printServiceEndpoints
-      description: Retrieve a list of endpoints exposed by a print service.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0
+      summary: Get endpoints from print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.service_ListEndpoint
       parameters:
         - name: printService-id
@@ -5637,11 +5546,8 @@ paths:
     get:
       tags:
         - print.printService
-      summary: Get printServiceEndpoint
-      description: Retrieve the properties and relationships of a print service endpoint.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-1.0
+      summary: Get endpoints from print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.service_GetEndpoint
       parameters:
         - name: printService-id
@@ -5803,11 +5709,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List shares
-      description: Retrieve a list of printerShares.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-shares?view=graph-rest-1.0
+      summary: Get shares from print
+      description: The list of printer shares registered in the tenant.
       operationId: print_ListShare
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5857,11 +5760,7 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create printerShare
-      description: Create a new printerShare for the specified printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-post-shares?view=graph-rest-1.0
+      summary: Create new navigation property to shares for print
       operationId: print_CreateShare
       requestBody:
         description: New navigation property
@@ -5884,11 +5783,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: Get printerShare
-      description: Retrieve the properties and relationships of a printer share.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-get?view=graph-rest-1.0
+      summary: Get shares from print
+      description: The list of printer shares registered in the tenant.
       operationId: print_GetShare
       parameters:
         - name: printerShare-id
@@ -5932,11 +5828,7 @@ paths:
     patch:
       tags:
         - print.printerShare
-      summary: Update printershare
-      description: 'Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-update?view=graph-rest-1.0
+      summary: Update the navigation property shares in print
       operationId: print_UpdateShare
       parameters:
         - name: printerShare-id
@@ -5967,11 +5859,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete printerShare
-      description: 'Delete a printer share (unshare the associated printer). This action can''t be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer needs to discover and reinstall it.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete?view=graph-rest-1.0
+      summary: Delete navigation property shares for print
       operationId: print_DeleteShare
       parameters:
         - name: printerShare-id
@@ -5998,11 +5886,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedGroups for printerShare
-      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
+      summary: Get allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.share_ListAllowedGroup
       parameters:
         - name: printerShare-id
@@ -6061,11 +5946,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedGroup from printerShare
-      description: Revoke the specified group's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedGroups for print
       operationId: print.share.allowedGroup_DeleteGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -6219,11 +6100,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedGroups for printerShare
-      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
+      summary: Get ref of allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.share_ListAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -6261,11 +6139,7 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create allowedGroup for printerShare
-      description: Grant the specified group access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0
+      summary: Create new navigation property ref to allowedGroups for print
       operationId: print.share_CreateAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -6287,11 +6161,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedGroup from printerShare
-      description: Revoke the specified group's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedGroups for print
       operationId: print.share_DeleteAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -6326,11 +6196,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedUsers for printerShare
-      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
+      summary: Get allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.share_ListAllowedUser
       parameters:
         - name: printerShare-id
@@ -6389,11 +6256,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedUser from printerShare
-      description: Revoke the specified user's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedUsers for print
       operationId: print.share.allowedUser_DeleteUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -6638,11 +6501,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedUsers for printerShare
-      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
+      summary: Get ref of allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.share_ListAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -6680,11 +6540,7 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create allowedUser for printerShare
-      description: Grant the specified user access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-post-allowedusers?view=graph-rest-1.0
+      summary: Create new navigation property ref to allowedUsers for print
       operationId: print.share_CreateAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -6706,11 +6562,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedUser from printerShare
-      description: Revoke the specified user's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedUsers for print
       operationId: print.share_DeleteAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -7307,7 +7159,7 @@ paths:
       description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-beta
       operationId: print.share.job.document_createUploadSession
       parameters:
         - name: printerShare-id
@@ -7394,7 +7246,7 @@ paths:
       description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-beta
       operationId: print.share.job_abort
       parameters:
         - name: printerShare-id
@@ -7440,7 +7292,7 @@ paths:
       description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-beta
       operationId: print.share.job_cancel
       parameters:
         - name: printerShare-id
@@ -7508,7 +7360,7 @@ paths:
       description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-beta
       operationId: print.share.job_redirect
       parameters:
         - name: printerShare-id
@@ -8121,11 +7973,7 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: List taskDefinitions
-      description: 'Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0
+      summary: Get taskDefinitions from print
       operationId: print_ListTaskDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8175,11 +8023,7 @@ paths:
     post:
       tags:
         - print.printTaskDefinition
-      summary: Create taskDefinition
-      description: 'Create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to taskDefinitions for print
       operationId: print_CreateTaskDefinition
       requestBody:
         description: New navigation property
@@ -8202,11 +8046,7 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: Get taskDefinition
-      description: 'Get details about a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtaskdefinition-get?view=graph-rest-1.0
+      summary: Get taskDefinitions from print
       operationId: print_GetTaskDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -8250,11 +8090,7 @@ paths:
     patch:
       tags:
         - print.printTaskDefinition
-      summary: Update taskDefinition
-      description: 'Update a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-update-taskdefinition?view=graph-rest-1.0
+      summary: Update the navigation property taskDefinitions in print
       operationId: print_UpdateTaskDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -8285,11 +8121,7 @@ paths:
     delete:
       tags:
         - print.printTaskDefinition
-      summary: Delete taskDefinition
-      description: 'Delete a taskDefinition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-delete-taskdefinition?view=graph-rest-1.0
+      summary: Delete navigation property taskDefinitions for print
       operationId: print_DeleteTaskDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -8316,11 +8148,8 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: List tasks
-      description: 'Retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
+      summary: Get tasks from print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinition_ListTask
       parameters:
         - name: printTaskDefinition-id
@@ -8410,11 +8239,8 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: Get task
-      description: 'Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0
+      summary: Get tasks from print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinition_GetTask
       parameters:
         - name: printTaskDefinition-id
@@ -8466,11 +8292,7 @@ paths:
     patch:
       tags:
         - print.printTaskDefinition
-      summary: Update task
-      description: 'Update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0
+      summary: Update the navigation property tasks in print
       operationId: print.taskDefinition_UpdateTask
       parameters:
         - name: printTaskDefinition-id
@@ -10861,6 +10683,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The user's mail folders. Read-only. Nullable.
               x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the user.
+              x-ms-navigationProperty: true
             managedAppRegistrations:
               type: array
               items:
@@ -11998,7 +11826,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -13924,7 +13752,7 @@ components:
               nullable: true
             isRooted:
               type: boolean
-              description: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             kind:
               type: string
@@ -14214,6 +14042,53 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.managedAppLogCollectionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppLogCollectionRequest
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+              nullable: true
+            managedAppRegistrationId:
+              type: string
+              description: The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
+              nullable: true
+            requestedBy:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
+              nullable: true
+            requestedByUserPrincipalName:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
+              nullable: true
+            requestedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was received. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+            status:
+              type: string
+              description: 'Indicates the status for the app log collection request - pending, completed or failed. Default is pending.'
+              nullable: true
+            uploadedLogs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogUpload'
+              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.'
+            userLogUploadConsent:
+              $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadConsent'
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The Managed App log collection response
     microsoft.graph.managedAppRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14296,6 +14171,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
               description: Zero or more policies admin intended for the app as of now.
+              x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the app.
               x-ms-navigationProperty: true
             operations:
               type: array
@@ -15294,6 +15175,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -15304,7 +15186,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+              description: Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
               x-ms-navigationProperty: true
             rosterPlans:
               type: array
@@ -17146,13 +17028,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -17599,7 +17481,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -17801,7 +17683,7 @@ components:
               description: 'The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -20271,6 +20153,50 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.managedAppLogUpload:
+      title: managedAppLogUpload
+      type: object
+      properties:
+        managedAppComponent:
+          type: string
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
+          nullable: true
+        managedAppComponentDescription:
+          type: string
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
+          nullable: true
+        referenceId:
+          type: string
+          description: A provider-specific reference id for the uploaded logs. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: 'A `managedAppLogUpload` represents the log upload result for a given Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.'
+    microsoft.graph.managedAppLogUploadConsent:
+      title: managedAppLogUploadConsent
+      enum:
+        - unknown
+        - declined
+        - accepted
+        - unknownFutureValue
+      type: string
+      description: Represents the current consent status of the associated `managedAppLogCollectionRequest`.
+      x-ms-enum:
+        name: managedAppLogUploadConsent
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Indicates app log consent state is 'Unknown'. This state is automatically assigned at request creation time and is updated when the log collection completes.
+            name: unknown
+          - value: declined
+            description: 'The User has Declined the Log Collection Request. The Log collection and uploads will not be initiated/triggered, and the log collection request will be abandoned.'
+            name: declined
+          - value: accepted
+            description: The User has Accepted the Log Collection Request. The log collection and upload will be initiated.
+            name: accepted
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
@@ -22908,7 +22834,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              description: 'The number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
             appliedCategories:
@@ -22917,19 +22843,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.'
               nullable: true
             assignments:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of checklist items that are present on the task.
+              description: The number of checklist items that are present on the task.
               format: int32
               nullable: true
             completedBy:
@@ -22937,19 +22863,19 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             conversationThreadId:
               type: string
-              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              description: The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             creationSource:
@@ -22957,12 +22883,12 @@ components:
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
               nullable: true
             isArchived:
               type: boolean
@@ -22979,13 +22905,13 @@ components:
               nullable: true
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.'
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              description: 'The percentage of task completion. When set to 100, the task is completed.'
               format: int32
               nullable: true
             planId:
@@ -24008,11 +23934,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive.  See drive resource for values.
           nullable: true
         id:
           type: string
@@ -24028,13 +23954,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -25461,6 +25387,8 @@ components:
         - article
         - home
         - unknownFutureValue
+        - newsLink
+        - videoNewsLink
       type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
@@ -29850,7 +29778,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -33094,6 +33022,7 @@ components:
       properties:
         isApprovalRequired:
           type: boolean
+          description: 'Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.'
           nullable: true
       additionalProperties:
         type: object

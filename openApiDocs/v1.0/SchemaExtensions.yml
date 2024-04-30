@@ -263,7 +263,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table in the Supported property data types section for more details.'
+          description: 'The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer, or String. For more information, see Supported property data types.'
           nullable: true
       additionalProperties:
         type: object

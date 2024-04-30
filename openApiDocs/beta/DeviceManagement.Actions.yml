@@ -709,6 +709,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.downloadDeviceLogs':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action downloadDeviceLogs
+      operationId: deviceManagement.comanagedDevice.logCollectionRequest_downloadDeviceLog
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: deviceLogCollectionResponse-id
+          in: path
+          description: The unique identifier of deviceLogCollectionResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceLogCollectionResponse
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.activateDeviceEsim':
     post:
       tags:
@@ -1359,7 +1398,7 @@ paths:
       description: Reprovision a Cloud PC with an Intune managed device ID.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-beta
       operationId: deviceManagement.comanagedDevice_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
@@ -1434,7 +1473,7 @@ paths:
       description: Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-beta
       operationId: deviceManagement.comanagedDevice_resizeCloudPc
       parameters:
         - name: managedDevice-id
@@ -1478,7 +1517,7 @@ paths:
       description: Restore a Cloud PC device to a previous state with an Intune managed device ID.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-beta
       operationId: deviceManagement.comanagedDevice_restoreCloudPc
       parameters:
         - name: managedDevice-id
@@ -1666,7 +1705,7 @@ paths:
       description: 'Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-beta
       operationId: deviceManagement.comanagedDevice_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
@@ -1956,7 +1995,7 @@ paths:
       description: Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-beta
       operationId: deviceManagement.comanagedDevice_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
@@ -1997,7 +2036,7 @@ paths:
       description: Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-beta
       operationId: deviceManagement.comanagedDevice_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
@@ -2045,7 +2084,7 @@ paths:
       description: Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-beta
       operationId: deviceManagement.comanagedDevice_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
@@ -3884,6 +3923,44 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/deviceManagement/elevationRequests/{privilegeManagementElevationRequest-id}/microsoft.graph.revoke':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action revoke
+      operationId: deviceManagement.elevationRequest_revoke
+      parameters:
+        - name: privilegeManagementElevationRequest-id
+          in: path
+          description: The unique identifier of privilegeManagementElevationRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegeManagementElevationRequest
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reviewerJustification:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privilegeManagementElevationRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool-id}/microsoft.graph.assign':
     post:
       tags:
@@ -4311,6 +4388,59 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/hardwareConfigurations/{hardwareConfiguration-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceManagement.hardwareConfiguration_assign
+      parameters:
+        - name: hardwareConfiguration-id
+          in: path
+          description: The unique identifier of hardwareConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: hardwareConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hardwareConfigurationAssignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of hardwareConfigurationAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/importedDeviceIdentities/microsoft.graph.importDeviceIdentityList:
     post:
       tags:
@@ -4635,6 +4765,45 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
       operationId: deviceManagement.managedDevice.logCollectionRequest_createDownloadUrl
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: deviceLogCollectionResponse-id
+          in: path
+          description: The unique identifier of deviceLogCollectionResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceLogCollectionResponse
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.downloadDeviceLogs':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action downloadDeviceLogs
+      operationId: deviceManagement.managedDevice.logCollectionRequest_downloadDeviceLog
       parameters:
         - name: managedDevice-id
           in: path
@@ -5318,7 +5487,7 @@ paths:
       description: Reprovision a Cloud PC with an Intune managed device ID.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-beta
       operationId: deviceManagement.managedDevice_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
@@ -5393,7 +5562,7 @@ paths:
       description: Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-beta
       operationId: deviceManagement.managedDevice_resizeCloudPc
       parameters:
         - name: managedDevice-id
@@ -5437,7 +5606,7 @@ paths:
       description: Restore a Cloud PC device to a previous state with an Intune managed device ID.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-beta
       operationId: deviceManagement.managedDevice_restoreCloudPc
       parameters:
         - name: managedDevice-id
@@ -5625,7 +5794,7 @@ paths:
       description: 'Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-beta
       operationId: deviceManagement.managedDevice_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
@@ -5915,7 +6084,7 @@ paths:
       description: Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-beta
       operationId: deviceManagement.managedDevice_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
@@ -5956,7 +6125,7 @@ paths:
       description: Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-beta
       operationId: deviceManagement.managedDevice_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
@@ -6004,7 +6173,7 @@ paths:
       description: Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-beta
       operationId: deviceManagement.managedDevice_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
@@ -6673,7 +6842,7 @@ paths:
       description: 'Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the isPortalNotificationSent property of the portal notification to true.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-beta
       operationId: deviceManagement.monitoring.alertRecord_setPortalNotificationAsSent
       parameters:
         - name: alertRecord-id
@@ -12720,7 +12889,7 @@ paths:
       description: Change the account type of the user on a specific Cloud PC.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_changeUserAccountType
       parameters:
         - name: cloudPC-id
@@ -12778,7 +12947,7 @@ paths:
       description: End the grace period for a specific Cloud PC. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before deprovisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_endGracePeriod
       parameters:
         - name: cloudPC-id
@@ -12803,7 +12972,7 @@ paths:
       description: 'Power off a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered off, it''s deallocated, and licenses are revoked immediately. Only IT admin users can perform this action. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-poweroff?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-poweroff?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_powerOff
       parameters:
         - name: cloudPC-id
@@ -12828,7 +12997,7 @@ paths:
       description: 'Power on a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately. Only IT admin users can perform this action. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-poweron?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-poweron?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_powerOn
       parameters:
         - name: cloudPC-id
@@ -12853,7 +13022,7 @@ paths:
       description: Reboot a specific Cloud PC.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_reboot
       parameters:
         - name: cloudPC-id
@@ -12878,7 +13047,7 @@ paths:
       description: Rename a specific Cloud PC. Use this API to update the displayName for the Cloud PC entity.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_rename
       parameters:
         - name: cloudPC-id
@@ -12916,7 +13085,7 @@ paths:
       description: Reprovision a specific Cloud PC.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_reprovision
       parameters:
         - name: cloudPC-id
@@ -12989,7 +13158,7 @@ paths:
       description: Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_restore
       parameters:
         - name: cloudPC-id
@@ -13027,7 +13196,7 @@ paths:
       description: Retry installation for the partner agents that failed to install on the Cloud PC. Service side checks which agent installation failed firstly and retry.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_retryPartnerAgentInstallation
       parameters:
         - name: cloudPC-id
@@ -13052,7 +13221,7 @@ paths:
       description: 'Start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-start?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-start?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_start
       parameters:
         - name: cloudPC-id
@@ -13077,7 +13246,7 @@ paths:
       description: 'Stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-stop?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-stop?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_stop
       parameters:
         - name: cloudPC-id
@@ -13102,7 +13271,7 @@ paths:
       description: Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_troubleshoot
       parameters:
         - name: cloudPC-id
@@ -13127,7 +13296,7 @@ paths:
       description: 'Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices can''t be resized, those devices indicate ''resize failed''. The remaining devices are provisioned for the resize process.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_bulkResize
       requestBody:
         description: Action parameters
@@ -13184,7 +13353,7 @@ paths:
       description: Validate that a set of cloudPC devices meet the requirements to be bulk resized.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.cloudPC_validateBulkResize
       requestBody:
         description: Action parameters
@@ -13235,7 +13404,7 @@ paths:
       description: Reupload a cloudPcDeviceImage object that failed to upload.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.deviceImage_reupload
       parameters:
         - name: cloudPcDeviceImage-id
@@ -13260,7 +13429,7 @@ paths:
       description: Run health checks on the cloudPcOnPremisesConnection object. It triggers a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.onPremisesConnection_runHealthCheck
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -13285,7 +13454,7 @@ paths:
       description: Update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.onPremisesConnection_updateAdDomainPassword
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -13323,7 +13492,7 @@ paths:
       description: 'Apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. Currently, the region is the only policy setting that you can apply.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-apply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-apply?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.provisioningPolicy_apply
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13366,7 +13535,7 @@ paths:
       description: Assign cloudPcProvisioningPolicy to user groups.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.provisioningPolicy_assign
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13411,7 +13580,7 @@ paths:
       description: Update the provisioning policy configuration for a set of Cloud PC devices by their IDs. This method supports retry and allows you to apply the configuration to a subset of Cloud PCs initially to test.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-applyconfig?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-applyconfig?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.provisioningPolicy_applyConfig
       requestBody:
         description: Action parameters
@@ -13450,7 +13619,7 @@ paths:
       description: 'Get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user''s principal name, device owner''s user principal name, action taken, and action state.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-getactionstatusreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getactionstatusreports?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getActionStatusReport
       requestBody:
         description: Action parameters
@@ -13588,7 +13757,7 @@ paths:
       description: 'Get the device recommendation reports for Cloud PCs, such as the usage category report. The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn''t Rightsized.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-getcloudpcrecommendationreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getcloudpcrecommendationreports?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getCloudPcRecommendationReport
       requestBody:
         description: Action parameters
@@ -13660,7 +13829,7 @@ paths:
       description: 'Get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage. Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-getconnectionqualityreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getconnectionqualityreports?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getConnectionQualityReport
       requestBody:
         description: Action parameters
@@ -13730,7 +13899,7 @@ paths:
       description: 'Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getDailyAggregatedRemoteConnectionReport
       requestBody:
         description: Action parameters
@@ -13800,7 +13969,7 @@ paths:
       description: 'Get the Windows 365 Frontline reports, such as real-time or historical data reports.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getFrontlineReport
       requestBody:
         description: Action parameters
@@ -13872,7 +14041,7 @@ paths:
       description: 'Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status. An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-getinaccessiblecloudpcreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getinaccessiblecloudpcreports?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getInaccessibleCloudPcReport
       requestBody:
         description: Action parameters
@@ -13944,7 +14113,7 @@ paths:
       description: 'Get the raw real-time remote connection report for a Cloud PC without any calculation, such as roundTripTime or available bandwidth, which are aggregated hourly from the raw event data.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-getrawremoteconnectionreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getrawremoteconnectionreports?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getRawRemoteConnectionReport
       requestBody:
         description: Action parameters
@@ -14014,7 +14183,7 @@ paths:
       description: 'Get the remote connection history records of a Cloud PC during a given period. This report contains data such as signInDateTime, signOutDateTime, usageInHour, remoteSignInTimeInSec and roundTripTimeInMsP50, and so on. This data is aggregated hourly for a specified time period, such as the last seven days.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getRemoteConnectionHistoricalReport
       requestBody:
         description: Action parameters
@@ -14084,7 +14253,7 @@ paths:
       description: 'Get a usage report on shared-use licenses, such as servicePlanId, licenseCount, and claimedLicenseCount, for real-time, 7 days, or 28 days trend.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getSharedUseLicenseUsageReport
       requestBody:
         description: Action parameters
@@ -14162,7 +14331,7 @@ paths:
       description: Get the total aggregated remote connection usage of a Cloud PC during a given time span.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcreports-gettotalaggregatedremoteconnectionreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-gettotalaggregatedremoteconnectionreports?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_getTotalAggregatedRemoteConnectionReport
       requestBody:
         description: Action parameters
@@ -14298,7 +14467,7 @@ paths:
       description: Assign a cloudPcUserSetting to user groups.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.userSetting_assign
       parameters:
         - name: cloudPcUserSetting-id
@@ -16433,6 +16602,17 @@ components:
       additionalProperties:
         type: object
       description: The entity represents an ADML (Administrative Template language) XML file uploaded by Administrator.
+    microsoft.graph.hardwareConfigurationAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hardwareConfigurationAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: Contains properties used to assign a hardware configuration to a group.
     microsoft.graph.importedDeviceIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17554,25 +17734,25 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: Default. No platform type specified.
+            description: Indicates the settings contained in this configuration don't have a platform set.
             name: none
           - value: android
-            description: Settings for Android platform.
+            description: 'Indicates that the settings contained in associated configuration applies to the Android operating system. '
             name: android
           - value: iOS
-            description: Settings for iOS platform.
+            description: Indicates that the settings contained in associated configuration applies to the iOS operating system.
             name: iOS
           - value: macOS
-            description: Settings for MacOS platform.
+            description: Indicates that the settings contained in associated configuration applies to the MacOS operating system.
             name: macOS
           - value: windows10X
-            description: Windows 10 X.
+            description: Indicates that the settings contained in associated configuration applies to the Windows 10X operating system.
             name: windows10X
           - value: windows10
-            description: Settings for Windows 10 platform.
+            description: Indicates that the settings contained in associated configuration applies to the Windows 10 operating system.
             name: windows10
           - value: linux
-            description: Settings for Linux platform.
+            description: Indicates that the settings contained in associated configuration applies to the Linux operating system.
             name: linux
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
@@ -19335,6 +19515,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The user's mail folders. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the user.
               x-ms-navigationProperty: true
             managedAppRegistrations:
               type: array
@@ -22823,7 +23009,7 @@ components:
               nullable: true
             isRooted:
               type: boolean
-              description: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             kind:
               type: string
@@ -22975,7 +23161,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -23771,6 +23957,53 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.managedAppLogCollectionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppLogCollectionRequest
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+              nullable: true
+            managedAppRegistrationId:
+              type: string
+              description: The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
+              nullable: true
+            requestedBy:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
+              nullable: true
+            requestedByUserPrincipalName:
+              type: string
+              description: The user principal name associated with the request for the managed application log collection. Read-only.
+              nullable: true
+            requestedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime of when the log upload request was received. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              format: date-time
+            status:
+              type: string
+              description: 'Indicates the status for the app log collection request - pending, completed or failed. Default is pending.'
+              nullable: true
+            uploadedLogs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogUpload'
+              description: 'The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.'
+            userLogUploadConsent:
+              $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadConsent'
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The Managed App log collection response
     microsoft.graph.managedAppRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23853,6 +24086,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
               description: Zero or more policies admin intended for the app as of now.
+              x-ms-navigationProperty: true
+            managedAppLogCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppLogCollectionRequest'
+              description: Zero or more log collection requests triggered for the app.
               x-ms-navigationProperty: true
             operations:
               type: array
@@ -24945,6 +25184,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -24955,7 +25195,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+              description: Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
               x-ms-navigationProperty: true
             rosterPlans:
               type: array
@@ -25350,7 +25590,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
           nullable: true
       additionalProperties:
         type: object
@@ -27819,13 +28059,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -28050,7 +28290,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -28252,7 +28492,7 @@ components:
               description: 'The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -29199,6 +29439,50 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.managedAppLogUpload:
+      title: managedAppLogUpload
+      type: object
+      properties:
+        managedAppComponent:
+          type: string
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
+          nullable: true
+        managedAppComponentDescription:
+          type: string
+          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
+          nullable: true
+        referenceId:
+          type: string
+          description: A provider-specific reference id for the uploaded logs. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: 'A `managedAppLogUpload` represents the log upload result for a given Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.'
+    microsoft.graph.managedAppLogUploadConsent:
+      title: managedAppLogUploadConsent
+      enum:
+        - unknown
+        - declined
+        - accepted
+        - unknownFutureValue
+      type: string
+      description: Represents the current consent status of the associated `managedAppLogCollectionRequest`.
+      x-ms-enum:
+        name: managedAppLogUploadConsent
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Default. Indicates app log consent state is 'Unknown'. This state is automatically assigned at request creation time and is updated when the log collection completes.
+            name: unknown
+          - value: declined
+            description: 'The User has Declined the Log Collection Request. The Log collection and uploads will not be initiated/triggered, and the log collection request will be abandoned.'
+            name: declined
+          - value: accepted
+            description: The User has Accepted the Log Collection Request. The log collection and upload will be initiated.
+            name: accepted
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
@@ -32027,7 +32311,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              description: 'The number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
             appliedCategories:
@@ -32036,19 +32320,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.'
               nullable: true
             assignments:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of checklist items that are present on the task.
+              description: The number of checklist items that are present on the task.
               format: int32
               nullable: true
             completedBy:
@@ -32056,19 +32340,19 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             conversationThreadId:
               type: string
-              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              description: The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             creationSource:
@@ -32076,12 +32360,12 @@ components:
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
               nullable: true
             isArchived:
               type: boolean
@@ -32098,13 +32382,13 @@ components:
               nullable: true
             orderHint:
               type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              description: 'The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.'
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              description: 'The percentage of task completion. When set to 100, the task is completed.'
               format: int32
               nullable: true
             planId:
@@ -32741,11 +33025,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -34101,11 +34385,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive.  See drive resource for values.
           nullable: true
         id:
           type: string
@@ -34121,13 +34405,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -35343,6 +35627,8 @@ components:
         - article
         - home
         - unknownFutureValue
+        - newsLink
+        - videoNewsLink
       type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
@@ -40096,7 +40382,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -44135,6 +44421,7 @@ components:
       properties:
         isApprovalRequired:
           type: boolean
+          description: 'Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.'
           nullable: true
       additionalProperties:
         type: object

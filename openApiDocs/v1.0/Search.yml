@@ -69,11 +69,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: List externalConnections
-      description: Get a list of the externalConnection objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
+      summary: Get connections from external
       operationId: external_ListConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -123,11 +119,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalConnection
-      description: Create a new externalConnection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
+      summary: Create new navigation property to connections for external
       operationId: external_CreateConnection
       requestBody:
         description: New navigation property
@@ -150,11 +142,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get externalConnection
-      description: Read the properties and relationships of an externalConnection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
+      summary: Get connections from external
       operationId: external_GetConnection
       parameters:
         - name: externalConnection-id
@@ -198,11 +186,7 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update externalConnection
-      description: Update the properties of an externalConnection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
+      summary: Update the navigation property connections in external
       operationId: external_UpdateConnection
       parameters:
         - name: externalConnection-id
@@ -233,11 +217,7 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete externalConnection
-      description: Deletes an externalConnection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
+      summary: Delete navigation property connections for external
       operationId: external_DeleteConnection
       parameters:
         - name: externalConnection-id
@@ -264,8 +244,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get externalGroup
-      description: Get an externalGroup object.
+      summary: Get groups from external
       operationId: external.connection_ListGroup
       parameters:
         - name: externalConnection-id
@@ -323,11 +302,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalGroup
-      description: Create a new externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
+      summary: Create new navigation property to groups for external
       operationId: external.connection_CreateGroup
       parameters:
         - name: externalConnection-id
@@ -359,11 +334,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get externalGroup
-      description: Get an externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0
+      summary: Get groups from external
       operationId: external.connection_GetGroup
       parameters:
         - name: externalConnection-id
@@ -415,11 +386,7 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update externalGroup
-      description: Update the properties of an externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0
+      summary: Update the navigation property groups in external
       operationId: external.connection_UpdateGroup
       parameters:
         - name: externalConnection-id
@@ -458,11 +425,7 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete externalGroup
-      description: Delete an externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
+      summary: Delete navigation property groups for external
       operationId: external.connection_DeleteGroup
       parameters:
         - name: externalConnection-id
@@ -564,11 +527,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create identity
-      description: Create an identity resource for a new member in an externalGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for external
       operationId: external.connection.group_CreateMember
       parameters:
         - name: externalConnection-id
@@ -716,11 +675,7 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete identity
-      description: Delete an identity resource to remove the corresponding member from an externalGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
+      summary: Delete navigation property members for external
       operationId: external.connection.group_DeleteMember
       parameters:
         - name: externalConnection-id
@@ -815,8 +770,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get externalItem
-      description: Read the properties and relationships of an externalItem object.
+      summary: Get items from external
       operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
@@ -906,11 +860,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get externalItem
-      description: Read the properties and relationships of an externalItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
+      summary: Get items from external
       operationId: external.connection_GetItem
       parameters:
         - name: externalConnection-id
@@ -1001,11 +951,7 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete externalItem
-      description: Delete an externalItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
+      summary: Delete navigation property items for external
       operationId: external.connection_DeleteItem
       parameters:
         - name: externalConnection-id
@@ -1473,8 +1419,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connectionOperation
-      description: Read the properties and relationships of a connectionOperation object.
+      summary: Get operations from external
       operationId: external.connection_ListOperation
       parameters:
         - name: externalConnection-id
@@ -1564,11 +1509,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connectionOperation
-      description: Read the properties and relationships of a connectionOperation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0
+      summary: Get operations from external
       operationId: external.connection_GetOperation
       parameters:
         - name: externalConnection-id
@@ -1716,11 +1657,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get schema
-      description: Read the properties and relationships of a schema object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+      summary: Get schema from external
       operationId: external.connection_GetSchema
       parameters:
         - name: externalConnection-id
@@ -1764,11 +1701,7 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Create schema
-      description: Create a new schema object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
+      summary: Update the navigation property schema in external
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -1873,11 +1806,8 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: List acronyms
-      description: Get a list of the acronym objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
+      summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in an organization.
       operationId: search_ListAcronym
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1927,11 +1857,7 @@ paths:
     post:
       tags:
         - search.acronym
-      summary: Create acronym
-      description: Create a new acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
+      summary: Create new navigation property to acronyms for search
       operationId: search_CreateAcronym
       requestBody:
         description: New navigation property
@@ -1954,11 +1880,8 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: Get acronym
-      description: Read the properties and relationships of an acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
+      summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in an organization.
       operationId: search_GetAcronym
       parameters:
         - name: acronym-id
@@ -2002,11 +1925,7 @@ paths:
     patch:
       tags:
         - search.acronym
-      summary: Update acronym
-      description: Update the properties of an acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
+      summary: Update the navigation property acronyms in search
       operationId: search_UpdateAcronym
       parameters:
         - name: acronym-id
@@ -2037,11 +1956,7 @@ paths:
     delete:
       tags:
         - search.acronym
-      summary: Delete acronym
-      description: Delete an acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
+      summary: Delete navigation property acronyms for search
       operationId: search_DeleteAcronym
       parameters:
         - name: acronym-id
@@ -2082,11 +1997,8 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: List bookmarks
-      description: Get a list of bookmark objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
+      summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_ListBookmark
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2136,11 +2048,7 @@ paths:
     post:
       tags:
         - search.bookmark
-      summary: Create bookmark
-      description: Create a new bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
+      summary: Create new navigation property to bookmarks for search
       operationId: search_CreateBookmark
       requestBody:
         description: New navigation property
@@ -2163,11 +2071,8 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: Get bookmark
-      description: Read the properties and relationships of a bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
+      summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_GetBookmark
       parameters:
         - name: bookmark-id
@@ -2211,11 +2116,7 @@ paths:
     patch:
       tags:
         - search.bookmark
-      summary: Update bookmark
-      description: Update the properties of a bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
+      summary: Update the navigation property bookmarks in search
       operationId: search_UpdateBookmark
       parameters:
         - name: bookmark-id
@@ -2246,11 +2147,7 @@ paths:
     delete:
       tags:
         - search.bookmark
-      summary: Delete bookmark
-      description: Delete a bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
+      summary: Delete navigation property bookmarks for search
       operationId: search_DeleteBookmark
       parameters:
         - name: bookmark-id
@@ -2338,11 +2235,8 @@ paths:
     get:
       tags:
         - search.qna
-      summary: List qnas
-      description: Get a list of the qna objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
+      summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
       operationId: search_ListQna
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2392,11 +2286,7 @@ paths:
     post:
       tags:
         - search.qna
-      summary: Create qna
-      description: Create a new qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
+      summary: Create new navigation property to qnas for search
       operationId: search_CreateQna
       requestBody:
         description: New navigation property
@@ -2419,11 +2309,8 @@ paths:
     get:
       tags:
         - search.qna
-      summary: Get qna
-      description: Read the properties and relationships of a qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
+      summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
       operationId: search_GetQna
       parameters:
         - name: qna-id
@@ -2467,11 +2354,7 @@ paths:
     patch:
       tags:
         - search.qna
-      summary: Update qna
-      description: Update the properties of a qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
+      summary: Update the navigation property qnas in search
       operationId: search_UpdateQna
       parameters:
         - name: qna-id
@@ -2502,11 +2385,7 @@ paths:
     delete:
       tags:
         - search.qna
-      summary: Delete qna
-      description: Delete a qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
+      summary: Delete navigation property qnas for search
       operationId: search_DeleteQna
       parameters:
         - name: qna-id

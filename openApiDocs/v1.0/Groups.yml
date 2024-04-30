@@ -377,11 +377,11 @@ paths:
     post:
       tags:
         - groups.group
-      summary: Create group
-      description: 'Create a new group as specified in the request body. You can create the following types of groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.'
+      summary: Upsert group
+      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
       operationId: group_CreateGroup
       requestBody:
         description: New entity
@@ -452,11 +452,11 @@ paths:
     patch:
       tags:
         - groups.group
-      summary: Update group
-      description: Update the properties of a group object.
+      summary: Upsert group
+      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
       operationId: group_UpdateGroup
       parameters:
         - name: group-id
@@ -518,11 +518,8 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: List acceptedSenders
-      description: "Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
+      summary: Get acceptedSenders from groups
+      description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
       operationId: group_ListAcceptedSender
       parameters:
         - name: group-id
@@ -570,10 +567,7 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Remove acceptedSender
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
+      summary: Delete ref of navigation property acceptedSenders for groups
       operationId: group.acceptedSender_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: group-id
@@ -629,11 +623,8 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: List acceptedSenders
-      description: "Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
+      summary: Get ref of acceptedSenders from groups
+      description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
       operationId: group_ListAcceptedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -670,11 +661,7 @@ paths:
     post:
       tags:
         - groups.directoryObject
-      summary: Create acceptedSender
-      description: 'Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don''t specify the same user or group in the accepted senders and rejected senders lists, otherwise you''ll get an error.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-acceptedsenders?view=graph-rest-1.0
+      summary: Create new navigation property ref to acceptedSenders for groups
       operationId: group_CreateAcceptedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -696,10 +683,7 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Remove acceptedSender
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
+      summary: Delete ref of navigation property acceptedSenders for groups
       operationId: group_DeleteAcceptedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -3911,11 +3895,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List conversations
-      description: Retrieve the list of conversations in this group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0
+      summary: Get conversations from groups
+      description: The group's conversations.
       operationId: group_ListConversation
       parameters:
         - name: group-id
@@ -3963,11 +3944,7 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Use reply thread or reply post to further post to that conversation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
+      summary: Create new navigation property to conversations for groups
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -3999,11 +3976,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get conversation
+      summary: Get conversations from groups
       description: The group's conversations.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -4045,11 +4019,7 @@ paths:
     delete:
       tags:
         - groups.conversation
-      summary: Delete conversation
-      description: Delete conversation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
+      summary: Delete navigation property conversations for groups
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -4084,11 +4054,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List threads
-      description: 'Get all the threads in a group conversation. Note: You can also get all the threads of a group.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0
+      summary: Get threads from groups
+      description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
       operationId: group.conversation_ListThread
       parameters:
         - name: group-id
@@ -4153,11 +4120,7 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create thread
-      description: "Create a new thread in the specified conversation.  A thread and post are created as specified. Use reply thread to further post \nto that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0
+      summary: Create new navigation property to threads for groups
       operationId: group.conversation_CreateThread
       parameters:
         - name: group-id
@@ -4401,11 +4364,7 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,\nyou can specify the thread without referencing the parent conversation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+      summary: Get posts from groups
       operationId: group.conversation.thread_ListPost
       parameters:
         - name: group-id
@@ -4548,11 +4507,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a post.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: Read-only. Nullable. Supports $expand.
       operationId: group.conversation.thread.post_ListAttachment
       parameters:
         - name: group-id
@@ -4935,8 +4891,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
       operationId: group.conversation.thread.post_ListExtension
       parameters:
         - name: group-id
@@ -5073,11 +5029,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+      summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
       operationId: group.conversation.thread.post_GetExtension
       parameters:
         - name: group-id
@@ -5153,11 +5106,7 @@ paths:
     patch:
       tags:
         - groups.conversation
-      summary: Update open extension
-      description: 'Update an open extension (openTypeExtension object) with the properties in the request body: The data in an extension can be primitive types, or arrays of primitive types. See the table in the Permissions section for the list of resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-update?view=graph-rest-1.0
+      summary: Update the navigation property extensions in groups
       operationId: group.conversation.thread.post_UpdateExtension
       parameters:
         - name: group-id
@@ -5394,11 +5343,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a post.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: Read-only. Nullable. Supports $expand.
       operationId: group.conversation.thread.post.inReplyTo_ListAttachment
       parameters:
         - name: group-id
@@ -5781,8 +5727,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
       operationId: group.conversation.thread.post.inReplyTo_ListExtension
       parameters:
         - name: group-id
@@ -5919,11 +5865,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+      summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
       operationId: group.conversation.thread.post.inReplyTo_GetExtension
       parameters:
         - name: group-id
@@ -5999,11 +5942,7 @@ paths:
     patch:
       tags:
         - groups.conversation
-      summary: Update open extension
-      description: 'Update an open extension (openTypeExtension object) with the properties in the request body: The data in an extension can be primitive types, or arrays of primitive types. See the table in the Permissions section for the list of resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-update?view=graph-rest-1.0
+      summary: Update the navigation property extensions in groups
       operationId: group.conversation.thread.post.inReplyTo_UpdateExtension
       parameters:
         - name: group-id
@@ -7086,7 +7025,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
+      description: 'Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
@@ -7283,6 +7222,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
+      description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: group.drive.item_delta
       parameters:
         - name: group-id
@@ -7563,6 +7506,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
+      description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: group.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
@@ -7767,7 +7714,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][]."
+      description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
@@ -8021,6 +7968,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: group.drive.item_search
       parameters:
         - name: group-id
@@ -8212,7 +8163,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
+      description: Grant users access to a link represented by a permission.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
@@ -8396,7 +8347,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a published [content type][contentType] present in a content type hub with a list of hub sites.'
+      description: Associate a published content type present in a content type hub with a list of hub sites.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
@@ -8455,7 +8406,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
+      description: Copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
@@ -8511,6 +8462,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function isPublished
+      description: Check the publishing status of a contentType in a content type hub site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
       operationId: group.drive.list.contentType_isPublished
       parameters:
         - name: group-id
@@ -8558,7 +8513,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in the content type hub site.'
+      description: Publishes a contentType present in the content type hub site.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
@@ -8599,7 +8554,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
+      description: Unpublish a contentType from a content type hub site.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
@@ -8640,7 +8595,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
+      description: Add a copy of a content type from a site to a list.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
@@ -8738,6 +8693,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getCompatibleHubContentTypes
+      description: 'Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
       operationId: group.drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: group-id
@@ -9197,6 +9156,188 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/drives/{drive-id}/list/items/microsoft.graph.delta()':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function delta
+      description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
+      operationId: group.drive.list.item_delta
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groups/{group-id}/drives/{drive-id}/list/items/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function delta
+      operationId: group.drive.list.item_delta
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: token
+          in: path
+          description: 'Usage: token=''{token}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/groups/{group-id}/drives/{drive-id}/list/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
     post:
       tags:
@@ -9243,6 +9384,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function recent
+      description: "List a set of items that have been recently used by the signed in user.\nThis collection includes items that are in the user's drive and items they have access to from other drives."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
       operationId: group.drive_recent
       parameters:
         - name: group-id
@@ -9310,6 +9455,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: group.drive_search
       parameters:
         - name: group-id
@@ -9385,6 +9534,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function sharedWithMe
+      description: Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
       operationId: group.drive_sharedGraphWPreMe
       parameters:
         - name: group-id
@@ -9923,7 +10076,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
+      description: 'Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
@@ -10096,6 +10249,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
+      description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: group.drive.root_delta
       parameters:
         - name: group-id
@@ -10344,6 +10501,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getActivitiesByInterval
+      description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: group.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
@@ -10532,7 +10693,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][]."
+      description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
@@ -10754,6 +10915,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: group.drive.root_search
       parameters:
         - name: group-id
@@ -10921,7 +11086,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
+      description: Grant users access to a link represented by a permission.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
@@ -12340,11 +12505,8 @@ paths:
     get:
       tags:
         - groups.groupLifecyclePolicy
-      summary: List groupLifecyclePolicies
-      description: Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-1.0
+      summary: Get groupLifecyclePolicies from groups
+      description: The collection of lifecycle policies for this group. Read-only. Nullable.
       operationId: group_ListGroupLifecyclePolicy
       parameters:
         - name: group-id
@@ -12695,9 +12857,6 @@ paths:
         - groups.directoryObject
       summary: Get memberOf from groups
       description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
       operationId: group_ListMemberGraphOPre
       parameters:
         - name: group-id
@@ -13188,9 +13347,6 @@ paths:
         - groups.directoryObject
       summary: Get members from groups
       description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
       operationId: group_ListMember
       parameters:
         - name: group-id
@@ -13259,11 +13415,7 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Remove member
-      description: Remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
+      summary: Delete ref of navigation property members for groups
       operationId: group.member_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: group-id
@@ -13704,9 +13856,6 @@ paths:
         - groups.directoryObject
       summary: Get ref of members from groups
       description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
       operationId: group_ListMemberGraphBPreRef
       parameters:
         - name: group-id
@@ -13754,11 +13903,7 @@ paths:
     post:
       tags:
         - groups.directoryObject
-      summary: Add members
-      description: Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
+      summary: Create new navigation property ref to members for groups
       operationId: group_CreateMemberGraphBPreRef
       parameters:
         - name: group-id
@@ -13780,11 +13925,7 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Remove member
-      description: Remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
+      summary: Delete ref of navigation property members for groups
       operationId: group_DeleteMemberGraphBPreRef
       parameters:
         - name: group-id
@@ -16906,6 +17047,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getRecentNotebooks
+      description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0
       operationId: group.onenote.notebook_getRecentNotebook
       parameters:
         - name: group-id
@@ -17699,9 +17844,6 @@ paths:
         - groups.directoryObject
       summary: Get owners from groups
       description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
       operationId: group_ListOwner
       parameters:
         - name: group-id
@@ -17770,11 +17912,7 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Remove group owner
-      description: 'Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0
+      summary: Delete ref of navigation property owners for groups
       operationId: group.owner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: group-id
@@ -18215,9 +18353,6 @@ paths:
         - groups.directoryObject
       summary: Get ref of owners from groups
       description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
       operationId: group_ListOwnerGraphBPreRef
       parameters:
         - name: group-id
@@ -18265,11 +18400,7 @@ paths:
     post:
       tags:
         - groups.directoryObject
-      summary: Add owners
-      description: Add a user or service principal to a Microsoft 365 or security group's owners. The owners are a set of users or service principals who are allowed to modify the group object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-owners?view=graph-rest-1.0
+      summary: Create new navigation property ref to owners for groups
       operationId: group_CreateOwnerGraphBPreRef
       parameters:
         - name: group-id
@@ -18291,11 +18422,7 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Remove group owner
-      description: 'Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0
+      summary: Delete ref of navigation property owners for groups
       operationId: group_DeleteOwnerGraphBPreRef
       parameters:
         - name: group-id
@@ -18930,11 +19057,7 @@ paths:
     get:
       tags:
         - groups.resourceSpecificPermissionGrant
-      summary: List permissionGrants of a group
-      description: 'List all resource-specific permission grants on the group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding resource-specific access that each app has.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-permissiongrants?view=graph-rest-1.0
+      summary: Get permissionGrants from groups
       operationId: group_ListPermissionGrant
       parameters:
         - name: group-id
@@ -19319,11 +19442,8 @@ paths:
     get:
       tags:
         - groups.profilePhoto
-      summary: List photos
-      description: Retrieve a list of profilePhoto objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
+      summary: Get photos from groups
+      description: The profile photos owned by the group. Read-only. Nullable.
       operationId: group_ListPhoto
       parameters:
         - name: group-id
@@ -19415,9 +19535,6 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Get media content for the navigation property photos from groups
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
       operationId: group_GetPhotosContent
       parameters:
         - name: group-id
@@ -19487,11 +19604,8 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: List rejectedSenders
-      description: 'Users in the rejected senders list can''t post to conversations of the group (identified in the GET request URL). Make sure you don''t specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
+      summary: Get rejectedSenders from groups
+      description: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
       operationId: group_ListRejectedSender
       parameters:
         - name: group-id
@@ -19539,10 +19653,7 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Remove rejectedSender
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-rejectedsenders?view=graph-rest-1.0
+      summary: Delete ref of navigation property rejectedSenders for groups
       operationId: group.rejectedSender_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: group-id
@@ -19598,11 +19709,8 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: List rejectedSenders
-      description: 'Users in the rejected senders list can''t post to conversations of the group (identified in the GET request URL). Make sure you don''t specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
+      summary: Get ref of rejectedSenders from groups
+      description: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
       operationId: group_ListRejectedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -19639,11 +19747,7 @@ paths:
     post:
       tags:
         - groups.directoryObject
-      summary: Create rejectedSender
-      description: 'Specify the user or group in @odata.id in the request body. Users in the rejected senders list can''t post to conversations of the group (identified in the POST request URL). Make sure you don''t specify the same user or group in the rejected senders and accepted senders lists, otherwise you''ll get an error.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-rejectedsenders?view=graph-rest-1.0
+      summary: Create new navigation property ref to rejectedSenders for groups
       operationId: group_CreateRejectedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -19665,10 +19769,7 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Remove rejectedSender
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-rejectedsenders?view=graph-rest-1.0
+      summary: Delete ref of navigation property rejectedSenders for groups
       operationId: group_DeleteRejectedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -19703,11 +19804,8 @@ paths:
     get:
       tags:
         - groups.groupSetting
-      summary: List settings
-      description: Retrieve a list of tenant-level or group-specific group settings objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
+      summary: Get settings from groups
+      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
       operationId: group_ListSetting
       parameters:
         - name: group-id
@@ -19765,11 +19863,7 @@ paths:
     post:
       tags:
         - groups.groupSetting
-      summary: Create settings
-      description: 'Create a new setting based on the templates available in groupSettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
+      summary: Create new navigation property to settings for groups
       operationId: group_CreateSetting
       parameters:
         - name: group-id
@@ -19801,11 +19895,8 @@ paths:
     get:
       tags:
         - groups.groupSetting
-      summary: Get groupSetting
-      description: Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
+      summary: Get settings from groups
+      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
       operationId: group_GetSetting
       parameters:
         - name: group-id
@@ -19857,11 +19948,7 @@ paths:
     patch:
       tags:
         - groups.groupSetting
-      summary: Update groupSetting
-      description: Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
+      summary: Update the navigation property settings in groups
       operationId: group_UpdateSetting
       parameters:
         - name: group-id
@@ -19958,7 +20045,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a published [content type][contentType] present in a content type hub with a list of hub sites.'
+      description: Associate a published content type present in a content type hub with a list of hub sites.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
@@ -20017,7 +20104,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
+      description: Copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
@@ -20073,6 +20160,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function isPublished
+      description: Check the publishing status of a contentType in a content type hub site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
       operationId: group.site.contentType_isPublished
       parameters:
         - name: group-id
@@ -20120,7 +20211,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in the content type hub site.'
+      description: Publishes a contentType present in the content type hub site.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
@@ -20161,7 +20252,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
+      description: Unpublish a contentType from a content type hub site.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
@@ -20202,7 +20293,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
+      description: Add a copy of a content type from a site to a list.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
@@ -20300,6 +20391,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getCompatibleHubContentTypes
+      description: 'Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
       operationId: group.site.contentType_getCompatibleHubContentType
       parameters:
         - name: group-id
@@ -20382,7 +20477,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a published [content type][contentType] present in a content type hub with a list of hub sites.'
+      description: Associate a published content type present in a content type hub with a list of hub sites.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
@@ -20449,7 +20544,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
+      description: Copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
@@ -20513,6 +20608,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function isPublished
+      description: Check the publishing status of a contentType in a content type hub site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
       operationId: group.site.list.contentType_isPublished
       parameters:
         - name: group-id
@@ -20568,7 +20667,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in the content type hub site.'
+      description: Publishes a contentType present in the content type hub site.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
@@ -20617,7 +20716,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
+      description: Unpublish a contentType from a content type hub site.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
@@ -20666,7 +20765,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
+      description: Add a copy of a content type from a site to a list.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
@@ -20780,6 +20879,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getCompatibleHubContentTypes
+      description: 'Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
       operationId: group.site.list.contentType_getCompatibleHubContentType
       parameters:
         - name: group-id
@@ -21287,6 +21390,204 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/microsoft.graph.delta()':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function delta
+      description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
+      operationId: group.site.list.item_delta
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: The unique identifier of list
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function delta
+      operationId: group.site.list.item_delta
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: The unique identifier of list
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: token
+          in: path
+          description: 'Usage: token=''{token}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/groups/{group-id}/sites/{site-id}/lists/{list-id}/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
     post:
       tags:
@@ -21529,6 +21830,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getApplicableContentTypesForList
+      description: Get site contentTypes that can be added to a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
       operationId: group.site_getApplicableContentTypesGraphFPreList
       parameters:
         - name: group-id
@@ -21863,6 +22168,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getApplicableContentTypesForList
+      description: Get site contentTypes that can be added to a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
       operationId: group.site.getGraphBPrePath_getApplicableContentTypesGraphFPreList
       parameters:
         - name: group-id
@@ -22895,6 +23204,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getRecentNotebooks
+      description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0
       operationId: group.site.onenote.notebook_getRecentNotebook
       parameters:
         - name: group-id
@@ -23962,7 +24275,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
+      description: Grant users access to a link represented by a permission.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
@@ -24097,6 +24410,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
+      description: "Get newly created, updated, or deleted sites without having to perform a full read of the entire sites collection. A delta function call for sites is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls,\nyou can query for incremental changes in the sites. It allows you to maintain and synchronize a local store of a user's sites without having to fetch all the sites from the server every time.\nThe application calls the API without specifying any parameters.\nThe service begins enumerating sites and returns pages of changes to these sites, accompanied by either an @odata.nextLink or an @odata.deltaLink.\nYour application should continue making calls using the @odata.nextLink until there's an @odata.deltaLink  in the response. After you receive all the changes, you can apply them to your local state.\nTo monitor future changes, call the delta API by using the @odata.deltaLink in the previous response. Any resources marked as deleted should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-delta?view=graph-rest-1.0
       operationId: group.site_delta
       parameters:
         - name: group-id
@@ -24174,6 +24491,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getAllSites
+      description: 'List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0
       operationId: group.site_getAllSite
       parameters:
         - name: group-id
@@ -24765,6 +25086,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: group.team.channel.message.reply_delta
       parameters:
         - name: group-id
@@ -24858,6 +25183,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: group.team.channel.message_delta
       parameters:
         - name: group-id
@@ -24976,6 +25305,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function doesUserHaveAccess
+      description: Determine whether a user has access to a shared channel.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: group.team.channel_doesUserHaveAccess
       parameters:
         - name: group-id
@@ -25109,6 +25442,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function getAllMessages
+      description: 'Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
       operationId: group.team.channel_getAllMessage
       parameters:
         - name: group-id
@@ -25330,7 +25667,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they'll see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
+      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
@@ -25874,6 +26211,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message.reply_delta
       parameters:
         - name: group-id
@@ -25959,6 +26300,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_delta
       parameters:
         - name: group-id
@@ -26061,6 +26406,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function doesUserHaveAccess
+      description: Determine whether a user has access to a shared channel.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: group.team.primaryChannel_doesUserHaveAccess
       parameters:
         - name: group-id
@@ -26218,11 +26567,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List threads
-      description: Get all the threads of a group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-threads?view=graph-rest-1.0
+      summary: Get threads from groups
+      description: The group's conversation threads. Nullable.
       operationId: group_ListThread
       parameters:
         - name: group-id
@@ -26269,11 +26615,7 @@ paths:
     post:
       tags:
         - groups.conversationThread
-      summary: Create conversation thread
-      description: "Start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group.\nUse reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-threads?view=graph-rest-1.0
+      summary: Create new navigation property to threads for groups
       operationId: group_CreateThread
       parameters:
         - name: group-id
@@ -26305,11 +26647,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversationThread
-      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+      summary: Get threads from groups
+      description: The group's conversation threads. Nullable.
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -26351,10 +26690,7 @@ paths:
     patch:
       tags:
         - groups.conversationThread
-      summary: Update conversation thread
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-update-thread?view=graph-rest-1.0
+      summary: Update the navigation property threads in groups
       operationId: group_UpdateThread
       parameters:
         - name: group-id
@@ -26393,11 +26729,7 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversation thread
-      description: Delete conversationThread.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+      summary: Delete navigation property threads for groups
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -26477,11 +26809,7 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,\nyou can specify the thread without referencing the parent conversation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+      summary: Get posts from groups
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
@@ -26608,11 +26936,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a post.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: Read-only. Nullable. Supports $expand.
       operationId: group.thread.post_ListAttachment
       parameters:
         - name: group-id
@@ -26947,8 +27272,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
       operationId: group.thread.post_ListExtension
       parameters:
         - name: group-id
@@ -27069,11 +27394,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+      summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
       operationId: group.thread.post_GetExtension
       parameters:
         - name: group-id
@@ -27141,11 +27463,7 @@ paths:
     patch:
       tags:
         - groups.conversationThread
-      summary: Update open extension
-      description: 'Update an open extension (openTypeExtension object) with the properties in the request body: The data in an extension can be primitive types, or arrays of primitive types. See the table in the Permissions section for the list of resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-update?view=graph-rest-1.0
+      summary: Update the navigation property extensions in groups
       operationId: group.thread.post_UpdateExtension
       parameters:
         - name: group-id
@@ -27350,11 +27668,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a post.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: Read-only. Nullable. Supports $expand.
       operationId: group.thread.post.inReplyTo_ListAttachment
       parameters:
         - name: group-id
@@ -27689,8 +28004,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
       operationId: group.thread.post.inReplyTo_ListExtension
       parameters:
         - name: group-id
@@ -27811,11 +28126,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+      summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
       operationId: group.thread.post.inReplyTo_GetExtension
       parameters:
         - name: group-id
@@ -27883,11 +28195,7 @@ paths:
     patch:
       tags:
         - groups.conversationThread
-      summary: Update open extension
-      description: 'Update an open extension (openTypeExtension object) with the properties in the request body: The data in an extension can be primitive types, or arrays of primitive types. See the table in the Permissions section for the list of resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-update?view=graph-rest-1.0
+      summary: Update the navigation property extensions in groups
       operationId: group.thread.post.inReplyTo_UpdateExtension
       parameters:
         - name: group-id
@@ -28296,9 +28604,6 @@ paths:
         - groups.directoryObject
       summary: Get transitiveMemberOf from groups
       description: 'The groups that a group is a member of, either directly or through nested membership. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0
       operationId: group_ListTransitiveMemberGraphOPre
       parameters:
         - name: group-id
@@ -28789,9 +29094,6 @@ paths:
         - groups.directoryObject
       summary: Get transitiveMembers from groups
       description: The direct and transitive members of a group. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
       operationId: group_ListTransitiveMember
       parameters:
         - name: group-id
@@ -29976,11 +30278,11 @@ paths:
     patch:
       tags:
         - groups.group
-      summary: Update group
-      description: Update the properties of a group object.
+      summary: Upsert group
+      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
       operationId: group_UpdateGroupGraphBPreUniqueName
       parameters:
         - name: uniqueName
@@ -30067,6 +30369,10 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. See Using Delta Query for details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delta?view=graph-rest-1.0
       operationId: group_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -30932,6 +31238,10 @@ paths:
       tags:
         - groupSettingTemplates.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0
       operationId: groupSettingTemplate_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -31328,6 +31638,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -32069,11 +32380,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
           nullable: true
         id:
           type: string
@@ -32089,13 +32400,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -32191,13 +32502,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -32343,6 +32654,36 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.listItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: listItem
+          type: object
+          properties:
+            contentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            sharepointIds:
+              $ref: '#/components/schemas/microsoft.graph.sharepointIds'
+            analytics:
+              $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
+            documentSetVersions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
+              description: Version information for a document set version created by a user.
+              x-ms-navigationProperty: true
+            driveItem:
+              $ref: '#/components/schemas/microsoft.graph.driveItem'
+            fields:
+              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+              description: The list of previous versions of the list item.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.administrativeUnit:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -32438,7 +32779,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
+              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique. You can use the default value provided, which is in the form api://<appId>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
@@ -32515,6 +32856,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to an application and used as an alternate key. Immutable. Read-only.
               nullable: true
             verifiedPublisher:
               $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
@@ -32625,6 +32967,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -32636,9 +32979,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
@@ -33927,6 +34272,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -33956,17 +34302,21 @@ components:
       properties:
         columnId:
           type: number
+          description: Indicates the identifier of the column where the web part is located.
           format: double
           nullable: true
         horizontalSectionId:
           type: number
+          description: Indicates the horizontal section where the web part is located.
           format: double
           nullable: true
         isInVerticalSection:
           type: boolean
+          description: Indicates whether the web part is located in the vertical section.
           nullable: true
         webPartIndex:
           type: number
+          description: Index of the current web part. Represents the order of the web part in this column or section.
           format: double
           nullable: true
       additionalProperties:
@@ -34470,7 +34820,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -35651,36 +36001,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
           additionalProperties:
             type: object
-    microsoft.graph.listItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: listItem
-          type: object
-          properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            sharepointIds:
-              $ref: '#/components/schemas/microsoft.graph.sharepointIds'
-            analytics:
-              $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
-            documentSetVersions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
-              description: Version information for a document set version created by a user.
-              x-ms-navigationProperty: true
-            driveItem:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-            fields:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-            versions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-              description: The list of previous versions of the list item.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.itemRetentionLabel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36026,7 +36346,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -36058,6 +36378,66 @@ components:
               $ref: '#/components/schemas/microsoft.graph.columnValidation'
             sourceColumn:
               $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.documentSetVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+        - title: documentSetVersion
+          type: object
+          properties:
+            comment:
+              type: string
+              description: Comment about the captured version.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this version was created.
+              format: date-time
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
+              description: Items within the document set that are captured as part of this version.
+            shouldCaptureMinorVersion:
+              type: boolean
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.fieldValueSet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: fieldValueSet
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.listItemVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItemVersion'
+        - title: listItemVersion
+          type: object
+          properties:
+            fields:
+              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
           additionalProperties:
             type: object
     microsoft.graph.scopedRoleMembership:
@@ -36501,7 +36881,7 @@ components:
               description: 'The URL of the external identity provider, which must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique within the app. It has a limit of 600 characters. Required.'
             name:
               type: string
-              description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it''s created. Required. Not nullable. Supports $filter (eq).'
+              description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it''s created. Alternate key. Required. Not nullable. Supports $filter (eq).'
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format; each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique within the app. It has a limit of 600 characters. Supports $filter (eq).'
@@ -37907,6 +38287,11 @@ components:
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
+              readOnly: true
             ethernetMacAddress:
               type: string
               description: 'Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.'
@@ -38446,6 +38831,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -38711,6 +39104,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -40109,7 +40503,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -40165,66 +40559,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.documentSetVersion:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-        - title: documentSetVersion
-          type: object
-          properties:
-            comment:
-              type: string
-              description: Comment about the captured version.
-              nullable: true
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this version was created.
-              format: date-time
-              nullable: true
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
-              description: Items within the document set that are captured as part of this version.
-            shouldCaptureMinorVersion:
-              type: boolean
-              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.fieldValueSet:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: fieldValueSet
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.listItemVersion:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.baseItemVersion'
-        - title: listItemVersion
-          type: object
-          properties:
-            fields:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-          additionalProperties:
-            type: object
     microsoft.graph.retentionLabelSettings:
       title: retentionLabelSettings
       type: object
@@ -40784,6 +41118,24 @@ components:
         formula:
           type: string
           description: 'The formula to validate column value. For examples, see Examples of common formulas in lists.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.documentSetVersionItem:
+      title: documentSetVersionItem
+      type: object
+      properties:
+        itemId:
+          type: string
+          description: The unique identifier for the item.
+          nullable: true
+        title:
+          type: string
+          description: The title of the item.
+          nullable: true
+        versionId:
+          type: string
+          description: The version ID of the item.
           nullable: true
       additionalProperties:
         type: object
@@ -43896,24 +44248,6 @@ components:
         - noEnd
         - numbered
       type: string
-    microsoft.graph.documentSetVersionItem:
-      title: documentSetVersionItem
-      type: object
-      properties:
-        itemId:
-          type: string
-          description: The unique identifier for the item.
-          nullable: true
-        title:
-          type: string
-          description: The title of the item.
-          nullable: true
-        versionId:
-          type: string
-          description: The version ID of the item.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.security.behaviorDuringRetentionPeriod:
       title: behaviorDuringRetentionPeriod
       enum:
