@@ -22590,6 +22590,10 @@ components:
               type: string
               description: The Microsoft Entra device ID of the Cloud PC.
               nullable: true
+            allotmentDisplayName:
+              type: string
+              description: 'The allotment name divides tenant licenses into smaller batches or groups that helps restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.'
+              nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
@@ -24725,7 +24729,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -25590,7 +25594,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object
@@ -33514,11 +33518,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
