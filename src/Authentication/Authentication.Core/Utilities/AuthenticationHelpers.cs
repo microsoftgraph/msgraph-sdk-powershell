@@ -30,16 +30,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// </summary>
         /// <param name="authContext">The <see cref="IAuthContext"/> to get a token credential for.</param>
         /// <returns>A <see cref="TokenCredential"/> based on provided <see cref="IAuthContext"/>.</returns>
-        public static async Task<TokenCredential> GetTokenCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        public static async Task<TokenCredential> GetTokenCredentialAsync(IAuthContext authContext, bool safeRollOut, CancellationToken cancellationToken = default)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-
             switch (authContext.AuthType)
             {
                 case AuthenticationType.Delegated:
                     if (authContext.TokenCredentialType == TokenCredentialType.InteractiveBrowser)
-                        return await GetInteractiveBrowserCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
+                        return await GetInteractiveBrowserCredentialAsync(authContext, safeRollOut, cancellationToken).ConfigureAwait(false);
                     return await GetDeviceCodeCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
                     return authContext.TokenCredentialType == TokenCredentialType.ClientCertificate
@@ -63,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
             var tokenCredentialOptions = new TokenCredentialOptions
             {
-                AuthorityHost = new Uri(GetAuthorityUrl(authContext))
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext, false))
             };
 
             if (IsAuthFlowNotSupported())
@@ -93,7 +92,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
             var clientSecretCredentialOptions = new ClientSecretCredentialOptions
             {
-                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext, false)),
                 TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
             };
             var clientSecretCredential = new ClientSecretCredential(authContext.TenantId, authContext.ClientId, authContext.ClientSecret.ConvertToString(), clientSecretCredentialOptions);
@@ -109,16 +108,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return await Task.FromResult(new ManagedIdentityCredential(userAccountId)).ConfigureAwait(false);
         }
 
-        private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext,bool safeRollOut, CancellationToken cancellationToken = default)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             var interactiveOptions = IsWamSupported() ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
             interactiveOptions.ClientId = authContext.ClientId;
-            interactiveOptions.TenantId = authContext.TenantId ?? "common";
-            interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
+            interactiveOptions.TenantId = authContext.TenantId ?? "common"; 
+            interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext, safeRollOut));
+            Console.WriteLine($"Got authority host {interactiveOptions.AuthorityHost}");
             interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
-
             if (!File.Exists(Constants.AuthRecordPath))
             {
                 AuthenticationRecord authRecord;
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 ClientId = authContext.ClientId,
                 TenantId = authContext.TenantId,
-                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext, false)),
                 TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext),
                 DeviceCodeCallback = (code, cancellation) =>
                 {
@@ -183,7 +182,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
             var clientCredentialOptions = new ClientCertificateCredentialOptions
             {
-                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext, false)),
                 TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext),
                 SendCertificateChain = authContext.SendCertificateChain
             };
@@ -211,7 +210,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return new AzureIdentityAccessTokenProvider(credential: tokenCrdential, scopes: GetScopes(authContext));
         }
 
-        public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken)
+        public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, bool safeRollOut, CancellationToken cancellationToken)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
@@ -227,7 +226,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         (args, message) => GraphSession.Instance.OutputWriter.WriteDebug($"{message}"),
                         level: EventLevel.Informational))
                     {
-                        signInAuthContext = await SignInAsync(authContext, cancellationToken).ConfigureAwait(false);
+                        signInAuthContext = await SignInAsync(authContext, safeRollOut,cancellationToken).ConfigureAwait(false);
                         retrySignIn = false;
                     };
                 }
@@ -272,11 +271,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return signInAuthContext;
         }
 
-        private static async Task<IAuthContext> SignInAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        private static async Task<IAuthContext> SignInAsync(IAuthContext authContext, bool safeRollOut, CancellationToken cancellationToken = default)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var tokenCredential = await GetTokenCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
+            var tokenCredential = await GetTokenCredentialAsync(authContext, safeRollOut, cancellationToken).ConfigureAwait(false);
             var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext)), cancellationToken).ConfigureAwait(false);
             JwtHelpers.DecodeJWT(token.Token, account: null, ref authContext);
             return authContext;
@@ -304,14 +303,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// </summary>
         /// <param name="authContext">The <see cref="IAuthContext"/> to get an authority URL for.</param>
         /// <returns></returns>
-        private static string GetAuthorityUrl(IAuthContext authContext)
+        private static string GetAuthorityUrl(IAuthContext authContext, bool safeRollOut)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             string audience = authContext.TenantId ?? Constants.DefaultTenant;
+            if(safeRollOut)
+                return GraphSession.Instance.Environment != null
+                    ? $"{GraphSession.Instance.Environment.AzureADEndpoint}?safe_rollout=apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc"
+                    : $"{Constants.DefaultAzureADEndpoint}?safe_rollout=apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc";
+
             return GraphSession.Instance.Environment != null
                 ? $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}"
-                : $"{Constants.DefaultAzureADEndpoint}/{audience}";
+                : $"{Constants.DefaultAzureADEndpoint}/{audience}"; 
         }
 
         /// <summary>

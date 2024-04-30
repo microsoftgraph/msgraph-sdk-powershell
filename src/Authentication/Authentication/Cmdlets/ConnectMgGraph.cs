@@ -59,8 +59,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /*
         Torus migration changes for client based rollout
         */
-
-        [Parameter(Mandatory = false, ParameterSetName = Constants.SafeRolloutParameterSet, HelpMessage = HelpMessages.SafeRollout)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.SafeRollout)]
+        //[Parameter(Mandatory = false, ParameterSetName = Constants.SafeRolloutParameterSet, HelpMessage = HelpMessages.SafeRollout)]
         [Alias("ValidateRollout")]
         public bool SafeRollOut { get; set; }
         
@@ -176,12 +176,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version, Environment = environment?.Name };
                 if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout)))
                     GraphSession.Instance.RequestContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
-                if(SafeRollOut)
-                {
-                    environment.AzureADEndpoint = $"{environment.AzureADEndpoint}?safe_rollout=apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc";
-                }
+                
+                bool.TryParse(SafeRollOut.ToString().ToLower(), out bool safeRollOut);
+                WriteDebug($"SafeRollOut Initiated: {safeRollOut} ");
                 GraphSession.Instance.Environment = environment;
-                WriteDebug($"Environment: {GraphSession.Instance.Environment.Name} Azure AD endpoint: {GraphSession.Instance.Environment.AzureADEndpoint} Graph endpoint: {GraphSession.Instance.Environment.GraphEndpoint}");
                 GraphSession.Instance.GraphHttpClient = null;
                 if (GraphSession.Instance.InMemoryTokenCache is null)
                     GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
@@ -260,7 +258,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 try
                 {
-                    GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, _cancellationTokenSource.Token).ConfigureAwait(false);
+                    GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, safeRollOut, _cancellationTokenSource.Token).ConfigureAwait(false);
+                
                 }
                 catch (Exception)
                 {
