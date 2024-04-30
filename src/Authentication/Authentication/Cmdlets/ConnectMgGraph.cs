@@ -178,7 +178,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     GraphSession.Instance.RequestContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
                 
                 bool.TryParse(SafeRollOut.ToString().ToLower(), out bool safeRollOut);
-                WriteDebug($"SafeRollOut Initiated: {safeRollOut} ");
                 GraphSession.Instance.Environment = environment;
                 GraphSession.Instance.GraphHttpClient = null;
                 if (GraphSession.Instance.InMemoryTokenCache is null)
