@@ -30,11 +30,4 @@ require:
 title: $(service-name)
 subject-prefix: ''
 namespace: Microsoft.Graph.PowerShell
-# directive:
-#   - remove-path-by-operation: application_DeleteOwnerGraphBPreRef
-#   - where:
-#       verb: Remove
-#       subject: ApplicationOwnerDirectoryObjectByRef
-#     set:
-#       alias: Remove-MgApplicationOwnerByRef
 ```
