@@ -34,6 +34,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// </summary>
         string OutputType { get; set; }
         /// <summary>
+        /// Command Alias.
+        /// </summary>
+        string CommandAlias { get; set; }
+        /// <summary>
         /// The parameter sets of the command.
         /// </summary>
         string[] Variants { get; set; }
@@ -84,6 +88,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// The permissions needed to use the command.
         /// </summary>
         public GraphPermission[] Permissions { get; set; }
+        public string CommandAlias { get; set ; }
     }
 
     /// <summary>

@@ -35,7 +35,8 @@ $CommandPathMapping = [ordered]@{}
 
 # Regex patterns.
 $OpenApiTagPattern = '\[OpenAPI\].s*(.*)=>(.*):\"(.*)\"'
-$ExternalDocsPattern ='https://learn.microsoft.com/graph/api/(.*?(graph-rest-1.0|graph-rest-beta))'
+$ExternalDocsPattern = 'https://learn.microsoft.com/graph/api/(.*?(graph-rest-1.0|graph-rest-beta))'
+$AliasPattern = '\[global::System.Management.Automation.Alias(.*?)\]'
 $ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
 $PermissionsUrl = "https://graphexplorerapi.azurewebsites.net/permissions"
 
@@ -73,16 +74,21 @@ $ApiVersion | ForEach-Object {
                 }
                 $Uri = $Uri -replace [Regex]::Escape($MatchedUriSegment), $SegmentBuilder
             }
+            $CommandAliasValue = ($RawFileContent -match $AliasPattern) ? $Matches.0 : $null
+            if (-not($Null -eq $CommandAliasValue)) {
+                $CommandAliasValue = $CommandAliasValue.Replace("[global::System.Management.Automation.Alias(`"", "").Replace("`")", "").Replace("]", "")
+            }
             $MappingValue = @{
-                Command     = $CommandName
-                Variants    = [System.Collections.ArrayList]@($VariantName)
-                Method      = $Method
-                Uri         = $Uri
-                ApiVersion  = $CurrentApiVersion
-                OutputType  = ($RawFileContent -match $OutputTypePattern) ? $Matches.1 : $null
-                Module      = $ModuleName
+                Command          = $CommandName
+                Variants         = [System.Collections.ArrayList]@($VariantName)
+                Method           = $Method
+                Uri              = $Uri
+                ApiVersion       = $CurrentApiVersion
+                OutputType       = ($RawFileContent -match $OutputTypePattern) ? $Matches.1 : $null
+                Module           = $ModuleName
                 ApiReferenceLink = ($RawFileContent -match $ExternalDocsPattern) ? $Matches.0 : $null
-                Permissions = @()
+                CommandAlias     = $CommandAliasValue
+                Permissions      = @()
             }
 
             # Disambiguate between /users (Get-MgUser) and /users/{id} (Get-MgUser) by variant name (parameterset) i.e., List and Get.
@@ -118,6 +124,7 @@ $ApiVersion | ForEach-Object {
                 }
                 $CommandPathMapping.Add($CommandMappingKey, $MappingValue)
             }
+            
         }
         else {
             Write-Error "No match for $OpenApiTagPattern"

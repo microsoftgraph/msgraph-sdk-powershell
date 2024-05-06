@@ -663,4 +663,176 @@ directive:
         $ = $.replace(systemRegex, '_System$1');
         return $;
       }
+#The below aliases are added to enable backward compatibility due to the breaking changes introduced in v2.17.0 and v2.18.0      
+  - where:
+      verb: Remove
+      subject: ApplicationAppManagementPolicyAppManagementPolicyByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}ApplicationAppManagementPolicyByRef
+  - where:
+      verb: Remove
+      subject: ApplicationOwnerDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}ApplicationOwnerByRef
+  - where:
+      verb: Remove
+      subject: ApplicationTokenIssuancePolicyTokenIssuancePolicyByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}ApplicationTokenIssuancePolicyByRef
+  - where:
+      verb: Remove
+      subject: ApplicationTokenLifetimePolicyTokenLifetimePolicyByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}ApplicationTokenLifetimePolicyByRef 
+  - where:
+      verb: Remove
+      subject: DeviceRegisteredOwnerDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}DeviceRegisteredOwnerByRef 
+  - where:
+      verb: Remove
+      subject: DeviceRegisteredUserDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}DeviceRegisteredUserByRef
+  - where:
+      verb: Remove
+      subject: DirectoryAdministrativeUnitMemberDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}DirectoryAdministrativeUnitMemberByRef 
+  - where:
+      verb: Remove
+      subject: DirectoryRoleMemberDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}DirectoryRoleMemberByRef 
+  - where:
+      verb: Remove
+      subject: EducationClassAssignmentCategoryEducationCategoryByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}EducationClassAssignmentCategoryByRef 
+  - where:
+      verb: Remove
+      subject: EducationClassMemberEducationUserByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}EducationClassMemberByRef 
+  - where:
+      verb: Remove
+      subject: EducationClassTeacherEducationUserByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}EducationClassTeacherByRef 
+  - where:
+      verb: Remove
+      subject: EducationMeAssignmentCategoryEducationCategoryByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}EducationMeAssignmentCategoryByRef 
+  - where:
+      verb: Remove
+      subject: EducationSchoolClassEducationClassByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}EducationSchoolClassByRef 
+  - where:
+      verb: Remove
+      subject: EducationSchoolUserEducationUserByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}EducationSchoolUserByRef 
+  - where:
+      verb: Remove
+      subject: EducationUserAssignmentCategoryEducationCategoryByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}EducationUserAssignmentCategoryByRef 
+  - where:
+      verb: Remove
+      subject: GroupAcceptedSenderDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}GroupAcceptedSenderByRef 
+  - where:
+      verb: Remove
+      subject: GroupMemberDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}GroupMemberByRef 
+  - where:
+      verb: Remove
+      subject: GroupOwnerDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}GroupOwnerByRef 
+  - where:
+      verb: Remove
+      subject: GroupRejectedSenderDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}GroupRejectedSenderByRef 
+  - where:
+      verb: Remove
+      subject: IdentityB2XUserFlowIdentityProviderBaseByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}IdentityB2XUserFlowIdentityProviderByRef 
+  - where:
+      verb: Remove
+      subject: EntitlementManagementConnectedOrganizationExternalSponsorDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}EntitlementManagementConnectedOrganizationExternalSponsorByRef 
+  - where:
+      verb: Remove
+      subject: EntitlementManagementConnectedOrganizationInternalSponsorDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}EntitlementManagementConnectedOrganizationInternalSponsorByRef
+  - where:
+      verb: Remove
+      subject: PolicyFeatureRolloutPolicyApplyToDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}PolicyFeatureRolloutPolicyApplyToByRef
+  - where:
+      verb: Remove
+      subject: ServicePrincipalClaimMappingPolicyClaimMappingPolicyByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}ServicePrincipalClaimMappingPolicyByRef
+  - where:
+      verb: Remove
+      subject: ServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}ServicePrincipalHomeRealmDiscoveryPolicyByRef
+  - where:
+      verb: Remove
+      subject: ServicePrincipalOwnerDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}ServicePrincipalOwnerByRef
+  - where:
+      verb: Remove
+      subject: AdministrativeUnitMemberDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}AdministrativeUnitMemberByRef
+  - where:
+      verb: Remove
+      subject: DirectoryFeatureRolloutPolicyApplyToDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}DirectoryFeatureRolloutPolicyApplyToByRef
+  - where:
+      verb: Remove
+      subject: OnPremisePublishingProfileAgentGroupOnPremiseAgentGroupByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}OnPremisePublishingProfileAgentGroupByRef
+  - where:
+      verb: Remove
+      subject: OnPremisePublishingProfileConnectorGroupMemberConnectorByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}OnPremisePublishingProfileConnectorGroupMemberByRef
+  - where:
+      verb: Remove
+      subject: OnPremisePublishingProfileConnectorMemberOfConnectorGroupByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}OnPremisePublishingProfileConnectorMemberOfByRef
+  - where:
+      verb: Remove
+      subject: OnPremisePublishingProfilePublishedResourceAgentGroupOnPremiseAgentGroupByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}OnPremisePublishingProfilePublishedResourceAgentGroupByRef
+  - where:
+      verb: Remove
+      subject: UserDeviceRegisteredOwnerDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}UserDeviceRegisteredOwnerByRef
+  - where:
+      verb: Remove
+      subject: UserDeviceRegisteredUserDirectoryObjectByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}UserDeviceRegisteredUserByRef
+      
 ```
