@@ -92,6 +92,15 @@ steps:
       script: |
         . "$(System.DefaultWorkingDirectory)\tools\Versions\BumpModuleVersion.ps1" -BumpV1Module -BumpBetaModule -BumpAuthModule -Debug
 
+  - task: PowerShell@2
+    name: GenerateOpenApiErrorAndInfoFiles
+    displayName: Generate OpenApi error and info file for detecting unnecessary changes that would lead to a breaking change
+    inputs:
+      pwsh: true
+      targetType: inline
+      script: |
+        . "$(System.DefaultWorkingDirectory)\tools\OpenApiInfoGenerator\OpenApiInfoGenerator\GenerateErrorAndInfoFile.ps1"
+
   - task: Bash@3
     displayName: Commit downloaded files
     condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))

@@ -36,5 +36,4 @@ function Start-Validation {
     }
 
 }
-dotnet run
 Start-Validation
