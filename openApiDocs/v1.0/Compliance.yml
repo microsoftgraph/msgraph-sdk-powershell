@@ -69,7 +69,11 @@ paths:
     get:
       tags:
         - privacy.subjectRightsRequest
-      summary: Get subjectRightsRequests from privacy
+      summary: List subjectRightsRequests
+      description: Get a list of subjectRightsRequest objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-list?view=graph-rest-1.0
       operationId: privacy_ListSubjectRightsRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -125,7 +129,11 @@ paths:
     post:
       tags:
         - privacy.subjectRightsRequest
-      summary: Create new navigation property to subjectRightsRequests for privacy
+      summary: Create subjectRightsRequest
+      description: Create a new subjectRightsRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-post?view=graph-rest-1.0
       operationId: privacy_CreateSubjectRightsRequest
       requestBody:
         description: New navigation property
@@ -154,7 +162,11 @@ paths:
     get:
       tags:
         - privacy.subjectRightsRequest
-      summary: Get subjectRightsRequests from privacy
+      summary: Get subjectRightsRequest
+      description: Read the properties and relationships of a subjectRightsRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-1.0
       operationId: privacy_GetSubjectRightsRequest
       parameters:
         - name: subjectRightsRequest-id
@@ -204,7 +216,11 @@ paths:
     patch:
       tags:
         - privacy.subjectRightsRequest
-      summary: Update the navigation property subjectRightsRequests in privacy
+      summary: Update subjectRightsRequest
+      description: Update the properties of a subjectRightsRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-1.0
       operationId: privacy_UpdateSubjectRightsRequest
       parameters:
         - name: subjectRightsRequest-id
@@ -1006,8 +1022,11 @@ paths:
     get:
       tags:
         - privacy.subjectRightsRequest
-      summary: Get notes from privacy
-      description: List of notes associated with the request.
+      summary: List authoredNotes
+      description: 'Get the list of authored notes assoicated with a subject rights request. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0
       operationId: privacy.subjectRightsRequest_ListNote
       parameters:
         - name: subjectRightsRequest-id
@@ -1071,7 +1090,11 @@ paths:
     post:
       tags:
         - privacy.subjectRightsRequest
-      summary: Create new navigation property to notes for privacy
+      summary: Create authoredNote
+      description: Create a new authoredNote object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0
       operationId: privacy.subjectRightsRequest_CreateNote
       parameters:
         - name: subjectRightsRequest-id

@@ -2270,7 +2270,11 @@ paths:
     delete:
       tags:
         - solutions.bookingBusiness
-      summary: Delete navigation property bookingBusinesses for solutions
+      summary: Delete bookingBusiness
+      description: Delete a bookingBusiness object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-beta
       operationId: solution_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -2297,8 +2301,8 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get appointments from solutions
-      description: All the appointments of this business. Read-only. Nullable.
+      summary: Get bookingAppointment
+      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
       operationId: solution.bookingBusiness_ListAppointment
       parameters:
         - name: bookingBusiness-id
@@ -2388,8 +2392,11 @@ paths:
     get:
       tags:
         - solutions.bookingBusiness
-      summary: Get appointments from solutions
-      description: All the appointments of this business. Read-only. Nullable.
+      summary: Get bookingAppointment
+      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-beta
       operationId: solution.bookingBusiness_GetAppointment
       parameters:
         - name: bookingBusiness-id
@@ -2441,7 +2448,11 @@ paths:
     patch:
       tags:
         - solutions.bookingBusiness
-      summary: Update the navigation property appointments in solutions
+      summary: Update bookingAppointment
+      description: Update the properties of a bookingAppointment object in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-beta
       operationId: solution.bookingBusiness_UpdateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -2480,7 +2491,11 @@ paths:
     delete:
       tags:
         - solutions.bookingBusiness
-      summary: Delete navigation property appointments for solutions
+      summary: Delete bookingAppointment
+      description: Delete a bookingAppointment in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-beta
       operationId: solution.bookingBusiness_DeleteAppointment
       parameters:
         - name: bookingBusiness-id
@@ -3985,7 +4000,11 @@ paths:
     get:
       tags:
         - solutions.bookingCurrency
-      summary: Get bookingCurrencies from solutions
+      summary: List bookingCurrencies
+      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-beta
       operationId: solution_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4058,7 +4077,11 @@ paths:
     get:
       tags:
         - solutions.bookingCurrency
-      summary: Get bookingCurrencies from solutions
+      summary: Get bookingCurrency
+      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-beta
       operationId: solution_GetBookingCurrency
       parameters:
         - name: bookingCurrency-id
@@ -4174,7 +4197,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get businessScenarios from solutions
+      summary: List businessScenarios
+      description: Get a list of all businessScenario objects in an organization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-beta
       operationId: solution_ListBusinessScenario
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4224,7 +4251,11 @@ paths:
     post:
       tags:
         - solutions.businessScenario
-      summary: Create new navigation property to businessScenarios for solutions
+      summary: Create businessScenario
+      description: Create a new businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-beta
       operationId: solution_CreateBusinessScenario
       requestBody:
         description: New navigation property
@@ -4247,7 +4278,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get businessScenarios from solutions
+      summary: Get businessScenario
+      description: Read the properties and relationships of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-beta
       operationId: solution_GetBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -4291,7 +4326,11 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update the navigation property businessScenarios in solutions
+      summary: Update businessScenario
+      description: Update the properties of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-beta
       operationId: solution_UpdateBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -4322,7 +4361,11 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete navigation property businessScenarios for solutions
+      summary: Delete businessScenario
+      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-beta
       operationId: solution_DeleteBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -4349,8 +4392,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get planner from solutions
-      description: Planner content related to the scenario.
+      summary: Get businessScenarioPlanner
+      description: Read the properties and relationships of a businessScenarioPlanner object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-beta
       operationId: solution.businessScenario_GetPlanner
       parameters:
         - name: businessScenario-id
@@ -5715,7 +5761,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get businessScenarios from solutions
+      summary: Get businessScenario
+      description: Read the properties and relationships of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-beta
       operationId: solution.businessScenario_GetGraphBPreUniqueName
       parameters:
         - name: uniqueName
@@ -5759,7 +5809,11 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update the navigation property businessScenarios in solutions
+      summary: Update businessScenario
+      description: Update the properties of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-beta
       operationId: solution.businessScenario_UpdateGraphBPreUniqueName
       parameters:
         - name: uniqueName
@@ -5790,7 +5844,11 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete navigation property businessScenarios for solutions
+      summary: Delete businessScenario
+      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-beta
       operationId: solution.businessScenario_DeleteGraphBPreUniqueName
       parameters:
         - name: uniqueName
@@ -8027,7 +8085,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get townhalls from solutions
+      summary: Get virtualEventTownhall
+      description: Read the properties and relationships of a virtualEventTownhall object.
       operationId: solution.virtualEvent_ListTownhall
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8077,7 +8136,11 @@ paths:
     post:
       tags:
         - solutions.virtualEventsRoot
-      summary: Create new navigation property to townhalls for solutions
+      summary: Create virtualEvent
+      description: Create a new virtualEventTownhall object in draft mode.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventsroot-post-townhalls?view=graph-rest-beta
       operationId: solution.virtualEvent_CreateTownhall
       requestBody:
         description: New navigation property
@@ -8100,7 +8163,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get townhalls from solutions
+      summary: Get virtualEventTownhall
+      description: Read the properties and relationships of a virtualEventTownhall object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventtownhall-get?view=graph-rest-beta
       operationId: solution.virtualEvent_GetTownhall
       parameters:
         - name: virtualEventTownhall-id
@@ -8144,7 +8211,11 @@ paths:
     patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Update the navigation property townhalls in solutions
+      summary: Update virtualEventTownhall
+      description: Update the properties of a virtualEventTownhall object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventtownhall-update?view=graph-rest-beta
       operationId: solution.virtualEvent_UpdateTownhall
       parameters:
         - name: virtualEventTownhall-id
@@ -8202,8 +8273,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get presenters from solutions
-      description: The virtual event presenters.
+      summary: List presenters
+      description: Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualevent-list-presenters?view=graph-rest-beta
       operationId: solution.virtualEvent.townhall_ListPresenter
       parameters:
         - name: virtualEventTownhall-id
@@ -8261,7 +8335,11 @@ paths:
     post:
       tags:
         - solutions.virtualEventsRoot
-      summary: Create new navigation property to presenters for solutions
+      summary: Create virtualEventPresenter
+      description: Create a new virtualEventPresenter object on a virtual event.  Currently the supported virtual event type is virtualEventTownhall.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualevent-post-presenters?view=graph-rest-beta
       operationId: solution.virtualEvent.townhall_CreatePresenter
       parameters:
         - name: virtualEventTownhall-id
@@ -8293,8 +8371,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get presenters from solutions
-      description: The virtual event presenters.
+      summary: Get presenter
+      description: Read the properties and relationships of a virtualEventPresenter object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventpresenter-get?view=graph-rest-beta
       operationId: solution.virtualEvent.townhall_GetPresenter
       parameters:
         - name: virtualEventTownhall-id
@@ -8385,7 +8466,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete navigation property presenters for solutions
+      summary: Delete virtualEventPresenter
+      description: Delete a virtualEventPresenter from a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventpresenter-delete?view=graph-rest-beta
       operationId: solution.virtualEvent.townhall_DeletePresenter
       parameters:
         - name: virtualEventTownhall-id
@@ -10257,7 +10342,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get webinars from solutions
+      summary: List webinars
+      description: Get the list of all virtualEventWebinar objects created in the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-beta
       operationId: solution.virtualEvent_ListWebinar
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10330,7 +10419,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get webinars from solutions
+      summary: Get virtualEventWebinar
+      description: Read the properties and relationships of a virtualEventWebinar object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-beta
       operationId: solution.virtualEvent_GetWebinar
       parameters:
         - name: virtualEventWebinar-id
@@ -10936,8 +11029,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get registrations from solutions
-      description: Registration records of the webinar.
+      summary: List virtualEventRegistrations
+      description: Get a list of all registration records of a webinar.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar_ListRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -11027,8 +11123,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get registrations from solutions
-      description: Registration records of the webinar.
+      summary: Get virtualEventRegistration
+      description: Get the properties and relationships of a virtualEventRegistration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar_GetRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -11373,8 +11472,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get registrations from solutions
-      description: Registration records of the webinar.
+      summary: Get virtualEventRegistration
+      description: Get the properties and relationships of a virtualEventRegistration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar.registration_GetGraphBPreEmail
       parameters:
         - name: virtualEventWebinar-id
@@ -11500,8 +11602,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get registrations from solutions
-      description: Registration records of the webinar.
+      summary: Get virtualEventRegistration
+      description: Get the properties and relationships of a virtualEventRegistration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar.registration_GetGraphBPreUserId
       parameters:
         - name: virtualEventWebinar-id
@@ -11649,8 +11754,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get sessions from solutions
-      description: Sessions for the virtual event.
+      summary: List sessions
+      description: 'Get a list of all virtualEventSession objects under a virtual event. Currently, the following virtual event types are supported: virtualEventTownhall and virtualEventWebinar.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualevent-list-sessions?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar_ListSession
       parameters:
         - name: virtualEventWebinar-id
@@ -11740,8 +11848,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get sessions from solutions
-      description: Sessions for the virtual event.
+      summary: Get virtualEventSession
+      description: 'Read the properties and relationships of a virtualEventSession object.  Currently, the following virtual event types are supported: virtualEventTownhall and virtualEventWebinar.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar_GetSession
       parameters:
         - name: virtualEventWebinar-id
@@ -12929,8 +13040,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get sessions from solutions
-      description: Sessions for the virtual event.
+      summary: Get virtualEventSession
+      description: 'Read the properties and relationships of a virtualEventSession object.  Currently, the following virtual event types are supported: virtualEventTownhall and virtualEventWebinar.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: virtualEventWebinar-id
@@ -13093,7 +13207,7 @@ paths:
       tags:
         - solutions.Functions
       summary: Invoke function getByUserIdAndRole
-      description: Get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
+      description: Get a list of virtualEventWebinar objects where the specified user is either the organizer or a coorganizer.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuseridandrole?view=graph-rest-beta
@@ -13177,7 +13291,7 @@ paths:
       tags:
         - solutions.Functions
       summary: Invoke function getByUserRole
-      description: Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+      description: Get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-beta
@@ -14247,12 +14361,15 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              description: Identity information of the coorganizers of the town hall.
             invitedAttendees:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identity'
+              description: 'The attendees invited to the town hall. The supported identites are: communicationsUserIdentity and communicationsGuestIdentity.'
             isInviteOnly:
               type: boolean
+              description: Indicates whether the town hall is only open to invited people and groups within your organization. The isInviteOnly property can only be true if the value of the audience property is set to organization.
               nullable: true
           additionalProperties:
             type: object

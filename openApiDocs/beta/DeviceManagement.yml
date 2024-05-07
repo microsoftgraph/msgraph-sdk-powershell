@@ -166,8 +166,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get siteLists from admin
-      description: A collection of site lists to support Internet Explorer mode.
+      summary: List browserSiteLists
+      description: Get a list of the browserSiteList objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode_ListSiteList
       parameters:
         - $ref: '#/components/parameters/top'
@@ -217,7 +220,11 @@ paths:
     post:
       tags:
         - admin.edge
-      summary: Create new navigation property to siteLists for admin
+      summary: Create browserSiteList
+      description: Create a new browserSiteList object to support Internet Explorer mode.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internetexplorermode-post-sitelists?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode_CreateSiteList
       requestBody:
         description: New navigation property
@@ -240,8 +247,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get siteLists from admin
-      description: A collection of site lists to support Internet Explorer mode.
+      summary: Get browserSiteList
+      description: Get a browserSiteList that contains browserSite and browserSharedCookie resources.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode_GetSiteList
       parameters:
         - name: browserSiteList-id
@@ -285,7 +295,11 @@ paths:
     patch:
       tags:
         - admin.edge
-      summary: Update the navigation property siteLists in admin
+      summary: Update browserSiteList
+      description: Update the properties of a browserSiteList object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode_UpdateSiteList
       parameters:
         - name: browserSiteList-id
@@ -316,7 +330,11 @@ paths:
     delete:
       tags:
         - admin.edge
-      summary: Delete navigation property siteLists for admin
+      summary: Delete browserSiteList
+      description: Delete a browserSiteList object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode_DeleteSiteList
       parameters:
         - name: browserSiteList-id
@@ -343,8 +361,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get sharedCookies from admin
-      description: A collection of shared cookies defined for the site list.
+      summary: List browserSharedCookies
+      description: Get a list of the browserSharedCookie objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_ListSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -402,7 +423,11 @@ paths:
     post:
       tags:
         - admin.edge
-      summary: Create new navigation property to sharedCookies for admin
+      summary: Create browserSharedCookie
+      description: Create a new browserSharedCookie object in a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-post-sharedcookies?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_CreateSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -434,8 +459,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get sharedCookies from admin
-      description: A collection of shared cookies defined for the site list.
+      summary: Get browserSharedCookie
+      description: 'Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_GetSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -487,7 +515,11 @@ paths:
     patch:
       tags:
         - admin.edge
-      summary: Update the navigation property sharedCookies in admin
+      summary: Update browserSharedCookie
+      description: Update the properties of a browserSharedCookie object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_UpdateSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -526,7 +558,11 @@ paths:
     delete:
       tags:
         - admin.edge
-      summary: Delete navigation property sharedCookies for admin
+      summary: Delete browserSharedCookie
+      description: Delete a browserSharedCookie from a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_DeleteSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -583,8 +619,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get sites from admin
-      description: A collection of sites defined for the site list.
+      summary: List browserSites
+      description: Get a list of the browserSite objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_ListSite
       parameters:
         - name: browserSiteList-id
@@ -642,7 +681,11 @@ paths:
     post:
       tags:
         - admin.edge
-      summary: Create new navigation property to sites for admin
+      summary: Create browserSite
+      description: Create a new browserSite object in a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_CreateSite
       parameters:
         - name: browserSiteList-id
@@ -674,8 +717,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get sites from admin
-      description: A collection of sites defined for the site list.
+      summary: Get browserSite
+      description: Get a browserSite that resides on a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_GetSite
       parameters:
         - name: browserSiteList-id
@@ -727,7 +773,11 @@ paths:
     patch:
       tags:
         - admin.edge
-      summary: Update the navigation property sites in admin
+      summary: Update browserSite
+      description: Update the properties of a browserSite object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_UpdateSite
       parameters:
         - name: browserSiteList-id
@@ -766,7 +816,11 @@ paths:
     delete:
       tags:
         - admin.edge
-      summary: Delete navigation property sites for admin
+      summary: Delete browserSite
+      description: Delete a browserSite from a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-beta
       operationId: admin.edge.internetExplorerMode.siteList_DeleteSite
       parameters:
         - name: browserSiteList-id
@@ -27468,7 +27522,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: Indicates collection of App Log Upload Request.
+      description: The collection property of AppLogUploadRequest.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_ListAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -27559,7 +27613,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: Indicates collection of App Log Upload Request.
+      description: The collection property of AppLogUploadRequest.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_GetAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -27798,8 +27852,11 @@ paths:
     get:
       tags:
         - deviceManagement.monitoring
-      summary: Get alertRecords from deviceManagement
-      description: The collection of records of alert events.
+      summary: List alertRecords
+      description: Get a list of the alertRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-list?view=graph-rest-beta
       operationId: deviceManagement.monitoring_ListAlertRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -27872,8 +27929,11 @@ paths:
     get:
       tags:
         - deviceManagement.monitoring
-      summary: Get alertRecords from deviceManagement
-      description: The collection of records of alert events.
+      summary: Get alertRecord
+      description: Read the properties and relationships of an alertRecord object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-get?view=graph-rest-beta
       operationId: deviceManagement.monitoring_GetAlertRecord
       parameters:
         - name: alertRecord-id
@@ -27989,8 +28049,11 @@ paths:
     get:
       tags:
         - deviceManagement.monitoring
-      summary: Get alertRules from deviceManagement
-      description: The collection of alert rules.
+      summary: List alertRules
+      description: Get a list of the alertRule objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-beta
       operationId: deviceManagement.monitoring_ListAlertRule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -28040,7 +28103,11 @@ paths:
     post:
       tags:
         - deviceManagement.monitoring
-      summary: Create new navigation property to alertRules for deviceManagement
+      summary: Create alertRule
+      description: Create an alertRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-beta
       operationId: deviceManagement.monitoring_CreateAlertRule
       requestBody:
         description: New navigation property
@@ -28063,8 +28130,11 @@ paths:
     get:
       tags:
         - deviceManagement.monitoring
-      summary: Get alertRules from deviceManagement
-      description: The collection of alert rules.
+      summary: Get alertRule
+      description: Read the properties and relationships of an alertRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-beta
       operationId: deviceManagement.monitoring_GetAlertRule
       parameters:
         - name: alertRule-id
@@ -28108,7 +28178,11 @@ paths:
     patch:
       tags:
         - deviceManagement.monitoring
-      summary: Update the navigation property alertRules in deviceManagement
+      summary: Update alertRule
+      description: Update the properties of an alertRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-beta
       operationId: deviceManagement.monitoring_UpdateAlertRule
       parameters:
         - name: alertRule-id
@@ -42741,7 +42815,7 @@ components:
             intuneAccountId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Intune Account Id for given tenant
+              description: Intune Account ID for given tenant
               format: uuid
             intuneBrand:
               $ref: '#/components/schemas/microsoft.graph.intuneBrand'
@@ -42761,7 +42835,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Maximum number of dep tokens allowed per-tenant.
+              description: Maximum number of DEP tokens allowed per-tenant.
               format: int32
             settings:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementSettings'
@@ -48175,7 +48249,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -65401,6 +65475,10 @@ components:
               type: string
               description: The Microsoft Entra device ID of the Cloud PC.
               nullable: true
+            allotmentDisplayName:
+              type: string
+              description: 'The allotment name divides tenant licenses into smaller batches or groups that helps restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.'
+              nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
@@ -65812,7 +65890,7 @@ components:
               description: Specifies a list ordered by priority on how Cloud PCs join Microsoft Entra ID (Azure AD). Supports $select.
             enableSingleSignOn:
               type: boolean
-              description: 'True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn''t support this feature. The default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
+              description: 'True if single sign-on can access the provisioned Cloud PC. False indicates that the provisioned Cloud PC doesn''t support this feature. The default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
               nullable: true
             gracePeriodInHours:
               maximum: 2147483647
@@ -67848,6 +67926,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
               x-ms-navigationProperty: true
+            claimsPolicy:
+              $ref: '#/components/schemas/microsoft.graph.customClaimsPolicy'
             createdObjects:
               type: array
               items:
@@ -71990,6 +72070,8 @@ components:
         - dedicated
         - shared
         - unknownFutureValue
+        - sharedByUser
+        - sharedByEntraGroup
       type: string
     microsoft.graph.cloudPcServicePlanType:
       title: cloudPcServicePlanType
@@ -73174,6 +73256,27 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.customClaimsPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customClaimsPolicy
+          type: object
+          properties:
+            audienceOverride:
+              type: string
+              nullable: true
+            claims:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customClaimBase'
+            includeApplicationIdInIssuer:
+              type: boolean
+              nullable: true
+            includeBasicClaimSet:
+              type: boolean
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.delegatedPermissionClassification:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -73981,6 +74084,8 @@ components:
           properties:
             consentedPermissionSet:
               $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+            scopeInfo:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopeInfo'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -74594,6 +74699,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.specialFolder'
             video:
               $ref: '#/components/schemas/microsoft.graph.video'
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.driveItemViewpoint'
             webDavUrl:
               type: string
               description: WebDAV compatible URL for the item.
@@ -74770,6 +74877,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -78673,6 +78782,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.customClaimBase:
+      title: customClaimBase
+      type: object
+      properties:
+        configurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimConfiguration'
+      additionalProperties:
+        type: object
     microsoft.graph.permissionClassificationType:
       title: permissionClassificationType
       enum:
@@ -79023,6 +79142,14 @@ components:
           description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppInstallationScopeInfo:
+      title: teamsAppInstallationScopeInfo
+      type: object
+      properties:
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -79237,11 +79364,15 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'Supported values are Unicode characters and custom. Some backward-compatible reaction types include like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -80004,6 +80135,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.driveItemViewpoint:
+      title: driveItemViewpoint
+      type: object
+      properties:
+        accessOperations:
+          $ref: '#/components/schemas/microsoft.graph.driveItemAccessOperationsViewpoint'
+        sharing:
+          $ref: '#/components/schemas/microsoft.graph.sharingViewpoint'
+      additionalProperties:
+        type: object
     microsoft.graph.itemRetentionLabel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -80196,6 +80337,14 @@ components:
         - completed
         - unknownFutureValue
       type: string
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.itemActivityStat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -84041,6 +84190,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
       additionalProperties:
         type: object
+    microsoft.graph.customClaimConfiguration:
+      title: customClaimConfiguration
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        condition:
+          $ref: '#/components/schemas/microsoft.graph.customClaimConditionBase'
+        transformations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimTransformation'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationSecret:
       title: synchronizationSecret
       enum:
@@ -84257,14 +84420,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.teamsAppDistributionMethod:
-      title: teamsAppDistributionMethod
-      enum:
-        - store
-        - organization
-        - sideloaded
-        - unknownFutureValue
-      type: string
     microsoft.graph.teamsAppInstallationScopes:
       title: teamsAppInstallationScopes
       enum:
@@ -84275,6 +84430,14 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -84670,6 +84833,50 @@ components:
         - other
         - unknownFutureValue
       type: string
+    microsoft.graph.driveItemAccessOperationsViewpoint:
+      title: driveItemAccessOperationsViewpoint
+      type: object
+      properties:
+        canComment:
+          type: boolean
+          description: Indicates whether the user can comment on this item.
+          nullable: true
+        canCreateFile:
+          type: boolean
+          description: Indicates whether the user can create files within this object. Returned only on folders.
+          nullable: true
+        canCreateFolder:
+          type: boolean
+          description: Indicates whether the user can create folders within this object. Returned only on folders.
+          nullable: true
+        canDelete:
+          type: boolean
+          description: Indicates whether the user can delete this item.
+          nullable: true
+        canDownload:
+          type: boolean
+          description: Indicates whether the user can download this item.
+          nullable: true
+        canRead:
+          type: boolean
+          description: Indicates whether the user can read this item.
+          nullable: true
+        canUpdate:
+          type: boolean
+          description: Indicates whether the user can update this item.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingViewpoint:
+      title: sharingViewpoint
+      type: object
+      properties:
+        defaultSharingLink:
+          $ref: '#/components/schemas/microsoft.graph.defaultSharingLink'
+        sharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.sharePointSharingAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.retentionLabelSettings:
       title: retentionLabelSettings
       type: object
@@ -84945,6 +85152,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemActionStat:
       title: itemActionStat
       type: object
@@ -87507,6 +87722,24 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.customClaimAttributeBase:
+      title: customClaimAttributeBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimConditionBase:
+      title: customClaimConditionBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimTransformation:
+      title: customClaimTransformation
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/microsoft.graph.transformationAttribute'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationScheduleState:
       title: synchronizationScheduleState
       enum:
@@ -87826,6 +88059,34 @@ components:
         - comment
         - unknownFutureValue
       type: string
+    microsoft.graph.defaultSharingLink:
+      title: defaultSharingLink
+      type: object
+      properties:
+        defaultToExistingAccess:
+          type: boolean
+          description: Indicates whether the default link setting for this object is a direct URL rather than a sharing link.
+          nullable: true
+        role:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.sharingScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharePointSharingAbilities:
+      title: sharePointSharingAbilities
+      type: object
+      properties:
+        anyoneLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        directSharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.directSharingAbilities'
+        organizationLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        specificPeopleLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.security.behaviorDuringRetentionPeriod:
       title: behaviorDuringRetentionPeriod
       enum:
@@ -88472,6 +88733,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.transformationAttribute:
+      title: transformationAttribute
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        treatAsMultiValue:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationError:
       title: synchronizationError
       type: object
@@ -88643,6 +88914,60 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.sharingRole:
+      title: sharingRole
+      enum:
+        - none
+        - view
+        - edit
+        - manageList
+        - review
+        - restrictedView
+        - submitOnly
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sharingScope:
+      title: sharingScope
+      enum:
+        - anyone
+        - organization
+        - specificPeople
+        - anonymous
+        - users
+        - unknownFutureValue
+      type: string
+    microsoft.graph.linkScopeAbilities:
+      title: linkScopeAbilities
+      type: object
+      properties:
+        blockDownloadLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        editLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        manageListLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        readLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        reviewLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        submitOnlyLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+      additionalProperties:
+        type: object
+    microsoft.graph.directSharingAbilities:
+      title: directSharingAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addInternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requestGrantAccess:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookEmailIdentity:
       title: workbookEmailIdentity
       type: object
@@ -89100,6 +89425,44 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.linkRoleAbilities:
+      title: linkRoleAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        applyVariants:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkVariants'
+        createLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        deleteLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkAllowsExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkExpiration:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkExpirationStatus'
+        retrieveLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        updateLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingOperationStatus:
+      title: sharingOperationStatus
+      type: object
+      properties:
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
@@ -89381,6 +89744,41 @@ components:
         - Extensions
         - BaseObjectName
       type: string
+    microsoft.graph.sharingLinkVariants:
+      title: sharingLinkVariants
+      type: object
+      properties:
+        addressBarLinkPermission:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        allowEmbed:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        passwordProtected:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requiresAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLinkExpirationStatus:
+      title: sharingLinkExpirationStatus
+      type: object
+      properties:
+        defaultExpirationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Default link expiration in days. Returns -1 if there is no required expiration time.
+          format: int32
+          nullable: true
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookChartAxisFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

@@ -275,7 +275,11 @@ paths:
     delete:
       tags:
         - applications.appManagementPolicy
-      summary: Delete ref of navigation property appManagementPolicies for applications
+      summary: Remove appliesTo
+      description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
       operationId: application.appManagementPolicy_DeleteAppManagementPolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -371,7 +375,11 @@ paths:
     post:
       tags:
         - applications.appManagementPolicy
-      summary: Create new navigation property ref to appManagementPolicies for applications
+      summary: Assign appliesTo
+      description: Assign an appManagementPolicy policy object to an application or service principal object. The application or service principal adopts this policy over the tenant-wide tenantAppManagementPolicy setting. Only one policy object can be assigned to an application or service principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/appmanagementpolicy-post-appliesto?view=graph-rest-1.0
       operationId: application_CreateAppManagementPolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -393,7 +401,11 @@ paths:
     delete:
       tags:
         - applications.appManagementPolicy
-      summary: Delete ref of navigation property appManagementPolicies for applications
+      summary: Remove appliesTo
+      description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
       operationId: application_DeleteAppManagementPolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -474,8 +486,11 @@ paths:
     get:
       tags:
         - applications.extensionProperty
-      summary: Get extensionProperties from applications
-      description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
+      summary: List extensionProperties (directory extensions)
+      description: 'Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
       operationId: application_ListExtensionProperty
       parameters:
         - name: application-id
@@ -533,7 +548,11 @@ paths:
     post:
       tags:
         - applications.extensionProperty
-      summary: Create new navigation property to extensionProperties for applications
+      summary: Create extensionProperty (directory extension)
+      description: 'Create a new directory extension definition, represented by an extensionProperty object.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
       operationId: application_CreateExtensionProperty
       parameters:
         - name: application-id
@@ -565,8 +584,11 @@ paths:
     get:
       tags:
         - applications.extensionProperty
-      summary: Get extensionProperties from applications
-      description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
+      summary: Get extensionProperty (directory extension)
+      description: Read a directory extension definition represented by an extensionProperty object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
       operationId: application_GetExtensionProperty
       parameters:
         - name: application-id
@@ -657,7 +679,11 @@ paths:
     delete:
       tags:
         - applications.extensionProperty
-      summary: Delete navigation property extensionProperties for applications
+      summary: Delete extensionProperty (directory extension)
+      description: Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
       operationId: application_DeleteExtensionProperty
       parameters:
         - name: application-id
@@ -714,8 +740,11 @@ paths:
     get:
       tags:
         - applications.federatedIdentityCredential
-      summary: Get federatedIdentityCredentials from applications
-      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
+      summary: List federatedIdentityCredentials
+      description: Get a list of the federatedIdentityCredential objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0
       operationId: application_ListFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -773,7 +802,11 @@ paths:
     post:
       tags:
         - applications.federatedIdentityCredential
-      summary: Create new navigation property to federatedIdentityCredentials for applications
+      summary: Create federatedIdentityCredential
+      description: 'Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0
       operationId: application_CreateFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -805,8 +838,11 @@ paths:
     get:
       tags:
         - applications.federatedIdentityCredential
-      summary: Get federatedIdentityCredentials from applications
-      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
+      summary: Get federatedIdentityCredential
+      description: Read the properties and relationships of a federatedIdentityCredential object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
       operationId: application_GetFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -858,7 +894,11 @@ paths:
     patch:
       tags:
         - applications.federatedIdentityCredential
-      summary: Update the navigation property federatedIdentityCredentials in applications
+      summary: Upsert federatedIdentityCredential
+      description: 'Create a new federatedIdentityCredential object for an application if it does exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-1.0
       operationId: application_UpdateFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -897,7 +937,11 @@ paths:
     delete:
       tags:
         - applications.federatedIdentityCredential
-      summary: Delete navigation property federatedIdentityCredentials for applications
+      summary: Delete federatedIdentityCredential
+      description: Delete a federatedIdentityCredential object from an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
       operationId: application_DeleteFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -932,8 +976,11 @@ paths:
     get:
       tags:
         - applications.federatedIdentityCredential
-      summary: Get federatedIdentityCredentials from applications
-      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
+      summary: Get federatedIdentityCredential
+      description: Read the properties and relationships of a federatedIdentityCredential object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
       operationId: application.federatedIdentityCredential_GetGraphBPreName
       parameters:
         - name: application-id
@@ -984,7 +1031,11 @@ paths:
     patch:
       tags:
         - applications.federatedIdentityCredential
-      summary: Update the navigation property federatedIdentityCredentials in applications
+      summary: Upsert federatedIdentityCredential
+      description: 'Create a new federatedIdentityCredential object for an application if it does exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-1.0
       operationId: application.federatedIdentityCredential_UpdateGraphBPreName
       parameters:
         - name: application-id
@@ -1022,7 +1073,11 @@ paths:
     delete:
       tags:
         - applications.federatedIdentityCredential
-      summary: Delete navigation property federatedIdentityCredentials for applications
+      summary: Delete federatedIdentityCredential
+      description: Delete a federatedIdentityCredential object from an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
       operationId: application.federatedIdentityCredential_DeleteGraphBPreName
       parameters:
         - name: application-id
@@ -1234,7 +1289,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - applications.application
@@ -1263,7 +1317,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applications.application
+      summary: Delete logo for application in applications
+      description: The main logo for the application. Not nullable.
+      operationId: application_DeleteLogo
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/microsoft.graph.addKey':
     post:
       tags:
@@ -1745,8 +1824,11 @@ paths:
     get:
       tags:
         - applications.directoryObject
-      summary: Get owners from applications
-      description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
+      summary: List owners
+      description: Retrieve a list of owners for an application that are directoryObject objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
       operationId: application_ListOwner
       parameters:
         - name: application-id
@@ -1815,7 +1897,11 @@ paths:
     delete:
       tags:
         - applications.directoryObject
-      summary: Delete ref of navigation property owners for applications
+      summary: Remove application owner
+      description: 'Remove an owner from an application. As a recommended best practice, apps should have at least two owners.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
       operationId: application.owner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: application-id
@@ -2130,8 +2216,11 @@ paths:
     get:
       tags:
         - applications.directoryObject
-      summary: Get ref of owners from applications
-      description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
+      summary: List owners
+      description: Retrieve a list of owners for an application that are directoryObject objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
       operationId: application_ListOwnerGraphBPreRef
       parameters:
         - name: application-id
@@ -2179,7 +2268,11 @@ paths:
     post:
       tags:
         - applications.directoryObject
-      summary: Create new navigation property ref to owners for applications
+      summary: Add owner
+      description: Add an owner to an application by posting to the owners collection.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0
       operationId: application_CreateOwnerGraphBPreRef
       parameters:
         - name: application-id
@@ -2201,7 +2294,11 @@ paths:
     delete:
       tags:
         - applications.directoryObject
-      summary: Delete ref of navigation property owners for applications
+      summary: Remove application owner
+      description: 'Remove an owner from an application. As a recommended best practice, apps should have at least two owners.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
       operationId: application_DeleteOwnerGraphBPreRef
       parameters:
         - name: application-id
@@ -3085,6 +3182,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get media content for the navigation property bulkUpload from applications
+      description: The bulk upload operation for the job.
       operationId: application.synchronization.job_GetBulkUploadContent
       parameters:
         - name: application-id
@@ -3113,11 +3211,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - applications.synchronization
       summary: Update media content for the navigation property bulkUpload in applications
+      description: The bulk upload operation for the job.
       operationId: application.synchronization.job_SetBulkUploadContent
       parameters:
         - name: application-id
@@ -3149,7 +3247,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applications.synchronization
+      summary: Delete media content for the navigation property bulkUpload in applications
+      description: The bulk upload operation for the job.
+      operationId: application.synchronization.job_DeleteBulkUploadContent
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
       tags:
@@ -4376,7 +4507,11 @@ paths:
     patch:
       tags:
         - applications.synchronization
-      summary: Update the navigation property templates in applications
+      summary: Update synchronizationTemplate
+      description: Update (override) the synchronization template associated with a given application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
       operationId: application.synchronization_UpdateTemplate
       parameters:
         - name: application-id
@@ -5158,7 +5293,11 @@ paths:
     get:
       tags:
         - applications.tokenIssuancePolicy
-      summary: Get tokenIssuancePolicies from applications
+      summary: List assigned tokenIssuancePolicies
+      description: List the tokenIssuancePolicy objects that are assigned to an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_ListTokenIssuancePolicy
       parameters:
         - name: application-id
@@ -5217,7 +5356,11 @@ paths:
     delete:
       tags:
         - applications.tokenIssuancePolicy
-      summary: Delete ref of navigation property tokenIssuancePolicies for applications
+      summary: Remove tokenIssuancePolicy
+      description: Remove a tokenIssuancePolicy from an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application.tokenIssuancePolicy_DeleteTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5274,7 +5417,11 @@ paths:
     get:
       tags:
         - applications.tokenIssuancePolicy
-      summary: Get ref of tokenIssuancePolicies from applications
+      summary: List assigned tokenIssuancePolicies
+      description: List the tokenIssuancePolicy objects that are assigned to an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_ListTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5312,7 +5459,11 @@ paths:
     post:
       tags:
         - applications.tokenIssuancePolicy
-      summary: Create new navigation property ref to tokenIssuancePolicies for applications
+      summary: Assign tokenIssuancePolicy
+      description: Assign a tokenIssuancePolicy to an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_CreateTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5334,7 +5485,11 @@ paths:
     delete:
       tags:
         - applications.tokenIssuancePolicy
-      summary: Delete ref of navigation property tokenIssuancePolicies for applications
+      summary: Remove tokenIssuancePolicy
+      description: Remove a tokenIssuancePolicy from an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_DeleteTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5369,7 +5524,11 @@ paths:
     get:
       tags:
         - applications.tokenLifetimePolicy
-      summary: Get tokenLifetimePolicies from applications
+      summary: List assigned tokenLifetimePolicies
+      description: List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_ListTokenLifetimePolicy
       parameters:
         - name: application-id
@@ -5428,7 +5587,11 @@ paths:
     delete:
       tags:
         - applications.tokenLifetimePolicy
-      summary: Delete ref of navigation property tokenLifetimePolicies for applications
+      summary: Remove tokenLifetimePolicy
+      description: Remove a tokenLifetimePolicy from an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application.tokenLifetimePolicy_DeleteTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5485,7 +5648,11 @@ paths:
     get:
       tags:
         - applications.tokenLifetimePolicy
-      summary: Get ref of tokenLifetimePolicies from applications
+      summary: List assigned tokenLifetimePolicies
+      description: List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_ListTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5523,7 +5690,11 @@ paths:
     post:
       tags:
         - applications.tokenLifetimePolicy
-      summary: Create new navigation property ref to tokenLifetimePolicies for applications
+      summary: Assign tokenLifetimePolicy
+      description: Assign a tokenLifetimePolicy to an application. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_CreateTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5545,7 +5716,11 @@ paths:
     delete:
       tags:
         - applications.tokenLifetimePolicy
-      summary: Delete ref of navigation property tokenLifetimePolicies for applications
+      summary: Remove tokenLifetimePolicy
+      description: Remove a tokenLifetimePolicy from an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_DeleteTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -6206,8 +6381,11 @@ paths:
     get:
       tags:
         - groups.appRoleAssignment
-      summary: Get appRoleAssignments from groups
-      description: Represents the app roles a group has been granted for an application. Supports $expand.
+      summary: List appRoleAssignments granted to a group
+      description: Retrieve the list of appRoleAssignment that have been granted to a group.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0
       operationId: group_ListAppRoleAssignment
       parameters:
         - name: group-id
@@ -6275,7 +6453,11 @@ paths:
     post:
       tags:
         - groups.appRoleAssignment
-      summary: Create new navigation property to appRoleAssignments for groups
+      summary: Grant an appRoleAssignment to a group
+      description: 'Use this API to assign an app role to a security group. All direct members of the group will be considered assigned. Security groups with dynamic memberships are supported. To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0
       operationId: group_CreateAppRoleAssignment
       parameters:
         - name: group-id
@@ -6409,7 +6591,11 @@ paths:
     delete:
       tags:
         - groups.appRoleAssignment
-      summary: Delete navigation property appRoleAssignments for groups
+      summary: Delete appRoleAssignment
+      description: Deletes an appRoleAssignment that a group has been granted.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-1.0
       operationId: group_DeleteAppRoleAssignment
       parameters:
         - name: group-id
@@ -6817,8 +7003,11 @@ paths:
     get:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Get appRoleAssignedTo from servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
+      summary: Get appRoleAssignment
+      description: Read the properties and relationships of an appRoleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0
       operationId: servicePrincipal_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -6876,7 +7065,11 @@ paths:
     post:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Create new navigation property to appRoleAssignedTo for servicePrincipals
+      summary: Grant an appRoleAssignment for a service principal
+      description: 'Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0
       operationId: servicePrincipal_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -6908,8 +7101,11 @@ paths:
     get:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Get appRoleAssignedTo from servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
+      summary: Get appRoleAssignment
+      description: Read the properties and relationships of an appRoleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0
       operationId: servicePrincipal_GetAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -7000,7 +7196,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Delete navigation property appRoleAssignedTo for servicePrincipals
+      summary: Delete appRoleAssignedTo
+      description: 'Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -7057,8 +7257,11 @@ paths:
     get:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Get appRoleAssignments from servicePrincipals
-      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
+      summary: Get appRoleAssignment
+      description: Read the properties and relationships of an appRoleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0
       operationId: servicePrincipal_ListAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
@@ -7126,7 +7329,11 @@ paths:
     post:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Create new navigation property to appRoleAssignments for servicePrincipals
+      summary: Grant an appRoleAssignment to a service principal
+      description: 'Assign an app role to a client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment to a client service principal, you need three identifiers:'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0
       operationId: servicePrincipal_CreateAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
@@ -7158,8 +7365,11 @@ paths:
     get:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Get appRoleAssignments from servicePrincipals
-      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
+      summary: Get appRoleAssignment
+      description: Read the properties and relationships of an appRoleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0
       operationId: servicePrincipal_GetAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
@@ -7178,16 +7388,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: appRoleAssignment
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -7260,7 +7460,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Delete navigation property appRoleAssignments for servicePrincipals
+      summary: Delete appRoleAssignment
+      description: Deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
@@ -7327,8 +7531,11 @@ paths:
     get:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: Get claimsMappingPolicies from servicePrincipals
-      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
+      summary: List assigned claimsMappingPolicy
+      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_ListClaimsMappingPolicy
       parameters:
         - name: servicePrincipal-id
@@ -7387,7 +7594,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+      summary: Remove claimsMappingPolicy
+      description: Remove a claimsMappingPolicy from a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal.claimsMappingPolicy_DeleteClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -7444,8 +7655,11 @@ paths:
     get:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: Get ref of claimsMappingPolicies from servicePrincipals
-      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
+      summary: List assigned claimsMappingPolicy
+      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_ListClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -7483,7 +7697,11 @@ paths:
     post:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
+      summary: Assign claimsMappingPolicy
+      description: Assign a claimsMappingPolicy to a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_CreateClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -7505,7 +7723,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+      summary: Remove claimsMappingPolicy
+      description: Remove a claimsMappingPolicy from a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -7808,7 +8030,11 @@ paths:
     get:
       tags:
         - servicePrincipals.delegatedPermissionClassification
-      summary: Get delegatedPermissionClassifications from servicePrincipals
+      summary: List delegatedPermissionClassifications collection of servicePrincipal
+      description: Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0
       operationId: servicePrincipal_ListDelegatedPermissionClassification
       parameters:
         - name: servicePrincipal-id
@@ -7866,7 +8092,11 @@ paths:
     post:
       tags:
         - servicePrincipals.delegatedPermissionClassification
-      summary: Create new navigation property to delegatedPermissionClassifications for servicePrincipals
+      summary: Create delegatedPermissionClassification
+      description: Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0
       operationId: servicePrincipal_CreateDelegatedPermissionClassification
       parameters:
         - name: servicePrincipal-id
@@ -7989,7 +8219,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.delegatedPermissionClassification
-      summary: Delete navigation property delegatedPermissionClassifications for servicePrincipals
+      summary: Delete delegatedPermissionClassification
+      description: Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteDelegatedPermissionClassification
       parameters:
         - name: servicePrincipal-id
@@ -8648,8 +8882,11 @@ paths:
     get:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Get homeRealmDiscoveryPolicies from servicePrincipals
-      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
+      summary: List assigned homeRealmDiscoveryPolicy
+      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_ListHomeRealmDiscoveryPolicy
       parameters:
         - name: servicePrincipal-id
@@ -8708,7 +8945,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
+      summary: Remove homeRealmDiscoveryPolicy
+      description: Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal.homeRealmDiscoveryPolicy_DeleteHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -8765,8 +9006,11 @@ paths:
     get:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
-      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
+      summary: List assigned homeRealmDiscoveryPolicy
+      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_ListHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -8804,7 +9048,11 @@ paths:
     post:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
+      summary: Assign homeRealmDiscoveryPolicy
+      description: Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_CreateHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -8826,7 +9074,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
+      summary: Remove homeRealmDiscoveryPolicy
+      description: Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -8861,8 +9113,11 @@ paths:
     get:
       tags:
         - servicePrincipals.directoryObject
-      summary: Get memberOf from servicePrincipals
-      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
+      summary: List servicePrincipal memberOf
+      description: Get the groups and directory roles that this servicePrincipal is a direct member of. This operation is not transitive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0
       operationId: servicePrincipal_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -9975,8 +10230,11 @@ paths:
     get:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
-      summary: Get oauth2PermissionGrants from servicePrincipals
-      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
+      summary: List oauth2PermissionGrants granted to a service principal
+      description: 'Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0
       operationId: servicePrincipal_ListOauth2PermissionGrant
       parameters:
         - name: servicePrincipal-id
@@ -10907,8 +11165,11 @@ paths:
     get:
       tags:
         - servicePrincipals.directoryObject
-      summary: Get owners from servicePrincipals
-      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
+      summary: 'servicePrincipals: List owners'
+      description: Retrieve a list of owners of the servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
       operationId: servicePrincipal_ListOwner
       parameters:
         - name: servicePrincipal-id
@@ -10977,7 +11238,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.directoryObject
-      summary: Delete ref of navigation property owners for servicePrincipals
+      summary: Remove service principal owner
+      description: 'Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0
       operationId: servicePrincipal.owner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -11292,8 +11557,11 @@ paths:
     get:
       tags:
         - servicePrincipals.directoryObject
-      summary: Get ref of owners from servicePrincipals
-      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
+      summary: 'servicePrincipals: List owners'
+      description: Retrieve a list of owners of the servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
       operationId: servicePrincipal_ListOwnerGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -11341,7 +11609,11 @@ paths:
     post:
       tags:
         - servicePrincipals.directoryObject
-      summary: Create new navigation property ref to owners for servicePrincipals
+      summary: 'servicePrincipal: Add owner'
+      description: 'Use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0
       operationId: servicePrincipal_CreateOwnerGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -11363,7 +11635,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.directoryObject
-      summary: Delete ref of navigation property owners for servicePrincipals
+      summary: Remove service principal owner
+      description: 'Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteOwnerGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -11798,8 +12074,11 @@ paths:
     get:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
-      summary: Get remoteDesktopSecurityConfiguration from servicePrincipals
-      description: The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
+      summary: Get remoteDesktopSecurityConfiguration
+      description: Read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal. Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices. Additionally you can view any targetDeviceGroups that have been configured for SSO.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-get?view=graph-rest-1.0
       operationId: servicePrincipal_GetRemoteDesktopSecurityConfiguration
       parameters:
         - name: servicePrincipal-id
@@ -11843,7 +12122,11 @@ paths:
     patch:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
-      summary: Update the navigation property remoteDesktopSecurityConfiguration in servicePrincipals
+      summary: Update remoteDesktopSecurityConfiguration
+      description: Update the properties of a remoteDesktopSecurityConfiguration object on the servicePrincipal. Use this configuration to enable or disable the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-update?view=graph-rest-1.0
       operationId: servicePrincipal_UpdateRemoteDesktopSecurityConfiguration
       parameters:
         - name: servicePrincipal-id
@@ -11874,7 +12157,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
-      summary: Delete navigation property remoteDesktopSecurityConfiguration for servicePrincipals
+      summary: Delete remoteDesktopSecurityConfiguration
+      description: 'Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal. Removing remoteDesktopSecurityConfiguration object on the servicePrincipal disables the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices, and removes any target device groups that you configured for SSO.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-remotedesktopsecurityconfiguration?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteRemoteDesktopSecurityConfiguration
       parameters:
         - name: servicePrincipal-id
@@ -11901,8 +12188,11 @@ paths:
     get:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
-      summary: Get targetDeviceGroups from servicePrincipals
-      description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+      summary: List targetDeviceGroups
+      description: Get a list of the targetDeviceGroup objects and their properties on the remoteDesktopSecurityConfiguration resource on the servicePrincipal. Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that belongs to the targetDeviceGroup will get SSO.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-targetdevicegroups?view=graph-rest-1.0
       operationId: servicePrincipal.remoteDesktopSecurityConfiguration_ListTargetDeviceGroup
       parameters:
         - name: servicePrincipal-id
@@ -11960,7 +12250,11 @@ paths:
     post:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
-      summary: Create new navigation property to targetDeviceGroups for servicePrincipals
+      summary: Create targetDeviceGroup
+      description: Create a new targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-targetdevicegroups?view=graph-rest-1.0
       operationId: servicePrincipal.remoteDesktopSecurityConfiguration_CreateTargetDeviceGroup
       parameters:
         - name: servicePrincipal-id
@@ -11992,8 +12286,11 @@ paths:
     get:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
-      summary: Get targetDeviceGroups from servicePrincipals
-      description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+      summary: Get targetDeviceGroup
+      description: Read the properties and relationships of a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/targetdevicegroup-get?view=graph-rest-1.0
       operationId: servicePrincipal.remoteDesktopSecurityConfiguration_GetTargetDeviceGroup
       parameters:
         - name: servicePrincipal-id
@@ -12045,7 +12342,11 @@ paths:
     patch:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
-      summary: Update the navigation property targetDeviceGroups in servicePrincipals
+      summary: Update targetDeviceGroup
+      description: Update the properties of a targetDeviceGroup object for remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/targetdevicegroup-update?view=graph-rest-1.0
       operationId: servicePrincipal.remoteDesktopSecurityConfiguration_UpdateTargetDeviceGroup
       parameters:
         - name: servicePrincipal-id
@@ -12084,7 +12385,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
-      summary: Delete navigation property targetDeviceGroups for servicePrincipals
+      summary: Delete targetDeviceGroup
+      description: Delete a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that's in the removed targetDeviceGroup doesn't get SSO prompts.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-delete-targetdevicegroups?view=graph-rest-1.0
       operationId: servicePrincipal.remoteDesktopSecurityConfiguration_DeleteTargetDeviceGroup
       parameters:
         - name: servicePrincipal-id
@@ -12244,8 +12549,11 @@ paths:
     get:
       tags:
         - servicePrincipals.synchronization
-      summary: Get jobs from servicePrincipals
-      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
+      summary: List synchronization jobs
+      description: List existing jobs for a given application instance (service principal).
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_ListJob
       parameters:
         - name: servicePrincipal-id
@@ -12303,7 +12611,11 @@ paths:
     post:
       tags:
         - servicePrincipals.synchronization
-      summary: Create new navigation property to jobs for servicePrincipals
+      summary: Create synchronizationJob
+      description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_CreateJob
       parameters:
         - name: servicePrincipal-id
@@ -12335,8 +12647,11 @@ paths:
     get:
       tags:
         - servicePrincipals.synchronization
-      summary: Get jobs from servicePrincipals
-      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
+      summary: Get synchronizationJob
+      description: Retrieve the existing synchronization job and its properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_GetJob
       parameters:
         - name: servicePrincipal-id
@@ -12427,7 +12742,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.synchronization
-      summary: Delete navigation property jobs for servicePrincipals
+      summary: Delete synchronizationJob
+      description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_DeleteJob
       parameters:
         - name: servicePrincipal-id
@@ -12590,6 +12909,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get media content for the navigation property bulkUpload from servicePrincipals
+      description: The bulk upload operation for the job.
       operationId: servicePrincipal.synchronization.job_GetBulkUploadContent
       parameters:
         - name: servicePrincipal-id
@@ -12618,11 +12938,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - servicePrincipals.synchronization
       summary: Update media content for the navigation property bulkUpload in servicePrincipals
+      description: The bulk upload operation for the job.
       operationId: servicePrincipal.synchronization.job_SetBulkUploadContent
       parameters:
         - name: servicePrincipal-id
@@ -12654,7 +12974,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete media content for the navigation property bulkUpload in servicePrincipals
+      description: The bulk upload operation for the job.
+      operationId: servicePrincipal.synchronization.job_DeleteBulkUploadContent
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
       tags:
@@ -12878,8 +13231,11 @@ paths:
     get:
       tags:
         - servicePrincipals.synchronization
-      summary: Get schema from servicePrincipals
-      description: The synchronization schema configured for the job.
+      summary: Get synchronizationSchema
+      description: Retrieve the schema for a given synchronization job or template.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job_GetSchema
       parameters:
         - name: servicePrincipal-id
@@ -12931,7 +13287,11 @@ paths:
     patch:
       tags:
         - servicePrincipals.synchronization
-      summary: Update the navigation property schema in servicePrincipals
+      summary: Update synchronizationSchema
+      description: 'Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job_UpdateSchema
       parameters:
         - name: servicePrincipal-id
@@ -13670,7 +14030,11 @@ paths:
     put:
       tags:
         - servicePrincipals.synchronization
-      summary: Update property secrets value.
+      summary: Add synchronization secrets
+      description: Provide credentials for establishing connectivity with the target system.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_SetSecret
       parameters:
         - name: servicePrincipal-id
@@ -13737,8 +14101,11 @@ paths:
     get:
       tags:
         - servicePrincipals.synchronization
-      summary: Get templates from servicePrincipals
-      description: Preconfigured synchronization settings for a particular application.
+      summary: List existing synchronization templates
+      description: List the synchronization templates associated with a given application or service principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_ListTemplate
       parameters:
         - name: servicePrincipal-id
@@ -14799,8 +15166,11 @@ paths:
     get:
       tags:
         - servicePrincipals.tokenLifetimePolicy
-      summary: Get tokenLifetimePolicies from servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal.
+      summary: List assigned tokenLifetimePolicies
+      description: List the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: servicePrincipal_ListTokenLifetimePolicy
       parameters:
         - name: servicePrincipal-id
@@ -14935,7 +15305,11 @@ paths:
     get:
       tags:
         - servicePrincipals.directoryObject
-      summary: Get transitiveMemberOf from servicePrincipals
+      summary: List servicePrincipal transitive memberOf
+      description: Get the groups and directory roles that this servicePrincipal is a member of. This operation is transitive and will include all groups that this service principal is a nested member of.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
       operationId: servicePrincipal_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -15937,8 +16311,11 @@ paths:
     get:
       tags:
         - users.appRoleAssignment
-      summary: Get appRoleAssignments from users
-      description: Represents the app roles a user has been granted for an application. Supports $expand.
+      summary: List appRoleAssignments granted to a user
+      description: Retrieve the list of appRoleAssignments that are currently granted to a user. This operation also returns app role assignments granted to groups that the user is a direct member of.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0
       operationId: user_ListAppRoleAssignment
       parameters:
         - name: user-id
@@ -16006,7 +16383,11 @@ paths:
     post:
       tags:
         - users.appRoleAssignment
-      summary: Create new navigation property to appRoleAssignments for users
+      summary: Grant an appRoleAssignment to a user
+      description: 'Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0
       operationId: user_CreateAppRoleAssignment
       parameters:
         - name: user-id
@@ -16140,7 +16521,11 @@ paths:
     delete:
       tags:
         - users.appRoleAssignment
-      summary: Delete navigation property appRoleAssignments for users
+      summary: Delete appRoleAssignment
+      description: Delete an appRoleAssignment that has been granted to a user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0
       operationId: user_DeleteAppRoleAssignment
       parameters:
         - name: user-id

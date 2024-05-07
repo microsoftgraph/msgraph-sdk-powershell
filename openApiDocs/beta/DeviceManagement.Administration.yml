@@ -11254,8 +11254,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get auditEvents from deviceManagement
-      description: Cloud PC audit event.
+      summary: List auditEvents
+      description: List all the cloudPcAuditEvent objects for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11328,8 +11331,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get auditEvents from deviceManagement
-      description: Cloud PC audit event.
+      summary: Get cloudPcAuditEvent
+      description: Read the properties and relationships of a cloudPcAuditEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcauditevent-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetAuditEvent
       parameters:
         - name: cloudPcAuditEvent-id
@@ -11445,8 +11451,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get bulkActions from deviceManagement
-      description: Bulk actions applied to a Cloud PC.
+      summary: List bulkActions
+      description: Get a list of the cloudPcBulkAction objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-bulkactions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListBulkAction
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11496,7 +11505,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to bulkActions for deviceManagement
+      summary: Create cloudPcBulkAction
+      description: Create a new cloudPcBulkAction object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-bulkactions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateBulkAction
       requestBody:
         description: New navigation property
@@ -11519,8 +11532,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get bulkActions from deviceManagement
-      description: Bulk actions applied to a Cloud PC.
+      summary: Get cloudPcBulkAction
+      description: Read the properties and relationships of a cloudPcBulkAction object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcbulkaction-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetBulkAction
       parameters:
         - name: cloudPcBulkAction-id
@@ -11636,8 +11652,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPCs from deviceManagement
-      description: Cloud managed virtual desktops.
+      summary: List cloudPCs
+      description: List the cloudPC devices in a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListCloudPC
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11710,8 +11729,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPCs from deviceManagement
-      description: Cloud managed virtual desktops.
+      summary: Get cloudPC
+      description: Read the properties and relationships of a specific cloudPC object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetCloudPC
       parameters:
         - name: cloudPC-id
@@ -11827,8 +11849,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get crossCloudGovernmentOrganizationMapping from deviceManagement
-      description: Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+      summary: Get cloudPcCrossCloudGovernmentOrganizationMapping
+      description: Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetCrossCloudGovernmentOrganizationMapping
       parameters:
         - name: $select
@@ -11905,8 +11930,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get deviceImages from deviceManagement
-      description: The image resource on Cloud PC.
+      summary: List deviceImages
+      description: List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListDeviceImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11956,7 +11984,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to deviceImages for deviceManagement
+      summary: Create cloudPcDeviceImage
+      description: Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateDeviceImage
       requestBody:
         description: New navigation property
@@ -11979,8 +12011,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get deviceImages from deviceManagement
-      description: The image resource on Cloud PC.
+      summary: Get cloudPcDeviceImage
+      description: Read the properties and relationships of a specific cloudPcDeviceImage object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetDeviceImage
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12055,7 +12090,11 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete navigation property deviceImages for deviceManagement
+      summary: Delete cloudPcDeviceImage
+      description: Delete a cloudPcDeviceImage object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_DeleteDeviceImage
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12096,8 +12135,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get externalPartnerSettings from deviceManagement
-      description: The external partner settings on a Cloud PC.
+      summary: List cloudPcExternalPartnerSettings
+      description: Get a list of the cloudPcExternalPartnerSetting objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12147,7 +12189,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to externalPartnerSettings for deviceManagement
+      summary: Create cloudPcExternalPartnerSetting
+      description: Create a new cloudPcExternalPartnerSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateExternalPartnerSetting
       requestBody:
         description: New navigation property
@@ -12170,8 +12216,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get externalPartnerSettings from deviceManagement
-      description: The external partner settings on a Cloud PC.
+      summary: Get cloudPcExternalPartnerSetting
+      description: Read the properties and relationships of a cloudPcExternalPartnerSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcexternalpartnersetting-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetExternalPartnerSetting
       parameters:
         - name: cloudPcExternalPartnerSetting-id
@@ -12215,7 +12264,11 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property externalPartnerSettings in deviceManagement
+      summary: Update cloudPcExternalPartnerSetting
+      description: Update the properties of a cloudPcExternalPartnerSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcexternalpartnersetting-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateExternalPartnerSetting
       parameters:
         - name: cloudPcExternalPartnerSetting-id
@@ -12287,8 +12340,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get frontLineServicePlans from deviceManagement
-      description: Front-line service plans for a Cloud PC.
+      summary: List cloudPcFrontLineServicePlans
+      description: Get a list of the cloudPcFrontLineServicePlan objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-frontlineserviceplans?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListFrontLineServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12361,8 +12417,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get frontLineServicePlans from deviceManagement
-      description: Front-line service plans for a Cloud PC.
+      summary: Get cloudPcFrontLineServicePlan
+      description: Get the properties and relationships of a cloudPcFrontLineServicePlan object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcfrontlineserviceplan-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetFrontLineServicePlan
       parameters:
         - name: cloudPcFrontLineServicePlan-id
@@ -12478,8 +12537,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get galleryImages from deviceManagement
-      description: The gallery image resource on Cloud PC.
+      summary: List galleryImages
+      description: List the properties and relationships of the cloudPcGalleryImage objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListGalleryImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12552,8 +12614,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get galleryImages from deviceManagement
-      description: The gallery image resource on Cloud PC.
+      summary: Get cloudPcGalleryImage
+      description: Read the properties and relationships of a specific cloudPcGalleryImage object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetGalleryImage
       parameters:
         - name: cloudPcGalleryImage-id
@@ -12669,8 +12734,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get onPremisesConnections from deviceManagement
-      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+      summary: List onPremisesConnections
+      description: Get a list of the cloudPcOnPremisesConnection objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12720,7 +12788,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to onPremisesConnections for deviceManagement
+      summary: Create cloudPcOnPremisesConnection
+      description: Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateOnPremisesConnection
       requestBody:
         description: New navigation property
@@ -12743,8 +12815,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get onPremisesConnections from deviceManagement
-      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+      summary: Get cloudPcOnPremisesConnection
+      description: Read the properties and relationships of the cloudPcOnPremisesConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12788,7 +12863,11 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property onPremisesConnections in deviceManagement
+      summary: Update cloudPcOnPremisesConnection
+      description: Update the properties of a cloudPcOnPremisesConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12819,7 +12898,11 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete navigation property onPremisesConnections for deviceManagement
+      summary: Delete cloudPcOnPremisesConnection
+      description: 'Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You can''t delete an Azure network connection when it''s in use, as indicated by the inUse property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_DeleteOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12860,8 +12943,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get organizationSettings from deviceManagement
-      description: The Cloud PC organization settings for a tenant.
+      summary: Get cloudPcOrganizationSettings
+      description: Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetOrganizationSetting
       parameters:
         - name: $select
@@ -12897,7 +12983,11 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property organizationSettings in deviceManagement
+      summary: Update cloudPcOrganizationSettings
+      description: Update the properties of the cloudPcOrganizationSettings object in a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateOrganizationSetting
       requestBody:
         description: New navigation property values
@@ -12938,8 +13028,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get provisioningPolicies from deviceManagement
-      description: Cloud PC provisioning policy.
+      summary: List provisioningPolicies
+      description: List properties and relationships of the cloudPcProvisioningPolicy objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12995,7 +13088,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to provisioningPolicies for deviceManagement
+      summary: Create cloudPcProvisioningPolicy
+      description: Create a new cloudPcProvisioningPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateProvisioningPolicy
       requestBody:
         description: New navigation property
@@ -13024,8 +13121,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get provisioningPolicies from deviceManagement
-      description: Cloud PC provisioning policy.
+      summary: Get cloudPcProvisioningPolicy
+      description: Read the properties and relationships of a cloudPcProvisioningPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13075,7 +13175,11 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property provisioningPolicies in deviceManagement
+      summary: Update cloudPcProvisioningPolicy
+      description: Update the properties of a cloudPcProvisioningPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13112,7 +13216,11 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete navigation property provisioningPolicies for deviceManagement
+      summary: Delete cloudPcProvisioningPolicy
+      description: Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_DeleteProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13941,8 +14049,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get exportJobs from deviceManagement
-      description: The export jobs created for downloading reports.
+      summary: Get cloudPcExportJob
+      description: Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
       operationId: deviceManagement.virtualEndpoint.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13992,7 +14100,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to exportJobs for deviceManagement
+      summary: Create cloudPcExportJob
+      description: 'Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property result is completed, the report has finished downloading to the location specified by the exportUrl property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_CreateExportJob
       requestBody:
         description: New navigation property
@@ -14015,8 +14127,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get exportJobs from deviceManagement
-      description: The export jobs created for downloading reports.
+      summary: Get cloudPcExportJob
+      description: Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcexportjob-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_GetExportJob
       parameters:
         - name: cloudPcExportJob-id
@@ -14132,8 +14247,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get servicePlans from deviceManagement
-      description: Cloud PC service plans.
+      summary: List servicePlans
+      description: 'List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14323,7 +14441,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get sharedUseServicePlans from deviceManagement
+      summary: List cloudPcSharedUseServicePlans (deprecated)
+      description: Get a list of the cloudPcSharedUseServicePlan objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListSharedUseServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14408,7 +14530,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get sharedUseServicePlans from deviceManagement
+      summary: Get cloudPcSharedUseServicePlan (deprecated)
+      description: Read the properties and relationships of a cloudPcSharedUseServicePlan object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcshareduseserviceplan-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetSharedUseServicePlan
       parameters:
         - name: cloudPcSharedUseServicePlan-id
@@ -14548,8 +14674,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get snapshots from deviceManagement
-      description: Cloud PC snapshots.
+      summary: List snapshots
+      description: Get a list of cloudPcSnapshot objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListSnapshot
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14622,8 +14751,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get snapshots from deviceManagement
-      description: Cloud PC snapshots.
+      summary: Get cloudPcSnapshot
+      description: Read the properties and relationships of a cloudPcSnapshot object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcsnapshot-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetSnapshot
       parameters:
         - name: cloudPcSnapshot-id
@@ -14739,8 +14871,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get supportedRegions from deviceManagement
-      description: Cloud PC supported regions.
+      summary: List supportedRegions
+      description: List the supported regions that are available for creating Cloud PC connections.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListSupportedRegion
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14930,8 +15065,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get userSettings from deviceManagement
-      description: Cloud PC user settings.
+      summary: List userSettings
+      description: Retrieve a list of cloudPcUserSetting objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListUserSetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14981,7 +15119,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to userSettings for deviceManagement
+      summary: Create cloudPcUserSetting
+      description: Create a new cloudPcUserSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateUserSetting
       requestBody:
         description: New navigation property
@@ -15004,8 +15146,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get userSettings from deviceManagement
-      description: Cloud PC user settings.
+      summary: Get cloudPcUserSetting
+      description: Read the properties and relationships of a cloudPcUserSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetUserSetting
       parameters:
         - name: cloudPcUserSetting-id
@@ -15049,7 +15194,11 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property userSettings in deviceManagement
+      summary: Update cloudPcUserSetting
+      description: Update the properties of a cloudPcUserSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateUserSetting
       parameters:
         - name: cloudPcUserSetting-id
@@ -15080,7 +15229,11 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete navigation property userSettings for deviceManagement
+      summary: Delete cloudPcUserSetting
+      description: Delete a cloudPcUserSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-delete?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_DeleteUserSetting
       parameters:
         - name: cloudPcUserSetting-id
@@ -17245,6 +17398,10 @@ components:
               type: string
               description: The Microsoft Entra device ID of the Cloud PC.
               nullable: true
+            allotmentDisplayName:
+              type: string
+              description: 'The allotment name divides tenant licenses into smaller batches or groups that helps restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.'
+              nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
@@ -17656,7 +17813,7 @@ components:
               description: Specifies a list ordered by priority on how Cloud PCs join Microsoft Entra ID (Azure AD). Supports $select.
             enableSingleSignOn:
               type: boolean
-              description: 'True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn''t support this feature. The default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
+              description: 'True if single sign-on can access the provisioned Cloud PC. False indicates that the provisioned Cloud PC doesn''t support this feature. The default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
               nullable: true
             gracePeriodInHours:
               maximum: 2147483647
@@ -20367,6 +20524,8 @@ components:
         - dedicated
         - shared
         - unknownFutureValue
+        - sharedByUser
+        - sharedByEntraGroup
       type: string
     microsoft.graph.cloudPcServicePlanType:
       title: cloudPcServicePlanType
@@ -21358,6 +21517,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
               x-ms-navigationProperty: true
+            claimsPolicy:
+              $ref: '#/components/schemas/microsoft.graph.customClaimsPolicy'
             createdObjects:
               type: array
               items:
@@ -24075,7 +24236,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -26621,6 +26782,27 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.customClaimsPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customClaimsPolicy
+          type: object
+          properties:
+            audienceOverride:
+              type: string
+              nullable: true
+            claims:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customClaimBase'
+            includeApplicationIdInIssuer:
+              type: boolean
+              nullable: true
+            includeBasicClaimSet:
+              type: boolean
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.delegatedPermissionClassification:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27428,6 +27610,8 @@ components:
           properties:
             consentedPermissionSet:
               $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+            scopeInfo:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopeInfo'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -28157,6 +28341,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.specialFolder'
             video:
               $ref: '#/components/schemas/microsoft.graph.video'
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.driveItemViewpoint'
             webDavUrl:
               type: string
               description: WebDAV compatible URL for the item.
@@ -28333,6 +28519,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -33508,6 +33696,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.customClaimBase:
+      title: customClaimBase
+      type: object
+      properties:
+        configurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimConfiguration'
+      additionalProperties:
+        type: object
     microsoft.graph.permissionClassificationType:
       title: permissionClassificationType
       enum:
@@ -33858,6 +34056,14 @@ components:
           description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppInstallationScopeInfo:
+      title: teamsAppInstallationScopeInfo
+      type: object
+      properties:
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -34072,11 +34278,15 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'Supported values are Unicode characters and custom. Some backward-compatible reaction types include like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -34870,6 +35080,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.driveItemViewpoint:
+      title: driveItemViewpoint
+      type: object
+      properties:
+        accessOperations:
+          $ref: '#/components/schemas/microsoft.graph.driveItemAccessOperationsViewpoint'
+        sharing:
+          $ref: '#/components/schemas/microsoft.graph.sharingViewpoint'
+      additionalProperties:
+        type: object
     microsoft.graph.itemRetentionLabel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -35062,6 +35282,14 @@ components:
         - completed
         - unknownFutureValue
       type: string
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.itemActivityStat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -39746,6 +39974,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
       additionalProperties:
         type: object
+    microsoft.graph.customClaimConfiguration:
+      title: customClaimConfiguration
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        condition:
+          $ref: '#/components/schemas/microsoft.graph.customClaimConditionBase'
+        transformations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimTransformation'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationSecret:
       title: synchronizationSecret
       enum:
@@ -39962,14 +40204,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.teamsAppDistributionMethod:
-      title: teamsAppDistributionMethod
-      enum:
-        - store
-        - organization
-        - sideloaded
-        - unknownFutureValue
-      type: string
     microsoft.graph.teamsAppInstallationScopes:
       title: teamsAppInstallationScopes
       enum:
@@ -39980,6 +40214,14 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -40375,6 +40617,50 @@ components:
         - other
         - unknownFutureValue
       type: string
+    microsoft.graph.driveItemAccessOperationsViewpoint:
+      title: driveItemAccessOperationsViewpoint
+      type: object
+      properties:
+        canComment:
+          type: boolean
+          description: Indicates whether the user can comment on this item.
+          nullable: true
+        canCreateFile:
+          type: boolean
+          description: Indicates whether the user can create files within this object. Returned only on folders.
+          nullable: true
+        canCreateFolder:
+          type: boolean
+          description: Indicates whether the user can create folders within this object. Returned only on folders.
+          nullable: true
+        canDelete:
+          type: boolean
+          description: Indicates whether the user can delete this item.
+          nullable: true
+        canDownload:
+          type: boolean
+          description: Indicates whether the user can download this item.
+          nullable: true
+        canRead:
+          type: boolean
+          description: Indicates whether the user can read this item.
+          nullable: true
+        canUpdate:
+          type: boolean
+          description: Indicates whether the user can update this item.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingViewpoint:
+      title: sharingViewpoint
+      type: object
+      properties:
+        defaultSharingLink:
+          $ref: '#/components/schemas/microsoft.graph.defaultSharingLink'
+        sharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.sharePointSharingAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.retentionLabelSettings:
       title: retentionLabelSettings
       type: object
@@ -40650,6 +40936,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemActionStat:
       title: itemActionStat
       type: object
@@ -43624,6 +43918,24 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.customClaimAttributeBase:
+      title: customClaimAttributeBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimConditionBase:
+      title: customClaimConditionBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimTransformation:
+      title: customClaimTransformation
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/microsoft.graph.transformationAttribute'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationScheduleState:
       title: synchronizationScheduleState
       enum:
@@ -43943,6 +44255,34 @@ components:
         - comment
         - unknownFutureValue
       type: string
+    microsoft.graph.defaultSharingLink:
+      title: defaultSharingLink
+      type: object
+      properties:
+        defaultToExistingAccess:
+          type: boolean
+          description: Indicates whether the default link setting for this object is a direct URL rather than a sharing link.
+          nullable: true
+        role:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.sharingScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharePointSharingAbilities:
+      title: sharePointSharingAbilities
+      type: object
+      properties:
+        anyoneLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        directSharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.directSharingAbilities'
+        organizationLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        specificPeopleLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.security.behaviorDuringRetentionPeriod:
       title: behaviorDuringRetentionPeriod
       enum:
@@ -44602,6 +44942,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.transformationAttribute:
+      title: transformationAttribute
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        treatAsMultiValue:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationError:
       title: synchronizationError
       type: object
@@ -44773,6 +45123,60 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.sharingRole:
+      title: sharingRole
+      enum:
+        - none
+        - view
+        - edit
+        - manageList
+        - review
+        - restrictedView
+        - submitOnly
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sharingScope:
+      title: sharingScope
+      enum:
+        - anyone
+        - organization
+        - specificPeople
+        - anonymous
+        - users
+        - unknownFutureValue
+      type: string
+    microsoft.graph.linkScopeAbilities:
+      title: linkScopeAbilities
+      type: object
+      properties:
+        blockDownloadLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        editLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        manageListLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        readLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        reviewLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        submitOnlyLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+      additionalProperties:
+        type: object
+    microsoft.graph.directSharingAbilities:
+      title: directSharingAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addInternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requestGrantAccess:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookEmailIdentity:
       title: workbookEmailIdentity
       type: object
@@ -45230,6 +45634,44 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.linkRoleAbilities:
+      title: linkRoleAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        applyVariants:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkVariants'
+        createLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        deleteLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkAllowsExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkExpiration:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkExpirationStatus'
+        retrieveLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        updateLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingOperationStatus:
+      title: sharingOperationStatus
+      type: object
+      properties:
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
@@ -45511,6 +45953,41 @@ components:
         - Extensions
         - BaseObjectName
       type: string
+    microsoft.graph.sharingLinkVariants:
+      title: sharingLinkVariants
+      type: object
+      properties:
+        addressBarLinkPermission:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        allowEmbed:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        passwordProtected:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requiresAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLinkExpirationStatus:
+      title: sharingLinkExpirationStatus
+      type: object
+      properties:
+        defaultExpirationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Default link expiration in days. Returns -1 if there is no required expiration time.
+          format: int32
+          nullable: true
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookChartAxisFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

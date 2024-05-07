@@ -1413,6 +1413,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getPortalNotifications
+      description: 'Get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.'
       operationId: deviceManagement.monitoring.alertRecord_getPortalNotification
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4092,6 +4093,10 @@ components:
               type: string
               description: The Microsoft Entra device ID of the Cloud PC.
               nullable: true
+            allotmentDisplayName:
+              type: string
+              description: 'The allotment name divides tenant licenses into smaller batches or groups that helps restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.'
+              nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
@@ -5404,6 +5409,8 @@ components:
         - dedicated
         - shared
         - unknownFutureValue
+        - sharedByUser
+        - sharedByEntraGroup
       type: string
     microsoft.graph.cloudPcServicePlanType:
       title: cloudPcServicePlanType

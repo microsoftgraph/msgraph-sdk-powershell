@@ -87,7 +87,11 @@ paths:
     get:
       tags:
         - admin.sharepoint
-      summary: Get settings from admin
+      summary: Get settings
+      description: Get the tenant-level settings for SharePoint and OneDrive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointsettings-get?view=graph-rest-beta
       operationId: admin.sharepoint_GetSetting
       parameters:
         - name: $select
@@ -123,7 +127,11 @@ paths:
     patch:
       tags:
         - admin.sharepoint
-      summary: Update the navigation property settings in admin
+      summary: Update settings
+      description: Update one or more tenant-level settings for SharePoint and OneDrive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointsettings-update?view=graph-rest-beta
       operationId: admin.sharepoint_UpdateSetting
       requestBody:
         description: New navigation property values
@@ -1173,7 +1181,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -1229,7 +1236,55 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete content for the navigation property driveItem in groups
+      operationId: group.site.analytic.itemActivityStat.activity_DeleteDriveItemContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - name: itemActivity-id
+          in: path
+          description: The unique identifier of itemActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivity
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream':
     get:
       tags:
@@ -1280,7 +1335,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -1333,7 +1387,56 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete contentStream for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.site.analytic.itemActivityStat.activity_DeleteDriveItemContentStream
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - name: itemActivity-id
+          in: path
+          description: The unique identifier of itemActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivity
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
     get:
       tags:
@@ -10314,7 +10417,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -10378,7 +10480,63 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete content for the navigation property driveItem in groups
+      operationId: group.site.list.item.activity_DeleteDriveItemContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: The unique identifier of list
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: The unique identifier of itemActivityOLD
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream':
     get:
       tags:
@@ -10437,7 +10595,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -10498,7 +10655,64 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete contentStream for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.site.list.item.activity_DeleteDriveItemContentStream
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: The unique identifier of list
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: The unique identifier of itemActivityOLD
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -11722,7 +11936,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -11778,7 +11991,55 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete content for the navigation property driveItem in groups
+      operationId: group.site.list.item_DeleteDriveItemContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: The unique identifier of list
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/{listItem-id}/driveItem/contentStream':
     get:
       tags:
@@ -11829,7 +12090,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -11882,7 +12142,56 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete contentStream for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.site.list.item_DeleteDriveItemContentStream
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: The unique identifier of list
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/{listItem-id}/fields':
     get:
       tags:
@@ -19987,7 +20296,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -20060,7 +20368,72 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.site.onenote.notebook.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -21221,7 +21594,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -21286,7 +21658,64 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.site.onenote.notebook.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -22285,7 +22714,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -22334,7 +22762,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.site.onenote_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -22788,7 +23257,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -22836,7 +23304,47 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete content for the navigation property resources in groups
+      operationId: group.site.onenote_DeleteResourcesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteResource-id
+          in: path
+          description: The unique identifier of onenoteResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/onenote/resources/$count':
     get:
       tags:
@@ -24127,7 +24635,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -24192,7 +24699,64 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.site.onenote.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -25209,7 +25773,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.site
@@ -25266,7 +25829,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.site
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.site.onenote.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -49077,11 +49689,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: List sites
-      description: "List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.\nIf you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale."
+      summary: Search for sites
+      description: Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/site-search?view=graph-rest-beta
       operationId: site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -49940,7 +50552,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.itemAnalytics
@@ -49988,7 +50599,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream':
     get:
       tags:
@@ -50031,7 +50641,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.itemAnalytics
@@ -50076,7 +50685,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
     get:
       tags:
@@ -50178,8 +50786,11 @@ paths:
     get:
       tags:
         - sites.columnDefinition
-      summary: Get columns from sites
+      summary: List columns in a site
       description: The collection of column definitions reusable across lists under this site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-beta
       operationId: site_ListColumn
       parameters:
         - name: site-id
@@ -50237,7 +50848,10 @@ paths:
     post:
       tags:
         - sites.columnDefinition
-      summary: Create new navigation property to columns for sites
+      summary: Create columnDefinition for a site
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-beta
       operationId: site_CreateColumn
       parameters:
         - name: site-id
@@ -50472,8 +51086,11 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: Get contentTypes from sites
+      summary: List contentTypes in a site
       description: The collection of content types defined for this site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-beta
       operationId: site_ListContentType
       parameters:
         - name: site-id
@@ -50531,7 +51148,11 @@ paths:
     post:
       tags:
         - sites.contentType
-      summary: Create new navigation property to contentTypes for sites
+      summary: Create contentType
+      description: Create a new contentType for a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-beta
       operationId: site_CreateContentType
       parameters:
         - name: site-id
@@ -50563,8 +51184,11 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: Get contentTypes from sites
-      description: The collection of content types defined for this site.
+      summary: Get contentType
+      description: Retrieve the metadata for a content type in a site or a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-get?view=graph-rest-beta
       operationId: site_GetContentType
       parameters:
         - name: site-id
@@ -50616,7 +51240,10 @@ paths:
     patch:
       tags:
         - sites.contentType
-      summary: Update the navigation property contentTypes in sites
+      summary: Update contentType
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-update?view=graph-rest-beta
       operationId: site_UpdateContentType
       parameters:
         - name: site-id
@@ -50655,7 +51282,11 @@ paths:
     delete:
       tags:
         - sites.contentType
-      summary: Delete navigation property contentTypes for sites
+      summary: Delete contentType
+      description: Remove a content type from a list or a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-delete?view=graph-rest-beta
       operationId: site_DeleteContentType
       parameters:
         - name: site-id
@@ -51352,8 +51983,11 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: Get columns from sites
+      summary: List columns in a content type
       description: The collection of column definitions for this content type.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-beta
       operationId: site.contentType_ListColumn
       parameters:
         - name: site-id
@@ -51419,7 +52053,10 @@ paths:
     post:
       tags:
         - sites.contentType
-      summary: Create new navigation property to columns for sites
+      summary: Create columnDefinition for a content type
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-beta
       operationId: site.contentType_CreateColumn
       parameters:
         - name: site-id
@@ -51459,8 +52096,11 @@ paths:
     get:
       tags:
         - sites.contentType
-      summary: Get columns from sites
-      description: The collection of column definitions for this content type.
+      summary: Get columnDefinition
+      description: 'Retrieve the metadata for a site, list, or contentType column.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-beta
       operationId: site.contentType_GetColumn
       parameters:
         - name: site-id
@@ -51520,7 +52160,10 @@ paths:
     patch:
       tags:
         - sites.contentType
-      summary: Update the navigation property columns in sites
+      summary: Update columnDefinition
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-beta
       operationId: site.contentType_UpdateColumn
       parameters:
         - name: site-id
@@ -51567,7 +52210,10 @@ paths:
     delete:
       tags:
         - sites.contentType
-      summary: Delete navigation property columns for sites
+      summary: Delete columnDefinition
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-beta
       operationId: site.contentType_DeleteColumn
       parameters:
         - name: site-id
@@ -52959,8 +53605,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get lists from sites
-      description: The collection of lists under this site.
+      summary: Get lists in a site
+      description: "Get the collection of lists for a site. Lists with the system facet are hidden by default.\nTo list them, include system in your $select statement."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/list-list?view=graph-rest-beta
       operationId: site_ListList
       parameters:
         - name: site-id
@@ -53018,7 +53667,11 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create new navigation property to lists for sites
+      summary: Create a new list
+      description: Create a new list in a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/list-create?view=graph-rest-beta
       operationId: site_CreateList
       parameters:
         - name: site-id
@@ -53050,8 +53703,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get lists from sites
-      description: The collection of lists under this site.
+      summary: List operations
+      description: Get the list of richLongRunningOperations associated with a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-beta
       operationId: site_GetList
       parameters:
         - name: site-id
@@ -53284,8 +53940,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get columns from sites
+      summary: List columns in a list
       description: The collection of field definitions for this list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/list-list-columns?view=graph-rest-beta
       operationId: site.list_ListColumn
       parameters:
         - name: site-id
@@ -53351,7 +54010,10 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create new navigation property to columns for sites
+      summary: Create columnDefinition
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/list-post-columns?view=graph-rest-beta
       operationId: site.list_CreateColumn
       parameters:
         - name: site-id
@@ -53634,8 +54296,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get contentTypes from sites
+      summary: List contentTypes in a list
       description: The collection of content types present in this list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-beta
       operationId: site.list_ListContentType
       parameters:
         - name: site-id
@@ -55815,8 +56480,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get items from sites
-      description: All items contained in the list.
+      summary: Enumerate items in a list
+      description: Get the collection of items in a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-list?view=graph-rest-beta
       operationId: site.list_ListItem
       parameters:
         - name: site-id
@@ -55839,6 +56507,7 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -55881,7 +56550,11 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create new navigation property to items for sites
+      summary: Create a new item in a list
+      description: Create a new listItem in a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-create?view=graph-rest-beta
       operationId: site.list_CreateItem
       parameters:
         - name: site-id
@@ -55921,8 +56594,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get items from sites
-      description: All items contained in the list.
+      summary: Get an item in a list
+      description: Returns the metadata for an item in a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-get?view=graph-rest-beta
       operationId: site.list_GetItem
       parameters:
         - name: site-id
@@ -56029,7 +56705,11 @@ paths:
     delete:
       tags:
         - sites.list
-      summary: Delete navigation property items for sites
+      summary: Delete an item from a list
+      description: Removes an item from a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-delete?view=graph-rest-beta
       operationId: site.list_DeleteItem
       parameters:
         - name: site-id
@@ -56491,7 +57171,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.list
@@ -56547,7 +57226,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream':
     get:
       tags:
@@ -56598,7 +57276,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.list
@@ -56651,7 +57328,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -57772,7 +58448,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.list
@@ -57820,7 +58495,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/driveItem/contentStream':
     get:
       tags:
@@ -57863,7 +58537,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.list
@@ -57908,7 +58581,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/fields':
     get:
       tags:
@@ -64687,8 +65359,11 @@ paths:
     get:
       tags:
         - sites.richLongRunningOperation
-      summary: Get operations from sites
-      description: The collection of long running operations for the site.
+      summary: List operations
+      description: Get the list of richLongRunningOperations associated with a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-beta
       operationId: site_ListOperation
       parameters:
         - name: site-id
@@ -64778,8 +65453,11 @@ paths:
     get:
       tags:
         - sites.richLongRunningOperation
-      summary: Get operations from sites
-      description: The collection of long running operations for the site.
+      summary: Get richLongRunningOperation
+      description: Read the properties of a richLongRunningOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-beta
       operationId: site_GetOperation
       parameters:
         - name: site-id
@@ -64927,8 +65605,11 @@ paths:
     get:
       tags:
         - sites.baseSitePage
-      summary: Get pages from sites
-      description: The collection of pages in the baseSitePages list on this site.
+      summary: List baseSitePages
+      description: Get the collection of baseSitePage objects from the site pages list in a site. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-beta
       operationId: site_ListPage
       parameters:
         - name: site-id
@@ -64986,7 +65667,11 @@ paths:
     post:
       tags:
         - sites.baseSitePage
-      summary: Create new navigation property to pages for sites
+      summary: Create a page in the site pages list of a site
+      description: Create a new sitePage in the site pages list in a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-beta
       operationId: site_CreatePage
       parameters:
         - name: site-id
@@ -65018,8 +65703,11 @@ paths:
     get:
       tags:
         - sites.baseSitePage
-      summary: Get pages from sites
-      description: The collection of pages in the baseSitePages list on this site.
+      summary: Get baseSitePage
+      description: Get the metadata for a baseSitePage in the site pages list in a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/basesitepage-get?view=graph-rest-beta
       operationId: site_GetPage
       parameters:
         - name: site-id
@@ -65627,7 +66315,11 @@ paths:
     get:
       tags:
         - sites.baseSitePage
-      summary: Get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
+      summary: Get SitePage
+      description: Returns the metadata for a sitePage in the site pages list in a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sitepage-get?view=graph-rest-beta
       operationId: site_GetPageAsSitePage
       parameters:
         - name: site-id
@@ -68024,7 +68716,11 @@ paths:
     delete:
       tags:
         - sites.baseSitePage
-      summary: Delete navigation property webParts for sites
+      summary: Delete webPart
+      description: Delete a webPart object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/webpart-delete?view=graph-rest-beta
       operationId: site.pageAsSitePage_DeleteWebPart
       parameters:
         - name: site-id
@@ -68160,7 +68856,11 @@ paths:
     get:
       tags:
         - sites.baseSitePage
-      summary: Get the items of type microsoft.graph.sitePage in the microsoft.graph.baseSitePage collection
+      summary: Get SitePage
+      description: Returns the metadata for a sitePage in the site pages list in a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sitepage-get?view=graph-rest-beta
       operationId: site_ListPageAsSitePage
       parameters:
         - name: site-id
@@ -68240,8 +68940,11 @@ paths:
     get:
       tags:
         - sites.permission
-      summary: Get permissions from sites
-      description: The permissions associated with the site. Nullable.
+      summary: List permissions
+      description: Get the permission resources from the permissions navigation property on a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-beta
       operationId: site_ListPermission
       parameters:
         - name: site-id
@@ -68299,7 +69002,11 @@ paths:
     post:
       tags:
         - sites.permission
-      summary: Create new navigation property to permissions for sites
+      summary: Create permission
+      description: Create a new permission object on a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-beta
       operationId: site_CreatePermission
       parameters:
         - name: site-id
@@ -68331,8 +69038,11 @@ paths:
     get:
       tags:
         - sites.permission
-      summary: Get permissions from sites
-      description: The permissions associated with the site. Nullable.
+      summary: Get permission
+      description: Retrieve the properties and relationships of a permission object on a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-get-permission?view=graph-rest-beta
       operationId: site_GetPermission
       parameters:
         - name: site-id
@@ -68384,7 +69094,11 @@ paths:
     patch:
       tags:
         - sites.permission
-      summary: Update the navigation property permissions in sites
+      summary: Update permission
+      description: Update the permission object on a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-update-permission?view=graph-rest-beta
       operationId: site_UpdatePermission
       parameters:
         - name: site-id
@@ -68601,8 +69315,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Get sites from sites
-      description: The collection of the sub-sites under this site.
+      summary: List subsites for a site
+      description: Get a collection of subsites defined for a site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-beta
       operationId: site_ListSite
       parameters:
         - name: site-id
@@ -68737,8 +69454,11 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get termStore from sites
-      description: The termStore under this site.
+      summary: Get store
+      description: Read the properties and relationships of a store object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-beta
       operationId: site_GetTermStore
       parameters:
         - name: site-id
@@ -68840,8 +69560,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get groups from sites
-      description: Collection of all groups available in the term store.
+      summary: Get termStore group
+      description: Read the properties and relationships of a term store group object.
       operationId: site.termStore_ListGroup
       parameters:
         - name: site-id
@@ -68931,8 +69651,11 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get groups from sites
-      description: Collection of all groups available in the term store.
+      summary: Get termStore group
+      description: Read the properties and relationships of a term store group object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/termstore-group-get?view=graph-rest-beta
       operationId: site.termStore_GetGroup
       parameters:
         - name: site-id
@@ -74417,8 +75140,8 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get sets from sites
-      description: Collection of all sets available in the term store.
+      summary: Get set
+      description: Read the properties and relationships of a set object.
       operationId: site.termStore_ListSet
       parameters:
         - name: site-id
@@ -74508,8 +75231,11 @@ paths:
     get:
       tags:
         - sites.store
-      summary: Get sets from sites
-      description: Collection of all sets available in the term store.
+      summary: Get set
+      description: Read the properties and relationships of a set object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/termstore-set-get?view=graph-rest-beta
       operationId: site.termStore_GetSet
       parameters:
         - name: site-id
@@ -85055,6 +85781,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.specialFolder'
             video:
               $ref: '#/components/schemas/microsoft.graph.video'
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.driveItemViewpoint'
             webDavUrl:
               type: string
               description: WebDAV compatible URL for the item.
@@ -87755,6 +88483,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -88304,6 +89034,16 @@ components:
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.driveItemViewpoint:
+      title: driveItemViewpoint
+      type: object
+      properties:
+        accessOperations:
+          $ref: '#/components/schemas/microsoft.graph.driveItemAccessOperationsViewpoint'
+        sharing:
+          $ref: '#/components/schemas/microsoft.graph.sharingViewpoint'
       additionalProperties:
         type: object
     microsoft.graph.itemRetentionLabel:
@@ -89499,6 +90239,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
               x-ms-navigationProperty: true
+            claimsPolicy:
+              $ref: '#/components/schemas/microsoft.graph.customClaimsPolicy'
             createdObjects:
               type: array
               items:
@@ -90126,6 +90868,10 @@ components:
             aadDeviceId:
               type: string
               description: The Microsoft Entra device ID of the Cloud PC.
+              nullable: true
+            allotmentDisplayName:
+              type: string
+              description: 'The allotment name divides tenant licenses into smaller batches or groups that helps restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.'
               nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
@@ -92135,7 +92881,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -94353,6 +95099,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -94452,6 +95206,50 @@ components:
         - other
         - unknownFutureValue
       type: string
+    microsoft.graph.driveItemAccessOperationsViewpoint:
+      title: driveItemAccessOperationsViewpoint
+      type: object
+      properties:
+        canComment:
+          type: boolean
+          description: Indicates whether the user can comment on this item.
+          nullable: true
+        canCreateFile:
+          type: boolean
+          description: Indicates whether the user can create files within this object. Returned only on folders.
+          nullable: true
+        canCreateFolder:
+          type: boolean
+          description: Indicates whether the user can create folders within this object. Returned only on folders.
+          nullable: true
+        canDelete:
+          type: boolean
+          description: Indicates whether the user can delete this item.
+          nullable: true
+        canDownload:
+          type: boolean
+          description: Indicates whether the user can download this item.
+          nullable: true
+        canRead:
+          type: boolean
+          description: Indicates whether the user can read this item.
+          nullable: true
+        canUpdate:
+          type: boolean
+          description: Indicates whether the user can update this item.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingViewpoint:
+      title: sharingViewpoint
+      type: object
+      properties:
+        defaultSharingLink:
+          $ref: '#/components/schemas/microsoft.graph.defaultSharingLink'
+        sharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.sharePointSharingAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.retentionLabelSettings:
       title: retentionLabelSettings
       type: object
@@ -95180,6 +95978,27 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: claimsMappingPolicy
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.customClaimsPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customClaimsPolicy
+          type: object
+          properties:
+            audienceOverride:
+              type: string
+              nullable: true
+            claims:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customClaimBase'
+            includeApplicationIdInIssuer:
+              type: boolean
+              nullable: true
+            includeBasicClaimSet:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.delegatedPermissionClassification:
@@ -95959,6 +96778,8 @@ components:
           properties:
             consentedPermissionSet:
               $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+            scopeInfo:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopeInfo'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -96366,6 +97187,8 @@ components:
         - dedicated
         - shared
         - unknownFutureValue
+        - sharedByUser
+        - sharedByEntraGroup
       type: string
     microsoft.graph.cloudPcServicePlanType:
       title: cloudPcServicePlanType
@@ -101460,6 +102283,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.mediaSourceContentCategory:
       title: mediaSourceContentCategory
       enum:
@@ -101474,6 +102305,34 @@ components:
         - comment
         - unknownFutureValue
       type: string
+    microsoft.graph.defaultSharingLink:
+      title: defaultSharingLink
+      type: object
+      properties:
+        defaultToExistingAccess:
+          type: boolean
+          description: Indicates whether the default link setting for this object is a direct URL rather than a sharing link.
+          nullable: true
+        role:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.sharingScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharePointSharingAbilities:
+      title: sharePointSharingAbilities
+      type: object
+      properties:
+        anyoneLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        directSharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.directSharingAbilities'
+        organizationLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        specificPeopleLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.security.behaviorDuringRetentionPeriod:
       title: behaviorDuringRetentionPeriod
       enum:
@@ -101942,6 +102801,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.customClaimBase:
+      title: customClaimBase
+      type: object
+      properties:
+        configurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimConfiguration'
+      additionalProperties:
+        type: object
     microsoft.graph.permissionClassificationType:
       title: permissionClassificationType
       enum:
@@ -102283,6 +103152,14 @@ components:
           description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppInstallationScopeInfo:
+      title: teamsAppInstallationScopeInfo
+      type: object
+      properties:
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -102497,11 +103374,15 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'Supported values are Unicode characters and custom. Some backward-compatible reaction types include like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -106175,6 +107056,60 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.sharingRole:
+      title: sharingRole
+      enum:
+        - none
+        - view
+        - edit
+        - manageList
+        - review
+        - restrictedView
+        - submitOnly
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sharingScope:
+      title: sharingScope
+      enum:
+        - anyone
+        - organization
+        - specificPeople
+        - anonymous
+        - users
+        - unknownFutureValue
+      type: string
+    microsoft.graph.linkScopeAbilities:
+      title: linkScopeAbilities
+      type: object
+      properties:
+        blockDownloadLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        editLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        manageListLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        readLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        reviewLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        submitOnlyLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+      additionalProperties:
+        type: object
+    microsoft.graph.directSharingAbilities:
+      title: directSharingAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addInternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requestGrantAccess:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookEmailIdentity:
       title: workbookEmailIdentity
       type: object
@@ -107043,6 +107978,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
       additionalProperties:
         type: object
+    microsoft.graph.customClaimConfiguration:
+      title: customClaimConfiguration
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        condition:
+          $ref: '#/components/schemas/microsoft.graph.customClaimConditionBase'
+        transformations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimTransformation'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationSecret:
       title: synchronizationSecret
       enum:
@@ -107259,14 +108208,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.teamsAppDistributionMethod:
-      title: teamsAppDistributionMethod
-      enum:
-        - store
-        - organization
-        - sideloaded
-        - unknownFutureValue
-      type: string
     microsoft.graph.teamsAppInstallationScopes:
       title: teamsAppInstallationScopes
       enum:
@@ -107277,6 +108218,14 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -108944,6 +109893,44 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.linkRoleAbilities:
+      title: linkRoleAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        applyVariants:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkVariants'
+        createLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        deleteLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkAllowsExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkExpiration:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkExpirationStatus'
+        retrieveLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        updateLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingOperationStatus:
+      title: sharingOperationStatus
+      type: object
+      properties:
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
@@ -110352,6 +111339,24 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.customClaimAttributeBase:
+      title: customClaimAttributeBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimConditionBase:
+      title: customClaimConditionBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimTransformation:
+      title: customClaimTransformation
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/microsoft.graph.transformationAttribute'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationScheduleState:
       title: synchronizationScheduleState
       enum:
@@ -110859,6 +111864,41 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.sharingLinkVariants:
+      title: sharingLinkVariants
+      type: object
+      properties:
+        addressBarLinkPermission:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        allowEmbed:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        passwordProtected:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requiresAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLinkExpirationStatus:
+      title: sharingLinkExpirationStatus
+      type: object
+      properties:
+        defaultExpirationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Default link expiration in days. Returns -1 if there is no required expiration time.
+          format: int32
+          nullable: true
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookChartAxisFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -111081,6 +112121,16 @@ components:
           type: string
           description: Refers to the Service Principal Name is the Application name in the tenant.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.transformationAttribute:
+      title: transformationAttribute
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        treatAsMultiValue:
+          type: boolean
       additionalProperties:
         type: object
     microsoft.graph.synchronizationError:
