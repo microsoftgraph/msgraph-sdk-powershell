@@ -42,6 +42,8 @@ jobs:
           git submodule update --init --recursive
       - template: ./common-templates/install-tools.yml
       - template: ./common-templates/security-pre-checks.yml
+      
+      - template: ./generation-templates/check-openapi-errors.yml
 
       - template: ./generation-templates/authentication-module.yml
         parameters:
