@@ -25,7 +25,7 @@ internal class Program
 
     private static void CompareOpenApiInfo(string version, IList<Model> openApiInfoMetadata)
     {
-        List<Model> models = new List<Model>();
+        HashSet<Model> models = new HashSet<Model>();
         var newPathsAdded = new HashSet<string>();
         var openApiErrors = new HashSet<string>();
         newPathsAdded.Add("Module,Path,Method");
@@ -55,37 +55,45 @@ internal class Program
                     {
                         throw new Exception($"Error reading openapi file {file}");
                     }
+                    
                     //Go through each path in the openapi file
                     foreach (var path in openApiDoc.Paths)
                     {
-                        var model = new Model();
+
+   
+
+                        //Go through each operation in the path
+                        foreach (var operation in path.Value.Operations)
+                        {
+                                                    var model = new Model();
+                        
                         var pathInfo = new PathInfo();
                         //Get the path key
                         var apiPath = path.Key;
                         pathInfo.Path = apiPath;
                         pathInfo.Module = fileName;
                         model.PathInfo = pathInfo;
-                        //Go through each operation in the path
-                        foreach (var operation in path.Value.Operations)
-                        {
                             var methodInfo = new MethodInfo();
                             //Get the operationId
                             var operationId = operation.Value.OperationId;
-                            methodInfo.OperationId = operationId;
+                            methodInfo.OperationId = operationId.ToString();
+                           
                             //Get the method
                             var method = operation.Key.ToString();
-                            methodInfo.Method = method;
+                            methodInfo.Method = method.ToString();
+                            //Console.WriteLine("here" + methodInfo.Method);
                             //Get the parameters
                             var parameters = new List<Parameters>();
                             foreach (var parameter in operation.Value.Parameters)
                             {
                                 var param = new Parameters();
-                                param.Name = parameter.Name;
+                                param.Name = parameter.Name.ToString() ?? "NA";
                                 param.Location = parameter.In.ToString() ?? "NA";
                                 parameters.Add(param);
                             }
                             methodInfo.Parameters = parameters;
                             model.MethodInfo = methodInfo;
+
                             var originalPathDetails = PathDetails(openApiInfoMetadata, operationId, apiPath, method, fileName);
                             if (originalPathDetails == null || originalPathDetails.PathInfo == null)
                             {
@@ -101,14 +109,13 @@ internal class Program
                             {
                                 openApiErrors.Add($"{fileName},{apiPath}, {method},OperationId changed from: {originalPathDetails.MethodInfo.OperationId}, OperationId changed to: {methodInfo.OperationId}");
                             }
-                            if(originalPathDetails.MethodInfo != null && originalPathDetails.MethodInfo.Method != methodInfo.Method)
-                            {
-                                openApiErrors.Add($"{fileName},{apiPath}, {method},Method changed from: {originalPathDetails.MethodInfo.Method}, Method changed to: {methodInfo.Method}");
-                            }
-
-
+                            
+                            models.Add(model);
+                                    
                         }
-                        models.Add(model);
+                        
+  
+                        
                     }
                 }
             }
