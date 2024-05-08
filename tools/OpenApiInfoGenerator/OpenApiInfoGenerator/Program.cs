@@ -25,7 +25,7 @@ internal class Program
 
     private static void CompareOpenApiInfo(string version, IList<Model> openApiInfoMetadata)
     {
-        HashSet<Model> models = new HashSet<Model>();
+        var models = new HashSet<Model>();
         var newPathsAdded = new HashSet<string>();
         var openApiErrors = new HashSet<string>();
         newPathsAdded.Add("Module,Path,Method");
@@ -55,29 +55,26 @@ internal class Program
                     {
                         throw new Exception($"Error reading openapi file {file}");
                     }
-                    
+
                     //Go through each path in the openapi file
                     foreach (var path in openApiDoc.Paths)
                     {
-
-   
-
                         //Go through each operation in the path
                         foreach (var operation in path.Value.Operations)
                         {
-                                                    var model = new Model();
-                        
-                        var pathInfo = new PathInfo();
-                        //Get the path key
-                        var apiPath = path.Key;
-                        pathInfo.Path = apiPath;
-                        pathInfo.Module = fileName;
-                        model.PathInfo = pathInfo;
+                            var model = new Model();
+
+                            var pathInfo = new PathInfo();
+                            //Get the path key
+                            var apiPath = path.Key;
+                            pathInfo.Path = apiPath;
+                            pathInfo.Module = fileName;
+                            model.PathInfo = pathInfo;
                             var methodInfo = new MethodInfo();
                             //Get the operationId
                             var operationId = operation.Value.OperationId;
                             methodInfo.OperationId = operationId.ToString();
-                           
+
                             //Get the method
                             var method = operation.Key.ToString();
                             methodInfo.Method = method.ToString();
@@ -109,13 +106,13 @@ internal class Program
                             {
                                 openApiErrors.Add($"{fileName},{apiPath}, {method},OperationId changed from: {originalPathDetails.MethodInfo.OperationId}, OperationId changed to: {methodInfo.OperationId}");
                             }
-                            
+
                             models.Add(model);
-                                    
+
                         }
-                        
-  
-                        
+
+
+
                     }
                 }
             }
