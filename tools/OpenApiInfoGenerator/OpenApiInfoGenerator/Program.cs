@@ -30,19 +30,22 @@ internal class Program
         var openApiErrors = new HashSet<string>();
         newPathsAdded.Add("Module,Path,Method");
         openApiErrors.Add("Module,ApiPath,Method,From,To");
-        var filePath = FileHandler.GetDocsFolder();
-        Console.WriteLine(filePath);
-        var combinedPath = filePath != null ? Path.Combine(filePath, "openApiInfo") : null;
-        var openAPiInfoPath = combinedPath != null ? Path.Combine(combinedPath, version) : null;
-        var combinedErrorPath = openAPiInfoPath != null ? Path.Combine(openAPiInfoPath, openApiFileError) : null;
-        if (combinedErrorPath != null && File.Exists(combinedErrorPath))
+        var openApiFilePath = FileHandler.GetOpenApiFolder();
+        var docPath = FileHandler.GetDocFolder();
+        var openApiPath = openApiFilePath != null ? Path.Combine(openApiFilePath, version) : null;
+
+        var combinedDocPath = docPath != null ? Path.Combine(docPath, "OpenAPiInfo") : null;
+        var openApiInfoPath = combinedDocPath != null ? Path.Combine(combinedDocPath, version) : null;
+
+        var errorPath = openApiInfoPath != null ? Path.Combine(openApiInfoPath, openApiFileError) : null;
+        if (errorPath != null && File.Exists(errorPath))
         {
-            File.WriteAllText(combinedErrorPath, string.Empty);
+            File.WriteAllText(errorPath, string.Empty);
         }
-        if(combinedPath!=null)
+        if(openApiPath!=null)
         {
         //Go through list of openapi files
-        foreach (var file in Directory.GetFiles(combinedPath))
+        foreach (var file in Directory.GetFiles(openApiPath))
         {
             using (var sr = new StreamReader(file))
             {
@@ -112,9 +115,9 @@ internal class Program
             var options = new JsonSerializerOptions { WriteIndented = true };
             var json = JsonSerializer.Serialize(models, options);
             //Clear file first
-            File.WriteAllText($"{openAPiInfoPath}\\{openApiInfoFile}", string.Empty);
+            File.WriteAllText($"{openApiInfoPath}\\{openApiInfoFile}", string.Empty);
             //then write to it with new content.
-            File.WriteAllText($"{openAPiInfoPath}\\{openApiInfoFile}", json);
+            File.WriteAllText($"{openApiInfoPath}\\{openApiInfoFile}", json);
         }
         if (openApiErrors.Count > 1)
         {
@@ -122,7 +125,7 @@ internal class Program
             {
                 var errList = error.Split(",");
                 var report = $"{errList[0]},{errList[1]},{errList[2]},{errList[3]},{errList[4]}";
-                File.AppendAllText($"{openAPiInfoPath}\\{openApiFileError}", report + Environment.NewLine);
+                File.AppendAllText($"{openApiInfoPath}\\{openApiFileError}", report + Environment.NewLine);
             }
         }
 
