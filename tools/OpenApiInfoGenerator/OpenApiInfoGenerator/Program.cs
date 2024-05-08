@@ -42,72 +42,72 @@ internal class Program
         {
             File.WriteAllText(errorPath, string.Empty);
         }
-        if(openApiPath!=null)
+        if (openApiPath != null)
         {
-        //Go through list of openapi files
-        foreach (var file in Directory.GetFiles(openApiPath))
-        {
-            using (var sr = new StreamReader(file))
+            //Go through list of openapi files
+            foreach (var file in Directory.GetFiles(openApiPath))
             {
-                var fileName = Path.GetFileNameWithoutExtension(file);
-                var openApiDoc = new OpenApiStreamReader().Read(sr.BaseStream, out var diagnostic);
-                if (diagnostic.Errors.Count > 0)
+                using (var sr = new StreamReader(file))
                 {
-                    throw new Exception($"Error reading openapi file {file}");
-                }
-                //Go through each path in the openapi file
-                foreach (var path in openApiDoc.Paths)
-                {
-                    var model = new Model();
-                    var pathInfo = new PathInfo();
-                    //Get the path key
-                    var apiPath = path.Key;
-                    pathInfo.Path = apiPath;
-                    pathInfo.Module = fileName;
-                    model.PathInfo = pathInfo;
-                    //Go through each operation in the path
-                    foreach (var operation in path.Value.Operations)
+                    var fileName = Path.GetFileNameWithoutExtension(file);
+                    var openApiDoc = new OpenApiStreamReader().Read(sr.BaseStream, out var diagnostic);
+                    if (diagnostic.Errors.Count > 0)
                     {
-                        var methodInfo = new MethodInfo();
-                        //Get the operationId
-                        var operationId = operation.Value.OperationId;
-                        methodInfo.OperationId = operationId;
-                        //Get the method
-                        var method = operation.Key.ToString();
-                        methodInfo.Method = method;
-                        //Get the parameters
-                        var parameters = new List<Parameters>();
-                        foreach (var parameter in operation.Value.Parameters)
-                        {
-                            var param = new Parameters();
-                            param.Name = parameter.Name;
-                            param.Location = parameter.In.ToString() ?? "NA";
-                            parameters.Add(param);
-                        }
-                        methodInfo.Parameters = parameters;
-                        model.MethodInfo = methodInfo;
-                        var originalPathDetails = PathDetails(openApiInfoMetadata, operationId, apiPath, method, fileName);
-                        if (originalPathDetails == null || originalPathDetails.PathInfo == null)
-                        {
-                            newPathsAdded.Add($"{fileName},{apiPath},{method}");
-                            continue;
-                        }
-                        if (originalPathDetails.MethodInfo != null && originalPathDetails.MethodInfo.Parameters != null && originalPathDetails.MethodInfo.Parameters.Count > methodInfo.Parameters.Count)
-                        {
-                            openApiErrors.Add($"{fileName},{apiPath}, {method},Parameter Count: {methodInfo.Parameters.Count}, Parameter Count: {originalPathDetails.MethodInfo.Parameters.Count}");
-                        }
-
-                        if (originalPathDetails.MethodInfo != null && originalPathDetails.MethodInfo.OperationId != methodInfo.OperationId)
-                        {
-                            openApiErrors.Add($"{fileName},{apiPath}, {method},OperationId changed from: {originalPathDetails.MethodInfo.OperationId}, OperationId changed to: {methodInfo.OperationId}");
-                        }
-
-
+                        throw new Exception($"Error reading openapi file {file}");
                     }
-                    models.Add(model);
+                    //Go through each path in the openapi file
+                    foreach (var path in openApiDoc.Paths)
+                    {
+                        var model = new Model();
+                        var pathInfo = new PathInfo();
+                        //Get the path key
+                        var apiPath = path.Key;
+                        pathInfo.Path = apiPath;
+                        pathInfo.Module = fileName;
+                        model.PathInfo = pathInfo;
+                        //Go through each operation in the path
+                        foreach (var operation in path.Value.Operations)
+                        {
+                            var methodInfo = new MethodInfo();
+                            //Get the operationId
+                            var operationId = operation.Value.OperationId;
+                            methodInfo.OperationId = operationId;
+                            //Get the method
+                            var method = operation.Key.ToString();
+                            methodInfo.Method = method;
+                            //Get the parameters
+                            var parameters = new List<Parameters>();
+                            foreach (var parameter in operation.Value.Parameters)
+                            {
+                                var param = new Parameters();
+                                param.Name = parameter.Name;
+                                param.Location = parameter.In.ToString() ?? "NA";
+                                parameters.Add(param);
+                            }
+                            methodInfo.Parameters = parameters;
+                            model.MethodInfo = methodInfo;
+                            var originalPathDetails = PathDetails(openApiInfoMetadata, operationId, apiPath, method, fileName);
+                            if (originalPathDetails == null || originalPathDetails.PathInfo == null)
+                            {
+                                newPathsAdded.Add($"{fileName},{apiPath},{method}");
+                                continue;
+                            }
+                            if (originalPathDetails.MethodInfo != null && originalPathDetails.MethodInfo.Parameters != null && originalPathDetails.MethodInfo.Parameters.Count > methodInfo.Parameters.Count)
+                            {
+                                openApiErrors.Add($"{fileName},{apiPath}, {method},Parameter Count: {methodInfo.Parameters.Count}, Parameter Count: {originalPathDetails.MethodInfo.Parameters.Count}");
+                            }
+
+                            if (originalPathDetails.MethodInfo != null && originalPathDetails.MethodInfo.OperationId != methodInfo.OperationId)
+                            {
+                                openApiErrors.Add($"{fileName},{apiPath}, {method},OperationId changed from: {originalPathDetails.MethodInfo.OperationId}, OperationId changed to: {methodInfo.OperationId}");
+                            }
+
+
+                        }
+                        models.Add(model);
+                    }
                 }
             }
-        }
         }
         //convert list to json and add it to file
         if (newPathsAdded.Count > 1)
