@@ -834,5 +834,10 @@ directive:
       subject: UserDeviceRegisteredUserDirectoryObjectByRef
     set:
       alias: ${verb}-Mg${subject-prefix}UserDeviceRegisteredUserByRef
+  - where:
+      verb: Remove
+      subject: OnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupOnPremiseAgentGroupByRef
+    set:
+      alias: ${verb}-Mg${subject-prefix}OnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
       
 ```
