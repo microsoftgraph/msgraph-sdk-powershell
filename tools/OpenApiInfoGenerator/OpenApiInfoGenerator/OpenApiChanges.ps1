@@ -13,7 +13,7 @@ function Start-Validation {
     
     $GraphMapping = @{
         "v1.0" = $V1_OpenAPIErrorFile
-        "beta" = $Beta_OpenAPIErrorFile
+        #"beta" = $Beta_OpenAPIErrorFile. Commenting out this to do checks for v1.0 only
     }
     $GraphMapping.Keys | ForEach-Object {
         $GraphProfile = $_
