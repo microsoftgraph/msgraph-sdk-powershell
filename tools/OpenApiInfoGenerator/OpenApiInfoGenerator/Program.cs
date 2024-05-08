@@ -101,6 +101,10 @@ internal class Program
                             {
                                 openApiErrors.Add($"{fileName},{apiPath}, {method},OperationId changed from: {originalPathDetails.MethodInfo.OperationId}, OperationId changed to: {methodInfo.OperationId}");
                             }
+                            if(originalPathDetails.MethodInfo != null && originalPathDetails.MethodInfo.Method != methodInfo.Method)
+                            {
+                                openApiErrors.Add($"{fileName},{apiPath}, {method},Method changed from: {originalPathDetails.MethodInfo.Method}, Method changed to: {methodInfo.Method}");
+                            }
 
 
                         }
