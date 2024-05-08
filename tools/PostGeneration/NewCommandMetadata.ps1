@@ -78,6 +78,9 @@ $ApiVersion | ForEach-Object {
             if (-not($Null -eq $CommandAliasValue)) {
                 $CommandAliasValue = $CommandAliasValue.Replace("[global::System.Management.Automation.Alias(`"", "").Replace("`")", "").Replace("]", "")
             }
+            if($CommandAliasValue -eq "RHV") {
+                $CommandAliasValue = $null
+            }
             $MappingValue = @{
                 Command          = $CommandName
                 Variants         = [System.Collections.ArrayList]@($VariantName)
