@@ -1,0 +1,2 @@
+Module,ApiPath,Method,From,To
+Applications,/servicePrincipals/{servicePrincipal-id}/appRoleAssignments/{appRoleAssignment-id}, Get,Parameter Count: 4, Parameter Count: 5
