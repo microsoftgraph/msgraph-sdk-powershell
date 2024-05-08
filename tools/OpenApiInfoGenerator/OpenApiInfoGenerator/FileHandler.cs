@@ -2,10 +2,10 @@ namespace openapiinfo;
 
 public static class FileHandler
 {
-    private const string OpenApiFolderName = "OpenApiDocs";
+    private const string OpenApiFolderName = "docs";
     private static string? AssemblyLocation = Path.GetDirectoryName(typeof(FileHandler).Assembly.Location);
 
-    public static string? GetOpenApiFolder()
+    public static string? GetDocsFolder()
     {
         if (AssemblyLocation is null)
         {

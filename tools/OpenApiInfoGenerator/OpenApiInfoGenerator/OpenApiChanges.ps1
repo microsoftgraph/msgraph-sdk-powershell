@@ -1,8 +1,8 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 Param(
-    [string] $v1_OpenAPIErrorFilePath = (Join-Path $PSScriptRoot "..\..\..\openApiDocs\v1.0\OpenApiInfo\"),
-    [string] $beta_OpenAPIErrorFilePath = (Join-Path $PSScriptRoot "..\..\..\openApiDocs\beta\OpenApiInfo\"),
+    [string] $v1_OpenAPIErrorFilePath = (Join-Path $PSScriptRoot "..\..\..\docs\OpenApiInfo\v1.0\"),
+    [string] $beta_OpenAPIErrorFilePath = (Join-Path $PSScriptRoot "..\..\..\docs\OpenApiInfo\beta\"),
     [string] $OpenAPIErrorFileName = "openAPIErrors"
 )
 

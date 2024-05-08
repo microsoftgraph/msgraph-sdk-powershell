@@ -6,8 +6,8 @@ internal class Program
 {
     public static string openApiInfoFile = "openApiInfo.json";
     public static string openApiFileError = "openAPIErrors.csv";
-    private const string openApiInfoMetadataUrl_v1 = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/metadata-changes-detection/openApiDocs/v1.0/OpenApiInfo/openApiInfo.json";
-    private const string openApiInfoMetadataUrl_beta = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/metadata-changes-detection/openApiDocs/beta/OpenApiInfo/openApiInfo.json";
+    private const string openApiInfoMetadataUrl_v1 = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/metadata-changes-detection/docs/OpenApiInfo/v1.0/openApiInfo.json";
+    private const string openApiInfoMetadataUrl_beta = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/metadata-changes-detection/docs/OpenApiInfo/beta/openApiInfo.json";
     private static IList<Model> openApiInfo_v1 = new OriginalMetadata(openApiInfoMetadataUrl_v1).GetOpenApiInfo();
     private static IList<Model> openApiInfo_beta = new OriginalMetadata(openApiInfoMetadataUrl_beta).GetOpenApiInfo();
     private static IDictionary<string, IList<Model>> openApiVersions = new Dictionary<string, IList<Model>>();
@@ -30,9 +30,10 @@ internal class Program
         var openApiErrors = new HashSet<string>();
         newPathsAdded.Add("Module,Path,Method");
         openApiErrors.Add("Module,ApiPath,Method,From,To");
-        var filePath = FileHandler.GetOpenApiFolder();
-        var combinedPath = filePath != null ? Path.Combine(filePath, version) : null;
-        var openAPiInfoPath = combinedPath != null ? Path.Combine(combinedPath, "OpenAPiInfo") : null;
+        var filePath = FileHandler.GetDocsFolder();
+        Console.WriteLine(filePath);
+        var combinedPath = filePath != null ? Path.Combine(filePath, "openApiInfo") : null;
+        var openAPiInfoPath = combinedPath != null ? Path.Combine(combinedPath, version) : null;
         var combinedErrorPath = openAPiInfoPath != null ? Path.Combine(openAPiInfoPath, openApiFileError) : null;
         if (combinedErrorPath != null && File.Exists(combinedErrorPath))
         {
