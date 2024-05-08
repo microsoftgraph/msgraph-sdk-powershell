@@ -78,7 +78,7 @@ $ApiVersion | ForEach-Object {
             if (-not($Null -eq $CommandAliasValue)) {
                 $CommandAliasValue = $CommandAliasValue.Replace("[global::System.Management.Automation.Alias(`"", "").Replace("`")", "").Replace("]", "")
             }
-            if($CommandAliasValue -eq "RHV") {
+            if(-not($CommandAliasValue -contains "-Mg")) {
                 $CommandAliasValue = $null
             }
             $MappingValue = @{
