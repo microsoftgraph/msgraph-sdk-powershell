@@ -99,7 +99,7 @@ internal class Program
                             }
                             if (originalPathDetails.MethodInfo != null && originalPathDetails.MethodInfo.Parameters != null && originalPathDetails.MethodInfo.Parameters.Count > methodInfo.Parameters.Count)
                             {
-                                openApiErrors.Add($"{fileName},{apiPath}, {method},Parameter Count: {methodInfo.Parameters.Count}, Parameter Count: {originalPathDetails.MethodInfo.Parameters.Count}");
+                                openApiErrors.Add($"{fileName},{apiPath}, {method},Parameter Count: {originalPathDetails.MethodInfo.Parameters.Count},Parameter Count: {methodInfo.Parameters.Count}");
                             }
 
                             if (originalPathDetails.MethodInfo != null && originalPathDetails.MethodInfo.OperationId != methodInfo.OperationId)
