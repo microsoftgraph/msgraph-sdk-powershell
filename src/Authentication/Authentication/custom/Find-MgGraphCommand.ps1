@@ -82,7 +82,7 @@ Function Find-MgGraphCommand {
                 Write-Debug "Matching ApiVersion: $ApiVersion"
                 [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
                     if ($_.ApiVersion -match $ApiVersion -and
-                        $_.Command -match "^$c$") {
+                        $_.Command -match "^$c$" -or $_.CommandAlias -match "^$c$") {
                         $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
                     }
                 }
