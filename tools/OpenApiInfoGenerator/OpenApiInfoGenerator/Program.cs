@@ -40,7 +40,7 @@ internal class Program
         var errorPath = openApiInfoPath != null ? Path.Combine(openApiInfoPath, openApiFileError) : null;
         if (errorPath != null && File.Exists(errorPath))
         {
-            File.WriteAllText(errorPath, string.Empty);
+            File.Delete(errorPath);
         }
         if (openApiPath != null)
         {
