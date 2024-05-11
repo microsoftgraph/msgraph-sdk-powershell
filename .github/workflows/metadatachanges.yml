@@ -1,0 +1,55 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+# This is a basic workflow to help you get started with Actions
+
+name: "Metadata Changes"
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - dev
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  CheckForMetadataChanges:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+
+                
+    # Check if error report exists
+    - name: Check file existence
+      id: check_files
+      uses: andstor/file-existence-action@v3
+      with:
+        files: "docs/OpenApiInfo/v1.0/openAPIErrors.csv"
+    
+    # If it exists then add a warning to comment section of the PR
+    - name: File exists
+      if: steps.check_files.outputs.files_exists == 'true'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const name = 'OpenApiChecks';
+          const body = '**Changes in metadata detected :bangbang:** :warning:\n Please have a look at the metadata changes report in `docs/OpenApiInfo/v1.0/openAPIErrors.csv`\nThis action is important before merging :pleading_face:';
+  
+          await github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: body
+          })
+
+# [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
+# [1] https://hub.github.com/hub-pull-request.1.html
+# https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token
