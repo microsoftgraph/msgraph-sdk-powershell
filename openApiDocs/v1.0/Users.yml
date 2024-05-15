@@ -14,7 +14,7 @@ paths:
       description: List properties and relationships of the user objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -77,7 +77,7 @@ paths:
       description: Create a new user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-create?view=graph-rest-1.0
       operationId: user_CreateUser
       requestBody:
         description: New entity
@@ -104,7 +104,7 @@ paths:
       description: Read properties and relationships of the user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0
       operationId: user_GetUser
       parameters:
         - name: user-id
@@ -149,10 +149,10 @@ paths:
       tags:
         - users.user
       summary: Update user
-      description: Update the properties of a user object.
+      description: Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. Customers through Microsoft Entra ID for customers can also use this API operation to update their details. See Default user permissions in customer tenants for the list of properties they can update.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
       operationId: user_UpdateUser
       parameters:
         - name: user-id
@@ -183,11 +183,11 @@ paths:
     delete:
       tags:
         - users.user
-      summary: Delete a user
-      description: 'Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.'
+      summary: Delete user
+      description: Deletes a user.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0
       operationId: user_DeleteUser
       parameters:
         - name: user-id

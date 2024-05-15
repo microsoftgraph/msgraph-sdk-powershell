@@ -1,0 +1,10 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+steps:
+  - task: PowerShell@2
+    displayName: Check for OpenAPI Errors
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/OpenApiInfoGenerator/OpenApiInfoGenerator/OpenApiChanges.ps1

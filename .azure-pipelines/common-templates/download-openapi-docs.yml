@@ -92,6 +92,24 @@ steps:
       script: |
         . "$(System.DefaultWorkingDirectory)\tools\Versions\BumpModuleVersion.ps1" -BumpV1Module -BumpBetaModule -BumpAuthModule -Debug
 
+  - task: PowerShell@2
+    name: BuildOpenApiMetadataDetectionTool
+    displayName: Build tool for detecting metadata changes
+    inputs:
+      pwsh: true
+      targetType: inline
+      script: dotnet build --configuration Release
+      workingDirectory: "$(System.DefaultWorkingDirectory)/tools/OpenApiInfoGenerator/OpenApiInfoGenerator"
+
+  - task: PowerShell@2
+    name: GenerateOpenApiErrorAndInfoFiles
+    displayName: Generate OpenApi error and info file for detecting unnecessary changes that would lead to a breaking change
+    inputs:
+      pwsh: true
+      targetType: inline
+      script: dotnet run
+      workingDirectory: "$(System.DefaultWorkingDirectory)/tools/OpenApiInfoGenerator/OpenApiInfoGenerator"
+
   - task: Bash@3
     displayName: Commit downloaded files
     condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))

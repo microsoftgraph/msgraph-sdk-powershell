@@ -112,6 +112,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.alertCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-04-10'
+        date: '2024-04-10'
+        version: 2024-01/Deprecation
+        description: 'The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -137,6 +143,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.alert'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-04-10'
+        date: '2024-04-10'
+        version: 2024-01/Deprecation
+        description: 'The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API.'
       x-ms-docs-operation-type: operation
   /security/alerts_v2:
     get:
@@ -436,6 +448,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.alert'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-04-10'
+        date: '2024-04-10'
+        version: 2024-01/Deprecation
+        description: 'The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -467,6 +485,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.alert'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-04-10'
+        date: '2024-04-10'
+        version: 2024-01/Deprecation
+        description: 'The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API.'
       x-ms-docs-operation-type: operation
   /security/alerts/$count:
     get:
@@ -482,6 +506,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-04-10'
+        date: '2024-04-10'
+        version: 2024-01/Deprecation
+        description: 'The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API.'
   /security/attackSimulation:
     get:
       tags:
@@ -24358,6 +24388,7 @@ components:
         - scheduledAlerts
         - microsoftDefenderThreatIntelligenceAnalytics
         - builtInMl
+        - microsoftInsiderRiskManagement
         - microsoftSentinel
       type: string
     microsoft.graph.security.alertDetermination:
@@ -24431,6 +24462,7 @@ components:
         - unknownFutureValue
         - microsoftDefenderForCloud
         - microsoftSentinel
+        - microsoftInsiderRiskManagement
       type: string
     microsoft.graph.security.alertSeverity:
       title: alertSeverity

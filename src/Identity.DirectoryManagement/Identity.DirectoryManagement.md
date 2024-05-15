@@ -58,4 +58,6 @@ directive:
       subject: ^(DirectoryDeleted)(application|administrativeUnit|appRoleAssignment|directoryObject|directoryRole|device|group|orgContact|servicePrincipal|user)$
     set:
       subject: $1ItemAs$2
+##Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0.
+  - remove-path-by-operation: ^device_DeleteRegisteredOwnerGraphBPreRef$|^device_DeleteRegisteredUserGraphBPreRef$|^directory.administrativeUnit_DeleteMemberGraphBPreRef$|^directoryRole_DeleteMemberGraphBPreRef$|^directory.featureRolloutPolicy_ListAppliesToGraphBPreRef$
 ```
