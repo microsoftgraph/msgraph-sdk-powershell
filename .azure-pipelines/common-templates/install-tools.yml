@@ -12,6 +12,12 @@ steps:
     inputs:
       debugMode: false
       version: 7.x
+  
+  - task: UseDotNet@2
+    displayName: Use .NET SDK
+    inputs:
+      debugMode: false
+      version: 8.x
 
   - task: NuGetToolInstaller@1
     displayName: Install Nuget
