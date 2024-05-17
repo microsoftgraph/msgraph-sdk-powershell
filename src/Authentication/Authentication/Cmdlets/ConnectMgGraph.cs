@@ -60,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         Torus migration changes for client based rollout
         */
         [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.SafeRollout)]
-        //[Parameter(Mandatory = false, ParameterSetName = Constants.SafeRolloutParameterSet, HelpMessage = HelpMessages.SafeRollout)]
+        [Parameter(Mandatory = false, ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.SafeRollout)]
         [Alias("ValidateRollout")]
         public bool SafeRollOut { get; set; }
         
@@ -133,7 +133,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
             else
             {
-                environment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global];
+                bool.TryParse(SafeRollOut.ToString().ToLower(), out bool safeRollOut);
+                if(safeRollOut && AccessToken != null){
+                    //Use Torus environment
+                    environment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Torus];
+                }
+                else{
+                    environment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global];
+                }
+                
             }
             
         }
@@ -176,7 +184,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version, Environment = environment?.Name };
                 if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout)))
                     GraphSession.Instance.RequestContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
-                
                 bool.TryParse(SafeRollOut.ToString().ToLower(), out bool safeRollOut);
                 GraphSession.Instance.Environment = environment;
                 GraphSession.Instance.GraphHttpClient = null;
@@ -257,7 +264,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 try
                 {
-                    GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, safeRollOut, _cancellationTokenSource.Token).ConfigureAwait(false);
+                    GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, safeRollOut,_cancellationTokenSource.Token).ConfigureAwait(false);
                 
                 }
                 catch (Exception)
@@ -281,6 +288,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"Welcome to Microsoft Graph!{System.Environment.NewLine}");
+            //Show message that this is a torus test if environment is torus and the access token is user defined
+            if (GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Torus].Name == GraphSession.Instance.Environment.Name)
+            {
+                stringBuilder.AppendLine($"You are connected to the Torus environment. This is a test environment and should not be used for production scenarios.{System.Environment.NewLine}");
+                //Show the azure endpoint for torus environment
+                stringBuilder.AppendLine($"Azure Endpoint: {GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Torus].AzureADEndpoint}{System.Environment.NewLine}");
+            }
+            //Show torus migration message if safe rollout is enabled
             stringBuilder.AppendLine($"Connected via {authType.ToLower()} access using {clientId}");
             stringBuilder.AppendLine($"Readme: {Constants.SdkReadmeLink}");
             stringBuilder.AppendLine($"SDK Docs: {Constants.SdkDocsLink}");
