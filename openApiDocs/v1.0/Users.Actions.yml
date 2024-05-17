@@ -26149,13 +26149,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
@@ -26167,7 +26167,7 @@ components:
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
@@ -32863,6 +32863,52 @@ components:
         - stapleDualRight
         - stapleDualBottom
         - unknownFutureValue
+        - stapleTripleLeft
+        - stapleTripleTop
+        - stapleTripleRight
+        - stapleTripleBottom
+        - bindLeft
+        - bindTop
+        - bindRight
+        - bindBottom
+        - foldAccordion
+        - foldDoubleGate
+        - foldGate
+        - foldHalf
+        - foldHalfZ
+        - foldLeftGate
+        - foldLetter
+        - foldParallel
+        - foldPoster
+        - foldRightGate
+        - foldZ
+        - foldEngineeringZ
+        - punchTopLeft
+        - punchBottomLeft
+        - punchTopRight
+        - punchBottomRight
+        - punchDualLeft
+        - punchDualTop
+        - punchDualRight
+        - punchDualBottom
+        - punchTripleLeft
+        - punchTripleTop
+        - punchTripleRight
+        - punchTripleBottom
+        - punchQuadLeft
+        - punchQuadTop
+        - punchQuadRight
+        - punchQuadBottom
+        - fold
+        - trim
+        - bale
+        - bookletMaker
+        - coat
+        - laminate
+        - trimAfterPages
+        - trimAfterDocuments
+        - trimAfterCopies
+        - trimAfterJob
       type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout

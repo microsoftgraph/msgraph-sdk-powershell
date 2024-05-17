@@ -9795,7 +9795,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/users/{user-id}/onlineMeetings/microsoft.graph.getAllRecordings()':
+  '/users/{user-id}/onlineMeetings/microsoft.graph.getAllRecordings(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
     get:
       tags:
         - users.Functions
@@ -9810,6 +9810,34 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: meetingOrganizerUserId
+          in: query
+          description: 'Usage: meetingOrganizerUserId=''@meetingOrganizerUserId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+            nullable: true
+        - name: startDateTime
+          in: query
+          description: 'Usage: startDateTime=@startDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: query
+          description: 'Usage: endDateTime=@endDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -9869,7 +9897,7 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/users/{user-id}/onlineMeetings/microsoft.graph.getAllTranscripts()':
+  '/users/{user-id}/onlineMeetings/microsoft.graph.getAllTranscripts(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
     get:
       tags:
         - users.Functions
@@ -9888,6 +9916,34 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: meetingOrganizerUserId
+          in: query
+          description: 'Usage: meetingOrganizerUserId=''@meetingOrganizerUserId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+            nullable: true
+        - name: startDateTime
+          in: query
+          description: 'Usage: startDateTime=@startDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: query
+          description: 'Usage: endDateTime=@endDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -12718,6 +12774,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.specialFolder'
             video:
               $ref: '#/components/schemas/microsoft.graph.video'
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.driveItemViewpoint'
             webDavUrl:
               type: string
               description: WebDAV compatible URL for the item.
@@ -15703,11 +15761,15 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'Supported values are Unicode characters and custom. Some backward-compatible reaction types include like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -15864,6 +15926,8 @@ components:
         - dedicated
         - shared
         - unknownFutureValue
+        - sharedByUser
+        - sharedByEntraGroup
       type: string
     microsoft.graph.cloudPcServicePlanType:
       title: cloudPcServicePlanType
@@ -16808,6 +16872,16 @@ components:
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.driveItemViewpoint:
+      title: driveItemViewpoint
+      type: object
+      properties:
+        accessOperations:
+          $ref: '#/components/schemas/microsoft.graph.driveItemAccessOperationsViewpoint'
+        sharing:
+          $ref: '#/components/schemas/microsoft.graph.sharingViewpoint'
       additionalProperties:
         type: object
     microsoft.graph.itemActivityOLD:
@@ -19292,6 +19366,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
               x-ms-navigationProperty: true
+            claimsPolicy:
+              $ref: '#/components/schemas/microsoft.graph.customClaimsPolicy'
             createdObjects:
               type: array
               items:
@@ -21655,6 +21731,50 @@ components:
         - other
         - unknownFutureValue
       type: string
+    microsoft.graph.driveItemAccessOperationsViewpoint:
+      title: driveItemAccessOperationsViewpoint
+      type: object
+      properties:
+        canComment:
+          type: boolean
+          description: Indicates whether the user can comment on this item.
+          nullable: true
+        canCreateFile:
+          type: boolean
+          description: Indicates whether the user can create files within this object. Returned only on folders.
+          nullable: true
+        canCreateFolder:
+          type: boolean
+          description: Indicates whether the user can create folders within this object. Returned only on folders.
+          nullable: true
+        canDelete:
+          type: boolean
+          description: Indicates whether the user can delete this item.
+          nullable: true
+        canDownload:
+          type: boolean
+          description: Indicates whether the user can download this item.
+          nullable: true
+        canRead:
+          type: boolean
+          description: Indicates whether the user can read this item.
+          nullable: true
+        canUpdate:
+          type: boolean
+          description: Indicates whether the user can update this item.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingViewpoint:
+      title: sharingViewpoint
+      type: object
+      properties:
+        defaultSharingLink:
+          $ref: '#/components/schemas/microsoft.graph.defaultSharingLink'
+        sharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.sharePointSharingAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.itemActionSet:
       title: itemActionSet
       type: object
@@ -22664,6 +22784,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -22987,6 +23109,8 @@ components:
           properties:
             consentedPermissionSet:
               $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+            scopeInfo:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopeInfo'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -24363,6 +24487,27 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: claimsMappingPolicy
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.customClaimsPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customClaimsPolicy
+          type: object
+          properties:
+            audienceOverride:
+              type: string
+              nullable: true
+            claims:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customClaimBase'
+            includeApplicationIdInIssuer:
+              type: boolean
+              nullable: true
+            includeBasicClaimSet:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.delegatedPermissionClassification:
@@ -28346,6 +28491,34 @@ components:
         - comment
         - unknownFutureValue
       type: string
+    microsoft.graph.defaultSharingLink:
+      title: defaultSharingLink
+      type: object
+      properties:
+        defaultToExistingAccess:
+          type: boolean
+          description: Indicates whether the default link setting for this object is a direct URL rather than a sharing link.
+          nullable: true
+        role:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.sharingScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharePointSharingAbilities:
+      title: sharePointSharingAbilities
+      type: object
+      properties:
+        anyoneLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        directSharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.directSharingAbilities'
+        organizationLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        specificPeopleLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.commentAction:
       title: commentAction
       type: object
@@ -28957,6 +29130,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalLink'
       additionalProperties:
         type: object
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.publicError:
       title: publicError
       type: object
@@ -29140,6 +29321,14 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
           description: A collection of resource-specific permissions.
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppInstallationScopeInfo:
+      title: teamsAppInstallationScopeInfo
+      type: object
+      properties:
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
       additionalProperties:
         type: object
     microsoft.graph.teamsApp:
@@ -29810,11 +29999,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -29892,6 +30081,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.customClaimBase:
+      title: customClaimBase
+      type: object
+      properties:
+        configurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimConfiguration'
+      additionalProperties:
+        type: object
     microsoft.graph.permissionClassificationType:
       title: permissionClassificationType
       enum:
@@ -32287,6 +32486,60 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.sharingRole:
+      title: sharingRole
+      enum:
+        - none
+        - view
+        - edit
+        - manageList
+        - review
+        - restrictedView
+        - submitOnly
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sharingScope:
+      title: sharingScope
+      enum:
+        - anyone
+        - organization
+        - specificPeople
+        - anonymous
+        - users
+        - unknownFutureValue
+      type: string
+    microsoft.graph.linkScopeAbilities:
+      title: linkScopeAbilities
+      type: object
+      properties:
+        blockDownloadLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        editLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        manageListLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        readLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        reviewLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        submitOnlyLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+      additionalProperties:
+        type: object
+    microsoft.graph.directSharingAbilities:
+      title: directSharingAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addInternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requestGrantAccess:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookEmailIdentity:
       title: workbookEmailIdentity
       type: object
@@ -32650,6 +32903,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.publicErrorDetail:
       title: publicErrorDetail
       type: object
@@ -32725,14 +32986,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.teamsAppDistributionMethod:
-      title: teamsAppDistributionMethod
-      enum:
-        - store
-        - organization
-        - sideloaded
-        - unknownFutureValue
-      type: string
     microsoft.graph.teamsAppInstallationScopes:
       title: teamsAppInstallationScopes
       enum:
@@ -32743,6 +32996,14 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -33605,6 +33866,20 @@ components:
           nullable: true
         restrictionType:
           $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimConfiguration:
+      title: customClaimConfiguration
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        condition:
+          $ref: '#/components/schemas/microsoft.graph.customClaimConditionBase'
+        transformations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimTransformation'
       additionalProperties:
         type: object
     microsoft.graph.synchronizationSecret:
@@ -34643,6 +34918,44 @@ components:
         - rejectedByOrganizer
         - unknownFutureValue
       type: string
+    microsoft.graph.linkRoleAbilities:
+      title: linkRoleAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        applyVariants:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkVariants'
+        createLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        deleteLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkAllowsExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkExpiration:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkExpirationStatus'
+        retrieveLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        updateLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingOperationStatus:
+      title: sharingOperationStatus
+      type: object
+      properties:
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
@@ -36162,6 +36475,24 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.customClaimAttributeBase:
+      title: customClaimAttributeBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimConditionBase:
+      title: customClaimConditionBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimTransformation:
+      title: customClaimTransformation
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/microsoft.graph.transformationAttribute'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationScheduleState:
       title: synchronizationScheduleState
       enum:
@@ -36493,6 +36824,41 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.sharingLinkVariants:
+      title: sharingLinkVariants
+      type: object
+      properties:
+        addressBarLinkPermission:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        allowEmbed:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        passwordProtected:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requiresAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLinkExpirationStatus:
+      title: sharingLinkExpirationStatus
+      type: object
+      properties:
+        defaultExpirationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Default link expiration in days. Returns -1 if there is no required expiration time.
+          format: int32
+          nullable: true
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookChartAxisFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36748,6 +37114,16 @@ components:
           type: string
           description: Refers to the Service Principal Name is the Application name in the tenant.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.transformationAttribute:
+      title: transformationAttribute
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        treatAsMultiValue:
+          type: boolean
       additionalProperties:
         type: object
     microsoft.graph.synchronizationError:
