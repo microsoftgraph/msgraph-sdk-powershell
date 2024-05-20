@@ -60,6 +60,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         Torus migration changes for client based rollout
         */
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, Mandatory = false, HelpMessage = HelpMessages.SafeRollout)]
+        [Parameter(Mandatory = false, ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.Certificate)]
+        [Parameter(Mandatory = false, ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.ClientSecretCredential)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.SafeRollout)]
+        [Parameter(ParameterSetName = Constants.EnvironmentVariableParameterSet, Mandatory = false, HelpMessage = HelpMessages.Environment)]
         [Alias("ValidateRollout")]
         public bool SafeRollOut { get; set; }
         
