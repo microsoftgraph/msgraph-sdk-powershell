@@ -137,7 +137,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             else
             {
                 bool.TryParse(SafeRollOut.ToString().ToLower(), out bool safeRollOut);
-                if(safeRollOut && AccessToken != null){
+                if (safeRollOut) {
                     //Use Torus environment
                     environment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Torus];
                 }

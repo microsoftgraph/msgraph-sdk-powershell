@@ -310,7 +310,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             string audience = authContext.TenantId ?? Constants.DefaultTenant;
             if(safeRollOut)
                 return GraphSession.Instance.Environment != null
-                    ? $"{GraphSession.Instance.Environment.AzureADEndpoint}?safe_rollout=apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc"
+                    ? $"{GraphSession.Instance.Environment.AzureADEndpoint}"
                     : $"{Constants.DefaultAzureADEndpoint}?safe_rollout=apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc";
 
             return GraphSession.Instance.Environment != null
