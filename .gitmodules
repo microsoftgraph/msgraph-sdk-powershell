@@ -2,3 +2,7 @@
 	path = autorest.powershell
 	url = https://github.com/microsoftgraph/autorest.powershell
 	branch = powershell_v2
+[submodule "Newtonsoft.Json"]
+	path = Newtonsoft.Json
+	url = https://github.com/JamesNK/Newtonsoft.Json.git
+	branch = 13.0.3
