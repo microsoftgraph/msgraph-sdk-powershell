@@ -6,8 +6,8 @@ internal class Program
 {
     public static string openApiInfoFile = "openApiInfo.json";
     public static string openApiFileError = "openAPIErrors.csv";
-    private const string openApiInfoMetadataUrl_v1 = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/metadata-changes-detection/docs/OpenApiInfo/v1.0/openApiInfo.json";
-    private const string openApiInfoMetadataUrl_beta = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/metadata-changes-detection/docs/OpenApiInfo/beta/openApiInfo.json";
+    private const string openApiInfoMetadataUrl_v1 = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/docs/OpenApiInfo/v1.0/openApiInfo.json";
+    private const string openApiInfoMetadataUrl_beta = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/docs/OpenApiInfo/beta/openApiInfo.json";
     private static IList<Model> openApiInfo_v1 = new OriginalMetadata(openApiInfoMetadataUrl_v1).GetOpenApiInfo();
     private static IList<Model> openApiInfo_beta = new OriginalMetadata(openApiInfoMetadataUrl_beta).GetOpenApiInfo();
     private static IDictionary<string, IList<Model>> openApiVersions = new Dictionary<string, IList<Model>>();
