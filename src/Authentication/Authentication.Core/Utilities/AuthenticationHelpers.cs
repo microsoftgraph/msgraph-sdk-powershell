@@ -540,4 +540,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
     internal class PopClientOptions : ClientOptions
     {
     }
+    internal class PopClientOptions : ClientOptions
+    {
+    }
 }
