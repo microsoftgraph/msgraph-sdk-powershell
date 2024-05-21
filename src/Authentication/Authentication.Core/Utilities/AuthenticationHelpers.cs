@@ -1,6 +1,7 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using Azure;
 using Azure.Core;
 using Azure.Core.Diagnostics;
 using Azure.Core.Pipeline;
@@ -16,6 +17,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
@@ -91,7 +93,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         }
 
         //Check to see if ATPoP is Supported
-        private static bool IsATPoPSupported()
+        public static bool IsATPoPSupported()
         {
             return GraphSession.Instance.GraphOption.EnableATPoPForMSGraph;
         }
@@ -131,10 +133,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
             interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
 
+            var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
+            if (IsATPoPSupported())
+            {
+                GraphSession.Instance.GraphRequestProofofPossession.PopTokenContext = CreatePopTokenRequestContext(authContext);
+                GraphSession.Instance.GraphRequestProofofPossession.BrowserCredential = interactiveBrowserCredential;
+            }
+
             if (!File.Exists(Constants.AuthRecordPath))
             {
                 AuthenticationRecord authRecord;
-                var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
+                //var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
                 if (IsWamSupported())
                 {
                     // Adding a scenario to account for Access Token Proof of Possession
@@ -143,45 +152,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         // Logic to implement ATPoP Authentication
                         authRecord = await Task.Run(() =>
                         {
-                            // Creating a Request to retrieve nonce value
-                            string popNonce = null;
-                            var popNonceToken = "nonce=\"";
-                            Uri resourceUri = new Uri("https://canary.graph.microsoft.com/beta/me"); //PPE (https://graph.microsoft-ppe.com) or Canary (https://canary.graph.microsoft.com) or (https://20.190.132.47/beta/me)
-                            HttpClient httpClient = new(new HttpClientHandler { ServerCertificateCustomValidationCallback = (_, _, _, _) => true });
-                            HttpResponseMessage response = httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, resourceUri)).Result;
-
-                            // Find the WWW-Authenticate header in the response.
-                            var popChallenge = response.Headers.WwwAuthenticate.First(wa => wa.Scheme == "PoP");
-                            var nonceStart = popChallenge.Parameter.IndexOf(popNonceToken) + popNonceToken.Length;
-                            var nonceEnd = popChallenge.Parameter.IndexOf('"', nonceStart);
-                            popNonce = popChallenge.Parameter.Substring(nonceStart, nonceEnd - nonceStart);
-
-                            // Refresh token logic --- start
-                            var popTokenAuthenticationPolicy = new PopTokenAuthenticationPolicy(interactiveBrowserCredential as ISupportsProofOfPossession, $"https://graph.microsoft.com/.default");
-                            var pipelineOptions = new HttpPipelineOptions(new PopClientOptions()
-                            {
-                                Diagnostics = 
-                                {
-                                    IsLoggingContentEnabled = true,
-                                    LoggedHeaderNames = { "Authorization" }
-                                },
-                            });
-                            pipelineOptions.PerRetryPolicies.Add(popTokenAuthenticationPolicy);
-
-                            var _pipeline = HttpPipelineBuilder.Build(pipelineOptions, new HttpPipelineTransportOptions { ServerCertificateCustomValidationCallback = (_) => true });
-                            
-                            using var request = _pipeline.CreateRequest();
-                            request.Method = RequestMethod.Get;
-                            request.Uri.Reset(resourceUri);
-                         
-                            // Manually invoke the authentication policy's process method
-                            popTokenAuthenticationPolicy.ProcessAsync(new HttpMessage(request, new ResponseClassifier()), ReadOnlyMemory<HttpPipelinePolicy>.Empty);
-                            // Refresh token logic --- end
-
                             // Run the thread in MTA.
-                            var popContext = new PopTokenRequestContext(authContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: popNonce, request: request);
-                            //var token = interactiveBrowserCredential.GetToken(popContext, cancellationToken);
-                            return interactiveBrowserCredential.Authenticate(popContext, cancellationToken);
+                            //GraphSession.Instance.GraphRequestProofofPossession.AccessToken = interactiveBrowserCredential.GetTokenAsync(GraphSession.Instance.GraphRequestProofofPossession.PopTokenContext, cancellationToken).Result;
+                            return interactiveBrowserCredential.AuthenticateAsync(GraphSession.Instance.GraphRequestProofofPossession.PopTokenContext, cancellationToken);
                         });
                     }
                     else
@@ -507,6 +480,61 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (File.Exists(Constants.AuthRecordPath))
                 File.Delete(Constants.AuthRecordPath);
             return Task.CompletedTask;
+        }
+
+        public static PopTokenRequestContext CreatePopTokenRequestContext(IAuthContext authContext)
+        {
+            // Creating a httpclient that would handle all pop calls
+            Uri popResourceUri = GraphSession.Instance.GraphRequestProofofPossession.Uri ?? new Uri("https://canary.graph.microsoft.com/beta/me"); //PPE (https://graph.microsoft-ppe.com) or Canary (https://canary.graph.microsoft.com) or (https://20.190.132.47/beta/me)
+            HttpClient popHttpClient = new(new HttpClientHandler { ServerCertificateCustomValidationCallback = (_, _, _, _) => true });
+
+            // Find the WWW-Authenticate header in the response.
+            var popMethod = GraphSession.Instance.GraphRequestProofofPossession.HttpMethod ?? HttpMethod.Get;
+            var popResponse = popHttpClient.SendAsync(new HttpRequestMessage(popMethod, popResourceUri)).Result;
+            var popChallenge = popResponse.Headers.WwwAuthenticate.First(wa => wa.Scheme == "PoP");
+            var nonceStart = popChallenge.Parameter.IndexOf("nonce=\"") + "nonce=\"".Length;
+            var nonceEnd = popChallenge.Parameter.IndexOf('"', nonceStart);
+            GraphSession.Instance.GraphRequestProofofPossession.ProofofPossessionNonce = popChallenge.Parameter.Substring(nonceStart, nonceEnd - nonceStart);
+
+            // Refresh token logic --- start
+            var popPipelineOptions = new HttpPipelineOptions(new PopClientOptions()
+            {
+
+            });
+
+            var _popPipeline = HttpPipelineBuilder.Build(popPipelineOptions, new HttpPipelineTransportOptions { ServerCertificateCustomValidationCallback = (_) => true });
+            GraphSession.Instance.GraphRequestProofofPossession.Request = _popPipeline.CreateRequest();
+            GraphSession.Instance.GraphRequestProofofPossession.Request.Method = ConvertToAzureRequestMethod(popMethod);
+            GraphSession.Instance.GraphRequestProofofPossession.Request.Uri.Reset(popResourceUri);
+
+            // Refresh token logic --- end
+            var popContext = new PopTokenRequestContext(authContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: GraphSession.Instance.GraphRequestProofofPossession.ProofofPossessionNonce, request: GraphSession.Instance.GraphRequestProofofPossession.Request);
+            return popContext;
+        }
+        public static RequestMethod ConvertToAzureRequestMethod(HttpMethod httpMethod)
+        {
+            // Mapping known HTTP methods
+            switch (httpMethod.Method.ToUpper())
+            {
+                case "GET":
+                    return RequestMethod.Get;
+                case "POST":
+                    return RequestMethod.Post;
+                case "PUT":
+                    return RequestMethod.Put;
+                case "DELETE":
+                    return RequestMethod.Delete;
+                case "HEAD":
+                    return RequestMethod.Head;
+                case "OPTIONS":
+                    return RequestMethod.Options;
+                case "PATCH":
+                    return RequestMethod.Patch;
+                case "TRACE":
+                    return RequestMethod.Trace;
+                default:
+                    throw new ArgumentException($"Unsupported HTTP method: {httpMethod.Method}");
+            }
         }
     }
     internal class PopClientOptions : ClientOptions

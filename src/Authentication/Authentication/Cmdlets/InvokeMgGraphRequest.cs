@@ -1023,6 +1023,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 try
                 {
                     PrepareSession();
+                    GraphSession.Instance.GraphRequestProofofPossession.Uri = Uri;
+                    GraphSession.Instance.GraphRequestProofofPossession.HttpMethod = GetHttpMethod(Method);
                     var client = HttpHelpers.GetGraphHttpClient();
                     ValidateRequestUri();
                     using (var httpRequestMessage = GetRequest(client, Uri))
