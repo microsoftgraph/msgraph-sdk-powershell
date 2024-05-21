@@ -366,7 +366,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -407,7 +406,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property bundles in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive_DeleteBundlesContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/bundles/$count':
     get:
       tags:
@@ -787,7 +819,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -828,7 +859,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property following in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive_DeleteFollowingContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/following/$count':
     get:
       tags:
@@ -855,8 +919,11 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: Get items from drives
-      description: All items contained in the drive. Read-only. Nullable.
+      summary: 'drive: sharedWithMe'
+      description: Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
       operationId: drive_ListItem
       parameters:
         - name: drive-id
@@ -1930,7 +1997,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -1987,7 +2053,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - name: itemActivity-id
+          in: path
+          description: The unique identifier of itemActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivity
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
     get:
       tags:
@@ -2113,8 +2228,11 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: Get children from drives
-      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+      summary: List children of a driveItem
+      description: Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
       operationId: drive.item_ListChild
       parameters:
         - name: drive-id
@@ -2327,7 +2445,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -2376,7 +2493,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property children in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive.item_DeleteChildrenContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: driveItem-id1
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/children/$count':
     get:
       tags:
@@ -2448,7 +2606,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -2489,7 +2646,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property items in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive_DeleteItemsContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/createdByUser':
     get:
       tags:
@@ -3972,7 +4162,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -4013,7 +4202,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive.item.listItem_DeleteDriveItemContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/listItem/fields':
     get:
       tags:
@@ -6685,7 +6907,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: Update the navigation property retentionLabel in drives
+      summary: 'driveItem: setRetentionLabel'
+      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
       operationId: drive.item_UpdateRetentionLabel
       parameters:
         - name: drive-id
@@ -6724,7 +6950,11 @@ paths:
     delete:
       tags:
         - drives.driveItem
-      summary: Delete navigation property retentionLabel for drives
+      summary: 'driveItem: removeRetentionLabel'
+      description: 'Remove a retention label from a driveItem. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0
       operationId: drive.item_DeleteRetentionLabel
       parameters:
         - name: drive-id
@@ -7672,7 +7902,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -7721,7 +7950,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property versions in drives
+      description: The content stream for this version of the item.
+      operationId: drive.item_DeleteVersionsContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: driveItemVersion-id
+          in: path
+          description: The unique identifier of driveItemVersion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItemVersion
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/versions/{driveItemVersion-id}/microsoft.graph.restoreVersion':
     post:
       tags:
@@ -10302,6 +10572,7 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -11370,7 +11641,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.list
@@ -11411,7 +11681,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.list
+      summary: Delete content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive.list.item_DeleteDriveItemContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/items/{listItem-id}/fields':
     get:
       tags:
@@ -14457,7 +14760,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -14506,7 +14808,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - name: itemActivity-id
+          in: path
+          description: The unique identifier of itemActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivity
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
     get:
       tags:
@@ -14790,7 +15133,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -14831,7 +15173,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property children in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive.root_DeleteChildrenContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/children/$count':
     get:
       tags:
@@ -14887,7 +15262,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -14920,7 +15294,32 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property root in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive_DeleteRootContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/createdByUser':
     get:
       tags:
@@ -16155,7 +16554,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -16188,7 +16586,32 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property driveItem in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive.root.listItem_DeleteDriveItemContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/listItem/fields':
     get:
       tags:
@@ -19295,7 +19718,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -19336,7 +19758,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property versions in drives
+      description: The content stream for this version of the item.
+      operationId: drive.root_DeleteVersionsContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItemVersion-id
+          in: path
+          description: The unique identifier of driveItemVersion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItemVersion
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/versions/{driveItemVersion-id}/microsoft.graph.restoreVersion':
     post:
       tags:
@@ -19547,7 +20002,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - drives.driveItem
@@ -19588,7 +20042,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - drives.driveItem
+      summary: Delete content for the navigation property special in drives
+      description: 'The content stream, if the item represents a file.'
+      operationId: drive_DeleteSpecialContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/special/$count':
     get:
       tags:
@@ -20093,7 +20580,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -20142,7 +20628,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property bundles in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive_DeleteBundlesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/bundles/$count':
     get:
       tags:
@@ -20594,7 +21121,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -20643,7 +21169,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property following in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive_DeleteFollowingContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/following/$count':
     get:
       tags:
@@ -21921,7 +22488,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -21986,7 +22552,64 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - name: itemActivity-id
+          in: path
+          description: The unique identifier of itemActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivity
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
     get:
       tags:
@@ -22382,7 +23005,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -22439,7 +23061,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property children in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive.item_DeleteChildrenContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: driveItem-id1
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/children/$count':
     get:
       tags:
@@ -22527,7 +23198,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -22576,7 +23246,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property items in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive_DeleteItemsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/createdByUser':
     get:
       tags:
@@ -24258,7 +24969,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -24307,7 +25017,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive.item.listItem_DeleteDriveItemContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/fields':
     get:
       tags:
@@ -26759,7 +27510,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -26816,7 +27566,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property versions in groups
+      description: The content stream for this version of the item.
+      operationId: group.drive.item_DeleteVersionsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: driveItemVersion-id
+          in: path
+          description: The unique identifier of driveItemVersion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItemVersion
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/versions/$count':
     get:
       tags:
@@ -30583,7 +31382,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -30632,7 +31430,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive.list.item_DeleteDriveItemContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/fields':
     get:
       tags:
@@ -33383,7 +34222,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -33440,7 +34278,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - name: itemActivity-id
+          in: path
+          description: The unique identifier of itemActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivity
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
     get:
       tags:
@@ -33780,7 +34667,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -33829,7 +34715,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property children in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive.root_DeleteChildrenContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/children/$count':
     get:
       tags:
@@ -33901,7 +34828,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -33942,7 +34868,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property root in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive_DeleteRootContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/createdByUser':
     get:
       tags:
@@ -35384,7 +36343,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -35425,7 +36383,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property driveItem in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive.root.listItem_DeleteDriveItemContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/listItem/fields':
     get:
       tags:
@@ -37525,7 +38516,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -37574,7 +38564,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property versions in groups
+      description: The content stream for this version of the item.
+      operationId: group.drive.root_DeleteVersionsContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItemVersion-id
+          in: path
+          description: The unique identifier of driveItemVersion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItemVersion
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/versions/$count':
     get:
       tags:
@@ -37784,7 +38815,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.drive
@@ -37833,7 +38863,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.drive
+      summary: Delete content for the navigation property special in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.drive_DeleteSpecialContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/special/$count':
     get:
       tags:
@@ -38282,8 +39353,11 @@ paths:
     get:
       tags:
         - shares.driveItem
-      summary: Get driveItem from shares
-      description: Used to access the underlying driveItem
+      summary: Accessing shared DriveItems
+      description: 'Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/shares-get?view=graph-rest-1.0
       operationId: share_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -38357,7 +39431,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - shares.driveItem
@@ -38390,7 +39463,32 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - shares.driveItem
+      summary: Delete content for the navigation property driveItem in shares
+      description: 'The content stream, if the item represents a file.'
+      operationId: share_DeleteDriveItemContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/items':
     get:
       tags:
@@ -38546,7 +39644,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - shares.driveItem
@@ -38587,7 +39684,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - shares.driveItem
+      summary: Delete content for the navigation property items in shares
+      description: 'The content stream, if the item represents a file.'
+      operationId: share_DeleteItemsContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/items/$count':
     get:
       tags:
@@ -41097,6 +42227,7 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -42165,7 +43296,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - shares.list
@@ -42206,7 +43336,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - shares.list
+      summary: Delete content for the navigation property driveItem in shares
+      description: 'The content stream, if the item represents a file.'
+      operationId: share.list.item_DeleteDriveItemContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/items/{listItem-id}/fields':
     get:
       tags:
@@ -45027,7 +46190,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - shares.listItem
@@ -45060,7 +46222,32 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - shares.listItem
+      summary: Delete content for the navigation property driveItem in shares
+      description: 'The content stream, if the item represents a file.'
+      operationId: share.listItem_DeleteDriveItemContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/listItem/fields':
     get:
       tags:
@@ -46246,7 +47433,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - shares.driveItem
@@ -46279,7 +47465,32 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - shares.driveItem
+      summary: Delete content for the navigation property root in shares
+      description: 'The content stream, if the item represents a file.'
+      operationId: share_DeleteRootContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/site':
     get:
       tags:
@@ -46822,7 +48033,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -46871,7 +48081,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property bundles in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive_DeleteBundlesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/bundles/$count':
     get:
       tags:
@@ -47323,7 +48574,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -47372,7 +48622,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property following in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive_DeleteFollowingContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/following/$count':
     get:
       tags:
@@ -48650,7 +49941,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -48715,7 +50005,64 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - name: itemActivity-id
+          in: path
+          description: The unique identifier of itemActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivity
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
     get:
       tags:
@@ -49111,7 +50458,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -49168,7 +50514,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property children in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive.item_DeleteChildrenContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: driveItem-id1
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/children/$count':
     get:
       tags:
@@ -49256,7 +50651,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -49305,7 +50699,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property items in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive_DeleteItemsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/createdByUser':
     get:
       tags:
@@ -50987,7 +52422,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -51036,7 +52470,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive.item.listItem_DeleteDriveItemContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/fields':
     get:
       tags:
@@ -53488,7 +54963,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -53545,7 +55019,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property versions in users
+      description: The content stream for this version of the item.
+      operationId: user.drive.item_DeleteVersionsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: driveItemVersion-id
+          in: path
+          description: The unique identifier of driveItemVersion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItemVersion
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/versions/$count':
     get:
       tags:
@@ -57312,7 +58835,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -57361,7 +58883,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive.list.item_DeleteDriveItemContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/fields':
     get:
       tags:
@@ -60112,7 +61675,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -60169,7 +61731,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - name: itemActivity-id
+          in: path
+          description: The unique identifier of itemActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivity
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
     get:
       tags:
@@ -60509,7 +62120,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -60558,7 +62168,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property children in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive.root_DeleteChildrenContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/children/$count':
     get:
       tags:
@@ -60630,7 +62281,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -60671,7 +62321,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property root in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive_DeleteRootContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/createdByUser':
     get:
       tags:
@@ -62113,7 +63796,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -62154,7 +63836,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property driveItem in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive.root.listItem_DeleteDriveItemContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/listItem/fields':
     get:
       tags:
@@ -64254,7 +65969,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -64303,7 +66017,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property versions in users
+      description: The content stream for this version of the item.
+      operationId: user.drive.root_DeleteVersionsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItemVersion-id
+          in: path
+          description: The unique identifier of driveItemVersion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItemVersion
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/versions/$count':
     get:
       tags:
@@ -64513,7 +66268,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.drive
@@ -64562,7 +66316,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.drive
+      summary: Delete content for the navigation property special in users
+      description: 'The content stream, if the item represents a file.'
+      operationId: user.drive_DeleteSpecialContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/special/$count':
     get:
       tags:
@@ -70572,13 +72367,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
@@ -70590,7 +72385,7 @@ components:
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
@@ -79082,6 +80877,52 @@ components:
         - stapleDualRight
         - stapleDualBottom
         - unknownFutureValue
+        - stapleTripleLeft
+        - stapleTripleTop
+        - stapleTripleRight
+        - stapleTripleBottom
+        - bindLeft
+        - bindTop
+        - bindRight
+        - bindBottom
+        - foldAccordion
+        - foldDoubleGate
+        - foldGate
+        - foldHalf
+        - foldHalfZ
+        - foldLeftGate
+        - foldLetter
+        - foldParallel
+        - foldPoster
+        - foldRightGate
+        - foldZ
+        - foldEngineeringZ
+        - punchTopLeft
+        - punchBottomLeft
+        - punchTopRight
+        - punchBottomRight
+        - punchDualLeft
+        - punchDualTop
+        - punchDualRight
+        - punchDualBottom
+        - punchTripleLeft
+        - punchTripleTop
+        - punchTripleRight
+        - punchTripleBottom
+        - punchQuadLeft
+        - punchQuadTop
+        - punchQuadRight
+        - punchQuadBottom
+        - fold
+        - trim
+        - bale
+        - bookletMaker
+        - coat
+        - laminate
+        - trimAfterPages
+        - trimAfterDocuments
+        - trimAfterCopies
+        - trimAfterJob
       type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout

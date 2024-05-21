@@ -10,8 +10,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get people from admin
-      description: Represents a setting to control people-related admin settings in the tenant.
+      summary: Get peopleAdminSettings
+      description: Retrieve the properties and relationships of a peopleAdminSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-1.0
       operationId: admin_GetPerson
       parameters:
         - name: $select
@@ -48,8 +51,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get profileCardProperties from admin
-      description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
+      summary: List profileCardProperties
+      description: Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilecardproperties?view=graph-rest-1.0
       operationId: admin.person_ListProfileCardProperty
       parameters:
         - $ref: '#/components/parameters/top'
@@ -99,7 +105,11 @@ paths:
     post:
       tags:
         - admin.peopleAdminSettings
-      summary: Create new navigation property to profileCardProperties for admin
+      summary: Create profileCardProperty
+      description: 'Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilecardproperties?view=graph-rest-1.0
       operationId: admin.person_CreateProfileCardProperty
       requestBody:
         description: New navigation property
@@ -122,8 +132,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get profileCardProperties from admin
-      description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
+      summary: Get profileCardProperty
+      description: Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0
       operationId: admin.person_GetProfileCardProperty
       parameters:
         - name: profileCardProperty-id
@@ -167,7 +180,11 @@ paths:
     patch:
       tags:
         - admin.peopleAdminSettings
-      summary: Update the navigation property profileCardProperties in admin
+      summary: Update profileCardProperty
+      description: 'Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-update?view=graph-rest-1.0
       operationId: admin.person_UpdateProfileCardProperty
       parameters:
         - name: profileCardProperty-id
@@ -198,7 +215,11 @@ paths:
     delete:
       tags:
         - admin.peopleAdminSettings
-      summary: Delete navigation property profileCardProperties for admin
+      summary: Delete profileCardProperty
+      description: 'Delete the profileCardProperty object specified by its directoryPropertyName from the organization''s profile card, and remove any localized customizations for that property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-delete?view=graph-rest-1.0
       operationId: admin.person_DeleteProfileCardProperty
       parameters:
         - name: profileCardProperty-id
@@ -239,8 +260,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get pronouns from admin
-      description: Represents administrator settings that manage the support of pronouns in an organization.
+      summary: List pronounsSettings
+      description: 'Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-1.0
       operationId: admin.person_GetPronoun
       parameters:
         - name: $select
@@ -276,7 +300,11 @@ paths:
     patch:
       tags:
         - admin.peopleAdminSettings
-      summary: Update the navigation property pronouns in admin
+      summary: Update pronounsSettings
+      description: 'Update the properties of a pronounsSettings object in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0
       operationId: admin.person_UpdatePronoun
       requestBody:
         description: New navigation property values
@@ -492,8 +520,11 @@ paths:
     get:
       tags:
         - contacts.directoryObject
-      summary: Get directReports from contacts
-      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.)  Read-only. Nullable. Supports $expand.
+      summary: List directReports
+      description: Get the direct reports for this organizational contact.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-1.0
       operationId: contact_ListDirectReport
       parameters:
         - name: orgContact-id
@@ -982,8 +1013,11 @@ paths:
     get:
       tags:
         - contacts.directoryObject
-      summary: Get manager from contacts
-      description: The user or contact that is this contact's manager. Read-only. Supports $expand and $filter (eq) by id.
+      summary: Get manager
+      description: Get this organizational contact's manager.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0
       operationId: contact_GetManager
       parameters:
         - name: orgContact-id
@@ -1028,8 +1062,11 @@ paths:
     get:
       tags:
         - contacts.directoryObject
-      summary: Get memberOf from contacts
-      description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+      summary: List memberOf
+      description: List the groups that this organizational contact is a member of.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/orgcontact-list-memberof?view=graph-rest-1.0
       operationId: contact_ListMemberGraphOPre
       parameters:
         - name: orgContact-id
@@ -1879,8 +1916,11 @@ paths:
     get:
       tags:
         - contacts.directoryObject
-      summary: Get transitiveMemberOf from contacts
-      description: 'Groups that this contact is a member of, including groups that the contact is nested under. Read-only. Nullable.'
+      summary: List transitiveMemberOf
+      description: 'Get groups that this organizational contact is a member of. The API request is transitive, and returns all groups the organizational contact is a nested member of.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/orgcontact-list-transitivememberof?view=graph-rest-1.0
       operationId: contact_ListTransitiveMemberGraphOPre
       parameters:
         - name: orgContact-id
@@ -3712,8 +3752,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get memberOf from devices
-      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+      summary: List device memberships
+      description: Get groups and administrative units that this device is a direct member of. This operation is not transitive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: device_ListMemberGraphOPre
       parameters:
         - name: device-id
@@ -3908,7 +3951,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+      summary: List device memberships
+      description: Get groups and administrative units that this device is a direct member of. This operation is not transitive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: device_GetMemberGraphOPreAsGroup
       parameters:
         - name: device-id
@@ -4102,7 +4149,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+      summary: List device memberships
+      description: Get groups and administrative units that this device is a direct member of. This operation is not transitive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: device_ListMemberGraphOPreAsGroup
       parameters:
         - name: device-id
@@ -4451,8 +4502,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get registeredOwners from devices
-      description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
+      summary: List registeredOwners
+      description: 'Retrieve a list of users that are registered owners of the device. A registered owner is the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: device_ListRegisteredOwner
       parameters:
         - name: device-id
@@ -4521,7 +4575,11 @@ paths:
     delete:
       tags:
         - devices.directoryObject
-      summary: Delete ref of navigation property registeredOwners for devices
+      summary: Delete registeredOwner
+      description: Remove a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
       operationId: device.registeredOwner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: device-id
@@ -4836,8 +4894,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get ref of registeredOwners from devices
-      description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
+      summary: List registeredOwners
+      description: 'Retrieve a list of users that are registered owners of the device. A registered owner is the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: device_ListRegisteredOwnerGraphBPreRef
       parameters:
         - name: device-id
@@ -4885,7 +4946,11 @@ paths:
     post:
       tags:
         - devices.directoryObject
-      summary: Create new navigation property ref to registeredOwners for devices
+      summary: Create registeredOwner
+      description: Add a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
       operationId: device_CreateRegisteredOwnerGraphBPreRef
       parameters:
         - name: device-id
@@ -4907,7 +4972,11 @@ paths:
     delete:
       tags:
         - devices.directoryObject
-      summary: Delete ref of navigation property registeredOwners for devices
+      summary: Delete registeredOwner
+      description: Remove a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
       operationId: device_DeleteRegisteredOwnerGraphBPreRef
       parameters:
         - name: device-id
@@ -5342,8 +5411,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get registeredUsers from devices
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      summary: List registeredUsers
+      description: 'Retrieve a list of users that are registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: device_ListRegisteredUser
       parameters:
         - name: device-id
@@ -5412,7 +5484,11 @@ paths:
     delete:
       tags:
         - devices.directoryObject
-      summary: Delete ref of navigation property registeredUsers for devices
+      summary: Delete registeredUser
+      description: Remove a user as a registered user of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
       operationId: device.registeredUser_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: device-id
@@ -5727,8 +5803,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get ref of registeredUsers from devices
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      summary: List registeredUsers
+      description: 'Retrieve a list of users that are registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: device_ListRegisteredUserGraphBPreRef
       parameters:
         - name: device-id
@@ -5776,7 +5855,11 @@ paths:
     post:
       tags:
         - devices.directoryObject
-      summary: Create new navigation property ref to registeredUsers for devices
+      summary: Create registeredUser
+      description: Add a registered user for the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
       operationId: device_CreateRegisteredUserGraphBPreRef
       parameters:
         - name: device-id
@@ -5798,7 +5881,11 @@ paths:
     delete:
       tags:
         - devices.directoryObject
-      summary: Delete ref of navigation property registeredUsers for devices
+      summary: Delete registeredUser
+      description: Remove a user as a registered user of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
       operationId: device_DeleteRegisteredUserGraphBPreRef
       parameters:
         - name: device-id
@@ -6233,8 +6320,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get transitiveMemberOf from devices
-      description: Groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
+      summary: List device transitive memberships
+      description: 'Get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: device_ListTransitiveMemberGraphOPre
       parameters:
         - name: device-id
@@ -6429,7 +6519,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+      summary: List device transitive memberships
+      description: 'Get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: device_GetTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: device-id
@@ -6623,7 +6717,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+      summary: List device transitive memberships
+      description: 'Get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: device_ListTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: device-id
@@ -7134,8 +7232,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get administrativeUnits from directory
-      description: Conceptual container for user and group directory objects.
+      summary: List administrativeUnits
+      description: Retrieve a list of administrativeUnit objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0
       operationId: directory_ListAdministrativeUnit
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7185,7 +7286,11 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Create new navigation property to administrativeUnits for directory
+      summary: Create administrativeUnit
+      description: Use this API to create a new administrativeUnit.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0
       operationId: directory_CreateAdministrativeUnit
       requestBody:
         description: New navigation property
@@ -7208,8 +7313,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get administrativeUnits from directory
-      description: Conceptual container for user and group directory objects.
+      summary: Get administrativeUnit
+      description: Retrieve the properties and relationships of an administrativeUnit object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0
       operationId: directory_GetAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -7253,7 +7361,11 @@ paths:
     patch:
       tags:
         - directory.administrativeUnit
-      summary: Update the navigation property administrativeUnits in directory
+      summary: Update administrativeUnit
+      description: Update the properties of an administrativeUnit object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-update?view=graph-rest-1.0
       operationId: directory_UpdateAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -7284,7 +7396,11 @@ paths:
     delete:
       tags:
         - directory.administrativeUnit
-      summary: Delete navigation property administrativeUnits for directory
+      summary: Delete administrativeUnit
+      description: Delete an administrativeUnit.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete?view=graph-rest-1.0
       operationId: directory_DeleteAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -7551,8 +7667,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get members from directory
-      description: Users and groups that are members of this administrative unit. Supports $expand.
+      summary: List members
+      description: 'Use this API to get the members list (users, groups, or devices) in an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_ListMember
       parameters:
         - name: administrativeUnit-id
@@ -7620,7 +7739,11 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Create new navigation property to members for directory
+      summary: Add a member
+      description: 'Use this API to add a member (user, group, or device) to an administrative unit. Currently it''s only possible to add one member at a time to an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_CreateMember
       parameters:
         - name: administrativeUnit-id
@@ -7652,7 +7775,11 @@ paths:
     delete:
       tags:
         - directory.administrativeUnit
-      summary: Delete ref of navigation property members for directory
+      summary: Remove a member
+      description: 'Use this API to remove a member (user, group, or device) from an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit.member_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -8091,8 +8218,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get ref of members from directory
-      description: Users and groups that are members of this administrative unit. Supports $expand.
+      summary: List members
+      description: 'Use this API to get the members list (users, groups, or devices) in an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_ListMemberGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -8140,7 +8270,11 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Create new navigation property ref to members for directory
+      summary: Add a member
+      description: 'Use this API to add a member (user, group, or device) to an administrative unit. Currently it''s only possible to add one member at a time to an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_CreateMemberGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -8162,7 +8296,11 @@ paths:
     delete:
       tags:
         - directory.administrativeUnit
-      summary: Delete ref of navigation property members for directory
+      summary: Remove a member
+      description: 'Use this API to remove a member (user, group, or device) from an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_DeleteMemberGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -8797,8 +8935,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get scopedRoleMembers from directory
-      description: Scoped-role members of this administrative unit.
+      summary: List scopedRoleMembers
+      description: List Microsoft Entra role assignments with administrative unit scope.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_ListScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -8856,7 +8997,11 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Create new navigation property to scopedRoleMembers for directory
+      summary: Add a scopedRoleMember
+      description: 'Assign a Microsoft Entra role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_CreateScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -8888,8 +9033,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get scopedRoleMembers from directory
-      description: Scoped-role members of this administrative unit.
+      summary: Get a scopedRoleMember
+      description: Get a Microsoft Entra role assignment with administrative unit scope.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_GetScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -8980,7 +9128,11 @@ paths:
     delete:
       tags:
         - directory.administrativeUnit
-      summary: Delete navigation property scopedRoleMembers for directory
+      summary: Remove a scopedRoleMember
+      description: Remove a Microsoft Entra role assignment with administrative unit scope.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_DeleteScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -9120,8 +9272,11 @@ paths:
     get:
       tags:
         - directory.attributeSet
-      summary: Get attributeSets from directory
-      description: Group of related custom security attribute definitions.
+      summary: List attributeSets
+      description: Get a list of the attributeSet objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0
       operationId: directory_ListAttributeSet
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9171,7 +9326,11 @@ paths:
     post:
       tags:
         - directory.attributeSet
-      summary: Create new navigation property to attributeSets for directory
+      summary: Create attributeSet
+      description: Create a new attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0
       operationId: directory_CreateAttributeSet
       requestBody:
         description: New navigation property
@@ -9194,8 +9353,11 @@ paths:
     get:
       tags:
         - directory.attributeSet
-      summary: Get attributeSets from directory
-      description: Group of related custom security attribute definitions.
+      summary: Get attributeSet
+      description: Read the properties and relationships of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attributeset-get?view=graph-rest-1.0
       operationId: directory_GetAttributeSet
       parameters:
         - name: attributeSet-id
@@ -9239,7 +9401,11 @@ paths:
     patch:
       tags:
         - directory.attributeSet
-      summary: Update the navigation property attributeSets in directory
+      summary: Update attributeSet
+      description: Update the properties of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attributeset-update?view=graph-rest-1.0
       operationId: directory_UpdateAttributeSet
       parameters:
         - name: attributeSet-id
@@ -9311,8 +9477,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get customSecurityAttributeDefinitions from directory
-      description: Schema of a custom security attributes (key-value pairs).
+      summary: List customSecurityAttributeDefinitions
+      description: Get a list of the customSecurityAttributeDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_ListCustomSecurityAttributeDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9362,7 +9531,11 @@ paths:
     post:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Create new navigation property to customSecurityAttributeDefinitions for directory
+      summary: Create customSecurityAttributeDefinition
+      description: Create a new customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-post-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_CreateCustomSecurityAttributeDefinition
       requestBody:
         description: New navigation property
@@ -9385,8 +9558,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get customSecurityAttributeDefinitions from directory
-      description: Schema of a custom security attributes (key-value pairs).
+      summary: Get customSecurityAttributeDefinition
+      description: Read the properties and relationships of a customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0
       operationId: directory_GetCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9430,7 +9606,11 @@ paths:
     patch:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Update the navigation property customSecurityAttributeDefinitions in directory
+      summary: Update customSecurityAttributeDefinition
+      description: Update the properties of a customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0
       operationId: directory_UpdateCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9488,8 +9668,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get allowedValues from directory
-      description: 'Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
+      summary: List allowedValues
+      description: Get a list of the allowedValue objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_ListAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9547,7 +9730,11 @@ paths:
     post:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Create new navigation property to allowedValues for directory
+      summary: Create allowedValue
+      description: Create a new allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-post-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_CreateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9579,8 +9766,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get allowedValues from directory
-      description: 'Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
+      summary: Get allowedValue
+      description: Read the properties and relationships of an allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_GetAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9632,7 +9822,11 @@ paths:
     patch:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Update the navigation property allowedValues in directory
+      summary: Update allowedValue
+      description: Update the properties of an allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_UpdateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9742,8 +9936,8 @@ paths:
     get:
       tags:
         - directory.directoryObject
-      summary: Get deletedItems from directory
-      description: Recently deleted items. Read-only. Nullable.
+      summary: Get deleted item (directory object)
+      description: 'Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.'
       operationId: directory_ListDeletedItem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9794,8 +9988,11 @@ paths:
     get:
       tags:
         - directory.directoryObject
-      summary: Get deletedItems from directory
-      description: Recently deleted items. Read-only. Nullable.
+      summary: Get deleted item (directory object)
+      description: 'Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-get?view=graph-rest-1.0
       operationId: directory_GetDeletedItem
       parameters:
         - name: directoryObject-id
@@ -9839,7 +10036,11 @@ paths:
     delete:
       tags:
         - directory.directoryObject
-      summary: Delete navigation property deletedItems for directory
+      summary: Permanently delete an item (directory object)
+      description: 'Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-delete?view=graph-rest-1.0
       operationId: directory_DeleteDeletedItem
       parameters:
         - name: directoryObject-id
@@ -10218,7 +10419,11 @@ paths:
     get:
       tags:
         - directory.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+      summary: List deletedItems (directory objects)
+      description: 'Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
       operationId: directory_GetDeletedItemAsGroup
       parameters:
         - name: directoryObject-id
@@ -10686,7 +10891,11 @@ paths:
     get:
       tags:
         - directory.directoryObject
-      summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+      summary: List deletedItems (directory objects)
+      description: 'Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
       operationId: directory_ListDeletedItemAsGroup
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10918,11 +11127,15 @@ paths:
     get:
       tags:
         - directory.deviceLocalCredentialInfo
-      summary: Get deviceLocalCredentials from directory
-      description: The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+      summary: List deviceLocalCredentialInfo
+      description: 'Get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-list-devicelocalcredentials?view=graph-rest-1.0
       operationId: directory_ListDeviceLocalCredential
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
@@ -10981,8 +11194,11 @@ paths:
     get:
       tags:
         - directory.deviceLocalCredentialInfo
-      summary: Get deviceLocalCredentials from directory
-      description: The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+      summary: Get deviceLocalCredentialInfo
+      description: 'Retrieve the properties of a deviceLocalCredentialInfo for a specified device object. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/devicelocalcredentialinfo-get?view=graph-rest-1.0
       operationId: directory_GetDeviceLocalCredential
       parameters:
         - name: deviceLocalCredentialInfo-id
@@ -11238,7 +11454,11 @@ paths:
     delete:
       tags:
         - directory.identityProviderBase
-      summary: Delete navigation property federationConfigurations for directory
+      summary: Delete samlOrWsFedExternalDomainFederation
+      description: Delete a samlOrWsFedExternalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0
       operationId: directory_DeleteFederationConfiguration
       parameters:
         - name: identityProviderBase-id
@@ -11319,8 +11539,8 @@ paths:
     get:
       tags:
         - directory.onPremisesDirectorySynchronization
-      summary: Get onPremisesSynchronization from directory
-      description: A container for on-premises directory synchronization functionalities that are available for the organization.
+      summary: Get onPremisesDirectorySynchronization
+      description: Read the properties and relationships of an onPremisesDirectorySynchronization object.
       operationId: directory_ListOnPremisesSynchronization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11393,8 +11613,11 @@ paths:
     get:
       tags:
         - directory.onPremisesDirectorySynchronization
-      summary: Get onPremisesSynchronization from directory
-      description: A container for on-premises directory synchronization functionalities that are available for the organization.
+      summary: Get onPremisesDirectorySynchronization
+      description: Read the properties and relationships of an onPremisesDirectorySynchronization object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-get?view=graph-rest-1.0
       operationId: directory_GetOnPremisesSynchronization
       parameters:
         - name: onPremisesDirectorySynchronization-id
@@ -11438,7 +11661,11 @@ paths:
     patch:
       tags:
         - directory.onPremisesDirectorySynchronization
-      summary: Update the navigation property onPremisesSynchronization in directory
+      summary: Update onPremisesDirectorySynchronization
+      description: Update the properties of an onPremisesDirectorySynchronization object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-update?view=graph-rest-1.0
       operationId: directory_UpdateOnPremisesSynchronization
       parameters:
         - name: onPremisesDirectorySynchronization-id
@@ -11808,6 +12035,7 @@ paths:
         url: https://learn.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0
       operationId: directoryRole_ListDirectoryRole
       parameters:
+        - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11987,8 +12215,11 @@ paths:
     get:
       tags:
         - directoryRoles.directoryObject
-      summary: Get members from directoryRoles
-      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
+      summary: List members of a directory role
+      description: 'Retrieve the list of principals that are assigned to the directory role.  You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
       operationId: directoryRole_ListMember
       parameters:
         - name: directoryRole-id
@@ -12057,7 +12288,11 @@ paths:
     delete:
       tags:
         - directoryRoles.directoryObject
-      summary: Delete ref of navigation property members for directoryRoles
+      summary: Remove directory role member
+      description: 'Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-delete-member?view=graph-rest-1.0
       operationId: directoryRole.member_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -12496,8 +12731,11 @@ paths:
     get:
       tags:
         - directoryRoles.directoryObject
-      summary: Get ref of members from directoryRoles
-      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
+      summary: List members of a directory role
+      description: 'Retrieve the list of principals that are assigned to the directory role.  You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
       operationId: directoryRole_ListMemberGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -12545,7 +12783,11 @@ paths:
     post:
       tags:
         - directoryRoles.directoryObject
-      summary: Create new navigation property ref to members for directoryRoles
+      summary: Add directory role member
+      description: 'Create a new directory role member. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-post-members?view=graph-rest-1.0
       operationId: directoryRole_CreateMemberGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -12567,7 +12809,11 @@ paths:
     delete:
       tags:
         - directoryRoles.directoryObject
-      summary: Delete ref of navigation property members for directoryRoles
+      summary: Remove directory role member
+      description: 'Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-delete-member?view=graph-rest-1.0
       operationId: directoryRole_DeleteMemberGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -13451,8 +13697,11 @@ paths:
     get:
       tags:
         - directoryRoles.scopedRoleMembership
-      summary: Get scopedMembers from directoryRoles
-      description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+      summary: List scopedMembers for a directory role
+      description: Retrieve a list of scopedRoleMembership objects for a directory role.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0
       operationId: directoryRole_ListScopedMember
       parameters:
         - name: directoryRole-id
@@ -14032,6 +14281,7 @@ paths:
         url: https://learn.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-1.0
       operationId: directoryRoleTemplate_ListDirectoryRoleTemplate
       parameters:
+        - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -14879,8 +15129,11 @@ paths:
     get:
       tags:
         - domains.directoryObject
-      summary: Get domainNameReferences from domains
-      description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
+      summary: List domainNameReferences
+      description: Retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0
       operationId: domain_ListDomainNameReference
       parameters:
         - name: domain-id
@@ -15015,8 +15268,11 @@ paths:
     get:
       tags:
         - domains.internalDomainFederation
-      summary: Get federationConfiguration from domains
-      description: Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+      summary: List internalDomainFederations
+      description: Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0
       operationId: domain_ListFederationConfiguration
       parameters:
         - name: domain-id
@@ -15074,7 +15330,11 @@ paths:
     post:
       tags:
         - domains.internalDomainFederation
-      summary: Create new navigation property to federationConfiguration for domains
+      summary: Create internalDomainFederation
+      description: Create a new internalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
       operationId: domain_CreateFederationConfiguration
       parameters:
         - name: domain-id
@@ -15106,8 +15366,11 @@ paths:
     get:
       tags:
         - domains.internalDomainFederation
-      summary: Get federationConfiguration from domains
-      description: Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+      summary: Get internalDomainFederation
+      description: Read the properties and relationships of an internalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0
       operationId: domain_GetFederationConfiguration
       parameters:
         - name: domain-id
@@ -15159,7 +15422,11 @@ paths:
     patch:
       tags:
         - domains.internalDomainFederation
-      summary: Update the navigation property federationConfiguration in domains
+      summary: Update internalDomainFederation
+      description: Update the properties of an internalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0
       operationId: domain_UpdateFederationConfiguration
       parameters:
         - name: domain-id
@@ -15198,7 +15465,11 @@ paths:
     delete:
       tags:
         - domains.internalDomainFederation
-      summary: Delete navigation property federationConfiguration for domains
+      summary: Delete internalDomainFederation
+      description: Delete an internalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0
       operationId: domain_DeleteFederationConfiguration
       parameters:
         - name: domain-id
@@ -15359,8 +15630,11 @@ paths:
     get:
       tags:
         - domains.domainDnsRecord
-      summary: Get serviceConfigurationRecords from domains
-      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
+      summary: List serviceConfigurationRecords
+      description: Retrieves a list of domainDnsRecord objects needed to enable services for the domain. Use the returned list to add records to the zone file of the domain. This can be done through the domain registrar or DNS server configuration.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-1.0
       operationId: domain_ListServiceConfigurationRecord
       parameters:
         - name: domain-id
@@ -15599,8 +15873,11 @@ paths:
     get:
       tags:
         - domains.domainDnsRecord
-      summary: Get verificationDnsRecords from domains
-      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.'
+      summary: List verificationDnsRecords
+      description: 'Retrieve a list of domainDnsRecord objects. You cannot use an associated domain with your Microsoft Entra tenant until ownership is verified. To verify the ownership of the domain, retrieve the domain verification records and add the details to the zone file of the domain. This can be done through the domain registrar or DNS server configuration. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-list-verificationdnsrecords?view=graph-rest-1.0
       operationId: domain_ListVerificationDnsRecord
       parameters:
         - name: domain-id
@@ -15979,10 +16256,10 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
-      description: Update the properties of a organization object.
+      description: 'Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
       operationId: organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -16040,8 +16317,11 @@ paths:
     get:
       tags:
         - organization.organizationalBranding
-      summary: Get branding from organization
-      description: Branding for the organization. Nullable.
+      summary: Get organizationalBranding
+      description: 'Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBranding
       parameters:
         - name: organization-id
@@ -16085,7 +16365,11 @@ paths:
     patch:
       tags:
         - organization.organizationalBranding
-      summary: Update the navigation property branding in organization
+      summary: Update organizationalBranding
+      description: Update the properties of the default branding object specified by the organizationalBranding resource.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-update?view=graph-rest-1.0
       operationId: organization_UpdateBranding
       parameters:
         - name: organization-id
@@ -16116,7 +16400,11 @@ paths:
     delete:
       tags:
         - organization.organizationalBranding
-      summary: Delete navigation property branding for organization
+      summary: Delete organizationalBranding
+      description: 'Delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-delete?view=graph-rest-1.0
       operationId: organization_DeleteBranding
       parameters:
         - name: organization-id
@@ -16189,7 +16477,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16242,7 +16529,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete backgroundImage for the navigation property branding in organization
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+      operationId: organization_DeleteBrandingBackgroundImage
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/bannerLogo':
     get:
       tags:
@@ -16293,7 +16605,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16346,7 +16657,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete bannerLogo for the navigation property branding in organization
+      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization_DeleteBrandingBannerLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/customCSS':
     get:
       tags:
@@ -16397,7 +16733,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16450,7 +16785,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete customCSS for the navigation property branding in organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+      operationId: organization_DeleteBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/favicon':
     get:
       tags:
@@ -16501,7 +16861,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16554,7 +16913,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete favicon for the navigation property branding in organization
+      description: A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+      operationId: organization_DeleteBrandingFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/headerLogo':
     get:
       tags:
@@ -16605,7 +16989,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16658,13 +17041,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete headerLogo for the navigation property branding in organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization_DeleteBrandingHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations':
     get:
       tags:
         - organization.organizationalBranding
-      summary: Get localizations from organization
-      description: Add different branding based on a locale.
+      summary: List localizations
+      description: 'Retrieve all localization branding objects, including the default branding.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_ListLocalization
       parameters:
         - name: organization-id
@@ -16722,7 +17133,11 @@ paths:
     post:
       tags:
         - organization.organizationalBranding
-      summary: Create new navigation property to localizations for organization
+      summary: Create organizationalBrandingLocalization
+      description: 'Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn''t exist. The default branding is created only once. It''s loaded when a localized branding isn''t configured for the user''s browser language. To retrieve the default branding, see Get branding.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-post-localizations?view=graph-rest-1.0
       operationId: organization.branding_CreateLocalization
       parameters:
         - name: organization-id
@@ -16754,8 +17169,11 @@ paths:
     get:
       tags:
         - organization.organizationalBranding
-      summary: Get localizations from organization
-      description: Add different branding based on a locale.
+      summary: Get organizationalBrandingLocalization
+      description: 'Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of id in the URL.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-get?view=graph-rest-1.0
       operationId: organization.branding_GetLocalization
       parameters:
         - name: organization-id
@@ -16807,7 +17225,11 @@ paths:
     patch:
       tags:
         - organization.organizationalBranding
-      summary: Update the navigation property localizations in organization
+      summary: Update organizationalBrandingLocalization
+      description: Update the properties of an organizationalBrandingLocalization object for a specific localization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0
       operationId: organization.branding_UpdateLocalization
       parameters:
         - name: organization-id
@@ -16846,7 +17268,11 @@ paths:
     delete:
       tags:
         - organization.organizationalBranding
-      summary: Delete navigation property localizations for organization
+      summary: Delete organizationalBrandingLocalization
+      description: 'Delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-delete?view=graph-rest-1.0
       operationId: organization.branding_DeleteLocalization
       parameters:
         - name: organization-id
@@ -16935,7 +17361,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16996,13 +17421,49 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete backgroundImage for the navigation property localizations in organization
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+      operationId: organization.branding_DeleteLocalizationsBackgroundImage
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/bannerLogo':
     get:
       tags:
         - organization.organizationalBranding
-      summary: Get bannerLogo for the navigation property localizations from organization
-      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      summary: Get organizationalBranding
+      description: 'Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsBannerLogo
       parameters:
         - name: organization-id
@@ -17055,12 +17516,14 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
-      summary: Update bannerLogo for the navigation property localizations in organization
-      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      summary: Update organizationalBrandingLocalization
+      description: Update the properties of an organizationalBrandingLocalization object for a specific localization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0
       operationId: organization.branding_SetLocalizationsBannerLogo
       parameters:
         - name: organization-id
@@ -17116,7 +17579,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete bannerLogo for the navigation property localizations in organization
+      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization.branding_DeleteLocalizationsBannerLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/customCSS':
     get:
       tags:
@@ -17175,7 +17671,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17236,7 +17731,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete customCSS for the navigation property localizations in organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+      operationId: organization.branding_DeleteLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/favicon':
     get:
       tags:
@@ -17295,7 +17823,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17356,7 +17883,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete favicon for the navigation property localizations in organization
+      description: A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+      operationId: organization.branding_DeleteLocalizationsFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/headerLogo':
     get:
       tags:
@@ -17415,7 +17975,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17476,7 +18035,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete headerLogo for the navigation property localizations in organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization.branding_DeleteLocalizationsHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/squareLogo':
     get:
       tags:
@@ -17535,7 +18127,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17596,7 +18187,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete squareLogo for the navigation property localizations in organization
+      description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+      operationId: organization.branding_DeleteLocalizationsSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/squareLogoDark':
     get:
       tags:
@@ -17655,7 +18279,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17716,7 +18339,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete squareLogoDark for the navigation property localizations in organization
+      description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+      operationId: organization.branding_DeleteLocalizationsSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/$count':
     get:
       tags:
@@ -17789,7 +18445,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17842,7 +18497,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete squareLogo for the navigation property branding in organization
+      description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+      operationId: organization_DeleteBrandingSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/squareLogoDark':
     get:
       tags:
@@ -17893,7 +18573,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17946,7 +18625,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete squareLogoDark for the navigation property branding in organization
+      description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+      operationId: organization_DeleteBrandingSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/extensions':
     get:
       tags:
@@ -18639,7 +19343,11 @@ paths:
         url: https://learn.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0
       operationId: subscribedSku_ListSubscribedSku
       parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -25049,6 +25757,8 @@ components:
                 type: string
                 nullable: true
               description: A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+            contentCustomization:
+              $ref: '#/components/schemas/microsoft.graph.contentCustomization'
             customAccountResetCredentialsUrl:
               type: string
               description: 'A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.'
@@ -25800,13 +26510,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
@@ -25818,7 +26528,7 @@ components:
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
@@ -29782,6 +30492,28 @@ components:
         issuerSki:
           type: string
           description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
+      additionalProperties:
+        type: object
+    microsoft.graph.contentCustomization:
+      title: contentCustomization
+      type: object
+      properties:
+        attributeCollection:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValue'
+          description: Represents the content options of External Identities to be customized throughout the authentication flow for a tenant.
+        attributeCollectionRelativeUrl:
+          type: string
+          description: A relative URL for the content options of External Identities to be customized throughout the authentication flow for a tenant.
+          nullable: true
+        registrationCampaign:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValue'
+        registrationCampaignRelativeUrl:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.loginPageLayoutConfiguration:
@@ -36067,6 +36799,52 @@ components:
         - stapleDualRight
         - stapleDualBottom
         - unknownFutureValue
+        - stapleTripleLeft
+        - stapleTripleTop
+        - stapleTripleRight
+        - stapleTripleBottom
+        - bindLeft
+        - bindTop
+        - bindRight
+        - bindBottom
+        - foldAccordion
+        - foldDoubleGate
+        - foldGate
+        - foldHalf
+        - foldHalfZ
+        - foldLeftGate
+        - foldLetter
+        - foldParallel
+        - foldPoster
+        - foldRightGate
+        - foldZ
+        - foldEngineeringZ
+        - punchTopLeft
+        - punchBottomLeft
+        - punchTopRight
+        - punchBottomRight
+        - punchDualLeft
+        - punchDualTop
+        - punchDualRight
+        - punchDualBottom
+        - punchTripleLeft
+        - punchTripleTop
+        - punchTripleRight
+        - punchTripleBottom
+        - punchQuadLeft
+        - punchQuadTop
+        - punchQuadRight
+        - punchQuadBottom
+        - fold
+        - trim
+        - bale
+        - bookletMaker
+        - coat
+        - laminate
+        - trimAfterPages
+        - trimAfterDocuments
+        - trimAfterCopies
+        - trimAfterJob
       type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout
