@@ -91,6 +91,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -285,6 +286,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -316,6 +318,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -555,6 +558,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1410,6 +1414,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
+      description: The unique identifier for an entity. Read-only.
       operationId: user.mailFolder.childFolder_GetMessagesContent
       parameters:
         - name: user-id
@@ -1444,13 +1449,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -1461,11 +1459,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.mailFolder
       summary: Update media content for the navigation property messages in users
+      description: The unique identifier for an entity. Read-only.
       operationId: user.mailFolder.childFolder_SetMessagesContent
       parameters:
         - name: user-id
@@ -1513,7 +1511,56 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete media content for the navigation property messages in users
+      description: The unique identifier for an entity. Read-only.
+      operationId: user.mailFolder.childFolder_DeleteMessagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/attachments':
     get:
       tags:
@@ -2274,6 +2321,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2306,6 +2354,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2540,6 +2589,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2809,6 +2859,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
+      description: The unique identifier for an entity. Read-only.
       operationId: user.mailFolder_GetMessagesContent
       parameters:
         - name: user-id
@@ -2835,13 +2886,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -2852,11 +2896,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.mailFolder
       summary: Update media content for the navigation property messages in users
+      description: The unique identifier for an entity. Read-only.
       operationId: user.mailFolder_SetMessagesContent
       parameters:
         - name: user-id
@@ -2896,7 +2940,48 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete media content for the navigation property messages in users
+      description: The unique identifier for an entity. Read-only.
+      operationId: user.mailFolder_DeleteMessagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments':
     get:
       tags:
@@ -3553,6 +3638,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -3796,6 +3882,7 @@ paths:
       tags:
         - users.message
       summary: Get media content for the navigation property messages from users
+      description: The unique identifier for an entity. Read-only.
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id
@@ -3814,13 +3901,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -3831,11 +3911,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.message
       summary: Update media content for the navigation property messages in users
+      description: The unique identifier for an entity. Read-only.
       operationId: user_SetMessagesContent
       parameters:
         - name: user-id
@@ -3867,7 +3947,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.message
+      summary: Delete media content for the navigation property messages in users
+      description: The unique identifier for an entity. Read-only.
+      operationId: user_DeleteMessagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/messages/{message-id}/attachments':
     get:
       tags:
@@ -3892,6 +4005,9 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4099,6 +4215,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -4131,6 +4248,7 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4385,6 +4503,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -5316,6 +5435,14 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
     filter:
       name: $filter
       in: query
@@ -5332,14 +5459,6 @@ components:
       explode: false
       schema:
         type: boolean
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      style: form
-      explode: false
-      schema:
-        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2
