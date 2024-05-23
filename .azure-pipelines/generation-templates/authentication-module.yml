@@ -34,12 +34,12 @@ steps:
       - template: ../common-templates/esrp/strongname.yml
         parameters:
           FolderPath: "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication"
-          Pattern: "Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll"
+          Pattern: "Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, Newtonsoft.Json.dll"
 
       - template: ../common-templates/esrp/codesign.yml
         parameters:
           FolderPath: "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication"
-          Pattern: "Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, *.psm1, *.psd1, *.format.ps1xml, *.ps1"
+          Pattern: "Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, Newtonsoft.Json.dll, *.psm1, *.psd1, *.format.ps1xml, *.ps1"
 
       - task: PowerShell@2
         displayName: "Validate Authenticode Signature"
