@@ -5,6 +5,8 @@
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Extensions;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Extensions
 {
@@ -27,9 +29,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Extensions
                 newRequest.Headers.TryAddWithoutValidation(header.Key, header.Value);
 
             // Copy request properties.
-            foreach (var property in originalRequest.Properties)
-                newRequest.Properties.Add(property);
-
+#if NET5_0_OR_GREATER
+            foreach(var property in originalRequest.Options)
+                if(property.Value is IRequestOption requestOption)
+                    newRequest.Options.Set(new HttpRequestOptionsKey<IRequestOption>(property.Key), requestOption);
+                else
+                    newRequest.Options.Set(new HttpRequestOptionsKey<object>(property.Key), property.Value);
+#else
+            foreach(var property in originalRequest.Properties)
+                newRequest.Properties.TryAdd(property.Key, property.Value);
+#endif
             // Set Content if previous request had one.
             if (originalRequest.Content != null)
             {

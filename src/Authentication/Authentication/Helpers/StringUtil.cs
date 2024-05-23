@@ -145,8 +145,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 : base(StringComparer.OrdinalIgnoreCase)
             {
             }
-
+#if NETSTANDARD2_0 
             public bool TryGetValue(string entryKey, out string entry)
+#else 
+            public new bool TryGetValue(string entryKey, out string entry)
+#endif
             {
                 entry = this.FirstOrDefault(x => x == entryKey);
                 return entry != null;

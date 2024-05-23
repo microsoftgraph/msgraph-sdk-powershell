@@ -14,8 +14,9 @@
     <PackageReference Include="Azure.Identity" Version="1.11.0" />
     <PackageReference Include="Azure.Identity.Broker" Version="1.1.0" />
     <PackageReference Include="Microsoft.Graph.Core" Version="3.0.9" />
+    <PackageReference Condition=" '$(TargetFramework)' == 'net6.0'" Include="Newtonsoft.Json" Version="13.0.3"  />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' != 'net6.0'">
     <ProjectReference Include="..\..\..\Newtonsoft.Json\Src\Newtonsoft.Json\Newtonsoft.Json.csproj" />
   </ItemGroup>
   <Target Name="CopyFiles" AfterTargets="Build">

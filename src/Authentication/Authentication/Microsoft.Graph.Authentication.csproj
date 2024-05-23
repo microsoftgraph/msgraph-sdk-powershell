@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <LangVersion>7.1</LangVersion>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
     <OutputType>Library</OutputType>
     <AssemblyName>Microsoft.Graph.Authentication</AssemblyName>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication</RootNamespace>
