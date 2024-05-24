@@ -28,6 +28,7 @@ $PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $AuthSrcPath = Join-Path $PSScriptRoot "..\src\Authentication\"
 $AuthModulePath = Join-Path $AuthSrcPath "Authentication" -Resolve
+$NewtonsoftJsonCSProj = Join-Path $PSScriptRoot "..\Newtonsoft.Json\Src\Newtonsoft.Json\Newtonsoft.Json.csproj" -Resolve
 $TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
 $RunModulePS1 = Join-Path $AuthModulePath ".\run-module.ps1" -Resolve
 $CSProjHelperPS1 = Join-Path $PSScriptRoot "./CSProjHelper.ps1"
@@ -48,10 +49,12 @@ if ($Build -or $Run) {
   if ($EnableSigning) {
     Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -AssemblyOriginatorKeyFile $ModuleMetadata.assemblyOriginatorKeyFile -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
     Set-CSProjValues -ModuleCsProj $AuthTestCSProj -AssemblyOriginatorKeyFile $ModuleMetadata.assemblyOriginatorKeyFile -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
+    Set-CSProjValues -ModuleCsProj $NewtonsoftJsonCSProj -AssemblyOriginatorKeyFile $ModuleMetadata.assemblyOriginatorKeyFile -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
   }
   else {
     Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
     Set-CSProjValues -ModuleCsProj $AuthTestCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
+    Set-CSProjValues -ModuleCsProj $NewtonsoftJsonCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
   }
   & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -EnableSigning:$EnableSigning -Version $ModuleMetadata.versions.authentication.version -Prerelease $ModuleMetadata.versions.authentication.prerelease -ModuleMetadata $ModuleMetadata.Clone()
 }
