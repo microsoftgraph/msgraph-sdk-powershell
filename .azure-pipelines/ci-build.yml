@@ -42,7 +42,12 @@ jobs:
           git submodule update --init --recursive
       - template: ./common-templates/install-tools.yml
       - template: ./common-templates/security-pre-checks.yml
-      
+
+      - pwsh: |
+          #  Remove file Newtonsoft.Json/Src/Newtonsoft.Json/Properties/AssemblyInfo.cs
+          Remove-Item -Path $(System.DefaultWorkingDirectory)/Newtonsoft.Json/Src/Newtonsoft.Json/Properties/ -Force -Recurse
+        displayName: Remove test project reference from Newtonsoft.Json submodule
+
       - template: ./generation-templates/authentication-module.yml
         parameters:
           Test: ${{ parameters.Test }}

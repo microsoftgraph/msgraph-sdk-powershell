@@ -72,6 +72,9 @@ Pop-Location
 # Build authentication.
 Push-Location $cmdletsSrc
 dotnet publish -c $Configuration -f $netStandard --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netapp --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netFx --verbosity quiet /nologo
+
 Pop-Location
 
 if ($LastExitCode -ne 0) {
