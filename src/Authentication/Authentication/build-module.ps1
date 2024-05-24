@@ -71,7 +71,7 @@ Pop-Location
 
 # Build authentication.
 Push-Location $cmdletsSrc
-dotnet publish -c $Configuration --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netStandard --verbosity quiet /nologo
 Pop-Location
 
 if ($LastExitCode -ne 0) {
@@ -145,7 +145,7 @@ ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir -Recurse }
 
 # Update module manifest with nested assemblies.
 $RequiredAssemblies = @(
-  'Microsoft.Graph.Authentication.dll', 
+  'Microsoft.Graph.Authentication.dll',
   'Microsoft.Graph.Authentication.Core.dll'
 )
 Update-ModuleManifest -Path (Join-Path $outDir "$ModulePrefix.$ModuleName.psd1") -NestedModules $RequiredAssemblies
