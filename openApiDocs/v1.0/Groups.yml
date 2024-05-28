@@ -377,11 +377,11 @@ paths:
     post:
       tags:
         - groups.group
-      summary: Create group
-      description: 'Create a new group as specified in the request body. You can create the following types of groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.'
+      summary: Upsert group
+      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
       operationId: group_CreateGroup
       requestBody:
         description: New entity
@@ -518,8 +518,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get acceptedSenders from groups
-      description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
+      summary: List acceptedSenders
+      description: "Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
       operationId: group_ListAcceptedSender
       parameters:
         - name: group-id
@@ -532,6 +535,7 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -567,7 +571,10 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Delete ref of navigation property acceptedSenders for groups
+      summary: Remove acceptedSender
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
       operationId: group.acceptedSender_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: group-id
@@ -613,6 +620,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -623,8 +631,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get ref of acceptedSenders from groups
-      description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
+      summary: List acceptedSenders
+      description: "Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
       operationId: group_ListAcceptedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -661,7 +672,11 @@ paths:
     post:
       tags:
         - groups.directoryObject
-      summary: Create new navigation property ref to acceptedSenders for groups
+      summary: Create acceptedSender
+      description: 'Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don''t specify the same user or group in the accepted senders and rejected senders lists, otherwise you''ll get an error.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-post-acceptedsenders?view=graph-rest-1.0
       operationId: group_CreateAcceptedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -683,7 +698,10 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Delete ref of navigation property acceptedSenders for groups
+      summary: Remove acceptedSender
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
       operationId: group_DeleteAcceptedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -3895,8 +3913,11 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get conversations from groups
-      description: The group's conversations.
+      summary: List conversations
+      description: Retrieve the list of conversations in this group.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0
       operationId: group_ListConversation
       parameters:
         - name: group-id
@@ -3944,7 +3965,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create new navigation property to conversations for groups
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -3976,8 +4001,11 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get conversations from groups
+      summary: Get conversation
       description: The group's conversations.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -4019,7 +4047,11 @@ paths:
     delete:
       tags:
         - groups.conversation
-      summary: Delete navigation property conversations for groups
+      summary: Delete conversation
+      description: Delete conversation.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -4054,8 +4086,11 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get threads from groups
-      description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+      summary: List threads
+      description: 'Get all the threads in a group conversation. Note: You can also get all the threads of a group.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0
       operationId: group.conversation_ListThread
       parameters:
         - name: group-id
@@ -4076,6 +4111,7 @@ paths:
           x-ms-docs-key-type: conversation
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4120,7 +4156,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create new navigation property to threads for groups
+      summary: Create thread
+      description: "Create a new thread in the specified conversation.  A thread and post are created as specified. Use reply thread to further post \nto that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0
       operationId: group.conversation_CreateThread
       parameters:
         - name: group-id
@@ -4312,10 +4352,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -6411,6 +6451,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: conversation
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -12505,8 +12546,11 @@ paths:
     get:
       tags:
         - groups.groupLifecyclePolicy
-      summary: Get groupLifecyclePolicies from groups
-      description: The collection of lifecycle policies for this group. Read-only. Nullable.
+      summary: List groupLifecyclePolicies
+      description: Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-1.0
       operationId: group_ListGroupLifecyclePolicy
       parameters:
         - name: group-id
@@ -12855,8 +12899,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get memberOf from groups
-      description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
+      summary: List memberOf
+      description: 'Get groups that the group is a direct member of. This operation is not transitive. Unlike getting a user''s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
       operationId: group_ListMemberGraphOPre
       parameters:
         - name: group-id
@@ -13051,7 +13098,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+      summary: List memberOf
+      description: 'Get groups that the group is a direct member of. This operation is not transitive. Unlike getting a user''s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
       operationId: group_GetMemberGraphOPreAsGroup
       parameters:
         - name: group-id
@@ -13245,7 +13296,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+      summary: List memberOf
+      description: 'Get groups that the group is a direct member of. This operation is not transitive. Unlike getting a user''s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
       operationId: group_ListMemberGraphOPreAsGroup
       parameters:
         - name: group-id
@@ -13345,8 +13400,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get members from groups
-      description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
+      summary: List group members
+      description: 'Get a list of the group''s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
       operationId: group_ListMember
       parameters:
         - name: group-id
@@ -13415,7 +13473,11 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Delete ref of navigation property members for groups
+      summary: Remove member
+      description: Remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
       operationId: group.member_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: group-id
@@ -13760,7 +13822,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+      summary: List group members
+      description: 'Get a list of the group''s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
       operationId: group_GetMemberAsUser
       parameters:
         - name: group-id
@@ -13854,8 +13920,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get ref of members from groups
-      description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
+      summary: List group members
+      description: 'Get a list of the group''s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
       operationId: group_ListMemberGraphBPreRef
       parameters:
         - name: group-id
@@ -13903,7 +13972,11 @@ paths:
     post:
       tags:
         - groups.directoryObject
-      summary: Create new navigation property ref to members for groups
+      summary: Add members
+      description: Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
       operationId: group_CreateMemberGraphBPreRef
       parameters:
         - name: group-id
@@ -13925,7 +13998,11 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Delete ref of navigation property members for groups
+      summary: Remove member
+      description: Remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
       operationId: group_DeleteMemberGraphBPreRef
       parameters:
         - name: group-id
@@ -14460,7 +14537,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+      summary: List group members
+      description: 'Get a list of the group''s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
       operationId: group_ListMemberAsUser
       parameters:
         - name: group-id
@@ -17842,8 +17923,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get owners from groups
-      description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+      summary: List group owners
+      description: Retrieve a list of the group's owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange or groups that are synchronized from an on-premises environment.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
       operationId: group_ListOwner
       parameters:
         - name: group-id
@@ -17912,7 +17996,11 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Delete ref of navigation property owners for groups
+      summary: Remove group owner
+      description: 'Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0
       operationId: group.owner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: group-id
@@ -18351,8 +18439,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get ref of owners from groups
-      description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+      summary: List group owners
+      description: Retrieve a list of the group's owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange or groups that are synchronized from an on-premises environment.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
       operationId: group_ListOwnerGraphBPreRef
       parameters:
         - name: group-id
@@ -18400,7 +18491,11 @@ paths:
     post:
       tags:
         - groups.directoryObject
-      summary: Create new navigation property ref to owners for groups
+      summary: Add owners
+      description: Add a user or service principal to a Microsoft 365 or security group's owners. The owners are a set of users or service principals who are allowed to modify the group object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-post-owners?view=graph-rest-1.0
       operationId: group_CreateOwnerGraphBPreRef
       parameters:
         - name: group-id
@@ -18422,7 +18517,11 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Delete ref of navigation property owners for groups
+      summary: Remove group owner
+      description: 'Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0
       operationId: group_DeleteOwnerGraphBPreRef
       parameters:
         - name: group-id
@@ -19057,7 +19156,11 @@ paths:
     get:
       tags:
         - groups.resourceSpecificPermissionGrant
-      summary: Get permissionGrants from groups
+      summary: List permissionGrants of a group
+      description: 'List all resource-specific permission grants on the group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding resource-specific access that each app has.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-permissiongrants?view=graph-rest-1.0
       operationId: group_ListPermissionGrant
       parameters:
         - name: group-id
@@ -19389,6 +19492,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Get media content for the navigation property photo from groups
+      description: The group's profile photo
       operationId: group_GetPhotoContent
       parameters:
         - name: group-id
@@ -19409,11 +19513,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.profilePhoto
       summary: Update media content for the navigation property photo in groups
+      description: The group's profile photo
       operationId: group_SetPhotoContent
       parameters:
         - name: group-id
@@ -19437,13 +19541,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.profilePhoto
+      summary: Delete media content for the navigation property photo in groups
+      description: The group's profile photo
+      operationId: group_DeletePhotoContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/photos':
     get:
       tags:
         - groups.profilePhoto
-      summary: Get photos from groups
-      description: The profile photos owned by the group. Read-only. Nullable.
+      summary: List photos
+      description: Retrieve a list of profilePhoto objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
       operationId: group_ListPhoto
       parameters:
         - name: group-id
@@ -19456,7 +19588,9 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -19535,6 +19669,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Get media content for the navigation property photos from groups
+      description: The unique identifier for an entity. Read-only.
       operationId: group_GetPhotosContent
       parameters:
         - name: group-id
@@ -19563,11 +19698,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.profilePhoto
       summary: Update media content for the navigation property photos in groups
+      description: The unique identifier for an entity. Read-only.
       operationId: group_SetPhotosContent
       parameters:
         - name: group-id
@@ -19599,13 +19734,49 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.profilePhoto
+      summary: Delete media content for the navigation property photos in groups
+      description: The unique identifier for an entity. Read-only.
+      operationId: group_DeletePhotosContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: profilePhoto-id
+          in: path
+          description: The unique identifier of profilePhoto
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePhoto
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/rejectedSenders':
     get:
       tags:
         - groups.directoryObject
-      summary: Get rejectedSenders from groups
-      description: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
+      summary: List rejectedSenders
+      description: 'Users in the rejected senders list can''t post to conversations of the group (identified in the GET request URL). Make sure you don''t specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
       operationId: group_ListRejectedSender
       parameters:
         - name: group-id
@@ -19618,6 +19789,7 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -19653,7 +19825,10 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Delete ref of navigation property rejectedSenders for groups
+      summary: Remove rejectedSender
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-rejectedsenders?view=graph-rest-1.0
       operationId: group.rejectedSender_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: group-id
@@ -19699,6 +19874,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -19709,8 +19885,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get ref of rejectedSenders from groups
-      description: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
+      summary: List rejectedSenders
+      description: 'Users in the rejected senders list can''t post to conversations of the group (identified in the GET request URL). Make sure you don''t specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
       operationId: group_ListRejectedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -19747,7 +19926,11 @@ paths:
     post:
       tags:
         - groups.directoryObject
-      summary: Create new navigation property ref to rejectedSenders for groups
+      summary: Create rejectedSender
+      description: 'Specify the user or group in @odata.id in the request body. Users in the rejected senders list can''t post to conversations of the group (identified in the POST request URL). Make sure you don''t specify the same user or group in the rejected senders and accepted senders lists, otherwise you''ll get an error.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-post-rejectedsenders?view=graph-rest-1.0
       operationId: group_CreateRejectedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -19769,7 +19952,10 @@ paths:
     delete:
       tags:
         - groups.directoryObject
-      summary: Delete ref of navigation property rejectedSenders for groups
+      summary: Remove rejectedSender
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-rejectedsenders?view=graph-rest-1.0
       operationId: group_DeleteRejectedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -19804,8 +19990,11 @@ paths:
     get:
       tags:
         - groups.groupSetting
-      summary: Get settings from groups
-      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
+      summary: List settings
+      description: Retrieve a list of tenant-level or group-specific group settings objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
       operationId: group_ListSetting
       parameters:
         - name: group-id
@@ -19863,7 +20052,11 @@ paths:
     post:
       tags:
         - groups.groupSetting
-      summary: Create new navigation property to settings for groups
+      summary: Create settings
+      description: 'Create a new setting based on the templates available in groupSettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
       operationId: group_CreateSetting
       parameters:
         - name: group-id
@@ -19895,8 +20088,11 @@ paths:
     get:
       tags:
         - groups.groupSetting
-      summary: Get settings from groups
-      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
+      summary: Get groupSetting
+      description: Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
       operationId: group_GetSetting
       parameters:
         - name: group-id
@@ -19948,7 +20144,11 @@ paths:
     patch:
       tags:
         - groups.groupSetting
-      summary: Update the navigation property settings in groups
+      summary: Update groupSetting
+      description: Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
       operationId: group_UpdateSetting
       parameters:
         - name: group-id
@@ -26567,8 +26767,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get threads from groups
-      description: The group's conversation threads. Nullable.
+      summary: List threads
+      description: Get all the threads of a group.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-threads?view=graph-rest-1.0
       operationId: group_ListThread
       parameters:
         - name: group-id
@@ -26581,6 +26784,7 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -26615,7 +26819,11 @@ paths:
     post:
       tags:
         - groups.conversationThread
-      summary: Create new navigation property to threads for groups
+      summary: Create conversation thread
+      description: "Start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group.\nUse reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-post-threads?view=graph-rest-1.0
       operationId: group_CreateThread
       parameters:
         - name: group-id
@@ -26647,8 +26855,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get threads from groups
-      description: The group's conversation threads. Nullable.
+      summary: Get conversationThread
+      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -26690,7 +26901,10 @@ paths:
     patch:
       tags:
         - groups.conversationThread
-      summary: Update the navigation property threads in groups
+      summary: Update conversation thread
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-update-thread?view=graph-rest-1.0
       operationId: group_UpdateThread
       parameters:
         - name: group-id
@@ -26729,7 +26943,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete navigation property threads for groups
+      summary: Delete conversationThread
+      description: Delete conversationThread.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -26765,10 +26983,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -26809,7 +27027,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get posts from groups
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,\nyou can specify the thread without referencing the parent conversation."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
@@ -26830,6 +27052,7 @@ paths:
           x-ms-docs-key-type: conversationThread
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -28571,6 +28794,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -28592,6 +28816,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -28602,8 +28827,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get transitiveMemberOf from groups
-      description: 'The groups that a group is a member of, either directly or through nested membership. Nullable.'
+      summary: List group transitive memberOf
+      description: 'Get groups that the group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user''s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0
       operationId: group_ListTransitiveMemberGraphOPre
       parameters:
         - name: group-id
@@ -29092,8 +29320,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get transitiveMembers from groups
-      description: The direct and transitive members of a group. Nullable.
+      summary: List group transitive members
+      description: 'Get a list of the group''s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
       operationId: group_ListTransitiveMember
       parameters:
         - name: group-id
@@ -29350,7 +29581,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+      summary: List group transitive members
+      description: 'Get a list of the group''s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
       operationId: group_GetTransitiveMemberAsGroup
       parameters:
         - name: group-id
@@ -29536,7 +29771,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+      summary: List group transitive members
+      description: 'Get a list of the group''s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
       operationId: group_GetTransitiveMemberAsUser
       parameters:
         - name: group-id
@@ -29830,7 +30069,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+      summary: List group transitive members
+      description: 'Get a list of the group''s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
       operationId: group_ListTransitiveMemberAsGroup
       parameters:
         - name: group-id
@@ -30130,7 +30373,11 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+      summary: List group transitive members
+      description: 'Get a list of the group''s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
       operationId: group_ListTransitiveMemberAsUser
       parameters:
         - name: group-id
@@ -31543,7 +31790,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -31602,7 +31849,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned at least one of the following Microsoft Entra roles: User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -32295,6 +32542,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToIdentitiesV2:
               type: array
               items:
@@ -32915,7 +33163,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -33512,7 +33760,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -36463,14 +36711,17 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
+          description: The unique identifier for the addIn object.
           format: uuid
           nullable: true
         properties:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValue'
+          description: The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.
         type:
           type: string
+          description: The unique name for the functionality exposed by the app.
       additionalProperties:
         type: object
     microsoft.graph.apiApplication:
@@ -37427,7 +37678,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -37437,12 +37688,22 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time of the user''s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The request ID of the last successful sign-in.
           nullable: true
       additionalProperties:
         type: object
@@ -37611,7 +37872,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
-              description: 'Represents the password that''s registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.'
+              description: 'Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.'
               x-ms-navigationProperty: true
             phoneMethods:
               type: array
@@ -37623,7 +37884,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-              description: The software OATH TOTP applications registered to a user for authentication.
+              description: The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
               x-ms-navigationProperty: true
             temporaryAccessPassMethods:
               type: array
@@ -38622,6 +38883,7 @@ components:
           properties:
             attendeeReport:
               type: string
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             broadcastSettings:
@@ -38643,6 +38905,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
+              description: Indicates if this is a Teams live event.
               nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
@@ -39005,6 +39268,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -39868,6 +40133,7 @@ components:
               nullable: true
             owner:
               type: string
+              description: 'Use the container property instead. ID of the group that owns the plan. After it''s set, this property can’t be updated. This property won''t return a valid group ID if the container of the plan isn''t a group.'
               nullable: true
             title:
               type: string
@@ -41544,13 +41810,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
@@ -41562,7 +41828,7 @@ components:
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
@@ -41949,7 +42215,6 @@ components:
               nullable: true
             externalcourseActivityId:
               type: string
-              description: A course activity ID generated by the provider. Optional.
               nullable: true
             learnerUserId:
               type: string
@@ -42008,6 +42273,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             resourceReference:
@@ -43091,6 +43357,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information about the meeting attendees.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
@@ -43493,6 +43760,14 @@ components:
           type: string
           description: The target of the error.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
       additionalProperties:
         type: object
     microsoft.graph.listInfo:
@@ -44496,6 +44771,7 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
@@ -44515,6 +44791,7 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'Value that can be used as the maximum number for setting password expiration time in days, hours, minutes or seconds. Defined in ISO 8601 format for Durations. For example, ''P4DT12H30M5S'' represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restriction type is set to passwordLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
@@ -44925,7 +45202,7 @@ components:
           nullable: true
         sharingType:
           type: string
-          description: 'Determines the way the document was shared, can be by a ''Link'', ''Attachment'', ''Group'', ''Site''.'
+          description: 'Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.'
           nullable: true
       additionalProperties:
         type: object
@@ -45647,6 +45924,7 @@ components:
           nullable: true
         tollFreeNumber:
           type: string
+          description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -45656,6 +45934,7 @@ components:
           description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
+          description: The toll number that connects to the Audio Conference Provider.
           nullable: true
         tollNumbers:
           type: array
@@ -46115,6 +46394,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.termStore.termGroupScope:
       title: termGroupScope
       enum:
@@ -47120,6 +47407,7 @@ components:
           nullable: true
         inputBin:
           type: string
+          description: The default input bin that serves as the paper source.
           nullable: true
         mediaColor:
           type: string
@@ -48082,21 +48370,27 @@ components:
       properties:
         color:
           type: string
+          description: The color applied to the cell.
           nullable: true
         criterion1:
           type: string
+          description: A custom criterion.
           nullable: true
         criterion2:
           type: string
+          description: A custom criterion.
           nullable: true
         dynamicCriteria:
           type: string
+          description: A dynamic formula specified in a custom filter.
         filterOn:
           type: string
+          description: Indicates whether a filter is applied to a column.
         icon:
           $ref: '#/components/schemas/microsoft.graph.workbookIcon'
         operator:
           type: string
+          description: 'An operator in a cell; for example, =, >, <, <=, or <>.'
         values:
           $ref: '#/components/schemas/microsoft.graph.Json'
       additionalProperties:
@@ -48448,6 +48742,52 @@ components:
         - stapleDualRight
         - stapleDualBottom
         - unknownFutureValue
+        - stapleTripleLeft
+        - stapleTripleTop
+        - stapleTripleRight
+        - stapleTripleBottom
+        - bindLeft
+        - bindTop
+        - bindRight
+        - bindBottom
+        - foldAccordion
+        - foldDoubleGate
+        - foldGate
+        - foldHalf
+        - foldHalfZ
+        - foldLeftGate
+        - foldLetter
+        - foldParallel
+        - foldPoster
+        - foldRightGate
+        - foldZ
+        - foldEngineeringZ
+        - punchTopLeft
+        - punchBottomLeft
+        - punchTopRight
+        - punchBottomRight
+        - punchDualLeft
+        - punchDualTop
+        - punchDualRight
+        - punchDualBottom
+        - punchTripleLeft
+        - punchTripleTop
+        - punchTripleRight
+        - punchTripleBottom
+        - punchQuadLeft
+        - punchQuadTop
+        - punchQuadRight
+        - punchQuadBottom
+        - fold
+        - trim
+        - bale
+        - bookletMaker
+        - coat
+        - laminate
+        - trimAfterPages
+        - trimAfterDocuments
+        - trimAfterCopies
+        - trimAfterJob
       type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout
@@ -49363,6 +49703,7 @@ components:
           description: Finishing processes to use when printing.
         fitPdfToPage:
           type: boolean
+          description: True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
           nullable: true
         inputBin:
           type: string
@@ -49372,10 +49713,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printMargin'
         mediaSize:
           type: string
-          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
           nullable: true
         mediaType:
           type: string
+          description: The default media (such as paper) type to print the document on.
           nullable: true
         multipageLayout:
           $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
@@ -49383,15 +49725,18 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printOrientation'
         outputBin:
           type: string
+          description: The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
           nullable: true
         pageRanges:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.integerRange'
+          description: The page ranges to print. Read-only.
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
         quality:
@@ -49697,6 +50042,7 @@ components:
           description: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
         defaultValue:
           type: string
+          description: The default value of the attribute.
           nullable: true
         flowNullValues:
           type: boolean

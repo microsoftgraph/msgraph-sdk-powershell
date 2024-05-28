@@ -164,7 +164,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get cases from compliance
+      summary: List cases
+      description: Retrieve a list of case objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-list?view=graph-rest-beta
       operationId: compliance.ediscovery_ListCase
       parameters:
         - $ref: '#/components/parameters/top'
@@ -220,7 +224,11 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to cases for compliance
+      summary: Create case
+      description: Create a new case object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-beta
       operationId: compliance.ediscovery_CreateCase
       requestBody:
         description: New navigation property
@@ -249,7 +257,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get cases from compliance
+      summary: Get case
+      description: Retrieve the properties and relationships of a case object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-get?view=graph-rest-beta
       operationId: compliance.ediscovery_GetCase
       parameters:
         - name: case-id
@@ -299,7 +311,11 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property cases in compliance
+      summary: Update case
+      description: Update the properties of a case object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-update?view=graph-rest-beta
       operationId: compliance.ediscovery_UpdateCase
       parameters:
         - name: case-id
@@ -336,7 +352,11 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property cases for compliance
+      summary: Delete case
+      description: Delete a case object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-delete?view=graph-rest-beta
       operationId: compliance.ediscovery_DeleteCase
       parameters:
         - name: case-id
@@ -369,8 +389,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get custodians from compliance
-      description: Returns a list of case custodian objects for this case.  Nullable.
+      summary: List custodians
+      description: Get a list of the custodian objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-list-custodians?view=graph-rest-beta
       operationId: compliance.ediscovery.case_ListCustodian
       parameters:
         - name: case-id
@@ -434,7 +457,11 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to custodians for compliance
+      summary: Create custodian
+      description: 'Create a new custodian object. After the custodian object is created, you will need to create the custodian''s userSource to reference their mailbox and OneDrive for Business site.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-post-custodians?view=graph-rest-beta
       operationId: compliance.ediscovery.case_CreateCustodian
       parameters:
         - name: case-id
@@ -472,8 +499,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get custodians from compliance
-      description: Returns a list of case custodian objects for this case.  Nullable.
+      summary: Get custodian
+      description: Read the properties and relationships of a custodian object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-custodian-get?view=graph-rest-beta
       operationId: compliance.ediscovery.case_GetCustodian
       parameters:
         - name: case-id
@@ -531,7 +561,11 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property custodians in compliance
+      summary: Update custodian
+      description: Update the properties of a custodian object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-custodian-update?view=graph-rest-beta
       operationId: compliance.ediscovery.case_UpdateCustodian
       parameters:
         - name: case-id
@@ -2204,8 +2238,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get legalHolds from compliance
-      description: Returns a list of case legalHold objects for this case.  Nullable.
+      summary: Get legalHold
+      description: Read the properties and relationships of a legalHold object.
       operationId: compliance.ediscovery.case_ListLegalHold
       parameters:
         - name: case-id
@@ -2307,8 +2341,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get legalHolds from compliance
-      description: Returns a list of case legalHold objects for this case.  Nullable.
+      summary: Get legalHold
+      description: Read the properties and relationships of a legalHold object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-get?view=graph-rest-beta
       operationId: compliance.ediscovery.case_GetLegalHold
       parameters:
         - name: case-id
@@ -2366,7 +2403,11 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property legalHolds in compliance
+      summary: Update legalHold
+      description: Update the properties of a legalHold object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-update?view=graph-rest-beta
       operationId: compliance.ediscovery.case_UpdateLegalHold
       parameters:
         - name: case-id
@@ -2411,7 +2452,11 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property legalHolds for compliance
+      summary: Delete legalHold
+      description: Delete a legalHold object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-delete?view=graph-rest-beta
       operationId: compliance.ediscovery.case_DeleteLegalHold
       parameters:
         - name: case-id
@@ -3773,8 +3818,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get noncustodialDataSources from compliance
-      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+      summary: List noncustodialDataSources
+      description: Get a list of the noncustodialDataSource objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-list?view=graph-rest-beta
       operationId: compliance.ediscovery.case_ListNoncustodialDataSource
       parameters:
         - name: case-id
@@ -3838,7 +3886,11 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to noncustodialDataSources for compliance
+      summary: Create noncustodialDataSource
+      description: Create a new noncustodialDataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-post?view=graph-rest-beta
       operationId: compliance.ediscovery.case_CreateNoncustodialDataSource
       parameters:
         - name: case-id
@@ -3876,8 +3928,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get noncustodialDataSources from compliance
-      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+      summary: Get noncustodialDataSource
+      description: Read the properties and relationships of a noncustodialDataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-get?view=graph-rest-beta
       operationId: compliance.ediscovery.case_GetNoncustodialDataSource
       parameters:
         - name: case-id
@@ -4967,8 +5022,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get reviewSets from compliance
-      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
+      summary: Get reviewSet
+      description: Retrieve the properties and relationships of a reviewSet object.
       operationId: compliance.ediscovery.case_ListReviewSet
       parameters:
         - name: case-id
@@ -5032,7 +5087,11 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to reviewSets for compliance
+      summary: Create reviewSet
+      description: 'Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-beta
       operationId: compliance.ediscovery.case_CreateReviewSet
       parameters:
         - name: case-id
@@ -5070,8 +5129,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get reviewSets from compliance
-      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
+      summary: Get reviewSet
+      description: Retrieve the properties and relationships of a reviewSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-reviewset-get?view=graph-rest-beta
       operationId: compliance.ediscovery.case_GetReviewSet
       parameters:
         - name: case-id
@@ -5748,7 +5810,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get settings from compliance
+      summary: Get caseSettings
+      description: Read the properties and relationships of an eDiscovery caseSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-casesettings-get?view=graph-rest-beta
       operationId: compliance.ediscovery.case_GetSetting
       parameters:
         - name: case-id
@@ -5798,7 +5864,11 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property settings in compliance
+      summary: Update caseSettings
+      description: Update the properties of a an eDiscovery caseSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-casesettings-update?view=graph-rest-beta
       operationId: compliance.ediscovery.case_UpdateSetting
       parameters:
         - name: case-id
@@ -5899,8 +5969,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get sourceCollections from compliance
-      description: Returns a list of sourceCollection objects associated with this case.
+      summary: List sourceCollections
+      description: Get the list of sourceCollections from a case object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-list-sourcecollections?view=graph-rest-beta
       operationId: compliance.ediscovery.case_ListSourceCollection
       parameters:
         - name: case-id
@@ -5964,7 +6037,11 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to sourceCollections for compliance
+      summary: Create sourceCollection
+      description: Create a new sourceCollection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-post-sourcecollections?view=graph-rest-beta
       operationId: compliance.ediscovery.case_CreateSourceCollection
       parameters:
         - name: case-id
@@ -6061,7 +6138,11 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property sourceCollections in compliance
+      summary: Update sourceCollection
+      description: Update the properties of a sourceCollection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-update?view=graph-rest-beta
       operationId: compliance.ediscovery.case_UpdateSourceCollection
       parameters:
         - name: case-id
@@ -6106,7 +6187,11 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property sourceCollections for compliance
+      summary: Delete sourceCollection
+      description: Delete a sourceCollection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-delete?view=graph-rest-beta
       operationId: compliance.ediscovery.case_DeleteSourceCollection
       parameters:
         - name: case-id
@@ -7053,8 +7138,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get tags from compliance
-      description: Returns a list of tag objects associated to this case.
+      summary: List tags
+      description: Retrieve a list of tag objects from an eDiscovery case.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-beta
       operationId: compliance.ediscovery.case_ListTag
       parameters:
         - name: case-id
@@ -7118,7 +7206,11 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to tags for compliance
+      summary: Create tag
+      description: Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-beta
       operationId: compliance.ediscovery.case_CreateTag
       parameters:
         - name: case-id
@@ -7156,8 +7248,11 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get tags from compliance
-      description: Returns a list of tag objects associated to this case.
+      summary: Get tag
+      description: Read the properties and relationships of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-tag-get?view=graph-rest-beta
       operationId: compliance.ediscovery.case_GetTag
       parameters:
         - name: case-id
@@ -7215,7 +7310,11 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property tags in compliance
+      summary: Update tag
+      description: Update the properties of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-tag-update?view=graph-rest-beta
       operationId: compliance.ediscovery.case_UpdateTag
       parameters:
         - name: case-id
@@ -7260,7 +7359,11 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property tags for compliance
+      summary: Delete tag
+      description: Delete a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/ediscovery-tag-delete?view=graph-rest-beta
       operationId: compliance.ediscovery.case_DeleteTag
       parameters:
         - name: case-id
@@ -7667,7 +7770,11 @@ paths:
     get:
       tags:
         - privacy.subjectRightsRequest
-      summary: Get subjectRightsRequests from privacy
+      summary: List subjectRightsRequests
+      description: Get a list of subjectRightsRequest objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-list?view=graph-rest-beta
       operationId: privacy_ListSubjectRightsRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7723,7 +7830,11 @@ paths:
     post:
       tags:
         - privacy.subjectRightsRequest
-      summary: Create new navigation property to subjectRightsRequests for privacy
+      summary: Create subjectRightsRequest
+      description: Create a new subjectRightsRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-post?view=graph-rest-beta
       operationId: privacy_CreateSubjectRightsRequest
       requestBody:
         description: New navigation property
@@ -7752,7 +7863,11 @@ paths:
     get:
       tags:
         - privacy.subjectRightsRequest
-      summary: Get subjectRightsRequests from privacy
+      summary: Get subjectRightsRequest
+      description: Read the properties and relationships of a subjectRightsRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-beta
       operationId: privacy_GetSubjectRightsRequest
       parameters:
         - name: subjectRightsRequest-id
@@ -7802,7 +7917,11 @@ paths:
     patch:
       tags:
         - privacy.subjectRightsRequest
-      summary: Update the navigation property subjectRightsRequests in privacy
+      summary: Update subjectRightsRequest
+      description: Update the properties of a subjectRightsRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-beta
       operationId: privacy_UpdateSubjectRightsRequest
       parameters:
         - name: subjectRightsRequest-id
@@ -8600,8 +8719,11 @@ paths:
     get:
       tags:
         - privacy.subjectRightsRequest
-      summary: Get notes from privacy
-      description: List of notes associated with the request.
+      summary: List authoredNotes
+      description: 'Get the list of authored notes associated with a subject rights request. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-beta
       operationId: privacy.subjectRightsRequest_ListNote
       parameters:
         - name: subjectRightsRequest-id
@@ -8665,7 +8787,11 @@ paths:
     post:
       tags:
         - privacy.subjectRightsRequest
-      summary: Create new navigation property to notes for privacy
+      summary: Create authoredNote
+      description: Create a new authoredNote object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-beta
       operationId: privacy.subjectRightsRequest_CreateNote
       parameters:
         - name: subjectRightsRequest-id
@@ -9302,10 +9428,11 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isFavorite:
               type: boolean
+              description: Indicates whether the user marked the group as favorite.
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -9375,7 +9502,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned at least one of the following Microsoft Entra roles:  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -9769,6 +9896,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.exportFileStructure'
             outputFolderId:
               type: string
+              description: The output folder ID.
               nullable: true
             outputName:
               type: string
@@ -10243,7 +10371,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -11096,6 +11224,7 @@ components:
               format: date-time
             description:
               type: string
+              description: The description of the item.
               nullable: true
             eTag:
               type: string
@@ -11191,6 +11320,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -11644,6 +11775,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToIdentitiesV2:
               type: array
               items:
@@ -12037,6 +12169,10 @@ components:
             hideAttendees:
               type: boolean
               description: 'When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.'
+              nullable: true
+            iCalUId:
+              type: string
+              description: A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -12988,7 +13124,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -12998,7 +13134,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -13008,12 +13144,12 @@ components:
         lastSuccessfulSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The datetime of the user's most recent successful sign in activity.
+          description: 'The date and time of the user''s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         lastSuccessfulSignInRequestId:
           type: string
-          description: The requestID of the last successful signIn.
+          description: The request ID of the last successful sign-in.
           nullable: true
       additionalProperties:
         type: object
@@ -13076,7 +13212,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+              description: Optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -13375,6 +13511,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
               x-ms-navigationProperty: true
+            claimsPolicy:
+              $ref: '#/components/schemas/microsoft.graph.customClaimsPolicy'
             createdObjects:
               type: array
               items:
@@ -13534,6 +13672,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
+              description: The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
               x-ms-navigationProperty: true
             temporaryAccessPassMethods:
               type: array
@@ -13590,6 +13729,10 @@ components:
               type: string
               description: Date and time at which the chat was created. Read-only.
               format: date-time
+              nullable: true
+            isHiddenForAllMembers:
+              type: boolean
+              description: Indicates whether the chat is hidden for all its members. Read-only.
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -13683,6 +13826,10 @@ components:
               type: string
               description: The Microsoft Entra device ID of the Cloud PC.
               nullable: true
+            allotmentDisplayName:
+              type: string
+              description: 'The allotment name divides tenant licenses into smaller batches or groups that help restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.'
+              nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
@@ -13698,7 +13845,7 @@ components:
             gracePeriodEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             imageDisplayName:
@@ -13710,7 +13857,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
               format: date-time
             lastRemoteActionResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
@@ -14075,7 +14222,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -15184,7 +15331,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -15269,10 +15416,12 @@ components:
           properties:
             alternativeRecording:
               type: string
+              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             attendeeReport:
               type: string
+              description: The content stream of the attendee report of a Teams live event. Read-only.
               format: base64url
               nullable: true
             broadcastRecording:
@@ -15285,6 +15434,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
+              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15303,6 +15453,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
+              description: Indicates whether this event is a Teams live event.
               nullable: true
             joinUrl:
               type: string
@@ -15315,6 +15466,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
               type: string
+              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             startDateTime:
@@ -15357,16 +15509,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
+              description: The user's Outlook task folders. Read-only. Nullable.
               x-ms-navigationProperty: true
             taskGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskGroup'
+              description: The user's Outlook task groups. Read-only. Nullable.
               x-ms-navigationProperty: true
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
+              description: The user's Outlook tasks. Read-only. Nullable.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -16209,6 +16364,8 @@ components:
           properties:
             consentedPermissionSet:
               $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+            scopeInfo:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopeInfo'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -16799,6 +16956,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.itemActivityStat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17271,6 +17436,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.bundle'
             content:
               type: string
+              description: 'The content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.'
               format: base64url
               nullable: true
             contentStream:
@@ -17327,6 +17493,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.specialFolder'
             video:
               $ref: '#/components/schemas/microsoft.graph.video'
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.driveItemViewpoint'
             webDavUrl:
               type: string
               description: WebDAV compatible URL for the item.
@@ -17765,10 +17933,12 @@ components:
           properties:
             content:
               type: string
+              description: The content of the resource.
               format: base64url
               nullable: true
             contentUrl:
               type: string
+              description: The URL for the content stream.
               nullable: true
           additionalProperties:
             type: object
@@ -18200,8 +18370,10 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the item.
             changeKey:
               type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -18428,6 +18600,7 @@ components:
               nullable: true
             owner:
               type: string
+              description: 'Use the container property instead. ID of the group that owns the plan. After it''s set, this property can’t be updated. This property doesn''t return a valid group ID if the container of the plan isn''t a group.'
               nullable: true
             sharedWithContainers:
               type: array
@@ -18646,36 +18819,43 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
+              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
@@ -18763,14 +18943,17 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
+          description: The unique identifier for the addIn object.
           format: uuid
           nullable: true
         properties:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValue'
+          description: The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.
         type:
           type: string
+          description: The unique name for the functionality exposed by the app.
       additionalProperties:
         type: object
     microsoft.graph.appRole:
@@ -18929,6 +19112,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordSingleSignOnField'
+          description: The fields to capture to fill the user credentials for password-based single sign-on.
       additionalProperties:
         type: object
     microsoft.graph.permissionScope:
@@ -19026,6 +19210,31 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: claimsMappingPolicy
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.customClaimsPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customClaimsPolicy
+          type: object
+          properties:
+            audienceOverride:
+              type: string
+              description: 'If specified, it overrides the content of the audience claim for WS-Federation and SAML2 protocols. A custom signing key must be used for audienceOverride to be applied, otherwise, the audienceOverride value is ignored. The value provided must be in the format of an absolute URI.'
+              nullable: true
+            claims:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customClaimBase'
+              description: 'Defines which claims are present in the tokens affected by the policy, in addition to the basic claim and the core claim set. Inherited from customclaimbase.'
+            includeApplicationIdInIssuer:
+              type: boolean
+              description: Indicates whether the application ID is added to the claim. It is relevant only for SAML2.0 and if a custom signing key is used. the default value is true. Optional.
+              nullable: true
+            includeBasicClaimSet:
+              type: boolean
+              description: 'Determines whether the basic claim set is included in tokens affected by this policy. If set to true, all claims in the basic claim set are emitted in tokens affected by the policy. By default the basic claim set isn''t in the tokens unless they''re explicitly configured in this policy.'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.delegatedPermissionClassification:
@@ -19623,6 +19832,7 @@ components:
               nullable: true
             teamsAppId:
               type: string
+              description: 'App definition identifier of the tab. This value can''t be changed after tab creation. Because this property is deprecated, we recommend expanding teamsApp to retrieve the application that is linked to the tab.'
               nullable: true
             webUrl:
               type: string
@@ -19798,6 +20008,8 @@ components:
         - dedicated
         - shared
         - unknownFutureValue
+        - sharedByUser
+        - sharedByEntraGroup
       type: string
     microsoft.graph.cloudPcServicePlanType:
       title: cloudPcServicePlanType
@@ -20118,7 +20330,6 @@ components:
               nullable: true
             externalcourseActivityId:
               type: string
-              description: A course activity ID generated by the provider. Optional.
               nullable: true
             learnerUserId:
               type: string
@@ -20261,6 +20472,8 @@ components:
           type: string
           description: A provider-specific reference id for the uploaded logs. Read-only.
           nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadState'
       additionalProperties:
         type: object
       description: 'A `managedAppLogUpload` represents the log upload result for a given Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.'
@@ -22319,12 +22532,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReport:
@@ -22366,15 +22581,26 @@ components:
         - title: callRecording
           type: object
           properties:
+            callId:
+              type: string
+              nullable: true
             content:
               type: string
               description: The content of the recording. Read-only.
               format: base64url
               nullable: true
+            contentCorrelationId:
+              type: string
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
               format: date-time
               nullable: true
             meetingId:
@@ -22449,15 +22675,26 @@ components:
         - title: callTranscript
           type: object
           properties:
+            callId:
+              type: string
+              nullable: true
             content:
               type: string
               description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
+            contentCorrelationId:
+              type: string
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
               format: date-time
               nullable: true
             meetingId:
@@ -22707,12 +22944,12 @@ components:
             appliedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.'
+              description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
               format: date-time
               nullable: true
             applyResult:
               type: string
-              description: 'The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.'
+              description: 'The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.'
               nullable: true
             decision:
               type: string
@@ -22732,7 +22969,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembership'
             recommendation:
               type: string
-              description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
+              description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within 30 days of start of review. Recommend deny if sign-in is greater than 30 days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
               nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemResource'
@@ -22775,6 +23012,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn''t exist, or manager is specified as reviewer but a user''s manager doesn''t exist.  Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
@@ -23960,6 +24198,14 @@ components:
           description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppInstallationScopeInfo:
+      title: teamsAppInstallationScopeInfo
+      type: object
+      properties:
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24418,6 +24664,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemActionStat:
       title: itemActionStat
       type: object
@@ -24825,6 +25079,7 @@ components:
       properties:
         type:
           type: string
+          description: 'An string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.'
           nullable: true
       additionalProperties:
         type: object
@@ -25068,6 +25323,16 @@ components:
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.driveItemViewpoint:
+      title: driveItemViewpoint
+      type: object
+      properties:
+        accessOperations:
+          $ref: '#/components/schemas/microsoft.graph.driveItemAccessOperationsViewpoint'
+        sharing:
+          $ref: '#/components/schemas/microsoft.graph.sharingViewpoint'
       additionalProperties:
         type: object
     microsoft.graph.itemRetentionLabel:
@@ -26105,6 +26370,17 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.customClaimBase:
+      title: customClaimBase
+      type: object
+      properties:
+        configurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimConfiguration'
+          description: One or more configurations that describe how the claim is sourced and under what conditions.
+      additionalProperties:
+        type: object
     microsoft.graph.permissionClassificationType:
       title: permissionClassificationType
       enum:
@@ -26403,11 +26679,15 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'Supported values are Unicode characters and custom. Some backward-compatible reaction types include like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -26663,6 +26943,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             resourceReference:
@@ -26880,6 +27161,43 @@ components:
           $ref: '#/components/schemas/microsoft.graph.sizeRange'
       additionalProperties:
         type: object
+    microsoft.graph.managedAppLogUploadState:
+      title: managedAppLogUploadState
+      enum:
+        - pending
+        - inProgress
+        - completed
+        - declinedByUser
+        - timedOut
+        - failed
+        - unknownFutureValue
+      type: string
+      description: Represents the current status of the associated `managedAppLogCollectionRequest`.
+      x-ms-enum:
+        name: managedAppLogUploadState
+        modelAsString: false
+        values:
+          - value: pending
+            description: 'Default. The log upload request has been successfully created, and is pending delivery to the Mobile Application Management (MAM) application.'
+            name: pending
+          - value: inProgress
+            description: One or more log upload components have uploaded their logs.
+            name: inProgress
+          - value: completed
+            description: All log upload successfully components have uploaded their logs.
+            name: completed
+          - value: declinedByUser
+            description: The log upload request was declined by the user on the device.
+            name: declinedByUser
+          - value: timedOut
+            description: The log upload request was not acknowledged by the user within the allowed time window.
+            name: timedOut
+          - value: failed
+            description: The log upload request encountered an error.
+            name: failed
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.configurationManagerClientState:
       title: configurationManagerClientState
       enum:
@@ -27984,6 +28302,7 @@ components:
           nullable: true
         tollFreeNumber:
           type: string
+          description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -27993,6 +28312,7 @@ components:
           description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
+          description: The toll number that connects to the Audio Conference Provider.
           nullable: true
         tollNumbers:
           type: array
@@ -28606,6 +28926,11 @@ components:
               format: date-time
             source:
               $ref: '#/components/schemas/microsoft.graph.personDataSources'
+            sources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileSourceAnnotation'
+              description: Where the values within an entity originated if synced from another source.
           additionalProperties:
             type: object
     microsoft.graph.personAnnualEventType:
@@ -29193,7 +29518,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             displayName:
               type: string
-              description: Display name of the virtual event.
+              description: The display name of the virtual event.
               nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -29211,7 +29536,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
-              description: Sessions for the virtual event.
+              description: The sessions for the virtual event.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -29272,6 +29597,12 @@ components:
               type: string
               description: Last name of the registrant.
               nullable: true
+            preferredLanguage:
+              type: string
+              nullable: true
+            preferredTimezone:
+              type: string
+              nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -29323,14 +29654,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.teamsAppDistributionMethod:
-      title: teamsAppDistributionMethod
-      enum:
-        - store
-        - organization
-        - sideloaded
-        - unknownFutureValue
-      type: string
     microsoft.graph.teamsAppInstallationScopes:
       title: teamsAppInstallationScopes
       enum:
@@ -29341,6 +29664,14 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -29886,6 +30217,50 @@ components:
         - other
         - unknownFutureValue
       type: string
+    microsoft.graph.driveItemAccessOperationsViewpoint:
+      title: driveItemAccessOperationsViewpoint
+      type: object
+      properties:
+        canComment:
+          type: boolean
+          description: Indicates whether the user can comment on this item.
+          nullable: true
+        canCreateFile:
+          type: boolean
+          description: Indicates whether the user can create files within this object. Returned only on folders.
+          nullable: true
+        canCreateFolder:
+          type: boolean
+          description: Indicates whether the user can create folders within this object. Returned only on folders.
+          nullable: true
+        canDelete:
+          type: boolean
+          description: Indicates whether the user can delete this item.
+          nullable: true
+        canDownload:
+          type: boolean
+          description: Indicates whether the user can download this item.
+          nullable: true
+        canRead:
+          type: boolean
+          description: Indicates whether the user can read this item.
+          nullable: true
+        canUpdate:
+          type: boolean
+          description: Indicates whether the user can update this item.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingViewpoint:
+      title: sharingViewpoint
+      type: object
+      properties:
+        defaultSharingLink:
+          $ref: '#/components/schemas/microsoft.graph.defaultSharingLink'
+        sharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.sharePointSharingAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.retentionLabelSettings:
       title: retentionLabelSettings
       type: object
@@ -30966,6 +31341,7 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
@@ -30985,6 +31361,7 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'Value that can be used as the maximum number for setting password expiration time in days, hours, minutes or seconds. Defined in ISO 8601 format for Durations. For example, ''P4DT12H30M5S'' represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restriction type is set to passwordLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
@@ -30995,6 +31372,21 @@ components:
           nullable: true
         restrictionType:
           $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimConfiguration:
+      title: customClaimConfiguration
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        condition:
+          $ref: '#/components/schemas/microsoft.graph.customClaimConditionBase'
+        transformations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimTransformation'
+          description: An ordered list of transformations that are applied in sequence.
       additionalProperties:
         type: object
     microsoft.graph.synchronizationSecret:
@@ -32048,6 +32440,24 @@ components:
             nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.profileSourceAnnotation:
+      title: profileSourceAnnotation
+      type: object
+      properties:
+        isDefaultSource:
+          type: boolean
+          description: Indicates whether the source is the default one.
+          nullable: true
+        properties:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The names of properties that have data from this source.
+        sourceId:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.personRelationship:
       title: personRelationship
       enum:
@@ -32472,6 +32882,34 @@ components:
         - comment
         - unknownFutureValue
       type: string
+    microsoft.graph.defaultSharingLink:
+      title: defaultSharingLink
+      type: object
+      properties:
+        defaultToExistingAccess:
+          type: boolean
+          description: Indicates whether the default link setting for this object is a direct URL rather than a sharing link.
+          nullable: true
+        role:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.sharingScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharePointSharingAbilities:
+      title: sharePointSharingAbilities
+      type: object
+      properties:
+        anyoneLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        directSharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.directSharingAbilities'
+        organizationLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        specificPeopleLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.security.behaviorDuringRetentionPeriod:
       title: behaviorDuringRetentionPeriod
       enum:
@@ -32784,6 +33222,52 @@ components:
         - stapleDualRight
         - stapleDualBottom
         - unknownFutureValue
+        - stapleTripleLeft
+        - stapleTripleTop
+        - stapleTripleRight
+        - stapleTripleBottom
+        - bindLeft
+        - bindTop
+        - bindRight
+        - bindBottom
+        - foldAccordion
+        - foldDoubleGate
+        - foldGate
+        - foldHalf
+        - foldHalfZ
+        - foldLeftGate
+        - foldLetter
+        - foldParallel
+        - foldPoster
+        - foldRightGate
+        - foldZ
+        - foldEngineeringZ
+        - punchTopLeft
+        - punchBottomLeft
+        - punchTopRight
+        - punchBottomRight
+        - punchDualLeft
+        - punchDualTop
+        - punchDualRight
+        - punchDualBottom
+        - punchTripleLeft
+        - punchTripleTop
+        - punchTripleRight
+        - punchTripleBottom
+        - punchQuadLeft
+        - punchQuadTop
+        - punchQuadRight
+        - punchQuadBottom
+        - fold
+        - trim
+        - bale
+        - bookletMaker
+        - coat
+        - laminate
+        - trimAfterPages
+        - trimAfterDocuments
+        - trimAfterCopies
+        - trimAfterJob
       type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout
@@ -33952,6 +34436,24 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.customClaimAttributeBase:
+      title: customClaimAttributeBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimConditionBase:
+      title: customClaimConditionBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimTransformation:
+      title: customClaimTransformation
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/microsoft.graph.transformationAttribute'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationScheduleState:
       title: synchronizationScheduleState
       enum:
@@ -34387,6 +34889,60 @@ components:
         - darkYellow
         - unknownFutureValue
       type: string
+    microsoft.graph.sharingRole:
+      title: sharingRole
+      enum:
+        - none
+        - view
+        - edit
+        - manageList
+        - review
+        - restrictedView
+        - submitOnly
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sharingScope:
+      title: sharingScope
+      enum:
+        - anyone
+        - organization
+        - specificPeople
+        - anonymous
+        - users
+        - unknownFutureValue
+      type: string
+    microsoft.graph.linkScopeAbilities:
+      title: linkScopeAbilities
+      type: object
+      properties:
+        blockDownloadLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        editLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        manageListLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        readLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        reviewLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        submitOnlyLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+      additionalProperties:
+        type: object
+    microsoft.graph.directSharingAbilities:
+      title: directSharingAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addInternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requestGrantAccess:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookEmailIdentity:
       title: workbookEmailIdentity
       type: object
@@ -34848,6 +35404,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.transformationAttribute:
+      title: transformationAttribute
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        treatAsMultiValue:
+          type: boolean
+          description: 'This flag is only relevant in the case where the attribute is multivalued. By default, transformations are only applied to the first element in a multi-valued claim, however setting this flag to true ensures the transformation is applied to all values, resulting in a multivalued output.'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationError:
       title: synchronizationError
       type: object
@@ -35003,27 +35570,71 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.linkRoleAbilities:
+      title: linkRoleAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        applyVariants:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkVariants'
+        createLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        deleteLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkAllowsExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkExpiration:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkExpirationStatus'
+        retrieveLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        updateLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingOperationStatus:
+      title: sharingOperationStatus
+      type: object
+      properties:
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
       properties:
         color:
           type: string
+          description: The color applied to the cell.
           nullable: true
         criterion1:
           type: string
+          description: A custom criterion.
           nullable: true
         criterion2:
           type: string
+          description: A custom criterion.
           nullable: true
         dynamicCriteria:
           type: string
+          description: A dynamic formula specified in a custom filter.
         filterOn:
           type: string
+          description: Indicates whether a filter is applied to a column.
         icon:
           $ref: '#/components/schemas/microsoft.graph.workbookIcon'
         operator:
           type: string
+          description: 'An operator in a cell; for example, =, >, <, <=, or <>.'
         values:
           $ref: '#/components/schemas/microsoft.graph.Json'
       additionalProperties:
@@ -35264,6 +35875,7 @@ components:
           description: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
         defaultValue:
           type: string
+          description: The default value of the attribute.
           nullable: true
         flowNullValues:
           type: boolean
@@ -35303,6 +35915,41 @@ components:
         value:
           type: string
           description: Value of the metadata property.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLinkVariants:
+      title: sharingLinkVariants
+      type: object
+      properties:
+        addressBarLinkPermission:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        allowEmbed:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        passwordProtected:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requiresAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLinkExpirationStatus:
+      title: sharingLinkExpirationStatus
+      type: object
+      properties:
+        defaultExpirationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Default link expiration in days. Returns -1 if there is no required expiration time.
+          format: int32
+          nullable: true
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
           nullable: true
       additionalProperties:
         type: object

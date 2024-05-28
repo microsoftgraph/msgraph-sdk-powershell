@@ -11254,8 +11254,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get auditEvents from deviceManagement
-      description: Cloud PC audit event.
+      summary: List auditEvents
+      description: List all the cloudPcAuditEvent objects for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11328,8 +11331,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get auditEvents from deviceManagement
-      description: Cloud PC audit event.
+      summary: Get cloudPcAuditEvent
+      description: Read the properties and relationships of a cloudPcAuditEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcauditevent-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetAuditEvent
       parameters:
         - name: cloudPcAuditEvent-id
@@ -11445,8 +11451,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get bulkActions from deviceManagement
-      description: Bulk actions applied to a Cloud PC.
+      summary: List bulkActions
+      description: Get a list of the cloudPcBulkAction objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-bulkactions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListBulkAction
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11496,7 +11505,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to bulkActions for deviceManagement
+      summary: Create cloudPcBulkAction
+      description: Create a new cloudPcBulkAction object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-bulkactions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateBulkAction
       requestBody:
         description: New navigation property
@@ -11519,8 +11532,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get bulkActions from deviceManagement
-      description: Bulk actions applied to a Cloud PC.
+      summary: Get cloudPcBulkAction
+      description: Read the properties and relationships of a cloudPcBulkAction object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcbulkaction-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetBulkAction
       parameters:
         - name: cloudPcBulkAction-id
@@ -11636,8 +11652,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPCs from deviceManagement
-      description: Cloud managed virtual desktops.
+      summary: List cloudPCs
+      description: List the cloudPC devices in a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListCloudPC
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11710,8 +11729,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPCs from deviceManagement
-      description: Cloud managed virtual desktops.
+      summary: Get cloudPC
+      description: Read the properties and relationships of a specific cloudPC object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetCloudPC
       parameters:
         - name: cloudPC-id
@@ -11827,8 +11849,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get crossCloudGovernmentOrganizationMapping from deviceManagement
-      description: Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+      summary: Get cloudPcCrossCloudGovernmentOrganizationMapping
+      description: Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetCrossCloudGovernmentOrganizationMapping
       parameters:
         - name: $select
@@ -11905,8 +11930,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get deviceImages from deviceManagement
-      description: The image resource on Cloud PC.
+      summary: List deviceImages
+      description: List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListDeviceImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11956,7 +11984,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to deviceImages for deviceManagement
+      summary: Create cloudPcDeviceImage
+      description: Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateDeviceImage
       requestBody:
         description: New navigation property
@@ -11979,8 +12011,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get deviceImages from deviceManagement
-      description: The image resource on Cloud PC.
+      summary: Get cloudPcDeviceImage
+      description: Read the properties and relationships of a specific cloudPcDeviceImage object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetDeviceImage
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12055,7 +12090,11 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete navigation property deviceImages for deviceManagement
+      summary: Delete cloudPcDeviceImage
+      description: Delete a cloudPcDeviceImage object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_DeleteDeviceImage
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12096,8 +12135,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get externalPartnerSettings from deviceManagement
-      description: The external partner settings on a Cloud PC.
+      summary: List cloudPcExternalPartnerSettings
+      description: Get a list of the cloudPcExternalPartnerSetting objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12147,7 +12189,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to externalPartnerSettings for deviceManagement
+      summary: Create cloudPcExternalPartnerSetting
+      description: Create a new cloudPcExternalPartnerSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateExternalPartnerSetting
       requestBody:
         description: New navigation property
@@ -12170,8 +12216,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get externalPartnerSettings from deviceManagement
-      description: The external partner settings on a Cloud PC.
+      summary: Get cloudPcExternalPartnerSetting
+      description: Read the properties and relationships of a cloudPcExternalPartnerSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcexternalpartnersetting-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetExternalPartnerSetting
       parameters:
         - name: cloudPcExternalPartnerSetting-id
@@ -12215,7 +12264,11 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property externalPartnerSettings in deviceManagement
+      summary: Update cloudPcExternalPartnerSetting
+      description: Update the properties of a cloudPcExternalPartnerSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcexternalpartnersetting-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateExternalPartnerSetting
       parameters:
         - name: cloudPcExternalPartnerSetting-id
@@ -12287,8 +12340,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get frontLineServicePlans from deviceManagement
-      description: Front-line service plans for a Cloud PC.
+      summary: List cloudPcFrontLineServicePlans
+      description: Get a list of the cloudPcFrontLineServicePlan objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-frontlineserviceplans?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListFrontLineServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12361,8 +12417,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get frontLineServicePlans from deviceManagement
-      description: Front-line service plans for a Cloud PC.
+      summary: Get cloudPcFrontLineServicePlan
+      description: Get the properties and relationships of a cloudPcFrontLineServicePlan object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcfrontlineserviceplan-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetFrontLineServicePlan
       parameters:
         - name: cloudPcFrontLineServicePlan-id
@@ -12478,8 +12537,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get galleryImages from deviceManagement
-      description: The gallery image resource on Cloud PC.
+      summary: List galleryImages
+      description: List the properties and relationships of the cloudPcGalleryImage objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListGalleryImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12552,8 +12614,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get galleryImages from deviceManagement
-      description: The gallery image resource on Cloud PC.
+      summary: Get cloudPcGalleryImage
+      description: Read the properties and relationships of a specific cloudPcGalleryImage object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetGalleryImage
       parameters:
         - name: cloudPcGalleryImage-id
@@ -12669,8 +12734,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get onPremisesConnections from deviceManagement
-      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+      summary: List onPremisesConnections
+      description: Get a list of the cloudPcOnPremisesConnection objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12720,7 +12788,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to onPremisesConnections for deviceManagement
+      summary: Create cloudPcOnPremisesConnection
+      description: Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateOnPremisesConnection
       requestBody:
         description: New navigation property
@@ -12743,8 +12815,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get onPremisesConnections from deviceManagement
-      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+      summary: Get cloudPcOnPremisesConnection
+      description: Read the properties and relationships of the cloudPcOnPremisesConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12788,7 +12863,11 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property onPremisesConnections in deviceManagement
+      summary: Update cloudPcOnPremisesConnection
+      description: Update the properties of a cloudPcOnPremisesConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12819,7 +12898,11 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete navigation property onPremisesConnections for deviceManagement
+      summary: Delete cloudPcOnPremisesConnection
+      description: 'Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You can''t delete an Azure network connection when it''s in use, as indicated by the inUse property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_DeleteOnPremisesConnection
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12860,8 +12943,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get organizationSettings from deviceManagement
-      description: The Cloud PC organization settings for a tenant.
+      summary: Get cloudPcOrganizationSettings
+      description: Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetOrganizationSetting
       parameters:
         - name: $select
@@ -12897,7 +12983,11 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property organizationSettings in deviceManagement
+      summary: Update cloudPcOrganizationSettings
+      description: Update the properties of the cloudPcOrganizationSettings object in a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateOrganizationSetting
       requestBody:
         description: New navigation property values
@@ -12938,8 +13028,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get provisioningPolicies from deviceManagement
-      description: Cloud PC provisioning policy.
+      summary: List provisioningPolicies
+      description: List properties and relationships of the cloudPcProvisioningPolicy objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12982,12 +13075,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.cloudPcProvisioningPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12995,7 +13082,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to provisioningPolicies for deviceManagement
+      summary: Create cloudPcProvisioningPolicy
+      description: Create a new cloudPcProvisioningPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateProvisioningPolicy
       requestBody:
         description: New navigation property
@@ -13013,19 +13104,16 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}':
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get provisioningPolicies from deviceManagement
-      description: Cloud PC provisioning policy.
+      summary: Get cloudPcProvisioningPolicy
+      description: Read the properties and relationships of a cloudPcProvisioningPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13065,17 +13153,15 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property provisioningPolicies in deviceManagement
+      summary: Update cloudPcProvisioningPolicy
+      description: Update the properties of a cloudPcProvisioningPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13102,17 +13188,15 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete navigation property provisioningPolicies for deviceManagement
+      summary: Delete cloudPcProvisioningPolicy
+      description: Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_DeleteProvisioningPolicy
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -13134,12 +13218,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments':
     get:
@@ -13197,12 +13275,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.cloudPcProvisioningPolicyAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13237,12 +13309,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}':
     get:
@@ -13297,12 +13363,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13342,12 +13402,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13382,12 +13436,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}/assignedUsers':
     get:
@@ -13453,12 +13501,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13524,12 +13566,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}/assignedUsers/{user-id}/mailboxSettings':
     get:
@@ -13592,12 +13628,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
     patch:
       tags:
         - deviceManagement.virtualEndpoint
@@ -13644,12 +13674,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}/assignedUsers/{user-id}/serviceProvisioningErrors':
     get:
       tags:
@@ -13722,12 +13746,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.serviceProvisioningErrorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13769,12 +13787,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}/assignedUsers/$count':
     get:
       tags:
@@ -13805,12 +13817,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/$count':
     get:
       tags:
@@ -13833,12 +13839,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
   /deviceManagement/virtualEndpoint/provisioningPolicies/$count:
     get:
       tags:
@@ -13853,12 +13853,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-30'
-        date: '2023-03-16'
-        version: 2023-03/onPremisesConnectionId
-        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
   /deviceManagement/virtualEndpoint/reports:
     get:
       tags:
@@ -13941,8 +13935,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get exportJobs from deviceManagement
-      description: The export jobs created for downloading reports.
+      summary: Get cloudPcExportJob
+      description: Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
       operationId: deviceManagement.virtualEndpoint.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13992,7 +13986,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to exportJobs for deviceManagement
+      summary: Create cloudPcExportJob
+      description: 'Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property result is completed, the report finishes downloading to the location specified by the exportUrl property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_CreateExportJob
       requestBody:
         description: New navigation property
@@ -14015,8 +14013,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get exportJobs from deviceManagement
-      description: The export jobs created for downloading reports.
+      summary: Get cloudPcExportJob
+      description: Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcexportjob-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint.report_GetExportJob
       parameters:
         - name: cloudPcExportJob-id
@@ -14132,8 +14133,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get servicePlans from deviceManagement
-      description: Cloud PC service plans.
+      summary: List servicePlans
+      description: 'List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14323,7 +14327,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get sharedUseServicePlans from deviceManagement
+      summary: List cloudPcSharedUseServicePlans (deprecated)
+      description: Get a list of the cloudPcSharedUseServicePlan objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListSharedUseServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14408,7 +14416,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get sharedUseServicePlans from deviceManagement
+      summary: Get cloudPcSharedUseServicePlan (deprecated)
+      description: Read the properties and relationships of a cloudPcSharedUseServicePlan object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcshareduseserviceplan-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetSharedUseServicePlan
       parameters:
         - name: cloudPcSharedUseServicePlan-id
@@ -14548,8 +14560,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get snapshots from deviceManagement
-      description: Cloud PC snapshots.
+      summary: List snapshots
+      description: Get a list of cloudPcSnapshot objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListSnapshot
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14622,8 +14637,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get snapshots from deviceManagement
-      description: Cloud PC snapshots.
+      summary: Get cloudPcSnapshot
+      description: Read the properties and relationships of a cloudPcSnapshot object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcsnapshot-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetSnapshot
       parameters:
         - name: cloudPcSnapshot-id
@@ -14739,8 +14757,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get supportedRegions from deviceManagement
-      description: Cloud PC supported regions.
+      summary: List supportedRegions
+      description: List the supported regions that are available for creating Cloud PC connections.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListSupportedRegion
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14930,8 +14951,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get userSettings from deviceManagement
-      description: Cloud PC user settings.
+      summary: List userSettings
+      description: Retrieve a list of cloudPcUserSetting objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_ListUserSetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14981,7 +15005,11 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create new navigation property to userSettings for deviceManagement
+      summary: Create cloudPcUserSetting
+      description: Create a new cloudPcUserSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_CreateUserSetting
       requestBody:
         description: New navigation property
@@ -15004,8 +15032,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get userSettings from deviceManagement
-      description: Cloud PC user settings.
+      summary: Get cloudPcUserSetting
+      description: Read the properties and relationships of a cloudPcUserSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-get?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_GetUserSetting
       parameters:
         - name: cloudPcUserSetting-id
@@ -15049,7 +15080,11 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update the navigation property userSettings in deviceManagement
+      summary: Update cloudPcUserSetting
+      description: Update the properties of a cloudPcUserSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-update?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_UpdateUserSetting
       parameters:
         - name: cloudPcUserSetting-id
@@ -15080,7 +15115,11 @@ paths:
     delete:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Delete navigation property userSettings for deviceManagement
+      summary: Delete cloudPcUserSetting
+      description: Delete a cloudPcUserSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-delete?view=graph-rest-beta
       operationId: deviceManagement.virtualEndpoint_DeleteUserSetting
       parameters:
         - name: cloudPcUserSetting-id
@@ -17145,6 +17184,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
+              description: 'Cloud PC shared-use service plans. The sharedUseServicePlans relationship is deprecated and stopped returning data on October 8, 2023. Going forward, use the frontLineServicePlans relationship.'
               x-ms-navigationProperty: true
             snapshots:
               type: array
@@ -17245,6 +17285,10 @@ components:
               type: string
               description: The Microsoft Entra device ID of the Cloud PC.
               nullable: true
+            allotmentDisplayName:
+              type: string
+              description: 'The allotment name divides tenant licenses into smaller batches or groups that help restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.'
+              nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
@@ -17260,7 +17304,7 @@ components:
             gracePeriodEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             imageDisplayName:
@@ -17272,7 +17316,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
               format: date-time
             lastRemoteActionResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
@@ -17483,9 +17527,11 @@ components:
               nullable: true
             offer:
               type: string
+              description: 'The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The offer property is deprecated and will stop returning data on January 31, 2024. Going forward, use the offerName property.'
               nullable: true
             offerDisplayName:
               type: string
+              description: 'The official display offer name of this gallery image. For example, Windows 10 Enterprise + OS Optimizations. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.'
               nullable: true
             offerName:
               type: string
@@ -17493,6 +17539,7 @@ components:
               nullable: true
             publisher:
               type: string
+              description: 'The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The publisher property is deprecated and will stop returning data on January 31, 2024. Going forward, use the publisherName property.'
               nullable: true
             publisherName:
               type: string
@@ -17500,6 +17547,7 @@ components:
               nullable: true
             recommendedSku:
               type: string
+              description: 'The recommended Cloud PC SKU for this gallery image. Read-only. The recommendedSku property is deprecated and will stop returning data on January 31, 2024.'
               nullable: true
             sizeInGB:
               maximum: 2147483647
@@ -17510,9 +17558,11 @@ components:
               nullable: true
             sku:
               type: string
+              description: 'The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only. The sku property is deprecated and will stop returning data on January 31, 2024. Going forward, use the skuName property.'
               nullable: true
             skuDisplayName:
               type: string
+              description: 'The official display SKU name of this gallery image. For example, 2004. Read-only. The skuDisplayName property is deprecated and will stop returning data on January 31, 2024.'
               nullable: true
             skuName:
               type: string
@@ -17632,6 +17682,8 @@ components:
               type: string
               description: The URL of the alternate resource that links to this provisioning policy. Read-only.
               nullable: true
+            autopatch:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAutopatch'
             cloudPcGroupDisplayName:
               type: string
               description: The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
@@ -17647,8 +17699,6 @@ components:
             displayName:
               type: string
               description: The display name for the provisioning policy.
-            domainJoinConfiguration:
-              $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
             domainJoinConfigurations:
               type: array
               items:
@@ -17656,7 +17706,7 @@ components:
               description: Specifies a list ordered by priority on how Cloud PCs join Microsoft Entra ID (Azure AD). Supports $select.
             enableSingleSignOn:
               type: boolean
-              description: 'True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn''t support this feature. The default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
+              description: 'True if single sign-on can access the provisioned Cloud PC. False indicates that the provisioned Cloud PC doesn''t support this feature. The default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
               nullable: true
             gracePeriodInHours:
               maximum: 2147483647
@@ -17681,9 +17731,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
             microsoftManagedDesktop:
               $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktop'
-            onPremisesConnectionId:
-              type: string
-              nullable: true
             provisioningType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
             scopeIds:
@@ -17820,7 +17867,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -18654,6 +18701,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointSetting'
             selfServiceEnabled:
               type: boolean
+              description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.'
               nullable: true
             assignments:
               type: array
@@ -20192,6 +20240,7 @@ components:
           description: The type of the audit resource.
         type:
           type: string
+          description: 'The type of the audit resource. The type property is deprecated and will stop returning data on May 8, 2024. Going forward, use the resourceType property.'
       additionalProperties:
         type: object
     microsoft.graph.cloudPcBulkActionSummary:
@@ -20367,6 +20416,8 @@ components:
         - dedicated
         - shared
         - unknownFutureValue
+        - sharedByUser
+        - sharedByEntraGroup
       type: string
     microsoft.graph.cloudPcServicePlanType:
       title: cloudPcServicePlanType
@@ -20557,6 +20608,15 @@ components:
         language:
           type: string
           description: 'The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcProvisioningPolicyAutopatch:
+      title: cloudPcProvisioningPolicyAutopatch
+      type: object
+      properties:
+        autopatchGroupId:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -21059,7 +21119,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+              description: Optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -21358,6 +21418,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
               x-ms-navigationProperty: true
+            claimsPolicy:
+              $ref: '#/components/schemas/microsoft.graph.customClaimsPolicy'
             createdObjects:
               type: array
               items:
@@ -21737,6 +21799,10 @@ components:
               type: boolean
               description: 'When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.'
               nullable: true
+            iCalUId:
+              type: string
+              description: A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isAllDay:
@@ -21893,6 +21959,10 @@ components:
               type: string
               description: Date and time at which the chat was created. Read-only.
               format: date-time
+              nullable: true
+            isHiddenForAllMembers:
+              type: boolean
+              description: Indicates whether the chat is hidden for all its members. Read-only.
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -22279,7 +22349,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -22786,10 +22856,11 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isFavorite:
               type: boolean
+              description: Indicates whether the user marked the group as favorite.
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -22859,7 +22930,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned at least one of the following Microsoft Entra roles:  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -24075,7 +24146,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -24204,10 +24275,12 @@ components:
           properties:
             alternativeRecording:
               type: string
+              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             attendeeReport:
               type: string
+              description: The content stream of the attendee report of a Teams live event. Read-only.
               format: base64url
               nullable: true
             broadcastRecording:
@@ -24220,6 +24293,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
+              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -24238,6 +24312,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
+              description: Indicates whether this event is a Teams live event.
               nullable: true
             joinUrl:
               type: string
@@ -24250,6 +24325,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
               type: string
+              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             startDateTime:
@@ -24292,16 +24368,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
+              description: The user's Outlook task folders. Read-only. Nullable.
               x-ms-navigationProperty: true
             taskGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskGroup'
+              description: The user's Outlook task groups. Read-only. Nullable.
               x-ms-navigationProperty: true
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
+              description: The user's Outlook tasks. Read-only. Nullable.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -25050,6 +25129,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours. The frequencyInHours property is deprecated and will stop returning data on January 31, 2024. Going forward, use the frequencyType property.'
           format: int32
           nullable: true
         frequencyType:
@@ -26117,6 +26197,7 @@ components:
           nullable: true
         additionalDetails:
           type: string
+          description: 'More details about the health check or the recommended action. Read-only. The additionalDetails property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the additionalDetail property.'
           nullable: true
         correlationId:
           type: string
@@ -26239,36 +26320,43 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
+              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
@@ -26356,14 +26444,17 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
+          description: The unique identifier for the addIn object.
           format: uuid
           nullable: true
         properties:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValue'
+          description: The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.
         type:
           type: string
+          description: The unique name for the functionality exposed by the app.
       additionalProperties:
         type: object
     microsoft.graph.appRole:
@@ -26522,6 +26613,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordSingleSignOnField'
+          description: The fields to capture to fill the user credentials for password-based single sign-on.
       additionalProperties:
         type: object
     microsoft.graph.permissionScope:
@@ -26619,6 +26711,31 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: claimsMappingPolicy
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.customClaimsPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customClaimsPolicy
+          type: object
+          properties:
+            audienceOverride:
+              type: string
+              description: 'If specified, it overrides the content of the audience claim for WS-Federation and SAML2 protocols. A custom signing key must be used for audienceOverride to be applied, otherwise, the audienceOverride value is ignored. The value provided must be in the format of an absolute URI.'
+              nullable: true
+            claims:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customClaimBase'
+              description: 'Defines which claims are present in the tokens affected by the policy, in addition to the basic claim and the core claim set. Inherited from customclaimbase.'
+            includeApplicationIdInIssuer:
+              type: boolean
+              description: Indicates whether the application ID is added to the claim. It is relevant only for SAML2.0 and if a custom signing key is used. the default value is true. Optional.
+              nullable: true
+            includeBasicClaimSet:
+              type: boolean
+              description: 'Determines whether the basic claim set is included in tokens affected by this policy. If set to true, all claims in the basic claim set are emitted in tokens affected by the policy. By default the basic claim set isn''t in the tokens unless they''re explicitly configured in this policy.'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.delegatedPermissionClassification:
@@ -27167,8 +27284,10 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the item.
             changeKey:
               type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -27428,6 +27547,8 @@ components:
           properties:
             consentedPermissionSet:
               $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+            scopeInfo:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopeInfo'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -27660,6 +27781,7 @@ components:
               nullable: true
             teamsAppId:
               type: string
+              description: 'App definition identifier of the tab. This value can''t be changed after tab creation. Because this property is deprecated, we recommend expanding teamsApp to retrieve the application that is linked to the tab.'
               nullable: true
             webUrl:
               type: string
@@ -27960,6 +28082,7 @@ components:
               format: date-time
             description:
               type: string
+              description: The description of the item.
               nullable: true
             eTag:
               type: string
@@ -28101,6 +28224,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.bundle'
             content:
               type: string
+              description: 'The content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.'
               format: base64url
               nullable: true
             contentStream:
@@ -28157,6 +28281,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.specialFolder'
             video:
               $ref: '#/components/schemas/microsoft.graph.video'
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.driveItemViewpoint'
             webDavUrl:
               type: string
               description: WebDAV compatible URL for the item.
@@ -28284,7 +28410,6 @@ components:
               nullable: true
             externalcourseActivityId:
               type: string
-              description: A course activity ID generated by the provider. Optional.
               nullable: true
             learnerUserId:
               type: string
@@ -28333,6 +28458,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -28603,6 +28730,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToIdentitiesV2:
               type: array
               items:
@@ -29591,6 +29719,8 @@ components:
           type: string
           description: A provider-specific reference id for the uploaded logs. Read-only.
           nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.managedAppLogUploadState'
       additionalProperties:
         type: object
       description: 'A `managedAppLogUpload` represents the log upload result for a given Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.'
@@ -31338,10 +31468,12 @@ components:
           properties:
             content:
               type: string
+              description: The content of the resource.
               format: base64url
               nullable: true
             contentUrl:
               type: string
+              description: The URL for the content stream.
               nullable: true
           additionalProperties:
             type: object
@@ -31536,12 +31668,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReport:
@@ -31924,12 +32058,12 @@ components:
             appliedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.'
+              description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
               format: date-time
               nullable: true
             applyResult:
               type: string
-              description: 'The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.'
+              description: 'The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.'
               nullable: true
             decision:
               type: string
@@ -31949,7 +32083,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembership'
             recommendation:
               type: string
-              description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
+              description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within 30 days of start of review. Recommend deny if sign-in is greater than 30 days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
               nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemResource'
@@ -31992,6 +32126,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn''t exist, or manager is specified as reviewer but a user''s manager doesn''t exist.  Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
@@ -32160,6 +32295,7 @@ components:
               nullable: true
             owner:
               type: string
+              description: 'Use the container property instead. ID of the group that owns the plan. After it''s set, this property can’t be updated. This property doesn''t return a valid group ID if the container of the plan isn''t a group.'
               nullable: true
             sharedWithContainers:
               type: array
@@ -32909,11 +33045,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -33508,6 +33644,17 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.customClaimBase:
+      title: customClaimBase
+      type: object
+      properties:
+        configurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimConfiguration'
+          description: One or more configurations that describe how the claim is sourced and under what conditions.
+      additionalProperties:
+        type: object
     microsoft.graph.permissionClassificationType:
       title: permissionClassificationType
       enum:
@@ -33858,6 +34005,14 @@ components:
           description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppInstallationScopeInfo:
+      title: teamsAppInstallationScopeInfo
+      type: object
+      properties:
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -34072,11 +34227,15 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'Supported values are Unicode characters and custom. Some backward-compatible reaction types include like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -34609,6 +34768,7 @@ components:
       properties:
         type:
           type: string
+          description: 'An string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.'
           nullable: true
       additionalProperties:
         type: object
@@ -34870,6 +35030,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.driveItemViewpoint:
+      title: driveItemViewpoint
+      type: object
+      properties:
+        accessOperations:
+          $ref: '#/components/schemas/microsoft.graph.driveItemAccessOperationsViewpoint'
+        sharing:
+          $ref: '#/components/schemas/microsoft.graph.sharingViewpoint'
+      additionalProperties:
+        type: object
     microsoft.graph.itemRetentionLabel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -35062,6 +35232,14 @@ components:
         - completed
         - unknownFutureValue
       type: string
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.itemActivityStat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -35866,6 +36044,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             resourceReference:
@@ -36584,6 +36763,43 @@ components:
           $ref: '#/components/schemas/microsoft.graph.sizeRange'
       additionalProperties:
         type: object
+    microsoft.graph.managedAppLogUploadState:
+      title: managedAppLogUploadState
+      enum:
+        - pending
+        - inProgress
+        - completed
+        - declinedByUser
+        - timedOut
+        - failed
+        - unknownFutureValue
+      type: string
+      description: Represents the current status of the associated `managedAppLogCollectionRequest`.
+      x-ms-enum:
+        name: managedAppLogUploadState
+        modelAsString: false
+        values:
+          - value: pending
+            description: 'Default. The log upload request has been successfully created, and is pending delivery to the Mobile Application Management (MAM) application.'
+            name: pending
+          - value: inProgress
+            description: One or more log upload components have uploaded their logs.
+            name: inProgress
+          - value: completed
+            description: All log upload successfully components have uploaded their logs.
+            name: completed
+          - value: declinedByUser
+            description: The log upload request was declined by the user on the device.
+            name: declinedByUser
+          - value: timedOut
+            description: The log upload request was not acknowledged by the user within the allowed time window.
+            name: timedOut
+          - value: failed
+            description: The log upload request encountered an error.
+            name: failed
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.configurationManagerClientState:
       title: configurationManagerClientState
       enum:
@@ -37746,6 +37962,7 @@ components:
           nullable: true
         tollFreeNumber:
           type: string
+          description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -37755,6 +37972,7 @@ components:
           description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
+          description: The toll number that connects to the Audio Conference Provider.
           nullable: true
         tollNumbers:
           type: array
@@ -38469,6 +38687,11 @@ components:
               format: date-time
             source:
               $ref: '#/components/schemas/microsoft.graph.personDataSources'
+            sources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileSourceAnnotation'
+              description: Where the values within an entity originated if synced from another source.
           additionalProperties:
             type: object
     microsoft.graph.personAnnualEventType:
@@ -39135,6 +39358,12 @@ components:
               type: string
               description: Last name of the registrant.
               nullable: true
+            preferredLanguage:
+              type: string
+              nullable: true
+            preferredTimezone:
+              type: string
+              nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -39715,6 +39944,7 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
@@ -39734,6 +39964,7 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'Value that can be used as the maximum number for setting password expiration time in days, hours, minutes or seconds. Defined in ISO 8601 format for Durations. For example, ''P4DT12H30M5S'' represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restriction type is set to passwordLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
@@ -39744,6 +39975,21 @@ components:
           nullable: true
         restrictionType:
           $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimConfiguration:
+      title: customClaimConfiguration
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        condition:
+          $ref: '#/components/schemas/microsoft.graph.customClaimConditionBase'
+        transformations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customClaimTransformation'
+          description: An ordered list of transformations that are applied in sequence.
       additionalProperties:
         type: object
     microsoft.graph.synchronizationSecret:
@@ -39962,14 +40208,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.teamsAppDistributionMethod:
-      title: teamsAppDistributionMethod
-      enum:
-        - store
-        - organization
-        - sideloaded
-        - unknownFutureValue
-      type: string
     microsoft.graph.teamsAppInstallationScopes:
       title: teamsAppInstallationScopes
       enum:
@@ -39980,6 +40218,14 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -40375,6 +40621,50 @@ components:
         - other
         - unknownFutureValue
       type: string
+    microsoft.graph.driveItemAccessOperationsViewpoint:
+      title: driveItemAccessOperationsViewpoint
+      type: object
+      properties:
+        canComment:
+          type: boolean
+          description: Indicates whether the user can comment on this item.
+          nullable: true
+        canCreateFile:
+          type: boolean
+          description: Indicates whether the user can create files within this object. Returned only on folders.
+          nullable: true
+        canCreateFolder:
+          type: boolean
+          description: Indicates whether the user can create folders within this object. Returned only on folders.
+          nullable: true
+        canDelete:
+          type: boolean
+          description: Indicates whether the user can delete this item.
+          nullable: true
+        canDownload:
+          type: boolean
+          description: Indicates whether the user can download this item.
+          nullable: true
+        canRead:
+          type: boolean
+          description: Indicates whether the user can read this item.
+          nullable: true
+        canUpdate:
+          type: boolean
+          description: Indicates whether the user can update this item.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingViewpoint:
+      title: sharingViewpoint
+      type: object
+      properties:
+        defaultSharingLink:
+          $ref: '#/components/schemas/microsoft.graph.defaultSharingLink'
+        sharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.sharePointSharingAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.retentionLabelSettings:
       title: retentionLabelSettings
       type: object
@@ -40650,6 +40940,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemActionStat:
       title: itemActionStat
       type: object
@@ -42075,6 +42373,24 @@ components:
             nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.profileSourceAnnotation:
+      title: profileSourceAnnotation
+      type: object
+      properties:
+        isDefaultSource:
+          type: boolean
+          description: Indicates whether the source is the default one.
+          nullable: true
+        properties:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The names of properties that have data from this source.
+        sourceId:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.personRelationship:
       title: personRelationship
       enum:
@@ -42456,6 +42772,52 @@ components:
         - stapleDualRight
         - stapleDualBottom
         - unknownFutureValue
+        - stapleTripleLeft
+        - stapleTripleTop
+        - stapleTripleRight
+        - stapleTripleBottom
+        - bindLeft
+        - bindTop
+        - bindRight
+        - bindBottom
+        - foldAccordion
+        - foldDoubleGate
+        - foldGate
+        - foldHalf
+        - foldHalfZ
+        - foldLeftGate
+        - foldLetter
+        - foldParallel
+        - foldPoster
+        - foldRightGate
+        - foldZ
+        - foldEngineeringZ
+        - punchTopLeft
+        - punchBottomLeft
+        - punchTopRight
+        - punchBottomRight
+        - punchDualLeft
+        - punchDualTop
+        - punchDualRight
+        - punchDualBottom
+        - punchTripleLeft
+        - punchTripleTop
+        - punchTripleRight
+        - punchTripleBottom
+        - punchQuadLeft
+        - punchQuadTop
+        - punchQuadRight
+        - punchQuadBottom
+        - fold
+        - trim
+        - bale
+        - bookletMaker
+        - coat
+        - laminate
+        - trimAfterPages
+        - trimAfterDocuments
+        - trimAfterCopies
+        - trimAfterJob
       type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout
@@ -43624,6 +43986,24 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.customClaimAttributeBase:
+      title: customClaimAttributeBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimConditionBase:
+      title: customClaimConditionBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.customClaimTransformation:
+      title: customClaimTransformation
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/microsoft.graph.transformationAttribute'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationScheduleState:
       title: synchronizationScheduleState
       enum:
@@ -43943,6 +44323,34 @@ components:
         - comment
         - unknownFutureValue
       type: string
+    microsoft.graph.defaultSharingLink:
+      title: defaultSharingLink
+      type: object
+      properties:
+        defaultToExistingAccess:
+          type: boolean
+          description: Indicates whether the default link setting for this object is a direct URL rather than a sharing link.
+          nullable: true
+        role:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.sharingScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharePointSharingAbilities:
+      title: sharePointSharingAbilities
+      type: object
+      properties:
+        anyoneLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        directSharingAbilities:
+          $ref: '#/components/schemas/microsoft.graph.directSharingAbilities'
+        organizationLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+        specificPeopleLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkScopeAbilities'
+      additionalProperties:
+        type: object
     microsoft.graph.security.behaviorDuringRetentionPeriod:
       title: behaviorDuringRetentionPeriod
       enum:
@@ -44602,6 +45010,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.transformationAttribute:
+      title: transformationAttribute
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/microsoft.graph.customClaimAttributeBase'
+        treatAsMultiValue:
+          type: boolean
+          description: 'This flag is only relevant in the case where the attribute is multivalued. By default, transformations are only applied to the first element in a multi-valued claim, however setting this flag to true ensures the transformation is applied to all values, resulting in a multivalued output.'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationError:
       title: synchronizationError
       type: object
@@ -44773,6 +45192,60 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.sharingRole:
+      title: sharingRole
+      enum:
+        - none
+        - view
+        - edit
+        - manageList
+        - review
+        - restrictedView
+        - submitOnly
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sharingScope:
+      title: sharingScope
+      enum:
+        - anyone
+        - organization
+        - specificPeople
+        - anonymous
+        - users
+        - unknownFutureValue
+      type: string
+    microsoft.graph.linkScopeAbilities:
+      title: linkScopeAbilities
+      type: object
+      properties:
+        blockDownloadLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        editLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        manageListLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        readLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        reviewLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+        submitOnlyLinkAbilities:
+          $ref: '#/components/schemas/microsoft.graph.linkRoleAbilities'
+      additionalProperties:
+        type: object
+    microsoft.graph.directSharingAbilities:
+      title: directSharingAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addInternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requestGrantAccess:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookEmailIdentity:
       title: workbookEmailIdentity
       type: object
@@ -45188,6 +45661,7 @@ components:
           description: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
         defaultValue:
           type: string
+          description: The default value of the attribute.
           nullable: true
         flowNullValues:
           type: boolean
@@ -45230,27 +45704,71 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.linkRoleAbilities:
+      title: linkRoleAbilities
+      type: object
+      properties:
+        addExistingExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        addNewExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        applyVariants:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkVariants'
+        createLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        deleteLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkAllowsExternalUsers:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        linkExpiration:
+          $ref: '#/components/schemas/microsoft.graph.sharingLinkExpirationStatus'
+        retrieveLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        updateLink:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingOperationStatus:
+      title: sharingOperationStatus
+      type: object
+      properties:
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
       properties:
         color:
           type: string
+          description: The color applied to the cell.
           nullable: true
         criterion1:
           type: string
+          description: A custom criterion.
           nullable: true
         criterion2:
           type: string
+          description: A custom criterion.
           nullable: true
         dynamicCriteria:
           type: string
+          description: A dynamic formula specified in a custom filter.
         filterOn:
           type: string
+          description: Indicates whether a filter is applied to a column.
         icon:
           $ref: '#/components/schemas/microsoft.graph.workbookIcon'
         operator:
           type: string
+          description: 'An operator in a cell; for example, =, >, <, <=, or <>.'
         values:
           $ref: '#/components/schemas/microsoft.graph.Json'
       additionalProperties:
@@ -45511,6 +46029,41 @@ components:
         - Extensions
         - BaseObjectName
       type: string
+    microsoft.graph.sharingLinkVariants:
+      title: sharingLinkVariants
+      type: object
+      properties:
+        addressBarLinkPermission:
+          $ref: '#/components/schemas/microsoft.graph.sharingRole'
+        allowEmbed:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        passwordProtected:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+        requiresAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.sharingOperationStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLinkExpirationStatus:
+      title: sharingLinkExpirationStatus
+      type: object
+      properties:
+        defaultExpirationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Default link expiration in days. Returns -1 if there is no required expiration time.
+          format: int32
+          nullable: true
+        disabledReason:
+          type: string
+          description: Provides a description of why this operation is not enabled. Only returned if this operation is not enabled.
+          nullable: true
+        enabled:
+          type: boolean
+          description: Indicates whether this operation is enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookChartAxisFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

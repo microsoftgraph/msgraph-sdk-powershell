@@ -953,7 +953,11 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update the navigation property addresses in users
+      summary: Update itemAddress
+      description: Update the properties of an itemAddress object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemaddress-update?view=graph-rest-beta
       operationId: user.profile_UpdateAddress
       parameters:
         - name: user-id
@@ -992,7 +996,11 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete navigation property addresses for users
+      summary: Delete itemAddress
+      description: Deletes an itemAddress object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-beta
       operationId: user.profile_DeleteAddress
       parameters:
         - name: user-id
@@ -1433,7 +1441,11 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update the navigation property awards in users
+      summary: Update personAward
+      description: Update the properties of a personAward object from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/personaward-update?view=graph-rest-beta
       operationId: user.profile_UpdateAward
       parameters:
         - name: user-id
@@ -1472,7 +1484,11 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete navigation property awards for users
+      summary: Delete personAward
+      description: Deletes a personAward object from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-beta
       operationId: user.profile_DeleteAward
       parameters:
         - name: user-id
@@ -1673,7 +1689,11 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update the navigation property certifications in users
+      summary: Update personCertification
+      description: Update the properties of a personCertification object from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/personcertification-update?view=graph-rest-beta
       operationId: user.profile_UpdateCertification
       parameters:
         - name: user-id
@@ -1712,7 +1732,11 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete navigation property certifications for users
+      summary: Delete personCertification
+      description: Deletes a personCertification object from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/personcertification-delete?view=graph-rest-beta
       operationId: user.profile_DeleteCertification
       parameters:
         - name: user-id
@@ -2009,8 +2033,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get emails from users
-      description: Represents detailed information about email addresses associated with the user.
+      summary: Get itemEmail
+      description: Retrieve the properties and relationships of an itemEmail object in a user's profile.
       operationId: user.profile_ListEmail
       parameters:
         - name: user-id
@@ -2100,8 +2124,11 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get emails from users
-      description: Represents detailed information about email addresses associated with the user.
+      summary: Get itemEmail
+      description: Retrieve the properties and relationships of an itemEmail object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itememail-get?view=graph-rest-beta
       operationId: user.profile_GetEmail
       parameters:
         - name: user-id
@@ -2153,7 +2180,11 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update the navigation property emails in users
+      summary: Update itememail
+      description: Update the properties of an itemEmail object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itememail-update?view=graph-rest-beta
       operationId: user.profile_UpdateEmail
       parameters:
         - name: user-id
@@ -3113,7 +3144,11 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update the navigation property notes in users
+      summary: Update personAnnotation
+      description: Update the properties of a personAnnotation object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/personannotation-update?view=graph-rest-beta
       operationId: user.profile_UpdateNote
       parameters:
         - name: user-id
@@ -3152,7 +3187,11 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete navigation property notes for users
+      summary: Delete personAnnotation
+      description: Deletes a personAnnotation object from a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/personannotation-delete?view=graph-rest-beta
       operationId: user.profile_DeleteNote
       parameters:
         - name: user-id
@@ -3353,7 +3392,11 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update the navigation property patents in users
+      summary: Update itemPatent
+      description: Update the properties of an itemPatent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itempatent-update?view=graph-rest-beta
       operationId: user.profile_UpdatePatent
       parameters:
         - name: user-id
@@ -3392,7 +3435,11 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete navigation property patents for users
+      summary: Delete itemPatent
+      description: Deletes an itemPatent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itempatent-delete?view=graph-rest-beta
       operationId: user.profile_DeletePatent
       parameters:
         - name: user-id
@@ -3593,7 +3640,11 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update the navigation property phones in users
+      summary: Update itemphonenumber
+      description: Update the properties of an itemPhone object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-beta
       operationId: user.profile_UpdatePhone
       parameters:
         - name: user-id
@@ -3632,7 +3683,11 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete navigation property phones for users
+      summary: Delete itemPhoneNumber
+      description: Delete an itemPhone object from the user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-beta
       operationId: user.profile_DeletePhone
       parameters:
         - name: user-id
@@ -4313,7 +4368,11 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update the navigation property publications in users
+      summary: Update itemPublication
+      description: Update the properties of an itemPublication object in a user's profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itempublication-update?view=graph-rest-beta
       operationId: user.profile_UpdatePublication
       parameters:
         - name: user-id
@@ -6086,6 +6145,11 @@ components:
               format: date-time
             source:
               $ref: '#/components/schemas/microsoft.graph.personDataSources'
+            sources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileSourceAnnotation'
+              description: Where the values within an entity originated if synced from another source.
           additionalProperties:
             type: object
     microsoft.graph.localeInfo:
@@ -6816,6 +6880,24 @@ components:
           items:
             type: string
             nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.profileSourceAnnotation:
+      title: profileSourceAnnotation
+      type: object
+      properties:
+        isDefaultSource:
+          type: boolean
+          description: Indicates whether the source is the default one.
+          nullable: true
+        properties:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The names of properties that have data from this source.
+        sourceId:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.physicalAddressType:

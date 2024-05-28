@@ -60,6 +60,7 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -254,6 +255,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -294,6 +296,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -411,6 +414,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -618,6 +622,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -694,6 +699,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -948,6 +954,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -996,6 +1003,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1783,6 +1791,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -1804,6 +1813,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -1828,6 +1838,7 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1957,7 +1968,11 @@ paths:
     patch:
       tags:
         - groups.calendar
-      summary: Update the navigation property events in groups
+      summary: Update event
+      description: Update an event object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0
       operationId: group.calendar_UpdateEvent
       parameters:
         - name: group-id
@@ -2053,6 +2068,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2260,6 +2276,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2336,6 +2353,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2590,6 +2608,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2638,6 +2657,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3425,6 +3445,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -3446,6 +3467,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -3456,8 +3478,11 @@ paths:
     get:
       tags:
         - groups.event
-      summary: Get calendarView from groups
-      description: The calendar view for the calendar. Read-only.
+      summary: List group calendarView
+      description: "Get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range,\nfrom the default calendar of a group."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-calendarview?view=graph-rest-1.0
       operationId: group_ListCalendarView
       parameters:
         - name: group-id
@@ -3486,6 +3511,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3603,6 +3629,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3810,6 +3837,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -3886,6 +3914,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4140,6 +4169,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -4188,6 +4218,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4975,6 +5006,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -4996,6 +5028,23 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -5006,8 +5055,11 @@ paths:
     get:
       tags:
         - groups.event
-      summary: Get events from groups
-      description: The group's calendar events.
+      summary: List events
+      description: Retrieve a list of event objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-list-events?view=graph-rest-1.0
       operationId: group_ListEvent
       parameters:
         - name: group-id
@@ -5020,6 +5072,7 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -5054,7 +5107,11 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Create new navigation property to events for groups
+      summary: Create event
+      description: Use this API to create a new event.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-post-events?view=graph-rest-1.0
       operationId: group_CreateEvent
       parameters:
         - name: group-id
@@ -5086,8 +5143,11 @@ paths:
     get:
       tags:
         - groups.event
-      summary: Get events from groups
-      description: The group's calendar events.
+      summary: Get event
+      description: Get an event object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-get-event?view=graph-rest-1.0
       operationId: group_GetEvent
       parameters:
         - name: group-id
@@ -5168,7 +5228,11 @@ paths:
     delete:
       tags:
         - groups.event
-      summary: Delete navigation property events for groups
+      summary: Delete event
+      description: Delete an event object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-event?view=graph-rest-1.0
       operationId: group_DeleteEvent
       parameters:
         - name: group-id
@@ -5225,6 +5289,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -5432,6 +5497,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -5486,8 +5552,8 @@ paths:
     get:
       tags:
         - groups.event
-      summary: Get extensions from groups
-      description: The collection of open extensions defined for the event. Nullable.
+      summary: Get open extension
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: group.event_ListExtension
       parameters:
         - name: group-id
@@ -5508,6 +5574,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -5552,7 +5619,11 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Create new navigation property to extensions for groups
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.event_CreateExtension
       parameters:
         - name: group-id
@@ -5592,8 +5663,11 @@ paths:
     get:
       tags:
         - groups.event
-      summary: Get extensions from groups
-      description: The collection of open extensions defined for the event. Nullable.
+      summary: Get open extension
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: group.event_GetExtension
       parameters:
         - name: group-id
@@ -5762,6 +5836,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -5810,6 +5885,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -6597,6 +6673,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -6618,6 +6695,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -6690,7 +6768,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the item of type microsoft.graph.place as microsoft.graph.room
+      summary: List places
+      description: 'Get a collection of the specified type of place objects defined in the tenant. For example, you can get all the rooms, all the room lists, or the rooms in a specific room list in the tenant. A place object can be one of the following types: Both room and roomList are derived from the place object. By default, this operation returns 100 places per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. See details for how they compare.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_GetPlaceAsRoom
       parameters:
         - name: place-id
@@ -7030,7 +7112,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the items of type microsoft.graph.room in the microsoft.graph.place collection
+      summary: List places
+      description: 'Get a collection of the specified type of place objects defined in the tenant. For example, you can get all the rooms, all the room lists, or the rooms in a specific room list in the tenant. A place object can be one of the following types: Both room and roomList are derived from the place object. By default, this operation returns 100 places per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. See details for how they compare.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_ListPlaceAsRoom
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7225,8 +7311,11 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: Get calendarPermissions from users
-      description: The permissions of the users with whom the calendar is shared.
+      summary: List calendarPermissions
+      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
       operationId: user.calendar_ListCalendarPermission
       parameters:
         - name: user-id
@@ -7239,6 +7328,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -7305,8 +7395,11 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: Get calendarPermissions from users
-      description: The permissions of the users with whom the calendar is shared.
+      summary: Get calendarPermission
+      description: Get the specified permissions object of a user or group calendar that has been shared.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0
       operationId: user.calendar_GetCalendarPermission
       parameters:
         - name: user-id
@@ -7348,7 +7441,11 @@ paths:
     patch:
       tags:
         - users.calendar
-      summary: Update the navigation property calendarPermissions in users
+      summary: Update calendarPermission
+      description: 'Update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0
       operationId: user.calendar_UpdateCalendarPermission
       parameters:
         - name: user-id
@@ -7387,7 +7484,11 @@ paths:
     delete:
       tags:
         - users.calendar
-      summary: Delete navigation property calendarPermissions for users
+      summary: Delete calendarPermission
+      description: Delete calendarPermission.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0
       operationId: user.calendar_DeleteCalendarPermission
       parameters:
         - name: user-id
@@ -7433,6 +7534,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -7473,6 +7575,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -7590,6 +7693,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -7797,6 +7901,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -7873,6 +7978,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -8127,6 +8233,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -8175,6 +8282,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -8962,6 +9070,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -8983,6 +9092,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -9007,6 +9117,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -9232,6 +9343,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -9439,6 +9551,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -9515,6 +9628,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -9769,6 +9883,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -9817,6 +9932,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -10604,6 +10720,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -10625,6 +10742,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -10649,6 +10767,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -10854,6 +10973,7 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -15602,6 +15722,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: calendarGroup
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -15623,6 +15744,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -15647,6 +15769,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -15872,6 +15995,7 @@ paths:
           x-ms-docs-key-type: calendar
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -16106,6 +16230,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: calendar
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -16154,6 +16279,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -17896,6 +18022,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: calendar
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -17928,6 +18055,7 @@ paths:
           x-ms-docs-key-type: calendar
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -19802,6 +19930,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: calendar
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -19823,6 +19952,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -19863,6 +19993,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -20000,6 +20131,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -20207,6 +20339,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -20283,6 +20416,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -20537,6 +20671,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -20585,6 +20720,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -21372,6 +21508,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -21393,6 +21530,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -21417,6 +21555,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -21642,6 +21781,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -21849,6 +21989,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -21925,6 +22066,7 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -22179,6 +22321,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -22227,6 +22370,7 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -23014,6 +23158,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -23035,6 +23180,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -24272,6 +24418,14 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
     filter:
       name: $filter
       in: query
@@ -24288,14 +24442,6 @@ components:
       explode: false
       schema:
         type: boolean
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      style: form
-      explode: false
-      schema:
-        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2
