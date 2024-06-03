@@ -115,7 +115,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 {
                     Name = EnvironmentName.Torus,
                     Type = EnvironmentType.BuiltIn,
-                    AzureADEndpoint = "https://login.microsoftonline.com?safe_rollout=apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc",
+                    AzureADEndpoint = "https://login.microsoftonline.com",
                     GraphEndpoint = "https://graph.microsoft.com"
                 }
             },

@@ -308,11 +308,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             string audience = authContext.TenantId ?? Constants.DefaultTenant;
-            if(safeRollOut)
-                return GraphSession.Instance.Environment != null
-                    ? $"{GraphSession.Instance.Environment.AzureADEndpoint}"
-                    : $"{Constants.DefaultAzureADEndpoint}?safe_rollout=apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc";
-
             return GraphSession.Instance.Environment != null
                 ? $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}"
                 : $"{Constants.DefaultAzureADEndpoint}/{audience}"; 
