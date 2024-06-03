@@ -18,6 +18,8 @@ jobs:
   CheckForMetadataChanges:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -50,6 +52,16 @@ jobs:
             repo: context.repo.repo,
             body: body
           })
+
+          await github.rest.pulls.createReview({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: body,
+            pull_number: context.issue.number,
+            event: 'REQUEST_CHANGES'
+          })
+
+          core.setFailed(body)
 
 # [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
 # [1] https://hub.github.com/hub-pull-request.1.html
