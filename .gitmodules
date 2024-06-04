@@ -5,4 +5,4 @@
 [submodule "azure-sdk-for-net"]
 	path = azure-sdk-for-net
 	url = https://github.com/Ndiritu/azure-sdk-for-net.git
-	branch = feat/token-credential-query-parameters
+	branch = feat/extra-query-params
