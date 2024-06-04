@@ -11,6 +11,7 @@ using Microsoft.Identity.Client;
 using Microsoft.Identity.Client.Extensions.Msal;
 using System;
 using System.Diagnostics.Tracing;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -118,6 +119,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext, safeRollOut));
             Console.WriteLine($"Got authority host {interactiveOptions.AuthorityHost}");
             interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
+            if (safeRollOut)
+            {
+                interactiveOptions.ExtraQueryParameters = new Dictionary<string, string>
+                {
+                    { "safe_rollout", "apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc" }
+                };
+            }
             if (!File.Exists(Constants.AuthRecordPath))
             {
                 AuthenticationRecord authRecord;
