@@ -2,3 +2,7 @@
 	path = autorest.powershell
 	url = https://github.com/microsoftgraph/autorest.powershell
 	branch = powershell_v2
+[submodule "azure-sdk-for-net"]
+	path = azure-sdk-for-net
+	url = https://github.com/Ndiritu/azure-sdk-for-net.git
+	branch = feat/token-credential-query-parameters
