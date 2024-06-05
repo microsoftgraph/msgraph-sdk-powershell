@@ -123,7 +123,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 interactiveOptions.ExtraQueryParameters = new Dictionary<string, string>
                 {
-                    { "safe_rollout", "apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc" }
+                    { "safe_rollout", "apply:0238caeb-f6ca-4efc-afd0-a72e1273a8bc" }
                 };
             }
             if (!File.Exists(Constants.AuthRecordPath))
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 deviceCodeOptions.ExtraQueryParameters = new Dictionary<string, string>
                 {
-                    { "safe_rollout", "apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc" }
+                    { "safe_rollout", "apply:0238caeb-f6ca-4efc-afd0-a72e1273a8bc" }
                 };
             }
             if (!File.Exists(Constants.AuthRecordPath))
