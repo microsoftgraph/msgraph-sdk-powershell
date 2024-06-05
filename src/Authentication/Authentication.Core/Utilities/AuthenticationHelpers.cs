@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 case AuthenticationType.Delegated:
                     if (authContext.TokenCredentialType == TokenCredentialType.InteractiveBrowser)
                         return await GetInteractiveBrowserCredentialAsync(authContext, safeRollOut, cancellationToken).ConfigureAwait(false);
-                    return await GetDeviceCodeCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
+                    return await GetDeviceCodeCredentialAsync(authContext, safeRollOut, cancellationToken).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
                     return authContext.TokenCredentialType == TokenCredentialType.ClientCertificate
                         ? await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false)
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return new InteractiveBrowserCredential(interactiveOptions);
         }
 
-        private static async Task<DeviceCodeCredential> GetDeviceCodeCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        private static async Task<DeviceCodeCredential> GetDeviceCodeCredentialAsync(IAuthContext authContext, bool safeRollOut, CancellationToken cancellationToken = default)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
@@ -171,6 +171,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     return Task.CompletedTask;
                 }
             };
+            if (safeRollOut)
+            {
+                deviceCodeOptions.ExtraQueryParameters = new Dictionary<string, string>
+                {
+                    { "safe_rollout", "apply%3a0238caeb-f6ca-4efc-afd0-a72e1273a8bc" }
+                };
+            }
             if (!File.Exists(Constants.AuthRecordPath))
             {
                 var deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
