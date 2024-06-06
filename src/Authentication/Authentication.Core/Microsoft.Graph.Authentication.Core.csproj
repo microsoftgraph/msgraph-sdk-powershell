@@ -4,14 +4,15 @@
     <LangVersion>9.0</LangVersion>
     <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
-    <Version>2.18.0</Version>
+    <VersionPrefix>2.22.0</VersionPrefix>
+    <VersionSuffix>preview2</VersionSuffix>
   </PropertyGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.11.0" />
+    <ProjectReference Include="..\..\..\azure-sdk-for-net\sdk\identity\Azure.Identity\src\Azure.Identity.csproj" />
     <PackageReference Include="Azure.Identity.Broker" Version="1.1.0" />
     <PackageReference Include="Microsoft.Graph.Core" Version="3.0.9" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

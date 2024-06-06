@@ -15,6 +15,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public static class EnvironmentName
         {
             /// <summary>
+            /// Environment used for tours tests.
+            /// </summary>
+            public const string Torus = "Torus";
+            /// <summary>
             /// The graph national cloud.
             /// </summary>
             public const string Global = "Global";
@@ -103,7 +107,18 @@ namespace Microsoft.Graph.PowerShell.Authentication
                     AzureADEndpoint = "https://login.chinacloudapi.cn",
                     GraphEndpoint = "https://microsoftgraph.chinacloudapi.cn"
                 }
-            }
+            },
+            
+            // Environment used for torus tests.
+            {
+                EnvironmentName.Torus, new GraphEnvironment
+                {
+                    Name = EnvironmentName.Torus,
+                    Type = EnvironmentType.BuiltIn,
+                    AzureADEndpoint = "https://login.microsoftonline.com",
+                    GraphEndpoint = "https://graph.microsoft.com"
+                }
+            },
         };
     }
 }

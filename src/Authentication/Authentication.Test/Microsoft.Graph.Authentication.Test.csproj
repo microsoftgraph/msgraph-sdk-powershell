@@ -2,7 +2,8 @@
   <PropertyGroup>
     <TargetFrameworks>net6.0;net472</TargetFrameworks>
     <IsPackable>false</IsPackable>
-    <Version>2.8.0</Version>
+    <VersionPrefix>2.22.0</VersionPrefix>
+    <VersionSuffix>preview2</VersionSuffix>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
