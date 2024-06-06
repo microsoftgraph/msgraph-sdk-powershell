@@ -1,0 +1,94 @@
+# This workflow is used to add new issues to GitHub GraphSDKs Project
+
+name: Add Issue or PR to project
+on:
+  issues:
+    types:
+      - opened
+  pull_request:
+    types:
+      - opened
+    branches:
+      - "dev"
+
+jobs:
+  track_issue:
+    if: github.actor != 'dependabot[bot]' && github.event.pull_request.head.repo.fork == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
+        with:
+          app_id: ${{ secrets.GRAPHBOT_APP_ID }}
+          private_key: ${{ secrets.GRAPHBOT_APP_PEM }}
+
+      - name: Get project data
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+          ORGANIZATION: microsoftgraph
+          PROJECT_NUMBER: 55
+        run: |
+          gh api graphql -f query='
+            query($org: String!, $number: Int!) {
+              organization(login: $org){
+                projectV2(number: $number) {
+                  id
+                  fields(first:20) {
+                    nodes {
+                      ... on ProjectV2SingleSelectField {
+                        id
+                        name
+                        options {
+                          id
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }' -f org=$ORGANIZATION -F number=$PROJECT_NUMBER > project_data.json
+
+          echo 'PROJECT_ID='$(jq '.data.organization.projectV2.id' project_data.json) >> $GITHUB_ENV
+          echo 'LANGUAGE_FIELD_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Language") | .id' project_data.json) >> $GITHUB_ENV
+          echo 'LANGUAGE_OPTION_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Language") | .options[] | select(.name=="PowerShell") |.id' project_data.json) >> $GITHUB_ENV
+
+      - name: Add Issue or PR to project
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+          ISSUE_ID: ${{ github.event_name == 'issues' && github.event.issue.node_id || github.event.pull_request.node_id }}
+        run: |
+          item_id="$( gh api graphql -f query='
+            mutation($project:ID!, $issue:ID!) {
+              addProjectV2ItemById(input: {projectId: $project, contentId: $issue}) {
+                item {
+                  id
+                }
+              }
+            }' -f project=$PROJECT_ID -f issue=$ISSUE_ID --jq '.data.addProjectV2ItemById.item.id')"
+
+          echo 'ITEM_ID='$item_id >> $GITHUB_ENV
+
+      - name: Set Language
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+        run: |
+          gh api graphql -f query='
+            mutation (
+              $project: ID!
+              $item: ID!
+              $language_field: ID!
+              $language_value: String!
+            ) {
+              set_status: updateProjectV2ItemFieldValue(input: {
+                projectId: $project
+                itemId: $item
+                fieldId: $language_field
+                value: {singleSelectOptionId: $language_value}
+              }) {
+                projectV2Item {
+                  id
+                  }
+              }
+            }' -f project=$PROJECT_ID -f item=$ITEM_ID -f language_field=$LANGUAGE_FIELD_ID -f language_value=${{ env.LANGUAGE_OPTION_ID }} --silent
