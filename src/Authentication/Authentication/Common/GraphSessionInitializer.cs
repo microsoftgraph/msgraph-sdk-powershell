@@ -48,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
                 DataStore = dataStore ?? new DiskDataStore(),
                 RequestContext = new RequestContext(),
                 GraphOption = graphOptions ?? new GraphOption(),
-                GraphRequestProofofPossession = new GraphRequestProofofPossession()
+                GraphRequestPopContext = new GraphRequestPopContext()
             };
         }
         /// <summary>

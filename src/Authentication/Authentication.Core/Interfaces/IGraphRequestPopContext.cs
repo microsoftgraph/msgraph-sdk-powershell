@@ -9,7 +9,7 @@ using System.Net.Http;
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    public interface IGraphRequestProofofPossession
+    public interface IGraphRequestPopContext
     {
         Uri Uri { get; set; }
         HttpMethod HttpMethod { get; set; }
@@ -17,6 +17,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string ProofofPossessionNonce { get; set; }
         PopTokenRequestContext PopTokenContext { get; set; }
         Request Request { get; set; }
-        InteractiveBrowserCredential BrowserCredential { get; set; }
+        InteractiveBrowserCredential PopInteractiveBrowserCredential { get; set; }
     }
 }
