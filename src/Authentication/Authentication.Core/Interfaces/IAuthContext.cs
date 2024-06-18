@@ -52,5 +52,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         ContextScope ContextScope { get; set; }
         Version PSHostVersion { get; set; }
         SecureString ClientSecret { get; set; }
+        string SubClaim { get; set; }
     }
 }

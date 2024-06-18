@@ -42,6 +42,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             authContext.TenantId = jwtPayload?.Tid ?? account?.HomeAccountId?.TenantId;
             authContext.AppName = jwtPayload?.AppDisplayname;
             authContext.Account = jwtPayload?.Upn ?? account?.Username;
+            authContext.SubClaim = jwtPayload?.Sub;
         }
 
         /// <summary>

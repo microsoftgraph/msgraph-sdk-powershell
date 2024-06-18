@@ -50,5 +50,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
 
         [JsonPropertyName("upn")]
         public string Upn { get; set; }
+
+        [JsonPropertyName("sub")]
+        public string Sub { get; set; }
     }
 }
