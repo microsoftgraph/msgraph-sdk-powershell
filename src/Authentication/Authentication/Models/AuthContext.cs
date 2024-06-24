@@ -28,6 +28,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public string ManagedIdentityId { get; set; }
         public SecureString ClientSecret { get; set; }
         public string Environment { get; set; } = GraphEnvironmentConstants.EnvironmentName.Global;
+        public string SubClaim { get; set; }
 
         public AuthContext()
         {
