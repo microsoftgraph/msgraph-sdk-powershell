@@ -48,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 case AuthenticationType.ManagedIdentity:
                     return await GetManagedIdentityCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.EnvironmentVariable:
-                    return await GetEnvironmentCredentialAsync(authContext).ConfigureAwait(false);
+                    return await GetEnvironmentCredentialAsync(authContext, safeRollOut).ConfigureAwait(false);
                 case AuthenticationType.UserProvidedAccessToken:
                     return new UserProvidedTokenCredential();
                 default:
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             }
         }
 
-        private static async Task<TokenCredential> GetEnvironmentCredentialAsync(IAuthContext authContext)
+        private static async Task<TokenCredential> GetEnvironmentCredentialAsync(IAuthContext authContext, bool safeRollout)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
@@ -65,6 +65,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext, false))
             };
+
+            if (safeRollout)
+            {
+                tokenCredentialOptions.ExtraQueryParameters = new Dictionary<string, string>
+                {
+                    { "safe_rollout", "apply:0238caeb-f6ca-4efc-afd0-a72e1273a8bc" }
+                };
+            }
 
             if (IsAuthFlowNotSupported())
             {
