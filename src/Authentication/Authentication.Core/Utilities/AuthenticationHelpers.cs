@@ -43,8 +43,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     return await GetDeviceCodeCredentialAsync(authContext, safeRollOut, cancellationToken).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
                     return authContext.TokenCredentialType == TokenCredentialType.ClientCertificate
-                        ? await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false)
-                        : await GetClientSecretCredentialAsync(authContext).ConfigureAwait(false);
+                        ? await GetClientCertificateCredentialAsync(authContext, safeRollOut).ConfigureAwait(false)
+                        : await GetClientSecretCredentialAsync(authContext, safeRollOut).ConfigureAwait(false);
                 case AuthenticationType.ManagedIdentity:
                     return await GetManagedIdentityCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.EnvironmentVariable:
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return GraphSession.Instance.GraphOption.EnableWAMForMSGraph && SharedUtilities.IsWindowsPlatform();
         }
 
-        private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
+        private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext, bool safeRollout)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
@@ -96,6 +96,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext, false)),
                 TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
             };
+            if (safeRollout)
+            {
+                clientSecretCredentialOptions.ExtraQueryParameters = new Dictionary<string, string>
+                {
+                    { "safe_rollout", "apply:0238caeb-f6ca-4efc-afd0-a72e1273a8bc" }
+                };
+            }
             var clientSecretCredential = new ClientSecretCredential(authContext.TenantId, authContext.ClientId, authContext.ClientSecret.ConvertToString(), clientSecretCredentialOptions);
             return await Task.FromResult(clientSecretCredential).ConfigureAwait(false);
         }
@@ -190,7 +197,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return new DeviceCodeCredential(deviceCodeOptions);
         }
 
-        private static async Task<ClientCertificateCredential> GetClientCertificateCredentialAsync(IAuthContext authContext)
+        private static async Task<ClientCertificateCredential> GetClientCertificateCredentialAsync(IAuthContext authContext, bool safeRollOut)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
@@ -201,6 +208,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext),
                 SendCertificateChain = authContext.SendCertificateChain
             };
+            if (safeRollOut)
+            {
+                clientCredentialOptions.ExtraQueryParameters = new Dictionary<string, string>
+                {
+                    { "safe_rollout", "apply:0238caeb-f6ca-4efc-afd0-a72e1273a8bc" }
+                };
+            }
             var clientCertificateCredential = new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), clientCredentialOptions);
             return await Task.FromResult(clientCertificateCredential).ConfigureAwait(false);
         }
