@@ -166,8 +166,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get siteLists from admin
-      description: A collection of site lists to support Internet Explorer mode.
+      summary: List browserSiteLists
+      description: Get a list of the browserSiteList objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_ListSiteList
       parameters:
         - $ref: '#/components/parameters/top'
@@ -217,7 +220,11 @@ paths:
     post:
       tags:
         - admin.edge
-      summary: Create new navigation property to siteLists for admin
+      summary: Create browserSiteList
+      description: Create a new browserSiteList object to support Internet Explorer mode.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internetexplorermode-post-sitelists?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_CreateSiteList
       requestBody:
         description: New navigation property
@@ -240,8 +247,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get siteLists from admin
-      description: A collection of site lists to support Internet Explorer mode.
+      summary: Get browserSiteList
+      description: Get a browserSiteList that contains browserSite and browserSharedCookie resources.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_GetSiteList
       parameters:
         - name: browserSiteList-id
@@ -285,7 +295,11 @@ paths:
     patch:
       tags:
         - admin.edge
-      summary: Update the navigation property siteLists in admin
+      summary: Update browserSiteList
+      description: Update the properties of a browserSiteList object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_UpdateSiteList
       parameters:
         - name: browserSiteList-id
@@ -316,7 +330,11 @@ paths:
     delete:
       tags:
         - admin.edge
-      summary: Delete navigation property siteLists for admin
+      summary: Delete browserSiteList
+      description: Delete a browserSiteList object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_DeleteSiteList
       parameters:
         - name: browserSiteList-id
@@ -343,8 +361,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get sharedCookies from admin
-      description: A collection of shared cookies defined for the site list.
+      summary: List browserSharedCookies
+      description: Get a list of the browserSharedCookie objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_ListSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -402,7 +423,11 @@ paths:
     post:
       tags:
         - admin.edge
-      summary: Create new navigation property to sharedCookies for admin
+      summary: Create browserSharedCookie
+      description: Create a new browserSharedCookie object in a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-post-sharedcookies?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_CreateSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -434,8 +459,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get sharedCookies from admin
-      description: A collection of shared cookies defined for the site list.
+      summary: Get browserSharedCookie
+      description: 'Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_GetSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -487,7 +515,11 @@ paths:
     patch:
       tags:
         - admin.edge
-      summary: Update the navigation property sharedCookies in admin
+      summary: Update browserSharedCookie
+      description: Update the properties of a browserSharedCookie object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_UpdateSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -526,7 +558,11 @@ paths:
     delete:
       tags:
         - admin.edge
-      summary: Delete navigation property sharedCookies for admin
+      summary: Delete browserSharedCookie
+      description: Delete a browserSharedCookie from a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_DeleteSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -583,8 +619,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get sites from admin
-      description: A collection of sites defined for the site list.
+      summary: List browserSites
+      description: Get a list of the browserSite objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_ListSite
       parameters:
         - name: browserSiteList-id
@@ -642,7 +681,11 @@ paths:
     post:
       tags:
         - admin.edge
-      summary: Create new navigation property to sites for admin
+      summary: Create browserSite
+      description: Create a new browserSite object in a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_CreateSite
       parameters:
         - name: browserSiteList-id
@@ -674,8 +717,11 @@ paths:
     get:
       tags:
         - admin.edge
-      summary: Get sites from admin
-      description: A collection of sites defined for the site list.
+      summary: Get browserSite
+      description: Get a browserSite that resides on a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_GetSite
       parameters:
         - name: browserSiteList-id
@@ -727,7 +773,11 @@ paths:
     patch:
       tags:
         - admin.edge
-      summary: Update the navigation property sites in admin
+      summary: Update browserSite
+      description: Update the properties of a browserSite object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_UpdateSite
       parameters:
         - name: browserSiteList-id
@@ -766,7 +816,11 @@ paths:
     delete:
       tags:
         - admin.edge
-      summary: Delete navigation property sites for admin
+      summary: Delete browserSite
+      description: Delete a browserSite from a browserSiteList.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_DeleteSite
       parameters:
         - name: browserSiteList-id
@@ -841,7 +895,7 @@ paths:
       description: Read properties and relationships of the deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-notification-devicemanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -881,7 +935,7 @@ paths:
       description: Update the properties of a deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-companyterms-devicemanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-devicemanagement-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
@@ -904,8 +958,11 @@ paths:
     get:
       tags:
         - deviceManagement.detectedApp
-      summary: Get detectedApps from deviceManagement
-      description: The list of detected apps associated with a device.
+      summary: List detectedApps
+      description: List properties and relationships of the detectedApp objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDetectedApp
       parameters:
         - $ref: '#/components/parameters/top'
@@ -955,7 +1012,11 @@ paths:
     post:
       tags:
         - deviceManagement.detectedApp
-      summary: Create new navigation property to detectedApps for deviceManagement
+      summary: Create detectedApp
+      description: Create a new detectedApp object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDetectedApp
       requestBody:
         description: New navigation property
@@ -978,8 +1039,11 @@ paths:
     get:
       tags:
         - deviceManagement.detectedApp
-      summary: Get detectedApps from deviceManagement
-      description: The list of detected apps associated with a device.
+      summary: Get detectedApp
+      description: Read properties and relationships of the detectedApp object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDetectedApp
       parameters:
         - name: detectedApp-id
@@ -1023,7 +1087,11 @@ paths:
     patch:
       tags:
         - deviceManagement.detectedApp
-      summary: Update the navigation property detectedApps in deviceManagement
+      summary: Update detectedApp
+      description: Update the properties of a detectedApp object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDetectedApp
       parameters:
         - name: detectedApp-id
@@ -1054,7 +1122,11 @@ paths:
     delete:
       tags:
         - deviceManagement.detectedApp
-      summary: Delete navigation property detectedApps for deviceManagement
+      summary: Delete detectedApp
+      description: Deletes a detectedApp.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDetectedApp
       parameters:
         - name: detectedApp-id
@@ -1231,8 +1303,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCategory
-      summary: Get deviceCategories from deviceManagement
-      description: The list of device categories with the tenant.
+      summary: List deviceCategories
+      description: List properties and relationships of the deviceCategory objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceCategory
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1282,7 +1357,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCategory
-      summary: Create new navigation property to deviceCategories for deviceManagement
+      summary: Create deviceCategory
+      description: Create a new deviceCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceCategory
       requestBody:
         description: New navigation property
@@ -1305,8 +1384,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCategory
-      summary: Get deviceCategories from deviceManagement
-      description: The list of device categories with the tenant.
+      summary: Get deviceCategory
+      description: Read properties and relationships of the deviceCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCategory
       parameters:
         - name: deviceCategory-id
@@ -1350,7 +1432,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCategory
-      summary: Update the navigation property deviceCategories in deviceManagement
+      summary: Update deviceCategory
+      description: Update the properties of a deviceCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceCategory
       parameters:
         - name: deviceCategory-id
@@ -1381,7 +1467,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCategory
-      summary: Delete navigation property deviceCategories for deviceManagement
+      summary: Delete deviceCategory
+      description: Deletes a deviceCategory.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceCategory
       parameters:
         - name: deviceCategory-id
@@ -1422,8 +1512,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get deviceCompliancePolicies from deviceManagement
-      description: The device compliance policies.
+      summary: List windows81CompliancePolicies
+      description: List properties and relationships of the windows81CompliancePolicy objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceCompliancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1473,7 +1566,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create new navigation property to deviceCompliancePolicies for deviceManagement
+      summary: Create windows10MobileCompliancePolicy
+      description: Create a new windows10MobileCompliancePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceCompliancePolicy
       requestBody:
         description: New navigation property
@@ -1496,8 +1593,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get deviceCompliancePolicies from deviceManagement
-      description: The device compliance policies.
+      summary: Get windows81CompliancePolicy
+      description: Read properties and relationships of the windows81CompliancePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1541,7 +1641,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update the navigation property deviceCompliancePolicies in deviceManagement
+      summary: Update windows10MobileCompliancePolicy
+      description: Update the properties of a windows10MobileCompliancePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1572,7 +1676,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete navigation property deviceCompliancePolicies for deviceManagement
+      summary: Delete iosCompliancePolicy
+      description: Deletes a iosCompliancePolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1599,8 +1707,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get assignments from deviceManagement
-      description: The collection of assignments for this compliance policy.
+      summary: List deviceCompliancePolicyAssignments
+      description: List properties and relationships of the deviceCompliancePolicyAssignment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicyassignment-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_ListAssignment
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1658,7 +1769,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create new navigation property to assignments for deviceManagement
+      summary: Create deviceCompliancePolicyAssignment
+      description: Create a new deviceCompliancePolicyAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicyassignment-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_CreateAssignment
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1690,8 +1805,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get assignments from deviceManagement
-      description: The collection of assignments for this compliance policy.
+      summary: Get deviceCompliancePolicyAssignment
+      description: Read properties and relationships of the deviceCompliancePolicyAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicyassignment-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_GetAssignment
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1743,7 +1861,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update the navigation property assignments in deviceManagement
+      summary: Update deviceCompliancePolicyAssignment
+      description: Update the properties of a deviceCompliancePolicyAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicyassignment-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_UpdateAssignment
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1782,7 +1904,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete navigation property assignments for deviceManagement
+      summary: Delete deviceCompliancePolicyAssignment
+      description: Deletes a deviceCompliancePolicyAssignment.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicyassignment-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_DeleteAssignment
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2079,8 +2205,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get deviceStatuses from deviceManagement
-      description: List of DeviceComplianceDeviceStatus.
+      summary: List deviceComplianceDeviceStatuses
+      description: List properties and relationships of the deviceComplianceDeviceStatus objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_ListDeviceStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2138,7 +2267,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create new navigation property to deviceStatuses for deviceManagement
+      summary: Create deviceComplianceDeviceStatus
+      description: Create a new deviceComplianceDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_CreateDeviceStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2170,8 +2303,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get deviceStatuses from deviceManagement
-      description: List of DeviceComplianceDeviceStatus.
+      summary: Get deviceComplianceDeviceStatus
+      description: Read properties and relationships of the deviceComplianceDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_GetDeviceStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2223,7 +2359,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update the navigation property deviceStatuses in deviceManagement
+      summary: Update deviceComplianceDeviceStatus
+      description: Update the properties of a deviceComplianceDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_UpdateDeviceStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2262,7 +2402,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete navigation property deviceStatuses for deviceManagement
+      summary: Delete deviceComplianceDeviceStatus
+      description: Deletes a deviceComplianceDeviceStatus.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_DeleteDeviceStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2319,8 +2463,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get deviceStatusOverview from deviceManagement
-      description: Device compliance devices status overview
+      summary: Get deviceComplianceDeviceOverview
+      description: Read properties and relationships of the deviceComplianceDeviceOverview object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedeviceoverview-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_GetDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2364,7 +2511,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update the navigation property deviceStatusOverview in deviceManagement
+      summary: Update deviceComplianceDeviceOverview
+      description: Update the properties of a deviceComplianceDeviceOverview object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedeviceoverview-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_UpdateDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2422,8 +2573,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+      summary: List deviceComplianceScheduledActionForRules
+      description: List properties and relationships of the deviceComplianceScheduledActionForRule objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancescheduledactionforrule-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_ListScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2481,7 +2635,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create new navigation property to scheduledActionsForRule for deviceManagement
+      summary: Create deviceComplianceScheduledActionForRule
+      description: Create a new deviceComplianceScheduledActionForRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancescheduledactionforrule-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_CreateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2513,8 +2671,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+      summary: Get deviceComplianceScheduledActionForRule
+      description: Read properties and relationships of the deviceComplianceScheduledActionForRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancescheduledactionforrule-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_GetScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2566,7 +2727,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update the navigation property scheduledActionsForRule in deviceManagement
+      summary: Update deviceComplianceScheduledActionForRule
+      description: Update the properties of a deviceComplianceScheduledActionForRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancescheduledactionforrule-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_UpdateScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2605,7 +2770,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete navigation property scheduledActionsForRule for deviceManagement
+      summary: Delete deviceComplianceScheduledActionForRule
+      description: Deletes a deviceComplianceScheduledActionForRule.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancescheduledactionforrule-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_DeleteScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2640,8 +2809,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get scheduledActionConfigurations from deviceManagement
-      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+      summary: List deviceComplianceActionItems
+      description: List properties and relationships of the deviceComplianceActionItem objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_ListScheduledActionConfiguration
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2707,7 +2879,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create new navigation property to scheduledActionConfigurations for deviceManagement
+      summary: Create deviceComplianceActionItem
+      description: Create a new deviceComplianceActionItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_CreateScheduledActionConfiguration
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2747,8 +2923,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get scheduledActionConfigurations from deviceManagement
-      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+      summary: Get deviceComplianceActionItem
+      description: Read properties and relationships of the deviceComplianceActionItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_GetScheduledActionConfiguration
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2808,7 +2987,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update the navigation property scheduledActionConfigurations in deviceManagement
+      summary: Update deviceComplianceActionItem
+      description: Update the properties of a deviceComplianceActionItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_UpdateScheduledActionConfiguration
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2855,7 +3038,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete navigation property scheduledActionConfigurations for deviceManagement
+      summary: Delete deviceComplianceActionItem
+      description: Deletes a deviceComplianceActionItem.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_DeleteScheduledActionConfiguration
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2950,8 +3137,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get userStatuses from deviceManagement
-      description: List of DeviceComplianceUserStatus.
+      summary: List deviceComplianceUserStatuses
+      description: List properties and relationships of the deviceComplianceUserStatus objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_ListUserStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3009,7 +3199,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create new navigation property to userStatuses for deviceManagement
+      summary: Create deviceComplianceUserStatus
+      description: Create a new deviceComplianceUserStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_CreateUserStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3041,8 +3235,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get userStatuses from deviceManagement
-      description: List of DeviceComplianceUserStatus.
+      summary: Get deviceComplianceUserStatus
+      description: Read properties and relationships of the deviceComplianceUserStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_GetUserStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3094,7 +3291,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update the navigation property userStatuses in deviceManagement
+      summary: Update deviceComplianceUserStatus
+      description: Update the properties of a deviceComplianceUserStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_UpdateUserStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3133,7 +3334,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete navigation property userStatuses for deviceManagement
+      summary: Delete deviceComplianceUserStatus
+      description: Deletes a deviceComplianceUserStatus.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_DeleteUserStatus
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3190,8 +3395,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get userStatusOverview from deviceManagement
-      description: Device compliance users status overview
+      summary: Get deviceComplianceUserOverview
+      description: Read properties and relationships of the deviceComplianceUserOverview object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuseroverview-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_GetUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3235,7 +3443,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update the navigation property userStatusOverview in deviceManagement
+      summary: Update deviceComplianceUserOverview
+      description: Update the properties of a deviceComplianceUserOverview object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuseroverview-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicy_UpdateUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3307,8 +3519,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
-      summary: Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
-      description: The device compliance state summary for this account.
+      summary: Get deviceCompliancePolicyDeviceStateSummary
+      description: Read properties and relationships of the deviceCompliancePolicyDeviceStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicydevicestatesummary-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicyDeviceStateSummary
       parameters:
         - name: $select
@@ -3344,7 +3559,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
-      summary: Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
+      summary: Update deviceCompliancePolicyDeviceStateSummary
+      description: Update the properties of a deviceCompliancePolicyDeviceStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicydevicestatesummary-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceCompliancePolicyDeviceStateSummary
       requestBody:
         description: New navigation property values
@@ -3385,8 +3604,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
-      description: The summary states of compliance policy settings for this account.
+      summary: List deviceCompliancePolicySettingStateSummaries
+      description: List properties and relationships of the deviceCompliancePolicySettingStateSummary objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicysettingstatesummary-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceCompliancePolicySettingStateSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3436,7 +3658,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Create new navigation property to deviceCompliancePolicySettingStateSummaries for deviceManagement
+      summary: Create deviceCompliancePolicySettingStateSummary
+      description: Create a new deviceCompliancePolicySettingStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicysettingstatesummary-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceCompliancePolicySettingStateSummary
       requestBody:
         description: New navigation property
@@ -3459,8 +3685,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
-      description: The summary states of compliance policy settings for this account.
+      summary: Get deviceCompliancePolicySettingStateSummary
+      description: Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicysettingstatesummary-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicySettingStateSummary
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3504,7 +3733,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+      summary: Update deviceCompliancePolicySettingStateSummary
+      description: Update the properties of a deviceCompliancePolicySettingStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicysettingstatesummary-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceCompliancePolicySettingStateSummary
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3535,7 +3768,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
+      summary: Delete deviceCompliancePolicySettingStateSummary
+      description: Deletes a deviceCompliancePolicySettingStateSummary.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicysettingstatesummary-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceCompliancePolicySettingStateSummary
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3562,8 +3799,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
+      summary: List deviceComplianceSettingStates
+      description: List properties and relationships of the deviceComplianceSettingState objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancesettingstate-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_ListDeviceComplianceSettingState
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3621,7 +3861,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Create new navigation property to deviceComplianceSettingStates for deviceManagement
+      summary: Create deviceComplianceSettingState
+      description: Create a new deviceComplianceSettingState object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancesettingstate-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_CreateDeviceComplianceSettingState
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3653,8 +3897,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
+      summary: Get deviceComplianceSettingState
+      description: Read properties and relationships of the deviceComplianceSettingState object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancesettingstate-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_GetDeviceComplianceSettingState
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3706,7 +3953,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Update the navigation property deviceComplianceSettingStates in deviceManagement
+      summary: Update deviceComplianceSettingState
+      description: Update the properties of a deviceComplianceSettingState object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancesettingstate-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_UpdateDeviceComplianceSettingState
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3745,7 +3996,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
-      summary: Delete navigation property deviceComplianceSettingStates for deviceManagement
+      summary: Delete deviceComplianceSettingState
+      description: Deletes a deviceComplianceSettingState.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancesettingstate-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_DeleteDeviceComplianceSettingState
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3816,8 +4071,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
-      summary: Get deviceConfigurationDeviceStateSummaries from deviceManagement
-      description: The device configuration device state summary for this account.
+      summary: Get deviceConfigurationDeviceStateSummary
+      description: Read properties and relationships of the deviceConfigurationDeviceStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatesummary-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceConfigurationDeviceStateSummary
       parameters:
         - name: $select
@@ -3853,7 +4111,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
-      summary: Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
+      summary: Update deviceConfigurationDeviceStateSummary
+      description: Update the properties of a deviceConfigurationDeviceStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatesummary-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceConfigurationDeviceStateSummary
       requestBody:
         description: New navigation property values
@@ -3894,8 +4156,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get deviceConfigurations from deviceManagement
-      description: The device configurations.
+      summary: List windows10EndpointProtectionConfigurations
+      description: List properties and relationships of the windows10EndpointProtectionConfiguration objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10endpointprotectionconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3945,7 +4210,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create new navigation property to deviceConfigurations for deviceManagement
+      summary: Create windows81GeneralConfiguration
+      description: Create a new windows81GeneralConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81generalconfiguration-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceConfiguration
       requestBody:
         description: New navigation property
@@ -3968,8 +4237,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get deviceConfigurations from deviceManagement
-      description: The device configurations.
+      summary: Get androidWorkProfileGeneralDeviceConfiguration
+      description: Read properties and relationships of the androidWorkProfileGeneralDeviceConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilegeneraldeviceconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4013,7 +4285,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update the navigation property deviceConfigurations in deviceManagement
+      summary: Update windows10EndpointProtectionConfiguration
+      description: Update the properties of a windows10EndpointProtectionConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10endpointprotectionconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4044,7 +4320,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete navigation property deviceConfigurations for deviceManagement
+      summary: Delete windows10TeamGeneralConfiguration
+      description: Deletes a windows10TeamGeneralConfiguration.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10teamgeneralconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4071,8 +4351,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get assignments from deviceManagement
-      description: The list of assignments for the device configuration profile.
+      summary: List deviceConfigurationAssignments
+      description: List properties and relationships of the deviceConfigurationAssignment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_ListAssignment
       parameters:
         - name: deviceConfiguration-id
@@ -4130,7 +4413,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create new navigation property to assignments for deviceManagement
+      summary: Create deviceConfigurationAssignment
+      description: Create a new deviceConfigurationAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_CreateAssignment
       parameters:
         - name: deviceConfiguration-id
@@ -4162,8 +4449,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get assignments from deviceManagement
-      description: The list of assignments for the device configuration profile.
+      summary: Get deviceConfigurationAssignment
+      description: Read properties and relationships of the deviceConfigurationAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_GetAssignment
       parameters:
         - name: deviceConfiguration-id
@@ -4215,7 +4505,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update the navigation property assignments in deviceManagement
+      summary: Update deviceConfigurationAssignment
+      description: Update the properties of a deviceConfigurationAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_UpdateAssignment
       parameters:
         - name: deviceConfiguration-id
@@ -4254,7 +4548,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete navigation property assignments for deviceManagement
+      summary: Delete deviceConfigurationAssignment
+      description: Deletes a deviceConfigurationAssignment.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_DeleteAssignment
       parameters:
         - name: deviceConfiguration-id
@@ -4311,8 +4609,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Device Configuration Setting State Device Summary
+      summary: List settingStateDeviceSummaries
+      description: List properties and relationships of the settingStateDeviceSummary objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_ListDeviceSettingStateSummary
       parameters:
         - name: deviceConfiguration-id
@@ -4370,7 +4671,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create new navigation property to deviceSettingStateSummaries for deviceManagement
+      summary: Create settingStateDeviceSummary
+      description: Create a new settingStateDeviceSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_CreateDeviceSettingStateSummary
       parameters:
         - name: deviceConfiguration-id
@@ -4402,8 +4707,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get deviceSettingStateSummaries from deviceManagement
-      description: Device Configuration Setting State Device Summary
+      summary: Get settingStateDeviceSummary
+      description: Read properties and relationships of the settingStateDeviceSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_GetDeviceSettingStateSummary
       parameters:
         - name: deviceConfiguration-id
@@ -4455,7 +4763,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update the navigation property deviceSettingStateSummaries in deviceManagement
+      summary: Update settingStateDeviceSummary
+      description: Update the properties of a settingStateDeviceSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_UpdateDeviceSettingStateSummary
       parameters:
         - name: deviceConfiguration-id
@@ -4494,7 +4806,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete navigation property deviceSettingStateSummaries for deviceManagement
+      summary: Delete settingStateDeviceSummary
+      description: Deletes a settingStateDeviceSummary.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_DeleteDeviceSettingStateSummary
       parameters:
         - name: deviceConfiguration-id
@@ -4551,8 +4867,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get deviceStatuses from deviceManagement
-      description: Device configuration installation status by device.
+      summary: List deviceConfigurationDeviceStatuses
+      description: List properties and relationships of the deviceConfigurationDeviceStatus objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_ListDeviceStatus
       parameters:
         - name: deviceConfiguration-id
@@ -4610,7 +4929,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create new navigation property to deviceStatuses for deviceManagement
+      summary: Create deviceConfigurationDeviceStatus
+      description: Create a new deviceConfigurationDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_CreateDeviceStatus
       parameters:
         - name: deviceConfiguration-id
@@ -4642,8 +4965,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get deviceStatuses from deviceManagement
-      description: Device configuration installation status by device.
+      summary: Get deviceConfigurationDeviceStatus
+      description: Read properties and relationships of the deviceConfigurationDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_GetDeviceStatus
       parameters:
         - name: deviceConfiguration-id
@@ -4695,7 +5021,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update the navigation property deviceStatuses in deviceManagement
+      summary: Update deviceConfigurationDeviceStatus
+      description: Update the properties of a deviceConfigurationDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_UpdateDeviceStatus
       parameters:
         - name: deviceConfiguration-id
@@ -4734,7 +5064,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete navigation property deviceStatuses for deviceManagement
+      summary: Delete deviceConfigurationDeviceStatus
+      description: Deletes a deviceConfigurationDeviceStatus.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_DeleteDeviceStatus
       parameters:
         - name: deviceConfiguration-id
@@ -4791,8 +5125,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get deviceStatusOverview from deviceManagement
-      description: Device Configuration devices status overview
+      summary: Get deviceConfigurationDeviceOverview
+      description: Read properties and relationships of the deviceConfigurationDeviceOverview object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdeviceoverview-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_GetDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -4836,7 +5173,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update the navigation property deviceStatusOverview in deviceManagement
+      summary: Update deviceConfigurationDeviceOverview
+      description: Update the properties of a deviceConfigurationDeviceOverview object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdeviceoverview-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_UpdateDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -4894,8 +5235,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get userStatuses from deviceManagement
-      description: Device configuration installation status by user.
+      summary: List deviceConfigurationUserStatuses
+      description: List properties and relationships of the deviceConfigurationUserStatus objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-list?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_ListUserStatus
       parameters:
         - name: deviceConfiguration-id
@@ -4953,7 +5297,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create new navigation property to userStatuses for deviceManagement
+      summary: Create deviceConfigurationUserStatus
+      description: Create a new deviceConfigurationUserStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-create?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_CreateUserStatus
       parameters:
         - name: deviceConfiguration-id
@@ -4985,8 +5333,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get userStatuses from deviceManagement
-      description: Device configuration installation status by user.
+      summary: Get deviceConfigurationUserStatus
+      description: Read properties and relationships of the deviceConfigurationUserStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_GetUserStatus
       parameters:
         - name: deviceConfiguration-id
@@ -5038,7 +5389,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update the navigation property userStatuses in deviceManagement
+      summary: Update deviceConfigurationUserStatus
+      description: Update the properties of a deviceConfigurationUserStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_UpdateUserStatus
       parameters:
         - name: deviceConfiguration-id
@@ -5077,7 +5432,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete navigation property userStatuses for deviceManagement
+      summary: Delete deviceConfigurationUserStatus
+      description: Deletes a deviceConfigurationUserStatus.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-delete?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_DeleteUserStatus
       parameters:
         - name: deviceConfiguration-id
@@ -5134,8 +5493,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get userStatusOverview from deviceManagement
-      description: Device Configuration users status overview
+      summary: Get deviceConfigurationUserOverview
+      description: Read properties and relationships of the deviceConfigurationUserOverview object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuseroverview-get?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_GetUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -5179,7 +5541,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update the navigation property userStatusOverview in deviceManagement
+      summary: Update deviceConfigurationUserOverview
+      description: Update the properties of a deviceConfigurationUserOverview object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuseroverview-update?view=graph-rest-1.0
       operationId: deviceManagement.deviceConfiguration_UpdateUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -5340,7 +5706,11 @@ paths:
     post:
       tags:
         - deviceManagement.managedDevice
-      summary: Create new navigation property to managedDevices for deviceManagement
+      summary: Create managedDevice
+      description: Create a new managedDevice object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateManagedDevice
       requestBody:
         description: New navigation property
@@ -5439,7 +5809,11 @@ paths:
     delete:
       tags:
         - deviceManagement.managedDevice
-      summary: Delete navigation property managedDevices for deviceManagement
+      summary: Delete managedDevice
+      description: Deletes a managedDevice.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteManagedDevice
       parameters:
         - name: managedDevice-id
@@ -6706,8 +7080,11 @@ paths:
     get:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Get mobileAppTroubleshootingEvents from deviceManagement
-      description: The collection property of MobileAppTroubleshootingEvent.
+      summary: List mobileAppTroubleshootingEvents
+      description: List properties and relationships of the mobileAppTroubleshootingEvent objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-list?view=graph-rest-1.0
       operationId: deviceManagement_ListMobileAppTroubleshootingEvent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6757,7 +7134,11 @@ paths:
     post:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
+      summary: Create mobileAppTroubleshootingEvent
+      description: Create a new mobileAppTroubleshootingEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateMobileAppTroubleshootingEvent
       requestBody:
         description: New navigation property
@@ -6780,8 +7161,11 @@ paths:
     get:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Get mobileAppTroubleshootingEvents from deviceManagement
-      description: The collection property of MobileAppTroubleshootingEvent.
+      summary: Get mobileAppTroubleshootingEvent
+      description: Read properties and relationships of the mobileAppTroubleshootingEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-get?view=graph-rest-1.0
       operationId: deviceManagement_GetMobileAppTroubleshootingEvent
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -6825,7 +7209,11 @@ paths:
     patch:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Update the navigation property mobileAppTroubleshootingEvents in deviceManagement
+      summary: Update mobileAppTroubleshootingEvent
+      description: Update the properties of a mobileAppTroubleshootingEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateMobileAppTroubleshootingEvent
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -6856,7 +7244,11 @@ paths:
     delete:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Delete navigation property mobileAppTroubleshootingEvents for deviceManagement
+      summary: Delete mobileAppTroubleshootingEvent
+      description: Deletes a mobileAppTroubleshootingEvent.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteMobileAppTroubleshootingEvent
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -6883,8 +7275,11 @@ paths:
     get:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Get appLogCollectionRequests from deviceManagement
-      description: Indicates collection of App Log Upload Request.
+      summary: List appLogCollectionRequests
+      description: List properties and relationships of the appLogCollectionRequest objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-list?view=graph-rest-1.0
       operationId: deviceManagement.mobileAppTroubleshootingEvent_ListAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -6942,7 +7337,11 @@ paths:
     post:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Create new navigation property to appLogCollectionRequests for deviceManagement
+      summary: Create appLogCollectionRequest
+      description: Create a new appLogCollectionRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-create?view=graph-rest-1.0
       operationId: deviceManagement.mobileAppTroubleshootingEvent_CreateAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -6974,8 +7373,11 @@ paths:
     get:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Get appLogCollectionRequests from deviceManagement
-      description: Indicates collection of App Log Upload Request.
+      summary: Get appLogCollectionRequest
+      description: Read properties and relationships of the appLogCollectionRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-get?view=graph-rest-1.0
       operationId: deviceManagement.mobileAppTroubleshootingEvent_GetAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -7027,7 +7429,11 @@ paths:
     patch:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Update the navigation property appLogCollectionRequests in deviceManagement
+      summary: Update appLogCollectionRequest
+      description: Update the properties of a appLogCollectionRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-update?view=graph-rest-1.0
       operationId: deviceManagement.mobileAppTroubleshootingEvent_UpdateAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -7066,7 +7472,11 @@ paths:
     delete:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
-      summary: Delete navigation property appLogCollectionRequests for deviceManagement
+      summary: Delete appLogCollectionRequest
+      description: Deletes a appLogCollectionRequest.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-delete?view=graph-rest-1.0
       operationId: deviceManagement.mobileAppTroubleshootingEvent_DeleteAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -7137,8 +7547,11 @@ paths:
     get:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Get notificationMessageTemplates from deviceManagement
-      description: The Notification Message Templates.
+      summary: List notificationMessageTemplates
+      description: List properties and relationships of the notificationMessageTemplate objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-list?view=graph-rest-1.0
       operationId: deviceManagement_ListNotificationMessageTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7188,7 +7601,11 @@ paths:
     post:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Create new navigation property to notificationMessageTemplates for deviceManagement
+      summary: Create notificationMessageTemplate
+      description: Create a new notificationMessageTemplate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateNotificationMessageTemplate
       requestBody:
         description: New navigation property
@@ -7211,8 +7628,11 @@ paths:
     get:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Get notificationMessageTemplates from deviceManagement
-      description: The Notification Message Templates.
+      summary: Get notificationMessageTemplate
+      description: Read properties and relationships of the notificationMessageTemplate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-get?view=graph-rest-1.0
       operationId: deviceManagement_GetNotificationMessageTemplate
       parameters:
         - name: notificationMessageTemplate-id
@@ -7256,7 +7676,11 @@ paths:
     patch:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Update the navigation property notificationMessageTemplates in deviceManagement
+      summary: Update notificationMessageTemplate
+      description: Update the properties of a notificationMessageTemplate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateNotificationMessageTemplate
       parameters:
         - name: notificationMessageTemplate-id
@@ -7287,7 +7711,11 @@ paths:
     delete:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Delete navigation property notificationMessageTemplates for deviceManagement
+      summary: Delete notificationMessageTemplate
+      description: Deletes a notificationMessageTemplate.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteNotificationMessageTemplate
       parameters:
         - name: notificationMessageTemplate-id
@@ -7314,8 +7742,11 @@ paths:
     get:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Get localizedNotificationMessages from deviceManagement
-      description: The list of localized messages for this Notification Message Template.
+      summary: List localizedNotificationMessages
+      description: List properties and relationships of the localizedNotificationMessage objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-list?view=graph-rest-1.0
       operationId: deviceManagement.notificationMessageTemplate_ListLocalizedNotificationMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -7373,7 +7804,11 @@ paths:
     post:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Create new navigation property to localizedNotificationMessages for deviceManagement
+      summary: Create localizedNotificationMessage
+      description: Create a new localizedNotificationMessage object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-create?view=graph-rest-1.0
       operationId: deviceManagement.notificationMessageTemplate_CreateLocalizedNotificationMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -7405,8 +7840,11 @@ paths:
     get:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Get localizedNotificationMessages from deviceManagement
-      description: The list of localized messages for this Notification Message Template.
+      summary: Get localizedNotificationMessage
+      description: Read properties and relationships of the localizedNotificationMessage object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-get?view=graph-rest-1.0
       operationId: deviceManagement.notificationMessageTemplate_GetLocalizedNotificationMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -7458,7 +7896,11 @@ paths:
     patch:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Update the navigation property localizedNotificationMessages in deviceManagement
+      summary: Update localizedNotificationMessage
+      description: Update the properties of a localizedNotificationMessage object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-update?view=graph-rest-1.0
       operationId: deviceManagement.notificationMessageTemplate_UpdateLocalizedNotificationMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -7497,7 +7939,11 @@ paths:
     delete:
       tags:
         - deviceManagement.notificationMessageTemplate
-      summary: Delete navigation property localizedNotificationMessages for deviceManagement
+      summary: Delete localizedNotificationMessage
+      description: Deletes a localizedNotificationMessage.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-delete?view=graph-rest-1.0
       operationId: deviceManagement.notificationMessageTemplate_DeleteLocalizedNotificationMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -7568,8 +8014,11 @@ paths:
     get:
       tags:
         - deviceManagement.softwareUpdateStatusSummary
-      summary: Get softwareUpdateStatusSummary from deviceManagement
-      description: The software update status summary.
+      summary: Get softwareUpdateStatusSummary
+      description: Read properties and relationships of the softwareUpdateStatusSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-softwareupdatestatussummary-get?view=graph-rest-1.0
       operationId: deviceManagement_GetSoftwareUpdateStatusSummary
       parameters:
         - name: $select
@@ -12844,8 +13293,11 @@ paths:
     get:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
-      summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
-      description: The windows information protection app learning summaries.
+      summary: List windowsInformationProtectionAppLearningSummaries
+      description: List properties and relationships of the windowsInformationProtectionAppLearningSummary objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionapplearningsummary-list?view=graph-rest-1.0
       operationId: deviceManagement_ListWindowsInformationProtectionAppLearningSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12895,7 +13347,11 @@ paths:
     post:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
-      summary: Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
+      summary: Create windowsInformationProtectionAppLearningSummary
+      description: Create a new windowsInformationProtectionAppLearningSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionapplearningsummary-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateWindowsInformationProtectionAppLearningSummary
       requestBody:
         description: New navigation property
@@ -12918,8 +13374,11 @@ paths:
     get:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
-      summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
-      description: The windows information protection app learning summaries.
+      summary: Get windowsInformationProtectionAppLearningSummary
+      description: Read properties and relationships of the windowsInformationProtectionAppLearningSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionapplearningsummary-get?view=graph-rest-1.0
       operationId: deviceManagement_GetWindowsInformationProtectionAppLearningSummary
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -12963,7 +13422,11 @@ paths:
     patch:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
-      summary: Update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
+      summary: Update windowsInformationProtectionAppLearningSummary
+      description: Update the properties of a windowsInformationProtectionAppLearningSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionapplearningsummary-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateWindowsInformationProtectionAppLearningSummary
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -12994,7 +13457,11 @@ paths:
     delete:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
-      summary: Delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
+      summary: Delete windowsInformationProtectionAppLearningSummary
+      description: Deletes a windowsInformationProtectionAppLearningSummary.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionapplearningsummary-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteWindowsInformationProtectionAppLearningSummary
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -13035,8 +13502,11 @@ paths:
     get:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
-      summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
-      description: The windows information protection network learning summaries.
+      summary: List windowsInformationProtectionNetworkLearningSummaries
+      description: List properties and relationships of the windowsInformationProtectionNetworkLearningSummary objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-list?view=graph-rest-1.0
       operationId: deviceManagement_ListWindowsInformationProtectionNetworkLearningSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13086,7 +13556,11 @@ paths:
     post:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
-      summary: Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+      summary: Create windowsInformationProtectionNetworkLearningSummary
+      description: Create a new windowsInformationProtectionNetworkLearningSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateWindowsInformationProtectionNetworkLearningSummary
       requestBody:
         description: New navigation property
@@ -13109,8 +13583,11 @@ paths:
     get:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
-      summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
-      description: The windows information protection network learning summaries.
+      summary: Get windowsInformationProtectionNetworkLearningSummary
+      description: Read properties and relationships of the windowsInformationProtectionNetworkLearningSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-get?view=graph-rest-1.0
       operationId: deviceManagement_GetWindowsInformationProtectionNetworkLearningSummary
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -13154,7 +13631,11 @@ paths:
     patch:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
-      summary: Update the navigation property windowsInformationProtectionNetworkLearningSummaries in deviceManagement
+      summary: Update windowsInformationProtectionNetworkLearningSummary
+      description: Update the properties of a windowsInformationProtectionNetworkLearningSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateWindowsInformationProtectionNetworkLearningSummary
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -13185,7 +13666,11 @@ paths:
     delete:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
-      summary: Delete navigation property windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+      summary: Delete windowsInformationProtectionNetworkLearningSummary
+      description: Deletes a windowsInformationProtectionNetworkLearningSummary.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteWindowsInformationProtectionNetworkLearningSummary
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -13226,8 +13711,11 @@ paths:
     get:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Get windowsMalwareInformation from deviceManagement
-      description: The list of affected malware in the tenant.
+      summary: List windowsMalwareInformations
+      description: List properties and relationships of the windowsMalwareInformation objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-windowsmalwareinformation-list?view=graph-rest-1.0
       operationId: deviceManagement_ListWindowsMalwareInformation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13277,7 +13765,11 @@ paths:
     post:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Create new navigation property to windowsMalwareInformation for deviceManagement
+      summary: Create windowsMalwareInformation
+      description: Create a new windowsMalwareInformation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-windowsmalwareinformation-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateWindowsMalwareInformation
       requestBody:
         description: New navigation property
@@ -13300,8 +13792,11 @@ paths:
     get:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Get windowsMalwareInformation from deviceManagement
-      description: The list of affected malware in the tenant.
+      summary: Get windowsMalwareInformation
+      description: Read properties and relationships of the windowsMalwareInformation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-windowsmalwareinformation-get?view=graph-rest-1.0
       operationId: deviceManagement_GetWindowsMalwareInformation
       parameters:
         - name: windowsMalwareInformation-id
@@ -13345,7 +13840,11 @@ paths:
     patch:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Update the navigation property windowsMalwareInformation in deviceManagement
+      summary: Update windowsMalwareInformation
+      description: Update the properties of a windowsMalwareInformation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-windowsmalwareinformation-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateWindowsMalwareInformation
       parameters:
         - name: windowsMalwareInformation-id
@@ -13376,7 +13875,11 @@ paths:
     delete:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Delete navigation property windowsMalwareInformation for deviceManagement
+      summary: Delete windowsMalwareInformation
+      description: Deletes a windowsMalwareInformation.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-windowsmalwareinformation-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteWindowsMalwareInformation
       parameters:
         - name: windowsMalwareInformation-id
@@ -13403,8 +13906,11 @@ paths:
     get:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Get deviceMalwareStates from deviceManagement
-      description: List of devices affected by current malware with the malware state on each device
+      summary: List malwareStateForWindowsDevices
+      description: List properties and relationships of the malwareStateForWindowsDevice objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-malwarestateforwindowsdevice-list?view=graph-rest-1.0
       operationId: deviceManagement.windowsMalwareInformation_ListDeviceMalwareState
       parameters:
         - name: windowsMalwareInformation-id
@@ -13462,7 +13968,11 @@ paths:
     post:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Create new navigation property to deviceMalwareStates for deviceManagement
+      summary: Create malwareStateForWindowsDevice
+      description: Create a new malwareStateForWindowsDevice object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-malwarestateforwindowsdevice-create?view=graph-rest-1.0
       operationId: deviceManagement.windowsMalwareInformation_CreateDeviceMalwareState
       parameters:
         - name: windowsMalwareInformation-id
@@ -13494,8 +14004,11 @@ paths:
     get:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Get deviceMalwareStates from deviceManagement
-      description: List of devices affected by current malware with the malware state on each device
+      summary: Get malwareStateForWindowsDevice
+      description: Read properties and relationships of the malwareStateForWindowsDevice object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-malwarestateforwindowsdevice-get?view=graph-rest-1.0
       operationId: deviceManagement.windowsMalwareInformation_GetDeviceMalwareState
       parameters:
         - name: windowsMalwareInformation-id
@@ -13547,7 +14060,11 @@ paths:
     patch:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Update the navigation property deviceMalwareStates in deviceManagement
+      summary: Update malwareStateForWindowsDevice
+      description: Update the properties of a malwareStateForWindowsDevice object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-malwarestateforwindowsdevice-update?view=graph-rest-1.0
       operationId: deviceManagement.windowsMalwareInformation_UpdateDeviceMalwareState
       parameters:
         - name: windowsMalwareInformation-id
@@ -13586,7 +14103,11 @@ paths:
     delete:
       tags:
         - deviceManagement.windowsMalwareInformation
-      summary: Delete navigation property deviceMalwareStates for deviceManagement
+      summary: Delete malwareStateForWindowsDevice
+      description: Deletes a malwareStateForWindowsDevice.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-malwarestateforwindowsdevice-delete?view=graph-rest-1.0
       operationId: deviceManagement.windowsMalwareInformation_DeleteDeviceMalwareState
       parameters:
         - name: windowsMalwareInformation-id
@@ -18918,7 +19439,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -18935,32 +19456,32 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although it is a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
               description: 'The city where the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             companyName:
               type: string
-              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that a guest comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent was obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets whether consent was obtained for minors. Allowed values: null, Granted, Denied, and NotRequired. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             country:
               type: string
-              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The country/region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created, in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and UTC. The value can''t be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
               type: string
-              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).'
+              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by a guest signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).'
               nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
@@ -18976,7 +19497,7 @@ components:
               format: int32
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and family name. This property is required when a user is created and it can''t be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -18991,7 +19512,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -19002,7 +19523,7 @@ components:
               nullable: true
             externalUserState:
               type: string
-              description: 'For an external user invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).'
+              description: 'For a guest invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).'
               nullable: true
             externalUserStateChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -19021,13 +19542,13 @@ components:
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint in Microsoft 365. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             identities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It may contain multiple items with the same signInType value. Returned only on $select.  Supports $filter (eq) with limitations.'
+              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It might contain multiple items with the same signInType value. Returned only on $select.  Supports $filter (eq) with limitations.'
             imAddresses:
               type: array
               items:
@@ -19042,7 +19563,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isResourceAccount:
               type: boolean
-              description: Do not use – reserved for future use.
+              description: Don't use – reserved for future use.
               nullable: true
             jobTitle:
               type: string
@@ -19056,13 +19577,13 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
               description: 'The SMTP address for the user, for example, jeff@contoso.com. Changes to this property update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
@@ -19097,7 +19618,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -19116,7 +19637,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -19130,10 +19651,10 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -19153,7 +19674,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
+              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             preferredName:
               type: string
@@ -19170,7 +19691,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while those addresses prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             responsibilities:
               type: array
               items:
@@ -19182,7 +19703,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate the schools they have attended. Returned only on $select.
+              description: A list for the user to enumerate the schools they attended. Returned only on $select.
             securityIdentifier:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
@@ -19191,7 +19712,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
-              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+              description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -19201,7 +19722,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
+              description: 'Any refresh tokens or session tokens (session cookies) issued before this time are invalid. Applications get an error when using an invalid refresh or session token to acquire a delegated access token (to access APIs such as Microsoft Graph). If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
               format: date-time
               nullable: true
             skills:
@@ -19216,7 +19737,7 @@ components:
               nullable: true
             streetAddress:
               type: string
-              description: 'The street address of the user''s place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The street address of the user''s place of business. Maximum length is 1,024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             surname:
               type: string
@@ -19224,15 +19745,15 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
+              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for members and guests, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             activities:
               type: array
@@ -19250,7 +19771,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: Represents the app roles a user has been granted for an application. Supports $expand.
+              description: Represents the app roles a user is granted for an application. Supports $expand.
               x-ms-navigationProperty: true
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
@@ -19404,13 +19925,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects the user owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             people:
               type: array
@@ -19453,7 +19974,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The users and groups responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
+              description: 'The users and groups responsible for this guest''s privileges in the tenant and keeping the guest''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -21289,11 +21810,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -22686,7 +23207,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -22696,12 +23217,22 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time of the user''s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The request ID of the last successful sign-in.
           nullable: true
       additionalProperties:
         type: object
@@ -22725,7 +23256,7 @@ components:
               description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
             contentUrl:
               type: string
               description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
@@ -22913,7 +23444,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
-              description: 'Represents the password that''s registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.'
+              description: 'Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.'
               x-ms-navigationProperty: true
             phoneMethods:
               type: array
@@ -22925,7 +23456,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-              description: The software OATH TOTP applications registered to a user for authentication.
+              description: The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
               x-ms-navigationProperty: true
             temporaryAccessPassMethods:
               type: array
@@ -23406,7 +23937,7 @@ components:
               nullable: true
             generation:
               type: string
-              description: The contact's generation.
+              description: The contact's suffix.
               nullable: true
             givenName:
               type: string
@@ -24143,10 +24674,10 @@ components:
           properties:
             clientId:
               type: string
-              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application that's authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Nonadmin users might be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             principalId:
               type: string
@@ -24154,10 +24685,10 @@ components:
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
+              description: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
+              description: 'A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3,850 characters in length.'
               nullable: true
           additionalProperties:
             type: object
@@ -24213,6 +24744,7 @@ components:
           properties:
             attendeeReport:
               type: string
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             broadcastSettings:
@@ -24234,6 +24766,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
+              description: Indicates whether this meeting is a Teams live event.
               nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
@@ -25109,11 +25642,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printer'
           additionalProperties:
             type: object
-    microsoft.graph.Json:
-      title: Json
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.status:
       title: status
       enum:
@@ -25134,7 +25662,7 @@ components:
           description: Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
           nullable: true
         content:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
         description:
           type: string
           description: 'Optional. Longer text description of the user''s unique activity (example: document name, first sentence, and/or metadata)'
@@ -25166,13 +25694,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
@@ -25184,7 +25712,7 @@ components:
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
@@ -26323,7 +26851,6 @@ components:
               nullable: true
             externalcourseActivityId:
               type: string
-              description: A course activity ID generated by the provider. Optional.
               nullable: true
             learnerUserId:
               type: string
@@ -26373,6 +26900,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -26643,6 +27172,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToIdentitiesV2:
               type: array
               items:
@@ -26743,6 +27273,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             resourceReference:
@@ -26935,7 +27466,7 @@ components:
               nullable: true
             isFavoriteByDefault:
               type: boolean
-              description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
+              description: 'Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.'
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
@@ -26999,16 +27530,16 @@ components:
               description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
             autoSubscribeNewMembers:
               type: boolean
-              description: 'Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             classification:
               type: string
-              description: 'Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).'
+              description: 'Describes a classification for the group (such as low, medium, or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
+              description: 'Timestamp of when the group was created. The value can''t be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             description:
@@ -27017,12 +27548,12 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
+              description: 'The display name for the group. This property is required when a group is created and can''t be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. It''s null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -27036,11 +27567,11 @@ components:
               nullable: true
             hideFromAddressLists:
               type: boolean
-              description: 'True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group isn''t displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             isArchived:
               type: boolean
@@ -27048,7 +27579,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can''t be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -27066,7 +27597,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following characters: @ () / [] '' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             membershipRule:
               type: string
@@ -27082,7 +27613,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'Indicates the last time at which the group was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesNetBiosName:
@@ -27099,15 +27630,15 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned at least one of the following Microsoft Entra roles: User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -27121,7 +27652,7 @@ components:
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was last renewed. This value can''t be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             securityEnabled:
@@ -27130,16 +27661,16 @@ components:
               nullable: true
             securityIdentifier:
               type: string
-              description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
+              description: 'Security identifier of the group, used in Windows scenarios. Read-only. Returned by default.'
               nullable: true
             serviceProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
-              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+              description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
-              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange, or Red. Returned by default.'
               nullable: true
             uniqueName:
               type: string
@@ -27149,24 +27680,24 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             acceptedSenders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
+              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.'
               x-ms-navigationProperty: true
             appRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: Represents the app roles a group has been granted for an application. Supports $expand.
+              description: Represents the app roles granted to a group for an application. Supports $expand.
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
@@ -27234,7 +27765,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property isn''t specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -27261,7 +27792,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupSetting'
-              description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
+              description: 'Settings that can govern this group''s behavior, like whether members can invite guests to the group. Nullable.'
               x-ms-navigationProperty: true
             sites:
               type: array
@@ -27944,6 +28475,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information about the meeting attendees.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
@@ -28111,6 +28643,7 @@ components:
               nullable: true
             owner:
               type: string
+              description: 'Use the container property instead. ID of the group that owns the plan. After it''s set, this property can’t be updated. This property won''t return a valid group ID if the container of the plan isn''t a group.'
               nullable: true
             title:
               type: string
@@ -28655,7 +29188,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -28719,7 +29252,7 @@ components:
               nullable: true
             isRooted:
               type: boolean
-              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
+              description: true if the device is rooted or jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
@@ -29311,7 +29844,7 @@ components:
           nullable: true
         path:
           type: string
-          description: Path that can be used to navigate to the item. Read-only.
+          description: Percent-encoded path that can be used to navigate to the item. Read-only.
           nullable: true
         shareId:
           type: string
@@ -30070,6 +30603,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.itemActivityStat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30646,7 +31187,7 @@ components:
           nullable: true
         sharingType:
           type: string
-          description: 'Determines the way the document was shared, can be by a ''Link'', ''Attachment'', ''Group'', ''Site''.'
+          description: 'Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.'
           nullable: true
       additionalProperties:
         type: object
@@ -31532,6 +32073,7 @@ components:
           nullable: true
         tollFreeNumber:
           type: string
+          description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -31541,6 +32083,7 @@ components:
           description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
+          description: The toll number that connects to the Audio Conference Provider.
           nullable: true
         tollNumbers:
           type: array
@@ -32330,6 +32873,7 @@ components:
           nullable: true
         inputBin:
           type: string
+          description: The default input bin that serves as the paper source.
           nullable: true
         mediaColor:
           type: string
@@ -32996,7 +33540,7 @@ components:
               description: 'Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'Represents the formula that the name is defined to refer to. for example, =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.'
             visible:
               type: boolean
               description: Specifies whether the object is visible or not.
@@ -33124,6 +33668,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemActionStat:
       title: itemActionStat
       type: object
@@ -33933,6 +34485,52 @@ components:
         - stapleDualRight
         - stapleDualBottom
         - unknownFutureValue
+        - stapleTripleLeft
+        - stapleTripleTop
+        - stapleTripleRight
+        - stapleTripleBottom
+        - bindLeft
+        - bindTop
+        - bindRight
+        - bindBottom
+        - foldAccordion
+        - foldDoubleGate
+        - foldGate
+        - foldHalf
+        - foldHalfZ
+        - foldLeftGate
+        - foldLetter
+        - foldParallel
+        - foldPoster
+        - foldRightGate
+        - foldZ
+        - foldEngineeringZ
+        - punchTopLeft
+        - punchBottomLeft
+        - punchTopRight
+        - punchBottomRight
+        - punchDualLeft
+        - punchDualTop
+        - punchDualRight
+        - punchDualBottom
+        - punchTripleLeft
+        - punchTripleTop
+        - punchTripleRight
+        - punchTripleBottom
+        - punchQuadLeft
+        - punchQuadTop
+        - punchQuadRight
+        - punchQuadBottom
+        - fold
+        - trim
+        - bale
+        - bookletMaker
+        - coat
+        - laminate
+        - trimAfterPages
+        - trimAfterDocuments
+        - trimAfterCopies
+        - trimAfterJob
       type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout
@@ -34848,6 +35446,7 @@ components:
           description: Finishing processes to use when printing.
         fitPdfToPage:
           type: boolean
+          description: True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
           nullable: true
         inputBin:
           type: string
@@ -34857,10 +35456,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printMargin'
         mediaSize:
           type: string
-          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
           nullable: true
         mediaType:
           type: string
+          description: The default media (such as paper) type to print the document on.
           nullable: true
         multipageLayout:
           $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
@@ -34868,15 +35468,18 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printOrientation'
         outputBin:
           type: string
+          description: The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
           nullable: true
         pageRanges:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.integerRange'
+          description: The page ranges to print. Read-only.
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
         quality:
@@ -34893,7 +35496,7 @@ components:
           properties:
             ipAddress:
               type: string
-              description: Indicates the client IP address used by user performing the activity (audit log only).
+              description: Indicates the client IP address associated with the user performing the activity (audit log only).
               nullable: true
             userPrincipalName:
               type: string
@@ -35082,7 +35685,7 @@ components:
               description: Returns the name of the table column.
               nullable: true
             values:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.'
             filter:
               $ref: '#/components/schemas/microsoft.graph.workbookFilter'
           additionalProperties:
@@ -35100,7 +35703,7 @@ components:
               description: Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
               format: int32
             values:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.'
           additionalProperties:
             type: object
     microsoft.graph.workbookTableSort:
@@ -35669,23 +36272,29 @@ components:
       properties:
         color:
           type: string
+          description: The color applied to the cell.
           nullable: true
         criterion1:
           type: string
+          description: A custom criterion.
           nullable: true
         criterion2:
           type: string
+          description: A custom criterion.
           nullable: true
         dynamicCriteria:
           type: string
+          description: A dynamic formula specified in a custom filter.
         filterOn:
           type: string
+          description: Indicates whether a filter is applied to a column.
         icon:
           $ref: '#/components/schemas/microsoft.graph.workbookIcon'
         operator:
           type: string
+          description: 'An operator in a cell; for example, =, >, <, <=, or <>.'
         values:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: The values that appear in the cell.
       additionalProperties:
         type: object
     microsoft.graph.workbookIcon:
@@ -35710,13 +36319,13 @@ components:
           type: object
           properties:
             majorUnit:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
             maximum:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
             minimum:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
             minorUnit:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxisFormat'
             majorGridlines:
@@ -35810,7 +36419,7 @@ components:
           type: object
           properties:
             value:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Returns the value of a chart point. Read-only.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartPointFormat'
           additionalProperties:

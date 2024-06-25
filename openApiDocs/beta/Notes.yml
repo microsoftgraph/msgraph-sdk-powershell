@@ -1586,7 +1586,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -1651,7 +1650,64 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote.notebook.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -2668,7 +2724,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -2725,7 +2780,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote.notebook.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -3572,7 +3676,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -3613,7 +3716,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -3967,6 +4103,7 @@ paths:
       tags:
         - groups.onenote
       summary: Get content for the navigation property resources from groups
+      description: The content of the resource.
       operationId: group.onenote_GetResourcesContent
       parameters:
         - name: group-id
@@ -3995,11 +4132,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
       summary: Update content for the navigation property resources in groups
+      description: The content of the resource.
       operationId: group.onenote_SetResourcesContent
       parameters:
         - name: group-id
@@ -4035,7 +4172,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property resources in groups
+      description: The content of the resource.
+      operationId: group.onenote_DeleteResourcesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteResource-id
+          in: path
+          description: The unique identifier of onenoteResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/resources/$count':
     get:
       tags:
@@ -5150,7 +5320,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -5207,7 +5376,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -6080,7 +6298,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -6129,7 +6346,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -8270,7 +8528,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -8335,7 +8592,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -9352,7 +9608,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -9409,7 +9664,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -10256,7 +10510,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -10297,7 +10550,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -10651,6 +10903,7 @@ paths:
       tags:
         - sites.onenote
       summary: Get content for the navigation property resources from sites
+      description: The content of the resource.
       operationId: site.onenote_GetResourcesContent
       parameters:
         - name: site-id
@@ -10679,11 +10932,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
       summary: Update content for the navigation property resources in sites
+      description: The content of the resource.
       operationId: site.onenote_SetResourcesContent
       parameters:
         - name: site-id
@@ -10719,7 +10972,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/resources/$count':
     get:
       tags:
@@ -11834,7 +12086,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -11891,7 +12142,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -12764,7 +13014,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -12813,7 +13062,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -14678,7 +14926,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -14743,7 +14990,64 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote.notebook.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -15760,7 +16064,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -15817,7 +16120,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote.notebook.section_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -16664,7 +17016,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -16705,7 +17056,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -17059,6 +17443,7 @@ paths:
       tags:
         - users.onenote
       summary: Get content for the navigation property resources from users
+      description: The content of the resource.
       operationId: user.onenote_GetResourcesContent
       parameters:
         - name: user-id
@@ -17087,11 +17472,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
       summary: Update content for the navigation property resources in users
+      description: The content of the resource.
       operationId: user.onenote_SetResourcesContent
       parameters:
         - name: user-id
@@ -17127,7 +17512,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property resources in users
+      description: The content of the resource.
+      operationId: user.onenote_DeleteResourcesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteResource-id
+          in: path
+          description: The unique identifier of onenoteResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/resources/$count':
     get:
       tags:
@@ -18242,7 +18660,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -18299,7 +18716,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -19172,7 +19638,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -19221,7 +19686,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote.section_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -19738,10 +20244,12 @@ components:
           properties:
             content:
               type: string
+              description: The content of the resource.
               format: base64url
               nullable: true
             contentUrl:
               type: string
+              description: The URL for the content stream.
               nullable: true
           additionalProperties:
             type: object
