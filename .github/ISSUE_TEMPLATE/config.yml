@@ -1,4 +1,4 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
   - name: For issues related to authentication and service errors
     url: https://learn.microsoft.com/powershell/microsoftgraph/troubleshooting
