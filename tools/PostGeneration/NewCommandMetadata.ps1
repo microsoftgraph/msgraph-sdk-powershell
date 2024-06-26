@@ -78,8 +78,8 @@ $ApiVersion | ForEach-Object {
             if (-not($Null -eq $CommandAliasValue)) {
                 $CommandAliasValue = $CommandAliasValue.Replace("[global::System.Management.Automation.Alias(`"", "").Replace("`")", "").Replace("]", "")
             }
-            if(-not($CommandAliasValue -contains "-Mg")) {
-                $CommandAliasValue = $null
+            if(-not($CommandAliasValue.Contains("-Mg"))) {
+                $CommandAliasValue = ""
             }
             $MappingValue = @{
                 Command          = $CommandName
