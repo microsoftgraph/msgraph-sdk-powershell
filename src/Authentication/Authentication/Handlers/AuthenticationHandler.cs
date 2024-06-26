@@ -52,8 +52,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
                 // Continuous nonce extraction on each request
                 if (GraphSession.Instance.GraphOption.EnableATPoPForMSGraph)
                 {
-                    GraphSession.Instance.GraphRequestPopContext.ProofofPossessionNonce = WwwAuthenticateParameters.CreateFromAuthenticationHeaders(response.Headers, PopAuthenticationScheme).Nonce;
-                    GraphSession.Instance.GraphRequestPopContext.PopTokenContext = new PopTokenRequestContext(GraphSession.Instance.AuthContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: GraphSession.Instance.GraphRequestPopContext.ProofofPossessionNonce, request: GraphSession.Instance.GraphRequestPopContext.Request);
+                    GraphSession.Instance.GraphRequestPopContext.PopTokenContext = new PopTokenRequestContext(GraphSession.Instance.AuthContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: WwwAuthenticateParameters.CreateFromAuthenticationHeaders(response.Headers, PopAuthenticationScheme).Nonce, request: GraphSession.Instance.GraphRequestPopContext.Request);
                 }
 
                 // Check if response is a 401 & is not a streamed body (is buffered)

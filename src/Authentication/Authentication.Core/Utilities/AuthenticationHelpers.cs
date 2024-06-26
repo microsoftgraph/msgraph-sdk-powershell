@@ -479,8 +479,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             // Find the nonce in the WWW-Authenticate header in the response.
             var popMethod = GraphSession.Instance.GraphRequestPopContext.HttpMethod ?? HttpMethod.Get;
             var popResponse = await popHttpClient.SendAsync(new HttpRequestMessage(popMethod, popResourceUri));
-            GraphSession.Instance.GraphRequestPopContext.ProofofPossessionNonce = WwwAuthenticateParameters.CreateFromAuthenticationHeaders(popResponse.Headers, "Pop").Nonce;
-
+            
             // Refresh token logic --- start
             var popPipelineOptions = new HttpPipelineOptions(new PopClientOptions()
             {
@@ -493,7 +492,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             GraphSession.Instance.GraphRequestPopContext.Request.Uri.Reset(popResourceUri);
 
             // Refresh token logic --- end
-            var popContext = new PopTokenRequestContext(authContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: GraphSession.Instance.GraphRequestPopContext.ProofofPossessionNonce, request: GraphSession.Instance.GraphRequestPopContext.Request);
+            var popContext = new PopTokenRequestContext(authContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: WwwAuthenticateParameters.CreateFromAuthenticationHeaders(popResponse.Headers, "Pop").Nonce, request: GraphSession.Instance.GraphRequestPopContext.Request);
             return popContext;
         }
         public static RequestMethod ConvertToAzureRequestMethod(HttpMethod httpMethod)

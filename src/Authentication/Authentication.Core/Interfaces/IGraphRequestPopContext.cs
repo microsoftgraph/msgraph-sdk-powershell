@@ -14,7 +14,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Uri Uri { get; set; }
         HttpMethod HttpMethod { get; set; }
         AccessToken AccessToken { get; set; }
-        string ProofofPossessionNonce { get; set; }
         PopTokenRequestContext PopTokenContext { get; set; }
         Request Request { get; set; }
         InteractiveBrowserCredential PopInteractiveBrowserCredential { get; set; }
