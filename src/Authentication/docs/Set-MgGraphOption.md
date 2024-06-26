@@ -1,7 +1,7 @@
 ﻿---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
-online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/set-mgenvironment
+online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/set-mggraphoption
 schema: 2.0.0
 ---
 
@@ -14,6 +14,9 @@ Sets global configurations that apply to the SDK. For example, toggle Web Accoun
 
 ```
 Set-MgGraphOption [-EnableLoginByWAM <Boolean>] [<CommonParameters>]
+```
+```
+Set-MgGraphOption [-EnableATPoP <Boolean>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,10 +31,20 @@ PS C:\> Set-MgGraphOption -EnableLoginByWAM $True
 
  Sets web account manager support
 
+### Example 2: Set access token proof of possession support
+```powershell
+PS C:\> Set-MgGraphOption -EnableATPoP $True
+```
+
+ Sets access token proof of possession support
+
 ## PARAMETERS
 
 ### -EnableLoginByWAM
 {{ Fill EnableLoginByWAM Description }}
+
+### -EnableATPoP
+{{ Fill EnableATPoP Description }}
 
 ```yaml
 Type: Boolean
