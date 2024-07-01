@@ -30,4 +30,9 @@ require:
 title: $(service-name)
 subject-prefix: 'Beta'
 namespace: Microsoft.Graph.Beta.PowerShell
+directive:
+  - where:
+      verb: New
+      subject: ^(UserTodoListTaskLinkedResource)$
+    remove: true
 ```

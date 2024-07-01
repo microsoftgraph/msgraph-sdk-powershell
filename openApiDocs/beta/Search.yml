@@ -69,8 +69,11 @@ paths:
     get:
       tags:
         - external.authorizationSystem
-      summary: Get authorizationSystems from external
-      description: 'Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.'
+      summary: List authorizationSystems
+      description: List the authorizationSystem objects onboarded to Permissions Management and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-external-list-authorizationsystems?view=graph-rest-beta
       operationId: external_ListAuthorizationSystem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -363,7 +366,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connections from external
+      summary: List connections
+      description: Retrieve a list of externalConnections.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-beta
       operationId: external_ListConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -413,7 +420,11 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create new navigation property to connections for external
+      summary: Create connection
+      description: Create a new externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-beta
       operationId: external_CreateConnection
       requestBody:
         description: New navigation property
@@ -436,7 +447,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connections from external
+      summary: Get connection
+      description: Retrieve the properties and relationships of an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-beta
       operationId: external_GetConnection
       parameters:
         - name: externalConnection-id
@@ -480,7 +495,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update the navigation property connections in external
+      summary: Update connection
+      description: Update the properties of an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-beta
       operationId: external_UpdateConnection
       parameters:
         - name: externalConnection-id
@@ -511,7 +530,11 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property connections for external
+      summary: Delete externalConnection
+      description: Delete an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-beta
       operationId: external_DeleteConnection
       parameters:
         - name: externalConnection-id
@@ -596,7 +619,11 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create new navigation property to groups for external
+      summary: Create externalGroup
+      description: Create a new externalGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-beta
       operationId: external.connection_CreateGroup
       parameters:
         - name: externalConnection-id
@@ -719,7 +746,11 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property groups for external
+      summary: Delete externalGroup
+      description: Delete an externalGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-beta
       operationId: external.connection_DeleteGroup
       parameters:
         - name: externalConnection-id
@@ -821,7 +852,11 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create new navigation property to members for external
+      summary: Create externalGroupMember
+      description: Create a new externalGroupMember object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-beta
       operationId: external.connection.group_CreateMember
       parameters:
         - name: externalConnection-id
@@ -969,7 +1004,11 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property members for external
+      summary: Delete externalGroupMember
+      description: Delete an externalGroupMember object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-beta
       operationId: external.connection.group_DeleteMember
       parameters:
         - name: externalConnection-id
@@ -1064,7 +1103,8 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get items from external
+      summary: Get externalItem
+      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
       operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
@@ -1154,7 +1194,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get items from external
+      summary: Get externalItem
+      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-beta
       operationId: external.connection_GetItem
       parameters:
         - name: externalConnection-id
@@ -1206,7 +1250,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Update the navigation property items in external
+      summary: Create externalItem
+      description: Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -1245,7 +1293,11 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property items for external
+      summary: Delete externalItem
+      description: Delete an externalitem.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-beta
       operationId: external.connection_DeleteItem
       parameters:
         - name: externalConnection-id
@@ -1951,7 +2003,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get quota from external
+      summary: Get connectionQuota
+      description: Retrieve the properties and relationships of a connectionQuota object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-beta
       operationId: external.connection_GetQuota
       parameters:
         - name: externalConnection-id
@@ -2053,7 +2109,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get schema from external
+      summary: Get schema
+      description: Retrieve the properties of a schema for an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-beta
       operationId: external.connection_GetSchema
       parameters:
         - name: externalConnection-id
@@ -2097,7 +2157,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update the navigation property schema in external
+      summary: Update schema
+      description: Update the properties of a schema for an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2180,8 +2244,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get dataConnectors from external
-      description: Set of connectors for importing data from source systems.
+      summary: List industryDataConnectors
+      description: Get the industryDataConnector resources from the dataConnector navigation property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-beta
       operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2231,7 +2298,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create new navigation property to dataConnectors for external
+      summary: Create oneRosterApiDataConnector
+      description: Create a new oneRosterApiDataConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-onerosterapidataconnector-post?view=graph-rest-beta
       operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
@@ -2254,8 +2325,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get dataConnectors from external
-      description: Set of connectors for importing data from source systems.
+      summary: Get industryDataConnector
+      description: Read the properties and relationships of an industryDataConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-beta
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2299,7 +2373,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update the navigation property dataConnectors in external
+      summary: Update azureDataLakeConnector
+      description: Update the properties of an azureDataLakeConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-beta
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2330,7 +2408,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete navigation property dataConnectors for external
+      summary: Delete industryDataConnector
+      description: Delete an industryDataConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-beta
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2442,8 +2524,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFlows from external
-      description: Set of data import flow activities to bring data into the canonical store via a connector.
+      summary: List inboundFlows
+      description: Get a list of the inboundFlow objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-beta
       operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2493,7 +2578,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create new navigation property to inboundFlows for external
+      summary: Create inboundApiFlow
+      description: Create a new inboundApiFlow object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-post?view=graph-rest-beta
       operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
@@ -2516,8 +2605,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFlows from external
-      description: Set of data import flow activities to bring data into the canonical store via a connector.
+      summary: Get inboundFlow
+      description: Read the properties and relationships of an inboundFlow object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-beta
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2561,7 +2653,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update the navigation property inboundFlows in external
+      summary: Update inboundFileFlow
+      description: Update the properties of an inboundFileFlow object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2592,7 +2688,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete navigation property inboundFlows for external
+      summary: Delete inboundFlow
+      description: Delete an inboundFlow object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-beta
       operationId: external.industryData_DeleteInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2620,7 +2720,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get dataConnector from external
-      description: The data connector in the context of which this flow pulls in data from a source system.
+      description: The data connector to the source system from where this flow gets its data.
       operationId: external.industryData.inboundFlow_GetDataConnector
       parameters:
         - name: inboundFlow-id
@@ -2666,7 +2766,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get year from external
-      description: The year that the data brought in via this flow applies to.
+      description: The year associated to the data that this flow brings in.
       operationId: external.industryData.inboundFlow_GetYear
       parameters:
         - name: inboundFlow-id
@@ -2725,8 +2825,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get operations from external
-      description: Set of ephemeral operations that the system runs currently. Read-only.
+      summary: List fileValidateOperations
+      description: Get a list of long-running file validation operations and their statuses.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-beta
       operationId: external.industryData_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2799,8 +2902,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get operations from external
-      description: Set of ephemeral operations that the system runs currently. Read-only.
+      summary: Get fileValidateOperations
+      description: Read the properties and relationships of a fileValidateOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-beta
       operationId: external.industryData_GetOperation
       parameters:
         - name: longRunningOperation-id
@@ -2916,7 +3022,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get outboundProvisioningFlowSets from external
+      summary: List outboundProvisioningFlowSet objects
+      description: Get a list of the outboundProvisioningFlowSet objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataroot-list-outboundprovisioningflowsets?view=graph-rest-beta
       operationId: external.industryData_ListOutboundProvisioningFlowSet
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3091,8 +3201,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get provisioningFlows from external
-      description: A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
+      summary: List provisioningFlow objects
+      description: Get a list of the provisioningFlow objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-outboundprovisioningflowset-list-provisioningflows?view=graph-rest-beta
       operationId: external.industryData.outboundProvisioningFlowSet_ListProvisioningFlow
       parameters:
         - name: outboundProvisioningFlowSet-id
@@ -3305,6 +3418,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/industryData/outboundProvisioningFlowSets/{outboundProvisioningFlowSet-id}/provisioningFlows/{provisioningFlow-id}/microsoft.graph.industryData.reset':
+    post:
+      tags:
+        - external.Actions
+      summary: Invoke action reset
+      description: 'Reset a provisioningFlow. This action reprovisions all current data as if it were the initial run, and clears out the existing errors associated with the flow.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-provisioningflow-reset?view=graph-rest-beta
+      operationId: external.industryData.outboundProvisioningFlowSet.provisioningFlow_reset
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+        - name: provisioningFlow-id
+          in: path
+          description: The unique identifier of provisioningFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: provisioningFlow
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/external/industryData/outboundProvisioningFlowSets/{outboundProvisioningFlowSet-id}/provisioningFlows/$count':
     get:
       tags:
@@ -3345,8 +3491,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get referenceDefinitions from external
-      description: Set of user modifiable system picker types.
+      summary: List referenceDefinitions
+      description: Get a list of the referenceDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-beta
       operationId: external.industryData_ListReferenceDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3396,7 +3545,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create new navigation property to referenceDefinitions for external
+      summary: Create referenceDefinition
+      description: Create a new referenceDefinition object. referenceDefinition objects associate incoming data with standardized reference types values for validation. You can extend the following reference types with other codes that better align with your source data.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-post?view=graph-rest-beta
       operationId: external.industryData_CreateReferenceDefinition
       requestBody:
         description: New navigation property
@@ -3419,8 +3572,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get referenceDefinitions from external
-      description: Set of user modifiable system picker types.
+      summary: Get referenceDefinition
+      description: Read the properties and relationships of a referenceDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-get?view=graph-rest-beta
       operationId: external.industryData_GetReferenceDefinition
       parameters:
         - name: referenceDefinition-id
@@ -3536,8 +3692,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get roleGroups from external
-      description: Set of groups of individual roles that makes role-based admin simpler.
+      summary: List roleGroups
+      description: Get a list of the roleGroup objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-beta
       operationId: external.industryData_ListRoleGroup
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3610,8 +3769,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get roleGroups from external
-      description: Set of groups of individual roles that makes role-based admin simpler.
+      summary: Get roleGroup
+      description: Read the properties and relationships of a roleGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-beta
       operationId: external.industryData_GetRoleGroup
       parameters:
         - name: roleGroup-id
@@ -3727,8 +3889,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get runs from external
-      description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+      summary: List industryDataRuns
+      description: Get a list of the industryDataRun objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-beta
       operationId: external.industryData_ListRun
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3779,8 +3944,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get runs from external
-      description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+      summary: Get industryDataRun
+      description: Read the properties and relationships of an industryDataRun object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-beta
       operationId: external.industryData_GetRun
       parameters:
         - name: industryDataRun-id
@@ -4074,8 +4242,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get sourceSystems from external
-      description: Set of source definitions that represents real-world external systems.
+      summary: List sourceSystemDefinitions
+      description: Get a list of the sourceSystemDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-beta
       operationId: external.industryData_ListSourceSystem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4125,7 +4296,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create new navigation property to sourceSystems for external
+      summary: Create sourceSystemDefinition
+      description: Create a new sourceSystemDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-beta
       operationId: external.industryData_CreateSourceSystem
       requestBody:
         description: New navigation property
@@ -4148,8 +4323,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get sourceSystems from external
-      description: Set of source definitions that represents real-world external systems.
+      summary: Get sourceSystemDefinition
+      description: Read the properties and relationships of a sourceSystemDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-get?view=graph-rest-beta
       operationId: external.industryData_GetSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
@@ -4193,7 +4371,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update the navigation property sourceSystems in external
+      summary: Update sourceSystemDefinition
+      description: Update the properties of a sourceSystemDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-update?view=graph-rest-beta
       operationId: external.industryData_UpdateSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
@@ -4224,7 +4406,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete navigation property sourceSystems for external
+      summary: Delete sourceSystemDefinition
+      description: Delete a sourceSystemDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-delete?view=graph-rest-beta
       operationId: external.industryData_DeleteSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
@@ -4265,8 +4451,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get years from external
-      description: Set of years represented in the system.
+      summary: List yearTimePeriodDefinitions
+      description: Get a list of the yearTimePeriodDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-beta
       operationId: external.industryData_ListYear
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4316,7 +4505,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create new navigation property to years for external
+      summary: Create yearTimePeriodDefinition
+      description: Create a new yearTimePeriodDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-beta
       operationId: external.industryData_CreateYear
       requestBody:
         description: New navigation property
@@ -4339,8 +4532,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get years from external
-      description: Set of years represented in the system.
+      summary: Get yearTimePeriodDefinition
+      description: Read the properties and relationships of a yearTimePeriodDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-beta
       operationId: external.industryData_GetYear
       parameters:
         - name: yearTimePeriodDefinition-id
@@ -4384,7 +4580,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update the navigation property years in external
+      summary: Update yearTimePeriodDefinition
+      description: Update the properties of a yearTimePeriodDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-beta
       operationId: external.industryData_UpdateYear
       parameters:
         - name: yearTimePeriodDefinition-id
@@ -4415,7 +4615,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete navigation property years for external
+      summary: Delete yearTimePeriodDefinition
+      description: Delete a yearTimePeriodDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-beta
       operationId: external.industryData_DeleteYear
       parameters:
         - name: yearTimePeriodDefinition-id
@@ -4515,8 +4719,11 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: Get acronyms from search
-      description: Administrative answer in Microsoft Search results to define common acronyms in an organization.
+      summary: List acronyms
+      description: Get a list of the acronym objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-beta
       operationId: search_ListAcronym
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4566,7 +4773,11 @@ paths:
     post:
       tags:
         - search.acronym
-      summary: Create new navigation property to acronyms for search
+      summary: Create acronym
+      description: Create a new acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-beta
       operationId: search_CreateAcronym
       requestBody:
         description: New navigation property
@@ -4589,8 +4800,11 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: Get acronyms from search
-      description: Administrative answer in Microsoft Search results to define common acronyms in an organization.
+      summary: Get acronym
+      description: Read the properties and relationships of an acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-beta
       operationId: search_GetAcronym
       parameters:
         - name: acronym-id
@@ -4634,7 +4848,11 @@ paths:
     patch:
       tags:
         - search.acronym
-      summary: Update the navigation property acronyms in search
+      summary: Update acronym
+      description: Update the properties of an acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-beta
       operationId: search_UpdateAcronym
       parameters:
         - name: acronym-id
@@ -4665,7 +4883,11 @@ paths:
     delete:
       tags:
         - search.acronym
-      summary: Delete navigation property acronyms for search
+      summary: Delete acronym
+      description: Delete an acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-beta
       operationId: search_DeleteAcronym
       parameters:
         - name: acronym-id
@@ -4706,8 +4928,11 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: Get bookmarks from search
-      description: Administrative answer in Microsoft Search results for common search queries in an organization.
+      summary: List bookmarks
+      description: Get a list of bookmark objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-beta
       operationId: search_ListBookmark
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4757,7 +4982,11 @@ paths:
     post:
       tags:
         - search.bookmark
-      summary: Create new navigation property to bookmarks for search
+      summary: Create bookmark
+      description: Create a new bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-beta
       operationId: search_CreateBookmark
       requestBody:
         description: New navigation property
@@ -4780,8 +5009,11 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: Get bookmarks from search
-      description: Administrative answer in Microsoft Search results for common search queries in an organization.
+      summary: Get bookmark
+      description: Read the properties and relationships of a bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-beta
       operationId: search_GetBookmark
       parameters:
         - name: bookmark-id
@@ -4825,7 +5057,11 @@ paths:
     patch:
       tags:
         - search.bookmark
-      summary: Update the navigation property bookmarks in search
+      summary: Update bookmark
+      description: Update the properties of a bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-beta
       operationId: search_UpdateBookmark
       parameters:
         - name: bookmark-id
@@ -4856,7 +5092,11 @@ paths:
     delete:
       tags:
         - search.bookmark
-      summary: Delete navigation property bookmarks for search
+      summary: Delete bookmark
+      description: Delete a bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-beta
       operationId: search_DeleteBookmark
       parameters:
         - name: bookmark-id
@@ -4944,8 +5184,11 @@ paths:
     get:
       tags:
         - search.qna
-      summary: Get qnas from search
-      description: Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+      summary: List qnas
+      description: Get a list of the qna objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-beta
       operationId: search_ListQna
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4995,7 +5238,11 @@ paths:
     post:
       tags:
         - search.qna
-      summary: Create new navigation property to qnas for search
+      summary: Create qna
+      description: Create a new qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-beta
       operationId: search_CreateQna
       requestBody:
         description: New navigation property
@@ -5018,8 +5265,11 @@ paths:
     get:
       tags:
         - search.qna
-      summary: Get qnas from search
-      description: Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+      summary: Get qna
+      description: Read the properties and relationships of a qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-beta
       operationId: search_GetQna
       parameters:
         - name: qna-id
@@ -5063,7 +5313,11 @@ paths:
     patch:
       tags:
         - search.qna
-      summary: Update the navigation property qnas in search
+      summary: Update qna
+      description: Update the properties of a qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-beta
       operationId: search_UpdateQna
       parameters:
         - name: qna-id
@@ -5094,7 +5348,11 @@ paths:
     delete:
       tags:
         - search.qna
-      summary: Delete navigation property qnas for search
+      summary: Delete qna
+      description: Delete a qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-beta
       operationId: search_DeleteQna
       parameters:
         - name: qna-id
@@ -5604,9 +5862,13 @@ components:
               description: 'The date and time when the definition was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               readOnly: true
+            displayName:
+              type: string
+              description: A human-readable representation of the reference code value for display in a user interface.
+              nullable: true
             isDisabled:
               type: boolean
-              description: Indicates whether the definition has been disabled.
+              description: Indicates whether the definition is disabled.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -5620,7 +5882,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The ordering index to present the definitions within a type consistently in user interfaces.
+              description: The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.
               format: int32
             source:
               type: string
@@ -5907,6 +6169,7 @@ components:
           items:
             type: string
             nullable: true
+          description: This is now replaced by the fields property.
         trimDuplicates:
           type: boolean
           description: Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
@@ -6964,7 +7227,7 @@ components:
           type: string
           description: 'The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.'
         layout:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: 'The definition of the content''s appearance, represented by an Adaptive Card, which is a JSON-serialized card object model.'
         priority:
           maximum: 2147483647
           minimum: -2147483648
@@ -7297,11 +7560,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    microsoft.graph.Json:
-      title: Json
-      type: object
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.propertyRule:

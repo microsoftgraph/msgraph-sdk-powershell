@@ -787,7 +787,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -827,7 +826,43 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete picture for the navigation property companyInformation in financials
+      operationId: financial.company_DeleteCompanyInformationPicture
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: companyInformation-id
+          in: path
+          description: The unique identifier of companyInformation
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: companyInformation
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/companyInformation/$count':
     get:
       tags:
@@ -2996,7 +3031,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -3060,7 +3094,63 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.customerPaymentJournal.customerPayment.customer_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: customerPaymentJournal-id
+          in: path
+          description: The unique identifier of customerPaymentJournal
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: customerPaymentJournal
+        - name: customerPayment-id
+          in: path
+          description: The unique identifier of customerPayment
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: customerPayment
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/picture/$count':
     get:
       tags:
@@ -4444,7 +4534,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -4498,7 +4587,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.customerPayment.customer_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: customerPayment-id
+          in: path
+          description: The unique identifier of customerPayment
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: customerPayment
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/picture/$count':
     get:
       tags:
@@ -5670,7 +5805,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -5724,7 +5858,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.customer_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: customer-id
+          in: path
+          description: The unique identifier of customer
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: customer
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/customers/{customer-id}/picture/$count':
     get:
       tags:
@@ -6938,7 +7118,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -6992,7 +7171,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.employee_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: employee-id
+          in: path
+          description: The unique identifier of employee
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: employee
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/employees/{employee-id}/picture/$count':
     get:
       tags:
@@ -8205,7 +8430,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -8259,7 +8483,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: item-id
+          in: path
+          description: The unique identifier of item
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: item
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/items/{item-id}/picture/$count':
     get:
       tags:
@@ -10141,7 +10411,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -10185,7 +10454,43 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/picture/$count':
     get:
       tags:
@@ -11003,7 +11308,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -11055,7 +11359,51 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.purchaseInvoiceLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: purchaseInvoiceLine-id
+          in: path
+          description: The unique identifier of purchaseInvoiceLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoiceLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/$count':
     get:
       tags:
@@ -12397,7 +12745,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -12459,7 +12806,61 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.purchaseInvoice.purchaseInvoiceLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: purchaseInvoice-id
+          in: path
+          description: The unique identifier of purchaseInvoice
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: purchaseInvoice
+        - name: purchaseInvoiceLine-id
+          in: path
+          description: The unique identifier of purchaseInvoiceLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoiceLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/$count':
     get:
       tags:
@@ -13417,7 +13818,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -13471,7 +13871,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.purchaseInvoice.vendor_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: purchaseInvoice-id
+          in: path
+          description: The unique identifier of purchaseInvoice
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: purchaseInvoice
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/picture/$count':
     get:
       tags:
@@ -14323,7 +14769,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -14375,7 +14820,51 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesCreditMemoLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesCreditMemoLine-id
+          in: path
+          description: The unique identifier of salesCreditMemoLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemoLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/$count':
     get:
       tags:
@@ -15612,7 +16101,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -15666,7 +16154,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesCreditMemo.customer_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesCreditMemo-id
+          in: path
+          description: The unique identifier of salesCreditMemo
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: salesCreditMemo
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/picture/$count':
     get:
       tags:
@@ -16930,7 +17464,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -16992,7 +17525,61 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesCreditMemo.salesCreditMemoLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesCreditMemo-id
+          in: path
+          description: The unique identifier of salesCreditMemo
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: salesCreditMemo
+        - name: salesCreditMemoLine-id
+          in: path
+          description: The unique identifier of salesCreditMemoLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemoLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/$count':
     get:
       tags:
@@ -17886,7 +18473,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -17938,7 +18524,51 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesInvoiceLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesInvoiceLine-id
+          in: path
+          description: The unique identifier of salesInvoiceLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoiceLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/$count':
     get:
       tags:
@@ -19175,7 +19805,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -19229,7 +19858,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesInvoice.customer_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesInvoice-id
+          in: path
+          description: The unique identifier of salesInvoice
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: salesInvoice
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/picture/$count':
     get:
       tags:
@@ -20658,7 +21333,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -20720,7 +21394,61 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesInvoice.salesInvoiceLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesInvoice-id
+          in: path
+          description: The unique identifier of salesInvoice
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: salesInvoice
+        - name: salesInvoiceLine-id
+          in: path
+          description: The unique identifier of salesInvoiceLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoiceLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/$count':
     get:
       tags:
@@ -21752,7 +22480,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -21804,7 +22531,51 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesOrderLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesOrderLine-id
+          in: path
+          description: The unique identifier of salesOrderLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrderLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item/picture/$count':
     get:
       tags:
@@ -23041,7 +23812,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -23095,7 +23865,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesOrder.customer_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesOrder-id
+          in: path
+          description: The unique identifier of salesOrder
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: salesOrder
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/picture/$count':
     get:
       tags:
@@ -24359,7 +25175,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -24421,7 +25236,61 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesOrder.salesOrderLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesOrder-id
+          in: path
+          description: The unique identifier of salesOrder
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: salesOrder
+        - name: salesOrderLine-id
+          in: path
+          description: The unique identifier of salesOrderLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrderLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item/picture/$count':
     get:
       tags:
@@ -25315,7 +26184,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -25367,7 +26235,51 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesQuoteLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesQuoteLine-id
+          in: path
+          description: The unique identifier of salesQuoteLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuoteLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture/$count':
     get:
       tags:
@@ -26604,7 +27516,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -26658,7 +27569,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesQuote.customer_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesQuote-id
+          in: path
+          description: The unique identifier of salesQuote
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: salesQuote
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/picture/$count':
     get:
       tags:
@@ -27988,7 +28945,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -28050,7 +29006,61 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.salesQuote.salesQuoteLine.item_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: salesQuote-id
+          in: path
+          description: The unique identifier of salesQuote
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: salesQuote
+        - name: salesQuoteLine-id
+          in: path
+          description: The unique identifier of salesQuoteLine
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuoteLine
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture/$count':
     get:
       tags:
@@ -30282,7 +31292,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - financials.company
@@ -30336,7 +31345,53 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.picture'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - financials.company
+      summary: Delete content for the navigation property picture in financials
+      operationId: financial.company.vendor_DeletePictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: The unique identifier of company
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: company
+        - name: vendor-id
+          in: path
+          description: The unique identifier of vendor
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: vendor
+        - name: picture-id
+          in: path
+          description: The unique identifier of picture
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+          x-ms-docs-key-type: picture
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/financials/companies/{company-id}/vendors/{vendor-id}/picture/$count':
     get:
       tags:

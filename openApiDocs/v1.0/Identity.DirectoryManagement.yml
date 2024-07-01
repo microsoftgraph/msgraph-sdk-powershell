@@ -10,8 +10,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get people from admin
-      description: Represents a setting to control people-related admin settings in the tenant.
+      summary: Get peopleAdminSettings
+      description: Retrieve the properties and relationships of a peopleAdminSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-1.0
       operationId: admin_GetPerson
       parameters:
         - name: $select
@@ -48,8 +51,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get profileCardProperties from admin
-      description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
+      summary: List profileCardProperties
+      description: Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilecardproperties?view=graph-rest-1.0
       operationId: admin.person_ListProfileCardProperty
       parameters:
         - $ref: '#/components/parameters/top'
@@ -99,7 +105,11 @@ paths:
     post:
       tags:
         - admin.peopleAdminSettings
-      summary: Create new navigation property to profileCardProperties for admin
+      summary: Create profileCardProperty
+      description: 'Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilecardproperties?view=graph-rest-1.0
       operationId: admin.person_CreateProfileCardProperty
       requestBody:
         description: New navigation property
@@ -122,8 +132,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get profileCardProperties from admin
-      description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
+      summary: Get profileCardProperty
+      description: Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0
       operationId: admin.person_GetProfileCardProperty
       parameters:
         - name: profileCardProperty-id
@@ -167,7 +180,11 @@ paths:
     patch:
       tags:
         - admin.peopleAdminSettings
-      summary: Update the navigation property profileCardProperties in admin
+      summary: Update profileCardProperty
+      description: 'Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-update?view=graph-rest-1.0
       operationId: admin.person_UpdateProfileCardProperty
       parameters:
         - name: profileCardProperty-id
@@ -198,7 +215,11 @@ paths:
     delete:
       tags:
         - admin.peopleAdminSettings
-      summary: Delete navigation property profileCardProperties for admin
+      summary: Delete profileCardProperty
+      description: 'Delete the profileCardProperty object specified by its directoryPropertyName from the organization''s profile card, and remove any localized customizations for that property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-delete?view=graph-rest-1.0
       operationId: admin.person_DeleteProfileCardProperty
       parameters:
         - name: profileCardProperty-id
@@ -239,8 +260,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get pronouns from admin
-      description: Represents administrator settings that manage the support of pronouns in an organization.
+      summary: List pronounsSettings
+      description: 'Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-1.0
       operationId: admin.person_GetPronoun
       parameters:
         - name: $select
@@ -276,7 +300,11 @@ paths:
     patch:
       tags:
         - admin.peopleAdminSettings
-      summary: Update the navigation property pronouns in admin
+      summary: Update pronounsSettings
+      description: 'Update the properties of a pronounsSettings object in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0
       operationId: admin.person_UpdatePronoun
       requestBody:
         description: New navigation property values
@@ -492,8 +520,11 @@ paths:
     get:
       tags:
         - contacts.directoryObject
-      summary: Get directReports from contacts
-      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.)  Read-only. Nullable. Supports $expand.
+      summary: List directReports
+      description: Get the direct reports for this organizational contact.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-1.0
       operationId: contact_ListDirectReport
       parameters:
         - name: orgContact-id
@@ -982,8 +1013,11 @@ paths:
     get:
       tags:
         - contacts.directoryObject
-      summary: Get manager from contacts
-      description: The user or contact that is this contact's manager. Read-only. Supports $expand and $filter (eq) by id.
+      summary: Get manager
+      description: Get this organizational contact's manager.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0
       operationId: contact_GetManager
       parameters:
         - name: orgContact-id
@@ -1028,8 +1062,11 @@ paths:
     get:
       tags:
         - contacts.directoryObject
-      summary: Get memberOf from contacts
-      description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+      summary: List memberOf
+      description: List the groups that this organizational contact is a member of.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/orgcontact-list-memberof?view=graph-rest-1.0
       operationId: contact_ListMemberGraphOPre
       parameters:
         - name: orgContact-id
@@ -1879,8 +1916,11 @@ paths:
     get:
       tags:
         - contacts.directoryObject
-      summary: Get transitiveMemberOf from contacts
-      description: 'Groups that this contact is a member of, including groups that the contact is nested under. Read-only. Nullable.'
+      summary: List transitiveMemberOf
+      description: 'Get groups that this organizational contact is a member of. The API request is transitive, and returns all groups the organizational contact is a nested member of.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/orgcontact-list-transitivememberof?view=graph-rest-1.0
       operationId: contact_ListTransitiveMemberGraphOPre
       parameters:
         - name: orgContact-id
@@ -3712,8 +3752,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get memberOf from devices
-      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+      summary: List device memberships
+      description: Get groups and administrative units that this device is a direct member of. This operation is not transitive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: device_ListMemberGraphOPre
       parameters:
         - name: device-id
@@ -3908,7 +3951,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+      summary: List device memberships
+      description: Get groups and administrative units that this device is a direct member of. This operation is not transitive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: device_GetMemberGraphOPreAsGroup
       parameters:
         - name: device-id
@@ -4102,7 +4149,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+      summary: List device memberships
+      description: Get groups and administrative units that this device is a direct member of. This operation is not transitive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: device_ListMemberGraphOPreAsGroup
       parameters:
         - name: device-id
@@ -4451,8 +4502,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get registeredOwners from devices
-      description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
+      summary: List registeredOwners
+      description: 'Retrieve a list of users that are registered owners of the device. A registered owner is the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: device_ListRegisteredOwner
       parameters:
         - name: device-id
@@ -4521,7 +4575,11 @@ paths:
     delete:
       tags:
         - devices.directoryObject
-      summary: Delete ref of navigation property registeredOwners for devices
+      summary: Delete registeredOwner
+      description: Remove a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
       operationId: device.registeredOwner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: device-id
@@ -4836,8 +4894,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get ref of registeredOwners from devices
-      description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
+      summary: List registeredOwners
+      description: 'Retrieve a list of users that are registered owners of the device. A registered owner is the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: device_ListRegisteredOwnerGraphBPreRef
       parameters:
         - name: device-id
@@ -4885,7 +4946,11 @@ paths:
     post:
       tags:
         - devices.directoryObject
-      summary: Create new navigation property ref to registeredOwners for devices
+      summary: Create registeredOwner
+      description: Add a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
       operationId: device_CreateRegisteredOwnerGraphBPreRef
       parameters:
         - name: device-id
@@ -4907,7 +4972,11 @@ paths:
     delete:
       tags:
         - devices.directoryObject
-      summary: Delete ref of navigation property registeredOwners for devices
+      summary: Delete registeredOwner
+      description: Remove a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
       operationId: device_DeleteRegisteredOwnerGraphBPreRef
       parameters:
         - name: device-id
@@ -5342,8 +5411,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get registeredUsers from devices
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      summary: List registeredUsers
+      description: 'Retrieve a list of users that are registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: device_ListRegisteredUser
       parameters:
         - name: device-id
@@ -5412,7 +5484,11 @@ paths:
     delete:
       tags:
         - devices.directoryObject
-      summary: Delete ref of navigation property registeredUsers for devices
+      summary: Delete registeredUser
+      description: Remove a user as a registered user of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
       operationId: device.registeredUser_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: device-id
@@ -5727,8 +5803,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get ref of registeredUsers from devices
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      summary: List registeredUsers
+      description: 'Retrieve a list of users that are registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: device_ListRegisteredUserGraphBPreRef
       parameters:
         - name: device-id
@@ -5776,7 +5855,11 @@ paths:
     post:
       tags:
         - devices.directoryObject
-      summary: Create new navigation property ref to registeredUsers for devices
+      summary: Create registeredUser
+      description: Add a registered user for the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
       operationId: device_CreateRegisteredUserGraphBPreRef
       parameters:
         - name: device-id
@@ -5798,7 +5881,11 @@ paths:
     delete:
       tags:
         - devices.directoryObject
-      summary: Delete ref of navigation property registeredUsers for devices
+      summary: Delete registeredUser
+      description: Remove a user as a registered user of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
       operationId: device_DeleteRegisteredUserGraphBPreRef
       parameters:
         - name: device-id
@@ -6233,8 +6320,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get transitiveMemberOf from devices
-      description: Groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
+      summary: List device transitive memberships
+      description: 'Get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: device_ListTransitiveMemberGraphOPre
       parameters:
         - name: device-id
@@ -6429,7 +6519,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+      summary: List device transitive memberships
+      description: 'Get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: device_GetTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: device-id
@@ -6623,7 +6717,11 @@ paths:
     get:
       tags:
         - devices.directoryObject
-      summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+      summary: List device transitive memberships
+      description: 'Get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: device_ListTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: device-id
@@ -7134,8 +7232,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get administrativeUnits from directory
-      description: Conceptual container for user and group directory objects.
+      summary: List administrativeUnits
+      description: Retrieve a list of administrativeUnit objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0
       operationId: directory_ListAdministrativeUnit
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7185,7 +7286,11 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Create new navigation property to administrativeUnits for directory
+      summary: Create administrativeUnit
+      description: Use this API to create a new administrativeUnit.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0
       operationId: directory_CreateAdministrativeUnit
       requestBody:
         description: New navigation property
@@ -7208,8 +7313,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get administrativeUnits from directory
-      description: Conceptual container for user and group directory objects.
+      summary: Get administrativeUnit
+      description: Retrieve the properties and relationships of an administrativeUnit object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0
       operationId: directory_GetAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -7253,7 +7361,11 @@ paths:
     patch:
       tags:
         - directory.administrativeUnit
-      summary: Update the navigation property administrativeUnits in directory
+      summary: Update administrativeUnit
+      description: Update the properties of an administrativeUnit object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-update?view=graph-rest-1.0
       operationId: directory_UpdateAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -7284,7 +7396,11 @@ paths:
     delete:
       tags:
         - directory.administrativeUnit
-      summary: Delete navigation property administrativeUnits for directory
+      summary: Delete administrativeUnit
+      description: Delete an administrativeUnit.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete?view=graph-rest-1.0
       operationId: directory_DeleteAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -7551,8 +7667,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get members from directory
-      description: Users and groups that are members of this administrative unit. Supports $expand.
+      summary: List members
+      description: 'Use this API to get the members list (users, groups, or devices) in an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_ListMember
       parameters:
         - name: administrativeUnit-id
@@ -7620,7 +7739,11 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Create new navigation property to members for directory
+      summary: Add a member
+      description: 'Use this API to add a member (user, group, or device) to an administrative unit. Currently it''s only possible to add one member at a time to an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_CreateMember
       parameters:
         - name: administrativeUnit-id
@@ -7652,7 +7775,11 @@ paths:
     delete:
       tags:
         - directory.administrativeUnit
-      summary: Delete ref of navigation property members for directory
+      summary: Remove a member
+      description: 'Use this API to remove a member (user, group, or device) from an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit.member_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -8091,8 +8218,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get ref of members from directory
-      description: Users and groups that are members of this administrative unit. Supports $expand.
+      summary: List members
+      description: 'Use this API to get the members list (users, groups, or devices) in an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_ListMemberGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -8140,7 +8270,11 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Create new navigation property ref to members for directory
+      summary: Add a member
+      description: 'Use this API to add a member (user, group, or device) to an administrative unit. Currently it''s only possible to add one member at a time to an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_CreateMemberGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -8162,7 +8296,11 @@ paths:
     delete:
       tags:
         - directory.administrativeUnit
-      summary: Delete ref of navigation property members for directory
+      summary: Remove a member
+      description: 'Use this API to remove a member (user, group, or device) from an administrative unit.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_DeleteMemberGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -8797,8 +8935,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get scopedRoleMembers from directory
-      description: Scoped-role members of this administrative unit.
+      summary: List scopedRoleMembers
+      description: List Microsoft Entra role assignments with administrative unit scope.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_ListScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -8856,7 +8997,11 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Create new navigation property to scopedRoleMembers for directory
+      summary: Add a scopedRoleMember
+      description: 'Assign a Microsoft Entra role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_CreateScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -8888,8 +9033,11 @@ paths:
     get:
       tags:
         - directory.administrativeUnit
-      summary: Get scopedRoleMembers from directory
-      description: Scoped-role members of this administrative unit.
+      summary: Get a scopedRoleMember
+      description: Get a Microsoft Entra role assignment with administrative unit scope.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_GetScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -8980,7 +9128,11 @@ paths:
     delete:
       tags:
         - directory.administrativeUnit
-      summary: Delete navigation property scopedRoleMembers for directory
+      summary: Remove a scopedRoleMember
+      description: Remove a Microsoft Entra role assignment with administrative unit scope.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_DeleteScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -9120,8 +9272,11 @@ paths:
     get:
       tags:
         - directory.attributeSet
-      summary: Get attributeSets from directory
-      description: Group of related custom security attribute definitions.
+      summary: List attributeSets
+      description: Get a list of the attributeSet objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0
       operationId: directory_ListAttributeSet
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9171,7 +9326,11 @@ paths:
     post:
       tags:
         - directory.attributeSet
-      summary: Create new navigation property to attributeSets for directory
+      summary: Create attributeSet
+      description: Create a new attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0
       operationId: directory_CreateAttributeSet
       requestBody:
         description: New navigation property
@@ -9194,8 +9353,11 @@ paths:
     get:
       tags:
         - directory.attributeSet
-      summary: Get attributeSets from directory
-      description: Group of related custom security attribute definitions.
+      summary: Get attributeSet
+      description: Read the properties and relationships of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attributeset-get?view=graph-rest-1.0
       operationId: directory_GetAttributeSet
       parameters:
         - name: attributeSet-id
@@ -9239,7 +9401,11 @@ paths:
     patch:
       tags:
         - directory.attributeSet
-      summary: Update the navigation property attributeSets in directory
+      summary: Update attributeSet
+      description: Update the properties of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attributeset-update?view=graph-rest-1.0
       operationId: directory_UpdateAttributeSet
       parameters:
         - name: attributeSet-id
@@ -9311,8 +9477,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get customSecurityAttributeDefinitions from directory
-      description: Schema of a custom security attributes (key-value pairs).
+      summary: List customSecurityAttributeDefinitions
+      description: Get a list of the customSecurityAttributeDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_ListCustomSecurityAttributeDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9362,7 +9531,11 @@ paths:
     post:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Create new navigation property to customSecurityAttributeDefinitions for directory
+      summary: Create customSecurityAttributeDefinition
+      description: Create a new customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-post-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_CreateCustomSecurityAttributeDefinition
       requestBody:
         description: New navigation property
@@ -9385,8 +9558,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get customSecurityAttributeDefinitions from directory
-      description: Schema of a custom security attributes (key-value pairs).
+      summary: Get customSecurityAttributeDefinition
+      description: Read the properties and relationships of a customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0
       operationId: directory_GetCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9430,7 +9606,11 @@ paths:
     patch:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Update the navigation property customSecurityAttributeDefinitions in directory
+      summary: Update customSecurityAttributeDefinition
+      description: Update the properties of a customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0
       operationId: directory_UpdateCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9488,8 +9668,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get allowedValues from directory
-      description: 'Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
+      summary: List allowedValues
+      description: Get a list of the allowedValue objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_ListAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9547,7 +9730,11 @@ paths:
     post:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Create new navigation property to allowedValues for directory
+      summary: Create allowedValue
+      description: Create a new allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-post-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_CreateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9579,8 +9766,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get allowedValues from directory
-      description: 'Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
+      summary: Get allowedValue
+      description: Read the properties and relationships of an allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_GetAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9632,7 +9822,11 @@ paths:
     patch:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Update the navigation property allowedValues in directory
+      summary: Update allowedValue
+      description: Update the properties of an allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_UpdateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9742,8 +9936,8 @@ paths:
     get:
       tags:
         - directory.directoryObject
-      summary: Get deletedItems from directory
-      description: Recently deleted items. Read-only. Nullable.
+      summary: Get deleted item (directory object)
+      description: 'Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.'
       operationId: directory_ListDeletedItem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9794,8 +9988,11 @@ paths:
     get:
       tags:
         - directory.directoryObject
-      summary: Get deletedItems from directory
-      description: Recently deleted items. Read-only. Nullable.
+      summary: Get deleted item (directory object)
+      description: 'Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-get?view=graph-rest-1.0
       operationId: directory_GetDeletedItem
       parameters:
         - name: directoryObject-id
@@ -9839,7 +10036,11 @@ paths:
     delete:
       tags:
         - directory.directoryObject
-      summary: Delete navigation property deletedItems for directory
+      summary: Permanently delete an item (directory object)
+      description: 'Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-delete?view=graph-rest-1.0
       operationId: directory_DeleteDeletedItem
       parameters:
         - name: directoryObject-id
@@ -10218,7 +10419,11 @@ paths:
     get:
       tags:
         - directory.directoryObject
-      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+      summary: List deletedItems (directory objects)
+      description: 'Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
       operationId: directory_GetDeletedItemAsGroup
       parameters:
         - name: directoryObject-id
@@ -10686,7 +10891,11 @@ paths:
     get:
       tags:
         - directory.directoryObject
-      summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+      summary: List deletedItems (directory objects)
+      description: 'Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
       operationId: directory_ListDeletedItemAsGroup
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10918,11 +11127,15 @@ paths:
     get:
       tags:
         - directory.deviceLocalCredentialInfo
-      summary: Get deviceLocalCredentials from directory
-      description: The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+      summary: List deviceLocalCredentialInfo
+      description: 'Get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-list-devicelocalcredentials?view=graph-rest-1.0
       operationId: directory_ListDeviceLocalCredential
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
@@ -10939,6 +11152,16 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
           style: form
           explode: false
           schema:
@@ -10981,8 +11204,11 @@ paths:
     get:
       tags:
         - directory.deviceLocalCredentialInfo
-      summary: Get deviceLocalCredentials from directory
-      description: The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+      summary: Get deviceLocalCredentialInfo
+      description: 'Retrieve the properties of a deviceLocalCredentialInfo for a specified device object. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/devicelocalcredentialinfo-get?view=graph-rest-1.0
       operationId: directory_GetDeviceLocalCredential
       parameters:
         - name: deviceLocalCredentialInfo-id
@@ -10996,6 +11222,16 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
           style: form
           explode: false
           schema:
@@ -11238,7 +11474,11 @@ paths:
     delete:
       tags:
         - directory.identityProviderBase
-      summary: Delete navigation property federationConfigurations for directory
+      summary: Delete samlOrWsFedExternalDomainFederation
+      description: Delete a samlOrWsFedExternalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0
       operationId: directory_DeleteFederationConfiguration
       parameters:
         - name: identityProviderBase-id
@@ -11319,8 +11559,8 @@ paths:
     get:
       tags:
         - directory.onPremisesDirectorySynchronization
-      summary: Get onPremisesSynchronization from directory
-      description: A container for on-premises directory synchronization functionalities that are available for the organization.
+      summary: Get onPremisesDirectorySynchronization
+      description: Read the properties and relationships of an onPremisesDirectorySynchronization object.
       operationId: directory_ListOnPremisesSynchronization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11393,8 +11633,11 @@ paths:
     get:
       tags:
         - directory.onPremisesDirectorySynchronization
-      summary: Get onPremisesSynchronization from directory
-      description: A container for on-premises directory synchronization functionalities that are available for the organization.
+      summary: Get onPremisesDirectorySynchronization
+      description: Read the properties and relationships of an onPremisesDirectorySynchronization object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-get?view=graph-rest-1.0
       operationId: directory_GetOnPremisesSynchronization
       parameters:
         - name: onPremisesDirectorySynchronization-id
@@ -11438,7 +11681,11 @@ paths:
     patch:
       tags:
         - directory.onPremisesDirectorySynchronization
-      summary: Update the navigation property onPremisesSynchronization in directory
+      summary: Update onPremisesDirectorySynchronization
+      description: Update the properties of an onPremisesDirectorySynchronization object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-update?view=graph-rest-1.0
       operationId: directory_UpdateOnPremisesSynchronization
       parameters:
         - name: onPremisesDirectorySynchronization-id
@@ -11808,6 +12055,7 @@ paths:
         url: https://learn.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0
       operationId: directoryRole_ListDirectoryRole
       parameters:
+        - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11987,8 +12235,11 @@ paths:
     get:
       tags:
         - directoryRoles.directoryObject
-      summary: Get members from directoryRoles
-      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
+      summary: List members of a directory role
+      description: 'Retrieve the list of principals that are assigned to the directory role.  You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
       operationId: directoryRole_ListMember
       parameters:
         - name: directoryRole-id
@@ -12057,7 +12308,11 @@ paths:
     delete:
       tags:
         - directoryRoles.directoryObject
-      summary: Delete ref of navigation property members for directoryRoles
+      summary: Remove directory role member
+      description: 'Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-delete-member?view=graph-rest-1.0
       operationId: directoryRole.member_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -12496,8 +12751,11 @@ paths:
     get:
       tags:
         - directoryRoles.directoryObject
-      summary: Get ref of members from directoryRoles
-      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
+      summary: List members of a directory role
+      description: 'Retrieve the list of principals that are assigned to the directory role.  You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
       operationId: directoryRole_ListMemberGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -12545,7 +12803,11 @@ paths:
     post:
       tags:
         - directoryRoles.directoryObject
-      summary: Create new navigation property ref to members for directoryRoles
+      summary: Add directory role member
+      description: 'Create a new directory role member. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-post-members?view=graph-rest-1.0
       operationId: directoryRole_CreateMemberGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -12567,7 +12829,11 @@ paths:
     delete:
       tags:
         - directoryRoles.directoryObject
-      summary: Delete ref of navigation property members for directoryRoles
+      summary: Remove directory role member
+      description: 'Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-delete-member?view=graph-rest-1.0
       operationId: directoryRole_DeleteMemberGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -13451,8 +13717,11 @@ paths:
     get:
       tags:
         - directoryRoles.scopedRoleMembership
-      summary: Get scopedMembers from directoryRoles
-      description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+      summary: List scopedMembers for a directory role
+      description: Retrieve a list of scopedRoleMembership objects for a directory role.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0
       operationId: directoryRole_ListScopedMember
       parameters:
         - name: directoryRole-id
@@ -14032,6 +14301,7 @@ paths:
         url: https://learn.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-1.0
       operationId: directoryRoleTemplate_ListDirectoryRoleTemplate
       parameters:
+        - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -14879,8 +15149,11 @@ paths:
     get:
       tags:
         - domains.directoryObject
-      summary: Get domainNameReferences from domains
-      description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
+      summary: List domainNameReferences
+      description: Retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0
       operationId: domain_ListDomainNameReference
       parameters:
         - name: domain-id
@@ -15015,8 +15288,11 @@ paths:
     get:
       tags:
         - domains.internalDomainFederation
-      summary: Get federationConfiguration from domains
-      description: Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+      summary: List internalDomainFederations
+      description: Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0
       operationId: domain_ListFederationConfiguration
       parameters:
         - name: domain-id
@@ -15074,7 +15350,11 @@ paths:
     post:
       tags:
         - domains.internalDomainFederation
-      summary: Create new navigation property to federationConfiguration for domains
+      summary: Create internalDomainFederation
+      description: Create a new internalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
       operationId: domain_CreateFederationConfiguration
       parameters:
         - name: domain-id
@@ -15106,8 +15386,11 @@ paths:
     get:
       tags:
         - domains.internalDomainFederation
-      summary: Get federationConfiguration from domains
-      description: Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+      summary: Get internalDomainFederation
+      description: Read the properties and relationships of an internalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0
       operationId: domain_GetFederationConfiguration
       parameters:
         - name: domain-id
@@ -15159,7 +15442,11 @@ paths:
     patch:
       tags:
         - domains.internalDomainFederation
-      summary: Update the navigation property federationConfiguration in domains
+      summary: Update internalDomainFederation
+      description: Update the properties of an internalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0
       operationId: domain_UpdateFederationConfiguration
       parameters:
         - name: domain-id
@@ -15198,7 +15485,11 @@ paths:
     delete:
       tags:
         - domains.internalDomainFederation
-      summary: Delete navigation property federationConfiguration for domains
+      summary: Delete internalDomainFederation
+      description: Delete an internalDomainFederation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0
       operationId: domain_DeleteFederationConfiguration
       parameters:
         - name: domain-id
@@ -15359,8 +15650,11 @@ paths:
     get:
       tags:
         - domains.domainDnsRecord
-      summary: Get serviceConfigurationRecords from domains
-      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
+      summary: List serviceConfigurationRecords
+      description: Retrieves a list of domainDnsRecord objects needed to enable services for the domain. Use the returned list to add records to the zone file of the domain. This can be done through the domain registrar or DNS server configuration.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-1.0
       operationId: domain_ListServiceConfigurationRecord
       parameters:
         - name: domain-id
@@ -15599,8 +15893,11 @@ paths:
     get:
       tags:
         - domains.domainDnsRecord
-      summary: Get verificationDnsRecords from domains
-      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.'
+      summary: List verificationDnsRecords
+      description: 'Retrieve a list of domainDnsRecord objects. You cannot use an associated domain with your Microsoft Entra tenant until ownership is verified. To verify the ownership of the domain, retrieve the domain verification records and add the details to the zone file of the domain. This can be done through the domain registrar or DNS server configuration. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/domain-list-verificationdnsrecords?view=graph-rest-1.0
       operationId: domain_ListVerificationDnsRecord
       parameters:
         - name: domain-id
@@ -15854,10 +16151,10 @@ paths:
       tags:
         - organization.organization
       summary: List organizations
-      description: List properties and relationships of the organization objects.
+      description: Retrieve a list of organization objects. There's only one organization object in the collection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15931,10 +16228,10 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
-      description: Read properties and relationships of the organization object.
+      description: 'Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
       operationId: organization_GetOrganization
       parameters:
         - name: organization-id
@@ -15979,10 +16276,10 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
-      description: Update the properties of a organization object.
+      description: 'Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
       operationId: organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -16040,8 +16337,11 @@ paths:
     get:
       tags:
         - organization.organizationalBranding
-      summary: Get branding from organization
-      description: Branding for the organization. Nullable.
+      summary: Get organizationalBranding
+      description: 'Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBranding
       parameters:
         - name: organization-id
@@ -16085,7 +16385,11 @@ paths:
     patch:
       tags:
         - organization.organizationalBranding
-      summary: Update the navigation property branding in organization
+      summary: Update organizationalBranding
+      description: Update the properties of the default branding object specified by the organizationalBranding resource.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-update?view=graph-rest-1.0
       operationId: organization_UpdateBranding
       parameters:
         - name: organization-id
@@ -16116,7 +16420,11 @@ paths:
     delete:
       tags:
         - organization.organizationalBranding
-      summary: Delete navigation property branding for organization
+      summary: Delete organizationalBranding
+      description: 'Delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-delete?view=graph-rest-1.0
       operationId: organization_DeleteBranding
       parameters:
         - name: organization-id
@@ -16144,7 +16452,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get backgroundImage for the navigation property branding from organization
-      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
       operationId: organization_GetBrandingBackgroundImage
       parameters:
         - name: organization-id
@@ -16189,12 +16497,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
       summary: Update backgroundImage for the navigation property branding in organization
-      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
       operationId: organization_SetBrandingBackgroundImage
       parameters:
         - name: organization-id
@@ -16242,7 +16549,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete backgroundImage for the navigation property branding in organization
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
+      operationId: organization_DeleteBrandingBackgroundImage
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/bannerLogo':
     get:
       tags:
@@ -16293,7 +16625,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16346,7 +16677,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete bannerLogo for the navigation property branding in organization
+      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization_DeleteBrandingBannerLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/customCSS':
     get:
       tags:
@@ -16397,7 +16753,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16450,7 +16805,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete customCSS for the navigation property branding in organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+      operationId: organization_DeleteBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/favicon':
     get:
       tags:
@@ -16501,7 +16881,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16554,7 +16933,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete favicon for the navigation property branding in organization
+      description: A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+      operationId: organization_DeleteBrandingFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/headerLogo':
     get:
       tags:
@@ -16605,7 +17009,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -16658,13 +17061,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete headerLogo for the navigation property branding in organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization_DeleteBrandingHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations':
     get:
       tags:
         - organization.organizationalBranding
-      summary: Get localizations from organization
-      description: Add different branding based on a locale.
+      summary: List localizations
+      description: 'Retrieve all localization branding objects, including the default branding.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_ListLocalization
       parameters:
         - name: organization-id
@@ -16722,7 +17153,11 @@ paths:
     post:
       tags:
         - organization.organizationalBranding
-      summary: Create new navigation property to localizations for organization
+      summary: Create organizationalBrandingLocalization
+      description: 'Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn''t exist. The default branding is created only once. It''s loaded when a localized branding isn''t configured for the user''s browser language. To retrieve the default branding, see Get branding.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-post-localizations?view=graph-rest-1.0
       operationId: organization.branding_CreateLocalization
       parameters:
         - name: organization-id
@@ -16754,8 +17189,11 @@ paths:
     get:
       tags:
         - organization.organizationalBranding
-      summary: Get localizations from organization
-      description: Add different branding based on a locale.
+      summary: Get organizationalBrandingLocalization
+      description: 'Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of id in the URL.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-get?view=graph-rest-1.0
       operationId: organization.branding_GetLocalization
       parameters:
         - name: organization-id
@@ -16807,7 +17245,11 @@ paths:
     patch:
       tags:
         - organization.organizationalBranding
-      summary: Update the navigation property localizations in organization
+      summary: Update organizationalBrandingLocalization
+      description: Update the properties of an organizationalBrandingLocalization object for a specific localization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0
       operationId: organization.branding_UpdateLocalization
       parameters:
         - name: organization-id
@@ -16846,7 +17288,11 @@ paths:
     delete:
       tags:
         - organization.organizationalBranding
-      summary: Delete navigation property localizations for organization
+      summary: Delete organizationalBrandingLocalization
+      description: 'Delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-delete?view=graph-rest-1.0
       operationId: organization.branding_DeleteLocalization
       parameters:
         - name: organization-id
@@ -16882,7 +17328,7 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get backgroundImage for the navigation property localizations from organization
-      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
       operationId: organization.branding_GetLocalizationsBackgroundImage
       parameters:
         - name: organization-id
@@ -16935,12 +17381,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
       summary: Update backgroundImage for the navigation property localizations in organization
-      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
       operationId: organization.branding_SetLocalizationsBackgroundImage
       parameters:
         - name: organization-id
@@ -16996,13 +17441,49 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete backgroundImage for the navigation property localizations in organization
+      description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
+      operationId: organization.branding_DeleteLocalizationsBackgroundImage
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/bannerLogo':
     get:
       tags:
         - organization.organizationalBranding
-      summary: Get bannerLogo for the navigation property localizations from organization
-      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      summary: Get organizationalBranding
+      description: 'Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsBannerLogo
       parameters:
         - name: organization-id
@@ -17055,12 +17536,14 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
-      summary: Update bannerLogo for the navigation property localizations in organization
-      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      summary: Update organizationalBrandingLocalization
+      description: Update the properties of an organizationalBrandingLocalization object for a specific localization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0
       operationId: organization.branding_SetLocalizationsBannerLogo
       parameters:
         - name: organization-id
@@ -17116,7 +17599,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete bannerLogo for the navigation property localizations in organization
+      description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization.branding_DeleteLocalizationsBannerLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/customCSS':
     get:
       tags:
@@ -17175,7 +17691,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17236,7 +17751,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete customCSS for the navigation property localizations in organization
+      description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+      operationId: organization.branding_DeleteLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/favicon':
     get:
       tags:
@@ -17295,7 +17843,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17356,7 +17903,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete favicon for the navigation property localizations in organization
+      description: A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+      operationId: organization.branding_DeleteLocalizationsFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/headerLogo':
     get:
       tags:
@@ -17415,7 +17995,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17476,7 +18055,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete headerLogo for the navigation property localizations in organization
+      description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+      operationId: organization.branding_DeleteLocalizationsHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/squareLogo':
     get:
       tags:
@@ -17535,7 +18147,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17596,7 +18207,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete squareLogo for the navigation property localizations in organization
+      description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+      operationId: organization.branding_DeleteLocalizationsSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/squareLogoDark':
     get:
       tags:
@@ -17655,7 +18299,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17716,7 +18359,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete squareLogoDark for the navigation property localizations in organization
+      description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+      operationId: organization.branding_DeleteLocalizationsSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/localizations/$count':
     get:
       tags:
@@ -17789,7 +18465,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17842,7 +18517,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete squareLogo for the navigation property branding in organization
+      description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+      operationId: organization_DeleteBrandingSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/branding/squareLogoDark':
     get:
       tags:
@@ -17893,7 +18593,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - organization.organizationalBranding
@@ -17946,7 +18645,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete squareLogoDark for the navigation property branding in organization
+      description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+      operationId: organization_DeleteBrandingSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/organization/{organization-id}/extensions':
     get:
       tags:
@@ -18639,7 +19363,11 @@ paths:
         url: https://learn.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0
       operationId: subscribedSku_ListSubscribedSku
       parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -18653,6 +19381,16 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
           style: form
           explode: false
           schema:
@@ -19202,7 +19940,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -19219,32 +19957,32 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although it is a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
               description: 'The city where the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             companyName:
               type: string
-              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that a guest comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent was obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets whether consent was obtained for minors. Allowed values: null, Granted, Denied, and NotRequired. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             country:
               type: string
-              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The country/region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created, in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and UTC. The value can''t be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
               type: string
-              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).'
+              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by a guest signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).'
               nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
@@ -19260,7 +19998,7 @@ components:
               format: int32
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and family name. This property is required when a user is created and it can''t be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -19275,7 +20013,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -19286,7 +20024,7 @@ components:
               nullable: true
             externalUserState:
               type: string
-              description: 'For an external user invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).'
+              description: 'For a guest invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).'
               nullable: true
             externalUserStateChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -19305,13 +20043,13 @@ components:
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint in Microsoft 365. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             identities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It may contain multiple items with the same signInType value. Returned only on $select.  Supports $filter (eq) with limitations.'
+              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It might contain multiple items with the same signInType value. Returned only on $select.  Supports $filter (eq) with limitations.'
             imAddresses:
               type: array
               items:
@@ -19326,7 +20064,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isResourceAccount:
               type: boolean
-              description: Do not use – reserved for future use.
+              description: Don't use – reserved for future use.
               nullable: true
             jobTitle:
               type: string
@@ -19340,13 +20078,13 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
               description: 'The SMTP address for the user, for example, jeff@contoso.com. Changes to this property update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
@@ -19381,7 +20119,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -19400,7 +20138,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -19414,10 +20152,10 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -19437,7 +20175,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
+              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             preferredName:
               type: string
@@ -19454,7 +20192,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while those addresses prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             responsibilities:
               type: array
               items:
@@ -19466,7 +20204,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate the schools they have attended. Returned only on $select.
+              description: A list for the user to enumerate the schools they attended. Returned only on $select.
             securityIdentifier:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
@@ -19475,7 +20213,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
-              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+              description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -19485,7 +20223,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
+              description: 'Any refresh tokens or session tokens (session cookies) issued before this time are invalid. Applications get an error when using an invalid refresh or session token to acquire a delegated access token (to access APIs such as Microsoft Graph). If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
               format: date-time
               nullable: true
             skills:
@@ -19500,7 +20238,7 @@ components:
               nullable: true
             streetAddress:
               type: string
-              description: 'The street address of the user''s place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The street address of the user''s place of business. Maximum length is 1,024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             surname:
               type: string
@@ -19508,15 +20246,15 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
+              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for members and guests, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             activities:
               type: array
@@ -19534,7 +20272,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: Represents the app roles a user has been granted for an application. Supports $expand.
+              description: Represents the app roles a user is granted for an application. Supports $expand.
               x-ms-navigationProperty: true
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
@@ -19688,13 +20426,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects the user owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             people:
               type: array
@@ -19737,7 +20475,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The users and groups responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
+              description: 'The users and groups responsible for this guest''s privileges in the tenant and keeping the guest''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -19811,16 +20549,16 @@ components:
               description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
             autoSubscribeNewMembers:
               type: boolean
-              description: 'Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             classification:
               type: string
-              description: 'Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).'
+              description: 'Describes a classification for the group (such as low, medium, or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
+              description: 'Timestamp of when the group was created. The value can''t be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             description:
@@ -19829,12 +20567,12 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
+              description: 'The display name for the group. This property is required when a group is created and can''t be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. It''s null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -19848,11 +20586,11 @@ components:
               nullable: true
             hideFromAddressLists:
               type: boolean
-              description: 'True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group isn''t displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             isArchived:
               type: boolean
@@ -19860,7 +20598,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can''t be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -19878,7 +20616,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following characters: @ () / [] '' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             membershipRule:
               type: string
@@ -19894,7 +20632,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'Indicates the last time at which the group was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesNetBiosName:
@@ -19911,15 +20649,15 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned at least one of the following Microsoft Entra roles: User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -19933,7 +20671,7 @@ components:
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was last renewed. This value can''t be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             securityEnabled:
@@ -19942,16 +20680,16 @@ components:
               nullable: true
             securityIdentifier:
               type: string
-              description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
+              description: 'Security identifier of the group, used in Windows scenarios. Read-only. Returned by default.'
               nullable: true
             serviceProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
-              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+              description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
-              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange, or Red. Returned by default.'
               nullable: true
             uniqueName:
               type: string
@@ -19961,24 +20699,24 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             acceptedSenders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
+              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.'
               x-ms-navigationProperty: true
             appRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: Represents the app roles a group has been granted for an application. Supports $expand.
+              description: Represents the app roles granted to a group for an application. Supports $expand.
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
@@ -20046,7 +20784,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property isn''t specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -20073,7 +20811,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupSetting'
-              description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
+              description: 'Settings that can govern this group''s behavior, like whether members can invite guests to the group. Nullable.'
               x-ms-navigationProperty: true
             sites:
               type: array
@@ -20167,7 +20905,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -20231,7 +20969,7 @@ components:
               nullable: true
             isRooted:
               type: boolean
-              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
+              description: true if the device is rooted or jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
@@ -21457,6 +22195,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: A list of all subscription IDs associated with this SKU.
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -21852,7 +22591,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -21862,12 +22601,22 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time of the user''s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The request ID of the last successful sign-in.
           nullable: true
       additionalProperties:
         type: object
@@ -21891,7 +22640,7 @@ components:
               description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
             contentUrl:
               type: string
               description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
@@ -22036,7 +22785,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
-              description: 'Represents the password that''s registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.'
+              description: 'Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.'
               x-ms-navigationProperty: true
             phoneMethods:
               type: array
@@ -22048,7 +22797,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-              description: The software OATH TOTP applications registered to a user for authentication.
+              description: The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
               x-ms-navigationProperty: true
             temporaryAccessPassMethods:
               type: array
@@ -22529,7 +23278,7 @@ components:
               nullable: true
             generation:
               type: string
-              description: The contact's generation.
+              description: The contact's suffix.
               nullable: true
             givenName:
               type: string
@@ -23556,10 +24305,10 @@ components:
           properties:
             clientId:
               type: string
-              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application that's authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Nonadmin users might be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             principalId:
               type: string
@@ -23567,10 +24316,10 @@ components:
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
+              description: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
+              description: 'A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3,850 characters in length.'
               nullable: true
           additionalProperties:
             type: object
@@ -23626,6 +24375,7 @@ components:
           properties:
             attendeeReport:
               type: string
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             broadcastSettings:
@@ -23647,6 +24397,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
+              description: Indicates whether this meeting is a Teams live event.
               nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
@@ -24109,14 +24860,17 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
+          description: The unique identifier for the addIn object.
           format: uuid
           nullable: true
         properties:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValue'
+          description: The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.
         type:
           type: string
+          description: The unique name for the functionality exposed by the app.
       additionalProperties:
         type: object
     microsoft.graph.appRole:
@@ -24704,11 +25458,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -25027,7 +25781,7 @@ components:
               nullable: true
             backgroundImage:
               type: string
-              description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+              description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
               format: base64url
               nullable: true
             backgroundImageRelativeUrl:
@@ -25049,6 +25803,8 @@ components:
                 type: string
                 nullable: true
               description: A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+            contentCustomization:
+              $ref: '#/components/schemas/microsoft.graph.contentCustomization'
             customAccountResetCredentialsUrl:
               type: string
               description: 'A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.'
@@ -25743,11 +26499,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printer'
           additionalProperties:
             type: object
-    microsoft.graph.Json:
-      title: Json
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.status:
       title: status
       enum:
@@ -25768,7 +26519,7 @@ components:
           description: Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
           nullable: true
         content:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
         description:
           type: string
           description: 'Optional. Longer text description of the user''s unique activity (example: document name, first sentence, and/or metadata)'
@@ -25800,13 +26551,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
@@ -25818,7 +26569,7 @@ components:
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
@@ -26969,7 +27720,6 @@ components:
               nullable: true
             externalcourseActivityId:
               type: string
-              description: A course activity ID generated by the provider. Optional.
               nullable: true
             learnerUserId:
               type: string
@@ -27019,6 +27769,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -27289,6 +28041,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToIdentitiesV2:
               type: array
               items:
@@ -27389,6 +28142,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             resourceReference:
@@ -27581,7 +28335,7 @@ components:
               nullable: true
             isFavoriteByDefault:
               type: boolean
-              description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
+              description: 'Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.'
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
@@ -29029,6 +29783,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information about the meeting attendees.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
@@ -29178,6 +29933,7 @@ components:
               nullable: true
             owner:
               type: string
+              description: 'Use the container property instead. ID of the group that owns the plan. After it''s set, this property can’t be updated. This property won''t return a valid group ID if the container of the plan isn''t a group.'
               nullable: true
             title:
               type: string
@@ -29782,6 +30538,30 @@ components:
         issuerSki:
           type: string
           description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
+      additionalProperties:
+        type: object
+    microsoft.graph.contentCustomization:
+      title: contentCustomization
+      type: object
+      properties:
+        attributeCollection:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValue'
+          description: Represents the content options of External Identities to be customized throughout the authentication flow for a tenant.
+        attributeCollectionRelativeUrl:
+          type: string
+          description: A relative URL for the content options of External Identities to be customized throughout the authentication flow for a tenant.
+          nullable: true
+        registrationCampaign:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValue'
+          description: Represents content options to customize during MFA proofup interruptions.
+        registrationCampaignRelativeUrl:
+          type: string
+          description: The relative URL of the content options to customize during MFA proofup interruptions.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.loginPageLayoutConfiguration:
@@ -30503,7 +31283,7 @@ components:
           nullable: true
         path:
           type: string
-          description: Path that can be used to navigate to the item. Read-only.
+          description: Percent-encoded path that can be used to navigate to the item. Read-only.
           nullable: true
         shareId:
           type: string
@@ -31262,6 +32042,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.itemActivityStat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31838,7 +32626,7 @@ components:
           nullable: true
         sharingType:
           type: string
-          description: 'Determines the way the document was shared, can be by a ''Link'', ''Attachment'', ''Group'', ''Site''.'
+          description: 'Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.'
           nullable: true
       additionalProperties:
         type: object
@@ -32989,6 +33777,7 @@ components:
           nullable: true
         tollFreeNumber:
           type: string
+          description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -32998,6 +33787,7 @@ components:
           description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
+          description: The toll number that connects to the Audio Conference Provider.
           nullable: true
         tollNumbers:
           type: array
@@ -33517,6 +34307,7 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
@@ -33536,6 +34327,7 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'Value that can be used as the maximum number for setting password expiration time in days, hours, minutes or seconds. Defined in ISO 8601 format for Durations. For example, ''P4DT12H30M5S'' represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restriction type is set to passwordLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
@@ -33944,6 +34736,7 @@ components:
           nullable: true
         inputBin:
           type: string
+          description: The default input bin that serves as the paper source.
           nullable: true
         mediaColor:
           type: string
@@ -34588,7 +35381,7 @@ components:
               description: 'Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'Represents the formula that the name is defined to refer to. for example, =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.'
             visible:
               type: boolean
               description: Specifies whether the object is visible or not.
@@ -34716,6 +35509,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemActionStat:
       title: itemActionStat
       type: object
@@ -36067,6 +36868,52 @@ components:
         - stapleDualRight
         - stapleDualBottom
         - unknownFutureValue
+        - stapleTripleLeft
+        - stapleTripleTop
+        - stapleTripleRight
+        - stapleTripleBottom
+        - bindLeft
+        - bindTop
+        - bindRight
+        - bindBottom
+        - foldAccordion
+        - foldDoubleGate
+        - foldGate
+        - foldHalf
+        - foldHalfZ
+        - foldLeftGate
+        - foldLetter
+        - foldParallel
+        - foldPoster
+        - foldRightGate
+        - foldZ
+        - foldEngineeringZ
+        - punchTopLeft
+        - punchBottomLeft
+        - punchTopRight
+        - punchBottomRight
+        - punchDualLeft
+        - punchDualTop
+        - punchDualRight
+        - punchDualBottom
+        - punchTripleLeft
+        - punchTripleTop
+        - punchTripleRight
+        - punchTripleBottom
+        - punchQuadLeft
+        - punchQuadTop
+        - punchQuadRight
+        - punchQuadBottom
+        - fold
+        - trim
+        - bale
+        - bookletMaker
+        - coat
+        - laminate
+        - trimAfterPages
+        - trimAfterDocuments
+        - trimAfterCopies
+        - trimAfterJob
       type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout
@@ -36982,6 +37829,7 @@ components:
           description: Finishing processes to use when printing.
         fitPdfToPage:
           type: boolean
+          description: True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
           nullable: true
         inputBin:
           type: string
@@ -36991,10 +37839,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printMargin'
         mediaSize:
           type: string
-          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
           nullable: true
         mediaType:
           type: string
+          description: The default media (such as paper) type to print the document on.
           nullable: true
         multipageLayout:
           $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
@@ -37002,15 +37851,18 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printOrientation'
         outputBin:
           type: string
+          description: The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
           nullable: true
         pageRanges:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.integerRange'
+          description: The page ranges to print. Read-only.
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
         quality:
@@ -37027,7 +37879,7 @@ components:
           properties:
             ipAddress:
               type: string
-              description: Indicates the client IP address used by user performing the activity (audit log only).
+              description: Indicates the client IP address associated with the user performing the activity (audit log only).
               nullable: true
             userPrincipalName:
               type: string
@@ -37216,7 +38068,7 @@ components:
               description: Returns the name of the table column.
               nullable: true
             values:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.'
             filter:
               $ref: '#/components/schemas/microsoft.graph.workbookFilter'
           additionalProperties:
@@ -37234,7 +38086,7 @@ components:
               description: Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
               format: int32
             values:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.'
           additionalProperties:
             type: object
     microsoft.graph.workbookTableSort:
@@ -38027,6 +38879,7 @@ components:
           description: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
         defaultValue:
           type: string
+          description: The default value of the attribute.
           nullable: true
         flowNullValues:
           type: boolean
@@ -38084,23 +38937,29 @@ components:
       properties:
         color:
           type: string
+          description: The color applied to the cell.
           nullable: true
         criterion1:
           type: string
+          description: A custom criterion.
           nullable: true
         criterion2:
           type: string
+          description: A custom criterion.
           nullable: true
         dynamicCriteria:
           type: string
+          description: A dynamic formula specified in a custom filter.
         filterOn:
           type: string
+          description: Indicates whether a filter is applied to a column.
         icon:
           $ref: '#/components/schemas/microsoft.graph.workbookIcon'
         operator:
           type: string
+          description: 'An operator in a cell; for example, =, >, <, <=, or <>.'
         values:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: The values that appear in the cell.
       additionalProperties:
         type: object
     microsoft.graph.workbookIcon:
@@ -38125,13 +38984,13 @@ components:
           type: object
           properties:
             majorUnit:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
             maximum:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
             minimum:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
             minorUnit:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxisFormat'
             majorGridlines:
@@ -38225,7 +39084,7 @@ components:
           type: object
           properties:
             value:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Returns the value of a chart point. Read-only.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartPointFormat'
           additionalProperties:
