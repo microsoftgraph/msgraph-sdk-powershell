@@ -171,7 +171,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.APIVersion | Select-Object -Unique | should -HaveCount 1
                 $MgCommand.Variants | Select-Object -Unique | should -HaveCount 1
                 $MgCommand.URI | Select-Object -Unique | Should -Be "/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders"
-                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider")
+                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("Get-MgIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider","Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider")
             } | Should -Not -Throw
         }
     }
