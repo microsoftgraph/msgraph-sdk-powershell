@@ -61,9 +61,6 @@ paths:
         - admin.Functions
       summary: Invoke function incidentReport
       description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant. An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-beta
       operationId: admin.serviceAnnouncement.healthOverview.issue_incidentReport
       parameters:
         - name: serviceHealth-id
@@ -625,8 +622,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get entries from admin
-      description: Lists the content that you can approve for deployment. Read-only.
+      summary: List entries
+      description: 'Get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from catalogEntry. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-catalog-list-entries?view=graph-rest-beta
       operationId: admin.window.update.catalog_ListEntry
       parameters:
         - $ref: '#/components/parameters/top'
@@ -816,8 +816,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get deploymentAudiences from admin
-      description: The set of updatableAsset resources to which a deployment can apply.
+      summary: List deploymentAudiences
+      description: Get a list of deploymentAudience objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-deploymentaudiences?view=graph-rest-beta
       operationId: admin.window.update_ListDeploymentAudience
       parameters:
         - $ref: '#/components/parameters/top'
@@ -867,7 +870,11 @@ paths:
     post:
       tags:
         - admin.adminWindows
-      summary: Create new navigation property to deploymentAudiences for admin
+      summary: Create deploymentAudience
+      description: Create a new deploymentAudience object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-deploymentaudiences?view=graph-rest-beta
       operationId: admin.window.update_CreateDeploymentAudience
       requestBody:
         description: New navigation property
@@ -890,8 +897,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get deploymentAudiences from admin
-      description: The set of updatableAsset resources to which a deployment can apply.
+      summary: Get deploymentAudience
+      description: Read the properties and relationships of a deploymentAudience object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-get?view=graph-rest-beta
       operationId: admin.window.update_GetDeploymentAudience
       parameters:
         - name: deploymentAudience-id
@@ -966,7 +976,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete navigation property deploymentAudiences for admin
+      summary: Delete deploymentAudience
+      description: Delete a deploymentAudience object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteDeploymentAudience
       parameters:
         - name: deploymentAudience-id
@@ -1575,8 +1589,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get exclusions from admin
-      description: Specifies the assets to exclude from the audience.
+      summary: List deployment audience exclusions
+      description: List the updatableAsset resources that are excluded from a deploymentAudience.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-exclusions?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience_ListExclusion
       parameters:
         - name: deploymentAudience-id
@@ -2167,8 +2184,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get members from admin
-      description: Specifies the assets to include in the audience.
+      summary: List deployment audience members
+      description: List the updatableAsset resources that are members of a deploymentAudience.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-members?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience_ListMember
       parameters:
         - name: deploymentAudience-id
@@ -2882,8 +2902,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get deployments from admin
-      description: Deployments created using the deployment service.
+      summary: List deployments
+      description: Get a list of deployment objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-deployments?view=graph-rest-beta
       operationId: admin.window.update_ListDeployment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2933,7 +2956,11 @@ paths:
     post:
       tags:
         - admin.adminWindows
-      summary: Create new navigation property to deployments for admin
+      summary: Create deployment
+      description: Create a new deployment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-deployments?view=graph-rest-beta
       operationId: admin.window.update_CreateDeployment
       requestBody:
         description: New navigation property
@@ -2956,8 +2983,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get deployments from admin
-      description: Deployments created using the deployment service.
+      summary: Get deployment
+      description: Read the properties and relationships of a deployment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-deployment-get?view=graph-rest-beta
       operationId: admin.window.update_GetDeployment
       parameters:
         - name: deployment-id
@@ -3001,7 +3031,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update the navigation property deployments in admin
+      summary: Update deployment
+      description: Update the properties of a deployment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-deployment-update?view=graph-rest-beta
       operationId: admin.window.update_UpdateDeployment
       parameters:
         - name: deployment-id
@@ -3032,7 +3066,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete navigation property deployments for admin
+      summary: Delete deployment
+      description: Delete a deployment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-deployment-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteDeployment
       parameters:
         - name: deployment-id
@@ -6716,8 +6754,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get resourceConnections from admin
-      description: Service connections to external resources such as analytics workspaces.
+      summary: List resourceConnections
+      description: Get a list of the resourceConnection objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-resourceconnections?view=graph-rest-beta
       operationId: admin.window.update_ListResourceConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6767,7 +6808,11 @@ paths:
     post:
       tags:
         - admin.adminWindows
-      summary: Create new navigation property to resourceConnections for admin
+      summary: Create operationalInsightsConnection
+      description: Create a new operationalInsightsConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-beta
       operationId: admin.window.update_CreateResourceConnection
       requestBody:
         description: New navigation property
@@ -6790,8 +6835,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get resourceConnections from admin
-      description: Service connections to external resources such as analytics workspaces.
+      summary: Get resourceConnection
+      description: Read the properties and relationships of a resourceConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-beta
       operationId: admin.window.update_GetResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6866,7 +6914,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete navigation property resourceConnections for admin
+      summary: Delete resourceConnection
+      description: Delete a resourceConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6907,8 +6959,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatableAssets from admin
-      description: Assets registered with the deployment service that can receive updates.
+      summary: List updatableAssets
+      description: 'Get a list of updatableAsset objects and their properties. Listing updatable assets returns updatableAsset resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-updatableassets?view=graph-rest-beta
       operationId: admin.window.update_ListUpdatableAsset
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6958,7 +7013,11 @@ paths:
     post:
       tags:
         - admin.adminWindows
-      summary: Create new navigation property to updatableAssets for admin
+      summary: Create updatableAssetGroup
+      description: Create a new updatableAssetGroup object. The updatableAssetGroup resource inherits from updatableAsset.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-updatableassets-updatableassetgroup?view=graph-rest-beta
       operationId: admin.window.update_CreateUpdatableAsset
       requestBody:
         description: New navigation property
@@ -6981,8 +7040,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatableAssets from admin
-      description: Assets registered with the deployment service that can receive updates.
+      summary: Get updatableAsset
+      description: Read the properties and relationships of an updatableAsset object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-beta
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -7057,7 +7119,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete navigation property updatableAssets for admin
+      summary: Delete updatableAssetGroup
+      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -7263,6 +7329,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
+      description: 'Enroll updatableAsset resources in update management by the deployment service. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.'
       operationId: admin.window.update.updatableAsset_enrollAsset
       requestBody:
         description: Action parameters
@@ -7291,6 +7358,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssetsById
+      description: Enroll updatableAsset resources of the same type in update management by the deployment service. You can also use the method enrollAssets to enroll assets.
       operationId: admin.window.update.updatableAsset_enrollAssetsGraphBPreId
       requestBody:
         description: Action parameters
@@ -7323,6 +7391,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
+      description: Unenroll updatableAsset resources from update management by the deployment service. You can also use the method unenrollAssetsById to unenroll assets.
       operationId: admin.window.update.updatableAsset_unenrollAsset
       requestBody:
         description: Action parameters
@@ -7351,6 +7420,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssetsById
+      description: Unenroll updatableAsset resources of the same type from update management by the deployment service. You can also use the method unenrollAssets to unenroll assets.
       operationId: admin.window.update.updatableAsset_unenrollAssetsGraphBPreId
       requestBody:
         description: Action parameters
@@ -7382,8 +7452,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatePolicies from admin
-      description: A collection of policies for approving the deployment of different content to an audience over time.
+      summary: List updatePolicy
+      description: Get a list of updatePolicy objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-updatepolicies?view=graph-rest-beta
       operationId: admin.window.update_ListUpdatePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7433,7 +7506,11 @@ paths:
     post:
       tags:
         - admin.adminWindows
-      summary: Create new navigation property to updatePolicies for admin
+      summary: Create updatePolicy
+      description: Create a new updatePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-updatepolicies?view=graph-rest-beta
       operationId: admin.window.update_CreateUpdatePolicy
       requestBody:
         description: New navigation property
@@ -7456,8 +7533,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatePolicies from admin
-      description: A collection of policies for approving the deployment of different content to an audience over time.
+      summary: Get updatePolicy
+      description: Read the properties and relationships of an updatePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-get?view=graph-rest-beta
       operationId: admin.window.update_GetUpdatePolicy
       parameters:
         - name: updatePolicy-id
@@ -7501,7 +7581,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update the navigation property updatePolicies in admin
+      summary: Update updatePolicy
+      description: Update the properties of an updatePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-update?view=graph-rest-beta
       operationId: admin.window.update_UpdateUpdatePolicy
       parameters:
         - name: updatePolicy-id
@@ -7532,7 +7616,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete navigation property updatePolicies for admin
+      summary: Delete updatePolicy
+      description: Delete an updatePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteUpdatePolicy
       parameters:
         - name: updatePolicy-id
@@ -9537,8 +9625,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get complianceChanges from admin
-      description: Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
+      summary: List complianceChanges
+      description: Get a list of the complianceChange objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-list-compliancechanges?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_ListComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -9596,7 +9687,11 @@ paths:
     post:
       tags:
         - admin.adminWindows
-      summary: Create new navigation property to complianceChanges for admin
+      summary: Create contentApproval
+      description: Create a new contentApproval object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-post-compliancechanges-contentapproval?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_CreateComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -9628,8 +9723,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get complianceChanges from admin
-      description: Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
+      summary: Get contentApproval
+      description: Read the properties and relationships of a contentApproval object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -9681,7 +9779,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update the navigation property complianceChanges in admin
+      summary: Update contentApproval
+      description: Update the properties of a contentApproval object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_UpdateComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -9720,7 +9822,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete navigation property complianceChanges for admin
+      summary: Delete contentApproval
+      description: Delete a contentApproval object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_DeleteComplianceChange
       parameters:
         - name: updatePolicy-id
