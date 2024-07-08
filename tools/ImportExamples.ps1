@@ -21,49 +21,49 @@ function Start-Generator {
     if ($GenerationMode -eq "auto") {
         #Test path first
         if (Test-Path $CommandMetadataPath) {
-        $CommandMetadataContent = Get-Content $CommandMetadataPath | ConvertFrom-Json
-        $CommandMetadataContent | ForEach-Object {
-            $GraphCommand = $_.Command
-            $GraphModule = $_.Module
-            $UriPath = $_.Uri
-            $ExternalDocsUrl = $_.ApiReferenceLink
-            $ApiVersion = $_.ApiVersion
-            $ProfilePathMapping = "v1.0\examples"
-            if ($ApiVersion -eq "beta") {
-                $ProfilePathMapping = "beta\examples"
-            }
-            $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
+            $CommandMetadataContent = Get-Content $CommandMetadataPath | ConvertFrom-Json
+            $CommandMetadataContent | ForEach-Object {
+                $GraphCommand = $_.Command
+                $GraphModule = $_.Module
+                $UriPath = $_.Uri
+                $ExternalDocsUrl = $_.ApiReferenceLink
+                $ApiVersion = $_.ApiVersion
+                $ProfilePathMapping = "v1.0\examples"
+                if ($ApiVersion -eq "beta") {
+                    $ProfilePathMapping = "beta\examples"
+                }
+                $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
 
-            $ExampleFile = "$ModulePath\$GraphCommand.md"
-            Test-Commands -Command $GraphCommand -CommandPath $ExampleFile
-            if ($null -ne $ExternalDocsUrl) { 
-                if (-not (Test-Path $ExampleFile)) {
-                    New-Item -Path $ExampleFile -ItemType File -Force
+                $ExampleFile = "$ModulePath\$GraphCommand.md"
+                Test-Commands -Command $GraphCommand -CommandPath $ExampleFile
+                if ($null -ne $ExternalDocsUrl) { 
+                    if (-not (Test-Path $ExampleFile)) {
+                        New-Item -Path $ExampleFile -ItemType File -Force
+                    }
+                    $IntuneUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
+                    $IntuneUrl = $IntuneUrl.Replace("intune-mam-", "")
+                    $IsValid = IsValidEndPoint -GraphEndpoint $IntuneUrl
+                    if ($IsValid) {
+                        $ExternalDocsUrl = $IntuneUrl
+                    }
+                    Start-WebScrapping -GraphProfile $ApiVersion -ExternalDocUrl $ExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -UriPath $UriPath -Module $GraphModule
                 }
-                $IntuneUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
-                $IntuneUrl = $IntuneUrl.Replace("intune-mam-", "")
-                $IsValid = IsValidEndPoint -GraphEndpoint $IntuneUrl
-                if ($IsValid) {
-                    $ExternalDocsUrl = $IntuneUrl
+                else {
+                    if (Test-Path $ExampleFile) {
+                        #Check file content and retain correct examples
+                        $Content = Get-Content -Path $ExampleFile
+                        Clear-Content $ExampleFile -Force
+                        if ($Content | Select-String -pattern $GraphCommand) {
+                            Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $GraphCommand
+                        }   
+                    }
                 }
-                Start-WebScrapping -GraphProfile $ApiVersion -ExternalDocUrl $ExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -UriPath $UriPath -Module $GraphModule
-            }
-            else {
-                if (Test-Path $ExampleFile) {
-                    #Check file content and retain correct examples
-                    $Content = Get-Content -Path $ExampleFile
-                    Clear-Content $ExampleFile -Force
-                    if ($Content | Select-String -pattern $GraphCommand) {
-                        Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $GraphCommand
-                    }   
-                }
-            }
             
+            }
         }
-    }
-    else {
-        Write-Host "The path to the command metadata file is invalid. Please ensure that the path is correct"
-    }
+        else {
+            Write-Host "The path to the command metadata file is invalid. Please ensure that the path is correct"
+        }
     }
     else {
           
@@ -199,20 +199,24 @@ function IsValidEndPoint {
     param(
         [string] $GraphEndpoint
     )
+    try {
+        $HTTP_Request = [System.Net.WebRequest]::Create($GraphEndpoint)
 
-    $HTTP_Request = [System.Net.WebRequest]::Create($GraphEndpoint)
+        # We then get a response from the site.
+        $HTTP_Response = $HTTP_Request.GetResponse()
 
-    # We then get a response from the site.
-    $HTTP_Response = $HTTP_Request.GetResponse()
+        # We then get the HTTP code as an integer.
+        $HTTP_Status = [int]$HTTP_Response.StatusCode
 
-    # We then get the HTTP code as an integer.
-    $HTTP_Status = [int]$HTTP_Response.StatusCode
-
-    If ($HTTP_Status -eq 200) {
-        return $True
+        If ($HTTP_Status -eq 200) {
+            return $True
+        }
+        If ($HTTP_Response -ne $null) { $HTTP_Response.Close() }
+        return $False
     }
-    If ($HTTP_Response -ne $null) { $HTTP_Response.Close() }
-    return $False
+    catch {
+        return $False
+    }
 }
 function FetchStream {
     param(
