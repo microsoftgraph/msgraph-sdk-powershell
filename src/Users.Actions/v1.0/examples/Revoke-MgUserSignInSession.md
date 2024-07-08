@@ -1,18 +1,12 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Users.Actions
+
+# A UPN can also be used as -UserId.
+Revoke-MgUserSignInSession -UserId $userId
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Revoke-MgUserSignInSession Cmdlet.
 

@@ -1,21 +1,22 @@
-### Example 1: Using the Invoke-MgAvailableIdentityProviderType Cmdlet
+### Example 1: List all identity providers available in a Microsoft Entra directory
+
 ```powershell
+
 Import-Module Microsoft.Graph.Identity.SignIns
+
 Invoke-MgAvailableIdentityProviderType
+
 ```
-This example shows how to use the Invoke-MgAvailableIdentityProviderType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Invoke-MgAvailableIdentityProviderType Cmdlet
+This example will list all identity providers available in a microsoft entra directory
+
+### Example 2: List all identity providers available in an Azure AD B2C directory
+
 ```powershell
+
 Import-Module Microsoft.Graph.Identity.SignIns
+
 Invoke-MgAvailableIdentityProviderType
+
 ```
-This example shows how to use the Invoke-MgAvailableIdentityProviderType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Invoke-MgAvailableIdentityProviderType Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Invoke-MgAvailableIdentityProviderType -OutFile $outFileId
-```
-This example shows how to use the Invoke-MgAvailableIdentityProviderType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will list all identity providers available in an azure ad b2c directory
+

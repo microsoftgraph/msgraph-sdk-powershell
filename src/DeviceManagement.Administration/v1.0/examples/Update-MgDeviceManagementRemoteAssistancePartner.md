@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.DeviceManagement.Administration
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.remoteAssistancePartner"
@@ -13,5 +14,6 @@ $params = @{
 Update-MgDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId $remoteAssistancePartnerId -BodyParameter $params
 ```
 This example shows how to use the Update-MgDeviceManagementRemoteAssistancePartner Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.PersonalContacts
+```powershell
+Import-Module Microsoft.Graph.PersonalContacts
 
 $params = @{
 	homeAddress = @{
@@ -16,5 +17,6 @@ $params = @{
 Update-MgUserContact -UserId $userId -ContactId $contactId -BodyParameter $params
 ```
 This example shows how to use the Update-MgUserContact Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

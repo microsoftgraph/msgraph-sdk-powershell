@@ -1,18 +1,15 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Actions
+
+$params = @{
+	priority = 8
+}
+
+Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority -DeviceEnrollmentConfigurationId $deviceEnrollmentConfigurationId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority Cmdlet.
 

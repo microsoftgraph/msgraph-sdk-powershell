@@ -1,18 +1,49 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Files
+
+$params = @{
+	type = "view"
+	password = "ThisIsMyPrivatePassword"
+	scope = "anonymous"
+	retainInheritedPermissions = $false
+}
+
+New-MgDriveItemLink -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params
+
 ```
+This example shows how to use the New-MgDriveItemLink Cmdlet.
 
-{{ Add description here }}
+### Example 2: Code snippet
 
-### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Files
+
+$params = @{
+	type = "edit"
+	scope = "organization"
+}
+
+New-MgDriveItemLink -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params
+
 ```
+This example shows how to use the New-MgDriveItemLink Cmdlet.
 
-{{ Add description here }}
+### Example 3: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Files
+
+$params = @{
+	type = "embed"
+}
+
+New-MgDriveItemLink -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params
+
+```
+This example shows how to use the New-MgDriveItemLink Cmdlet.
 

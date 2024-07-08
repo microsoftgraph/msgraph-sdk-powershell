@@ -401,7 +401,7 @@ New-MgCommunicationCall -BodyParameter $params
 ```
 This example will create peer-to-peer pstn call with service hosted media
 
-### Example 10: Create peer-to-peer PSTN call with application hosted media
+### Example 100: Create peer-to-peer PSTN call with application hosted media
 
 ```powershell
 

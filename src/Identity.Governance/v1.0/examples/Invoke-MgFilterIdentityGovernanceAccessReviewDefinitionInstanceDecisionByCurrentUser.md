@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Retrieve all decisions on an accessReviewInstance for which the calling user is the reviewer
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+
+Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceDecisionByCurrentUser -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -On $onId 
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example will retrieve all decisions on an accessreviewinstance for which the calling user is the reviewer
 

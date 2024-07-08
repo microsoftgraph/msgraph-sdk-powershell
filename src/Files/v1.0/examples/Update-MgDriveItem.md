@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Files
+```powershell
+Import-Module Microsoft.Graph.Files
 
 $params = @{
 	parentReference = @{
@@ -12,5 +13,6 @@ $params = @{
 Update-MgDriveItem -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params
 ```
 This example shows how to use the Update-MgDriveItem Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Users
+```powershell
+Import-Module Microsoft.Graph.Users
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.taskFileAttachment"
@@ -13,5 +14,6 @@ $params = @{
 New-MgUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
 This example shows how to use the New-MgUserTodoListTaskAttachment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
