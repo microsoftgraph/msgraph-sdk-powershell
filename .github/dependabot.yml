@@ -14,6 +14,6 @@ updates:
     directory: "/src/Authentication/Authentication.Test"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 1
     allow:
       - dependency-name: "Moq"
-    open-pull-requests-limit: 1
