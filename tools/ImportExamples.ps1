@@ -19,6 +19,8 @@ function Start-Generator {
     )
 
     if ($GenerationMode -eq "auto") {
+        #Test path first
+        if (Test-Path $CommandMetadataPath) {
         $CommandMetadataContent = Get-Content $CommandMetadataPath | ConvertFrom-Json
         $CommandMetadataContent | ForEach-Object {
             $GraphCommand = $_.Command
@@ -58,6 +60,10 @@ function Start-Generator {
             }
             
         }
+    }
+    else {
+        Write-Host "The path to the command metadata file is invalid. Please ensure that the path is correct"
+    }
     }
     else {
           
