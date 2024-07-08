@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Identity.SignIns
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
 	b2bCollaborationOutbound = @{
@@ -28,5 +29,6 @@ $params = @{
 Update-MgPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
 ```
 This example shows how to use the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

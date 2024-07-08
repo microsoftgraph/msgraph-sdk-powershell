@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Mail
+```powershell
+Import-Module Microsoft.Graph.Mail
 
 $params = @{
 	subject = "Did you see last night's game?"
@@ -22,11 +23,13 @@ $params = @{
 New-MgUserMessage -UserId $userId -BodyParameter $params
 ```
 This example shows how to use the New-MgUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Mail
+```powershell
+Import-Module Microsoft.Graph.Mail
 
 $params = @{
 	subject = "9/8/2018: concert"
@@ -57,5 +60,6 @@ $params = @{
 New-MgUserMessage -UserId $userId -BodyParameter $params
 ```
 This example shows how to use the New-MgUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

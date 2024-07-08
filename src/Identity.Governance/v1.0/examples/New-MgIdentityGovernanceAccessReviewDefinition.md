@@ -1,6 +1,7 @@
 ### Example 1: Create an access review on a group
 
-```powershellImport-Module Microsoft.Graph.Identity.Governance
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
 
 $params = @{
 	displayName = "Test create"
@@ -41,11 +42,13 @@ $params = @{
 New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
 This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Create an access review on all teams with inactive guest users
 
-```powershellImport-Module Microsoft.Graph.Identity.Governance
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
 
 $params = @{
 	displayName = "Review inactive guests on teams"
@@ -100,11 +103,13 @@ $params = @{
 New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
 This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Create an access review of all users to an application
 
-```powershellImport-Module Microsoft.Graph.Identity.Governance
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
 
 $params = @{
 	displayName = "Review employee access to LinkedIn"
@@ -168,11 +173,13 @@ $params = @{
 New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
 This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Create an access review on a group with multiple stages
 
-```powershellImport-Module Microsoft.Graph.Identity.Governance
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
 
 $params = @{
 	displayName = "Group Multi-stage Access Review"
@@ -240,5 +247,6 @@ $params = @{
 New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
 This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
