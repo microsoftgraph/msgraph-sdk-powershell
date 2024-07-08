@@ -12,9 +12,6 @@ paths:
         - admin.Actions
       summary: Invoke action publish
       description: Publish the specified browserSiteList for devices to download.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/browsersitelist-publish?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_publish
       parameters:
         - name: browserSiteList-id
@@ -137,8 +134,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get healthOverviews from admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: List healthOverviews
+      description: Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_ListHealthOverview
       parameters:
         - $ref: '#/components/parameters/top'
@@ -211,8 +211,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get healthOverviews from admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: Get serviceHealth
+      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetHealthOverview
       parameters:
         - name: serviceHealth-id
@@ -534,9 +537,6 @@ paths:
         - admin.Functions
       summary: Invoke function incidentReport
       description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.healthOverview.issue_incidentReport
       parameters:
         - name: serviceHealth-id
@@ -612,8 +612,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get issues from admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: List issues
+      description: Retrieve serviceHealthIssue resources from the issues navigation property. This operation retrieves information about all service health issues that exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_ListIssue
       parameters:
         - $ref: '#/components/parameters/top'
@@ -686,8 +689,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get issues from admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: Get serviceHealthIssue
+      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetIssue
       parameters:
         - name: serviceHealthIssue-id
@@ -839,8 +845,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get messages from admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: List serviceAnnouncement messages
+      description: Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_ListMessage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -913,8 +922,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get messages from admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: Get serviceUpdateMessage
+      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetMessage
       parameters:
         - name: serviceUpdateMessage-id
@@ -1016,8 +1028,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get attachments from admin
-      description: A collection of serviceAnnouncementAttachments.
+      summary: List attachments
+      description: Get the list of attachments associated with a service message.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_ListAttachment
       parameters:
         - name: serviceUpdateMessage-id
@@ -1107,8 +1122,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get attachments from admin
-      description: A collection of serviceAnnouncementAttachments.
+      summary: Get serviceAnnouncementAttachment
+      description: Read the properties and relationships of a serviceAnnouncementAttachment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_GetAttachment
       parameters:
         - name: serviceUpdateMessage-id
@@ -1234,8 +1252,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get content for the navigation property attachments from admin
-      description: The attachment content.
+      summary: Get serviceAnnouncementAttachment
+      description: Read the properties and relationships of a serviceAnnouncementAttachment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_GetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
@@ -1264,7 +1285,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - admin.serviceAnnouncement
@@ -1305,7 +1325,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete content for the navigation property attachments in admin
+      description: The attachment content.
+      operationId: admin.serviceAnnouncement.message_DeleteAttachmentsContent
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: serviceAnnouncementAttachment-id
+          in: path
+          description: The unique identifier of serviceAnnouncementAttachment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceAnnouncementAttachment
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/$count':
     get:
       tags:
@@ -1332,8 +1385,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get attachmentsArchive for the navigation property messages from admin
-      description: The zip file that contains all attachments for a message.
+      summary: List attachments
+      description: Get the list of attachments associated with a service message.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
@@ -1354,7 +1410,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - admin.serviceAnnouncement
@@ -1383,7 +1438,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete attachmentsArchive for the navigation property messages in admin
+      description: The zip file that contains all attachments for a message.
+      operationId: admin.serviceAnnouncement_DeleteMessagesAttachmentsArchive
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   /admin/serviceAnnouncement/messages/$count:
     get:
       tags:
@@ -2445,11 +2525,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object

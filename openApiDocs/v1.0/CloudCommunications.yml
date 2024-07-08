@@ -69,7 +69,11 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get callRecords from communications
+      summary: List callRecords
+      description: Get the list of callRecord objects and their properties. The results can be optionally filtered using the $filter query parameter on the startDateTime and participant id properties. Note that the listed call records don't include expandable relationships such as sessions and participants_v2. You can expand these relationships using Get callRecord for a specific record.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/callrecords-cloudcommunications-list-callrecords?view=graph-rest-1.0
       operationId: communication_ListCallRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -142,7 +146,11 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get callRecords from communications
+      summary: Get callRecord
+      description: "Retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:\n* Subscribe to change notifications to the /communications/callRecords endpoint.\n* Use the callChainId property of a call. The call record is available only after the associated call is completed."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-1.0
       operationId: communication_GetCallRecord
       parameters:
         - name: callRecord-id
@@ -240,12 +248,361 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}/organizer_v2':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get organizer_v2 from communications
+      description: Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
+      operationId: communication.callRecord_GetOrganizer_v2
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.organizer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.callRecord
+      summary: Update the navigation property organizer_v2 in communications
+      operationId: communication.callRecord_UpdateOrganizer_v2
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.organizer'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.organizer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.callRecord
+      summary: Delete navigation property organizer_v2 for communications
+      operationId: communication.callRecord_DeleteOrganizer_v2
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}/participants_v2':
+    get:
+      tags:
+        - communications.callRecord
+      summary: List participants_v2
+      description: Get the list of participant objects associated with a callRecord.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-participants_v2?view=graph-rest-1.0
+      operationId: communication.callRecord_ListParticipants_v2
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.callRecords.participantCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.callRecord
+      summary: Create new navigation property to participants_v2 for communications
+      operationId: communication.callRecord_CreateParticipants_v2
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.participant'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.participant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}/participants_v2/{participant-id}':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get participants_v2 from communications
+      description: List of distinct participants in the call.
+      operationId: communication.callRecord_GetParticipants_v2
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: participant-id
+          in: path
+          description: The unique identifier of participant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: participant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.participant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.callRecord
+      summary: Update the navigation property participants_v2 in communications
+      operationId: communication.callRecord_UpdateParticipants_v2
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: participant-id
+          in: path
+          description: The unique identifier of participant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: participant
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.participant'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.participant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.callRecord
+      summary: Delete navigation property participants_v2 for communications
+      operationId: communication.callRecord_DeleteParticipants_v2
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: participant-id
+          in: path
+          description: The unique identifier of participant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: participant
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}/participants_v2/$count':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get the number of the resource
+      operationId: communication.callRecord.participants_v2_GetCount
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: The unique identifier of callRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/communications/callRecords/{callRecord-id}/sessions':
     get:
       tags:
         - communications.callRecord
-      summary: Get sessions from communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
+      summary: List sessions
+      description: 'Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-sessions?view=graph-rest-1.0
       operationId: communication.callRecord_ListSession
       parameters:
         - name: callRecord-id
@@ -786,7 +1143,8 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get calls from communications
+      summary: Get call
+      description: Retrieve the properties and relationships of a call object.
       operationId: communication_ListCall
       parameters:
         - $ref: '#/components/parameters/top'
@@ -836,7 +1194,11 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create new navigation property to calls for communications
+      summary: Create call
+      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
       operationId: communication_CreateCall
       requestBody:
         description: New navigation property
@@ -859,7 +1221,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get calls from communications
+      summary: Get call
+      description: Retrieve the properties and relationships of a call object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/call-get?view=graph-rest-1.0
       operationId: communication_GetCall
       parameters:
         - name: call-id
@@ -934,7 +1300,11 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete navigation property calls for communications
+      summary: Delete call
+      description: 'Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/call-delete?view=graph-rest-1.0
       operationId: communication_DeleteCall
       parameters:
         - name: call-id
@@ -961,7 +1331,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get audioRoutingGroups from communications
+      summary: List audioRoutingGroups
+      description: Retrieve a list of audioRoutingGroup objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0
       operationId: communication.call_ListAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1019,7 +1393,11 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create new navigation property to audioRoutingGroups for communications
+      summary: Create audioRoutingGroup
+      description: Create a new audioRoutingGroup.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0
       operationId: communication.call_CreateAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1051,7 +1429,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get audioRoutingGroups from communications
+      summary: Get audioRoutingGroup
+      description: Retrieve the properties and relationships of an audioRoutingGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0
       operationId: communication.call_GetAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1103,7 +1485,11 @@ paths:
     patch:
       tags:
         - communications.call
-      summary: Update the navigation property audioRoutingGroups in communications
+      summary: Update audioRoutingGroup
+      description: Modify sources and receivers of an audioRoutingGroup.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0
       operationId: communication.call_UpdateAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1142,7 +1528,11 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete navigation property audioRoutingGroups for communications
+      summary: Delete audioRoutingGroup
+      description: Delete the specified audioRoutingGroup.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0
       operationId: communication.call_DeleteAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1199,7 +1589,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get contentSharingSessions from communications
+      summary: List contentSharingSessions
+      description: Retrieve a list of contentSharingSession objects in a call.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
       operationId: communication.call_ListContentSharingSession
       parameters:
         - name: call-id
@@ -1289,7 +1683,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get contentSharingSessions from communications
+      summary: Get contentSharingSession
+      description: Retrieve the properties of a contentSharingSession object in a call.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contentsharingsession-get?view=graph-rest-1.0
       operationId: communication.call_GetContentSharingSession
       parameters:
         - name: call-id
@@ -2102,7 +2500,8 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get operations from communications
+      summary: Get addLargeGalleryViewOperation
+      description: Get the status of an operation that adds the large gallery view to a call.
       operationId: communication.call_ListOperation
       parameters:
         - name: call-id
@@ -2192,7 +2591,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get operations from communications
+      summary: Get addLargeGalleryViewOperation
+      description: Get the status of an operation that adds the large gallery view to a call.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/addlargegalleryviewoperation-get?view=graph-rest-1.0
       operationId: communication.call_GetOperation
       parameters:
         - name: call-id
@@ -2340,7 +2743,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get participants from communications
+      summary: List participants
+      description: Retrieve a list of participant objects in the call.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
       operationId: communication.call_ListParticipant
       parameters:
         - name: call-id
@@ -2430,7 +2837,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get participants from communications
+      summary: Get participant
+      description: Retrieve the properties and relationships of a participant object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/participant-get?view=graph-rest-1.0
       operationId: communication.call_GetParticipant
       parameters:
         - name: call-id
@@ -2521,7 +2932,11 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete navigation property participants for communications
+      summary: Delete participant
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communication.call_DeleteParticipant
       parameters:
         - name: call-id
@@ -2731,10 +3146,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -2866,7 +3281,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get onlineMeetings from communications
+      summary: Get onlineMeeting
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact. For details, see Online meeting artifacts and permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communication_ListOnlineMeeting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3570,6 +3989,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: communication_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -3590,11 +4010,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - communications.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: communication_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -3618,7 +4038,32 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeeting
+      summary: Delete attendeeReport for the navigation property onlineMeetings in communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+      operationId: communication_DeleteOnlineMeetingsAttendeeReport
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
     get:
       tags:
@@ -3988,7 +4433,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - communications.onlineMeeting
@@ -4029,7 +4473,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeeting
+      summary: Delete content for the navigation property recordings in communications
+      description: The content of the recording. Read-only.
+      operationId: communication.onlineMeeting_DeleteRecordingsContent
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callRecording-id
+          in: path
+          description: The unique identifier of callRecording
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecording
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/communications/onlineMeetings/{onlineMeeting-id}/recordings/$count':
     get:
       tags:
@@ -4304,7 +4781,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - communications.onlineMeeting
@@ -4345,7 +4821,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeeting
+      summary: Delete content for the navigation property transcripts in communications
+      description: The content of the transcript. Read-only.
+      operationId: communication.onlineMeeting_DeleteTranscriptsContent
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: The unique identifier of callTranscript
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/communications/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/metadataContent':
     get:
       tags:
@@ -4380,7 +4889,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - communications.onlineMeeting
@@ -4417,7 +4925,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeeting
+      summary: Delete metadataContent for the navigation property transcripts in communications
+      description: The time-aligned metadata of the utterances in the transcript. Read-only.
+      operationId: communication.onlineMeeting_DeleteTranscriptsMetadataContent
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: The unique identifier of callTranscript
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/communications/onlineMeetings/{onlineMeeting-id}/transcripts/$count':
     get:
       tags:
@@ -4507,7 +5048,8 @@ paths:
     get:
       tags:
         - communications.presence
-      summary: Get presences from communications
+      summary: Get presence
+      description: Get a user's presence information.
       operationId: communication_ListPresence
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4580,7 +5122,11 @@ paths:
     get:
       tags:
         - communications.presence
-      summary: Get presences from communications
+      summary: Get presence
+      description: Get a user's presence information.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: communication_GetPresence
       parameters:
         - name: presence-id
@@ -5730,6 +6276,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: user_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -5758,11 +6305,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in users
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: user_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -5794,13 +6341,46 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onlineMeeting
+      summary: Delete attendeeReport for the navigation property onlineMeetings in users
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+      operationId: user_DeleteOnlineMeetingsAttendeeReport
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings':
     get:
       tags:
         - users.onlineMeeting
-      summary: Get recordings from users
-      description: The recordings of an online meeting. Read-only.
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       operationId: user.onlineMeeting_ListRecording
       parameters:
         - name: user-id
@@ -5906,8 +6486,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get recordings from users
-      description: The recordings of an online meeting. Read-only.
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetRecording
       parameters:
         - name: user-id
@@ -6095,7 +6678,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onlineMeeting
@@ -6144,7 +6726,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onlineMeeting
+      summary: Delete content for the navigation property recordings in users
+      description: The content of the recording. Read-only.
+      operationId: user.onlineMeeting_DeleteRecordingsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callRecording-id
+          in: path
+          description: The unique identifier of callRecording
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecording
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings/$count':
     get:
       tags:
@@ -6179,8 +6802,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get transcripts from users
-      description: The transcripts of an online meeting. Read-only.
+      summary: List transcripts
+      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: user.onlineMeeting_ListTranscript
       parameters:
         - name: user-id
@@ -6286,8 +6912,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get transcripts from users
-      description: The transcripts of an online meeting. Read-only.
+      summary: Get callTranscript
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetTranscript
       parameters:
         - name: user-id
@@ -6437,8 +7066,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get content for the navigation property transcripts from users
-      description: The content of the transcript. Read-only.
+      summary: Get callTranscript
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetTranscriptsContent
       parameters:
         - name: user-id
@@ -6475,7 +7107,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onlineMeeting
@@ -6524,13 +7155,57 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onlineMeeting
+      summary: Delete content for the navigation property transcripts in users
+      description: The content of the transcript. Read-only.
+      operationId: user.onlineMeeting_DeleteTranscriptsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: The unique identifier of callTranscript
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/metadataContent':
     get:
       tags:
         - users.onlineMeeting
-      summary: Get metadataContent for the navigation property transcripts from users
-      description: The time-aligned metadata of the utterances in the transcript. Read-only.
+      summary: Get callTranscript
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetTranscriptsMetadataContent
       parameters:
         - name: user-id
@@ -6567,7 +7242,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onlineMeeting
@@ -6612,7 +7286,48 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onlineMeeting
+      summary: Delete metadataContent for the navigation property transcripts in users
+      description: The time-aligned metadata of the utterances in the transcript. Read-only.
+      operationId: user.onlineMeeting_DeleteTranscriptsMetadataContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: The unique identifier of callTranscript
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/$count':
     get:
       tags:
@@ -6669,7 +7384,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence from users
+      summary: 'presence: setStatusMessage'
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -6826,7 +7545,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
-              description: List of distinct identities involved in the call.
+              description: 'List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -6838,12 +7557,34 @@ components:
               type: integer
               description: Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
               format: int64
+            organizer_v2:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.organizer'
+            participants_v2:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.participant'
+              description: List of distinct participants in the call.
+              x-ms-navigationProperty: true
             sessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.session'
               description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.callRecords.organizer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.callRecords.participantBase'
+        - title: organizer
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.callRecords.participant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.callRecords.participantBase'
+        - title: participant
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.callRecords.session:
@@ -7375,6 +8116,7 @@ components:
           properties:
             attendeeReport:
               type: string
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             broadcastSettings:
@@ -7396,6 +8138,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
+              description: Indicates whether this meeting is a Teams live event.
               nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
@@ -7599,6 +8342,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information about the meeting attendees.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
@@ -7658,6 +8402,16 @@ components:
         - peerToPeer
         - unknownFutureValue
       type: string
+    microsoft.graph.callRecords.participantBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: participantBase
+          type: object
+          properties:
+            identity:
+              $ref: '#/components/schemas/microsoft.graph.communicationsIdentitySet'
+          additionalProperties:
+            type: object
     microsoft.graph.callRecords.endpoint:
       title: endpoint
       type: object
@@ -8156,11 +8910,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -8225,6 +8979,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.callRecords.participantCollectionResponse:
+      title: Collection of participant
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.participant'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.callRecords.sessionCollectionResponse:
       title: Collection of session
       type: object
@@ -8251,9 +9021,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    ODataCountResponse:
-      type: integer
-      format: int32
     microsoft.graph.callCollectionResponse:
       title: Collection of call
       type: object
@@ -8397,6 +9164,30 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.communicationsIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: communicationsIdentitySet
+          type: object
+          properties:
+            applicationInstance:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            assertedIdentity:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            azureCommunicationServicesUser:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            encrypted:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            endpointType:
+              $ref: '#/components/schemas/microsoft.graph.endpointType'
+            guest:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            onPremises:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            phone:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
     microsoft.graph.callRecords.userAgent:
       title: userAgent
       type: object
@@ -8896,6 +9687,7 @@ components:
           nullable: true
         tollFreeNumber:
           type: string
+          description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -8905,6 +9697,7 @@ components:
           description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
+          description: The toll number that connects to the Audio Conference Provider.
           nullable: true
         tollNumbers:
           type: array
@@ -9185,6 +9978,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.callRecords.callRecordCollectionResponse'
+    microsoft.graph.callRecords.participantCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.participantCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.callRecords.sessionCollectionResponse:
       description: Retrieved collection
       content:
@@ -9197,12 +10002,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.callRecords.segmentCollectionResponse'
-    ODataCountResponse:
-      description: The count of the resource
-      content:
-        text/plain:
-          schema:
-            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.callCollectionResponse:
       description: Retrieved collection
       content:
