@@ -1,6 +1,7 @@
 ### Example 1: Create a setting to block guests for a specific Microsoft 365 group
 
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Groups
 
 $params = @{
@@ -14,8 +15,7 @@ $params = @{
 }
 
 New-MgBetaGroupSetting -GroupId $groupId -BodyParameter $params
-```
-This example shows how to use the New-MgBetaGroupSetting Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will create a setting to block guests for a specific microsoft 365 group
 

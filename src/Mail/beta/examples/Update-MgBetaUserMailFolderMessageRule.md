@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Mail
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
 
 $params = @{
 	displayName = "Important from partner"
@@ -13,5 +14,6 @@ $params = @{
 Update-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaUserMailFolderMessageRule Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Calendar
+```powershell
+Import-Module Microsoft.Graph.Beta.Calendar
 
 $params = @{
 	originalStartTimeZone = "originalStartTimeZone-value"
@@ -25,5 +26,6 @@ $params = @{
 Update-MgBetaUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaUserEvent Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

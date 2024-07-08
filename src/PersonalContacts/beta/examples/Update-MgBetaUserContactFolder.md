@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.PersonalContacts
+```powershell
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 
 $params = @{
 	parentFolderId = "parentFolderId-value"
@@ -11,5 +12,6 @@ $params = @{
 Update-MgBetaUserContactFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaUserContactFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

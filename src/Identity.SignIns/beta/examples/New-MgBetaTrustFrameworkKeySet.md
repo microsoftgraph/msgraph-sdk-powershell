@@ -1,42 +1,37 @@
-### Example 1: Using the New-MgBetaTrustFrameworkKeySet Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
 $params = @{
-	Id = "keyset1"
-	Keys = @(
+	id = "keyset1"
+	keys = @(
 		@{
-			K = "k-value"
-			X5c = @(
-				"x5c-value"
-			)
-			X5t = "x5t-value"
-			Kty = "kty-value"
-			Use = "use-value"
-			Exp = 99
-			Nbf = 99
-			Kid = "kid-value"
-			E = "e-value"
-			N = "n-value"
-			D = "d-value"
-			P = "p-value"
-			Q = "q-value"
-			Dp = "dp-value"
-			Dq = "dq-value"
-			Qi = "qi-value"
-		}
-	)
+			k = "k-value"
+			x5c = @(
+			"x5c-value"
+		)
+		x5t = "x5t-value"
+		kty = "kty-value"
+		use = "use-value"
+		exp = 99
+		nbf = 99
+		kid = "kid-value"
+		e = "e-value"
+		n = "n-value"
+		d = "d-value"
+		p = "p-value"
+		q = "q-value"
+		dp = "dp-value"
+		dq = "dq-value"
+		qi = "qi-value"
+	}
+)
 }
+
 New-MgBetaTrustFrameworkKeySet -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTrustFrameworkKeySet Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgBetaTrustFrameworkKeySet Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	Id = "keyset1"
-}
-New-MgBetaTrustFrameworkKeySet -BodyParameter $params
-```
-This example shows how to use the New-MgBetaTrustFrameworkKeySet Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

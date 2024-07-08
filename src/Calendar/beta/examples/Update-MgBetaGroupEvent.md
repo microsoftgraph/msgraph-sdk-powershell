@@ -1,9 +1,23 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Calendar
+```powershell
 
-Get-MgBetaGroupEvent -GroupId $groupId -EventId $eventId
+Import-Module Microsoft.Graph.Beta.Calendar
+
+$params = @{
+	originalStartTimeZone = "originalStartTimeZone-value"
+	originalEndTimeZone = "originalEndTimeZone-value"
+	responseStatus = @{
+		response = ""
+		time = [System.DateTime]::Parse("datetime-value")
+	}
+	uid = "iCalUId-value"
+	reminderMinutesBeforeStart = 99
+	isReminderOn = $true
+}
+
+Update-MgBetaGroupEvent -GroupId $groupId -EventId $eventId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaBetaGroupEvent Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Update-MgBetaGroupEvent Cmdlet.
 

@@ -1,28 +1,33 @@
-### Example 1: Using the New-MgBetaDirectorySetting Cmdlet
+### Example 1: Create a directory or tenant-level setting
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
 $params = @{
-	TemplateId = "62375ab9-6b52-47ed-826b-58e47e0e304b"
-	Values = @(
+	templateId = "62375ab9-6b52-47ed-826b-58e47e0e304b"
+	values = @(
 		@{
-			Name = "GuestUsageGuidelinesUrl"
-			Value = "https://privacy.contoso.com/privacystatement"
+			name = "GuestUsageGuidelinesUrl"
+			value = "https://privacy.contoso.com/privacystatement"
 		}
 		@{
-			Name = "EnableMSStandardBlockedWords"
-			Value = "true"
+			name = "EnableMSStandardBlockedWords"
+			value = "true"
 		}
 		@{
-			Name = "EnableMIPLabels"
-			Value = "true"
+			name = "EnableMIPLabels"
+			value = "true"
 		}
 		@{
-			Name = "PrefixSuffixNamingRequirement"
-			Value = "[Contoso-][GroupName]"
+			name = "PrefixSuffixNamingRequirement"
+			value = "[Contoso-][GroupName]"
 		}
 	)
 }
+
 New-MgBetaDirectorySetting -BodyParameter $params
+
 ```
-This example shows how to use the New-MgBetaDirectorySetting Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create a directory or tenant-level setting
+

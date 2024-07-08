@@ -1,19 +1,27 @@
-### Example 1: Using the Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.cloudPcProvisioningPolicy"
-	DisplayName = "HR provisioning policy"
-	Description = "Provisioning policy for India HR employees"
-	OnPremisesConnectionId = "4e47d0f6-6f77-44f0-8893-c0fe1701ffff"
-	ImageId = "Image ID value"
-	ImageDisplayName = "Image Display Name value"
-	ImageType = "custom"
-	WindowsSettings = @{
-		Language = "en-US"
+	displayName = "HR provisioning policy"
+	description = "Provisioning policy for India HR employees"
+	onPremisesConnectionId = "4e47d0f6-6f77-44f0-8893-c0fe1701ffff"
+	imageId = "Image ID value"
+	imageDisplayName = "Image Display Name value"
+	imageType = "custom"
+	windowsSettings = @{
+		language = "en-US"
+	}
+	windowsSetting = @{
+		locale = "en-US"
 	}
 }
+
 Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy -CloudPcProvisioningPolicyId $cloudPcProvisioningPolicyId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

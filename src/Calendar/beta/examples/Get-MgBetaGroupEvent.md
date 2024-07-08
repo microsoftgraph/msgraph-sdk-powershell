@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Calendar
+```powershell
 
-Get-MgBetaGroupEvent -GroupId $groupId -EventId $eventId
+Import-Module Microsoft.Graph.Beta.Calendar
+
+Get-MgBetaGroupEvent -GroupId $groupId
+
 ```
 This example shows how to use the Get-MgBetaGroupEvent Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
