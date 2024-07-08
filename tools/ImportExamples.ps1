@@ -41,7 +41,7 @@ function Start-Generator {
                     New-Item -Path $ExampleFile -ItemType File -Force
                 }
                 $IntuneUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
-                $IntuneUrl = $MUrl.Replace("intune-mam-", "")
+                $IntuneUrl = $IntuneUrl.Replace("intune-mam-", "")
                 $IsValid = IsValidEndPoint -GraphEndpoint $IntuneUrl
                 if ($IsValid) {
                     $ExternalDocsUrl = $IntuneUrl
