@@ -50,6 +50,12 @@
     },
     {
       "file": [
+        "src\\Users.Actions\\v1.0\\examples\\Reset-MgUserAuthenticationMethodPassword.md"
+      ],
+      "_justification": "[Users.Actions] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
         "tools\\Tests\\loadEnv.md"
       ],
       "_justification": "[ToolsTest] Examples contain random values recognized as secret"

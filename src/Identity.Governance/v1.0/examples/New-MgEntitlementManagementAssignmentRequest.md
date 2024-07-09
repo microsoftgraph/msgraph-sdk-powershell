@@ -1,6 +1,7 @@
 ### Example 1: Admin requests a direct assignment for a user already in the directory
 
 ```powershell
+
 Import-Module Microsoft.Graph.Identity.Governance
 
 $params = @{
@@ -13,14 +14,14 @@ $params = @{
 }
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
-```
-This example shows how to use the New-MgEntitlementManagementAssignmentRequest Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will admin requests a direct assignment for a user already in the directory
 
 ### Example 2: Remove an assignment
 
 ```powershell
+
 Import-Module Microsoft.Graph.Identity.Governance
 
 $params = @{
@@ -31,32 +32,14 @@ $params = @{
 }
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
+
 ```
-This example shows how to use the New-MgEntitlementManagementAssignmentRequest Cmdlet.
+This example will remove an assignment
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 3: Request an assignment
+### Example 3: Request an assignment by providing answers to questions
 
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
 
-$params = @{
-	requestType = "userAdd"
-	assignment = @{
-		accessPackageId = "d7be3253-b9c6-4fab-adef-30d30de8da2b"
-	}
-}
-
-New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
-```
-This example shows how to use the New-MgEntitlementManagementAssignmentRequest Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 4: Request an assignment by providing answers to questions
-
-```powershell
 Import-Module Microsoft.Graph.Identity.Governance
 
 $params = @{
@@ -88,14 +71,55 @@ $params = @{
 }
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
+
 ```
-This example shows how to use the New-MgEntitlementManagementAssignmentRequest Cmdlet.
+This example will request an assignment by providing answers to questions
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 5: Request an update to answers for an assignment
+### Example 4: Request a package and provide a justification
 
 ```powershell
+
+Import-Module Microsoft.Graph.Identity.Governance
+
+$params = @{
+	requestType = "UserAdd"
+	accessPackageAssignment = @{
+		accessPackageId = "a914b616-e04e-476b-aa37-91038f0b165b"
+	}
+	justification = "Need access to New Hire access package"
+}
+
+New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
+
+```
+This example will request a package and provide a justification
+
+### Example 5: Admin requests a direct assignment for a user not yet in the directory
+
+```powershell
+
+Import-Module Microsoft.Graph.Identity.Governance
+
+$params = @{
+	requestType = "AdminAdd"
+	accessPackageAssignment = @{
+		target = @{
+			email = "user@contoso.com"
+		}
+		assignmentPolicyId = "2264bf65-76ba-417b-a27d-54d291f0cbc8"
+		accessPackageId = "a914b616-e04e-476b-aa37-91038f0b165b"
+	}
+}
+
+New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
+
+```
+This example will admin requests a direct assignment for a user not yet in the directory
+
+### Example 6: Request an update to answers for an assignment
+
+```powershell
+
 Import-Module Microsoft.Graph.Identity.Governance
 
 $params = @{
@@ -127,8 +151,35 @@ $params = @{
 }
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
-```
-This example shows how to use the New-MgEntitlementManagementAssignmentRequest Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will request an update to answers for an assignment
+
+### Example 7: Update the expiration date for an access package assignment
+
+```powershell
+
+Import-Module Microsoft.Graph.Identity.Governance
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.accessPackageAssignmentRequest"
+	requestType = "adminUpdate"
+	schedule = @{
+		startDateTime = [System.DateTime]::Parse("2023-05-23T20:04:02.39Z")
+		recurrence = $null
+		expiration = @{
+			endDateTime = [System.DateTime]::Parse("2024-07-01T00:00:00.00Z")
+			duration = $null
+			type = "afterDateTime"
+		}
+	}
+	assignment = @{
+		id = "329f8dac-8062-4c1b-a9b8-39b7132f9bff"
+	}
+}
+
+New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
+
+```
+This example will update the expiration date for an access package assignment
 

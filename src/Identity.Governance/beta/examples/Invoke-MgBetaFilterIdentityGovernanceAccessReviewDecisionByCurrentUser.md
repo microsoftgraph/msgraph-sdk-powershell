@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Retrieve all decision items for which you're a reviewer and expand the definitions
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+
+Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionByCurrentUser -ExpandProperty "instance(`$expand=definition)"  -On $onId 
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example will retrieve all decision items for which you're a reviewer and expand the definitions
 

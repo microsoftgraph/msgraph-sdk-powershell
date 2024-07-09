@@ -1,18 +1,29 @@
-### Example 1: {{ Add title here }}
+### Example 1: User-submitted password
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Users.Actions
+
+$params = @{
+	newPassword = "Cuyo5459"
+}
+
+Reset-MgBetaUserAuthenticationMethodPassword -UserId $userId -AuthenticationMethodId $authenticationMethodId -BodyParameter $params
+
 ```
+This example will user-submitted password
 
-{{ Add description here }}
+### Example 2: System-generated password
 
-### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Users.Actions
+
+$params = @{
+}
+
+Reset-MgBetaUserAuthenticationMethodPassword -UserId $userId -AuthenticationMethodId $authenticationMethodId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
+This example will system-generated password
 

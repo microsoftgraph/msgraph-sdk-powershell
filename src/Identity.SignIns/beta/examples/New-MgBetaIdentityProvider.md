@@ -1,6 +1,8 @@
-### Example 1: Create a specific <strong>social identity provider</strong> (Azure AD and Azure AD B2C)
+### Example 1: Create a specific **social identity provider** (Microsoft Entra ID and Azure AD B2C)
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 $params = @{
 	"@odata.type" = "microsoft.graph.socialIdentityProvider"
@@ -11,19 +13,28 @@ $params = @{
 }
 
 New-MgBetaIdentityProvider -BodyParameter $params
+
 ```
-This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create a specific **social identity provider** (microsoft entra id and azure ad b2c)
 
-### Example 2: Create a specific <strong>OpenID Connect identity provider</strong> (only for Azure AD B2C)
+### Example 2: Create a specific **OpenID Connect identity provider** (only for Azure AD B2C)
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 $params = @{
 	"@odata.type" = "microsoft.graph.openIdConnectIdentityProvider"
 	displayName = "Login with the Contoso identity provider"
 	clientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
 	clientSecret = "12345"
+	claimsMapping = @{
+		userId = "myUserId"
+		givenName = "myGivenName"
+		surname = "mySurname"
+		email = "myEmail"
+		displayName = "myDisplayName"
+	}
 	domainHint = "mycustomoidc"
 	metadataUrl = "https://mycustomoidc.com/.well-known/openid-configuration"
 	responseMode = "form_post"
@@ -32,13 +43,15 @@ $params = @{
 }
 
 New-MgBetaIdentityProvider -BodyParameter $params
+
 ```
-This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create a specific **openid connect identity provider** (only for azure ad b2c)
 
 ### Example 3: Retrieves Apple identity provider (only for Azure AD B2C)
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 $params = @{
 	"@odata.type" = "microsoft.graph.appleManagedIdentityProvider"
@@ -50,7 +63,7 @@ $params = @{
 }
 
 New-MgBetaIdentityProvider -BodyParameter $params
+
 ```
-This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example retrieves apple identity provider (only for azure ad b2c)
 

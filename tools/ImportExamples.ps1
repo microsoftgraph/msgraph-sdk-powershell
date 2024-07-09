@@ -31,6 +31,7 @@ function Start-Generator {
                 $ProfilePathMapping = "v1.0\examples"
                 if ($ApiVersion -eq "beta") {
                     $ProfilePathMapping = "beta\examples"
+                    $GraphModule = $GraphModule.Replace("Beta.", "")
                 }
                 $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
 

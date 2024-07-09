@@ -1,22 +1,27 @@
-### Example 1: Using the Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.ManagedTenants
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.managedTenants.tenantCustomizedInformation"
-	TenantId = "String"
-	Contacts = @(
+	tenantId = "String"
+	contacts = @(
 		@{
 			"@odata.type" = "microsoft.graph.managedTenants.tenantContactInformation"
-			Name = "String"
-			Title = "String"
-			Email = "String"
-			Phone = "String"
-			Notes = "String"
+			name = "String"
+			title = "String"
+			email = "String"
+			phone = "String"
+			notes = "String"
 		}
 	)
-	Website = "String"
+	website = "String"
 }
+
 Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation -TenantCustomizedInformationId $tenantCustomizedInformationId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

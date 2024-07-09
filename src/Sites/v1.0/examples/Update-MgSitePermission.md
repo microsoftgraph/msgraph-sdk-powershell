@@ -6,8 +6,8 @@ Import-Module Microsoft.Graph.Sites
 
 $params = @{
 	roles = @(
-		"read"
-	)
+	"read"
+)
 }
 
 Update-MgSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params

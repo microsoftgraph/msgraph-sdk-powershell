@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Calendar
+```powershell
+Import-Module Microsoft.Graph.Beta.Calendar
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.fileAttachment"
@@ -12,11 +13,13 @@ $params = @{
 New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Calendar
+```powershell
+Import-Module Microsoft.Graph.Beta.Calendar
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.itemAttachment"
@@ -31,11 +34,13 @@ $params = @{
 New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Calendar
+```powershell
+Import-Module Microsoft.Graph.Beta.Calendar
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.referenceAttachment"
@@ -50,5 +55,6 @@ $params = @{
 New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

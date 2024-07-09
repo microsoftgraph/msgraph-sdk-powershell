@@ -1,12 +1,17 @@
-### Example 1: Using the Test-MgBetaGroupProperty Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Groups
+
 $params = @{
-	DisplayName = "Myprefix_test_mysuffix"
-	MailNickname = "Myprefix_test_mysuffix"
-	OnBehalfOfUserId = "onBehalfOfUserId-value"
+	displayName = "Myprefix_test_mysuffix"
+	mailNickname = "Myprefix_test_mysuffix"
+	onBehalfOfUserId = "onBehalfOfUserId-value"
 }
+
 Test-MgBetaGroupProperty -GroupId $groupId -BodyParameter $params
+
 ```
 This example shows how to use the Test-MgBetaGroupProperty Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -4,7 +4,10 @@
 
 Import-Module Microsoft.Graph.Beta.Teams
 
-Invoke-MgBetaArchiveTeam -TeamId $teamId
+$params = @{
+}
+
+Invoke-MgBetaArchiveTeam -TeamId $teamId -BodyParameter $params
 
 ```
 This example shows how to use the Invoke-MgBetaArchiveTeam Cmdlet.
