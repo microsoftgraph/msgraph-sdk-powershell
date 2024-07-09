@@ -1,20 +1,25 @@
-### Example 1: Using the Grant-MgBetaSharePermission Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Files
+
 $params = @{
-	Recipients = @(
+	recipients = @(
 		@{
-			Email = "john@contoso.com"
+			email = "john@contoso.com"
 		}
 		@{
-			Email = "ryan@external.com"
+			email = "ryan@external.com"
 		}
 	)
-	Roles = @(
-		"read"
-	)
+	roles = @(
+	"read"
+)
 }
+
 Grant-MgBetaSharePermission -SharedDriveItemId $sharedDriveItemId -BodyParameter $params
+
 ```
 This example shows how to use the Grant-MgBetaSharePermission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

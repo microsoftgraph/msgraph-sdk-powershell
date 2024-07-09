@@ -1,18 +1,22 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get an export job for the TotalAggregatedRemoteConnectionReports report
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+
+Get-MgBetaDeviceManagementVirtualEndpointReportExportJob -CloudPcExportJobId $cloudPcExportJobId
+
 ```
+This example will get an export job for the totalaggregatedremoteconnectionreports report
 
-{{ Add description here }}
+### Example 2: Get an export job for the RemoteConnectionQualityReports report
 
-### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+
+Get-MgBetaDeviceManagementVirtualEndpointReportExportJob -CloudPcExportJobId $cloudPcExportJobId
+
 ```
-
-{{ Add description here }}
+This example will get an export job for the remoteconnectionqualityreports report
 

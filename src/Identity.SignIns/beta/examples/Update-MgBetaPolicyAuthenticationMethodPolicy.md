@@ -1,11 +1,14 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 $params = @{
 	registrationEnforcement = @{
 		authenticationMethodsRegistrationCampaign = @{
 			snoozeDurationInDays = 1
+			enforceRegistrationAfterAllowedSnoozes = $true
 			state = "enabled"
 			excludeTargets = @(
 			)
@@ -29,7 +32,7 @@ $params = @{
 }
 
 Update-MgBetaPolicyAuthenticationMethodPolicy -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgBetaPolicyAuthenticationMethodPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

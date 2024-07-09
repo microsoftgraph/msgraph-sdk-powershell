@@ -1,21 +1,22 @@
-### Example 1: Using the Invoke-MgBetaAvailableIdentityProviderType Cmdlet
+### Example 1: List all **identityProvider** available in a Microsoft Entra directory
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
 Invoke-MgBetaAvailableIdentityProviderType
+
 ```
-This example shows how to use the Invoke-MgBetaAvailableIdentityProviderType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Invoke-MgBetaAvailableIdentityProviderType Cmdlet
+This example will list all **identityprovider** available in a microsoft entra directory
+
+### Example 2: List all **identityProvider** available in an Azure AD B2C directory
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
 Invoke-MgBetaAvailableIdentityProviderType
+
 ```
-This example shows how to use the Invoke-MgBetaAvailableIdentityProviderType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Invoke-MgBetaAvailableIdentityProviderType Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Invoke-MgBetaAvailableIdentityProviderType -OutFile $outFileId
-```
-This example shows how to use the Invoke-MgBetaAvailableIdentityProviderType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will list all **identityprovider** available in an azure ad b2c directory
+

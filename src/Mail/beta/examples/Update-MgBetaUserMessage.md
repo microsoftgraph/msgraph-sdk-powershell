@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Mail
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
 
 $params = @{
 	subject = "subject-value"
@@ -15,5 +16,6 @@ $params = @{
 Update-MgBetaUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

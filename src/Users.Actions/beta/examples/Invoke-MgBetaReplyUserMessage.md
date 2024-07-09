@@ -1,27 +1,32 @@
-### Example 1: Using the Invoke-MgBetaReplyUserMessage Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Users.Actions
+
 $params = @{
-	Message = @{
-		ToRecipients = @(
+	message = @{
+		toRecipients = @(
 			@{
-				EmailAddress = @{
-					Address = "samanthab@contoso.onmicrosoft.com"
-					Name = "Samantha Booth"
+				emailAddress = @{
+					address = "samanthab@contoso.com"
+					name = "Samantha Booth"
 				}
 			}
 			@{
-				EmailAddress = @{
-					Address = "randiw@contoso.onmicrosoft.com"
-					Name = "Randi Welch"
+				emailAddress = @{
+					address = "randiw@contoso.com"
+					name = "Randi Welch"
 				}
 			}
 		)
 	}
-	Comment = "Samantha, Randi, would you name the group please?"
+	comment = "Samantha, Randi, would you name the group please?"
 }
+
 # A UPN can also be used as -UserId.
 Invoke-MgBetaReplyUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+
 ```
 This example shows how to use the Invoke-MgBetaReplyUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
