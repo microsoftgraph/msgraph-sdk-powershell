@@ -1,17 +1,23 @@
-### Example 1: Using the New-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.cloudPcUserSetting"
-	DisplayName = "Example"
-	SelfServiceEnabled = $false
-	LocalAdminEnabled = $true
-	RestorePointSetting = @{
-		FrequencyInHours = 16
-		UserRestoreEnabled = $true
+	displayName = "Example"
+	selfServiceEnabled = $false
+	localAdminEnabled = $true
+	restorePointSetting = @{
+		frequencyInHours = 16
+		frequencyType = "sixteenHours"
+		userRestoreEnabled = $true
 	}
 }
+
 New-MgBetaDeviceManagementVirtualEndpointUserSetting -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

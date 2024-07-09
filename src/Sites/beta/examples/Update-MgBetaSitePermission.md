@@ -6,8 +6,8 @@ Import-Module Microsoft.Graph.Beta.Sites
 
 $params = @{
 	roles = @(
-		"read"
-	)
+	"read"
+)
 }
 
 Update-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params

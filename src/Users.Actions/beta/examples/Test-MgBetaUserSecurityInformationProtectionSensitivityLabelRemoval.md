@@ -1,52 +1,57 @@
-### Example 1: Using the Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Users.Actions
+
 $params = @{
-	ContentInfo = @{
+	contentInfo = @{
 		"@odata.type" = "#microsoft.graph.security.contentInfo"
-		Identifier = $null
-		State = "rest"
-		Metadata = @(
+		identifier = $null
+		state = "rest"
+		metadata = @(
 			@{
-				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_Enabled"
-				Value = "True"
+				name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_Enabled"
+				value = "True"
 			}
 			@{
-				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_Method"
-				Value = "Standard"
+				name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_Method"
+				value = "Standard"
 			}
 			@{
-				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_SetDate"
-				Value = "1/1/0001 12:00:00 AM"
-			}
-			@{
-				"@odata.type" = "#microsoft.graph.security.keyValuePair"
-				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_SiteId"
-				Value = "cfa4cf1d-a337-4481-aa99-19d8f3d63f7c"
+				name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_SetDate"
+				value = "1/1/0001 12:00:00 AM"
 			}
 			@{
 				"@odata.type" = "#microsoft.graph.security.keyValuePair"
-				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_Name"
-				Value = "LabelScopedToBob_Tests"
+				name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_SiteId"
+				value = "cfa4cf1d-a337-4481-aa99-19d8f3d63f7c"
 			}
 			@{
 				"@odata.type" = "#microsoft.graph.security.keyValuePair"
-				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_ContentBits"
-				Value = "0"
+				name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_Name"
+				value = "LabelScopedToBob_Tests"
 			}
 			@{
 				"@odata.type" = "#microsoft.graph.security.keyValuePair"
-				Name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_ActionId"
-				Value = "00000000-0000-0000-0000-000000000000"
+				name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_ContentBits"
+				value = "0"
+			}
+			@{
+				"@odata.type" = "#microsoft.graph.security.keyValuePair"
+				name = "MSIP_Label_836ff34f-b604-4a62-a68c-d6be4205d569_ActionId"
+				value = "00000000-0000-0000-0000-000000000000"
 			}
 		)
 	}
-	DowngradeJustification = @{
-		JustificationMessage = "The information has been declassified."
-		IsDowngradeJustified = $true
+	downgradeJustification = @{
+		justificationMessage = "The information has been declassified."
+		isDowngradeJustified = $true
 	}
 }
+
 Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval -UserId $userId -BodyParameter $params
+
 ```
 This example shows how to use the Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

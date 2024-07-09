@@ -1,18 +1,32 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Users.Actions
+
+$params = @{
+	contentInfo = @{
+		"@odata.type" = "#microsoft.graph.security.contentInfo"
+		"format@odata.type" = "#microsoft.graph.security.contentFormat"
+		format = "default"
+		contentFormat = "File"
+		identifier = "c:\user\new.docx"
+		"state@odata.type" = "#microsoft.graph.security.contentState"
+		state = "rest"
+		metadata = @(
+		)
+	}
+	classificationResults = @(
+		@{
+			sensitiveTypeId = "50842eb7-edc8-4019-85dd-5a5c1f2bb085"
+			count = 7
+			confidenceLevel = 99
+		}
+	)
+}
+
+Test-MgBetaUserSecurityInformationProtectionSensitivityLabelClassificationResult -UserId $userId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Test-MgBetaUserSecurityInformationProtectionSensitivityLabelClassificationResult Cmdlet.
 

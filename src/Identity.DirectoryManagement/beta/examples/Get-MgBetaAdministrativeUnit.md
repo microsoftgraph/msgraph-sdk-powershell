@@ -1,22 +1,22 @@
-### Example 1: Get a list of administrative units
+### Example 1: Get an administrative unit
 
 ```powershell
-Get-MgBetaDirectoryAdministrativeUnit
 
-DeletedDateTime Id                                   Description DisplayName    Visibility
---------------- --                                   ----------- -----------    ----------
-                416f19a5-2e01-4d15-a78c-d9028fee1ebb             Test Unit
-                d924fbd3-69c5-4cdf-b9ea-9b0badcf9c4d             East wing Unit
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
+
 ```
+This example will get an administrative unit
 
-This example retrieves a list of administrative units.
+### Example 2: Get a restricted management administrative unit
 
-### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
+
 ```
-
-{{ Add description here }}
+This example will get a restricted management administrative unit
 

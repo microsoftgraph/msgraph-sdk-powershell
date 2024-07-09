@@ -1,11 +1,16 @@
-### Example 1: Using the Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc Cmdlet
+### Example 1: Reprovision the cloudPC for the administrator
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
+
 $params = @{
-	UserAccountType = "administrator"
-	OsVersion = "windows10"
+	userAccountType = "administrator"
+	osVersion = "windows10"
 }
+
 Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId -BodyParameter $params
+
 ```
-This example shows how to use the Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will reprovision the cloudpc for the administrator
+

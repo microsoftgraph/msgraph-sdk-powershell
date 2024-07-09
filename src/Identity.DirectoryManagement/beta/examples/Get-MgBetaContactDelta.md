@@ -1,7 +1,33 @@
-### Example 1: Using the Get-MgBetaContactDelta Cmdlet
+### Example 1: Default properties
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
 Get-MgBetaContactDelta
+
 ```
-This example shows how to use the Get-MgBetaContactDelta Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will default properties
+
+### Example 2: Selecting three properties
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaContactDelta -Property "displayName,jobTitle,mail" 
+
+```
+This example shows selecting three properties
+
+### Example 3: Alternative minimal response behavior
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaContactDelta -Property "displayName,jobTitle,mail" 
+
+```
+This example will alternative minimal response behavior
+

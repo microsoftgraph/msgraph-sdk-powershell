@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Applications
+```powershell
+Import-Module Microsoft.Graph.Beta.Applications
 
 $params = @{
 	name = "testing02"
@@ -15,5 +16,6 @@ $params = @{
 Update-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaApplicationFederatedIdentityCredential Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -1,18 +1,33 @@
-### Example 1: {{ Add title here }}
+### Example 1: Initial request
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Sites
+
+Get-MgBetaSiteDelta
+
 ```
+This example will initial request
 
-{{ Add description here }}
+### Example 2: Last page request
 
-### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Sites
+
+Get-MgBetaSiteDelta -Token "1230919asd190410jlka" 
+
 ```
+This example will last page request
 
-{{ Add description here }}
+### Example 3: Delta link request
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Sites
+
+Get-MgBetaSiteDelta -Token "latest" 
+
+```
+This example will delta link request
 
