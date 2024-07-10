@@ -17,64 +17,71 @@ function Start-Generator {
         [string] $ProfilePath = "v1.0",
         [string] $ManualExternalDocsUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell"
     )
+    try {
+        if ($GenerationMode -eq "auto") {
+            #Test path first
+            if (Test-Path $CommandMetadataPath) {
+                $CommandMetadataContent = Get-Content $CommandMetadataPath | ConvertFrom-Json
+                $CommandMetadataContent | ForEach-Object {
+                    $GraphCommand = $_.Command
+                    $GraphModule = $_.Module
+                    $UriPath = $_.Uri
+                    $ExternalDocsUrl = $_.ApiReferenceLink
+                    $ApiVersion = $_.ApiVersion
+                    $ProfilePathMapping = "v1.0\examples"
+                    if ($ApiVersion -eq "beta") {
+                        $ProfilePathMapping = "beta\examples"
+                        $GraphModule = $GraphModule.Replace("Beta.", "")
+                    }
+                    $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
 
-    if ($GenerationMode -eq "auto") {
-        #Test path first
-        if (Test-Path $CommandMetadataPath) {
-            $CommandMetadataContent = Get-Content $CommandMetadataPath | ConvertFrom-Json
-            $CommandMetadataContent | ForEach-Object {
-                $GraphCommand = $_.Command
-                $GraphModule = $_.Module
-                $UriPath = $_.Uri
-                $ExternalDocsUrl = $_.ApiReferenceLink
-                $ApiVersion = $_.ApiVersion
-                $ProfilePathMapping = "v1.0\examples"
-                if ($ApiVersion -eq "beta") {
-                    $ProfilePathMapping = "beta\examples"
-                    $GraphModule = $GraphModule.Replace("Beta.", "")
-                }
-                $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
-
-                $ExampleFile = "$ModulePath\$GraphCommand.md"
-                Write-Host $ExampleFile
-                Test-Commands -Command $GraphCommand -CommandPath $ExampleFile
-                if ($null -ne $ExternalDocsUrl) { 
-                    if (-not (Test-Path $ExampleFile)) {
-                        New-Item -Path $ExampleFile -ItemType File -Force
+                    $ExampleFile = "$ModulePath\$GraphCommand.md"
+                    Write-Host $ExampleFile
+                    Test-Commands -Command $GraphCommand -CommandPath $ExampleFile
+                    if ($null -ne $ExternalDocsUrl) { 
+                        if (-not (Test-Path $ExampleFile)) {
+                            New-Item -Path $ExampleFile -ItemType File -Force
+                        }
+                        $IntuneUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
+                        $IntuneUrl = $IntuneUrl.Replace("intune-mam-", "")
+                        $IsValid = IsValidEndPoint -GraphEndpoint $IntuneUrl
+                        if ($IsValid) {
+                            $ExternalDocsUrl = $IntuneUrl
+                        }
+                        Start-WebScrapping -GraphProfile $ApiVersion -ExternalDocUrl $ExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -UriPath $UriPath -Module $GraphModule
                     }
-                    $IntuneUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
-                    $IntuneUrl = $IntuneUrl.Replace("intune-mam-", "")
-                    $IsValid = IsValidEndPoint -GraphEndpoint $IntuneUrl
-                    if ($IsValid) {
-                        $ExternalDocsUrl = $IntuneUrl
+                    else {
+                        if (Test-Path $ExampleFile) {
+                            #Check file content and retain correct examples
+                            $Content = Get-Content -Path $ExampleFile
+                            Clear-Content $ExampleFile -Force
+                            if ($Content | Select-String -pattern $GraphCommand) {
+                                Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $GraphCommand
+                            }   
+                        }
                     }
-                    Start-WebScrapping -GraphProfile $ApiVersion -ExternalDocUrl $ExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -UriPath $UriPath -Module $GraphModule
-                }
-                else {
-                    if (Test-Path $ExampleFile) {
-                        #Check file content and retain correct examples
-                        $Content = Get-Content -Path $ExampleFile
-                        Clear-Content $ExampleFile -Force
-                        if ($Content | Select-String -pattern $GraphCommand) {
-                            Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $GraphCommand
-                        }   
-                    }
-                }
             
+                }
+            }
+            else {
+                Write-Host "The path to the command metadata file is invalid. Please ensure that the path is correct"
             }
         }
         else {
-            Write-Host "The path to the command metadata file is invalid. Please ensure that the path is correct"
+          
+            $ProfilePathMapping = "v1.0\examples"
+            if ($ProfilePath -eq "beta") {
+                $ProfilePathMapping = "beta\examples"
+            }
+            $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
+            Start-WebScrapping -GraphProfile $ProfilePath -ExternalDocUrl $ManualExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -Module $GraphModule   
         }
     }
-    else {
-          
-        $ProfilePathMapping = "v1.0\examples"
-        if ($ProfilePath -eq "beta") {
-            $ProfilePathMapping = "beta\examples"
-        }
-        $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
-        Start-WebScrapping -GraphProfile $ProfilePath -ExternalDocUrl $ManualExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -Module $GraphModule   
+    catch {
+        Write-Host "`nError Message: " $_.Exception.Message
+        Write-Host "`nError in Line: " $_.InvocationInfo.Line
+        Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
+        Write-Host "`nError Item Name: "$_.Exception.ItemName
     }
 }
 function Test-Commands {
