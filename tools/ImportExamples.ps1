@@ -137,8 +137,11 @@ function Start-WebScrapping {
     $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
     $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
     try {
-        ($readStream, $HttpWebResponse) = FetchStream -GraphDocsUrl $GraphDocsUrl
-
+        ($readStream, $HttpWebResponse, $IsSuccess) = FetchStream -GraphDocsUrl $GraphDocsUrl
+        if($IsSuccess -eq $False) {
+            Write-Host "The url $GraphDocsUrl is invalid. Please ensure that the url is correct"
+            return
+        }
         while (-not $readStream.EndOfStream) {
             $Line = $readStream.ReadLine()
             if ($Line -match "^### Example") {
@@ -223,12 +226,21 @@ function FetchStream {
     param(
         [string]$GraphDocsUrl
     )
+    try{
     $HttpWebRequest = [System.Net.WebRequest]::Create($GraphDocsUrl)
     $HttpWebResponse = $HttpWebRequest.GetResponse()
     $ReceiveStream = $HttpWebResponse.GetResponseStream()
     $Encode = [System.Text.Encoding]::GetEncoding("utf-8")
     $ReadStream = [System.IO.StreamReader]::new($ReceiveStream, $Encode)
-    return ($ReadStream, $HttpWebResponse)
+    return ($ReadStream, $HttpWebResponse, $True)
+    }
+    catch {
+        return ($null, $null, $False)
+        Write-Host "`nError Message: " $_.Exception.Message
+        Write-Host "`nError in Line: " $_.InvocationInfo.Line
+        Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
+        Write-Host "`nError Item Name: "$_.Exception.ItemName
+    }
 }
 function Update-ExampleFile {
     param(
