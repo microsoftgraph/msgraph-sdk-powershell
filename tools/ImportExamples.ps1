@@ -36,6 +36,7 @@ function Start-Generator {
                 $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
 
                 $ExampleFile = "$ModulePath\$GraphCommand.md"
+                Write-Host $ExampleFile
                 Test-Commands -Command $GraphCommand -CommandPath $ExampleFile
                 if ($null -ne $ExternalDocsUrl) { 
                     if (-not (Test-Path $ExampleFile)) {
