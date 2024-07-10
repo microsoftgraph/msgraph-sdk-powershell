@@ -138,56 +138,54 @@ function Start-WebScrapping {
     $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
     try {
         ($readStream, $HttpWebResponse, $IsSuccess) = FetchStream -GraphDocsUrl $GraphDocsUrl
-        if($IsSuccess -eq $False) {
-            Write-Host "The url $GraphDocsUrl is invalid. Please ensure that the url is correct"
-            return
-        }
-        while (-not $readStream.EndOfStream) {
-            $Line = $readStream.ReadLine()
-            if ($Line -match "^### Example") {
-                $H = $HeaderList.Add($Line)
+        if ($IsSuccess) {
+            while (-not $readStream.EndOfStream) {
+                $Line = $readStream.ReadLine()
+                if ($Line -match "^### Example") {
+                    $H = $HeaderList.Add($Line)
+                }
+                if ($Line -match "/includes/snippets/powershell/") {
+                    $Line = $Line.Replace("[!INCLUDE [sample-code](..", "")
+                    $SnippetPath = $Line.Replace(")", "").Replace("]", "")
+                    $SnippetUrl = $GraphDocsUrl.Replace("/api/$LastPathSegment", $SnippetPath)
+                    $E = $ExampleLinks.Add($SnippetUrl)
+                }
             }
-            if ($Line -match "/includes/snippets/powershell/") {
-                $Line = $Line.Replace("[!INCLUDE [sample-code](..", "")
-                $SnippetPath = $Line.Replace(")", "").Replace("]", "")
-                $SnippetUrl = $GraphDocsUrl.Replace("/api/$LastPathSegment", $SnippetPath)
-                $E = $ExampleLinks.Add($SnippetUrl)
-            }
-        }
-        $HttpWebResponse.Close() 
-        $readStream.Close()
+            $HttpWebResponse.Close() 
+            $readStream.Close()
 
-        foreach ($Link in $ExampleLinks) {
-            $ConstructedSnippet = "";
+            foreach ($Link in $ExampleLinks) {
+                $ConstructedSnippet = "";
                 ($Rs, $HttpResponse) = FetchStream -GraphDocsUrl $Link
-            while (-not $Rs.EndOfStream) {
-                $Snippet = $Rs.ReadLine()
+                while (-not $Rs.EndOfStream) {
+                    $Snippet = $Rs.ReadLine()
                 
-                #Write-Host $desc
-                $Snippet = $Snippet.Replace("---", "")
-                $Snippet = $Snippet.Replace('description: "Automatically generated file. DO NOT MODIFY"', "")
-                $ConstructedSnippet += $Snippet + "`n"
+                    #Write-Host $desc
+                    $Snippet = $Snippet.Replace("---", "")
+                    $Snippet = $Snippet.Replace('description: "Automatically generated file. DO NOT MODIFY"', "")
+                    $ConstructedSnippet += $Snippet + "`n"
                     
+                }
+                $S = $Snippets.Add($ConstructedSnippet)
             }
-            $S = $Snippets.Add($ConstructedSnippet)
-        }
-        if ($HeaderList.Count -ne $Snippets.Count) {
-            $HeaderList.Clear()
-            for ($d = 0; $d -lt $Snippets.Count; $d++) {
-                $sum = $d + 1
-                $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
+            if ($HeaderList.Count -ne $Snippets.Count) {
+                $HeaderList.Clear()
+                for ($d = 0; $d -lt $Snippets.Count; $d++) {
+                    $sum = $d + 1
+                    $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
+                }
             }
-        }
 
-        $ExampleFile = "$GraphProfilePath/$Command.md"
-        $url = $ExternalDocUrl
-        if ($GraphProfile -eq "beta") {
-            $url = $url.Replace("graph-rest-1.0", "graph-rest-beta")
-        }
-        $DescriptionCommand = $Command  
-        $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
+            $ExampleFile = "$GraphProfilePath/$Command.md"
+            $url = $ExternalDocUrl
+            if ($GraphProfile -eq "beta") {
+                $url = $url.Replace("graph-rest-1.0", "graph-rest-beta")
+            }
+            $DescriptionCommand = $Command  
+            $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
     
-        Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
+            Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
+        }
     }
     catch {
         Write-Host "`nError Message: " $_.Exception.Message
@@ -226,13 +224,13 @@ function FetchStream {
     param(
         [string]$GraphDocsUrl
     )
-    try{
-    $HttpWebRequest = [System.Net.WebRequest]::Create($GraphDocsUrl)
-    $HttpWebResponse = $HttpWebRequest.GetResponse()
-    $ReceiveStream = $HttpWebResponse.GetResponseStream()
-    $Encode = [System.Text.Encoding]::GetEncoding("utf-8")
-    $ReadStream = [System.IO.StreamReader]::new($ReceiveStream, $Encode)
-    return ($ReadStream, $HttpWebResponse, $True)
+    try {
+        $HttpWebRequest = [System.Net.WebRequest]::Create($GraphDocsUrl)
+        $HttpWebResponse = $HttpWebRequest.GetResponse()
+        $ReceiveStream = $HttpWebResponse.GetResponseStream()
+        $Encode = [System.Text.Encoding]::GetEncoding("utf-8")
+        $ReadStream = [System.IO.StreamReader]::new($ReceiveStream, $Encode)
+        return ($ReadStream, $HttpWebResponse, $True)
     }
     catch {
         return ($null, $null, $False)
