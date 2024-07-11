@@ -1,4 +1,4 @@
-﻿---
+---
 external help file: Microsoft.Graph.Authentication-help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphpermission
@@ -15,12 +15,13 @@ The Microsoft Graph PowerShell SDK application requires users to have domain kno
 ### Search
 ```
 Find-MgGraphPermission [-SearchString] <String> [-ExactMatch] [-PermissionType <String>] [-Online]
- [<CommonParameters>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### All
 ```
-Find-MgGraphPermission [-PermissionType <String>] [-Online] [-All] [<CommonParameters>]
+Find-MgGraphPermission [-PermissionType <String>] [-Online] [-All] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,7 +80,8 @@ Retrieves identifier for a specific permission.
 ## PARAMETERS
 
 ### -All
-{{ Fill All Description }}
+To return all possible permissions rather than just those that match the SearchString parameter, specify the All parameter. The
+All parameter may also be used with the PermissionType to enumerate all applicaition permissions or all delegated permissions.
 
 ```yaml
 Type: SwitchParameter
@@ -94,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExactMatch
-{{ Fill ExactMatch Description }}
+Specify the ExactMatch parameter to restrict the permissions emitted to those that exactly match the value specified for SearchString.
 
 ```yaml
 Type: SwitchParameter
@@ -109,7 +111,14 @@ Accept wildcard characters: False
 ```
 
 ### -Online
-{{ Fill Online Description }}
+Specify the Online parameter in addition to SearchString to force Find-MgGraphPermission to update its set of permissions
+by requesting the latest permissions data from Microsoft Graph itself before searching for the permissions specified the
+SearchString parameter. This ensures that Find-MgGraphPermission returns the most accurate search results as new permissions
+are added to Microsoft Graph for new APIs. The command uses the existing access to Microsoft Graph as enabled by a previous
+invocation of the Connect-MgGraph command to issue the request for updated permissions. If your current connection does not
+already have access to read this data from Microsoft Graph or if there is no network connectivity to Microsoft Graph, the command will fail.
+If the command is successful in updating the set of permissions prior to searching for permissions, Find-MgGraphPermission will
+continue to use the updated list for all future invocations of the command even if they do not specify the Online parameter
 
 ```yaml
 Type: SwitchParameter
@@ -124,7 +133,9 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionType
-{{ Fill PermissionType Description }}
+Specify the PermissionType to determine whether application permissions, delegated permisisons, or both are returned by
+Find-MgGraphPermission. By default, the value of this parameter is Any, which includes both delegated and application permissions.
+Other valid values for PermissionType are Application and Delegated to return those specify types of permissions.
 
 ```yaml
 Type: String
@@ -138,8 +149,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProgressAction
+Treat this as a common parameter.
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SearchString
-{{ Fill SearchString Description }}
+The SearchString parameter allows you to specify a string such as 'user' or 'mail' that represents the subject or domain
+of the permission you're searching for. Since permissions usually have names such as 'User.Read' or 'Mail.ReadWrite', the
+command uses the SearchString parameter to return all permissions that contain the value specified for SearchString in the
+name of the permission.
 
 ```yaml
 Type: String

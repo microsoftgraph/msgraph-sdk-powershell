@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <helpItems schema="maml" xmlns="http://msh">
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
@@ -18,7 +18,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ApiVersion</maml:name>
           <maml:description>
-            <maml:para>{{ Fill ApiVersion Description }}</maml:para>
+            <maml:para>The service API version.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -30,11 +30,23 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Command</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Command Description }}</maml:para>
+            <maml:para>The name of a command. e.g., Get-MgUser.}</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
             <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
+          <maml:name>ProgressAction</maml:name>
+          <maml:description>
+            <maml:para>Treat this as a common parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ActionPreference</command:parameterValue>
+          <dev:type>
+            <maml:name>ActionPreference</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -45,7 +57,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
           <maml:name>InputObject</maml:name>
           <maml:description>
-            <maml:para>{{ Fill InputObject Description }}</maml:para>
+            <maml:para>Pipeline input object</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">Object[]</command:parameterValue>
           <dev:type>
@@ -57,11 +69,23 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ApiVersion</maml:name>
           <maml:description>
-            <maml:para>{{ Fill ApiVersion Description }}</maml:para>
+            <maml:para>The service API version.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
             <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
+          <maml:name>ProgressAction</maml:name>
+          <maml:description>
+            <maml:para>Treat this as a common parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ActionPreference</command:parameterValue>
+          <dev:type>
+            <maml:name>ActionPreference</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -72,7 +96,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
           <maml:name>Uri</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Uri Description }}</maml:para>
+            <maml:para>The API path a command calls. e.g., /users.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
@@ -84,7 +108,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ApiVersion</maml:name>
           <maml:description>
-            <maml:para>{{ Fill ApiVersion Description }}</maml:para>
+            <maml:para>The service API version.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -96,11 +120,23 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Method</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Method Description }}</maml:para>
+            <maml:para>The HTTP method a command makes.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
             <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
+          <maml:name>ProgressAction</maml:name>
+          <maml:description>
+            <maml:para>Treat this as a common parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ActionPreference</command:parameterValue>
+          <dev:type>
+            <maml:name>ActionPreference</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -111,7 +147,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ApiVersion</maml:name>
         <maml:description>
-          <maml:para>{{ Fill ApiVersion Description }}</maml:para>
+          <maml:para>The service API version.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -123,7 +159,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Command</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Command Description }}</maml:para>
+          <maml:para>The name of a command. e.g., Get-MgUser.}</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -135,7 +171,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
         <maml:name>InputObject</maml:name>
         <maml:description>
-          <maml:para>{{ Fill InputObject Description }}</maml:para>
+          <maml:para>Pipeline input object</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">Object[]</command:parameterValue>
         <dev:type>
@@ -147,7 +183,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Method</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Method Description }}</maml:para>
+          <maml:para>The HTTP method a command makes.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -156,10 +192,22 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
+        <maml:name>ProgressAction</maml:name>
+        <maml:description>
+          <maml:para>Treat this as a common parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ActionPreference</command:parameterValue>
+        <dev:type>
+          <maml:name>ActionPreference</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
         <maml:name>Uri</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Uri Description }}</maml:para>
+          <maml:para>The API path a command calls. e.g., /users.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
@@ -371,7 +419,8 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>All</maml:name>
           <maml:description>
-            <maml:para>{{ Fill All Description }}</maml:para>
+            <maml:para>To return all possible permissions rather than just those that match the SearchString parameter, specify the All parameter. The
+All parameter may also be used with the PermissionType to enumerate all applicaition permissions or all delegated permissions.</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -382,7 +431,14 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Online</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Online Description }}</maml:para>
+            <maml:para>Specify the Online parameter in addition to SearchString to force Find-MgGraphPermission to update its set of permissions
+by requesting the latest permissions data from Microsoft Graph itself before searching for the permissions specified the
+SearchString parameter. This ensures that Find-MgGraphPermission returns the most accurate search results as new permissions
+are added to Microsoft Graph for new APIs. The command uses the existing access to Microsoft Graph as enabled by a previous
+invocation of the Connect-MgGraph command to issue the request for updated permissions. If your current connection does not
+already have access to read this data from Microsoft Graph or if there is no network connectivity to Microsoft Graph, the command will fail.
+If the command is successful in updating the set of permissions prior to searching for permissions, Find-MgGraphPermission will
+continue to use the updated list for all future invocations of the command even if they do not specify the Online parameter</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -393,11 +449,25 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>PermissionType</maml:name>
           <maml:description>
-            <maml:para>{{ Fill PermissionType Description }}</maml:para>
+            <maml:para>Specify the PermissionType to determine whether application permissions, delegated permisisons, or both are returned by
+Find-MgGraphPermission. By default, the value of this parameter is Any, which includes both delegated and application permissions.
+Other valid values for PermissionType are Application and Delegated to return those specify types of permissions.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
             <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
+          <maml:name>ProgressAction</maml:name>
+          <maml:description>
+            <maml:para>Treat this as a common parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ActionPreference</command:parameterValue>
+          <dev:type>
+            <maml:name>ActionPreference</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -408,7 +478,10 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
           <maml:name>SearchString</maml:name>
           <maml:description>
-            <maml:para>{{ Fill SearchString Description }}</maml:para>
+            <maml:para>The SearchString parameter allows you to specify a string such as 'user' or 'mail' that represents the subject or domain
+of the permission you're searching for. Since permissions usually have names such as 'User.Read' or 'Mail.ReadWrite', the
+command uses the SearchString parameter to return all permissions that contain the value specified for SearchString in the
+name of the permission.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -420,7 +493,7 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ExactMatch</maml:name>
           <maml:description>
-            <maml:para>{{ Fill ExactMatch Description }}</maml:para>
+            <maml:para>Specify the ExactMatch parameter to restrict the permissions emitted to those that exactly match the value specified for SearchString.</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -431,7 +504,14 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Online</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Online Description }}</maml:para>
+            <maml:para>Specify the Online parameter in addition to SearchString to force Find-MgGraphPermission to update its set of permissions
+by requesting the latest permissions data from Microsoft Graph itself before searching for the permissions specified the
+SearchString parameter. This ensures that Find-MgGraphPermission returns the most accurate search results as new permissions
+are added to Microsoft Graph for new APIs. The command uses the existing access to Microsoft Graph as enabled by a previous
+invocation of the Connect-MgGraph command to issue the request for updated permissions. If your current connection does not
+already have access to read this data from Microsoft Graph or if there is no network connectivity to Microsoft Graph, the command will fail.
+If the command is successful in updating the set of permissions prior to searching for permissions, Find-MgGraphPermission will
+continue to use the updated list for all future invocations of the command even if they do not specify the Online parameter</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -442,11 +522,25 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>PermissionType</maml:name>
           <maml:description>
-            <maml:para>{{ Fill PermissionType Description }}</maml:para>
+            <maml:para>Specify the PermissionType to determine whether application permissions, delegated permisisons, or both are returned by
+Find-MgGraphPermission. By default, the value of this parameter is Any, which includes both delegated and application permissions.
+Other valid values for PermissionType are Application and Delegated to return those specify types of permissions.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
             <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
+          <maml:name>ProgressAction</maml:name>
+          <maml:description>
+            <maml:para>Treat this as a common parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ActionPreference</command:parameterValue>
+          <dev:type>
+            <maml:name>ActionPreference</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -457,7 +551,8 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>All</maml:name>
         <maml:description>
-          <maml:para>{{ Fill All Description }}</maml:para>
+          <maml:para>To return all possible permissions rather than just those that match the SearchString parameter, specify the All parameter. The
+All parameter may also be used with the PermissionType to enumerate all applicaition permissions or all delegated permissions.</maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -469,7 +564,7 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ExactMatch</maml:name>
         <maml:description>
-          <maml:para>{{ Fill ExactMatch Description }}</maml:para>
+          <maml:para>Specify the ExactMatch parameter to restrict the permissions emitted to those that exactly match the value specified for SearchString.</maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -481,7 +576,14 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Online</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Online Description }}</maml:para>
+          <maml:para>Specify the Online parameter in addition to SearchString to force Find-MgGraphPermission to update its set of permissions
+by requesting the latest permissions data from Microsoft Graph itself before searching for the permissions specified the
+SearchString parameter. This ensures that Find-MgGraphPermission returns the most accurate search results as new permissions
+are added to Microsoft Graph for new APIs. The command uses the existing access to Microsoft Graph as enabled by a previous
+invocation of the Connect-MgGraph command to issue the request for updated permissions. If your current connection does not
+already have access to read this data from Microsoft Graph or if there is no network connectivity to Microsoft Graph, the command will fail.
+If the command is successful in updating the set of permissions prior to searching for permissions, Find-MgGraphPermission will
+continue to use the updated list for all future invocations of the command even if they do not specify the Online parameter</maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -493,7 +595,9 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>PermissionType</maml:name>
         <maml:description>
-          <maml:para>{{ Fill PermissionType Description }}</maml:para>
+          <maml:para>Specify the PermissionType to determine whether application permissions, delegated permisisons, or both are returned by
+Find-MgGraphPermission. By default, the value of this parameter is Any, which includes both delegated and application permissions.
+Other valid values for PermissionType are Application and Delegated to return those specify types of permissions.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -502,10 +606,25 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="proga">
+        <maml:name>ProgressAction</maml:name>
+        <maml:description>
+          <maml:para>Treat this as a common parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ActionPreference</command:parameterValue>
+        <dev:type>
+          <maml:name>ActionPreference</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
         <maml:name>SearchString</maml:name>
         <maml:description>
-          <maml:para>{{ Fill SearchString Description }}</maml:para>
+          <maml:para>The SearchString parameter allows you to specify a string such as 'user' or 'mail' that represents the subject or domain
+of the permission you're searching for. Since permissions usually have names such as 'User.Read' or 'Mail.ReadWrite', the
+command uses the SearchString parameter to return all permissions that contain the value specified for SearchString in the
+name of the permission.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
