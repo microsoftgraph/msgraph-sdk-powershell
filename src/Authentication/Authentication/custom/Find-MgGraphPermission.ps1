@@ -22,20 +22,18 @@ function Find-MgGraphPermission {
     [cmdletbinding(positionalbinding=$false, HelpUri = 'https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphpermission')]
     [OutputType('Microsoft.Graph.Custom.Permission')]
     param (
-        [parameter(ParameterSetName='Search', position=0, ValueFromPipeline=$true, Mandatory=$true, HelpMessage='The search string to use to find permissions')]
+        [parameter(ParameterSetName='Search', position=0, ValueFromPipeline=$true, Mandatory=$true)]
         [String] $SearchString,
 
-        [parameter(ParameterSetName='Search', HelpMessage='Search for permissions that exactly match the specified name')]
+        [parameter(ParameterSetName='Search')]
         [Switch] $ExactMatch,
 
-        [parameter(ParameterSetName='PermissionType', HelpMessage='The type of permissions to search for', Mandatory=$false)]
         [ValidateSet('Any', 'Delegated', 'Application')]
         [String] $PermissionType = 'Any',
-        
-        [parameter(ParameterSetName='Online', HelpMessage='Search for permissions in the online service', Mandatory=$false)]
+
         [Switch] $Online,
 
-        [parameter(ParameterSetname='All', HelpMessage='Return all permissions', Mandatory=$false)]
+        [parameter(ParameterSetname='All')]
         [Switch] $All
     )
 
