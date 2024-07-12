@@ -999,8 +999,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// </summary>
         private void ResetGraphSessionEnvironment()
         {
-            _originalEnvironment = GraphSession.Instance.Environment;
-            GraphSession.Instance.Environment = _originalEnvironment;
+            var currentEnvironment = GraphSession.Instance.Environment;
+            if(currentEnvironment != null && !currentEnvironment.Equals(_originalEnvironment))
+            {
+                GraphSession.Instance.Environment = _originalEnvironment;
+            }
         }
 
         #region CmdLet LifeCycle
@@ -1039,6 +1042,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             if (ShouldCheckHttpStatus && !isSuccess)
                             {
                                 var httpErrorRecord = await GenerateHttpErrorRecordAsync(httpResponseMessageFormatter, httpRequestMessage);
+                                // A reset of the GraphSession Environment is required to avoid side effects
+                                ResetGraphSessionEnvironment();
                                 ThrowTerminatingError(httpErrorRecord);
                             }
                             await ProcessResponseAsync(httpResponseMessage);
