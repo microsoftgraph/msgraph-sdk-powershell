@@ -17,63 +17,71 @@ function Start-Generator {
         [string] $ProfilePath = "v1.0",
         [string] $ManualExternalDocsUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell"
     )
+    try {
+        if ($GenerationMode -eq "auto") {
+            #Test path first
+            if (Test-Path $CommandMetadataPath) {
+                $CommandMetadataContent = Get-Content $CommandMetadataPath | ConvertFrom-Json
+                $CommandMetadataContent | ForEach-Object {
+                    $GraphCommand = $_.Command
+                    $GraphModule = $_.Module
+                    $UriPath = $_.Uri
+                    $ExternalDocsUrl = $_.ApiReferenceLink
+                    $ApiVersion = $_.ApiVersion
+                    $ProfilePathMapping = "v1.0\examples"
+                    if ($ApiVersion -eq "beta") {
+                        $ProfilePathMapping = "beta\examples"
+                        $GraphModule = $GraphModule.Replace("Beta.", "")
+                    }
+                    $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
 
-    if ($GenerationMode -eq "auto") {
-        #Test path first
-        if (Test-Path $CommandMetadataPath) {
-            $CommandMetadataContent = Get-Content $CommandMetadataPath | ConvertFrom-Json
-            $CommandMetadataContent | ForEach-Object {
-                $GraphCommand = $_.Command
-                $GraphModule = $_.Module
-                $UriPath = $_.Uri
-                $ExternalDocsUrl = $_.ApiReferenceLink
-                $ApiVersion = $_.ApiVersion
-                $ProfilePathMapping = "v1.0\examples"
-                if ($ApiVersion -eq "beta") {
-                    $ProfilePathMapping = "beta\examples"
-                    $GraphModule = $GraphModule.Replace("Beta.", "")
-                }
-                $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
-
-                $ExampleFile = "$ModulePath\$GraphCommand.md"
-                Test-Commands -Command $GraphCommand -CommandPath $ExampleFile
-                if ($null -ne $ExternalDocsUrl) { 
-                    if (-not (Test-Path $ExampleFile)) {
-                        New-Item -Path $ExampleFile -ItemType File -Force
+                    $ExampleFile = "$ModulePath\$GraphCommand.md"
+                    Write-Host $ExampleFile
+                    Test-Commands -Command $GraphCommand -CommandPath $ExampleFile
+                    if ($null -ne $ExternalDocsUrl) { 
+                        if (-not (Test-Path $ExampleFile)) {
+                            New-Item -Path $ExampleFile -ItemType File -Force
+                        }
+                        $IntuneUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
+                        $IntuneUrl = $IntuneUrl.Replace("intune-mam-", "")
+                        $IsValid = IsValidEndPoint -GraphEndpoint $IntuneUrl
+                        if ($IsValid) {
+                            $ExternalDocsUrl = $IntuneUrl
+                        }
+                        Start-WebScrapping -GraphProfile $ApiVersion -ExternalDocUrl $ExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -UriPath $UriPath -Module $GraphModule
                     }
-                    $IntuneUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
-                    $IntuneUrl = $IntuneUrl.Replace("intune-mam-", "")
-                    $IsValid = IsValidEndPoint -GraphEndpoint $IntuneUrl
-                    if ($IsValid) {
-                        $ExternalDocsUrl = $IntuneUrl
+                    else {
+                        if (Test-Path $ExampleFile) {
+                            #Check file content and retain correct examples
+                            $Content = Get-Content -Path $ExampleFile
+                            Clear-Content $ExampleFile -Force
+                            if ($Content | Select-String -pattern $GraphCommand) {
+                                Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $GraphCommand
+                            }   
+                        }
                     }
-                    Start-WebScrapping -GraphProfile $ApiVersion -ExternalDocUrl $ExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -UriPath $UriPath -Module $GraphModule
-                }
-                else {
-                    if (Test-Path $ExampleFile) {
-                        #Check file content and retain correct examples
-                        $Content = Get-Content -Path $ExampleFile
-                        Clear-Content $ExampleFile -Force
-                        if ($Content | Select-String -pattern $GraphCommand) {
-                            Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $GraphCommand
-                        }   
-                    }
-                }
             
+                }
+            }
+            else {
+                Write-Host "The path to the command metadata file is invalid. Please ensure that the path is correct"
             }
         }
         else {
-            Write-Host "The path to the command metadata file is invalid. Please ensure that the path is correct"
+          
+            $ProfilePathMapping = "v1.0\examples"
+            if ($ProfilePath -eq "beta") {
+                $ProfilePathMapping = "beta\examples"
+            }
+            $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
+            Start-WebScrapping -GraphProfile $ProfilePath -ExternalDocUrl $ManualExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -Module $GraphModule   
         }
     }
-    else {
-          
-        $ProfilePathMapping = "v1.0\examples"
-        if ($ProfilePath -eq "beta") {
-            $ProfilePathMapping = "beta\examples"
-        }
-        $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
-        Start-WebScrapping -GraphProfile $ProfilePath -ExternalDocUrl $ManualExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -Module $GraphModule   
+    catch {
+        Write-Host "`nError Message: " $_.Exception.Message
+        Write-Host "`nError in Line: " $_.InvocationInfo.Line
+        Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
+        Write-Host "`nError Item Name: "$_.Exception.ItemName
     }
 }
 function Test-Commands {
@@ -137,54 +145,55 @@ function Start-WebScrapping {
     $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
     $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
     try {
-        ($readStream, $HttpWebResponse) = FetchStream -GraphDocsUrl $GraphDocsUrl
-
-        while (-not $readStream.EndOfStream) {
-            $Line = $readStream.ReadLine()
-            if ($Line -match "^### Example") {
-                $H = $HeaderList.Add($Line)
+        ($readStream, $HttpWebResponse, $IsSuccess) = FetchStream -GraphDocsUrl $GraphDocsUrl
+        if ($IsSuccess) {
+            while (-not $readStream.EndOfStream) {
+                $Line = $readStream.ReadLine()
+                if ($Line -match "^### Example") {
+                    $H = $HeaderList.Add($Line)
+                }
+                if ($Line -match "/includes/snippets/powershell/") {
+                    $Line = $Line.Replace("[!INCLUDE [sample-code](..", "")
+                    $SnippetPath = $Line.Replace(")", "").Replace("]", "")
+                    $SnippetUrl = $GraphDocsUrl.Replace("/api/$LastPathSegment", $SnippetPath)
+                    $E = $ExampleLinks.Add($SnippetUrl)
+                }
             }
-            if ($Line -match "/includes/snippets/powershell/") {
-                $Line = $Line.Replace("[!INCLUDE [sample-code](..", "")
-                $SnippetPath = $Line.Replace(")", "").Replace("]", "")
-                $SnippetUrl = $GraphDocsUrl.Replace("/api/$LastPathSegment", $SnippetPath)
-                $E = $ExampleLinks.Add($SnippetUrl)
-            }
-        }
-        $HttpWebResponse.Close() 
-        $readStream.Close()
+            $HttpWebResponse.Close() 
+            $readStream.Close()
 
-        foreach ($Link in $ExampleLinks) {
-            $ConstructedSnippet = "";
+            foreach ($Link in $ExampleLinks) {
+                $ConstructedSnippet = "";
                 ($Rs, $HttpResponse) = FetchStream -GraphDocsUrl $Link
-            while (-not $Rs.EndOfStream) {
-                $Snippet = $Rs.ReadLine()
+                while (-not $Rs.EndOfStream) {
+                    $Snippet = $Rs.ReadLine()
                 
-                #Write-Host $desc
-                $Snippet = $Snippet.Replace("---", "")
-                $Snippet = $Snippet.Replace('description: "Automatically generated file. DO NOT MODIFY"', "")
-                $ConstructedSnippet += $Snippet + "`n"
+                    #Write-Host $desc
+                    $Snippet = $Snippet.Replace("---", "")
+                    $Snippet = $Snippet.Replace('description: "Automatically generated file. DO NOT MODIFY"', "")
+                    $ConstructedSnippet += $Snippet + "`n"
                     
+                }
+                $S = $Snippets.Add($ConstructedSnippet)
             }
-            $S = $Snippets.Add($ConstructedSnippet)
-        }
-        if ($HeaderList.Count -ne $Snippets.Count) {
-            $HeaderList.Clear()
-            for ($d = 0; $d -lt $Snippets.Count; $d++) {
-                $sum = $d + 1
-                $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
+            if ($HeaderList.Count -ne $Snippets.Count) {
+                $HeaderList.Clear()
+                for ($d = 0; $d -lt $Snippets.Count; $d++) {
+                    $sum = $d + 1
+                    $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
+                }
             }
-        }
 
-        $ExampleFile = "$GraphProfilePath/$Command.md"
-        $url = $ExternalDocUrl
-        if ($GraphProfile -eq "beta") {
-            $url = $url.Replace("graph-rest-1.0", "graph-rest-beta")
-        }
-        $DescriptionCommand = $Command  
-        $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
+            $ExampleFile = "$GraphProfilePath/$Command.md"
+            $url = $ExternalDocUrl
+            if ($GraphProfile -eq "beta") {
+                $url = $url.Replace("graph-rest-1.0", "graph-rest-beta")
+            }
+            $DescriptionCommand = $Command  
+            $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
     
-        Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
+            Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
+        }
     }
     catch {
         Write-Host "`nError Message: " $_.Exception.Message
@@ -223,12 +232,21 @@ function FetchStream {
     param(
         [string]$GraphDocsUrl
     )
-    $HttpWebRequest = [System.Net.WebRequest]::Create($GraphDocsUrl)
-    $HttpWebResponse = $HttpWebRequest.GetResponse()
-    $ReceiveStream = $HttpWebResponse.GetResponseStream()
-    $Encode = [System.Text.Encoding]::GetEncoding("utf-8")
-    $ReadStream = [System.IO.StreamReader]::new($ReceiveStream, $Encode)
-    return ($ReadStream, $HttpWebResponse)
+    try {
+        $HttpWebRequest = [System.Net.WebRequest]::Create($GraphDocsUrl)
+        $HttpWebResponse = $HttpWebRequest.GetResponse()
+        $ReceiveStream = $HttpWebResponse.GetResponseStream()
+        $Encode = [System.Text.Encoding]::GetEncoding("utf-8")
+        $ReadStream = [System.IO.StreamReader]::new($ReceiveStream, $Encode)
+        return ($ReadStream, $HttpWebResponse, $True)
+    }
+    catch {
+        return ($null, $null, $False)
+        Write-Host "`nError Message: " $_.Exception.Message
+        Write-Host "`nError in Line: " $_.InvocationInfo.Line
+        Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
+        Write-Host "`nError Item Name: "$_.Exception.ItemName
+    }
 }
 function Update-ExampleFile {
     param(
