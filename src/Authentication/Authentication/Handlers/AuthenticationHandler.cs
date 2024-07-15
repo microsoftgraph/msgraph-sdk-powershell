@@ -27,6 +27,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
         private const string BearerAuthenticationScheme = "Bearer";
         private const string PopAuthenticationScheme = "Pop";
         private int MaxRetry { get; set; } = 1;
+        private PopTokenRequestContext popTokenRequestContext;
+        private Request popRequest = GraphSession.Instance.GraphRequestPopContext.PopPipeline.CreateRequest();
 
         public AzureIdentityAccessTokenProvider AuthenticationProvider { get; set; }
 
@@ -53,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
                 // Continuous nonce extraction on each request
                 if (GraphSession.Instance.GraphOption.EnableATPoPForMSGraph)
                 {
-                    GraphSession.Instance.GraphRequestPopContext.PopTokenContext = new PopTokenRequestContext(GraphSession.Instance.AuthContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: WwwAuthenticateParameters.CreateFromAuthenticationHeaders(response.Headers, PopAuthenticationScheme).Nonce, request: GraphSession.Instance.GraphRequestPopContext.Request);
+                    popTokenRequestContext = new PopTokenRequestContext(GraphSession.Instance.AuthContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: WwwAuthenticateParameters.CreateFromAuthenticationHeaders(response.Headers, PopAuthenticationScheme).Nonce, request: popRequest);
                 }
 
                 // Check if response is a 401 & is not a streamed body (is buffered)
@@ -76,14 +78,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
             {
                 if (GraphSession.Instance.GraphOption.EnableATPoPForMSGraph)
                 {
-                    GraphSession.Instance.GraphRequestPopContext.Request.Method = RequestMethod.Parse(httpRequestMessage.Method.Method.ToUpper());
-                    GraphSession.Instance.GraphRequestPopContext.Request.Uri.Reset(httpRequestMessage.RequestUri);
+                    popRequest.Method = RequestMethod.Parse(httpRequestMessage.Method.Method.ToUpper());
+                    popRequest.Uri.Reset(httpRequestMessage.RequestUri);
                     foreach (var header in httpRequestMessage.Headers)
                     {
-                        GraphSession.Instance.GraphRequestPopContext.Request.Headers.Add(header.Key, header.Value.First());
+                        popRequest.Headers.Add(header.Key, header.Value.First());
                     }
                     
-                    var accessToken = await GraphSession.Instance.GraphRequestPopContext.PopInteractiveBrowserCredential.GetTokenAsync(GraphSession.Instance.GraphRequestPopContext.PopTokenContext, cancellationToken).ConfigureAwait(false);
+                    var accessToken = await GraphSession.Instance.GraphRequestPopContext.PopInteractiveBrowserCredential.GetTokenAsync(popTokenRequestContext, cancellationToken).ConfigureAwait(false);
                     httpRequestMessage.Headers.Authorization = new AuthenticationHeaderValue(PopAuthenticationScheme, accessToken.Token);
                 }
                 else
