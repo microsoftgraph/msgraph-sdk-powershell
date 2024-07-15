@@ -126,9 +126,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
 
             var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
+            var popTokenRequestContext = new PopTokenRequestContext();
             if (GraphSession.Instance.GraphOption.EnableATPoPForMSGraph)
             {
-                GraphSession.Instance.GraphRequestPopContext.PopTokenContext = await CreatePopTokenRequestContext(authContext);
+                popTokenRequestContext = await CreatePopTokenRequestContext(authContext);
                 GraphSession.Instance.GraphRequestPopContext.PopInteractiveBrowserCredential = interactiveBrowserCredential;
             }
 
@@ -143,7 +144,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         authRecord = await Task.Run(() =>
                         {
                             // Run the thread in MTA.
-                            return interactiveBrowserCredential.AuthenticateAsync(GraphSession.Instance.GraphRequestPopContext.PopTokenContext, cancellationToken);
+                            return interactiveBrowserCredential.AuthenticateAsync(popTokenRequestContext, cancellationToken);
                         });
                     }
                     else
@@ -487,13 +488,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
             });
 
-            var _popPipeline = HttpPipelineBuilder.Build(popPipelineOptions, new HttpPipelineTransportOptions());
-            GraphSession.Instance.GraphRequestPopContext.Request = _popPipeline.CreateRequest();
-            GraphSession.Instance.GraphRequestPopContext.Request.Method = RequestMethod.Parse(popMethod.Method.ToUpper());
-            GraphSession.Instance.GraphRequestPopContext.Request.Uri.Reset(popResourceUri);
+            GraphSession.Instance.GraphRequestPopContext.PopPipeline = HttpPipelineBuilder.Build(popPipelineOptions, new HttpPipelineTransportOptions());
+            var popRequest = GraphSession.Instance.GraphRequestPopContext.PopPipeline.CreateRequest();
+            popRequest.Method = RequestMethod.Parse(popMethod.Method.ToUpper());
+            popRequest.Uri.Reset(popResourceUri);
 
             // Refresh token logic --- end
-            var popContext = new PopTokenRequestContext(authContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: WwwAuthenticateParameters.CreateFromAuthenticationHeaders(popResponse.Headers, "Pop").Nonce, request: GraphSession.Instance.GraphRequestPopContext.Request);
+            var popContext = new PopTokenRequestContext(authContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: WwwAuthenticateParameters.CreateFromAuthenticationHeaders(popResponse.Headers, "Pop").Nonce, request: popRequest);
             return popContext;
         }
     }
