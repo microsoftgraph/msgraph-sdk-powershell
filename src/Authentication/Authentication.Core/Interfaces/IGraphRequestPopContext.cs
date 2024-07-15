@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 
 using Azure.Core;
+using Azure.Core.Pipeline;
 using Azure.Identity;
 using System;
 using System.Net.Http;
@@ -14,8 +15,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Uri Uri { get; set; }
         HttpMethod HttpMethod { get; set; }
         AccessToken AccessToken { get; set; }
-        PopTokenRequestContext PopTokenContext { get; set; }
-        Request Request { get; set; }
+        HttpPipeline PopPipeline { get; set; }
         InteractiveBrowserCredential PopInteractiveBrowserCredential { get; set; }
     }
 }
