@@ -302,3 +302,56 @@ New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
 ```
 This example shows how to use the New-MgEntitlementManagementAssignmentPolicy Cmdlet.
 
+### Example 5: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Identity.Governance
+
+$params = @{
+	displayName = "customExtensionStageSettings policy"
+	description = "policy with specified stages for custom extension assignment"
+	allowedTargetScope = "notSpecified"
+	specificAllowedTargets = @(
+	)
+	expiration = @{
+		endDateTime = $null
+		duration = $null
+		type = "noExpiration"
+	}
+	requestorSettings = @{
+		enableTargetsToSelfAddAccess = $false
+		enableTargetsToSelfUpdateAccess = $false
+		enableTargetsToSelfRemoveAccess = $false
+		allowCustomAssignmentSchedule = $true
+		enableOnBehalfRequestorsToAddAccess = $false
+		enableOnBehalfRequestorsToUpdateAccess = $false
+		enableOnBehalfRequestorsToRemoveAccess = $false
+		onBehalfRequestors = @(
+		)
+	}
+	requestApprovalSettings = @{
+		isApprovalRequiredForAdd = $false
+		isApprovalRequiredForUpdate = $false
+		stages = @(
+		)
+	}
+	accessPackage = @{
+		id = "5ad1eb64-15f7-4614-b419-05d11ee266bf"
+	}
+	customExtensionStageSettings = @(
+		@{
+			stage = "assignmentRequestCreated"
+			customExtension = @{
+				"@odata.type" = "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension"
+				id = "bebe7873-1f0d-4db9-b6c3-01f7ebfe8476"
+			}
+		}
+	)
+}
+
+New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
+
+```
+This example shows how to use the New-MgEntitlementManagementAssignmentPolicy Cmdlet.
+

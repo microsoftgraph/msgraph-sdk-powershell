@@ -5,7 +5,6 @@
 Import-Module Microsoft.Graph.Beta.Bookings
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.businessScenarioTask"
 	title = "Customer order #12010"
 	percentComplete = 20
 	priority = 1
