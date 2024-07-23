@@ -40,4 +40,8 @@ directive:
       verb: Remove
       subject: ^(ShareListItemPermissionGrant)$
     remove: true
+  - where:
+      verb: Revoke
+      subject: ^(ShareListItemPermissionGrant)$
+    remove: true
 ```
