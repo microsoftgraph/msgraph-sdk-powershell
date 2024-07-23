@@ -113,7 +113,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
-      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+      description: 'Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: user.insight_ListShared
       parameters:
         - name: user-id
@@ -204,7 +204,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
-      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+      description: 'Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: user.insight_GetShared
       parameters:
         - name: user-id
@@ -460,7 +460,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
-      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+      description: 'Calculated relationship that identifies documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for work or school and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: user.insight_ListTrending
       parameters:
         - name: user-id
@@ -551,7 +551,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
-      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+      description: 'Calculated relationship that identifies documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for work or school and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: user.insight_GetTrending
       parameters:
         - name: user-id
@@ -754,7 +754,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
-      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
+      description: 'Calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.'
       operationId: user.insight_ListUsed
       parameters:
         - name: user-id
@@ -845,7 +845,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
-      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
+      description: 'Calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.'
       operationId: user.insight_GetUsed
       parameters:
         - name: user-id
@@ -1191,19 +1191,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+              description: 'Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
               x-ms-navigationProperty: true
             trending:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
-              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+              description: 'Calculated relationship that identifies documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for work or school and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
               x-ms-navigationProperty: true
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
+              description: 'Calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object

@@ -95,11 +95,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: List deviceEnrollmentConfigurations
-      description: List properties and relationships of the deviceEnrollmentConfiguration objects.
+      summary: List deviceEnrollmentPlatformRestrictionsConfigurations
+      description: List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceEnrollmentConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -176,11 +176,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Get deviceEnrollmentConfiguration
-      description: Read properties and relationships of the deviceEnrollmentConfiguration object.
+      summary: Get deviceEnrollmentLimitConfiguration
+      description: Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -224,11 +224,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Update deviceEnrollmentLimitConfiguration
-      description: Update the properties of a deviceEnrollmentLimitConfiguration object.
+      summary: Update deviceEnrollmentWindowsHelloForBusinessConfiguration
+      description: Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -259,11 +259,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Delete deviceEnrollmentWindowsHelloForBusinessConfiguration
-      description: Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
+      summary: Delete deviceEnrollmentLimitConfiguration
+      description: Deletes a deviceEnrollmentLimitConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -2081,11 +2081,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as having changed when using delta.'
+          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
