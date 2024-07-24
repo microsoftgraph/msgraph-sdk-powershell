@@ -962,11 +962,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Update externalItem
-      description: Update the properties of an externalItem object.
+      summary: Create externalItem
+      description: Create a new externalItem object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -3851,7 +3851,7 @@ components:
           type: array
           items:
             type: string
-          description: A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
+          description: A collection with one or many strings. One or more specified strings are matched with the specified property using the specified operation. Required.
         valuesJoinedBy:
           $ref: '#/components/schemas/microsoft.graph.binaryOperator'
       additionalProperties:

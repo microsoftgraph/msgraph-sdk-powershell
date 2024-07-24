@@ -3470,7 +3470,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -6704,7 +6704,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -9416,7 +9416,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -11044,7 +11044,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -12508,7 +12508,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -12703,6 +12703,7 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.site.list.item_ListPermission
       parameters:
         - name: group-id
@@ -12841,6 +12842,7 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.site.list.item_GetPermission
       parameters:
         - name: group-id
@@ -13778,7 +13780,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -14285,6 +14287,7 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.site.list_ListPermission
       parameters:
         - name: group-id
@@ -14407,6 +14410,7 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.site.list_GetPermission
       parameters:
         - name: group-id
@@ -27601,7 +27605,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -27882,7 +27886,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -28101,7 +28105,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -30013,7 +30017,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -30294,7 +30298,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -31436,7 +31440,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -31951,7 +31955,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -32232,7 +32236,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -32527,7 +32531,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -50418,11 +50422,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Search for sites
-      description: Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
+      summary: List sites
+      description: "List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.\nIf you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-search?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/site-list?view=graph-rest-beta
       operationId: site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -57011,7 +57015,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -58345,7 +58349,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -59600,7 +59604,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -59969,6 +59973,7 @@ paths:
       tags:
         - sites.list
       summary: Get permissions from sites
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: site.list.item_ListPermission
       parameters:
         - name: site-id
@@ -60091,6 +60096,7 @@ paths:
       tags:
         - sites.list
       summary: Get permissions from sites
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: site.list.item_GetPermission
       parameters:
         - name: site-id
@@ -61288,7 +61294,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -61723,6 +61729,7 @@ paths:
       tags:
         - sites.list
       summary: Get permissions from sites
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: site.list_ListPermission
       parameters:
         - name: site-id
@@ -61829,6 +61836,7 @@ paths:
       tags:
         - sites.list
       summary: Get permissions from sites
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: site.list_GetPermission
       parameters:
         - name: site-id
@@ -67591,7 +67599,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -67832,7 +67840,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -68023,7 +68031,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -69777,7 +69785,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -70018,7 +70026,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -88816,6 +88824,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
             subscriptions:
               type: array
@@ -88877,6 +88886,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
             versions:
               type: array
@@ -90619,7 +90629,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         scope:
           type: string
-          description: 'Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.'
+          description: 'Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.'
           nullable: true
         sharedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -93353,7 +93363,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -94585,7 +94595,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -98804,13 +98814,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
-          description: 'A list of failed health check items. If the status property is available, this property will be empty.'
+          description: 'A list of failed health check items. If the status property is available, this property is empty.'
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
+          description: 'Datetime when the status was updated. This property is deprecated and will no longer be supported effective August 31, 2024. Use lastModifiedDateTime instead. Read-Only.'
           format: date-time
       additionalProperties:
         type: object
@@ -98822,9 +98832,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
         primaryRegion:
           type: string
+          description: The primary and mainly used region where the Cloud PC is located.
           nullable: true
         secondaryRegion:
           type: string
+          description: The secondary region to which the Cloud PC can be failed over during a regional outage.
           nullable: true
       additionalProperties:
         type: object
@@ -102763,6 +102775,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
             isArchived:
               type: boolean
+              description: 'Read-only. If set to true, the plan is archived. An archived plan is read-only.'
               nullable: true
             owner:
               type: string
@@ -102860,6 +102873,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
+              description: 'Read-only. If set to true, the task is archived. An archived task is read-only.'
               nullable: true
             isOnMyDay:
               type: boolean
@@ -107791,12 +107805,14 @@ components:
       properties:
         justification:
           type: string
+          description: Read-only. Reason why the entity was archived or unarchived.
           nullable: true
         statusChangedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         statusChangedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Read-only. Date and time at which the entity's archive status changed.
           format: date-time
           nullable: true
       additionalProperties:
@@ -107852,6 +107868,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
             isArchived:
               type: boolean
+              description: 'Read-only. If set totrue, the bucket is archived. An archived bucket is read-only.'
               nullable: true
             name:
               type: string
@@ -108723,9 +108740,11 @@ components:
               nullable: true
             preferredLanguage:
               type: string
+              description: The registrant's preferred language.
               nullable: true
             preferredTimezone:
               type: string
+              description: The registrant's time zone details.
               nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -109790,17 +109809,17 @@ components:
           items:
             type: string
             nullable: true
-          description: Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
+          description: Collection of GUIDs that represent certificateBasedApplicationConfiguration that is allowed as root and intermediate certificate authorities.
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
+          description: 'String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.'
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
           format: date-time
           nullable: true
         restrictionType:
@@ -109814,13 +109833,13 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Value that can be used as the maximum number for setting password expiration time in days, hours, minutes or seconds. Defined in ISO 8601 format for Durations. For example, ''P4DT12H30M5S'' represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restriction type is set to passwordLifetime.'
+          description: 'String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.'
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
           format: date-time
           nullable: true
         restrictionType:
@@ -111736,7 +111755,7 @@ components:
       properties:
         booleanValue:
           type: boolean
-          description: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+          description: Boolean answer to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is boolean.
           nullable: true
         displayName:
           type: string
@@ -111747,14 +111766,14 @@ components:
           items:
             type: string
             nullable: true
-          description: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+          description: A collection of text answers to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is multiChoice.
         questionId:
           type: string
-          description: id of the virtualEventRegistrationQuestion.
+          description: The identifier of either a virtualEventRegistrationCustomQuestion or a virtualEventRegistrationPredefinedQuestion.
           nullable: true
         value:
           type: string
-          description: 'Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
+          description: 'Text answer to the virtualEventRegistrationCustomQuestion or the virtualEventRegistrationPredefinedQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
           nullable: true
       additionalProperties:
         type: object
@@ -113827,9 +113846,11 @@ components:
           properties:
             displayName:
               type: string
+              description: Display name of the registration question.
               nullable: true
             isRequired:
               type: boolean
+              description: Indicates whether an answer to the question is required. The default value is false.
               nullable: true
           additionalProperties:
             type: object

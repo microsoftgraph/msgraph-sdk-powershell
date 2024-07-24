@@ -377,11 +377,11 @@ paths:
     post:
       tags:
         - groups.group
-      summary: Upsert group
-      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
+      summary: Create group
+      description: 'Create a new group as specified in the request body. You can create the following types of groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0
       operationId: group_CreateGroup
       requestBody:
         description: New entity
@@ -3986,11 +3986,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Use reply thread or reply post to further post to that conversation.
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -4023,10 +4023,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: The group's conversations.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -4082,7 +4082,7 @@ paths:
       description: Delete conversation.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -13128,7 +13128,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -13194,7 +13194,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -13604,7 +13604,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -13666,7 +13666,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -13728,7 +13728,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -13790,7 +13790,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -13852,7 +13852,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -13918,7 +13918,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -14867,7 +14867,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -14929,7 +14929,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -14991,7 +14991,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -15053,7 +15053,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -15115,7 +15115,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -15177,7 +15177,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -15821,7 +15821,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addFavorite
-      description: Add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
+      description: Add the group to the list of the current user's favorite groups.  The group shows up in Outlook and Teams favorites. Supported for Microsoft 365 groups only.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0
@@ -16042,7 +16042,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -18127,7 +18127,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -18189,7 +18189,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -18251,7 +18251,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -18313,7 +18313,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -18375,7 +18375,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -18437,7 +18437,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -25552,6 +25552,53 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/team/channels/{channel-id}/microsoft.graph.archive':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action archive
+      description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel or add and remove members from it. If you archive a team, its channels are also archived. Archiving is an asynchronous operation; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the channel: unarchive method. A channel can’t be archived or unarchived if its team is archived.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
+      operationId: group.team.channel_archive
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shouldSetSpoSiteReadOnlyForMembers:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/team/channels/{channel-id}/microsoft.graph.completeMigration':
     post:
       tags:
@@ -25722,6 +25769,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/team/channels/{channel-id}/microsoft.graph.unarchive':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action unarchive
+      description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
+      operationId: group.team.channel_unarchive
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/team/channels/microsoft.graph.getAllMessages()':
     get:
       tags:
@@ -25748,6 +25828,80 @@ paths:
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groups/{group-id}/team/channels/microsoft.graph.getAllRetainedMessages()':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function getAllRetainedMessages
+      operationId: group.team.channel_getAllRetainedMessage
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -26661,6 +26815,45 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/team/primaryChannel/microsoft.graph.archive':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action archive
+      description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel or add and remove members from it. If you archive a team, its channels are also archived. Archiving is an asynchronous operation; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the channel: unarchive method. A channel can’t be archived or unarchived if its team is archived.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
+      operationId: group.team.primaryChannel_archive
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shouldSetSpoSiteReadOnlyForMembers:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/team/primaryChannel/microsoft.graph.completeMigration':
     post:
       tags:
@@ -26784,6 +26977,31 @@ paths:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: group.team.primaryChannel_removeEmail
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/team/primaryChannel/microsoft.graph.unarchive':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action unarchive
+      description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
+      operationId: group.team.primaryChannel_unarchive
       parameters:
         - name: group-id
           in: path
@@ -26950,11 +27168,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversation thread
-      description: Get a thread object.
+      summary: Get conversationThread
+      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -27132,11 +27350,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,\nyou can specify the thread without referencing the parent conversation."
+      summary: Get post
+      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
@@ -27801,7 +28019,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update open extension
-      description: 'Update an open extension (openTypeExtension object) with the properties in the request body: The data in an extension can be primitive types, or arrays of primitive types. See the table in the Permissions section for the list of resources that support open extensions.'
+      description: "Update an open extension (openTypeExtension object) on a supported resource type.\n- If a property in the request body matches the name of an existing property in the extension, the data in the extension is updated.\n- Otherwise, that property and its data are added to the extension.  The data in an extension can be primitive types or arrays of primitive types. See the table in the Permissions section for the list of resources that support open extensions."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-update?view=graph-rest-1.0
@@ -29138,7 +29356,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -29200,7 +29418,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -29631,7 +29849,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -29693,7 +29911,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -29759,7 +29977,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -29821,7 +30039,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -29883,7 +30101,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -29949,7 +30167,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -31453,7 +31671,7 @@ paths:
       tags:
         - groupSettingTemplates.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -31964,7 +32182,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -33170,6 +33388,8 @@ components:
               type: string
               description: The main logo for the application. Not nullable.
               format: base64url
+            nativeAuthenticationApisEnabled:
+              $ref: '#/components/schemas/microsoft.graph.nativeAuthenticationApisEnabled'
             notes:
               type: string
               description: Notes relevant for the management of the application.
@@ -34233,7 +34453,7 @@ components:
             inferenceClassification:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
             insights:
-              $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
+              $ref: '#/components/schemas/microsoft.graph.itemInsights'
             joinedTeams:
               type: array
               items:
@@ -36267,7 +36487,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         scope:
           type: string
-          description: 'Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.'
+          description: 'Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.'
           nullable: true
         sharedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -37021,6 +37241,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.nativeAuthenticationApisEnabled:
+      title: nativeAuthenticationApisEnabled
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.optionalClaims:
       title: optionalClaims
       type: object
@@ -37226,7 +37455,7 @@ components:
               type: boolean
               description: Denotes whether the policy is enabled.
             restrictions:
-              $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
+              $ref: '#/components/schemas/microsoft.graph.customAppManagementConfiguration'
             appliesTo:
               type: array
               items:
@@ -37989,7 +38218,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
-              description: Represents the status of a long-running operation.
+              description: 'Represents the status of a long-running operation, such as a password reset operation.'
               x-ms-navigationProperty: true
             passwordMethods:
               type: array
@@ -38391,30 +38620,11 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.officeGraphInsights:
+    microsoft.graph.itemInsights:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: officeGraphInsights
+        - $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
+        - title: itemInsights
           type: object
-          properties:
-            shared:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
-              x-ms-navigationProperty: true
-            trending:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.trending'
-              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
-              x-ms-navigationProperty: true
-            used:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.licenseDetails:
@@ -39035,7 +39245,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC. Required when you create an online meeting.
+              description: The meeting start time in UTC.
               format: date-time
               nullable: true
             recordings:
@@ -39202,8 +39412,12 @@ components:
             contributionToContentDiscoveryDisabled:
               type: boolean
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
+            itemInsights:
+              $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            storage:
+              $ref: '#/components/schemas/microsoft.graph.userStorage'
             windows:
               type: array
               items:
@@ -39219,11 +39433,11 @@ components:
           properties:
             locale:
               type: string
-              description: The chosen locale of a user in Microsoft Teams.
+              description: 'Represents the location that a user selected in Microsoft Teams and doesn''t follow the Office''s locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.'
               nullable: true
             region:
               type: string
-              description: The region of the user in Microsoft Teams.
+              description: 'Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user''s region (if available). For users without multigeo licenses, the property contains the organization''s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.'
               nullable: true
             associatedTeams:
               type: array
@@ -40429,6 +40643,10 @@ components:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
+            isArchived:
+              type: boolean
+              description: Indicates whether the channel is archived. Read-only.
+              nullable: true
             isFavoriteByDefault:
               type: boolean
               description: 'Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.'
@@ -40861,11 +41079,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as having changed when using delta.'
+          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -41647,22 +41865,13 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.appManagementConfiguration:
-      title: appManagementConfiguration
-      type: object
-      properties:
-        keyCredentials:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
-          description: Collection of keyCredential restrictions settings to be applied to an application or service principal.
-        passwordCredentials:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
-          description: Collection of password restrictions settings to be applied to an application or service principal.
-      additionalProperties:
-        type: object
+    microsoft.graph.customAppManagementConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
+        - title: customAppManagementConfiguration
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.stsPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.policyBase'
@@ -42360,66 +42569,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
           additionalProperties:
             type: object
-    microsoft.graph.sharedInsight:
+    microsoft.graph.officeGraphInsights:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: sharedInsight
+        - title: officeGraphInsights
           type: object
           properties:
-            lastShared:
-              $ref: '#/components/schemas/microsoft.graph.sharingDetail'
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            sharingHistory:
+            shared:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.sharingDetail'
-            lastSharedMethod:
-              $ref: '#/components/schemas/microsoft.graph.entity'
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.entity'
-          additionalProperties:
-            type: object
-    microsoft.graph.trending:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: trending
-          type: object
-          properties:
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            weight:
-              type: number
-              description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
-              format: double
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.entity'
-          additionalProperties:
-            type: object
-    microsoft.graph.usedInsight:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: usedInsight
-          type: object
-          properties:
-            lastUsed:
-              $ref: '#/components/schemas/microsoft.graph.usageDetails'
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.entity'
+                $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+              description: 'Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+              x-ms-navigationProperty: true
+            trending:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.trending'
+              description: 'Calculated relationship that identifies documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for work or school and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+              x-ms-navigationProperty: true
+            used:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.usedInsight'
+              description: 'Calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.servicePlanInfo:
@@ -43523,7 +43696,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingId:
@@ -43735,6 +43908,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userInsightsSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userInsightsSettings
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.shiftPreferences:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -43746,6 +43929,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
               description: Availability of the user to be scheduled for work and its recurrence pattern.
+          additionalProperties:
+            type: object
+    microsoft.graph.userStorage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userStorage
+          type: object
+          properties:
+            quota:
+              $ref: '#/components/schemas/microsoft.graph.unifiedStorageQuota'
           additionalProperties:
             type: object
     microsoft.graph.windowsSetting:
@@ -44403,6 +44596,8 @@ components:
         - unknownFutureValue
         - teamifyGroup
         - createChannel
+        - archiveChannel
+        - unarchiveChannel
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -44882,44 +45077,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.keyCredentialConfiguration:
-      title: keyCredentialConfiguration
+    microsoft.graph.appManagementConfiguration:
+      title: appManagementConfiguration
       type: object
       properties:
-        maxLifetime:
-          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-          type: string
-          description: 'Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
-          format: duration
-          nullable: true
-        restrictForAppsCreatedAfterDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.'
-          format: date-time
-          nullable: true
-        restrictionType:
-          $ref: '#/components/schemas/microsoft.graph.appKeyCredentialRestrictionType'
-      additionalProperties:
-        type: object
-    microsoft.graph.passwordCredentialConfiguration:
-      title: passwordCredentialConfiguration
-      type: object
-      properties:
-        maxLifetime:
-          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-          type: string
-          description: 'Value that can be used as the maximum number for setting password expiration time in days, hours, minutes or seconds. Defined in ISO 8601 format for Durations. For example, ''P4DT12H30M5S'' represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restriction type is set to passwordLifetime.'
-          format: duration
-          nullable: true
-        restrictForAppsCreatedAfterDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.'
-          format: date-time
-          nullable: true
-        restrictionType:
-          $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+        keyCredentials:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
+          description: Collection of keyCredential restrictions settings to be applied to an application or service principal.
+        passwordCredentials:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
+          description: Collection of password restrictions settings to be applied to an application or service principal.
       additionalProperties:
         type: object
     microsoft.graph.synchronizationSecret:
@@ -44984,7 +45155,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of one month.'
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601  format for durations. For example, P1M represents a period of one month and PT1M represents a period of one minute.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
@@ -45300,104 +45471,68 @@ components:
         - completed
         - unknownFutureValue
       type: string
-    microsoft.graph.sharingDetail:
-      title: sharingDetail
-      type: object
-      properties:
-        sharedBy:
-          $ref: '#/components/schemas/microsoft.graph.insightIdentity'
-        sharedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-        sharingReference:
-          $ref: '#/components/schemas/microsoft.graph.resourceReference'
-        sharingSubject:
-          type: string
-          description: The subject with which the document was shared.
-          nullable: true
-        sharingType:
-          type: string
-          description: 'Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.resourceReference:
-      title: resourceReference
-      type: object
-      properties:
-        id:
-          type: string
-          description: The item's unique identifier.
-          nullable: true
-        type:
-          type: string
-          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
-          nullable: true
-        webUrl:
-          type: string
-          description: A URL leading to the referenced item.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.resourceVisualization:
-      title: resourceVisualization
-      type: object
-      properties:
-        containerDisplayName:
-          type: string
-          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
-          nullable: true
-        containerType:
-          type: string
-          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
-          nullable: true
-        containerWebUrl:
-          type: string
-          description: A path leading to the folder in which the item is stored.
-          nullable: true
-        mediaType:
-          type: string
-          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
-          nullable: true
-        previewImageUrl:
-          type: string
-          description: A URL leading to the preview image for the item.
-          nullable: true
-        previewText:
-          type: string
-          description: A preview text for the item.
-          nullable: true
-        title:
-          type: string
-          description: The item's title text.
-          nullable: true
-        type:
-          type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.usageDetails:
-      title: usageDetails
-      type: object
-      properties:
-        lastAccessedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-        lastModifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.sharedInsight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sharedInsight
+          type: object
+          properties:
+            lastShared:
+              $ref: '#/components/schemas/microsoft.graph.sharingDetail'
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            sharingHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharingDetail'
+            lastSharedMethod:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+          additionalProperties:
+            type: object
+    microsoft.graph.trending:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: trending
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            weight:
+              type: number
+              description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
+              format: double
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+          additionalProperties:
+            type: object
+    microsoft.graph.usedInsight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usedInsight
+          type: object
+          properties:
+            lastUsed:
+              $ref: '#/components/schemas/microsoft.graph.usageDetails'
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+          additionalProperties:
+            type: object
     microsoft.graph.messageRuleActions:
       title: messageRuleActions
       type: object
@@ -46367,6 +46502,41 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.unifiedStorageQuota:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedStorageQuota
+          type: object
+          properties:
+            deleted:
+              type: integer
+              format: int64
+              nullable: true
+            manageWebUrl:
+              type: string
+              nullable: true
+            remaining:
+              type: integer
+              format: int64
+              nullable: true
+            state:
+              type: string
+              nullable: true
+            total:
+              type: integer
+              format: int64
+              nullable: true
+            used:
+              type: integer
+              format: int64
+              nullable: true
+            services:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.windowsSettingType:
       title: windowsSettingType
       enum:
@@ -47086,22 +47256,46 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.appKeyCredentialRestrictionType:
-      title: appKeyCredentialRestrictionType
-      enum:
-        - asymmetricKeyLifetime
-        - unknownFutureValue
-      type: string
-    microsoft.graph.appCredentialRestrictionType:
-      title: appCredentialRestrictionType
-      enum:
-        - passwordAddition
-        - passwordLifetime
-        - symmetricKeyAddition
-        - symmetricKeyLifetime
-        - customPasswordAddition
-        - unknownFutureValue
-      type: string
+    microsoft.graph.keyCredentialConfiguration:
+      title: keyCredentialConfiguration
+      type: object
+      properties:
+        maxLifetime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
+          format: duration
+          nullable: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.'
+          format: date-time
+          nullable: true
+        restrictionType:
+          $ref: '#/components/schemas/microsoft.graph.appKeyCredentialRestrictionType'
+      additionalProperties:
+        type: object
+    microsoft.graph.passwordCredentialConfiguration:
+      title: passwordCredentialConfiguration
+      type: object
+      properties:
+        maxLifetime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'Value that can be used as the maximum number for setting password expiration time in days, hours, minutes or seconds. Defined in ISO 8601 format for Durations. For example, ''P4DT12H30M5S'' represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restriction type is set to passwordLifetime.'
+          format: duration
+          nullable: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.'
+          format: date-time
+          nullable: true
+        restrictionType:
+          $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationScheduleState:
       title: synchronizationScheduleState
       enum:
@@ -47754,21 +47948,101 @@ components:
         - unknownFutureValue
         - emailUser
       type: string
-    microsoft.graph.insightIdentity:
-      title: insightIdentity
+    microsoft.graph.sharingDetail:
+      title: sharingDetail
       type: object
       properties:
-        address:
+        sharedBy:
+          $ref: '#/components/schemas/microsoft.graph.insightIdentity'
+        sharedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The email address of the user who shared the item.
+          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
           nullable: true
-        displayName:
+        sharingReference:
+          $ref: '#/components/schemas/microsoft.graph.resourceReference'
+        sharingSubject:
           type: string
-          description: The display name of the user who shared the item.
+          description: The subject with which the document was shared.
           nullable: true
+        sharingType:
+          type: string
+          description: 'Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.resourceReference:
+      title: resourceReference
+      type: object
+      properties:
         id:
           type: string
-          description: The ID of the user who shared the item.
+          description: The item's unique identifier.
+          nullable: true
+        type:
+          type: string
+          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
+          nullable: true
+        webUrl:
+          type: string
+          description: A URL leading to the referenced item.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.resourceVisualization:
+      title: resourceVisualization
+      type: object
+      properties:
+        containerDisplayName:
+          type: string
+          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
+          nullable: true
+        containerType:
+          type: string
+          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
+          nullable: true
+        containerWebUrl:
+          type: string
+          description: A path leading to the folder in which the item is stored.
+          nullable: true
+        mediaType:
+          type: string
+          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
+          nullable: true
+        previewImageUrl:
+          type: string
+          description: A URL leading to the preview image for the item.
+          nullable: true
+        previewText:
+          type: string
+          description: A preview text for the item.
+          nullable: true
+        title:
+          type: string
+          description: The item's title text.
+          nullable: true
+        type:
+          type: string
+          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.usageDetails:
+      title: usageDetails
+      type: object
+      properties:
+        lastAccessedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+          nullable: true
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
           nullable: true
       additionalProperties:
         type: object
@@ -48287,6 +48561,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.serviceStorageQuotaBreakdown:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
+        - title: serviceStorageQuotaBreakdown
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.taskStatus:
       title: taskStatus
       enum:
@@ -48652,6 +48933,22 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFont'
           additionalProperties:
             type: object
+    microsoft.graph.appKeyCredentialRestrictionType:
+      title: appKeyCredentialRestrictionType
+      enum:
+        - asymmetricKeyLifetime
+        - unknownFutureValue
+      type: string
+    microsoft.graph.appCredentialRestrictionType:
+      title: appCredentialRestrictionType
+      enum:
+        - passwordAddition
+        - passwordLifetime
+        - symmetricKeyAddition
+        - symmetricKeyLifetime
+        - customPasswordAddition
+        - unknownFutureValue
+      type: string
     microsoft.graph.synchronizationError:
       title: synchronizationError
       type: object
@@ -49960,6 +50257,24 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.insightIdentity:
+      title: insightIdentity
+      type: object
+      properties:
+        address:
+          type: string
+          description: The email address of the user who shared the item.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the user who shared the item.
+          nullable: true
+        id:
+          type: string
+          description: The ID of the user who shared the item.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.settingSourceType:
       title: settingSourceType
       enum:
@@ -49991,6 +50306,24 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.storageQuotaBreakdown:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: storageQuotaBreakdown
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            manageWebUrl:
+              type: string
+              nullable: true
+            used:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleEntityTheme:
       title: scheduleEntityTheme
       enum:

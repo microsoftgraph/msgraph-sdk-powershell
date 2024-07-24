@@ -5847,7 +5847,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignment_ListDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -5907,7 +5907,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignment_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -5983,7 +5983,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignment_ListPrincipal
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -6043,7 +6043,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignment_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -6119,7 +6119,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
-      description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
+      description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
       operationId: roleManagement.cloudPC.roleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7313,11 +7313,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List unifiedRoleAssignmentMultiple
-      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      summary: Get unifiedRoleAssignmentMultiple
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7749,7 +7749,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignment_ListDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7809,7 +7809,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignment_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7885,7 +7885,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignment_ListPrincipal
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7945,7 +7945,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignment_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -8021,7 +8021,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
-      description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
+      description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
       operationId: roleManagement.deviceManagement.roleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -10758,7 +10758,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Total number of AOSP devices that have enrolled using the current token.
+              description: Total number of AOSP devices that have enrolled using the current token. Valid values 0 to 20000
               format: int32
             isTeamsDeviceProfile:
               type: boolean
@@ -12085,7 +12085,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
+              description: Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determine the set of resources for which the principal has access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
             condition:
               type: string
               nullable: true
@@ -12108,7 +12108,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
+              description: Identifiers of the principals to which the assignment is granted. Supports $filter (any operator only).
             roleDefinitionId:
               type: string
               description: Identifier of the unifiedRoleDefinition the assignment is for.
@@ -12122,13 +12122,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+              description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
               x-ms-navigationProperty: true
             principals:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+              description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
               x-ms-navigationProperty: true
             roleDefinition:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'

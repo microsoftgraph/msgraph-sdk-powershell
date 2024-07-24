@@ -7457,6 +7457,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingBusinesses from solutions
+      description: A collection of businesses in Microsoft Bookings. Read-only. Nullable.
       operationId: solution_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7530,6 +7531,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingBusinesses from solutions
+      description: A collection of businesses in Microsoft Bookings. Read-only. Nullable.
       operationId: solution_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -11274,6 +11276,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get virtualEvents from solutions
+      description: A collection of virtual events.
       operationId: solution_GetVirtualEvent
       parameters:
         - name: $select
@@ -16491,7 +16494,11 @@ paths:
     post:
       tags:
         - solutions.virtualEventsRoot
-      summary: Create new navigation property to registrations for solutions
+      summary: Create virtualEventRegistration
+      description: 'Create a registration record for a registrant of a webinar. This method registers the person for the webinar. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-post-registrations?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar_CreateRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -16654,6 +16661,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
+      description: 'Cancel a registrant''s registration record for a webinar. '
       operationId: solution.virtualEvent.webinar.registration_cancel
       parameters:
         - name: virtualEventWebinar-id
@@ -16682,7 +16690,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get sessions from solutions
+      summary: List sessions
+      description: Get a list of sessions that a registrant registered for in a webinar.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventregistration-list-sessions?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar.registration_ListSession
       parameters:
         - name: virtualEventWebinar-id
@@ -17032,6 +17044,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
+      description: 'Cancel a registrant''s registration record for a webinar. '
       operationId: solution.virtualEvent.webinar.registration.email_cancel
       parameters:
         - name: virtualEventWebinar-id
@@ -17191,6 +17204,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
+      description: 'Cancel a registrant''s registration record for a webinar. '
       operationId: solution.virtualEvent.webinar.registration.userId_cancel
       parameters:
         - name: virtualEventWebinar-id
@@ -17576,7 +17590,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. Each time an online meeting ends, an attendance report is generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-beta
@@ -19000,7 +19014,7 @@ components:
               nullable: true
             customerNotes:
               type: string
-              description: 'Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.'
+              description: Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
               nullable: true
             customerPhone:
               type: string
@@ -19141,13 +19155,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date, time and timezone when the customer was created.'
+              description: 'The date, time, and timezone when the customer was created.'
               format: date-time
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date, time and timezone when the customer was last updated.'
+              description: 'The date, time, and timezone when the customer was last updated.'
               format: date-time
               nullable: true
             phones:
@@ -19394,16 +19408,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+          description: A collection of businesses in Microsoft Bookings. Read-only. Nullable.
           x-ms-navigationProperty: true
         bookingCurrencies:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+          description: A collection of monetary currencies supported by a bookingBusiness. Read-only. Nullable.
           x-ms-navigationProperty: true
         businessScenarios:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.businessScenario'
+          description: A collection of scenarios that contain relevant data and configuration information for a specific problem domain.
           x-ms-navigationProperty: true
         virtualEvents:
           $ref: '#/components/schemas/microsoft.graph.virtualEventsRoot'
@@ -20265,11 +20282,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventTownhall'
+              description: A collection of town halls. Nullable.
               x-ms-navigationProperty: true
             webinars:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
+              description: A collection of webinars. Nullable.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -20443,9 +20462,11 @@ components:
               nullable: true
             preferredLanguage:
               type: string
+              description: The registrant's preferred language.
               nullable: true
             preferredTimezone:
               type: string
+              description: The registrant's time zone details.
               nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -21171,6 +21192,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
+              description: 'Read-only. If set to true, the task is archived. An archived task is read-only.'
               nullable: true
             isOnMyDay:
               type: boolean
@@ -21526,7 +21548,7 @@ components:
       properties:
         booleanValue:
           type: boolean
-          description: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+          description: Boolean answer to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is boolean.
           nullable: true
         displayName:
           type: string
@@ -21537,14 +21559,14 @@ components:
           items:
             type: string
             nullable: true
-          description: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+          description: A collection of text answers to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is multiChoice.
         questionId:
           type: string
-          description: id of the virtualEventRegistrationQuestion.
+          description: The identifier of either a virtualEventRegistrationCustomQuestion or a virtualEventRegistrationPredefinedQuestion.
           nullable: true
         value:
           type: string
-          description: 'Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
+          description: 'Text answer to the virtualEventRegistrationCustomQuestion or the virtualEventRegistrationPredefinedQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
           nullable: true
       additionalProperties:
         type: object
@@ -22360,12 +22382,14 @@ components:
       properties:
         justification:
           type: string
+          description: Read-only. Reason why the entity was archived or unarchived.
           nullable: true
         statusChangedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         statusChangedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Read-only. Date and time at which the entity's archive status changed.
           format: date-time
           nullable: true
       additionalProperties:
@@ -22637,9 +22661,11 @@ components:
           properties:
             displayName:
               type: string
+              description: Display name of the registration question.
               nullable: true
             isRequired:
               type: boolean
+              description: Indicates whether an answer to the question is required. The default value is false.
               nullable: true
           additionalProperties:
             type: object
