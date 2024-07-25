@@ -24,7 +24,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -250,7 +249,6 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -516,7 +514,6 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -822,7 +819,6 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1157,7 +1153,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -1207,16 +1202,6 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
           style: form
           explode: false
           schema:
@@ -1294,7 +1279,6 @@ paths:
       tags:
         - users.contactFolder
       summary: Get media content for the navigation property photo from users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contactFolder.childFolder.contact_GetPhotoContent
       parameters:
         - name: user-id
@@ -1329,6 +1313,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -1339,11 +1330,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.contactFolder
       summary: Update media content for the navigation property photo in users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contactFolder.childFolder.contact_SetPhotoContent
       parameters:
         - name: user-id
@@ -1391,56 +1382,7 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-    delete:
-      tags:
-        - users.contactFolder
-      summary: Delete media content for the navigation property photo in users
-      description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: user.contactFolder.childFolder.contact_DeletePhotoContent
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: The unique identifier of contactFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contactFolder-id1
-          in: path
-          description: The unique identifier of contactFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: The unique identifier of contact
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/$count':
     get:
       tags:
@@ -1472,7 +1414,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -1502,7 +1443,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -1535,7 +1475,6 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1801,7 +1740,6 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2096,7 +2034,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2138,16 +2075,6 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
           style: form
           explode: false
           schema:
@@ -2217,7 +2144,6 @@ paths:
       tags:
         - users.contactFolder
       summary: Get media content for the navigation property photo from users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contactFolder.contact_GetPhotoContent
       parameters:
         - name: user-id
@@ -2244,6 +2170,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -2254,11 +2187,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.contactFolder
       summary: Update media content for the navigation property photo in users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contactFolder.contact_SetPhotoContent
       parameters:
         - name: user-id
@@ -2298,48 +2231,7 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-    delete:
-      tags:
-        - users.contactFolder
-      summary: Delete media content for the navigation property photo in users
-      description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: user.contactFolder.contact_DeletePhotoContent
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: The unique identifier of contactFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: The unique identifier of contact
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/$count':
     get:
       tags:
@@ -2363,7 +2255,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2385,7 +2276,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2636,7 +2526,6 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2891,7 +2780,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2925,16 +2813,6 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
           style: form
           explode: false
           schema:
@@ -2996,7 +2874,6 @@ paths:
       tags:
         - users.contact
       summary: Get media content for the navigation property photo from users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contact_GetPhotoContent
       parameters:
         - name: user-id
@@ -3015,6 +2892,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -3025,11 +2909,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.contact
       summary: Update media content for the navigation property photo in users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contact_SetPhotoContent
       parameters:
         - name: user-id
@@ -3061,40 +2945,7 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-    delete:
-      tags:
-        - users.contact
-      summary: Delete media content for the navigation property photo in users
-      description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: user.contact_DeletePhotoContent
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: The unique identifier of contact
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/$count':
     get:
       tags:
@@ -3216,7 +3067,7 @@ components:
               nullable: true
             generation:
               type: string
-              description: The contact's suffix.
+              description: The contact's generation.
               nullable: true
             givenName:
               type: string
@@ -3602,14 +3453,6 @@ components:
       schema:
         minimum: 0
         type: integer
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      style: form
-      explode: false
-      schema:
-        type: string
     filter:
       name: $filter
       in: query
@@ -3626,6 +3469,14 @@ components:
       explode: false
       schema:
         type: boolean
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2
