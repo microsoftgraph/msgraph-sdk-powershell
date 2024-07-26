@@ -69,7 +69,7 @@ Describe 'Connect-MgGraph In Delegated Mode' {
 
 Describe 'Connect-MgGraph In Environment Variable Mode' {
     It 'Should throw exception when supported environment variables are not specified' {
-        { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "*ClientSecretCredential authentication failed*"
+        { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "*EnvironmentCredential authentication unavailable*"
     }
     It 'Should attempt to use configured environment variables' {
         {
