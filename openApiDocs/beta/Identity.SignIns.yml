@@ -951,7 +951,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -1245,7 +1245,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -1290,7 +1290,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -1573,7 +1573,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -1584,7 +1584,7 @@ paths:
     get:
       tags:
         - identity.authenticationEventsFlow
-      summary: Get the items of type microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp in the microsoft.graph.onAttributeCollectionHandler collection
+      summary: Get the item of type microsoft.graph.onAttributeCollectionHandler as microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp
       operationId: identity.authenticationEventsFlow_GetOnAttributeCollectionAsOnAttributeCollectionExternalUsersSelfServiceSignUp
       parameters:
         - name: authenticationEventsFlow-id
@@ -1597,12 +1597,13 @@ paths:
           x-ms-docs-key-type: authenticationEventsFlow
       responses:
         2XX:
-          description: ''
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp'
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes':
     get:
       tags:
@@ -1872,7 +1873,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -1883,7 +1884,7 @@ paths:
     get:
       tags:
         - identity.authenticationEventsFlow
-      summary: Get the items of type microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp in the microsoft.graph.onAuthenticationMethodLoadStartHandler collection
+      summary: Get the item of type microsoft.graph.onAuthenticationMethodLoadStartHandler as microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
       operationId: identity.authenticationEventsFlow_GetOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
       parameters:
         - name: authenticationEventsFlow-id
@@ -1896,12 +1897,13 @@ paths:
           x-ms-docs-key-type: authenticationEventsFlow
       responses:
         2XX:
-          description: ''
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp'
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders':
     get:
       tags:
@@ -4537,7 +4539,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -9172,11 +9174,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get compliantNetworkNamedLocation
-      description: Read the properties and relationships of a compliantNetworkNamedLocation object.
+      summary: Get namedLocation
+      description: Retrieve the properties and relationships of a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/compliantnetworknamedlocation-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-beta
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9220,11 +9222,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update countryNamedLocation
-      description: Update the properties of a countryNamedLocation object.
+      summary: Update ipNamedlocation
+      description: Update the properties of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-beta
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9255,11 +9257,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete countryNamedLocation
-      description: Delete a countryNamedLocation object.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-beta
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -10811,11 +10813,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: List riskDetection
-      description: Retrieve the properties of a collection of riskDetection objects.
+      summary: Get riskDetection
+      description: Retrieve the properties of a riskDetection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-beta
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -14621,109 +14623,21 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/invitations/{invitation-id}':
+  /invitations/$count:
     get:
       tags:
         - invitations.invitation
-      summary: Get entity from invitations by key
-      operationId: invitation_GetInvitation
+      summary: Get the number of the resource
+      operationId: invitation_GetCount
       parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
       responses:
         2XX:
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.invitation'
+          $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - invitations.invitation
-      summary: Update entity in invitations
-      operationId: invitation_UpdateInvitation
-      parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.invitation'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.invitation'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - invitations.invitation
-      summary: Delete entity from invitations
-      operationId: invitation_DeleteInvitation
-      parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/invitations/{invitation-id}/invitedUser':
+  /invitations/invitedUser:
     get:
       tags:
         - invitations.user
@@ -14731,14 +14645,6 @@ paths:
       description: The user created as part of the invitation creation. Read-Only. The id property is required in the request body to reset a redemption status.
       operationId: invitation_GetInvitedUser
       parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
         - name: $select
           in: query
           description: Select properties to be returned
@@ -14769,7 +14675,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/invitations/{invitation-id}/invitedUser/mailboxSettings':
+  /invitations/invitedUser/mailboxSettings:
     get:
       tags:
         - invitations.user
@@ -14777,14 +14683,6 @@ paths:
       description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
       operationId: invitation.invitedUser_GetMailboxSetting
       parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
         - name: $select
           in: query
           description: Select properties to be returned
@@ -14807,7 +14705,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -14819,15 +14717,6 @@ paths:
         - invitations.user
       summary: Update property mailboxSettings value.
       operationId: invitation.invitedUser_UpdateMailboxSetting
-      parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
       requestBody:
         description: New property values
         content:
@@ -14844,7 +14733,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
         default:
           $ref: '#/components/responses/error'
-  '/invitations/{invitation-id}/invitedUser/serviceProvisioningErrors':
+  /invitations/invitedUser/serviceProvisioningErrors:
     get:
       tags:
         - invitations.user
@@ -14852,14 +14741,6 @@ paths:
       description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.'
       operationId: invitation.invitedUser_ListServiceProvisioningError
       parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -14903,21 +14784,13 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/invitations/{invitation-id}/invitedUser/serviceProvisioningErrors/$count':
+  /invitations/invitedUser/serviceProvisioningErrors/$count:
     get:
       tags:
         - invitations.user
       summary: Get the number of the resource
       operationId: invitation.invitedUser.ServiceProvisioningError_GetCount
       parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
@@ -14925,7 +14798,7 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/invitations/{invitation-id}/invitedUserSponsors':
+  /invitations/invitedUserSponsors:
     get:
       tags:
         - invitations.directoryObject
@@ -14933,14 +14806,6 @@ paths:
       description: The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users' privileges in the tenant and for keeping the guest users' information and access up to date.
       operationId: invitation_ListInvitedUserSponsor
       parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -14985,7 +14850,7 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/invitations/{invitation-id}/invitedUserSponsors/{directoryObject-id}':
+  '/invitations/invitedUserSponsors/{directoryObject-id}':
     get:
       tags:
         - invitations.directoryObject
@@ -14993,14 +14858,6 @@ paths:
       description: The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users' privileges in the tenant and for keeping the guest users' information and access up to date.
       operationId: invitation_GetInvitedUserSponsor
       parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
         - name: directoryObject-id
           in: path
           description: The unique identifier of directoryObject
@@ -15039,34 +14896,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/invitations/{invitation-id}/invitedUserSponsors/$count':
+  /invitations/invitedUserSponsors/$count:
     get:
       tags:
         - invitations.directoryObject
       summary: Get the number of the resource
       operationId: invitation.invitedUserSponsor_GetCount
-      parameters:
-        - name: invitation-id
-          in: path
-          description: The unique identifier of invitation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: invitation
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-  /invitations/$count:
-    get:
-      tags:
-        - invitations.invitation
-      summary: Get the number of the resource
-      operationId: invitation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -18958,11 +18793,11 @@ paths:
     put:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create identitySynchronization
-      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
+      summary: Update crossTenantIdentitySyncPolicyPartner
+      description: Update the user synchronization policy of a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-beta
       operationId: policy.crossTenantAccessPolicy.partner_SetIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -20075,11 +19910,11 @@ paths:
     get:
       tags:
         - policies.federatedTokenValidationPolicy
-      summary: Get federatedTokenValidationPolicy
-      description: Read the properties and relationships of a federatedTokenValidationPolicy object.
+      summary: List federatedTokenValidationPolicy
+      description: Get a list of the federatedTokenValidationPolicy objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/policyroot-list-federatedtokenvalidationpolicy?view=graph-rest-beta
       operationId: policy_GetFederatedTokenValidationPolicy
       parameters:
         - name: $select
@@ -24904,11 +24739,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Update multiTenantOrganization
-      description: Update the properties of a multi-tenant organization.
+      summary: Create multiTenantOrganization
+      description: 'Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-beta
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -28232,7 +28067,7 @@ paths:
               type: string
       responses:
         2XX:
-          description: Result entities
+          description: Entity result.
           content:
             application/json:
               schema:
@@ -31161,11 +30996,39 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.onAttributeCollectionHandler'
+        - title: onAttributeCollectionExternalUsersSelfServiceSignUp
+          type: object
+          properties:
+            attributeCollectionPage:
+              $ref: '#/components/schemas/microsoft.graph.authenticationAttributeCollectionPage'
+            attributes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.onAuthenticationMethodLoadStartHandler:
       title: onAuthenticationMethodLoadStartHandler
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.onAuthenticationMethodLoadStartHandler'
+        - title: onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
+          type: object
+          properties:
+            identityProviders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.b2cIdentityUserFlow:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
@@ -35260,6 +35123,20 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.authenticationAttributeCollectionPage:
+      title: authenticationAttributeCollectionPage
+      type: object
+      properties:
+        customStringsFileId:
+          type: string
+          nullable: true
+        views:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authenticationAttributeCollectionPageViewConfiguration'
+          description: A collection of displays of the attribute collection page.
+      additionalProperties:
+        type: object
     microsoft.graph.userAttributeValuesItem:
       title: userAttributeValuesItem
       type: object
@@ -38126,7 +38003,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -39358,7 +39235,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -41967,6 +41844,25 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.authenticationAttributeCollectionPageViewConfiguration:
+      title: authenticationAttributeCollectionPageViewConfiguration
+      type: object
+      properties:
+        description:
+          type: string
+          description: The description of the page.
+          nullable: true
+        inputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authenticationAttributeCollectionInputConfiguration'
+          description: The display configuration of attributes being collected on the attribute collection page.
+        title:
+          type: string
+          description: The title of the attribute collection page.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessTransferMethods:
       title: conditionalAccessTransferMethods
       enum:
@@ -43596,13 +43492,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
-          description: 'A list of failed health check items. If the status property is available, this property will be empty.'
+          description: 'A list of failed health check items. If the status property is available, this property is empty.'
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
+          description: 'Datetime when the status was updated. This property is deprecated and will no longer be supported effective August 31, 2024. Use lastModifiedDateTime instead. Read-Only.'
           format: date-time
       additionalProperties:
         type: object
@@ -43614,9 +43510,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
         primaryRegion:
           type: string
+          description: The primary and mainly used region where the Cloud PC is located.
           nullable: true
         secondaryRegion:
           type: string
+          description: The secondary region to which the Cloud PC can be failed over during a regional outage.
           nullable: true
       additionalProperties:
         type: object
@@ -44269,6 +44167,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
             subscriptions:
               type: array
@@ -48367,6 +48266,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
             isArchived:
               type: boolean
+              description: 'Read-only. If set to true, the plan is archived. An archived plan is read-only.'
               nullable: true
             owner:
               type: string
@@ -48464,6 +48364,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
+              description: 'Read-only. If set to true, the task is archived. An archived task is read-only.'
               nullable: true
             isOnMyDay:
               type: boolean
@@ -49350,17 +49251,17 @@ components:
           items:
             type: string
             nullable: true
-          description: Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
+          description: Collection of GUIDs that represent certificateBasedApplicationConfiguration that is allowed as root and intermediate certificate authorities.
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
+          description: 'String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.'
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
           format: date-time
           nullable: true
         restrictionType:
@@ -49374,13 +49275,13 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Value that can be used as the maximum number for setting password expiration time in days, hours, minutes or seconds. Defined in ISO 8601 format for Durations. For example, ''P4DT12H30M5S'' represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restriction type is set to passwordLifetime.'
+          description: 'String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.'
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
           format: date-time
           nullable: true
         restrictionType:
@@ -49575,6 +49476,49 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationAttributeCollectionInputConfiguration:
+      title: authenticationAttributeCollectionInputConfiguration
+      type: object
+      properties:
+        attribute:
+          type: string
+          description: The built-in or custom attribute for which a value is being collected.
+        defaultValue:
+          type: string
+          description: The default value of the attribute displayed to the end user.
+          nullable: true
+        editable:
+          type: boolean
+          description: Whether the attribute is editable by the end user.
+          nullable: true
+        hidden:
+          type: boolean
+          description: Whether the attribute is displayed to the end user.
+          nullable: true
+        inputType:
+          $ref: '#/components/schemas/microsoft.graph.authenticationAttributeCollectionInputType'
+        label:
+          type: string
+          description: 'The label of the attribute field that is displayed to end user, unless overridden.'
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authenticationAttributeCollectionOptionConfiguration'
+          description: The option values for certain multiple-option input types.
+        required:
+          type: boolean
+          description: Whether the field is required.
+          nullable: true
+        validationRegEx:
+          type: string
+          description: The regex for the value of the field.
+          nullable: true
+        writeToDirectory:
+          type: boolean
+          description: Whether the value collected is stored.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessFilter:
@@ -50843,6 +50787,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
             versions:
               type: array
@@ -51219,7 +51164,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         scope:
           type: string
-          description: 'Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.'
+          description: 'Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.'
           nullable: true
         sharedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -54542,12 +54487,14 @@ components:
       properties:
         justification:
           type: string
+          description: Read-only. Reason why the entity was archived or unarchived.
           nullable: true
         statusChangedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         statusChangedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Read-only. Date and time at which the entity's archive status changed.
           format: date-time
           nullable: true
       additionalProperties:
@@ -54603,6 +54550,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
             isArchived:
               type: boolean
+              description: 'Read-only. If set totrue, the bucket is archived. An archived bucket is read-only.'
               nullable: true
             name:
               type: string
@@ -55474,9 +55422,11 @@ components:
               nullable: true
             preferredLanguage:
               type: string
+              description: The registrant's preferred language.
               nullable: true
             preferredTimezone:
               type: string
+              description: The registrant's time zone details.
               nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -55547,7 +55497,7 @@ components:
       properties:
         target:
           type: string
-          description: 'Can be one of the following values:  The unique identifier of the user, group, or application  AllUsers  AllApplications - Refers to any Microsoft cloud application.  Office365 - Includes the applications mentioned as part of the Office365 suite.'
+          description: 'Defines the target for cross-tenant access policy settings and can have one of the following values:  The unique identifier of the user, group, or application  AllUsers  AllApplications - Refers to any Microsoft cloud application.  Office365 - Includes the applications mentioned as part of the Office 365 suite.'
           nullable: true
         targetType:
           $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTargetType'
@@ -55592,6 +55542,27 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.authenticationAttributeCollectionInputType:
+      title: authenticationAttributeCollectionInputType
+      enum:
+        - text
+        - radioSingleSelect
+        - checkboxMultiSelect
+        - boolean
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationAttributeCollectionOptionConfiguration:
+      title: authenticationAttributeCollectionOptionConfiguration
+      type: object
+      properties:
+        label:
+          type: string
+          description: 'The label of the option that will be displayed to user, unless overridden.'
+        value:
+          type: string
+          description: The value of the option that will be stored.
+      additionalProperties:
+        type: object
     microsoft.graph.filterMode:
       title: filterMode
       enum:
@@ -58817,7 +58788,7 @@ components:
       properties:
         booleanValue:
           type: boolean
-          description: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+          description: Boolean answer to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is boolean.
           nullable: true
         displayName:
           type: string
@@ -58828,14 +58799,14 @@ components:
           items:
             type: string
             nullable: true
-          description: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+          description: A collection of text answers to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is multiChoice.
         questionId:
           type: string
-          description: id of the virtualEventRegistrationQuestion.
+          description: The identifier of either a virtualEventRegistrationCustomQuestion or a virtualEventRegistrationPredefinedQuestion.
           nullable: true
         value:
           type: string
-          description: 'Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
+          description: 'Text answer to the virtualEventRegistrationCustomQuestion or the virtualEventRegistrationPredefinedQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
           nullable: true
       additionalProperties:
         type: object
@@ -60995,9 +60966,11 @@ components:
           properties:
             displayName:
               type: string
+              description: Display name of the registration question.
               nullable: true
             isRequired:
               type: boolean
+              description: Indicates whether an answer to the question is required. The default value is false.
               nullable: true
           additionalProperties:
             type: object

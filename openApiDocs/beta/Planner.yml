@@ -5623,6 +5623,10 @@ paths:
       tags:
         - planner.Actions
       summary: Invoke action archive
+      description: 'Archive a plannerPlan object. Archiving a plan, also archives the plannerTasks and plannerBuckets in the plan.  An archived entity is read-only. Archived entities cannot be updated. An archived plan can be unarchived.  All archived entities can be deleted. Archived tasks are not included in the response for list of tasks assigned to a user. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerplan-archive?view=graph-rest-beta
       operationId: planner.plan_archive
       parameters:
         - name: plannerPlan-id
@@ -5698,6 +5702,10 @@ paths:
       tags:
         - planner.Actions
       summary: Invoke action unarchive
+      description: 'Unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerplan-unarchive?view=graph-rest-beta
       operationId: planner.plan_unarchive
       parameters:
         - name: plannerPlan-id
@@ -12425,6 +12433,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
             isArchived:
               type: boolean
+              description: 'Read-only. If set to true, the plan is archived. An archived plan is read-only.'
               nullable: true
             owner:
               type: string
@@ -12466,6 +12475,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
             isArchived:
               type: boolean
+              description: 'Read-only. If set totrue, the bucket is archived. An archived bucket is read-only.'
               nullable: true
             name:
               type: string
@@ -12554,6 +12564,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
+              description: 'Read-only. If set to true, the task is archived. An archived task is read-only.'
               nullable: true
             isOnMyDay:
               type: boolean
@@ -12871,12 +12882,14 @@ components:
       properties:
         justification:
           type: string
+          description: Read-only. Reason why the entity was archived or unarchived.
           nullable: true
         statusChangedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         statusChangedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Read-only. Date and time at which the entity's archive status changed.
           format: date-time
           nullable: true
       additionalProperties:
