@@ -10,11 +10,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contactFolders
-      description: Get all the contact folders in the signed-in user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
+      summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: user_ListContactFolder
       parameters:
         - name: user-id
@@ -27,6 +24,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -71,11 +69,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create ContactFolder
-      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
+      summary: Create new navigation property to contactFolders for users
       operationId: user_CreateContactFolder
       parameters:
         - name: user-id
@@ -107,11 +101,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: Get contactFolder
-      description: 'Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user''s contact folder:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0
+      summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: user_GetContactFolder
       parameters:
         - name: user-id
@@ -163,11 +154,7 @@ paths:
     patch:
       tags:
         - users.contactFolder
-      summary: Update contactfolder
-      description: Update the properties of contactfolder object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0
+      summary: Update the navigation property contactFolders in users
       operationId: user_UpdateContactFolder
       parameters:
         - name: user-id
@@ -206,11 +193,7 @@ paths:
     delete:
       tags:
         - users.contactFolder
-      summary: Delete contactFolder
-      description: Delete contactFolder other than the default contactFolder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0
+      summary: Delete navigation property contactFolders for users
       operationId: user_DeleteContactFolder
       parameters:
         - name: user-id
@@ -245,11 +228,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List childFolders
-      description: Get a collection of child folders under the specified contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
+      summary: Get childFolders from users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: user.contactFolder_ListChildFolder
       parameters:
         - name: user-id
@@ -270,6 +250,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -314,11 +295,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create ContactFolder
-      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
+      summary: Create new navigation property to childFolders for users
       operationId: user.contactFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -509,11 +486,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contacts
-      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: user.contactFolder.childFolder_ListContact
       parameters:
         - name: user-id
@@ -542,6 +516,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -586,11 +561,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create Contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: user.contactFolder.childFolder_CreateContact
       parameters:
         - name: user-id
@@ -851,6 +822,7 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1185,6 +1157,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -1234,6 +1207,16 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
           style: form
           explode: false
           schema:
@@ -1311,6 +1294,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get media content for the navigation property photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contactFolder.childFolder.contact_GetPhotoContent
       parameters:
         - name: user-id
@@ -1355,11 +1339,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.contactFolder
       summary: Update media content for the navigation property photo in users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contactFolder.childFolder.contact_SetPhotoContent
       parameters:
         - name: user-id
@@ -1407,7 +1391,56 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete media content for the navigation property photo in users
+      description: Optional contact picture. You can get or set a photo for a contact.
+      operationId: user.contactFolder.childFolder.contact_DeletePhotoContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/$count':
     get:
       tags:
@@ -1439,6 +1472,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -1468,6 +1502,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -1478,11 +1513,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contacts
-      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: user.contactFolder_ListContact
       parameters:
         - name: user-id
@@ -1503,6 +1535,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1547,11 +1580,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create Contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: user.contactFolder_CreateContact
       parameters:
         - name: user-id
@@ -1772,6 +1801,7 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2066,6 +2096,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2107,6 +2138,16 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
           style: form
           explode: false
           schema:
@@ -2176,6 +2217,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get media content for the navigation property photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contactFolder.contact_GetPhotoContent
       parameters:
         - name: user-id
@@ -2212,11 +2254,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.contactFolder
       summary: Update media content for the navigation property photo in users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contactFolder.contact_SetPhotoContent
       parameters:
         - name: user-id
@@ -2256,7 +2298,48 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete media content for the navigation property photo in users
+      description: Optional contact picture. You can get or set a photo for a contact.
+      operationId: user.contactFolder.contact_DeletePhotoContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/$count':
     get:
       tags:
@@ -2280,6 +2363,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2301,6 +2385,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2311,11 +2396,8 @@ paths:
     get:
       tags:
         - users.contact
-      summary: List contacts
-      description: 'Get contacts in the user''s mailbox. There are two scenarios where an app can get contacts in another user''s contact folder:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: user_ListContact
       parameters:
         - name: user-id
@@ -2373,11 +2455,7 @@ paths:
     post:
       tags:
         - users.contact
-      summary: Create contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: user_CreateContact
       parameters:
         - name: user-id
@@ -2409,11 +2487,8 @@ paths:
     get:
       tags:
         - users.contact
-      summary: Get contact
-      description: 'Retrieve the properties and relationships of contact object. There are two scenarios where an app can get a contact in another user''s contact folder:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-get?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: user_GetContact
       parameters:
         - name: user-id
@@ -2465,11 +2540,7 @@ paths:
     patch:
       tags:
         - users.contact
-      summary: Update contact
-      description: Update the properties of contact object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-update?view=graph-rest-1.0
+      summary: Update the navigation property contacts in users
       operationId: user_UpdateContact
       parameters:
         - name: user-id
@@ -2508,11 +2579,7 @@ paths:
     delete:
       tags:
         - users.contact
-      summary: Delete contact
-      description: Delete contact.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0
+      summary: Delete navigation property contacts for users
       operationId: user_DeleteContact
       parameters:
         - name: user-id
@@ -2569,6 +2636,7 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2823,6 +2891,7 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
         2XX:
@@ -2856,6 +2925,16 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
           style: form
           explode: false
           schema:
@@ -2917,6 +2996,7 @@ paths:
       tags:
         - users.contact
       summary: Get media content for the navigation property photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contact_GetPhotoContent
       parameters:
         - name: user-id
@@ -2945,11 +3025,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.contact
       summary: Update media content for the navigation property photo in users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: user.contact_SetPhotoContent
       parameters:
         - name: user-id
@@ -2981,7 +3061,40 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contact
+      summary: Delete media content for the navigation property photo in users
+      description: Optional contact picture. You can get or set a photo for a contact.
+      operationId: user.contact_DeletePhotoContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contacts/$count':
     get:
       tags:
@@ -3101,7 +3214,7 @@ components:
               nullable: true
             generation:
               type: string
-              description: The contact's generation.
+              description: The contact's suffix.
               nullable: true
             givenName:
               type: string
@@ -3294,8 +3407,10 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the item.
             changeKey:
               type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -3617,6 +3732,14 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
     filter:
       name: $filter
       in: query
@@ -3633,14 +3756,6 @@ components:
       explode: false
       schema:
         type: boolean
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      style: form
-      explode: false
-      schema:
-        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2

@@ -1,7 +1,11 @@
-### Example 1: Using the Restart-MgBetaDeviceManagementVirtualEndpointCloudPc Cmdlet
+### Example 1: Reboot the cloudPC for the administrator
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
+
 Restart-MgBetaDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId
+
 ```
-This example shows how to use the Restart-MgBetaDeviceManagementVirtualEndpointCloudPc Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will reboot the cloudpc for the administrator
+

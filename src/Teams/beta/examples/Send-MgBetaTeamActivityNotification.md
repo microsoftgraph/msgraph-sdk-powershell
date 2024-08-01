@@ -1,4 +1,36 @@
-### Example 1: Code snippet
+### Example 1: Notify a user about pending finance approval requests
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
+
+$params = @{
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/beta/teams/{teamId}"
+	}
+	activityType = "pendingFinanceApprovalRequests"
+	previewText = @{
+		content = "Internal spending team has a pending finance approval requests"
+	}
+	recipient = @{
+		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
+		userId = "569363e2-4e49-4661-87f2-16f245c5d66a"
+	}
+	templateParameters = @(
+		@{
+			name = "pendingRequestCount"
+			value = "5"
+		}
+	)
+}
+
+Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
+
+```
+This example will notify a user about pending finance approval requests
+
+### Example 2: Notify a user about a channel tab
 
 ```powershell
 
@@ -32,9 +64,9 @@ $params = @{
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
 
 ```
-This example shows how to use the Send-MgBetaTeamActivityNotification Cmdlet.
+This example will notify a user about a channel tab
 
-### Example 2: Code snippet
+### Example 3: Notify a user about a channel tab using the user's principal name
 
 ```powershell
 
@@ -68,9 +100,9 @@ $params = @{
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
 
 ```
-This example shows how to use the Send-MgBetaTeamActivityNotification Cmdlet.
+This example will notify a user about a channel tab using the user's principal name
 
-### Example 3: Code snippet
+### Example 4: Notify a user about an event using a custom topic
 
 ```powershell
 
@@ -101,9 +133,9 @@ $params = @{
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
 
 ```
-This example shows how to use the Send-MgBetaTeamActivityNotification Cmdlet.
+This example will notify a user about an event using a custom topic
 
-### Example 4: Code snippet
+### Example 5: Notify the team members about pending finance approval requests
 
 ```powershell
 
@@ -133,9 +165,9 @@ $params = @{
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
 
 ```
-This example shows how to use the Send-MgBetaTeamActivityNotification Cmdlet.
+This example will notify the team members about pending finance approval requests
 
-### Example 5: Code snippet
+### Example 6: Notify the channel members about pending finance approval requests
 
 ```powershell
 
@@ -166,5 +198,5 @@ $params = @{
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
 
 ```
-This example shows how to use the Send-MgBetaTeamActivityNotification Cmdlet.
+This example will notify the channel members about pending finance approval requests
 

@@ -1,17 +1,35 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
- PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Groups
+
+$params = @{
+	topic = "Take your wellness days and rest"
+	threads = @(
+		@{
+			posts = @(
+				@{
+					body = @{
+						contentType = "html"
+						content = "Contoso cares about you: Rest and Recharge"
+					}
+					newParticipants = @(
+						@{
+							emailAddress = @{
+								name = "Adele Vance"
+								address = "AdeleV@contoso.com"
+							}
+						}
+					)
+				}
+			)
+		}
+	)
+}
+
+New-MgGroupConversation -GroupId $groupId -BodyParameter $params
+
 ```
+This example shows how to use the New-MgGroupConversation Cmdlet.
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}

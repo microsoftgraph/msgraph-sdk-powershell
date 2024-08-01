@@ -17,4 +17,10 @@ require:
 
 ``` yaml
 # Directives go here!
+directive:
+# Remove cmdlets.
+  - where:
+      verb: Get
+      subject: ^UserMailFolderMessageContent$
+    remove: true
 ```

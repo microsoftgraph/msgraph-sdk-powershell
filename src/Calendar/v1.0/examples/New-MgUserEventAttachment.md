@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Calendar
+```powershell
+Import-Module Microsoft.Graph.Calendar
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.fileAttachment"
@@ -12,11 +13,13 @@ $params = @{
 New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 This example shows how to use the New-MgUserEventAttachment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Calendar
+```powershell
+Import-Module Microsoft.Graph.Calendar
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.itemAttachment"
@@ -31,5 +34,6 @@ $params = @{
 New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 This example shows how to use the New-MgUserEventAttachment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

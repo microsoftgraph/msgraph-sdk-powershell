@@ -1,4 +1,4 @@
-﻿---
+---
 external help file: Microsoft.Graph.Authentication-help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphcommand
@@ -14,17 +14,20 @@ Find-MgGraphCommand aims to make it easier for you to discover which API path a 
 
 ### FindByCommandOrUri (Default)
 ```
-Find-MgGraphCommand [-ApiVersion <String>] [-InputObject] <Object[]> [<CommonParameters>]
+Find-MgGraphCommand [-ApiVersion <String>] [-InputObject] <Object[]> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ### FindByUri
 ```
-Find-MgGraphCommand [-Uri] <String[]> [-Method <String>] [-ApiVersion <String>] [<CommonParameters>]
+Find-MgGraphCommand [-Uri] <String[]> [-Method <String>] [-ApiVersion <String>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### FindByCommand
 ```
-Find-MgGraphCommand [-ApiVersion <String>] -Command <String[]> [<CommonParameters>]
+Find-MgGraphCommand [-ApiVersion <String>] -Command <String[]> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -129,7 +132,7 @@ Searches for commands using URI wildcard.
 ## PARAMETERS
 
 ### -ApiVersion
-{{ Fill ApiVersion Description }}
+The service API version.
 
 ```yaml
 Type: String
@@ -144,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -Command
-{{ Fill Command Description }}
+The name of a command. e.g., Get-MgUser.}
 
 ```yaml
 Type: String[]
@@ -159,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-{{ Fill InputObject Description }}
+Pipeline input object
 
 ```yaml
 Type: Object[]
@@ -174,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -Method
-{{ Fill Method Description }}
+The HTTP method a command makes.
 
 ```yaml
 Type: String
@@ -188,8 +191,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProgressAction
+Treat this as a common parameter.
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Uri
-{{ Fill Uri Description }}
+The API path a command calls. e.g., /users.
 
 ```yaml
 Type: String[]

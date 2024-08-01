@@ -1,18 +1,23 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.deviceAndAppManagementRoleAssignment"
+	displayName = "Display Name value"
+	description = "Description value"
+	resourceScopes = @(
+	"Resource Scopes value"
+)
+members = @(
+"Members value"
+)
+}
+
+New-MgDeviceManagementRoleAssignment -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the New-MgDeviceManagementRoleAssignment Cmdlet.
 

@@ -30,4 +30,18 @@ require:
 title: $(service-name)
 subject-prefix: 'Beta'
 namespace: Microsoft.Graph.Beta.PowerShell
+
+directive:
+  - where:
+      verb: Grant
+      subject: ^(ShareListItemPermission)$
+    remove: true
+  - where:
+      verb: Remove
+      subject: ^(ShareListItemPermissionGrant)$
+    remove: true
+  - where:
+      verb: Revoke
+      subject: ^(ShareListItemPermissionGrant)$
+    remove: true
 ```

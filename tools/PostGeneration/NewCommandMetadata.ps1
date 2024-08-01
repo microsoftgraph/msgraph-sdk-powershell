@@ -35,7 +35,8 @@ $CommandPathMapping = [ordered]@{}
 
 # Regex patterns.
 $OpenApiTagPattern = '\[OpenAPI\].s*(.*)=>(.*):\"(.*)\"'
-$ExternalDocsPattern ='https://learn.microsoft.com/graph/api/(.*?(graph-rest-1.0|graph-rest-beta))'
+$ExternalDocsPattern = 'https://learn.microsoft.com/graph/api/(.*?(graph-rest-1.0|graph-rest-beta))'
+$AliasPattern = '\[global::System.Management.Automation.Alias(.*?)\]'
 $ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
 $PermissionsUrl = "https://graphexplorerapi.azurewebsites.net/permissions"
 
@@ -73,16 +74,47 @@ $ApiVersion | ForEach-Object {
                 }
                 $Uri = $Uri -replace [Regex]::Escape($MatchedUriSegment), $SegmentBuilder
             }
+            $CommandAliasValue = ($RawFileContent -match $AliasPattern) ? $Matches.0 : $null
+            if (-not($Null -eq $CommandAliasValue)) {
+                $CommandAliasValue = $CommandAliasValue.Replace("[global::System.Management.Automation.Alias(`"", "").Replace("`")", "").Replace("]", "")
+            }
+            if(-not($CommandAliasValue.Contains("-Mg"))) {
+                $CommandAliasValue = $null
+            }
+            $ExternalDocsUrl = ($RawFileContent -match $ExternalDocsPattern) ? $Matches.0 : $null
+            if(-not($Null -eq $ExternalDocsUrl)) {
+                $ExternalDocsUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
+                $ExternalDocsUrl = $ExternalDocsUrl.Replace("intune-mam-", "")
+                
+                try {
+                    $HTTP_Request = [System.Net.WebRequest]::Create($ExternalDocsUrl)
+            
+                    # We then get a response from the site.
+                    $HTTP_Response = $HTTP_Request.GetResponse()
+            
+                    # We then get the HTTP code as an integer.
+                    $HTTP_Status = [int]$HTTP_Response.StatusCode
+            
+                    If (-not($HTTP_Status-eq 200)) {
+                        $ExternalDocsUrl = $Null
+                    }
+                    If ($HTTP_Response -ne $null) { $HTTP_Response.Close() }
+                }
+                catch {
+                    $ExternalDocsUrl = $Null
+                }
+            }
             $MappingValue = @{
-                Command     = $CommandName
-                Variants    = [System.Collections.ArrayList]@($VariantName)
-                Method      = $Method
-                Uri         = $Uri
-                ApiVersion  = $CurrentApiVersion
-                OutputType  = ($RawFileContent -match $OutputTypePattern) ? $Matches.1 : $null
-                Module      = $ModuleName
-                ApiReferenceLink = ($RawFileContent -match $ExternalDocsPattern) ? $Matches.0 : $null
-                Permissions = @()
+                Command          = $CommandName
+                Variants         = [System.Collections.ArrayList]@($VariantName)
+                Method           = $Method
+                Uri              = $Uri
+                ApiVersion       = $CurrentApiVersion
+                OutputType       = ($RawFileContent -match $OutputTypePattern) ? $Matches.1 : $null
+                Module           = $ModuleName
+                ApiReferenceLink = $ExternalDocsUrl
+                CommandAlias     = $CommandAliasValue
+                Permissions      = @()
             }
 
             # Disambiguate between /users (Get-MgUser) and /users/{id} (Get-MgUser) by variant name (parameterset) i.e., List and Get.
@@ -118,6 +150,7 @@ $ApiVersion | ForEach-Object {
                 }
                 $CommandPathMapping.Add($CommandMappingKey, $MappingValue)
             }
+            
         }
         else {
             Write-Error "No match for $OpenApiTagPattern"

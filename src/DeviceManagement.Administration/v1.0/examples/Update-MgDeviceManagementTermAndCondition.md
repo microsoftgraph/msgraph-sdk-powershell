@@ -1,18 +1,21 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.termsAndConditions"
+	displayName = "Display Name value"
+	description = "Description value"
+	title = "Title value"
+	bodyText = "Body Text value"
+	acceptanceStatement = "Acceptance Statement value"
+	version = 7
+}
+
+Update-MgDeviceManagementTermAndCondition -TermsAndConditionsId $termsAndConditionsId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Update-MgDeviceManagementTermAndCondition Cmdlet.
 

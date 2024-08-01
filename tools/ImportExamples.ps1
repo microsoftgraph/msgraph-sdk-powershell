@@ -3,9 +3,9 @@
 Param(
     $ModulesToGenerate = @(),
     $Available = @(),
-    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $FolderForExamplesToBeReviewed = (Join-Path $PSScriptRoot "..\examplesreport"),
-    [string] $ExamplesToBeReviewed = "ExamplesToBeReviewed.csv"
+    [string] $ExamplesToBeReviewed = "ExamplesToBeReviewed.csv",
+    [string] $CommandMetadataPath = (Join-Path $PSScriptRoot "..\src\Authentication\Authentication\custom\common\MgCommandMetadata.json")
 )
 function Start-Generator {
     Param(
@@ -17,88 +17,64 @@ function Start-Generator {
         [string] $ProfilePath = "v1.0",
         [string] $ManualExternalDocsUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell"
     )
-
-    $GraphMapping = @{
-        "v1.0" = "v1.0\examples"
-        "beta" = "beta\examples"
-    }
-    if ($GenerationMode -eq "auto") {
-        $GraphMapping.Keys | ForEach-Object {
-            $graphProfile = $_
-            Get-FilesByProfile -GraphProfile $graphProfile -GraphProfilePath $GraphMapping[$graphProfile] -ModulesToGenerate $ModulesToGenerate 
-        }
-    }
-    else {
-          
-        $ProfilePathMapping = "v1.0\examples"
-        if ($ProfilePath -eq "beta") {
-            $ProfilePathMapping = "beta\examples"
-        }
-        $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
-        Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ManualExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -Module $GraphModule   
-    }
-}
-function Get-FilesByProfile {
-    Param(
-        [ValidateSet("beta", "v1.0")]
-        [string] $GraphProfile = "v1.0",
-        [ValidateNotNullOrEmpty()]
-        [string] $GraphProfilePath = "v1.0\examples",
-        [ValidateNotNullOrEmpty()]
-        $ModulesToGenerate = @()
-    )
-
-
-    $ModulesToGenerate | ForEach-Object {
-        $ModuleName = $_
-        $ModulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$GraphProfilePath"
-        Get-Files -GraphProfile $GraphProfile -GraphProfilePath $modulePath -Module $ModuleName   
-    }
-
-}
-function Get-Files {
-    param(
-        [ValidateSet("beta", "v1.0")]
-        [string] $GraphProfile = "v1.0",
-        [ValidateNotNullOrEmpty()]
-        [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\v1.0\examples"),
-        [ValidateNotNullOrEmpty()]
-        [string] $Module = "Users"
-    )
-    
     try {
-        if (Test-Path $GraphProfilePath) {
+        if ($GenerationMode -eq "auto") {
+            #Test path first
+            if (Test-Path $CommandMetadataPath) {
+                $CommandMetadataContent = Get-Content $CommandMetadataPath | ConvertFrom-Json
+                $CommandMetadataContent | ForEach-Object {
+                    $GraphCommand = $_.Command
+                    $GraphModule = $_.Module
+                    $UriPath = $_.Uri
+                    $ExternalDocsUrl = $_.ApiReferenceLink
+                    $ApiVersion = $_.ApiVersion
+                    $ProfilePathMapping = "v1.0\examples"
+                    if ($ApiVersion -eq "beta") {
+                        $ProfilePathMapping = "beta\examples"
+                        $GraphModule = $GraphModule.Replace("Beta.", "")
+                    }
+                    $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
 
-            foreach ($File in Get-ChildItem $GraphProfilePath) {
-               
-                #Extract command over here
-                $Command = [System.IO.Path]::GetFileNameWithoutExtension($File)
-                
-                if ($Command -ine "README") {
-                    #Extract URI path
-                    $ApiRefLinks = (Find-MgGraphCommand -Command $Command).ApiReferenceLink
-                   
-                    if ($ApiRefLinks) {
-                        foreach ($ApiRefLink in $ApiRefLinks) {
-                                
-                                
-                            if (-not($null -eq $ApiRefLink -or $ApiRefLink -eq "")) {
-                                $ExternalDocsUrl = $ApiRefLink + "&tabs=powershell"
-                                Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ExternalDocsUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath -Module $Module
-                            }
-                                   
+                    $ExampleFile = "$ModulePath\$GraphCommand.md"
+                    Write-Host $ExampleFile
+                    Test-Commands -Command $GraphCommand -CommandPath $ExampleFile
+                    if ($null -ne $ExternalDocsUrl) { 
+                        if (-not (Test-Path $ExampleFile)) {
+                            New-Item -Path $ExampleFile -ItemType File -Force
                         }
-                    
-
+                        $IntuneUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
+                        $IntuneUrl = $IntuneUrl.Replace("intune-mam-", "")
+                        $IsValid = IsValidEndPoint -GraphEndpoint $IntuneUrl
+                        if ($IsValid) {
+                            $ExternalDocsUrl = $IntuneUrl
+                        }
+                        Start-WebScrapping -GraphProfile $ApiVersion -ExternalDocUrl $ExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -UriPath $UriPath -Module $GraphModule
                     }
                     else {
-                        #Clear any content in that file as long as its not a readme file
-                        Clear-Content $File -Force
-                    
+                        if (Test-Path $ExampleFile) {
+                            #Check file content and retain correct examples
+                            $Content = Get-Content -Path $ExampleFile
+                            Clear-Content $ExampleFile -Force
+                            if ($Content | Select-String -pattern $GraphCommand) {
+                                Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $GraphCommand
+                            }   
+                        }
                     }
-                }
             
+                }
             }
+            else {
+                Write-Host "The path to the command metadata file is invalid. Please ensure that the path is correct"
+            }
+        }
+        else {
+          
+            $ProfilePathMapping = "v1.0\examples"
+            if ($ProfilePath -eq "beta") {
+                $ProfilePathMapping = "beta\examples"
+            }
+            $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
+            Start-WebScrapping -GraphProfile $ProfilePath -ExternalDocUrl $ManualExternalDocsUrl -Command $GraphCommand -GraphProfilePath $ModulePath -Module $GraphModule   
         }
     }
     catch {
@@ -107,17 +83,44 @@ function Get-Files {
         Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
         Write-Host "`nError Item Name: "$_.Exception.ItemName
     }
+}
+function Test-Commands {
+    param(
+        [ValidateNotNullOrEmpty()]
+        [string] $Command = "Get-MgUser",
+        [string] $CommandPath = ""
+    )
+    
+    try {
+        #Extract URI path
+        $Cmdlet = Find-MgGraphCommand -Command $Command
+        #Remove the file for the non-existent command
+        if ($null -eq $Cmdlet) {
+            Remove-FilesForNonExistentCommands -Command $Command -CommandPath $CommandPath
+            return
+        }
+    }
+    catch {
+
+        #Remove the file for the non-existent command
+        Remove-FilesForNonExistentCommands -Command $Command -CommandPath $CommandPath
+        Write-Host "`nError Message: " $_.Exception.Message
+        Write-Host "`nError in Line: " $_.InvocationInfo.Line
+        Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
+        Write-Host "`nError Item Name: "$_.Exception.ItemName
+    }
     
 }
 
-function Append-GraphPrefix {
+function Remove-FilesForNonExistentCommands {
     param(
-        [string] $UriPath
+        [ValidateNotNullOrEmpty()]
+        [string] $Command = "Get-MgUser",
+        [string] $CommandPath = ""
     )
-    $UriPathSegments = $UriPath.Split("/")
-    $LastUriPathSegment = $UriPathSegments[$UriPathSegments.Length - 1]
-    $UriPath = $UriPath.Replace($LastUriPathSegment, "microsoft.graph." + $LastUriPathSegment)
-    return $UriPath
+    if (Test-Path $CommandPath) {
+        Remove-Item -Path $CommandPath -Force
+    }
 }
 function Start-WebScrapping {
     param(
@@ -142,54 +145,55 @@ function Start-WebScrapping {
     $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
     $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
     try {
-        ($readStream, $HttpWebResponse) = FetchStream -GraphDocsUrl $GraphDocsUrl
-
-        while (-not $readStream.EndOfStream) {
-            $Line = $readStream.ReadLine()
-            if ($Line -match "^### Example") {
-                $H = $HeaderList.Add($Line)
+        ($readStream, $HttpWebResponse, $IsSuccess) = FetchStream -GraphDocsUrl $GraphDocsUrl
+        if ($IsSuccess) {
+            while (-not $readStream.EndOfStream) {
+                $Line = $readStream.ReadLine()
+                if ($Line -match "^### Example") {
+                    $H = $HeaderList.Add($Line)
+                }
+                if ($Line -match "/includes/snippets/powershell/") {
+                    $Line = $Line.Replace("[!INCLUDE [sample-code](..", "")
+                    $SnippetPath = $Line.Replace(")", "").Replace("]", "")
+                    $SnippetUrl = $GraphDocsUrl.Replace("/api/$LastPathSegment", $SnippetPath)
+                    $E = $ExampleLinks.Add($SnippetUrl)
+                }
             }
-            if ($Line -match "/includes/snippets/powershell/") {
-                $Line = $Line.Replace("[!INCLUDE [sample-code](..", "")
-                $SnippetPath = $Line.Replace(")", "").Replace("]", "")
-                $SnippetUrl = $GraphDocsUrl.Replace("/api/$LastPathSegment", $SnippetPath)
-                $E = $ExampleLinks.Add($SnippetUrl)
-            }
-        }
-        $HttpWebResponse.Close() 
-        $readStream.Close()
+            $HttpWebResponse.Close() 
+            $readStream.Close()
 
-        foreach ($Link in $ExampleLinks) {
-            $ConstructedSnippet = "";
+            foreach ($Link in $ExampleLinks) {
+                $ConstructedSnippet = "";
                 ($Rs, $HttpResponse) = FetchStream -GraphDocsUrl $Link
-            while (-not $Rs.EndOfStream) {
-                $Snippet = $Rs.ReadLine()
+                while (-not $Rs.EndOfStream) {
+                    $Snippet = $Rs.ReadLine()
                 
-                #Write-Host $desc
-                $Snippet = $Snippet.Replace("---", "")
-                $Snippet = $Snippet.Replace('description: "Automatically generated file. DO NOT MODIFY"', "")
-                $ConstructedSnippet += $Snippet + "`n"
+                    #Write-Host $desc
+                    $Snippet = $Snippet.Replace("---", "")
+                    $Snippet = $Snippet.Replace('description: "Automatically generated file. DO NOT MODIFY"', "")
+                    $ConstructedSnippet += $Snippet + "`n"
                     
+                }
+                $S = $Snippets.Add($ConstructedSnippet)
             }
-            $S = $Snippets.Add($ConstructedSnippet)
-        }
-        if ($HeaderList.Count -ne $Snippets.Count) {
-            $HeaderList.Clear()
-            for ($d = 0; $d -lt $Snippets.Count; $d++) {
-                $sum = $d + 1
-                $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
+            if ($HeaderList.Count -ne $Snippets.Count) {
+                $HeaderList.Clear()
+                for ($d = 0; $d -lt $Snippets.Count; $d++) {
+                    $sum = $d + 1
+                    $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
+                }
             }
-        }
 
-        $ExampleFile = "$GraphProfilePath/$Command.md"
-        $url = $ExternalDocUrl
-        if ($GraphProfile -eq "beta") {
-            $url = $url.Replace("graph-rest-1.0", "graph-rest-beta")
-        }
-        $DescriptionCommand = $Command  
-        $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
+            $ExampleFile = "$GraphProfilePath/$Command.md"
+            $url = $ExternalDocUrl
+            if ($GraphProfile -eq "beta") {
+                $url = $url.Replace("graph-rest-1.0", "graph-rest-beta")
+            }
+            $DescriptionCommand = $Command  
+            $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
     
-        Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
+            Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
+        }
     }
     catch {
         Write-Host "`nError Message: " $_.Exception.Message
@@ -200,16 +204,49 @@ function Start-WebScrapping {
         Write-Host "`nExternal docs url : "  $ExternalDocUrl
     }
 }
+
+function IsValidEndPoint {
+    param(
+        [string] $GraphEndpoint
+    )
+    try {
+        $HTTP_Request = [System.Net.WebRequest]::Create($GraphEndpoint)
+
+        # We then get a response from the site.
+        $HTTP_Response = $HTTP_Request.GetResponse()
+
+        # We then get the HTTP code as an integer.
+        $HTTP_Status = [int]$HTTP_Response.StatusCode
+
+        If ($HTTP_Status -eq 200) {
+            return $True
+        }
+        If ($HTTP_Response -ne $null) { $HTTP_Response.Close() }
+        return $False
+    }
+    catch {
+        return $False
+    }
+}
 function FetchStream {
     param(
         [string]$GraphDocsUrl
     )
-    $HttpWebRequest = [System.Net.WebRequest]::Create($GraphDocsUrl)
-    $HttpWebResponse = $HttpWebRequest.GetResponse()
-    $ReceiveStream = $HttpWebResponse.GetResponseStream()
-    $Encode = [System.Text.Encoding]::GetEncoding("utf-8")
-    $ReadStream = [System.IO.StreamReader]::new($ReceiveStream, $Encode)
-    return ($ReadStream, $HttpWebResponse)
+    try {
+        $HttpWebRequest = [System.Net.WebRequest]::Create($GraphDocsUrl)
+        $HttpWebResponse = $HttpWebRequest.GetResponse()
+        $ReceiveStream = $HttpWebResponse.GetResponseStream()
+        $Encode = [System.Text.Encoding]::GetEncoding("utf-8")
+        $ReadStream = [System.IO.StreamReader]::new($ReceiveStream, $Encode)
+        return ($ReadStream, $HttpWebResponse, $True)
+    }
+    catch {
+        return ($null, $null, $False)
+        Write-Host "`nError Message: " $_.Exception.Message
+        Write-Host "`nError in Line: " $_.InvocationInfo.Line
+        Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
+        Write-Host "`nError Item Name: "$_.Exception.ItemName
+    }
 }
 function Update-ExampleFile {
     param(
@@ -251,6 +288,7 @@ function Update-ExampleFile {
     $ExampleCount = $ExampleList.Count
     $WrongExamplesCount = 0;
     $SkippedExample = -1
+    $TotalText = ""
     $ContainsRightExamples = $False
     $SearchString = "### Example \d:"
     $Option = [System.Text.RegularExpressions.RegexOptions]::Multiline
@@ -383,6 +421,7 @@ function Update-ExampleFile {
     #-----------------------------------------------------------------------------------------------------------------------------------------------------------------#
     if (($WrongExamplesCount -gt 0) -and -not($ContainsRightExamples)) {
         Clear-Content $ExampleFile -Force
+        Add-Content -Path $ExampleFile -Value $TotalText
         #Log api path api version and equivalent external doc url giving wron examples
         #Create folder and file if it doesn't exist
         #The artifact below will be ignored on git.
@@ -416,8 +455,7 @@ function Retain-ExistingCorrectExamples {
         [object]$Content,
         [string]$File,
         [string]$CommandPattern
-    ) 
-    $RetainedExamples = New-Object Collections.Generic.List[string] 
+    )  
     $End = 0
     $NoOfExamples = 0
     foreach ($C in $Content) {
@@ -508,19 +546,13 @@ $RetainedExamples = New-Object Collections.Generic.List[string]
 if (!(Get-Module "powershell-yaml" -ListAvailable -ErrorAction SilentlyContinue)) {
     Install-Module "powershell-yaml" -AcceptLicense -Scope CurrentUser -Force
 }
-if (-not (Test-Path $ModuleMappingConfigPath)) {
-    Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
-}
+
 If (-not (Get-Module -ErrorAction Ignore -ListAvailable PowerHTML)) {
     Write-Verbose "Installing PowerHTML module for the current user..."
     Install-Module PowerHTML -ErrorAction Stop -Scope CurrentUser -Force
 }
 Import-Module -ErrorAction Stop PowerHTML
 
-if ($ModulesToGenerate.Count -eq 0) {
-    [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-    $ModulesToGenerate = $ModuleMapping.Keys
-}
 Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #Comment the above and uncomment the below start command, if you manually want to manually pass ExternalDocs url.
@@ -541,4 +573,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/teamsappsettings-update?view=graph-rest-beta&tabs=powershell" -GraphCommand "Update-MgBetaTeamworkTeamAppSetting" -GraphModule "Teams" -Profile "v1.0"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/subscription-reauthorize?view=graph-rest-1.0&tabs=powershell" -GraphCommand "Invoke-MgReauthorizeSubscription" -GraphModule "ChangeNotifications" -Profile "v1.0"

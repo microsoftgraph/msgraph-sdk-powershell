@@ -1,18 +1,19 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.localizedNotificationMessage"
+	locale = "Locale value"
+	subject = "Subject value"
+	messageTemplate = "Message Template value"
+	isDefault = $true
+}
+
+Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage -NotificationMessageTemplateId $notificationMessageTemplateId -LocalizedNotificationMessageId $localizedNotificationMessageId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage Cmdlet.
 

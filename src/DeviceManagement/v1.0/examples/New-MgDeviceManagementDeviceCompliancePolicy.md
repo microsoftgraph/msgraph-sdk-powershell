@@ -1,18 +1,34 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.windows10MobileCompliancePolicy"
+	description = "Description value"
+	displayName = "Display Name value"
+	version = 7
+	passwordRequired = $true
+	passwordBlockSimple = $true
+	passwordMinimumLength = 
+	passwordMinimumCharacterSetCount = 
+	passwordRequiredType = "alphanumeric"
+	passwordPreviousPasswordBlockCount = 
+	passwordExpirationDays = 
+	passwordMinutesOfInactivityBeforeLock = 
+	passwordRequireToUnlockFromIdle = $true
+	osMinimumVersion = "Os Minimum Version value"
+	osMaximumVersion = "Os Maximum Version value"
+	earlyLaunchAntiMalwareDriverEnabled = $true
+	bitLockerEnabled = $true
+	secureBootEnabled = $true
+	codeIntegrityEnabled = $true
+	storageRequireEncryption = $true
+}
+
+New-MgDeviceManagementDeviceCompliancePolicy -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the New-MgDeviceManagementDeviceCompliancePolicy Cmdlet.
 

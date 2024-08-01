@@ -962,7 +962,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Update the navigation property items in external
+      summary: Create externalItem
+      description: Create a new externalItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -1764,8 +1768,8 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Create schema
-      description: Create a new schema object.
+      summary: Create or update schema
+      description: Create a new or update an existing schema for a Microsoft Search connection.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
@@ -3576,7 +3580,7 @@ components:
           type: string
           description: 'The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.'
         layout:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: 'The definition of the content''s appearance, represented by an Adaptive Card, which is a JSON-serialized card object model.'
         priority:
           maximum: 2147483647
           minimum: -2147483648
@@ -3834,11 +3838,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    microsoft.graph.Json:
-      title: Json
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.externalConnectors.propertyRule:
       title: propertyRule
       type: object
@@ -3852,7 +3851,7 @@ components:
           type: array
           items:
             type: string
-          description: A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
+          description: A collection with one or many strings. One or more specified strings are matched with the specified property using the specified operation. Required.
         valuesJoinedBy:
           $ref: '#/components/schemas/microsoft.graph.binaryOperator'
       additionalProperties:

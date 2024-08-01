@@ -1,18 +1,19 @@
-### Example 1: {{ Add title here }}
+### Example 1: Create an extension in the specified group event
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Calendar
+
+$params = @{
+	"@odata.type" = "microsoft.graph.openTypeExtension"
+	extensionName = "Com.Contoso.Deal"
+	companyName = "Alpine Skis"
+	dealValue = 
+	expirationDate = "2015-07-03T13:04:00.000Z"
+}
+
+New-MgGroupEventExtension -GroupId $groupId -EventId $eventId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example will create an extension in the specified group event
 

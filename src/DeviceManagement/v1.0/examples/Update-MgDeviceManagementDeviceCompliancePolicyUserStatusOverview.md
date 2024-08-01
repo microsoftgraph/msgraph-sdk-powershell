@@ -1,18 +1,22 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.deviceComplianceUserOverview"
+	pendingCount = 12
+	notApplicableCount = 2
+	successCount = 12
+	errorCount = 10
+	failedCount = 11
+	lastUpdateDateTime = [System.DateTime]::Parse("2016-12-31T23:58:21.6459442-08:00")
+	configurationVersion = 4
+}
+
+Update-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview -DeviceCompliancePolicyId $deviceCompliancePolicyId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Update-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview Cmdlet.
 

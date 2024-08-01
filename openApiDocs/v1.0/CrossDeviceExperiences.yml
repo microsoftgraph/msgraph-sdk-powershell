@@ -10,11 +10,8 @@ paths:
     get:
       tags:
         - users.userActivity
-      summary: Get user activities
-      description: 'Get activities for a given user. Unlike the recent OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application''s activities, use the nextLink property to paginate.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-get-activities?view=graph-rest-1.0
+      summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: user_ListActivity
       parameters:
         - name: user-id
@@ -196,11 +193,7 @@ paths:
     delete:
       tags:
         - users.userActivity
-      summary: Delete an activity
-      description: Delete an existing user activity for your app.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
+      summary: Delete navigation property activities for users
       operationId: user_DeleteActivity
       parameters:
         - name: user-id
@@ -403,11 +396,7 @@ paths:
     patch:
       tags:
         - users.userActivity
-      summary: Create or replace a historyItem
-      description: Create a new or replace an existing history item for an existing user activity.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0
+      summary: Update the navigation property historyItems in users
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id
@@ -629,7 +618,7 @@ components:
               description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
             contentUrl:
               type: string
               description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
@@ -694,13 +683,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
@@ -712,7 +701,7 @@ components:
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
@@ -731,11 +720,6 @@ components:
         id:
           type: string
           description: The unique identifier for an entity. Read-only.
-      additionalProperties:
-        type: object
-    microsoft.graph.Json:
-      title: Json
-      type: object
       additionalProperties:
         type: object
     microsoft.graph.status:
@@ -758,7 +742,7 @@ components:
           description: Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
           nullable: true
         content:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
         description:
           type: string
           description: 'Optional. Longer text description of the user''s unique activity (example: document name, first sentence, and/or metadata)'

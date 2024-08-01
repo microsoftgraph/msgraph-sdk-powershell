@@ -1,18 +1,22 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.applePushNotificationCertificate"
+	appleIdentifier = "Apple Identifier value"
+	topicIdentifier = "Topic Identifier value"
+	expirationDateTime = [System.DateTime]::Parse("2016-12-31T23:57:57.2481234-08:00")
+	certificateUploadStatus = "Certificate Upload Status value"
+	certificateUploadFailureReason = "Certificate Upload Failure Reason value"
+	certificateSerialNumber = "Certificate Serial Number value"
+	certificate = "Certificate value"
+}
+
+Update-MgDeviceManagementApplePushNotificationCertificate -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Update-MgDeviceManagementApplePushNotificationCertificate Cmdlet.
 

@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Applications
+```powershell
+Import-Module Microsoft.Graph.Applications
 
 $params = @{
 	principalId = "9028d19c-26a9-4809-8e3f-20ff73e2d75e"
@@ -11,5 +12,6 @@ $params = @{
 New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
 This example shows how to use the New-MgServicePrincipalAppRoleAssignment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

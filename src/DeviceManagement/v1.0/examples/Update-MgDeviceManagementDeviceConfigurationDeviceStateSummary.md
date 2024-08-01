@@ -1,18 +1,22 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.deviceConfigurationDeviceStateSummary"
+	unknownDeviceCount = 2
+	notApplicableDeviceCount = 8
+	compliantDeviceCount = 4
+	remediatedDeviceCount = 5
+	nonCompliantDeviceCount = 7
+	errorDeviceCount = 0
+	conflictDeviceCount = 3
+}
+
+Update-MgDeviceManagementDeviceConfigurationDeviceStateSummary -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Update-MgDeviceManagementDeviceConfigurationDeviceStateSummary Cmdlet.
 

@@ -1,17 +1,18 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
- PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$params = @{
+	definition = @(
+	'{"HomeRealmDiscoveryPolicy":{"AccelerateToFederatedDomain":true,"PreferredDomain":"federated.example.edu","AlternateIdLogin":{"Enabled":true}}}'
+)
+displayName = "Contoso default HRD Policy"
+}
+
+Update-MgBetaPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId -BodyParameter $params
+
 ```
+This example shows how to use the Update-MgBetaPolicyHomeRealmDiscoveryPolicy Cmdlet.
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}

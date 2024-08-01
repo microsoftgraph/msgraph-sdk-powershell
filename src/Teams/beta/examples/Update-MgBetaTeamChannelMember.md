@@ -7,8 +7,8 @@ Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
 	roles = @(
-		"owner"
-	)
+	"owner"
+)
 }
 
 Update-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -ConversationMemberId $conversationMemberId -BodyParameter $params

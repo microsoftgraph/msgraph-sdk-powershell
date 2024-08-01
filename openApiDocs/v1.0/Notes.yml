@@ -112,11 +112,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List notebooks
-      description: Retrieve a list of notebook objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
+      summary: Get notebooks from groups
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: group.onenote_ListNotebook
       parameters:
         - name: group-id
@@ -174,11 +171,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create notebook
-      description: Create a new OneNote notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
+      summary: Create new navigation property to notebooks for groups
       operationId: group.onenote_CreateNotebook
       parameters:
         - name: group-id
@@ -210,11 +203,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: Get notebook
-      description: Retrieve the properties and relationships of a notebook object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-get?view=graph-rest-1.0
+      summary: Get notebooks from groups
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: group.onenote_GetNotebook
       parameters:
         - name: group-id
@@ -340,11 +330,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in the notebook. Read-only. Nullable.
       operationId: group.onenote.notebook_ListSectionGroup
       parameters:
         - name: group-id
@@ -410,11 +397,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create sectionGroup
-      description: Create a new section group in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
+      summary: Create new navigation property to sectionGroups for groups
       operationId: group.onenote.notebook_CreateSectionGroup
       parameters:
         - name: group-id
@@ -729,11 +712,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in the section. Read-only. Nullable.
       operationId: group.onenote.notebook.sectionGroup_ListSectionGroup
       parameters:
         - name: group-id
@@ -916,11 +896,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in the section group. Read-only. Nullable.
       operationId: group.onenote.notebook.sectionGroup_ListSection
       parameters:
         - name: group-id
@@ -994,11 +971,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create section
-      description: Create a new onenoteSection in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for groups
       operationId: group.onenote.notebook.sectionGroup_CreateSection
       parameters:
         - name: group-id
@@ -1221,11 +1194,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: group.onenote.notebook.sectionGroup.section_ListPage
       parameters:
         - name: group-id
@@ -1307,11 +1277,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for groups
       operationId: group.onenote.notebook.sectionGroup.section_CreatePage
       parameters:
         - name: group-id
@@ -1568,9 +1534,6 @@ paths:
         - groups.onenote
       summary: Get content for the navigation property pages from groups
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: group.onenote.notebook.sectionGroup.section_GetPagesContent
       parameters:
         - name: group-id
@@ -1623,7 +1586,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -1688,7 +1650,64 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote.notebook.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -2103,11 +2122,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in the notebook. Read-only. Nullable.
       operationId: group.onenote.notebook_ListSection
       parameters:
         - name: group-id
@@ -2173,11 +2189,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create section
-      description: Create a new onenoteSection in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for groups
       operationId: group.onenote.notebook_CreateSection
       parameters:
         - name: group-id
@@ -2368,11 +2380,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: group.onenote.notebook.section_ListPage
       parameters:
         - name: group-id
@@ -2446,11 +2455,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for groups
       operationId: group.onenote.notebook.section_CreatePage
       parameters:
         - name: group-id
@@ -2675,9 +2680,6 @@ paths:
         - groups.onenote
       summary: Get content for the navigation property pages from groups
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: group.onenote.notebook.section_GetPagesContent
       parameters:
         - name: group-id
@@ -2722,7 +2724,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -2779,7 +2780,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote.notebook.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -3138,8 +3188,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
+      summary: Get operations from groups
+      description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: group.onenote_ListOperation
       parameters:
         - name: group-id
@@ -3229,11 +3279,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenoteoperation-get?view=graph-rest-1.0
+      summary: Get operations from groups
+      description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: group.onenote_GetOperation
       parameters:
         - name: group-id
@@ -3381,11 +3428,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List onenotePages
-      description: Retrieve a list of page objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.onenote_ListPage
       parameters:
         - name: group-id
@@ -3443,11 +3487,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create onenotePage
-      description: 'Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user''s default notebook. If you''re targeting other notebooks, you can create pages in a specified section.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for groups
       operationId: group.onenote_CreatePage
       parameters:
         - name: group-id
@@ -3479,11 +3519,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: Get page
-      description: 'Retrieve the properties and relationships of a page object. Getting page information Access a page''s metadata by page identifier: Getting page content You can use the page''s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.onenote_GetPage
       parameters:
         - name: group-id
@@ -3574,11 +3611,7 @@ paths:
     delete:
       tags:
         - groups.onenote
-      summary: Delete page
-      description: Delete a OneNote page.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
+      summary: Delete navigation property pages for groups
       operationId: group.onenote_DeletePage
       parameters:
         - name: group-id
@@ -3615,9 +3648,6 @@ paths:
         - groups.onenote
       summary: Get content for the navigation property pages from groups
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
       operationId: group.onenote_GetPagesContent
       parameters:
         - name: group-id
@@ -3646,7 +3676,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -3687,7 +3716,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -4070,7 +4132,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -4111,7 +4172,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property resources in groups
+      description: The content stream
+      operationId: group.onenote_DeleteResourcesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteResource-id
+          in: path
+          description: The unique identifier of onenoteResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/resources/$count':
     get:
       tags:
@@ -4138,11 +4232,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.onenote_ListSectionGroup
       parameters:
         - name: group-id
@@ -4232,11 +4323,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: Get sectionGroup
-      description: Retrieve the properties and relationships of a sectionGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-get?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.onenote_GetSectionGroup
       parameters:
         - name: group-id
@@ -4470,11 +4558,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in the section. Read-only. Nullable.
       operationId: group.onenote.sectionGroup_ListSectionGroup
       parameters:
         - name: group-id
@@ -4633,11 +4718,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in the section group. Read-only. Nullable.
       operationId: group.onenote.sectionGroup_ListSection
       parameters:
         - name: group-id
@@ -4703,11 +4785,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create section
-      description: Create a new onenoteSection in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for groups
       operationId: group.onenote.sectionGroup_CreateSection
       parameters:
         - name: group-id
@@ -4898,11 +4976,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: group.onenote.sectionGroup.section_ListPage
       parameters:
         - name: group-id
@@ -4976,11 +5051,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for groups
       operationId: group.onenote.sectionGroup.section_CreatePage
       parameters:
         - name: group-id
@@ -5205,9 +5276,6 @@ paths:
         - groups.onenote
       summary: Get content for the navigation property pages from groups
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: group.onenote.sectionGroup.section_GetPagesContent
       parameters:
         - name: group-id
@@ -5252,7 +5320,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -5309,7 +5376,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -5668,11 +5784,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.onenote_ListSection
       parameters:
         - name: group-id
@@ -5762,11 +5875,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: Get section
-      description: Retrieve the properties and relationships of a onenoteSection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-get?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: group.onenote_GetSection
       parameters:
         - name: group-id
@@ -5892,11 +6002,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from groups
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: group.onenote.section_ListPage
       parameters:
         - name: group-id
@@ -5962,11 +6069,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for groups
       operationId: group.onenote.section_CreatePage
       parameters:
         - name: group-id
@@ -6159,9 +6262,6 @@ paths:
         - groups.onenote
       summary: Get content for the navigation property pages from groups
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: group.onenote.section_GetPagesContent
       parameters:
         - name: group-id
@@ -6198,7 +6298,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - groups.onenote
@@ -6247,7 +6346,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.onenote
+      summary: Delete content for the navigation property pages in groups
+      description: The page's HTML content.
+      operationId: group.onenote.section_DeletePagesContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -6917,11 +7057,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List notebooks
-      description: Retrieve a list of notebook objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
+      summary: Get notebooks from sites
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: site.onenote_ListNotebook
       parameters:
         - name: site-id
@@ -6979,11 +7116,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create notebook
-      description: Create a new OneNote notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
+      summary: Create new navigation property to notebooks for sites
       operationId: site.onenote_CreateNotebook
       parameters:
         - name: site-id
@@ -7015,11 +7148,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: Get notebook
-      description: Retrieve the properties and relationships of a notebook object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-get?view=graph-rest-1.0
+      summary: Get notebooks from sites
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: site.onenote_GetNotebook
       parameters:
         - name: site-id
@@ -7145,11 +7275,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from sites
+      description: The section groups in the notebook. Read-only. Nullable.
       operationId: site.onenote.notebook_ListSectionGroup
       parameters:
         - name: site-id
@@ -7215,11 +7342,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create sectionGroup
-      description: Create a new section group in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
+      summary: Create new navigation property to sectionGroups for sites
       operationId: site.onenote.notebook_CreateSectionGroup
       parameters:
         - name: site-id
@@ -7534,11 +7657,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from sites
+      description: The section groups in the section. Read-only. Nullable.
       operationId: site.onenote.notebook.sectionGroup_ListSectionGroup
       parameters:
         - name: site-id
@@ -7721,11 +7841,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from sites
+      description: The sections in the section group. Read-only. Nullable.
       operationId: site.onenote.notebook.sectionGroup_ListSection
       parameters:
         - name: site-id
@@ -7799,11 +7916,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create section
-      description: Create a new onenoteSection in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for sites
       operationId: site.onenote.notebook.sectionGroup_CreateSection
       parameters:
         - name: site-id
@@ -8026,11 +8139,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: site.onenote.notebook.sectionGroup.section_ListPage
       parameters:
         - name: site-id
@@ -8112,11 +8222,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for sites
       operationId: site.onenote.notebook.sectionGroup.section_CreatePage
       parameters:
         - name: site-id
@@ -8373,9 +8479,6 @@ paths:
         - sites.onenote
       summary: Get content for the navigation property pages from sites
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: site.onenote.notebook.sectionGroup.section_GetPagesContent
       parameters:
         - name: site-id
@@ -8428,7 +8531,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -8493,7 +8595,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -8908,11 +9009,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
+      summary: Get sections from sites
+      description: The sections in the notebook. Read-only. Nullable.
       operationId: site.onenote.notebook_ListSection
       parameters:
         - name: site-id
@@ -8978,11 +9076,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create section
-      description: Create a new onenoteSection in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for sites
       operationId: site.onenote.notebook_CreateSection
       parameters:
         - name: site-id
@@ -9173,11 +9267,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: site.onenote.notebook.section_ListPage
       parameters:
         - name: site-id
@@ -9251,11 +9342,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for sites
       operationId: site.onenote.notebook.section_CreatePage
       parameters:
         - name: site-id
@@ -9480,9 +9567,6 @@ paths:
         - sites.onenote
       summary: Get content for the navigation property pages from sites
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: site.onenote.notebook.section_GetPagesContent
       parameters:
         - name: site-id
@@ -9527,7 +9611,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -9584,7 +9667,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -9943,8 +10025,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
+      summary: Get operations from sites
+      description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: site.onenote_ListOperation
       parameters:
         - name: site-id
@@ -10034,11 +10116,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenoteoperation-get?view=graph-rest-1.0
+      summary: Get operations from sites
+      description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: site.onenote_GetOperation
       parameters:
         - name: site-id
@@ -10186,11 +10265,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List onenotePages
-      description: Retrieve a list of page objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: site.onenote_ListPage
       parameters:
         - name: site-id
@@ -10248,11 +10324,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create onenotePage
-      description: 'Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user''s default notebook. If you''re targeting other notebooks, you can create pages in a specified section.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for sites
       operationId: site.onenote_CreatePage
       parameters:
         - name: site-id
@@ -10284,11 +10356,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: Get page
-      description: 'Retrieve the properties and relationships of a page object. Getting page information Access a page''s metadata by page identifier: Getting page content You can use the page''s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: site.onenote_GetPage
       parameters:
         - name: site-id
@@ -10379,11 +10448,7 @@ paths:
     delete:
       tags:
         - sites.onenote
-      summary: Delete page
-      description: Delete a OneNote page.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
+      summary: Delete navigation property pages for sites
       operationId: site.onenote_DeletePage
       parameters:
         - name: site-id
@@ -10420,9 +10485,6 @@ paths:
         - sites.onenote
       summary: Get content for the navigation property pages from sites
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
       operationId: site.onenote_GetPagesContent
       parameters:
         - name: site-id
@@ -10451,7 +10513,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -10492,7 +10553,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -10875,7 +10935,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -10916,7 +10975,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/resources/$count':
     get:
       tags:
@@ -10943,11 +11001,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from sites
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: site.onenote_ListSectionGroup
       parameters:
         - name: site-id
@@ -11037,11 +11092,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: Get sectionGroup
-      description: Retrieve the properties and relationships of a sectionGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-get?view=graph-rest-1.0
+      summary: Get sectionGroups from sites
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: site.onenote_GetSectionGroup
       parameters:
         - name: site-id
@@ -11275,11 +11327,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from sites
+      description: The section groups in the section. Read-only. Nullable.
       operationId: site.onenote.sectionGroup_ListSectionGroup
       parameters:
         - name: site-id
@@ -11438,11 +11487,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from sites
+      description: The sections in the section group. Read-only. Nullable.
       operationId: site.onenote.sectionGroup_ListSection
       parameters:
         - name: site-id
@@ -11508,11 +11554,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create section
-      description: Create a new onenoteSection in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for sites
       operationId: site.onenote.sectionGroup_CreateSection
       parameters:
         - name: site-id
@@ -11703,11 +11745,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: site.onenote.sectionGroup.section_ListPage
       parameters:
         - name: site-id
@@ -11781,11 +11820,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for sites
       operationId: site.onenote.sectionGroup.section_CreatePage
       parameters:
         - name: site-id
@@ -12010,9 +12045,6 @@ paths:
         - sites.onenote
       summary: Get content for the navigation property pages from sites
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: site.onenote.sectionGroup.section_GetPagesContent
       parameters:
         - name: site-id
@@ -12057,7 +12089,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -12114,7 +12145,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -12473,11 +12503,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
+      summary: Get sections from sites
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: site.onenote_ListSection
       parameters:
         - name: site-id
@@ -12567,11 +12594,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: Get section
-      description: Retrieve the properties and relationships of a onenoteSection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-get?view=graph-rest-1.0
+      summary: Get sections from sites
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: site.onenote_GetSection
       parameters:
         - name: site-id
@@ -12697,11 +12721,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from sites
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: site.onenote.section_ListPage
       parameters:
         - name: site-id
@@ -12767,11 +12788,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for sites
       operationId: site.onenote.section_CreatePage
       parameters:
         - name: site-id
@@ -12964,9 +12981,6 @@ paths:
         - sites.onenote
       summary: Get content for the navigation property pages from sites
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: site.onenote.section_GetPagesContent
       parameters:
         - name: site-id
@@ -13003,7 +13017,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - sites.onenote
@@ -13052,7 +13065,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -13443,11 +13455,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List notebooks
-      description: Retrieve a list of notebook objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
+      summary: Get notebooks from users
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: user.onenote_ListNotebook
       parameters:
         - name: user-id
@@ -13505,11 +13514,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create notebook
-      description: Create a new OneNote notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
+      summary: Create new navigation property to notebooks for users
       operationId: user.onenote_CreateNotebook
       parameters:
         - name: user-id
@@ -13541,11 +13546,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: Get notebook
-      description: Retrieve the properties and relationships of a notebook object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-get?view=graph-rest-1.0
+      summary: Get notebooks from users
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: user.onenote_GetNotebook
       parameters:
         - name: user-id
@@ -13671,11 +13673,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from users
+      description: The section groups in the notebook. Read-only. Nullable.
       operationId: user.onenote.notebook_ListSectionGroup
       parameters:
         - name: user-id
@@ -13741,11 +13740,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create sectionGroup
-      description: Create a new section group in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
+      summary: Create new navigation property to sectionGroups for users
       operationId: user.onenote.notebook_CreateSectionGroup
       parameters:
         - name: user-id
@@ -14060,11 +14055,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from users
+      description: The section groups in the section. Read-only. Nullable.
       operationId: user.onenote.notebook.sectionGroup_ListSectionGroup
       parameters:
         - name: user-id
@@ -14247,11 +14239,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from users
+      description: The sections in the section group. Read-only. Nullable.
       operationId: user.onenote.notebook.sectionGroup_ListSection
       parameters:
         - name: user-id
@@ -14325,11 +14314,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create section
-      description: Create a new onenoteSection in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for users
       operationId: user.onenote.notebook.sectionGroup_CreateSection
       parameters:
         - name: user-id
@@ -14552,11 +14537,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from users
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: user.onenote.notebook.sectionGroup.section_ListPage
       parameters:
         - name: user-id
@@ -14638,11 +14620,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for users
       operationId: user.onenote.notebook.sectionGroup.section_CreatePage
       parameters:
         - name: user-id
@@ -14899,9 +14877,6 @@ paths:
         - users.onenote
       summary: Get content for the navigation property pages from users
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: user.onenote.notebook.sectionGroup.section_GetPagesContent
       parameters:
         - name: user-id
@@ -14954,7 +14929,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -15019,7 +14993,64 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote.notebook.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -15434,11 +15465,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
+      summary: Get sections from users
+      description: The sections in the notebook. Read-only. Nullable.
       operationId: user.onenote.notebook_ListSection
       parameters:
         - name: user-id
@@ -15504,11 +15532,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create section
-      description: Create a new onenoteSection in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for users
       operationId: user.onenote.notebook_CreateSection
       parameters:
         - name: user-id
@@ -15699,11 +15723,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from users
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: user.onenote.notebook.section_ListPage
       parameters:
         - name: user-id
@@ -15777,11 +15798,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for users
       operationId: user.onenote.notebook.section_CreatePage
       parameters:
         - name: user-id
@@ -16006,9 +16023,6 @@ paths:
         - users.onenote
       summary: Get content for the navigation property pages from users
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: user.onenote.notebook.section_GetPagesContent
       parameters:
         - name: user-id
@@ -16053,7 +16067,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -16110,7 +16123,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote.notebook.section_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -16469,8 +16531,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
+      summary: Get operations from users
+      description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: user.onenote_ListOperation
       parameters:
         - name: user-id
@@ -16560,11 +16622,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenoteoperation-get?view=graph-rest-1.0
+      summary: Get operations from users
+      description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       operationId: user.onenote_GetOperation
       parameters:
         - name: user-id
@@ -16712,11 +16771,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List onenotePages
-      description: Retrieve a list of page objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
+      summary: Get pages from users
+      description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: user.onenote_ListPage
       parameters:
         - name: user-id
@@ -16774,11 +16830,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create onenotePage
-      description: 'Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user''s default notebook. If you''re targeting other notebooks, you can create pages in a specified section.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for users
       operationId: user.onenote_CreatePage
       parameters:
         - name: user-id
@@ -16810,11 +16862,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: Get page
-      description: 'Retrieve the properties and relationships of a page object. Getting page information Access a page''s metadata by page identifier: Getting page content You can use the page''s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0
+      summary: Get pages from users
+      description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: user.onenote_GetPage
       parameters:
         - name: user-id
@@ -16905,11 +16954,7 @@ paths:
     delete:
       tags:
         - users.onenote
-      summary: Delete page
-      description: Delete a OneNote page.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
+      summary: Delete navigation property pages for users
       operationId: user.onenote_DeletePage
       parameters:
         - name: user-id
@@ -16946,9 +16991,6 @@ paths:
         - users.onenote
       summary: Get content for the navigation property pages from users
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
       operationId: user.onenote_GetPagesContent
       parameters:
         - name: user-id
@@ -16977,7 +17019,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -17018,7 +17059,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -17401,7 +17475,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -17442,7 +17515,40 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property resources in users
+      description: The content stream
+      operationId: user.onenote_DeleteResourcesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteResource-id
+          in: path
+          description: The unique identifier of onenoteResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/resources/$count':
     get:
       tags:
@@ -17469,11 +17575,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from users
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: user.onenote_ListSectionGroup
       parameters:
         - name: user-id
@@ -17563,11 +17666,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: Get sectionGroup
-      description: Retrieve the properties and relationships of a sectionGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-get?view=graph-rest-1.0
+      summary: Get sectionGroups from users
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: user.onenote_GetSectionGroup
       parameters:
         - name: user-id
@@ -17801,11 +17901,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from users
+      description: The section groups in the section. Read-only. Nullable.
       operationId: user.onenote.sectionGroup_ListSectionGroup
       parameters:
         - name: user-id
@@ -17964,11 +18061,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from users
+      description: The sections in the section group. Read-only. Nullable.
       operationId: user.onenote.sectionGroup_ListSection
       parameters:
         - name: user-id
@@ -18034,11 +18128,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create section
-      description: Create a new onenoteSection in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for users
       operationId: user.onenote.sectionGroup_CreateSection
       parameters:
         - name: user-id
@@ -18229,11 +18319,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from users
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: user.onenote.sectionGroup.section_ListPage
       parameters:
         - name: user-id
@@ -18307,11 +18394,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for users
       operationId: user.onenote.sectionGroup.section_CreatePage
       parameters:
         - name: user-id
@@ -18536,9 +18619,6 @@ paths:
         - users.onenote
       summary: Get content for the navigation property pages from users
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: user.onenote.sectionGroup.section_GetPagesContent
       parameters:
         - name: user-id
@@ -18583,7 +18663,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -18640,7 +18719,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote.sectionGroup.section_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -18999,11 +19127,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
+      summary: Get sections from users
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: user.onenote_ListSection
       parameters:
         - name: user-id
@@ -19093,11 +19218,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: Get section
-      description: Retrieve the properties and relationships of a onenoteSection object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-get?view=graph-rest-1.0
+      summary: Get sections from users
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: user.onenote_GetSection
       parameters:
         - name: user-id
@@ -19223,11 +19345,8 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List pages
-      description: Retrieve a list of page objects from the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+      summary: Get pages from users
+      description: The collection of pages in the section.  Read-only. Nullable.
       operationId: user.onenote.section_ListPage
       parameters:
         - name: user-id
@@ -19293,11 +19412,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create page
-      description: Create a new page in the specified section.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+      summary: Create new navigation property to pages for users
       operationId: user.onenote.section_CreatePage
       parameters:
         - name: user-id
@@ -19490,9 +19605,6 @@ paths:
         - users.onenote
       summary: Get content for the navigation property pages from users
       description: The page's HTML content.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
       operationId: user.onenote.section_GetPagesContent
       parameters:
         - name: user-id
@@ -19529,7 +19641,6 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onenote
@@ -19578,7 +19689,48 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onenote
+      summary: Delete content for the navigation property pages in users
+      description: The page's HTML content.
+      operationId: user.onenote.section_DeletePagesContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -20383,11 +20535,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object

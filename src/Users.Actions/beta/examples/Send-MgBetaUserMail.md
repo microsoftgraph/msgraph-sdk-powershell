@@ -1,127 +1,147 @@
-### Example 1: Using the Send-MgBetaUserMail Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Users.Actions
+
 $params = @{
-	Message = @{
-		Subject = "Meet for lunch?"
-		Body = @{
-			ContentType = "Text"
-			Content = "The new cafeteria is open."
+	message = @{
+		subject = "Meet for lunch?"
+		body = @{
+			contentType = "Text"
+			content = "The new cafeteria is open."
 		}
-		ToRecipients = @(
+		toRecipients = @(
 			@{
-				EmailAddress = @{
-					Address = "samanthab@contoso.onmicrosoft.com"
+				emailAddress = @{
+					address = "samanthab@contoso.com"
 				}
 			}
 		)
-		CcRecipients = @(
+		ccRecipients = @(
 			@{
-				EmailAddress = @{
-					Address = "danas@contoso.onmicrosoft.com"
+				emailAddress = @{
+					address = "danas@contoso.com"
 				}
 			}
 		)
 	}
-	SaveToSentItems = "false"
+	saveToSentItems = "false"
 }
+
 # A UPN can also be used as -UserId.
 Send-MgBetaUserMail -UserId $userId -BodyParameter $params
+
 ```
 This example shows how to use the Send-MgBetaUserMail Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Send-MgBetaUserMail Cmdlet
+
+### Example 2: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Users.Actions
+
 $params = @{
-	Message = @{
-		Subject = "Meet for lunch?"
-		Body = @{
-			ContentType = "Text"
-			Content = "The new cafeteria is open."
-		}
-		ToRecipients = @(
+	message = @{
+		subject = "Project kickoff"
+		toRecipients = @(
 			@{
-				EmailAddress = @{
-					Address = "meganb@contoso.onmicrosoft.com"
+				emailAddress = @{
+					name = "Samantha Booth"
+					address = "samanthab@contoso.com"
 				}
 			}
 		)
-		Attachments = @(
+		mentions = @(
+			@{
+				mentioned = @{
+					name = "Dana Swope"
+					address = "danas@contoso.com"
+				}
+			}
+		)
+	}
+}
+
+# A UPN can also be used as -UserId.
+Send-MgBetaUserMail -UserId $userId -BodyParameter $params
+
+```
+This example shows how to use the Send-MgBetaUserMail Cmdlet.
+
+### Example 3: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Users.Actions
+
+$params = @{
+	message = @{
+		subject = "9/9/2018: concert"
+		body = @{
+			contentType = "HTML"
+			content = "The group represents Nevada."
+		}
+		toRecipients = @(
+			@{
+				emailAddress = @{
+					address = "AlexW@contoso.com"
+				}
+			}
+		)
+		internetMessageHeaders = @(
+			@{
+				name = "x-custom-header-group-name"
+				value = "Nevada"
+			}
+			@{
+				name = "x-custom-header-group-id"
+				value = "NV001"
+			}
+		)
+	}
+}
+
+# A UPN can also be used as -UserId.
+Send-MgBetaUserMail -UserId $userId -BodyParameter $params
+
+```
+This example shows how to use the Send-MgBetaUserMail Cmdlet.
+
+### Example 4: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Users.Actions
+
+$params = @{
+	message = @{
+		subject = "Meet for lunch?"
+		body = @{
+			contentType = "Text"
+			content = "The new cafeteria is open."
+		}
+		toRecipients = @(
+			@{
+				emailAddress = @{
+					address = "meganb@contoso.com"
+				}
+			}
+		)
+		attachments = @(
 			@{
 				"@odata.type" = "#microsoft.graph.fileAttachment"
-				Name = "attachment.txt"
-				ContentType = "text/plain"
-				ContentBytes = "SGVsbG8gV29ybGQh"
+				name = "attachment.txt"
+				contentType = "text/plain"
+				contentBytes = "SGVsbG8gV29ybGQh"
 			}
 		)
 	}
 }
+
 # A UPN can also be used as -UserId.
 Send-MgBetaUserMail -UserId $userId -BodyParameter $params
+
 ```
 This example shows how to use the Send-MgBetaUserMail Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Send-MgBetaUserMail Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Users.Actions
-$params = @{
-	Message = @{
-		Subject = "9/9/2018: concert"
-		Body = @{
-			ContentType = "HTML"
-			Content = "The group represents Nevada."
-		}
-		ToRecipients = @(
-			@{
-				EmailAddress = @{
-					Address = "AlexW@contoso.OnMicrosoft.com"
-				}
-			}
-		)
-		InternetMessageHeaders = @(
-			@{
-				Name = "x-custom-header-group-name"
-				Value = "Nevada"
-			}
-			@{
-				Name = "x-custom-header-group-id"
-				Value = "NV001"
-			}
-		)
-	}
-}
-# A UPN can also be used as -UserId.
-Send-MgBetaUserMail -UserId $userId -BodyParameter $params
-```
-This example shows how to use the Send-MgBetaUserMail Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Send-MgBetaUserMail Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Users.Actions
-$params = @{
-	Message = @{
-		Subject = "Project kickoff"
-		ToRecipients = @(
-			@{
-				EmailAddress = @{
-					Name = "Samantha Booth"
-					Address = "samanthab@contoso.onmicrosoft.com"
-				}
-			}
-		)
-		Mentions = @(
-			@{
-				Mentioned = @{
-					Name = "Dana Swope"
-					Address = "danas@contoso.onmicrosoft.com"
-				}
-			}
-		)
-	}
-}
-# A UPN can also be used as -UserId.
-Send-MgBetaUserMail -UserId $userId -BodyParameter $params
-```
-This example shows how to use the Send-MgBetaUserMail Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

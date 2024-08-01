@@ -11,7 +11,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function recent
-      description: 'Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a ''most recently used'' API. The service queries for the most recent historyItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems won''t be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application''s activities, use the nextLink property to paginate.'
+      description: 'Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a ''most recently used'' API. The service queries for the most recent activityHistoryItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the activityHistoryItem. This means that activities without activityHistoryItems won''t be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application''s activities, use the nextLink property to paginate.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/projectrome-get-recent-activities?view=graph-rest-1.0
@@ -1773,6 +1773,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.chat.message.reply_delta
       parameters:
         - name: user-id
@@ -1866,6 +1870,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.chat.message_delta
       parameters:
         - name: user-id
@@ -1951,6 +1959,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
+      description: 'Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0
       operationId: user.chat_getAllMessage
       parameters:
         - name: user-id
@@ -1968,6 +1980,80 @@ paths:
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/chats/microsoft.graph.getAllRetainedMessages()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getAllRetainedMessages
+      operationId: user.chat_getAllRetainedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2673,6 +2759,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: user.drive.item_delta
       parameters:
         - name: user-id
@@ -2867,6 +2957,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
+      description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: user.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
@@ -3071,6 +3165,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: user.drive.item_search
       parameters:
         - name: user-id
@@ -3169,6 +3267,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function isPublished
+      description: Check the publishing status of a contentType in a content type hub site.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
       operationId: user.drive.list.contentType_isPublished
       parameters:
         - name: user-id
@@ -3216,6 +3318,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCompatibleHubContentTypes
+      description: 'Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
       operationId: user.drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: user-id
@@ -3497,11 +3603,197 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/drives/{drive-id}/list/items/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
+      operationId: user.drive.list.item_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/drives/{drive-id}/list/items/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: user.drive.list.item_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: token
+          in: path
+          description: 'Usage: token=''{token}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/drives/{drive-id}/microsoft.graph.recent()':
     get:
       tags:
         - users.Functions
       summary: Invoke function recent
+      description: "List a set of items that have been recently used by the signed in user.\nThis collection includes items that are in the user's drive and items they have access to from other drives."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
       operationId: user.drive_recent
       parameters:
         - name: user-id
@@ -3569,6 +3861,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: user.drive_search
       parameters:
         - name: user-id
@@ -3644,6 +3940,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function sharedWithMe
+      description: Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
       operationId: user.drive_sharedGraphWPreMe
       parameters:
         - name: user-id
@@ -3899,6 +4199,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: user.drive.root_delta
       parameters:
         - name: user-id
@@ -4077,6 +4381,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
+      description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: user.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
@@ -4265,6 +4573,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
+      description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: user.drive.root_search
       parameters:
         - name: user-id
@@ -4557,6 +4869,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_delta
       parameters:
         - name: user-id
@@ -4658,6 +4974,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_delta
       parameters:
         - name: user-id
@@ -4751,6 +5071,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function doesUserHaveAccess
+      description: Determine whether a user has access to a shared channel.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_doesUserHaveAccess
       parameters:
         - name: user-id
@@ -4822,6 +5146,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
+      description: 'Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_getAllMessage
       parameters:
         - name: user-id
@@ -4906,11 +5234,97 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/joinedTeams/{team-id}/channels/microsoft.graph.getAllRetainedMessages()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getAllRetainedMessages
+      operationId: user.joinedTeam.channel_getAllRetainedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
     get:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_delta
       parameters:
         - name: user-id
@@ -5004,6 +5418,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Retrieve the list of messages (without the replies) in a channel of a team. By using delta query, you can get new or updated messages in a channel. Delta query supports both full synchronization that retrieves all the messages in the specified channel, and incremental synchronization that retrieves those messages that have been added or changed in the channel since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that messages view periodically. To get the replies for a message, use the list message replies or the get message reply operation. A GET request with the delta function returns either: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call for that same calendar view. A @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after acquiring @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_delta
       parameters:
         - name: user-id
@@ -5089,6 +5507,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function doesUserHaveAccess
+      description: Determine whether a user has access to a shared channel.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_doesUserHaveAccess
       parameters:
         - name: user-id
@@ -5228,6 +5650,35 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/licenseDetails/microsoft.graph.getTeamsLicensingDetails()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getTeamsLicensingDetails
+      description: Get the license status of a user in Microsoft Teams.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-1.0
+      operationId: user.licenseDetail_getTeamsLicensingDetail
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsLicensingDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/microsoft.graph.delta()':
     get:
       tags:
@@ -5754,6 +6205,9 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppDiagnosticStatuses
       description: Gets diagnostics validation status for a given user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0
       operationId: user_getManagedAppDiagnosticStatus
       parameters:
         - name: user-id
@@ -5784,6 +6238,9 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppPolicies
       description: Gets app restrictions for a given user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedapppolicies?view=graph-rest-1.0
       operationId: user_getManagedAppPolicy
       parameters:
         - name: user-id
@@ -5844,6 +6301,9 @@ paths:
         - users.Functions
       summary: Invoke function getManagedDevicesWithAppFailures
       description: Retrieves the list of devices with failed apps
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-troubleshooting-user-getmanageddeviceswithappfailures?view=graph-rest-1.0
       operationId: user_getManagedDevicesGraphWPreAppFailure
       parameters:
         - name: user-id
@@ -5873,6 +6333,9 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function reminderView
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-1.0
       operationId: user_reminderView
       parameters:
         - name: user-id
@@ -6023,6 +6486,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getRecentNotebooks
+      description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0
       operationId: user.onenote.notebook_getRecentNotebook
       parameters:
         - name: user-id
@@ -6197,6 +6664,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getVirtualAppointmentJoinWebUrl
+      description: 'Get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0
       operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: user-id
@@ -6376,6 +6847,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user''s todoTask resources without having to fetch the entire set from the server every time.  '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0
       operationId: user.todo.list.task_delta
       parameters:
         - name: user-id
@@ -6461,6 +6936,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: "Get a set of todoTaskList resources that have been added, deleted, or removed in Microsoft To Do. A delta function call for todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, \nyou can query for incremental changes in the todoTaskList. This allows you to maintain and synchronize a local store of a user's todoTaskList without having to fetch all the todoTaskList from the server every time."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/todotasklist-delta?view=graph-rest-1.0
       operationId: user.todo.list_delta
       parameters:
         - name: user-id
@@ -6538,6 +7017,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted users without having to perform a full read of the entire user collection. See change tracking for details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-delta?view=graph-rest-1.0
       operationId: user_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6624,7 +7107,7 @@ components:
               description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
             contentUrl:
               type: string
               description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
@@ -7006,7 +7489,7 @@ components:
               nullable: true
             generation:
               type: string
-              description: The contact's generation.
+              description: The contact's suffix.
               nullable: true
             givenName:
               type: string
@@ -7288,13 +7771,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -7382,6 +7865,48 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions for this content type.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.listItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: listItem
+          type: object
+          properties:
+            contentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            sharepointIds:
+              $ref: '#/components/schemas/microsoft.graph.sharepointIds'
+            analytics:
+              $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
+            documentSetVersions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
+              description: Version information for a document set version created by a user.
+              x-ms-navigationProperty: true
+            driveItem:
+              $ref: '#/components/schemas/microsoft.graph.driveItem'
+            fields:
+              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+              description: The list of previous versions of the list item.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsLicensingDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsLicensingDetails
+          type: object
+          properties:
+            hasTeamsLicense:
+              type: boolean
+              description: Indicates whether the user has a valid license to use Microsoft Teams.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.message:
@@ -7791,7 +8316,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -7808,32 +8333,32 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although it is a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
               description: 'The city where the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             companyName:
               type: string
-              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that a guest comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent was obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets whether consent was obtained for minors. Allowed values: null, Granted, Denied, and NotRequired. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             country:
               type: string
-              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The country/region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created, in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and UTC. The value can''t be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
               type: string
-              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).'
+              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by a guest signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).'
               nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
@@ -7849,7 +8374,7 @@ components:
               format: int32
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and family name. This property is required when a user is created and it can''t be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7864,7 +8389,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -7875,7 +8400,7 @@ components:
               nullable: true
             externalUserState:
               type: string
-              description: 'For an external user invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).'
+              description: 'For a guest invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).'
               nullable: true
             externalUserStateChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7894,13 +8419,13 @@ components:
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint in Microsoft 365. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             identities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It may contain multiple items with the same signInType value. Returned only on $select.  Supports $filter (eq) with limitations.'
+              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It might contain multiple items with the same signInType value. Returned only on $select.  Supports $filter (eq) with limitations.'
             imAddresses:
               type: array
               items:
@@ -7915,7 +8440,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isResourceAccount:
               type: boolean
-              description: Do not use – reserved for future use.
+              description: Don't use – reserved for future use.
               nullable: true
             jobTitle:
               type: string
@@ -7929,13 +8454,13 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
               description: 'The SMTP address for the user, for example, jeff@contoso.com. Changes to this property update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
@@ -7970,7 +8495,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7989,7 +8514,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -8003,10 +8528,10 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -8026,7 +8551,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
+              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             preferredName:
               type: string
@@ -8043,7 +8568,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while those addresses prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             responsibilities:
               type: array
               items:
@@ -8055,7 +8580,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate the schools they have attended. Returned only on $select.
+              description: A list for the user to enumerate the schools they attended. Returned only on $select.
             securityIdentifier:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
@@ -8064,7 +8589,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
-              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+              description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -8074,7 +8599,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
+              description: 'Any refresh tokens or session tokens (session cookies) issued before this time are invalid. Applications get an error when using an invalid refresh or session token to acquire a delegated access token (to access APIs such as Microsoft Graph). If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
               format: date-time
               nullable: true
             skills:
@@ -8089,7 +8614,7 @@ components:
               nullable: true
             streetAddress:
               type: string
-              description: 'The street address of the user''s place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The street address of the user''s place of business. Maximum length is 1,024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             surname:
               type: string
@@ -8097,15 +8622,15 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
+              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for members and guests, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             activities:
               type: array
@@ -8123,7 +8648,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: Represents the app roles a user has been granted for an application. Supports $expand.
+              description: Represents the app roles a user is granted for an application. Supports $expand.
               x-ms-navigationProperty: true
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
@@ -8214,7 +8739,7 @@ components:
             inferenceClassification:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
             insights:
-              $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
+              $ref: '#/components/schemas/microsoft.graph.itemInsights'
             joinedTeams:
               type: array
               items:
@@ -8277,13 +8802,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects the user owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             people:
               type: array
@@ -8326,7 +8851,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The users and groups responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
+              description: 'The users and groups responsible for this guest''s privileges in the tenant and keeping the guest''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -8349,11 +8874,6 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
-    microsoft.graph.Json:
-      title: Json
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.status:
       title: status
       enum:
@@ -8374,7 +8894,7 @@ components:
           description: Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
           nullable: true
         content:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
         description:
           type: string
           description: 'Optional. Longer text description of the user''s unique activity (example: document name, first sentence, and/or metadata)'
@@ -8406,13 +8926,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+              description: Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
               format: date-time
               nullable: true
             lastActiveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.'
+              description: 'Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
@@ -8424,7 +8944,7 @@ components:
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+              description: Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
@@ -9493,7 +10013,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         scope:
           type: string
-          description: 'Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.'
+          description: 'Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.'
           nullable: true
         sharedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -9632,36 +10152,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
           additionalProperties:
             type: object
-    microsoft.graph.listItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: listItem
-          type: object
-          properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            sharepointIds:
-              $ref: '#/components/schemas/microsoft.graph.sharepointIds'
-            analytics:
-              $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
-            documentSetVersions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
-              description: Version information for a document set version created by a user.
-              x-ms-navigationProperty: true
-            driveItem:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-            fields:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-            versions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-              description: The list of previous versions of the list item.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.permission:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9680,6 +10170,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToIdentitiesV2:
               type: array
               items:
@@ -9933,11 +10424,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
           nullable: true
         id:
           type: string
@@ -9949,17 +10440,17 @@ components:
           nullable: true
         path:
           type: string
-          description: Path that can be used to navigate to the item. Read-only.
+          description: Percent-encoded path that can be used to navigate to the item. Read-only.
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -10056,7 +10547,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -10088,6 +10579,66 @@ components:
               $ref: '#/components/schemas/microsoft.graph.columnValidation'
             sourceColumn:
               $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.documentSetVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+        - title: documentSetVersion
+          type: object
+          properties:
+            comment:
+              type: string
+              description: Comment about the captured version.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this version was created.
+              format: date-time
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
+              description: Items within the document set that are captured as part of this version.
+            shouldCaptureMinorVersion:
+              type: boolean
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.fieldValueSet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: fieldValueSet
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.listItemVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItemVersion'
+        - title: listItemVersion
+          type: object
+          properties:
+            fields:
+              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
           additionalProperties:
             type: object
     microsoft.graph.followupFlag:
@@ -10643,7 +11194,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -10653,12 +11204,22 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time of the user''s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The request ID of the last successful sign-in.
           nullable: true
       additionalProperties:
         type: object
@@ -10801,13 +11362,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
-              description: Represents the status of a long-running operation.
+              description: 'Represents the status of a long-running operation, such as a password reset operation.'
               x-ms-navigationProperty: true
             passwordMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
-              description: 'Represents the password that''s registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.'
+              description: 'Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.'
               x-ms-navigationProperty: true
             phoneMethods:
               type: array
@@ -10819,7 +11380,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-              description: The software OATH TOTP applications registered to a user for authentication.
+              description: The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
               x-ms-navigationProperty: true
             temporaryAccessPassMethods:
               type: array
@@ -10993,7 +11554,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -11105,6 +11666,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -11142,30 +11704,11 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.officeGraphInsights:
+    microsoft.graph.itemInsights:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: officeGraphInsights
+        - $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
+        - title: itemInsights
           type: object
-          properties:
-            shared:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
-              x-ms-navigationProperty: true
-            trending:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.trending'
-              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
-              x-ms-navigationProperty: true
-            used:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -11465,6 +12008,11 @@ components:
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
+              readOnly: true
             ethernetMacAddress:
               type: string
               description: 'Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.'
@@ -11663,10 +12211,10 @@ components:
           properties:
             clientId:
               type: string
-              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application that's authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Nonadmin users might be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             principalId:
               type: string
@@ -11674,10 +12222,10 @@ components:
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
+              description: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
+              description: 'A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3,850 characters in length.'
               nullable: true
           additionalProperties:
             type: object
@@ -11733,6 +12281,7 @@ components:
           properties:
             attendeeReport:
               type: string
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             broadcastSettings:
@@ -11754,13 +12303,14 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
+              description: Indicates whether this meeting is a Teams live event.
               nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC. Required when you create an online meeting.
+              description: The meeting start time in UTC.
               format: date-time
               nullable: true
             recordings:
@@ -11971,8 +12521,12 @@ components:
             contributionToContentDiscoveryDisabled:
               type: boolean
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
+            itemInsights:
+              $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            storage:
+              $ref: '#/components/schemas/microsoft.graph.userStorage'
             windows:
               type: array
               items:
@@ -11986,6 +12540,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: 'Represents the location that a user selected in Microsoft Teams and doesn''t follow the Office''s locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.'
+              nullable: true
+            region:
+              type: string
+              description: 'Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user''s region (if available). For users without multigeo licenses, the property contains the organization''s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.'
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -12464,7 +13026,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -12525,66 +13087,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.documentSetVersion:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-        - title: documentSetVersion
-          type: object
-          properties:
-            comment:
-              type: string
-              description: Comment about the captured version.
-              nullable: true
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this version was created.
-              format: date-time
-              nullable: true
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
-              description: Items within the document set that are captured as part of this version.
-            shouldCaptureMinorVersion:
-              type: boolean
-              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.fieldValueSet:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: fieldValueSet
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.listItemVersion:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.baseItemVersion'
-        - title: listItemVersion
-          type: object
-          properties:
-            fields:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -12785,7 +13287,7 @@ components:
               description: 'Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'Represents the formula that the name is defined to refer to. for example, =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.'
             visible:
               type: boolean
               description: Specifies whether the object is visible or not.
@@ -13176,6 +13678,24 @@ components:
         formula:
           type: string
           description: 'The formula to validate column value. For examples, see Examples of common formulas in lists.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.documentSetVersionItem:
+      title: documentSetVersionItem
+      type: object
+      properties:
+        itemId:
+          type: string
+          description: The unique identifier for the item.
+          nullable: true
+        title:
+          type: string
+          description: The title of the item.
+          nullable: true
+        versionId:
+          type: string
+          description: The version ID of the item.
           nullable: true
       additionalProperties:
         type: object
@@ -13980,7 +14500,6 @@ components:
               nullable: true
             externalcourseActivityId:
               type: string
-              description: A course activity ID generated by the provider. Optional.
               nullable: true
             learnerUserId:
               type: string
@@ -14025,6 +14544,8 @@ components:
       title: siteCollection
       type: object
       properties:
+        archivalDetails:
+          $ref: '#/components/schemas/microsoft.graph.siteArchivalDetails'
         dataLocationCode:
           type: string
           description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
@@ -14074,6 +14595,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -14117,65 +14639,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
           additionalProperties:
             type: object
-    microsoft.graph.sharedInsight:
+    microsoft.graph.officeGraphInsights:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: sharedInsight
+        - title: officeGraphInsights
           type: object
           properties:
-            lastShared:
-              $ref: '#/components/schemas/microsoft.graph.sharingDetail'
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            sharingHistory:
+            shared:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.sharingDetail'
-            lastSharedMethod:
-              $ref: '#/components/schemas/microsoft.graph.entity'
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.entity'
-          additionalProperties:
-            type: object
-    microsoft.graph.trending:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: trending
-          type: object
-          properties:
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            weight:
-              type: number
-              description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
-              format: double
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.entity'
-          additionalProperties:
-            type: object
-    microsoft.graph.usedInsight:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: usedInsight
-          type: object
-          properties:
-            lastUsed:
-              $ref: '#/components/schemas/microsoft.graph.usageDetails'
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.entity'
+                $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+              description: 'Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+              x-ms-navigationProperty: true
+            trending:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.trending'
+              description: 'Calculated relationship that identifies documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for work or school and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+              x-ms-navigationProperty: true
+            used:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.usedInsight'
+              description: 'Calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.teamFunSettings:
@@ -14338,9 +14825,13 @@ components:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
+            isArchived:
+              type: boolean
+              description: Indicates whether the channel is archived. Read-only.
+              nullable: true
             isFavoriteByDefault:
               type: boolean
-              description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
+              description: 'Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.'
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
@@ -14404,16 +14895,16 @@ components:
               description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
             autoSubscribeNewMembers:
               type: boolean
-              description: 'Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             classification:
               type: string
-              description: 'Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).'
+              description: 'Describes a classification for the group (such as low, medium, or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
+              description: 'Timestamp of when the group was created. The value can''t be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             description:
@@ -14422,12 +14913,12 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
+              description: 'The display name for the group. This property is required when a group is created and can''t be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. It''s null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -14441,11 +14932,11 @@ components:
               nullable: true
             hideFromAddressLists:
               type: boolean
-              description: 'True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group isn''t displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             isArchived:
               type: boolean
@@ -14453,7 +14944,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can''t be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -14471,7 +14962,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following characters: @ () / [] '' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             membershipRule:
               type: string
@@ -14487,7 +14978,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'Indicates the last time at which the group was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesNetBiosName:
@@ -14504,15 +14995,15 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned at least one of the following Microsoft Entra roles: User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -14526,7 +15017,7 @@ components:
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was last renewed. This value can''t be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             securityEnabled:
@@ -14535,42 +15026,43 @@ components:
               nullable: true
             securityIdentifier:
               type: string
-              description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
+              description: 'Security identifier of the group, used in Windows scenarios. Read-only. Returned by default.'
               nullable: true
             serviceProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
-              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+              description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
-              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange, or Red. Returned by default.'
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             acceptedSenders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
+              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.'
               x-ms-navigationProperty: true
             appRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: Represents the app roles a group has been granted for an application. Supports $expand.
+              description: Represents the app roles granted to a group for an application. Supports $expand.
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
@@ -14638,7 +15130,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property isn''t specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -14665,7 +15157,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupSetting'
-              description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
+              description: 'Settings that can govern this group''s behavior, like whether members can invite guests to the group. Nullable.'
               x-ms-navigationProperty: true
             sites:
               type: array
@@ -16024,6 +16516,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information about the meeting attendees.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
@@ -16071,7 +16564,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingId:
@@ -16173,6 +16666,7 @@ components:
               nullable: true
             owner:
               type: string
+              description: 'Use the container property instead. ID of the group that owns the plan. After it''s set, this property can’t be updated. This property won''t return a valid group ID if the container of the plan isn''t a group.'
               nullable: true
             title:
               type: string
@@ -16327,14 +16821,24 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userInsightsSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userInsightsSettings
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.shiftPreferences:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -16346,6 +16850,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
               description: Availability of the user to be scheduled for work and its recurrence pattern.
+          additionalProperties:
+            type: object
+    microsoft.graph.userStorage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userStorage
+          type: object
+          properties:
+            quota:
+              $ref: '#/components/schemas/microsoft.graph.unifiedStorageQuota'
           additionalProperties:
             type: object
     microsoft.graph.windowsSetting:
@@ -16479,24 +16993,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
-    microsoft.graph.documentSetVersionItem:
-      title: documentSetVersionItem
-      type: object
-      properties:
-        itemId:
-          type: string
-          description: The unique identifier for the item.
-          nullable: true
-        title:
-          type: string
-          description: The title of the item.
-          nullable: true
-        versionId:
-          type: string
-          description: The version ID of the item.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -16574,7 +17070,7 @@ components:
               description: Returns the name of the table column.
               nullable: true
             values:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.'
             filter:
               $ref: '#/components/schemas/microsoft.graph.workbookFilter'
           additionalProperties:
@@ -16592,7 +17088,7 @@ components:
               description: Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
               format: int32
             values:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.'
           additionalProperties:
             type: object
     microsoft.graph.workbookTableSort:
@@ -16964,7 +17460,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -17016,6 +17512,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -17027,9 +17524,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted or jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
@@ -17353,6 +17852,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteArchivalDetails:
+      title: siteArchivalDetails
+      type: object
+      properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.pageLayoutType:
       title: pageLayoutType
       enum:
@@ -17395,104 +17902,68 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.sharingDetail:
-      title: sharingDetail
-      type: object
-      properties:
-        sharedBy:
-          $ref: '#/components/schemas/microsoft.graph.insightIdentity'
-        sharedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-        sharingReference:
-          $ref: '#/components/schemas/microsoft.graph.resourceReference'
-        sharingSubject:
-          type: string
-          description: The subject with which the document was shared.
-          nullable: true
-        sharingType:
-          type: string
-          description: 'Determines the way the document was shared, can be by a ''Link'', ''Attachment'', ''Group'', ''Site''.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.resourceReference:
-      title: resourceReference
-      type: object
-      properties:
-        id:
-          type: string
-          description: The item's unique identifier.
-          nullable: true
-        type:
-          type: string
-          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
-          nullable: true
-        webUrl:
-          type: string
-          description: A URL leading to the referenced item.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.resourceVisualization:
-      title: resourceVisualization
-      type: object
-      properties:
-        containerDisplayName:
-          type: string
-          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
-          nullable: true
-        containerType:
-          type: string
-          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
-          nullable: true
-        containerWebUrl:
-          type: string
-          description: A path leading to the folder in which the item is stored.
-          nullable: true
-        mediaType:
-          type: string
-          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
-          nullable: true
-        previewImageUrl:
-          type: string
-          description: A URL leading to the preview image for the item.
-          nullable: true
-        previewText:
-          type: string
-          description: A preview text for the item.
-          nullable: true
-        title:
-          type: string
-          description: The item's title text.
-          nullable: true
-        type:
-          type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.usageDetails:
-      title: usageDetails
-      type: object
-      properties:
-        lastAccessedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-        lastModifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.sharedInsight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sharedInsight
+          type: object
+          properties:
+            lastShared:
+              $ref: '#/components/schemas/microsoft.graph.sharingDetail'
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            sharingHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharingDetail'
+            lastSharedMethod:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+          additionalProperties:
+            type: object
+    microsoft.graph.trending:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: trending
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            weight:
+              type: number
+              description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
+              format: double
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+          additionalProperties:
+            type: object
+    microsoft.graph.usedInsight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usedInsight
+          type: object
+          properties:
+            lastUsed:
+              $ref: '#/components/schemas/microsoft.graph.usageDetails'
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+          additionalProperties:
+            type: object
     microsoft.graph.giphyRatingType:
       title: giphyRatingType
       enum:
@@ -17741,6 +18212,8 @@ components:
         - unknownFutureValue
         - teamifyGroup
         - createChannel
+        - archiveChannel
+        - unarchiveChannel
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -18526,6 +18999,7 @@ components:
           nullable: true
         tollFreeNumber:
           type: string
+          description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -18535,6 +19009,7 @@ components:
           description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
+          description: The toll number that connects to the Audio Conference Provider.
           nullable: true
         tollNumbers:
           type: array
@@ -18902,6 +19377,41 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.unifiedStorageQuota:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedStorageQuota
+          type: object
+          properties:
+            deleted:
+              type: integer
+              format: int64
+              nullable: true
+            manageWebUrl:
+              type: string
+              nullable: true
+            remaining:
+              type: integer
+              format: int64
+              nullable: true
+            state:
+              type: string
+              nullable: true
+            total:
+              type: integer
+              format: int64
+              nullable: true
+            used:
+              type: integer
+              format: int64
+              nullable: true
+            services:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.windowsSettingType:
       title: windowsSettingType
       enum:
@@ -19455,6 +19965,7 @@ components:
           nullable: true
         inputBin:
           type: string
+          description: The default input bin that serves as the paper source.
           nullable: true
         mediaColor:
           type: string
@@ -19748,6 +20259,14 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.siteArchiveStatus:
+      title: siteArchiveStatus
+      enum:
+        - recentlyArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.termStore.termGroupScope:
       title: termGroupScope
       enum:
@@ -19756,21 +20275,101 @@ components:
         - siteCollection
         - unknownFutureValue
       type: string
-    microsoft.graph.insightIdentity:
-      title: insightIdentity
+    microsoft.graph.sharingDetail:
+      title: sharingDetail
       type: object
       properties:
-        address:
+        sharedBy:
+          $ref: '#/components/schemas/microsoft.graph.insightIdentity'
+        sharedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The email address of the user who shared the item.
+          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
           nullable: true
-        displayName:
+        sharingReference:
+          $ref: '#/components/schemas/microsoft.graph.resourceReference'
+        sharingSubject:
           type: string
-          description: The display name of the user who shared the item.
+          description: The subject with which the document was shared.
           nullable: true
+        sharingType:
+          type: string
+          description: 'Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.resourceReference:
+      title: resourceReference
+      type: object
+      properties:
         id:
           type: string
-          description: The ID of the user who shared the item.
+          description: The item's unique identifier.
+          nullable: true
+        type:
+          type: string
+          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
+          nullable: true
+        webUrl:
+          type: string
+          description: A URL leading to the referenced item.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.resourceVisualization:
+      title: resourceVisualization
+      type: object
+      properties:
+        containerDisplayName:
+          type: string
+          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
+          nullable: true
+        containerType:
+          type: string
+          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
+          nullable: true
+        containerWebUrl:
+          type: string
+          description: A path leading to the folder in which the item is stored.
+          nullable: true
+        mediaType:
+          type: string
+          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
+          nullable: true
+        previewImageUrl:
+          type: string
+          description: A URL leading to the preview image for the item.
+          nullable: true
+        previewText:
+          type: string
+          description: A preview text for the item.
+          nullable: true
+        title:
+          type: string
+          description: The item's title text.
+          nullable: true
+        type:
+          type: string
+          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.usageDetails:
+      title: usageDetails
+      type: object
+      properties:
+        lastAccessedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+          nullable: true
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
           nullable: true
       additionalProperties:
         type: object
@@ -20558,29 +21157,42 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.serviceStorageQuotaBreakdown:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
+        - title: serviceStorageQuotaBreakdown
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
       properties:
         color:
           type: string
+          description: The color applied to the cell.
           nullable: true
         criterion1:
           type: string
+          description: A custom criterion.
           nullable: true
         criterion2:
           type: string
+          description: A custom criterion.
           nullable: true
         dynamicCriteria:
           type: string
+          description: A dynamic formula specified in a custom filter.
         filterOn:
           type: string
+          description: Indicates whether a filter is applied to a column.
         icon:
           $ref: '#/components/schemas/microsoft.graph.workbookIcon'
         operator:
           type: string
+          description: 'An operator in a cell; for example, =, >, <, <=, or <>.'
         values:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: The values that appear in the cell.
       additionalProperties:
         type: object
     microsoft.graph.workbookIcon:
@@ -20605,13 +21217,13 @@ components:
           type: object
           properties:
             majorUnit:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
             maximum:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
             minimum:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
             minorUnit:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxisFormat'
             majorGridlines:
@@ -20705,7 +21317,7 @@ components:
           type: object
           properties:
             value:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Returns the value of a chart point. Read-only.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartPointFormat'
           additionalProperties:
@@ -20792,6 +21404,52 @@ components:
         - stapleDualRight
         - stapleDualBottom
         - unknownFutureValue
+        - stapleTripleLeft
+        - stapleTripleTop
+        - stapleTripleRight
+        - stapleTripleBottom
+        - bindLeft
+        - bindTop
+        - bindRight
+        - bindBottom
+        - foldAccordion
+        - foldDoubleGate
+        - foldGate
+        - foldHalf
+        - foldHalfZ
+        - foldLeftGate
+        - foldLetter
+        - foldParallel
+        - foldPoster
+        - foldRightGate
+        - foldZ
+        - foldEngineeringZ
+        - punchTopLeft
+        - punchBottomLeft
+        - punchTopRight
+        - punchBottomRight
+        - punchDualLeft
+        - punchDualTop
+        - punchDualRight
+        - punchDualBottom
+        - punchTripleLeft
+        - punchTripleTop
+        - punchTripleRight
+        - punchTripleBottom
+        - punchQuadLeft
+        - punchQuadTop
+        - punchQuadRight
+        - punchQuadBottom
+        - fold
+        - trim
+        - bale
+        - bookletMaker
+        - coat
+        - laminate
+        - trimAfterPages
+        - trimAfterDocuments
+        - trimAfterCopies
+        - trimAfterJob
       type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout
@@ -21707,6 +22365,7 @@ components:
           description: Finishing processes to use when printing.
         fitPdfToPage:
           type: boolean
+          description: True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
           nullable: true
         inputBin:
           type: string
@@ -21716,10 +22375,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printMargin'
         mediaSize:
           type: string
-          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
           nullable: true
         mediaType:
           type: string
+          description: The default media (such as paper) type to print the document on.
           nullable: true
         multipageLayout:
           $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
@@ -21727,15 +22387,18 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printOrientation'
         outputBin:
           type: string
+          description: The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
           nullable: true
         pageRanges:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.integerRange'
+          description: The page ranges to print. Read-only.
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
         quality:
@@ -21752,7 +22415,7 @@ components:
           properties:
             ipAddress:
               type: string
-              description: Indicates the client IP address used by user performing the activity (audit log only).
+              description: Indicates the client IP address associated with the user performing the activity (audit log only).
               nullable: true
             userPrincipalName:
               type: string
@@ -21848,6 +22511,24 @@ components:
         - application
         - unknownFutureValue
       type: string
+    microsoft.graph.insightIdentity:
+      title: insightIdentity
+      type: object
+      properties:
+        address:
+          type: string
+          description: The email address of the user who shared the item.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the user who shared the item.
+          nullable: true
+        id:
+          type: string
+          description: The ID of the user who shared the item.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
       enum:
@@ -21946,6 +22627,24 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.storageQuotaBreakdown:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: storageQuotaBreakdown
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            manageWebUrl:
+              type: string
+              nullable: true
+            used:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.workbookChartAxisFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

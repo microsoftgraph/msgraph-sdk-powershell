@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get driveItems shared with me
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Files
+
+Invoke-MgBetaGraphDrive -DriveId $driveId
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example will get driveitems shared with me
 

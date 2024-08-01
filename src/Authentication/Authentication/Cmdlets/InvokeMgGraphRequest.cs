@@ -402,7 +402,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 // set body to null to prevent later FillRequestStream
                 Body = null;
             }
-            return uriBuilder.Uri.EscapeDataStrings();
+            //Review fix made in https://github.com/microsoftgraph/msgraph-sdk-powershell/pull/2690
+            return uriBuilder.Uri;
         }
 
         private void ThrowIfError(ErrorRecord error)
@@ -998,8 +999,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// </summary>
         private void ResetGraphSessionEnvironment()
         {
-            _originalEnvironment = GraphSession.Instance.Environment;
-            GraphSession.Instance.Environment = _originalEnvironment;
+            var currentEnvironment = GraphSession.Instance.Environment;
+            if(currentEnvironment != null && !currentEnvironment.Equals(_originalEnvironment))
+            {
+                GraphSession.Instance.Environment = _originalEnvironment;
+            }
         }
 
         #region CmdLet LifeCycle
@@ -1038,6 +1042,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             if (ShouldCheckHttpStatus && !isSuccess)
                             {
                                 var httpErrorRecord = await GenerateHttpErrorRecordAsync(httpResponseMessageFormatter, httpRequestMessage);
+                                // A reset of the GraphSession Environment is required to avoid side effects
+                                ResetGraphSessionEnvironment();
                                 ThrowTerminatingError(httpErrorRecord);
                             }
                             await ProcessResponseAsync(httpResponseMessage);

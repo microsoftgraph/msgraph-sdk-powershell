@@ -1,44 +1,49 @@
-### Example 1: Using the New-MgBetaAccessReview Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.Governance
+
 $params = @{
-	DisplayName = "TestReview"
-	StartDateTime = [System.DateTime]::Parse("2017-02-10T00:35:53.214Z")
-	EndDateTime = [System.DateTime]::Parse("2017-03-12T00:35:53.214Z")
-	ReviewedEntity = @{
-		Id = "99025615-a0b1-47ec-9117-35377b10998b"
+	displayName = "TestReview"
+	startDateTime = [System.DateTime]::Parse("2017-02-10T00:35:53.214Z")
+	endDateTime = [System.DateTime]::Parse("2017-03-12T00:35:53.214Z")
+	reviewedEntity = @{
+		id = "99025615-a0b1-47ec-9117-35377b10998b"
 	}
-	ReviewerType = "delegated"
-	BusinessFlowTemplateId = "6e4f3d20-c5c3-407f-9695-8460952bcc68"
-	Description = "Sample description"
-	Reviewers = @(
+	reviewerType = "delegated"
+	businessFlowTemplateId = "6e4f3d20-c5c3-407f-9695-8460952bcc68"
+	description = "Sample description"
+	reviewers = @(
 		@{
-			Id = "f260246a-09b1-4fd5-8d18-daed736071ec"
+			id = "f260246a-09b1-4fd5-8d18-daed736071ec"
 		}
 		@{
-			Id = "5a4e184c-4ee5-4883-96e9-b371f8da88e3"
+			id = "5a4e184c-4ee5-4883-96e9-b371f8da88e3"
 		}
 	)
-	Settings = @{
-		MailNotificationsEnabled = $true
-		RemindersEnabled = $true
-		JustificationRequiredOnApproval = $true
-		AutoReviewEnabled = $false
-		ActivityDurationInDays = 30
-		AutoApplyReviewResultsEnabled = $false
-		AccessRecommendationsEnabled = $false
-		RecurrenceSettings = @{
-			RecurrenceType = "onetime"
-			RecurrenceEndType = "endBy"
-			DurationInDays = 0
-			RecurrenceCount = 0
+	settings = @{
+		mailNotificationsEnabled = $true
+		remindersEnabled = $true
+		justificationRequiredOnApproval = $true
+		autoReviewEnabled = $false
+		activityDurationInDays = 30
+		autoApplyReviewResultsEnabled = $false
+		accessRecommendationsEnabled = $false
+		recurrenceSettings = @{
+			recurrenceType = "onetime"
+			recurrenceEndType = "endBy"
+			durationInDays = 0
+			recurrenceCount = 0
 		}
-		AutoReviewSettings = @{
-			NotReviewedResult = "Deny"
+		autoReviewSettings = @{
+			notReviewedResult = "Deny"
 		}
 	}
 }
+
 New-MgBetaAccessReview -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaAccessReview Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

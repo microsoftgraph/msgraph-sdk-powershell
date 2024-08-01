@@ -1,6 +1,8 @@
 ### Example 1: Configure inbound trust settings
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 $params = @{
 	inboundTrust = @{
@@ -11,13 +13,15 @@ $params = @{
 }
 
 Update-MgBetaPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will configure inbound trust settings
 
 ### Example 2: Configure automaticUserConsent settings
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 $params = @{
 	automaticUserConsentSettings = @{
@@ -27,13 +31,15 @@ $params = @{
 }
 
 Update-MgBetaPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will configure automaticuserconsent settings
 
 ### Example 3: Configure tenant restrictions settings
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 $params = @{
 	tenantRestrictions = @{
@@ -59,7 +65,7 @@ $params = @{
 }
 
 Update-MgBetaPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will configure tenant restrictions settings
 

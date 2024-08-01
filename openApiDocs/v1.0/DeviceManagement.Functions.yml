@@ -12,6 +12,9 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
       description: Download Apple push notification certificate signing request
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-downloadapplepushnotificationcertificatesigningrequest?view=graph-rest-1.0
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
         2XX:
@@ -78,6 +81,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditCategories
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0
       operationId: deviceManagement.auditEvent_getAuditCategory
       parameters:
         - $ref: '#/components/parameters/top'
@@ -154,6 +161,9 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
       description: Retrieves the effective permissions of the currently authenticated user
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-geteffectivepermissions?view=graph-rest-1.0
       operationId: deviceManagement_getEffectivePermission
       parameters:
         - name: scope
@@ -317,6 +327,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
+      description: Get audit activity types by tenant ID.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -353,6 +367,10 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSourceImages
+      description: Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
       parameters:
         - $ref: '#/components/parameters/top'

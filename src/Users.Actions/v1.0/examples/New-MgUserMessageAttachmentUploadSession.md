@@ -1,32 +1,42 @@
-### Example 1: Using the New-MgUserMessageAttachmentUploadSession Cmdlet
+### Example 1: Create an upload session to add a large attachment to a draft message
+
 ```powershell
+
 Import-Module Microsoft.Graph.Users.Actions
+
 $params = @{
 	AttachmentItem = @{
-		AttachmentType = "file"
-		Name = "scenary"
-		Size = 7208534
-		IsInline = $true
-		ContentId = "my_inline_picture"
+		attachmentType = "file"
+		name = "flower"
+		size = 3483322
 	}
 }
+
 # A UPN can also be used as -UserId.
 New-MgUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
+
 ```
-This example shows how to use the New-MgUserMessageAttachmentUploadSession Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgUserMessageAttachmentUploadSession Cmdlet
+This example will create an upload session to add a large attachment to a draft message
+
+### Example 2: Create an upload session to add a large in-line attachment to a draft message
+
 ```powershell
+
 Import-Module Microsoft.Graph.Users.Actions
+
 $params = @{
 	AttachmentItem = @{
-		AttachmentType = "file"
-		Name = "flower"
-		Size = 3483322
+		attachmentType = "file"
+		name = "scenary"
+		size = 7208534
+		isInline = $true
+		contentId = "my_inline_picture"
 	}
 }
+
 # A UPN can also be used as -UserId.
 New-MgUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
+
 ```
-This example shows how to use the New-MgUserMessageAttachmentUploadSession Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create an upload session to add a large in-line attachment to a draft message
+

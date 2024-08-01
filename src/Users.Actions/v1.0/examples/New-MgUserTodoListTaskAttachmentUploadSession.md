@@ -1,18 +1,20 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	attachmentInfo = @{
+		attachmentType = "file"
+		name = "flower"
+		size = 3483322
+	}
+}
+
+# A UPN can also be used as -UserId.
+New-MgUserTodoListTaskAttachmentUploadSession -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the New-MgUserTodoListTaskAttachmentUploadSession Cmdlet.
 

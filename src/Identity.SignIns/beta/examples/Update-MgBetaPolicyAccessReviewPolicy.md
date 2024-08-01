@@ -1,10 +1,15 @@
-### Example 1: Using the Update-MgBetaPolicyAccessReviewPolicy Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
 $params = @{
-	IsGroupOwnerManagementEnabled = $true
+	isGroupOwnerManagementEnabled = $true
 }
+
 Update-MgBetaPolicyAccessReviewPolicy -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgBetaPolicyAccessReviewPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
