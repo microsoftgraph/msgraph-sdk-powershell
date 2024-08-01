@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v6.5.0
         with:
           push: true
-          platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
+          platforms: linux/amd64
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest,${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.getversion.outputs.version }}
           build-args: |
             VERSION=${{ steps.getversion.outputs.version }}
