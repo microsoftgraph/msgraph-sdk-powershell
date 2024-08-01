@@ -81,6 +81,29 @@ $ApiVersion | ForEach-Object {
             if(-not($CommandAliasValue.Contains("-Mg"))) {
                 $CommandAliasValue = $null
             }
+            $ExternalDocsUrl = ($RawFileContent -match $ExternalDocsPattern) ? $Matches.0 : $null
+            if(-not($Null -eq $ExternalDocsUrl)) {
+                $ExternalDocsUrl = $ExternalDocsUrl.Replace("intune-onboarding-", "")
+                $ExternalDocsUrl = $ExternalDocsUrl.Replace("intune-mam-", "")
+                
+                try {
+                    $HTTP_Request = [System.Net.WebRequest]::Create($ExternalDocsUrl)
+            
+                    # We then get a response from the site.
+                    $HTTP_Response = $HTTP_Request.GetResponse()
+            
+                    # We then get the HTTP code as an integer.
+                    $HTTP_Status = [int]$HTTP_Response.StatusCode
+            
+                    If (-not($HTTP_Status-eq 200)) {
+                        $ExternalDocsUrl = $Null
+                    }
+                    If ($HTTP_Response -ne $null) { $HTTP_Response.Close() }
+                }
+                catch {
+                    $ExternalDocsUrl = $Null
+                }
+            }
             $MappingValue = @{
                 Command          = $CommandName
                 Variants         = [System.Collections.ArrayList]@($VariantName)
@@ -89,7 +112,7 @@ $ApiVersion | ForEach-Object {
                 ApiVersion       = $CurrentApiVersion
                 OutputType       = ($RawFileContent -match $OutputTypePattern) ? $Matches.1 : $null
                 Module           = $ModuleName
-                ApiReferenceLink = ($RawFileContent -match $ExternalDocsPattern) ? $Matches.0 : $null
+                ApiReferenceLink = $ExternalDocsUrl
                 CommandAlias     = $CommandAliasValue
                 Permissions      = @()
             }
