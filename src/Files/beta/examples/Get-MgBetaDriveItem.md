@@ -1,11 +1,11 @@
-### Example 1: Get a bundle and its children in a single call
+### Example 1: Get metadata about a shared driveItem object
 
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Files
 
-Get-MgBetaDriveItem -DriveId $driveId -DriveItemId $driveItemId -ExpandProperty "children"
-```
-This example shows how to use the Get-MgBetaDriveItem Cmdlet.
+Get-MgBetaDriveItem -DriveId $driveId -DriveItemId $driveItemId
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will get metadata about a shared driveitem object
 
