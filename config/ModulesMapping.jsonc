@@ -1,6 +1,8 @@
 {
   "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
-  "Bookings": "^solutions\\.|^bookingBusinesses\\.|^bookingCurrencies\\.",
+  "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.|^solutions.Actions$|^solutions.bookingBusiness$|^solutions.bookingCurrency$|^solutions.virtualEventsRoot$|^solutions.Functions$|^solutions.solutionsRoot$",
+  "BusinessScenario": "^solutions.businessScenario$",
+  "BackupRestore": "^solutions.backupRestoreRoot$",
   "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
   "ChangeNotifications": "^subscriptions\\.",
   "CloudCommunications": "^users.onlineMeeting$|^users.presence$|^communications\\.",
