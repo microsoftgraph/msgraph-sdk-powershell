@@ -10053,7 +10053,7 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create meetingRegistrant
+      summary: Create meetingRegistrant (deprecated)
       description: 'Enroll a meeting registrant in an online meeting that has meeting registration enabled on behalf of the registrant. This operation has two scenarios: In either scenario, the registrant will receive an email notification that contains their registration information.'
       externalDocs:
         description: Find more info here
@@ -10205,7 +10205,7 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Unenroll meeting registrant
+      summary: Unenroll meeting registrant (deprecated)
       description: 'Cancel an onlineMeeting registration for a meetingRegistrant on behalf of the registrant. Only use this method when the allowedRegistrant property of the meetingRegistration object has a value of organization and the registrant''s delegated permission was used to enroll. When the allowedRegistrant value is everyone, registrants can only use the link in the email they receive to cancel their registration.'
       externalDocs:
         description: Find more info here
@@ -10991,11 +10991,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      summary: Get presence
+      description: Get a user's presence information.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -12078,7 +12078,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identity'
             registrantId:
               type: string
-              description: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+              description: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
               nullable: true
             role:
               type: string
@@ -12158,10 +12158,6 @@ components:
               nullable: true
             meetingOrganizer:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
-            meetingOrganizerId:
-              type: string
-              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
-              nullable: true
             recordingContentUrl:
               type: string
               description: The URL that can be used to access the content of the recording. Read-only.
@@ -12291,10 +12287,6 @@ components:
               nullable: true
             meetingOrganizer:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
-            meetingOrganizerId:
-              type: string
-              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
-              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
@@ -12907,8 +12899,7 @@ components:
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             allowLiveShare:
-              type: boolean
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.meetingLiveShareOptions'
             allowMeetingChat:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
@@ -13880,6 +13871,13 @@ components:
         - organization
         - roleIsPresenter
         - organizer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingLiveShareOptions:
+      title: meetingLiveShareOptions
+      enum:
+        - enabled
+        - disabled
         - unknownFutureValue
       type: string
     microsoft.graph.meetingChatMode:

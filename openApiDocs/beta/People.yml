@@ -6436,6 +6436,12 @@ components:
           type: string
           description: The role the position entailed.
           nullable: true
+        secondaryJobTitle:
+          type: string
+          nullable: true
+        secondaryRole:
+          type: string
+          nullable: true
         startMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
@@ -6454,6 +6460,10 @@ components:
       properties:
         address:
           $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+        companyCode:
+          type: string
+          description: 'Legal entity number of the company or its subdivision. For information on how to set the value for the companyCode, see profileSourceAnnotation.'
+          nullable: true
         department:
           type: string
           description: Department Name within a company.
@@ -6468,6 +6478,9 @@ components:
         pronunciation:
           type: string
           description: Pronunciation guide for the company name.
+          nullable: true
+        secondaryDepartment:
+          type: string
           nullable: true
         webUrl:
           type: string
