@@ -165,13 +165,13 @@ Describe "Find-MgGraphCommand Command" {
         It 'Should find commands for uri with Microsoft.Graph prefix in nested segments' {
             {
                 $MgCommand = Find-MgGraphCommand -Uri "/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders"
-                $MgCommand | Should -HaveCount 1
-                $MgCommand.Command | Select-Object -Unique | should -HaveCount 1
-                $MgCommand.Method | Select-Object -Unique | should -HaveCount 1
-                $MgCommand.APIVersion | Select-Object -Unique | should -HaveCount 1
-                $MgCommand.Variants | Select-Object -Unique | should -HaveCount 1
+                $MgCommand | Should -HaveCount 2
+                $MgCommand.Command | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.Method | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.APIVersion | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.Variants | Select-Object -Unique | should -HaveCount 2
                 $MgCommand.URI | Select-Object -Unique | Should -Be "/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders"
-                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider")
+                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider", "Get-MgIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider")
             } | Should -Not -Throw
         }
     }
