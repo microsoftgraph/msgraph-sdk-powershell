@@ -5,43 +5,99 @@
 Import-Module Microsoft.Graph.DeviceManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.windows81GeneralConfiguration"
+	"@odata.type" = "#microsoft.graph.windows10EndpointProtectionConfiguration"
 	description = "Description value"
 	displayName = "Display Name value"
 	version = 7
-	accountsBlockAddingNonMicrosoftAccountEmail = $true
-	applyOnlyToWindows81 = $true
-	browserBlockAutofill = $true
-	browserBlockAutomaticDetectionOfIntranetSites = $true
-	browserBlockEnterpriseModeAccess = $true
-	browserBlockJavaScript = $true
-	browserBlockPlugins = $true
-	browserBlockPopups = $true
-	browserBlockSendingDoNotTrackHeader = $true
-	browserBlockSingleWordEntryOnIntranetSites = $true
-	browserRequireSmartScreen = $true
-	browserEnterpriseModeSiteListLocation = "Browser Enterprise Mode Site List Location value"
-	browserInternetSecurityLevel = "medium"
-	browserIntranetSecurityLevel = "low"
-	browserLoggingReportLocation = "Browser Logging Report Location value"
-	browserRequireHighSecurityForRestrictedSites = $true
-	browserRequireFirewall = $true
-	browserRequireFraudWarning = $true
-	browserTrustedSitesSecurityLevel = "low"
-	cellularBlockDataRoaming = $true
-	diagnosticsBlockDataSubmission = $true
-	passwordBlockPicturePasswordAndPin = $true
-	passwordExpirationDays = 
-	passwordMinimumLength = 
-	passwordMinutesOfInactivityBeforeScreenTimeout = 
-	passwordMinimumCharacterSetCount = 
-	passwordPreviousPasswordBlockCount = 
-	passwordRequiredType = "alphanumeric"
-	passwordSignInFailureCountBeforeFactoryReset = 
-	storageRequireDeviceEncryption = $true
-	updatesRequireAutomaticUpdates = $true
-	userAccountControlSettings = "alwaysNotify"
-	workFoldersUrl = "https://example.com/workFoldersUrl/"
+	firewallBlockStatefulFTP = $true
+	firewallIdleTimeoutForSecurityAssociationInSeconds = 
+	firewallPreSharedKeyEncodingMethod = "none"
+	firewallIPSecExemptionsAllowNeighborDiscovery = $true
+	firewallIPSecExemptionsAllowICMP = $true
+	firewallIPSecExemptionsAllowRouterDiscovery = $true
+	firewallIPSecExemptionsAllowDHCP = $true
+	firewallCertificateRevocationListCheckMethod = "none"
+	firewallMergeKeyingModuleSettings = $true
+	firewallPacketQueueingMethod = "disabled"
+	firewallProfileDomain = @{
+		"@odata.type" = "microsoft.graph.windowsFirewallNetworkProfile"
+		firewallEnabled = "blocked"
+		stealthModeBlocked = $true
+		incomingTrafficBlocked = $true
+		unicastResponsesToMulticastBroadcastsBlocked = $true
+		inboundNotificationsBlocked = $true
+		authorizedApplicationRulesFromGroupPolicyMerged = $true
+		globalPortRulesFromGroupPolicyMerged = $true
+		connectionSecurityRulesFromGroupPolicyMerged = $true
+		outboundConnectionsBlocked = $true
+		inboundConnectionsBlocked = $true
+		securedPacketExemptionAllowed = $true
+		policyRulesFromGroupPolicyMerged = $true
+	}
+	firewallProfilePublic = @{
+		"@odata.type" = "microsoft.graph.windowsFirewallNetworkProfile"
+		firewallEnabled = "blocked"
+		stealthModeBlocked = $true
+		incomingTrafficBlocked = $true
+		unicastResponsesToMulticastBroadcastsBlocked = $true
+		inboundNotificationsBlocked = $true
+		authorizedApplicationRulesFromGroupPolicyMerged = $true
+		globalPortRulesFromGroupPolicyMerged = $true
+		connectionSecurityRulesFromGroupPolicyMerged = $true
+		outboundConnectionsBlocked = $true
+		inboundConnectionsBlocked = $true
+		securedPacketExemptionAllowed = $true
+		policyRulesFromGroupPolicyMerged = $true
+	}
+	firewallProfilePrivate = @{
+		"@odata.type" = "microsoft.graph.windowsFirewallNetworkProfile"
+		firewallEnabled = "blocked"
+		stealthModeBlocked = $true
+		incomingTrafficBlocked = $true
+		unicastResponsesToMulticastBroadcastsBlocked = $true
+		inboundNotificationsBlocked = $true
+		authorizedApplicationRulesFromGroupPolicyMerged = $true
+		globalPortRulesFromGroupPolicyMerged = $true
+		connectionSecurityRulesFromGroupPolicyMerged = $true
+		outboundConnectionsBlocked = $true
+		inboundConnectionsBlocked = $true
+		securedPacketExemptionAllowed = $true
+		policyRulesFromGroupPolicyMerged = $true
+	}
+	defenderAttackSurfaceReductionExcludedPaths = @(
+	"Defender Attack Surface Reduction Excluded Paths value"
+)
+defenderGuardedFoldersAllowedAppPaths = @(
+"Defender Guarded Folders Allowed App Paths value"
+)
+defenderAdditionalGuardedFolders = @(
+"Defender Additional Guarded Folders value"
+)
+defenderExploitProtectionXml = "ZGVmZW5kZXJFeHBsb2l0UHJvdGVjdGlvblhtbA=="
+defenderExploitProtectionXmlFileName = "Defender Exploit Protection Xml File Name value"
+defenderSecurityCenterBlockExploitProtectionOverride = $true
+appLockerApplicationControl = "enforceComponentsAndStoreApps"
+smartScreenEnableInShell = $true
+smartScreenBlockOverrideForFiles = $true
+applicationGuardEnabled = $true
+applicationGuardBlockFileTransfer = "blockImageAndTextFile"
+applicationGuardBlockNonEnterpriseContent = $true
+applicationGuardAllowPersistence = $true
+applicationGuardForceAuditing = $true
+applicationGuardBlockClipboardSharing = "blockBoth"
+applicationGuardAllowPrintToPDF = $true
+applicationGuardAllowPrintToXPS = $true
+applicationGuardAllowPrintToLocalPrinters = $true
+applicationGuardAllowPrintToNetworkPrinters = $true
+bitLockerDisableWarningForOtherDiskEncryption = $true
+bitLockerEnableStorageCardEncryptionOnMobile = $true
+bitLockerEncryptDevice = $true
+bitLockerRemovableDrivePolicy = @{
+"@odata.type" = "microsoft.graph.bitLockerRemovableDrivePolicy"
+encryptionMethod = "aesCbc256"
+requireEncryptionForWriteAccess = $true
+blockCrossOrganizationWriteAccess = $true
+}
 }
 
 New-MgDeviceManagementDeviceConfiguration -BodyParameter $params

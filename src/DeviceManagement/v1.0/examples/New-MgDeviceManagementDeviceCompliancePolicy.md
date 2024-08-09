@@ -5,26 +5,31 @@
 Import-Module Microsoft.Graph.DeviceManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.windows10MobileCompliancePolicy"
+	"@odata.type" = "#microsoft.graph.androidWorkProfileCompliancePolicy"
 	description = "Description value"
 	displayName = "Display Name value"
 	version = 7
 	passwordRequired = $true
-	passwordBlockSimple = $true
 	passwordMinimumLength = 
-	passwordMinimumCharacterSetCount = 
-	passwordRequiredType = "alphanumeric"
-	passwordPreviousPasswordBlockCount = 
-	passwordExpirationDays = 
+	passwordRequiredType = "alphabetic"
 	passwordMinutesOfInactivityBeforeLock = 
-	passwordRequireToUnlockFromIdle = $true
+	passwordExpirationDays = 
+	passwordPreviousPasswordBlockCount = 
+	securityPreventInstallAppsFromUnknownSources = $true
+	securityDisableUsbDebugging = $true
+	securityRequireVerifyApps = $true
+	deviceThreatProtectionEnabled = $true
+	deviceThreatProtectionRequiredSecurityLevel = "secured"
+	securityBlockJailbrokenDevices = $true
 	osMinimumVersion = "Os Minimum Version value"
 	osMaximumVersion = "Os Maximum Version value"
-	earlyLaunchAntiMalwareDriverEnabled = $true
-	bitLockerEnabled = $true
-	secureBootEnabled = $true
-	codeIntegrityEnabled = $true
+	minAndroidSecurityPatchLevel = "Min Android Security Patch Level value"
 	storageRequireEncryption = $true
+	securityRequireSafetyNetAttestationBasicIntegrity = $true
+	securityRequireSafetyNetAttestationCertifiedDevice = $true
+	securityRequireGooglePlayServices = $true
+	securityRequireUpToDateSecurityProviders = $true
+	securityRequireCompanyPortalAppIntegrity = $true
 }
 
 New-MgDeviceManagementDeviceCompliancePolicy -BodyParameter $params

@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.Devices.CorporateManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.windowsAppX"
+	"@odata.type" = "#microsoft.graph.iosiPadOSWebClip"
 	displayName = "Display Name value"
 	description = "Description value"
 	publisher = "Publisher value"
@@ -21,21 +21,8 @@ $params = @{
 	developer = "Developer value"
 	notes = "Notes value"
 	publishingState = "processing"
-	committedContentVersion = "Committed Content Version value"
-	fileName = "File Name value"
-	size = 
-	applicableArchitectures = "x86"
-	identityName = "Identity Name value"
-	identityPublisherHash = "Identity Publisher Hash value"
-	identityResourceIdentifier = "Identity Resource Identifier value"
-	isBundle = $true
-	minimumSupportedOperatingSystem = @{
-		"@odata.type" = "microsoft.graph.windowsMinimumOperatingSystem"
-		v8_0 = $true
-		v8_1 = $true
-		v10_0 = $true
-	}
-	identityVersion = "Identity Version value"
+	appUrl = "https://example.com/appUrl/"
+	useManagedBrowser = $true
 }
 
 New-MgDeviceAppManagementMobileApp -BodyParameter $params

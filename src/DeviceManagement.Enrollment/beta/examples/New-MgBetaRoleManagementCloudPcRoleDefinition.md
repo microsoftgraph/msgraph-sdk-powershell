@@ -6,6 +6,7 @@ Import-Module Microsoft.Graph.Beta.DeviceManagement.Enrollment
 
 $params = @{
 	description = "An example custom role"
+### Example 2
 	rolePermissions = @(
 		@{
 			allowedResourceActions = @(

@@ -1,35 +1,40 @@
-### Example 1: Code snippet
+### Example 1: Create an extension in a new group post using POST operation
 
 ```powershell
 
 Import-Module Microsoft.Graph.Groups
 
 $params = @{
-	topic = "Take your wellness days and rest"
-	threads = @(
+	Topic = "Does anyone have a second?"
+	Threads = @(
 		@{
-			posts = @(
+			Posts = @(
 				@{
-					body = @{
-						contentType = "html"
-						content = "Contoso cares about you: Rest and Recharge"
+					Body = @{
+						ContentType = "HTML"
+						Content = "This is urgent!"
 					}
-					newParticipants = @(
+					Extensions = @(
 						@{
-							emailAddress = @{
-								name = "Adele Vance"
-								address = "AdeleV@contoso.com"
-							}
-						}
-					)
-				}
-			)
-		}
-	)
+							"@odata.type" = "microsoft.graph.openTypeExtension"
+							extensionName = "Com.Contoso.Benefits"
+							companyName = "Contoso"
+							expirationDate = "2016-08-03T11:00:00.000Z"
+							topPicks = @(
+							"Employees only"
+						"Add spouse or guest"
+					"Add family"
+				)
+			}
+		)
+	}
+)
+}
+)
 }
 
 New-MgGroupConversation -GroupId $groupId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgGroupConversation Cmdlet.
+This example will create an extension in a new group post using post operation
 

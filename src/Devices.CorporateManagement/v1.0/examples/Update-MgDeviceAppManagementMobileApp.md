@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.Devices.CorporateManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.iosStoreApp"
+	"@odata.type" = "#microsoft.graph.windowsWebApp"
 	displayName = "Display Name value"
 	description = "Description value"
 	publisher = "Publisher value"
@@ -21,24 +21,7 @@ $params = @{
 	developer = "Developer value"
 	notes = "Notes value"
 	publishingState = "processing"
-	bundleId = "Bundle Id value"
-	appStoreUrl = "https://example.com/appStoreUrl/"
-	applicableDeviceType = @{
-		"@odata.type" = "microsoft.graph.iosDeviceType"
-		iPad = $true
-		iPhoneAndIPod = $true
-	}
-	minimumSupportedOperatingSystem = @{
-		"@odata.type" = "microsoft.graph.iosMinimumOperatingSystem"
-		v8_0 = $true
-		v9_0 = $true
-		v10_0 = $true
-		v11_0 = $true
-		v12_0 = $true
-		v13_0 = $true
-		v14_0 = $true
-		v15_0 = $true
-	}
+	appUrl = "https://example.com/appUrl/"
 }
 
 Update-MgDeviceAppManagementMobileApp -MobileAppId $mobileAppId -BodyParameter $params
