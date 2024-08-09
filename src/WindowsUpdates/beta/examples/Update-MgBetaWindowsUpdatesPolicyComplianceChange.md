@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.Beta.WindowsUpdates
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.windowsUpdates.contentApproval"
+	"@odata.type" = "#microsoft.graph.windowsUpdates.complianceChange"
 	isRevoked = $true
 }
 
