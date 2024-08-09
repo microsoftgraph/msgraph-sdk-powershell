@@ -82,7 +82,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return isOctetStream;
         }
 
-        private static bool IsPlainText(string contentType) => string.Equals(contentType.ToLower(CultureInfo.InvariantCulture), "text/plain");
+        private static bool IsPlainText(string contentType) => contentType.Equals("text/plain", StringComparison.OrdinalIgnoreCase);
 
         // used to split contentType arguments
         private static readonly char[] ContentTypeParamSeparator = { ';' };
