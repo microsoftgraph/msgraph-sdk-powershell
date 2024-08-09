@@ -7313,11 +7313,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      summary: List unifiedRoleAssignmentMultiple
+      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9597,7 +9597,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get appScope from roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
       operationId: roleManagement.exchange.roleAssignment_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -9700,7 +9700,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand for the directory provider.
       operationId: roleManagement.exchange.roleAssignment_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -9746,7 +9746,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      description: Referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
       operationId: roleManagement.exchange.roleAssignment_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -9792,7 +9792,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+      description: The roleDefinition the assignment is for. Supports $expand.
       operationId: roleManagement.exchange.roleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -10466,7 +10466,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get appScope from roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
       operationId: roleManagement.exchange.transitiveRoleAssignment_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -10569,7 +10569,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand for the directory provider.
       operationId: roleManagement.exchange.transitiveRoleAssignment_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -10615,7 +10615,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      description: Referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
       operationId: roleManagement.exchange.transitiveRoleAssignment_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -10661,7 +10661,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+      description: The roleDefinition the assignment is for. Supports $expand.
       operationId: roleManagement.exchange.transitiveRoleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -12142,11 +12142,11 @@ components:
           properties:
             displayName:
               type: string
-              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.'
+              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable ID. Read only.'
               nullable: true
             type:
               type: string
-              description: 'Describes the type of app-specific resource represented by the app scope and is provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.'
+              description: 'Describes the type of app-specific resource represented by the app scope. For display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read only.'
               nullable: true
           additionalProperties:
             type: object

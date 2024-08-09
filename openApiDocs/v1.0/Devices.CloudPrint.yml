@@ -8344,11 +8344,11 @@ components:
             pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
             type: string
             format: uuid
-          description: A collection of the unique identifiers for plans that have been disabled.
+          description: A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.
         skuId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: The unique identifier for the SKU.
+          description: The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.
           format: uuid
           nullable: true
       additionalProperties:

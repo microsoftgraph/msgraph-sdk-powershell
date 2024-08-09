@@ -11,7 +11,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action resetPassword
-      description: 'Reset a user''s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and can''t be performed on a user''s own account. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation.'
+      description: 'Reset a user''s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and can''t be performed on a user''s own account. To reset a user''s password in Azure AD B2C, use the Update user API operation and update the passwordProfile > forceChangePasswordNextSignIn object. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0
@@ -15623,7 +15623,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action assignLicense
-      description: Add or remove subscriptions for the user. You can also enable and disable specific plans associated with a subscription.
+      description: 'Add or remove licenses for the user to enable or disable their use of Microsoft cloud offerings that the company has licenses to. For example, an organization can have a Microsoft 365 Enterprise E3 subscription with 100 licenses, and this request assigns one of those licenses to a specific user. You can also enable and disable specific plans associated with a subscription.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0
@@ -21185,11 +21185,11 @@ components:
             pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
             type: string
             format: uuid
-          description: A collection of the unique identifiers for plans that have been disabled.
+          description: A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.
         skuId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: The unique identifier for the SKU.
+          description: The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.
           format: uuid
           nullable: true
       additionalProperties:

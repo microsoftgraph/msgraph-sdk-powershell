@@ -103,6 +103,7 @@ directive:
     - MicrosoftGraphPlannerTeamsPublicationInfo
     - MicrosoftGraphWorkbookComment
     - MicrosoftGraphSecurityHost
+    - MicrosoftGraphDomain
   # Set parameter alias
   - where:
       parameter-name: OrderBy

@@ -13872,7 +13872,7 @@ components:
               description: The identifier of the user.  Supports $filter (eq).
             userPrincipalName:
               type: string
-              description: 'The UPN of the user.  Supports $filter (eq, startsWith).'
+              description: 'User principal name of the user that initiated the sign-in. This value is always in lowercase. For guest users whose values in the user object typically contain #EXT# before the domain part, this property stores the value in both lowercase and the ''true'' format. For example, while the user object stores AdeleVance_fabrikam.com#EXT#@contoso.com, the sign-in logs store adelevance@fabrikam.com. Supports $filter (eq, startsWith).'
               nullable: true
             userType:
               $ref: '#/components/schemas/microsoft.graph.signInUserType'
@@ -14411,7 +14411,7 @@ components:
       properties:
         content:
           type: string
-          description: The http content that has the data
+          description: Report content; details vary by report type.
           format: base64url
           nullable: true
       additionalProperties:
@@ -14571,7 +14571,7 @@ components:
         completionDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The dateTimeOffset when the job was completed, canceled or aborted. Read-only.'
+          description: 'The dateTimeOffset when the job was completed, canceled, or aborted. Read-only.'
           format: date-time
           nullable: true
         copiesPrinted:
