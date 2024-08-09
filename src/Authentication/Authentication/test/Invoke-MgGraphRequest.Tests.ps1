@@ -54,6 +54,9 @@ Describe 'Invoke-MgGraphRequest Command' -skip {
           It 'Should not throw when -InferOutputFilePath is specified' {
                { Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/reports/getTeamsUserActivityUserDetail(period='D7')" -InferOutputFileName } | Should -Not -Throw
           }
+          It 'Should return plain text' {
+               { Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/v1.0/applications/`$count" } | Should -BeOfType [System.String]
+          }
      }
 
      Context 'Absolute and relative URIs' {

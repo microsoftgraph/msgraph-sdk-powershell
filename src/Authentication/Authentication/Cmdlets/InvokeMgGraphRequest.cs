@@ -453,6 +453,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                                 throw new ArgumentOutOfRangeException(nameof(OutputType));
                         }
                         break;
+                    case RestReturnType.PlainText:
+                        responseString = await response.Content.ReadAsStringAsync();
+                        WriteObject(responseString);
+                        break;
                     case RestReturnType.OctetStream:
                         if (OutputType == OutputType.HttpResponseMessage)
                             WriteObject(response);

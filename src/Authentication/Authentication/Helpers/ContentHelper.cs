@@ -29,6 +29,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 rt = RestReturnType.Image;
             else if (IsOctetStream(contentType))
                 rt = RestReturnType.OctetStream;
+            else if (IsPlainText(contentType))
+                rt = RestReturnType.PlainText;
             return rt;
         }
 
@@ -79,6 +81,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
             return isOctetStream;
         }
+
+        private static bool IsPlainText(string contentType) => string.Equals(contentType.ToLower(CultureInfo.InvariantCulture), "text/plain");
 
         // used to split contentType arguments
         private static readonly char[] ContentTypeParamSeparator = { ';' };
