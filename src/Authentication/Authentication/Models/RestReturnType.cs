@@ -24,6 +24,10 @@
         /// <summary>
         ///      image/* (image/jpeg, image/png) return type
         /// </summary>
-        Image = 4
+        Image = 4,
+        /// <summary>
+        ///      text/plain return type
+        /// </summary>
+        PlainText = 5
     }
 }
