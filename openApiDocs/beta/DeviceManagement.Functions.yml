@@ -253,6 +253,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2024-09-30'
+        date: '2024-05-08'
+        version: 2024-05/getCloudPcRemoteActionResults
+        description: 'Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead.'
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -868,6 +874,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2024-09-30'
+        date: '2024-05-08'
+        version: 2024-05/getCloudPcRemoteActionResults
+        description: 'Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead.'
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1013,6 +1025,80 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.powerliftIncidentMetadata'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/deviceManagement/managedDeviceWindowsOSImages/{managedDeviceWindowsOperatingSystemImage-id}/microsoft.graph.getAllManagedDeviceWindowsOSImages()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getAllManagedDeviceWindowsOSImages
+      operationId: deviceManagement.managedDeviceWindowsOSImage_getAllManagedDeviceWindowsOSImage
+      parameters:
+        - name: managedDeviceWindowsOperatingSystemImage-id
+          in: path
+          description: The unique identifier of managedDeviceWindowsOperatingSystemImage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceWindowsOperatingSystemImage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of managedDeviceWindowsOperatingSystemImage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedDeviceWindowsOperatingSystemImage'
                   '@odata.nextLink':
                     type: string
                     nullable: true
@@ -2214,41 +2300,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getShiftWorkCloudPcAccessState()':
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getShiftWorkCloudPcAccessState
-      description: 'Get the shiftWorkCloudPcAccessState of a shift work Cloud PC.  This API only supports shared-use licenses. For more information, see cloudPcProvisioningPolicy. Shared-use licenses allow three users per license, with one user signed in at a time. Callers can get the latest shift work Cloud PC accessState and determine whether the shift work Cloud PC is accessible to the user.  If a web client needs to connect to a shift work Cloud PC, the sharedCloudPcAccessState validates the bookmark scenario. If sharedCloudPcAccessState is not active/activating/standbyMode, the web client shows a ''bad bookmark''.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-getshiftworkcloudpcaccessstate?view=graph-rest-beta
-      operationId: deviceManagement.virtualEndpoint.cloudPC_getShiftWorkCloudPcAccessState
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.shiftWorkCloudPcAccessState'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-12-31'
-        date: '2023-09-05'
-        version: 2023-08/getShiftWorkCloudPcAccessState
-        description: 'The getShiftWorkCloudPcAccessState API is deprecated and will stop returning data on Dec 31, 2023. Please use the new getFrontlineCloudPcAccessState API'
-      x-ms-docs-operation-type: function
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getSupportedCloudPcRemoteActions()':
     get:
       tags:
@@ -2285,6 +2336,53 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionCapability'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.retrieveCloudPCRemoteActionResults()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveCloudPCRemoteActionResults
+      description: Retrieve remote action results and check the status of a specific remote action performed on the associated Cloud PC device.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpc-retrievecloudpcremoteactionresults?view=graph-rest-beta
+      operationId: deviceManagement.virtualEndpoint.cloudPC_retrieveCloudPCRemoteActionResult
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: The unique identifier of cloudPC
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
                   '@odata.nextLink':
                     type: string
                     nullable: true
@@ -2839,6 +2937,8 @@ components:
           description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
+        statusDetail:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetail'
         statusDetails:
           $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
       additionalProperties:
@@ -3278,6 +3378,30 @@ components:
       additionalProperties:
         type: object
       description: Default and customized value of a setting in a Security Baseline
+    microsoft.graph.managedDeviceWindowsOperatingSystemImage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedDeviceWindowsOperatingSystemImage
+          type: object
+          properties:
+            availableUpdates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceWindowsOperatingSystemUpdate'
+              description: 'Indicates the available Quality/Security updates for a specific Windows product version (example: Windows 11 22H1), for upto last 3 Patch Tuesdays . This value in the API response would be updated 2-3 days after every Patch Tuesday. Supports: $filter, $select, $top, $skip. Read-only.'
+            supportedArchitectures:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceArchitecture'
+              description: 'Indicates the list of architectures supported by the image. E.g. [''ARM64'',''X86'']. Supports: $filter, $select, $top, $skip. Read-only.'
+            supportedEditions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceWindowsOperatingSystemEdition'
+              description: 'Indicates the list of editions supported by the image along with their support dates. Supports: $filter, $select, $top, $skip. Read-only.'
+          additionalProperties:
+            type: object
+          description: 'This entity defines different Windows Operating System products, like ''Windows 11 22H1'', ''Windows 11 22H2'' etc., along with their available configurations.'
     microsoft.graph.deviceAndAppManagementAssignedRoleDetails:
       title: deviceAndAppManagementAssignedRoleDetails
       type: object
@@ -4029,17 +4153,6 @@ components:
         - standbyMode
         - unknownFutureValue
       type: string
-    microsoft.graph.shiftWorkCloudPcAccessState:
-      title: shiftWorkCloudPcAccessState
-      enum:
-        - unassigned
-        - noLicensesAvailable
-        - activationFailed
-        - active
-        - activating
-        - unknownFutureValue
-        - standbyMode
-      type: string
     microsoft.graph.cloudPcRemoteActionCapability:
       title: cloudPcRemoteActionCapability
       type: object
@@ -4064,10 +4177,16 @@ components:
               type: string
               description: 'The allotment name divides tenant licenses into smaller batches or groups that help restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.'
               nullable: true
+            connectionSetting:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSetting'
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            deviceRegionName:
+              type: string
+              description: 'The name of the geographical region where the Cloud PC is currently provisioned. For example, westus3, eastus2, and southeastasia. Read-only.'
+              nullable: true
             disasterRecoveryCapability:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapability'
             diskEncryptionState:
@@ -4143,6 +4262,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
             status:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatus'
+            statusDetail:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetail'
             statusDetails:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
             userAccountType:
@@ -4201,6 +4322,7 @@ components:
         lastSyncDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Indicates the date and time when last sync tenant encryption setting.
           format: date-time
           nullable: true
         tenantDiskEncryptionType:
@@ -4253,6 +4375,11 @@ components:
         - notIn
         - endsWith
         - notEndsWith
+        - greaterThan
+        - greaterThanOrEquals
+        - lessThan
+        - lessThanOrEquals
+        - unknownFutureValue
       type: string
       description: Represents the different type of operators which can be used to craft the AssignmentFilter rule.
       x-ms-enum:
@@ -4260,38 +4387,53 @@ components:
         modelAsString: false
         values:
           - value: notSet
-            description: NotSet.
+            description: Indicates operator is not set
             name: notSet
           - value: equals
-            description: Equals.
+            description: Indicates the devices whose property value equals the configured input in Assignment Filters.
             name: equals
           - value: notEquals
-            description: NotEquals.
+            description: Indicates the devices whose property value not equals the configured input in Assignment Filters.
             name: notEquals
           - value: startsWith
-            description: StartsWith.
+            description: Indicates the devices whose property value starts with the configured input in Assignment Filters.
             name: startsWith
           - value: notStartsWith
-            description: NotStartsWith.
+            description: Indicates the devices whose property value does not start with the configured input in Assignment Filters.
             name: notStartsWith
           - value: contains
-            description: Contains.
+            description: Indicates the devices whose property value contains the configured input in Assignment Filters.
             name: contains
           - value: notContains
-            description: NotContains.
+            description: Indicates the devices whose property value does not contain the configured input in Assignment Filters.
             name: notContains
           - value: in
-            description: In.
+            description: Indicates the devices whose property value equals one of the configured input in Assignment Filters.
             name: in
           - value: notIn
-            description: NotIn.
+            description: Indicates the devices whose property value does not equals any of the configured input in Assignment Filters.
             name: notIn
           - value: endsWith
-            description: EndsWith.
+            description: Indicates the devices whose property value ends with the configured input in Assignment Filters.
             name: endsWith
           - value: notEndsWith
-            description: NotEndsWith.
+            description: Indicates the devices whose property value does not end with the configured input in Assignment Filters.
             name: notEndsWith
+          - value: greaterThan
+            description: Indicates the devices whose property value is greater than the configured input in Assignment Filters.
+            name: greaterThan
+          - value: greaterThanOrEquals
+            description: Indicates the devices whose property value is greater than or equal to the configured input in Assignment Filters.
+            name: greaterThanOrEquals
+          - value: lessThan
+            description: Indicates the devices whose property value is less than the configured input in Assignment Filters.
+            name: lessThan
+          - value: lessThanOrEquals
+            description: Indicates the devices whose property value is less than or equal to the configured input in Assignment Filters.
+            name: lessThanOrEquals
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -4303,6 +4445,25 @@ components:
         - failed
         - notSupported
       type: string
+    microsoft.graph.cloudPcStatusDetail:
+      title: cloudPcStatusDetail
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: 'More information about the Cloud PC status. For example, ''additionalInformation'': [''{''@odata.type'': ''microsoft.graph.keyValuePair'',''name'': ''retriable'',''value'': true }] '''
+        code:
+          type: string
+          description: 'The error/warning code associated with the Cloud PC status. Example: ''code'': ''internalServerError''.'
+          nullable: true
+        message:
+          type: string
+          description: 'The status message associated with error code. Example: ''message'': ''There was an internal server error. Please contact support xxx.''.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
       type: object
@@ -4807,6 +4968,71 @@ components:
           - value: removed
             description: The setting is removed
             name: removed
+    microsoft.graph.managedDeviceWindowsOperatingSystemUpdate:
+      title: managedDeviceWindowsOperatingSystemUpdate
+      type: object
+      properties:
+        buildVersion:
+          type: string
+          description: Indicates the build version for associated windows update. Windows Operating System updates are usually released on the Patch Tuesday or B-week of each month. Read-only.
+        releaseMonth:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Indicates the Month in which this B-week update was released. Read-only.
+          format: int32
+        releaseYear:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Indicates the Year in which this B-week update was released. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: Updates for different Windows' versions are usually released on the Patch Tuesday or B-week  of each month. This complex type defines the Build-version and the release-date for a particular B-week update of the Windows' version.
+    microsoft.graph.managedDeviceArchitecture:
+      title: managedDeviceArchitecture
+      enum:
+        - unknown
+        - x86
+        - x64
+        - arm
+        - arM64
+      type: string
+      description: Processor architecture
+      x-ms-enum:
+        name: managedDeviceArchitecture
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown architecture
+            name: unknown
+          - value: x86
+            description: X86
+            name: x86
+          - value: x64
+            description: X64
+            name: x64
+          - value: arm
+            description: ARM
+            name: arm
+          - value: arM64
+            description: ARM64
+            name: arM64
+    microsoft.graph.managedDeviceWindowsOperatingSystemEdition:
+      title: managedDeviceWindowsOperatingSystemEdition
+      type: object
+      properties:
+        editionType:
+          $ref: '#/components/schemas/microsoft.graph.managedDeviceWindowsOperatingSystemEditionType'
+        supportEndDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'Indicates the Date until which this Operating System edition type is officially supported. The Timestamp type represents date and time information using ISO 8601 format and is always in Pacific Time Zone (PT). For example, 2014-01-01 would mean ''2014-01-01T07:00:00Z'' in UTC time. Returned by default. Read-only.'
+          format: date
+      additionalProperties:
+        type: object
+      description: Different Windows' versions have Edition specific support timelines. This complex type defines the date until which a particular edition is supported in a Windows' version.
     microsoft.graph.resourceAction:
       title: resourceAction
       type: object
@@ -5202,6 +5428,15 @@ components:
         - powerOff
         - moveRegion
       type: string
+    microsoft.graph.cloudPcConnectionSetting:
+      title: cloudPcConnectionSetting
+      type: object
+      properties:
+        enableSingleSignOn:
+          type: boolean
+          description: Indicates whether single sign-on is enabled. The default value is false.
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcConnectionSettings:
       title: cloudPcConnectionSettings
       type: object
@@ -5219,6 +5454,12 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
           description: 'A list of failed health check items. If the status property is available, this property is empty.'
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last modified time for connectivity status of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
@@ -5334,6 +5575,7 @@ components:
         - movingRegion
         - resizePendingLicense
         - updatingSingleSignOn
+        - modifyingSingleSignOn
       type: string
     microsoft.graph.cloudPcUserAccountType:
       title: cloudPcUserAccountType
@@ -5512,26 +5754,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specify category in which the setting is under. Support $filters.
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
               nullable: true
             description:
               type: string
-              description: Description of the setting.
+              description: Description of the item
               nullable: true
             displayName:
               type: string
-              description: 'Name of the setting. For example: Allow Toast.'
+              description: Display name of the item
               nullable: true
             helpText:
               type: string
-              description: Help text of the setting. Give more details of the setting.
+              description: Help text of the item
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at.
+              description: List of links more info for the setting can be found at
             keywords:
               type: array
               items:
@@ -5555,7 +5797,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition id if the setting is a child setting.
+              description: Root setting definition if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -5569,6 +5811,59 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingVisibility'
           additionalProperties:
             type: object
+    microsoft.graph.managedDeviceWindowsOperatingSystemEditionType:
+      title: managedDeviceWindowsOperatingSystemEditionType
+      enum:
+        - professional
+        - professionalN
+        - enterprise
+        - enterpriseN
+        - education
+        - educationN
+        - proEducation
+        - proEducationN
+        - proWorkstation
+        - proWorkstationN
+        - unknownFutureValue
+      type: string
+      description: 'Windows Operating System is available in different editions, which have a specific set of features available. This enum type defines the corresponding edition.'
+      x-ms-enum:
+        name: managedDeviceWindowsOperatingSystemEditionType
+        modelAsString: false
+        values:
+          - value: professional
+            description: Default. Indicates Professional Operating System edition used for the managed device.
+            name: professional
+          - value: professionalN
+            description: Indicates Professional N Operating System edition used for the managed device.
+            name: professionalN
+          - value: enterprise
+            description: Indicates Enterprise Operating System edition used for the managed device.
+            name: enterprise
+          - value: enterpriseN
+            description: Indicates Enterprise N Operating System edition used for the managed device.
+            name: enterpriseN
+          - value: education
+            description: Indicates Education Operating System edition used for the managed device.
+            name: education
+          - value: educationN
+            description: Indicates Education N Operating System edition used for the managed device.
+            name: educationN
+          - value: proEducation
+            description: Indicates Pro Education Operating System edition used for the managed device.
+            name: proEducation
+          - value: proEducationN
+            description: Indicates Pro Education N Operating System edition used for the managed device.
+            name: proEducationN
+          - value: proWorkstation
+            description: Indicates Pro Workstation Operating System edition used for the managed device.
+            name: proWorkstation
+          - value: proWorkstationN
+            description: Indicates Pro Workstation N Operating System edition used for the managed device.
+            name: proWorkstationN
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagement.aggregationType:
       title: aggregationType
       enum:

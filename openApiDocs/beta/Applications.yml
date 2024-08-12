@@ -1019,7 +1019,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Upsert federatedIdentityCredential
-      description: 'Create a new federatedIdentityCredential object for an application if it does exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
+      description: 'Create a new federatedIdentityCredential object for an application if it doesn''t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-beta
@@ -1156,7 +1156,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Upsert federatedIdentityCredential
-      description: 'Create a new federatedIdentityCredential object for an application if it does exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
+      description: 'Create a new federatedIdentityCredential object for an application if it doesn''t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-beta
@@ -1666,7 +1666,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta
@@ -1868,6 +1868,20 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                autoReconcileProxyConflict:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -14619,7 +14633,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta
@@ -14782,6 +14796,20 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                autoReconcileProxyConflict:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -21135,6 +21163,8 @@ components:
               type: string
               description: The main logo for the application. Not nullable.
               format: base64url
+            nativeAuthenticationApisEnabled:
+              $ref: '#/components/schemas/microsoft.graph.nativeAuthenticationApisEnabled'
             notes:
               type: string
               description: Notes relevant for the management of the application.
@@ -22396,6 +22426,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.security'
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+            solutions:
+              $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
             sponsors:
               type: array
               items:
@@ -22753,6 +22785,11 @@ components:
                 type: string
                 nullable: true
               description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
+            configurationUris:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.configurationUri'
+              description: The URIs required for the single sign-on configuration of a preintegrated application.
             description:
               type: string
               description: A description of the application.
@@ -23038,7 +23075,7 @@ components:
               type: boolean
               description: Denotes whether the policy is enabled.
             restrictions:
-              $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
+              $ref: '#/components/schemas/microsoft.graph.customAppManagementConfiguration'
             appliesTo:
               type: array
               items:
@@ -23898,6 +23935,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.nativeAuthenticationApisEnabled:
+      title: nativeAuthenticationApisEnabled
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.onPremisesPublishing:
       title: onPremisesPublishing
       type: object
@@ -24305,11 +24351,11 @@ components:
             pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
             type: string
             format: uuid
-          description: A collection of the unique identifiers for plans that have been disabled.
+          description: A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.
         skuId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: The unique identifier for the SKU.
+          description: The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.
           format: uuid
           nullable: true
       additionalProperties:
@@ -24885,6 +24931,8 @@ components:
         - title: authentication
           type: object
           properties:
+            requirements:
+              $ref: '#/components/schemas/microsoft.graph.strongAuthenticationRequirements'
             signInPreferences:
               $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
@@ -24915,6 +24963,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+              description: 'Represents the status of a long-running operation, such as a password reset operation.'
               x-ms-navigationProperty: true
             passwordlessMicrosoftAuthenticatorMethods:
               type: array
@@ -25384,10 +25433,16 @@ components:
               type: string
               description: 'The allotment name divides tenant licenses into smaller batches or groups that help restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.'
               nullable: true
+            connectionSetting:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSetting'
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            deviceRegionName:
+              type: string
+              description: 'The name of the geographical region where the Cloud PC is currently provisioned. For example, westus3, eastus2, and southeastasia. Read-only.'
+              nullable: true
             disasterRecoveryCapability:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapability'
             diskEncryptionState:
@@ -25463,6 +25518,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
             status:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatus'
+            statusDetail:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetail'
             statusDetails:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
             userAccountType:
@@ -26085,11 +26142,23 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions reusable across lists under this site.
               x-ms-navigationProperty: true
+            contentModels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentModel'
+              description: The collection of content models applied to this site.
+              x-ms-navigationProperty: true
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
               description: The collection of content types defined for this site.
+              x-ms-navigationProperty: true
+            documentProcessingJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentProcessingJob'
+              description: The document processing jobs running on this site.
               x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
@@ -27835,6 +27904,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userSolutionRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userSolutionRoot
+          type: object
+          properties:
+            workingTimeSchedule:
+              $ref: '#/components/schemas/microsoft.graph.workingTimeSchedule'
+          additionalProperties:
+            type: object
     microsoft.graph.userTeamwork:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27843,11 +27922,11 @@ components:
           properties:
             locale:
               type: string
-              description: The chosen locale of a user in Microsoft Teams.
+              description: 'Represents the location that a user selected in Microsoft Teams and doesn''t follow the Office''s locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.'
               nullable: true
             region:
               type: string
-              description: The region of the user in Microsoft Teams.
+              description: 'Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user''s region (if available). For users without multigeo licenses, the property contains the organization''s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.'
               nullable: true
             associatedTeams:
               type: array
@@ -27953,7 +28032,7 @@ components:
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601  format for durations. For example, P1M represents a period of one month and PT1M represents a period of one minute.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
@@ -28322,6 +28401,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.configurationUri:
+      title: configurationUri
+      type: object
+      properties:
+        appliesToSingleSignOnMode:
+          type: string
+          description: 'The single sign-on mode that the URI is configured for. Possible values are: saml, password.'
+        examples:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The various formats that the URI should follow.
+        isRequired:
+          type: boolean
+          description: Indicates whether this URI is required for the single sign-on configuration.
+        usage:
+          $ref: '#/components/schemas/microsoft.graph.uriUsageType'
+        values:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The suggested values for the URI. Developers may need to customize these values for their tenant.
+      additionalProperties:
+        type: object
     microsoft.graph.informationalUrls:
       title: informationalUrls
       type: object
@@ -28423,22 +28528,13 @@ components:
               description: Display name for this policy. Required.
           additionalProperties:
             type: object
-    microsoft.graph.appManagementConfiguration:
-      title: appManagementConfiguration
-      type: object
-      properties:
-        keyCredentials:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
-          description: Collection of keyCredential restrictions settings to be applied to an application or service principal.
-        passwordCredentials:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
-          description: Collection of password restrictions settings to be applied to an application or service principal.
-      additionalProperties:
-        type: object
+    microsoft.graph.customAppManagementConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
+        - title: customAppManagementConfiguration
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.customClaimBase:
       title: customClaimBase
       type: object
@@ -29666,6 +29762,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.strongAuthenticationRequirements:
+      title: strongAuthenticationRequirements
+      type: object
+      properties:
+        perUserMfaState:
+          $ref: '#/components/schemas/microsoft.graph.perUserMfaState'
+      additionalProperties:
+        type: object
     microsoft.graph.signInPreferences:
       title: signInPreferences
       type: object
@@ -29698,22 +29802,16 @@ components:
           properties:
             aaGuid:
               type: string
-              description: 'Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.'
+              description: 'Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.'
               nullable: true
             attestationCertificates:
               type: array
               items:
                 type: string
                 nullable: true
-              description: The attestation certificate(s) attached to this security key.
+              description: The attestation certificate or certificates attached to this security key.
             attestationLevel:
               $ref: '#/components/schemas/microsoft.graph.attestationLevel'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The timestamp when this key was registered to the user.
-              format: date-time
-              nullable: true
             displayName:
               type: string
               description: The display name of the key as given by the user.
@@ -29722,6 +29820,8 @@ components:
               type: string
               description: The manufacturer-assigned model of the FIDO2 security key.
               nullable: true
+            publicKeyCredential:
+              $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredential'
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethod:
@@ -29729,6 +29829,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: authenticationMethod
           type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
@@ -29739,12 +29845,6 @@ components:
           properties:
             clientAppName:
               $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethodClientAppName'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
-              format: date-time
-              nullable: true
             deviceTag:
               type: string
               description: Tags containing app metadata.
@@ -29797,11 +29897,6 @@ components:
         - title: passwordlessMicrosoftAuthenticatorAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -29822,12 +29917,6 @@ components:
         - title: passwordAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
             password:
               type: string
               description: 'For security, the password is always returned as null from a LIST or GET operation.'
@@ -29856,12 +29945,6 @@ components:
         - title: platformCredentialAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time that this Platform Credential Key was registered.
-              format: date-time
-              nullable: true
             displayName:
               type: string
               description: The name of the device on which Platform Credential is registered.
@@ -29892,12 +29975,6 @@ components:
         - title: temporaryAccessPassAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the Temporary Access Pass was created.
-              format: date-time
-              nullable: true
             isUsableOnce:
               type: boolean
               description: 'Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.'
@@ -29927,12 +30004,6 @@ components:
         - title: windowsHelloForBusinessAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time that this Windows Hello for Business key was registered.
-              format: date-time
-              nullable: true
             displayName:
               type: string
               description: The name of the device on which Windows Hello for Business is registered
@@ -30590,6 +30661,15 @@ components:
               description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectionSetting:
+      title: cloudPcConnectionSetting
+      type: object
+      properties:
+        enableSingleSignOn:
+          type: boolean
+          description: Indicates whether single sign-on is enabled. The default value is false.
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcConnectionSettings:
       title: cloudPcConnectionSettings
       type: object
@@ -30607,6 +30687,12 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcHealthCheckItem'
           description: 'A list of failed health check items. If the status property is available, this property is empty.'
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last modified time for connectivity status of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
         status:
           $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityStatus'
         updatedDateTime:
@@ -30683,6 +30769,8 @@ components:
           description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
+        statusDetail:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetail'
         statusDetails:
           $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
       additionalProperties:
@@ -30756,7 +30844,27 @@ components:
         - movingRegion
         - resizePendingLicense
         - updatingSingleSignOn
+        - modifyingSingleSignOn
       type: string
+    microsoft.graph.cloudPcStatusDetail:
+      title: cloudPcStatusDetail
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: 'More information about the Cloud PC status. For example, ''additionalInformation'': [''{''@odata.type'': ''microsoft.graph.keyValuePair'',''name'': ''retriable'',''value'': true }] '''
+        code:
+          type: string
+          description: 'The error/warning code associated with the Cloud PC status. Example: ''code'': ''internalServerError''.'
+          nullable: true
+        message:
+          type: string
+          description: 'The status message associated with error code. Example: ''message'': ''There was an internal server error. Please contact support xxx.''.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
       type: object
@@ -31544,6 +31652,36 @@ components:
               $ref: '#/components/schemas/microsoft.graph.columnDefinition'
           additionalProperties:
             type: object
+    microsoft.graph.contentModel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentModel
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of item creation. Read-only.
+              format: date-time
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of item last modification. Read-only.
+              format: date-time
+              nullable: true
+            modelType:
+              $ref: '#/components/schemas/microsoft.graph.contentModelType'
+            name:
+              type: string
+              description: The name of the contentModel.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentType:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31626,6 +31764,27 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions for this content type.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.documentProcessingJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: documentProcessingJob
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of item creation. Read-only.
+              format: date-time
+              nullable: true
+            jobType:
+              $ref: '#/components/schemas/microsoft.graph.documentProcessingJobType'
+            listItemUniqueId:
+              type: string
+              description: 'The listItemUniqueId of the file, or folder to process. Use GET driveItem resource operation and read  sharepointIds property to get listItemUniqueId.'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.documentProcessingJobStatus'
           additionalProperties:
             type: object
     microsoft.graph.richLongRunningOperation:
@@ -34599,8 +34758,7 @@ components:
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             allowLiveShare:
-              type: boolean
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.meetingLiveShareOptions'
             allowMeetingChat:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
@@ -34802,10 +34960,6 @@ components:
               nullable: true
             meetingOrganizer:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
-            meetingOrganizerId:
-              type: string
-              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
-              nullable: true
             recordingContentUrl:
               type: string
               description: The URL that can be used to access the content of the recording. Read-only.
@@ -34899,10 +35053,6 @@ components:
               nullable: true
             meetingOrganizer:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
-            meetingOrganizerId:
-              type: string
-              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
-              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
@@ -36248,6 +36398,13 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.workingTimeSchedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workingTimeSchedule
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -36645,6 +36802,15 @@ components:
         - synchronizationLearnMoreIbizaFwLink
         - configurationFields
       type: string
+    microsoft.graph.uriUsageType:
+      title: uriUsageType
+      enum:
+        - redirectUri
+        - identifierUri
+        - loginUrl
+        - logoutUrl
+        - unknownFutureValue
+      type: string
     microsoft.graph.updateWindow:
       title: updateWindow
       type: object
@@ -36663,50 +36829,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.keyCredentialConfiguration:
-      title: keyCredentialConfiguration
+    microsoft.graph.appManagementConfiguration:
+      title: appManagementConfiguration
       type: object
       properties:
-        certificateBasedApplicationConfigurationIds:
+        keyCredentials:
           type: array
           items:
-            type: string
-            nullable: true
-          description: Collection of GUIDs that represent certificateBasedApplicationConfiguration that is allowed as root and intermediate certificate authorities.
-        maxLifetime:
-          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-          type: string
-          description: 'String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
-          format: duration
-          nullable: true
-        restrictForAppsCreatedAfterDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
-          format: date-time
-          nullable: true
-        restrictionType:
-          $ref: '#/components/schemas/microsoft.graph.appKeyCredentialRestrictionType'
-      additionalProperties:
-        type: object
-    microsoft.graph.passwordCredentialConfiguration:
-      title: passwordCredentialConfiguration
-      type: object
-      properties:
-        maxLifetime:
-          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-          type: string
-          description: 'String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.'
-          format: duration
-          nullable: true
-        restrictForAppsCreatedAfterDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
-          format: date-time
-          nullable: true
-        restrictionType:
-          $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+            $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
+          description: Collection of keyCredential restrictions settings to be applied to an application or service principal.
+        passwordCredentials:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
+          description: Collection of password restrictions settings to be applied to an application or service principal.
       additionalProperties:
         type: object
     microsoft.graph.customClaimConfiguration:
@@ -37125,6 +37261,14 @@ components:
               description: 'The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.'
           additionalProperties:
             type: object
+    microsoft.graph.perUserMfaState:
+      title: perUserMfaState
+      enum:
+        - disabled
+        - enforced
+        - enabled
+        - unknownFutureValue
+      type: string
     microsoft.graph.userDefaultAuthenticationMethodType:
       title: userDefaultAuthenticationMethodType
       enum:
@@ -37143,6 +37287,20 @@ components:
         - notAttested
         - unknownFutureValue
       type: string
+    microsoft.graph.webauthnPublicKeyCredential:
+      title: webauthnPublicKeyCredential
+      type: object
+      properties:
+        clientExtensionResults:
+          $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticationExtensionsClientOutputs'
+        id:
+          type: string
+          description: The credential ID created by the WebAuthn Authenticator.
+          nullable: true
+        response:
+          $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticatorAttestationResponse'
+      additionalProperties:
+        type: object
     microsoft.graph.microsoftAuthenticatorAuthenticationMethodClientAppName:
       title: microsoftAuthenticatorAuthenticationMethodClientAppName
       enum:
@@ -39028,6 +39186,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.contentModelType:
+      title: contentModelType
+      enum:
+        - teachingMethod
+        - layoutMethod
+        - freeformSelectionMethod
+        - prebuiltContractModel
+        - prebuiltInvoiceModel
+        - prebuiltReceiptModel
+        - unknownFutureValue
+      type: string
     microsoft.graph.documentSet:
       title: documentSet
       type: object
@@ -39111,6 +39280,21 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.documentProcessingJobType:
+      title: documentProcessingJobType
+      enum:
+        - file
+        - folder
+        - unknownFutureValue
+      type: string
+    microsoft.graph.documentProcessingJobStatus:
+      title: documentProcessingJobStatus
+      enum:
+        - inProgress
+        - completed
+        - failed
+        - unknownFutureValue
+      type: string
     microsoft.graph.pageLayoutType:
       title: pageLayoutType
       enum:
@@ -41336,6 +41520,13 @@ components:
         - organizer
         - unknownFutureValue
       type: string
+    microsoft.graph.meetingLiveShareOptions:
+      title: meetingLiveShareOptions
+      enum:
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
     microsoft.graph.meetingChatMode:
       title: meetingChatMode
       enum:
@@ -41527,7 +41718,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identity'
             registrantId:
               type: string
-              description: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+              description: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
               nullable: true
             role:
               type: string
@@ -42264,6 +42455,12 @@ components:
           type: string
           description: The role the position entailed.
           nullable: true
+        secondaryJobTitle:
+          type: string
+          nullable: true
+        secondaryRole:
+          type: string
+          nullable: true
         startMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
@@ -42282,6 +42479,10 @@ components:
       properties:
         address:
           $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+        companyCode:
+          type: string
+          description: 'Legal entity number of the company or its subdivision. For information on how to set the value for the companyCode, see profileSourceAnnotation.'
+          nullable: true
         department:
           type: string
           description: Department Name within a company.
@@ -42296,6 +42497,9 @@ components:
         pronunciation:
           type: string
           description: Pronunciation guide for the company name.
+          nullable: true
+        secondaryDepartment:
+          type: string
           nullable: true
         webUrl:
           type: string
@@ -42691,6 +42895,8 @@ components:
               nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventSettings'
             startDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             status:
@@ -42917,23 +43123,56 @@ components:
         - Extensions
         - BaseObjectName
       type: string
-    microsoft.graph.appKeyCredentialRestrictionType:
-      title: appKeyCredentialRestrictionType
-      enum:
-        - asymmetricKeyLifetime
-        - trustedCertificateAuthority
-        - unknownFutureValue
-      type: string
-    microsoft.graph.appCredentialRestrictionType:
-      title: appCredentialRestrictionType
-      enum:
-        - passwordAddition
-        - passwordLifetime
-        - symmetricKeyAddition
-        - symmetricKeyLifetime
-        - customPasswordAddition
-        - unknownFutureValue
-      type: string
+    microsoft.graph.keyCredentialConfiguration:
+      title: keyCredentialConfiguration
+      type: object
+      properties:
+        certificateBasedApplicationConfigurationIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Collection of GUIDs that represent certificateBasedApplicationConfiguration that is allowed as root and intermediate certificate authorities.
+        maxLifetime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
+          format: duration
+          nullable: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
+          format: date-time
+          nullable: true
+        restrictionType:
+          $ref: '#/components/schemas/microsoft.graph.appKeyCredentialRestrictionType'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+      additionalProperties:
+        type: object
+    microsoft.graph.passwordCredentialConfiguration:
+      title: passwordCredentialConfiguration
+      type: object
+      properties:
+        maxLifetime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.'
+          format: duration
+          nullable: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
+          format: date-time
+          nullable: true
+        restrictionType:
+          $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+      additionalProperties:
+        type: object
     microsoft.graph.customClaimAttributeBase:
       title: customClaimAttributeBase
       type: object
@@ -43526,6 +43765,24 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
           additionalProperties:
             type: object
+    microsoft.graph.webauthnAuthenticationExtensionsClientOutputs:
+      title: webauthnAuthenticationExtensionsClientOutputs
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.webauthnAuthenticatorAttestationResponse:
+      title: webauthnAuthenticatorAttestationResponse
+      type: object
+      properties:
+        attestationObject:
+          type: string
+          description: 'Base64URL encoded, cryptographically protected attestation about the WebAuthn Authenticator.'
+          nullable: true
+        clientDataJSON:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attendeeType:
       title: attendeeType
       enum:
@@ -45947,6 +46204,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
             type: object
+    microsoft.graph.virtualEventSettings:
+      title: virtualEventSettings
+      type: object
+      properties:
+        isAttendeeEmailNotificationEnabled:
+          type: boolean
+          description: Indicates whether virtual event attendees receive email notifications.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.virtualEventStatus:
       title: virtualEventStatus
       enum:
@@ -46102,6 +46369,30 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.appKeyCredentialRestrictionType:
+      title: appKeyCredentialRestrictionType
+      enum:
+        - asymmetricKeyLifetime
+        - trustedCertificateAuthority
+        - unknownFutureValue
+      type: string
+    microsoft.graph.appManagementRestrictionState:
+      title: appManagementRestrictionState
+      enum:
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.appCredentialRestrictionType:
+      title: appCredentialRestrictionType
+      enum:
+        - passwordAddition
+        - passwordLifetime
+        - symmetricKeyAddition
+        - symmetricKeyLifetime
+        - customPasswordAddition
+        - unknownFutureValue
+      type: string
     microsoft.graph.transformationAttribute:
       title: transformationAttribute
       type: object

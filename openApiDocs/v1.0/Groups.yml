@@ -377,11 +377,11 @@ paths:
     post:
       tags:
         - groups.group
-      summary: Create group
-      description: 'Create a new group as specified in the request body. You can create the following types of groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.'
+      summary: Upsert group
+      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
       operationId: group_CreateGroup
       requestBody:
         description: New entity
@@ -4023,10 +4023,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Retrieve the properties and relationships of conversation object.
+      description: The group's conversations.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -4383,10 +4383,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -22549,55 +22549,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path=''{path}'')/microsoft.graph.getByPath(path=''{path1}'')':
-    get:
-      tags:
-        - groups.Functions
-      summary: Invoke function getByPath
-      operationId: group.site.getGraphBPrePath_getGraphBPrePath
-      parameters:
-        - name: group-id
-          in: path
-          description: The unique identifier of group
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: site-id
-          in: path
-          description: The unique identifier of site
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: site
-        - name: path
-          in: path
-          description: 'Usage: path=''{path}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-        - name: path1
-          in: path
-          description: 'Usage: path=''{path1}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.site'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/microsoft.graph.copyNotebook':
     post:
       tags:
@@ -27168,11 +27119,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversationThread
-      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
+      summary: Get conversation thread
+      description: Get a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -27266,11 +27217,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversation thread
+      summary: Delete conversationThread
       description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -27306,10 +27257,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -27350,11 +27301,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,\nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
@@ -34589,11 +34540,11 @@ components:
             pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
             type: string
             format: uuid
-          description: A collection of the unique identifiers for plans that have been disabled.
+          description: A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.
         skuId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: The unique identifier for the SKU.
+          description: The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.
           format: uuid
           nullable: true
       additionalProperties:
