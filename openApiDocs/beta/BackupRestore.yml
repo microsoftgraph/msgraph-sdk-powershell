@@ -3879,7 +3879,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update sharePointProtectionPolicy
-      description: Update a SharePoint protection policy. This method adds a sharepointprotectionunit to or removes it from the protection policy.
+      description: Update a SharePoint protection policy. This method adds a siteprotectionunit to or removes it from the protection policy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-update?view=graph-rest-beta

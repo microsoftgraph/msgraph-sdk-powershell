@@ -962,11 +962,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Create externalItem
-      description: Create a new externalItem object.
+      summary: Update externalItem
+      description: Update the properties of an externalItem object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-1.0
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
