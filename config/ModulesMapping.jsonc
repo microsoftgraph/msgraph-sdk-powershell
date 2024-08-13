@@ -1,6 +1,8 @@
 {
   "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
-  "Bookings": "^solutions\\.|^bookingBusinesses\\.|^bookingCurrencies\\.",
+  "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.|^solutions.Actions$|^solutions.bookingBusiness$|^solutions.bookingCurrency$|^solutions.virtualEventsRoot$|^solutions.Functions$|^solutions.solutionsRoot$",
+  "BusinessScenario": "^solutions.businessScenario$",
+  "BackupRestore": "^solutions.backupRestoreRoot$",
   "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
   "ChangeNotifications": "^subscriptions\\.",
   "CloudCommunications": "^users.onlineMeeting$|^users.presence$|^communications\\.",
@@ -25,6 +27,7 @@
   "Identity.Partner": "^tenantRelationships.delegatedAdminRelationship$|^tenantRelationships.delegatedAdminCustomer$",
   "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
   "ManagedTenants": "^tenantRelationships.managedTenant$",
+  "NetworkAccess": "^networkAccess\\.",
   "Notes": "^users.onenote$|^groups.onenote$|^sites.onenote$",
   "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",
   "PersonalContacts": "^users.contactFolder$|^users.contact$",
