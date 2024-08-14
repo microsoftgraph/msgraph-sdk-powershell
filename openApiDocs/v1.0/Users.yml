@@ -14,7 +14,7 @@ paths:
       description: List properties and relationships of the user objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -73,11 +73,11 @@ paths:
     post:
       tags:
         - users.user
-      summary: Create User
-      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties."
+      summary: Create user
+      description: Create a new user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-create?view=graph-rest-1.0
       operationId: user_CreateUser
       requestBody:
         description: New entity
@@ -152,7 +152,7 @@ paths:
       description: Update the properties of a user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
       operationId: user_UpdateUser
       parameters:
         - name: user-id
@@ -187,7 +187,7 @@ paths:
       description: Deletes a user.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0
       operationId: user_DeleteUser
       parameters:
         - name: user-id
@@ -1213,6 +1213,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Get insights from users
+      description: 'Represents relationships between a user and items such as OneDrive for work or school documents, calculated using advanced analytics and machine learning techniques. Read-only. Nullable.'
       operationId: user_GetInsight
       parameters:
         - name: user-id
@@ -6244,6 +6245,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get itemInsights from users
+      description: 'The user''s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.'
       operationId: user.setting_GetItemInsight
       parameters:
         - name: user-id
@@ -6287,7 +6289,11 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update the navigation property itemInsights in users
+      summary: Update userInsightsSettings
+      description: Update the privacy settings for itemInsights and meeting hours insights of a user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
       operationId: user.setting_UpdateItemInsight
       parameters:
         - name: user-id
@@ -12558,7 +12564,7 @@ components:
             appRoleId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
+              description: 'The identifier (id) for the app role that''s assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application hasn''t declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
               format: uuid
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -12998,10 +13004,10 @@ components:
           properties:
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
-              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
+              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for work or school is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
             contributionToContentDiscoveryDisabled:
               type: boolean
-              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
+              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for work or school is affected. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             shiftPreferences:
@@ -13023,6 +13029,7 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.
           additionalProperties:
             type: object
     microsoft.graph.shiftPreferences:

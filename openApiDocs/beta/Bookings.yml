@@ -10195,7 +10195,7 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: List sessions
+      summary: List sessions for a virtual event registration
       description: Get a list of sessions that a registrant registered for in a webinar.
       externalDocs:
         description: Find more info here
@@ -10760,7 +10760,7 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: List sessions
+      summary: List sessions for virtualEvent
       description: 'Get a list of all virtualEventSession objects under a virtual event. Currently, the following virtual event types are supported: virtualEventTownhall and virtualEventWebinar.'
       externalDocs:
         description: Find more info here
@@ -14162,6 +14162,7 @@ components:
               nullable: true
             allowBreakoutRooms:
               type: boolean
+              description: Indicates whether breakout rooms are enabled for the meeting.
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
@@ -14175,6 +14176,7 @@ components:
               nullable: true
             allowPowerPointSharing:
               type: boolean
+              description: Indicates whether PowerPoint live is enabled for the meeting.
               nullable: true
             allowRecording:
               type: boolean
@@ -14190,6 +14192,7 @@ components:
               nullable: true
             allowWhiteboard:
               type: boolean
+              description: Indicates whether whiteboard is enabled for the meeting.
               nullable: true
             anonymizeIdentityForRoles:
               type: array
