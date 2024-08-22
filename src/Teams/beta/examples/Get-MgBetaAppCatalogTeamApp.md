@@ -75,3 +75,14 @@ Get-MgBetaAppCatalogTeamApp -Filter "id eq 'a5228c26-a9ae-4702-90e0-79a5246d2f7d
 ```
 This example will list applications with a given id and return only the resource specific permissions required by the app
 
+### Example 8: List details of apps in the app catalog that contain dashboard cards
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
+
+Get-MgBetaAppCatalogTeamApp -ExpandProperty "appDefinitions(`$expand=dashboardCards)" -Filter "appDefinitions/any(a:a/dashboardCards/`$count ne 0)" 
+
+```
+This example will list details of apps in the app catalog that contain dashboard cards
+

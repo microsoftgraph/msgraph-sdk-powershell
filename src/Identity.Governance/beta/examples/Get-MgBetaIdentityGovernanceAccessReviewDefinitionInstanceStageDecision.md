@@ -1,11 +1,11 @@
-### Example 1: Retrieve a decision from a stage of a multi-stage access review
+### Example 1: Code snippet
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId
 
 ```
-This example will retrieve a decision from a stage of a multi-stage access review
+This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
 

@@ -1,26 +1,11 @@
-### Example 1: Get a list of domain objects
+### Example 1: Code snippet
 
 ```powershell
-Get-MgBetaDomain | Format-List
 
-AuthenticationType               : Managed
-AvailabilityStatus               :
-DomainNameReferences             :
-Id                               : contoso.com
-IsAdminManaged                   : True
-IsDefault                        : True
-IsInitial                        : True
-IsRoot                           : True
-IsVerified                       : True
-Manufacturer                     :
-Model                            :
-PasswordNotificationWindowInDays : 14
-PasswordValidityPeriodInDays     : 2147483647
-ServiceConfigurationRecords      :
-State                            : Microsoft.Graph.PowerShell.Models.MicrosoftGraphDomainState
-SupportedServices                : {Email, OfficeCommunicationsOnline}
-VerificationDnsRecords           :
-AdditionalProperties             : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#domains/$entity]}
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaDomain
+
 ```
+This example shows how to use the Get-MgBetaDomain Cmdlet.
 
-This example retrieves a list of the domain objects.

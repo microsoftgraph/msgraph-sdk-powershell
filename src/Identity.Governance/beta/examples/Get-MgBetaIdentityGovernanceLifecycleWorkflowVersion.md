@@ -1,22 +1,22 @@
-### Example 1: Get a workflow version
+### Example 1: Retrieve the versions of a workflow
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion -WorkflowId $workflowId -WorkflowVersionVersionNumber $workflowVersionVersionNumber
+Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion -WorkflowId $workflowId
 
 ```
-This example will get a workflow version
+This example will retrieve the versions of a workflow
 
-### Example 2: Get specific properties of a version of a workflow
+### Example 2: Retrieve specific properties of all versions of a workflow
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion -WorkflowId $workflowId -WorkflowVersionVersionNumber $workflowVersionVersionNumber -Property "category,displayName,versionNumber,executionConditions" -ExpandProperty "tasks" 
+Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion -WorkflowId $workflowId -Property "category,displayName,versionNumber" 
 
 ```
-This example will get specific properties of a version of a workflow
+This example will retrieve specific properties of all versions of a workflow
 

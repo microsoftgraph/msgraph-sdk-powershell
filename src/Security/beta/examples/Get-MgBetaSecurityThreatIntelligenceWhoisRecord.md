@@ -1,11 +1,11 @@
-### Example 1: Get the whoisRecord resource using its id property
+### Example 1: Code snippet
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Security
 
-Get-MgBetaSecurityThreatIntelligenceWhoisRecord -WhoisRecordId $whoisRecordId
+Get-MgBetaSecurityThreatIntelligenceWhoisRecord -Search '"admin/address/state:WA"' -Sort "registrationDateTime desc" 
 
 ```
-This example will get the whoisrecord resource using its id property
+This example shows how to use the Get-MgBetaSecurityThreatIntelligenceWhoisRecord Cmdlet.
 

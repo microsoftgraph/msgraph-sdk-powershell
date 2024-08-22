@@ -1,22 +1,22 @@
-### Example 1: Get a deleted workflow
+### Example 1: Retrieve all deleted workflows
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId $workflowId
+Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow
 
 ```
-This example will get a deleted workflow
+This example will retrieve all deleted workflows
 
-### Example 2: Get specific properties of a deleted workflow
+### Example 2: Retrieve deleted workflows for "leaver" scenarios and return only specific properties
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId $workflowId -Property "id,category,displayName,description,version,executionConditions" 
+Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -Property "id,category,displayName,description,version" -Filter "category eq 'leaver'" 
 
 ```
-This example will get specific properties of a deleted workflow
+This example will retrieve deleted workflows for "leaver" scenarios and return only specific properties
 

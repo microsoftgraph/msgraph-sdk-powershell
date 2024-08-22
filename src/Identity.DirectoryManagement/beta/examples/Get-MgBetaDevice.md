@@ -1,22 +1,46 @@
-### Example 1: Get a device
+### Example 1: Code snippet
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
-Get-MgBetaDevice -DeviceId $deviceId
+Get-MgBetaDevice
 
 ```
-This example will get a device
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 
-### Example 2: Get a device and return only its id and extensionAttributes properties
+### Example 2: Code snippet
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
-Get-MgBetaDevice -DeviceId $deviceId -Property "id,extensionAttributes" 
+Get-MgBetaDevice -Property "id,extensionAttributes" 
 
 ```
-This example will get a device and return only its id and extensionattributes properties
+This example shows how to use the Get-MgBetaDevice Cmdlet.
+
+### Example 3: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaDevice -Filter "startswith(displayName, 'a')" -CountVariable CountVar -Top 1 -Sort "displayName"  -ConsistencyLevel eventual 
+
+
+```
+This example shows how to use the Get-MgBetaDevice Cmdlet.
+
+### Example 4: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaDevice -Filter "extensionAttributes/extensionAttribute1 eq 'BYOD-Device'" -CountVariable CountVar  -ConsistencyLevel eventual 
+
+
+```
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 

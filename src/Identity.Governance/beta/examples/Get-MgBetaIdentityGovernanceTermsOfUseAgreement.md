@@ -1,22 +1,11 @@
-### Example 1: Retrieve an agreement
+### Example 1: Code snippet
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceTermsOfUseAgreement -AgreementId $agreementId
+Get-MgBetaIdentityGovernanceTermsOfUseAgreement
 
 ```
-This example will retrieve an agreement
-
-### Example 2: Retrieve an agreement and its related files
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-
-Get-MgBetaIdentityGovernanceTermsOfUseAgreement -AgreementId $agreementId -ExpandProperty "files" 
-
-```
-This example will retrieve an agreement and its related files
+This example shows how to use the Get-MgBetaIdentityGovernanceTermsOfUseAgreement Cmdlet.
 

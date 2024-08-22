@@ -1,22 +1,22 @@
-### Example 1: Get a run report for a workflow
+### Example 1: List the run reports for a workflow
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowRun -WorkflowId $workflowId -RunId $runId
+Get-MgBetaIdentityGovernanceLifecycleWorkflowRun -WorkflowId $workflowId
 
 ```
-This example will get a run report for a workflow
+This example will list the run reports for a workflow
 
-### Example 2: Get specific properties of a run report for a workflow
+### Example 2: List the run reports for a workflow and select specific properties
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowRun -WorkflowId $workflowId -RunId $runId -Property "id,failedTasksCount,failedUsersCount,processingStatus,totalTasksCount,totalUnprocessedTasksCount,totalUsersCount" 
+Get-MgBetaIdentityGovernanceLifecycleWorkflowRun -WorkflowId $workflowId -Property "id,failedTasksCount,failedUsersCount,processingStatus,totalTasksCount,totalUnprocessedTasksCount,totalUsersCount,id" 
 
 ```
-This example will get specific properties of a run report for a workflow
+This example will list the run reports for a workflow and select specific properties
 

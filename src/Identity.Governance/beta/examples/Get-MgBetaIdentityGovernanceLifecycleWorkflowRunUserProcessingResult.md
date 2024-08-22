@@ -1,22 +1,22 @@
-### Example 1: Get a user processing result in a run report
+### Example 1: List the user processing results in a run report for a workflow
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -WorkflowId $workflowId -RunId $runId -UserProcessingResultId $userProcessingResultId
+Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -WorkflowId $workflowId -RunId $runId
 
 ```
-This example will get a user processing result in a run report
+This example will list the user processing results in a run report for a workflow
 
-### Example 2: Get a user processing results for a workflow run
+### Example 2: List the user processing results for a run in a workflow and select specific properties
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -WorkflowId $workflowId -RunId $runId -UserProcessingResultId $userProcessingResultId -Property "id,failedTasksCount,processingStatus,totalTasksCount,totalUnprocessedTasksCount,subject" 
+Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult -WorkflowId $workflowId -RunId $runId -Property "id,failedTasksCount,processingStatus,totalTasksCount,totalUnprocessedTasksCount,subject" 
 
 ```
-This example will get a user processing results for a workflow run
+This example will list the user processing results for a run in a workflow and select specific properties
 

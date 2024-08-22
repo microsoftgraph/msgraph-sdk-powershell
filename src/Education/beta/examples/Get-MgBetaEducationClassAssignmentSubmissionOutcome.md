@@ -20,3 +20,14 @@ Get-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $education
 ```
 This example will get outcomes filtered by outcome type
 
+### Example 3: Using `$orderby` to get outcomes
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Education
+
+Get-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -Sort "id" 
+
+```
+This example shows using `$orderby` to get outcomes
+

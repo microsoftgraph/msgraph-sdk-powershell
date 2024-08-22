@@ -1,11 +1,11 @@
-### Example 1: Get an owner of a group
+### Example 1: Code snippet
 
 ```powershell
-Get-MgBetaGroupOwner -GroupId '4d5f57a1-85e0-41dd-8282-ff995ad5e1c3'
 
-Id                                   DeletedDateTime
---                                   ---------------
-5fc5c052-8774-4258-8705-0b4ab3e9a2df
+Import-Module Microsoft.Graph.Beta.Groups
+
+Get-MgBetaGroupOwner -GroupId $groupId
+
 ```
+This example shows how to use the Get-MgBetaGroupOwner Cmdlet.
 
-This example gets the owner of the specified group.

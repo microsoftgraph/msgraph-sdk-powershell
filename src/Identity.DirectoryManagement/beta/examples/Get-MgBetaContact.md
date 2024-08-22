@@ -1,12 +1,35 @@
-### Example 1: Retrieve contact objects in the directory 
+### Example 1: Code snippet
 
 ```powershell
-Get-MgBetaContact | Format-List Id, DisplayName, Mail, MailNickname
 
-Id           : 5d58402b-3cb2-4b17-b913-299a72c84204
-DisplayName  : Bob Kelly (TAILSPIN)
-Mail         : bobk@tailspintoys.com
-MailNickname : BobKTAILSPIN
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaContact
+
 ```
+This example shows how to use the Get-MgBetaContact Cmdlet.
 
-This example retrieves all contact objects in the directory.
+### Example 2: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaContact -Filter "startswith(displayName,'A')" -CountVariable CountVar -Top 1 -Sort "displayName"  -ConsistencyLevel eventual 
+
+
+```
+This example shows how to use the Get-MgBetaContact Cmdlet.
+
+### Example 3: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaContact -Search '"displayName:wa"' -CountVariable CountVar  -ConsistencyLevel eventual 
+
+
+```
+This example shows how to use the Get-MgBetaContact Cmdlet.
+

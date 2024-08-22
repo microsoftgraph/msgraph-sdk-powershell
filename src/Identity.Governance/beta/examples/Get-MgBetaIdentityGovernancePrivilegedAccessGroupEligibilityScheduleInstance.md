@@ -1,11 +1,11 @@
-### Example 1: Get all eligibility schedule instances
+### Example 1: Code snippet
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance -PrivilegedAccessGroupEligibilityScheduleInstanceId $privilegedAccessGroupEligibilityScheduleInstanceId
+Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance -Filter "groupId eq '2b5ed229-4072-478d-9504-a047ebd4b07d'" 
 
 ```
-This example will get all eligibility schedule instances
+This example shows how to use the Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance Cmdlet.
 

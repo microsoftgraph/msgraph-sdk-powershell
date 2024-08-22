@@ -1,22 +1,22 @@
-### Example 1: Get the definition of a custom role for a directory provider
+### Example 1: List role definitions for a directory provider
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId
+Get-MgBetaRoleManagementDirectoryRoleDefinition
 
 ```
-This example will get the definition of a custom role for a directory provider
+This example will list role definitions for a directory provider
 
-### Example 2: Get the definition of a built-in role for a directory provider
+### Example 2: List privileged role definitions
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId
+Get-MgBetaRoleManagementDirectoryRoleDefinition -Filter "isPrivileged eq true" 
 
 ```
-This example will get the definition of a built-in role for a directory provider
+This example will list privileged role definitions
 

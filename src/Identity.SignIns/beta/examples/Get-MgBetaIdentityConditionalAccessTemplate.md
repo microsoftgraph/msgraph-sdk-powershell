@@ -1,22 +1,22 @@
-### Example 1: Get the properties a template by ID
+### Example 1: List all conditional access policy templates
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Get-MgBetaIdentityConditionalAccessTemplate -ConditionalAccessTemplateId $conditionalAccessTemplateId
+Get-MgBetaIdentityConditionalAccessTemplate
 
 ```
-This example will get the properties a template by id
+This example will list all conditional access policy templates
 
-### Example 2: Select details of a template
+### Example 2: List name, description, id, scenarios of templates whose scenarios contain "secureFoundation"
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Get-MgBetaIdentityConditionalAccessTemplate -ConditionalAccessTemplateId $conditionalAccessTemplateId -Property "details" 
+Get-MgBetaIdentityConditionalAccessTemplate -Property "name,description,id,scenarios" -Filter "scenarios has 'secureFoundation'" 
 
 ```
-This example will select details of a template
+This example will list name, description, id, scenarios of templates whose scenarios contain "securefoundation"
 

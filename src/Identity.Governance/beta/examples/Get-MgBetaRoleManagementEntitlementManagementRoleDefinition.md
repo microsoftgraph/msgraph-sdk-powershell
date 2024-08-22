@@ -1,11 +1,11 @@
-### Example 1: Get the definition of a built-in role for the entitlement management provider
+### Example 1: List role definitions for the entitlement management provider
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaRoleManagementEntitlementManagementRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId
+Get-MgBetaRoleManagementEntitlementManagementRoleDefinition
 
 ```
-This example will get the definition of a built-in role for the entitlement management provider
+This example will list role definitions for the entitlement management provider
 

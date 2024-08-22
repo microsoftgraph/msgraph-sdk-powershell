@@ -1,66 +1,33 @@
-### Example 1: Get an educationWordResource
+### Example 1: Get all resources
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Education
 
-Get-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
+Get-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 
 ```
-This example will get an educationwordresource
+This example will get all resources
 
-### Example 2: Get an educationFileResource
+### Example 2: Using `$filter` to get resources
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Education
 
-Get-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
+Get-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -Filter " id eq 'c4682401-6866-4962-94d9-7499782a13e9'" 
 
 ```
-This example will get an educationfileresource
+This example shows using `$filter` to get resources
 
-### Example 3: Get an educationExcelResource
+### Example 3: Using `$orderby` to get resources
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Education
 
-Get-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
+Get-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -Sort "resource/createdDateTime" 
 
 ```
-This example will get an educationexcelresource
-
-### Example 4: Get an educationPowerPointResource
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.Education
-
-Get-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
-
-```
-This example will get an educationpowerpointresource
-
-### Example 5: Get an educationLinkResource
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.Education
-
-Get-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
-
-```
-This example will get an educationlinkresource
-
-### Example 6: Get an educationMediaResource
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.Education
-
-Get-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationSubmissionResourceId $educationSubmissionResourceId
-
-```
-This example will get an educationmediaresource
+This example shows using `$orderby` to get resources
 

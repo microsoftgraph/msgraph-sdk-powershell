@@ -1,12 +1,11 @@
-### Example 1: Get the identity governance settings
+### Example 1: Code snippet
 
 ```powershell
-Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+
 Get-MgBetaEntitlementManagementSetting
 
-Id        DaysUntilExternalUserDeletedAfterBlocked ExternalUserLifecycleAction
---        ---------------------------------------- ---------------------------
-singleton 30                                       BlockSignInAndDelete
 ```
+This example shows how to use the Get-MgBetaEntitlementManagementSetting Cmdlet.
 
-This example returns the identity governance settings.

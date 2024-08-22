@@ -1,11 +1,11 @@
-### Example 1: Get the definition of a built-in role for the Exchange Online provider
+### Example 1: List role definitions for the Exchange Online provider
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.DeviceManagement.Enrollment
 
-Get-MgBetaRoleManagementExchangeRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId
+Get-MgBetaRoleManagementExchangeRoleDefinition
 
 ```
-This example will get the definition of a built-in role for the exchange online provider
+This example will list role definitions for the exchange online provider
 

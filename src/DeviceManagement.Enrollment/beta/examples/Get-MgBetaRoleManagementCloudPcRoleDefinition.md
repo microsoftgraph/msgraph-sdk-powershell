@@ -1,11 +1,11 @@
-### Example 1: Get the definition of a built-in role for a Cloud PC provider
+### Example 1: List role definitions for a Cloud PC provider
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.DeviceManagement.Enrollment
 
-Get-MgBetaRoleManagementCloudPcRoleDefinition -UnifiedRoleDefinitionId $unifiedRoleDefinitionId
+Get-MgBetaRoleManagementCloudPcRoleDefinition
 
 ```
-This example will get the definition of a built-in role for a cloud pc provider
+This example will list role definitions for a cloud pc provider
 

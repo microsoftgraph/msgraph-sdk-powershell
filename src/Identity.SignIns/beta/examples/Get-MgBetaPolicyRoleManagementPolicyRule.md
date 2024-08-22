@@ -1,22 +1,22 @@
-### Example 1: Retrieve a rule defined for a policy in PIM for Azure AD roles
+### Example 1: Retrieve rules of a policy in PIM for Microsoft Entra roles
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Get-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -UnifiedRoleManagementPolicyRuleId $unifiedRoleManagementPolicyRuleId
+Get-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId
 
 ```
-This example will retrieve a rule defined for a policy in pim for azure ad roles
+This example will retrieve rules of a policy in pim for microsoft entra roles
 
-### Example 2: Retrieve a rule defined for a policy in PIM for groups
+### Example 2: Retrieve rules of a policy in PIM for groups
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Get-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -UnifiedRoleManagementPolicyRuleId $unifiedRoleManagementPolicyRuleId
+Get-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId
 
 ```
-This example will retrieve a rule defined for a policy in pim for groups
+This example will retrieve rules of a policy in pim for groups
 

@@ -1,26 +1,22 @@
-### Example 1: Get catalog resource roles
+### Example 1: Retrieving the roles of a resource for a group
 
 ```powershell
-Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "originSystem eq 'AadGroup' and accessPackageResource/id eq '36d8d18f-b081-4867-acf5-4a8b893761e8'"
 
-Id                                   Description DisplayName OriginId                                    OriginSystem
---                                   ----------- ----------- --------                                    ------------
-00000000-0000-0000-0000-000000000000             Owner       Owner_b5cd9d19-91c0-4622-93e2-537ad8a0b3ad  AadGroup
-00000000-0000-0000-0000-000000000000             Member      Member_b5cd9d19-91c0-4622-93e2-537ad8a0b3ad AadGroup
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+
+Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId $accessPackageCatalogId -Filter "(originSystem eq 'AadGroup' and accessPackageResource/id eq 'a35bef72-a8aa-4ca3-af30-f6b2ece7208f')" -ExpandProperty "accessPackageResource" 
+
 ```
+This example shows retrieving the roles of a resource for a group
 
-This example gets the resource roles for the specified catalog id and filtering the results for the specified access package resource id.
-
-### Example 2: Extend the -Filter to get the resource roles with the display name 'Member'
+### Example 2: Retrieve the roles of a resource for a SharePoint Online site
 
 ```powershell
-Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "originSystem eq 'AadGroup' and accessPackageResource/id eq '36d8d18f-b081-4867-acf5-4a8b893761e8' and DisplayName eq 'Member'"
 
-Id                                   Description DisplayName OriginId                                    OriginSystem
---                                   ----------- ----------- --------                                    ------------
-00000000-0000-0000-0000-000000000000             Member      Member_b5cd9d19-91c0-4622-93e2-537ad8a0b3ad AadGroup
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+
+Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId $accessPackageCatalogId -Filter "(originSystem eq 'SharePointOnline' and accessPackageResource/id eq '53c71803-a0a8-4777-aecc-075de8ee3991')" -Property "displayName,originId" 
+
 ```
+This example will retrieve the roles of a resource for a sharepoint online site
 
-This example extends the filter in example 1 to return access roles whose display name is 'Member'.
