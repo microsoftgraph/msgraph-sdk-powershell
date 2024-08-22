@@ -333,7 +333,7 @@ function Update-ExampleFile {
     if ($GraphProfile -eq "beta") {
         $PatternToSearch = "Import-Module Microsoft.Graph.Beta.$Module"
     }
-    if (($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example shows")) {
+    if (($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example")) {
         $ContainsPatternToSearch = $False
         foreach ($List in $ExampleList) {
             if ($List.Contains($PatternToSearch) -and $List.Contains($CommandPattern)) {
