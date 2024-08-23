@@ -7112,11 +7112,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackage
-      description: Retrieve the properties and relationships of an accessPackage object.
+      summary: List resourceRoleScopes
+      description: Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement_GetAccessPackage
       parameters:
         - name: accessPackage-id
@@ -13362,7 +13362,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.'
+      description: 'Resume a user''s access package request after waiting for a callback from a custom extension. In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It''s performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-resume?view=graph-rest-1.0
@@ -14658,11 +14658,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
+      summary: Delete accessPackageAssignmentRequestWorkflowExtension
+      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -44214,6 +44214,276 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /identityGovernance/lifecycleWorkflows/insights:
+    get:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Get insights from identityGovernance
+      description: The insight container holding workflow insight summaries for a tenant.
+      operationId: identityGovernance.lifecycleWorkflow_GetInsight
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.insights'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Update the navigation property insights in identityGovernance
+      operationId: identityGovernance.lifecycleWorkflow_UpdateInsight
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.insights'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.insights'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Delete navigation property insights for identityGovernance
+      operationId: identityGovernance.lifecycleWorkflow_DeleteInsight
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/lifecycleWorkflows/insights/microsoft.graph.identityGovernance.topTasksProcessedSummary(startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function topTasksProcessedSummary
+      description: 'Provide a summary of the most processed tasks, known as top tasks, for a specified time period in a tenant. The task definition is provided, along with numerical counts of total, successful, and failed runs. For information about workflows processed, see insights: topWorkflowsProcessedSummary.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-insights-toptasksprocessedsummary?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.insight_topTasksProcessedSummary
+      parameters:
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.identityGovernance.topTasksInsightsSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/identityGovernance/lifecycleWorkflows/insights/microsoft.graph.identityGovernance.topWorkflowsProcessedSummary(startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function topWorkflowsProcessedSummary
+      description: 'Provide a summary of the workflows processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-insights-topworkflowsprocessedsummary?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.insight_topWorkflowsProcessedSummary
+      parameters:
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.identityGovernance.topWorkflowsInsightsSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/identityGovernance/lifecycleWorkflows/insights/microsoft.graph.identityGovernance.workflowsProcessedByCategory(startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function workflowsProcessedByCategory
+      description: 'Provide a summary of workflows processed, by category, in a tenant. This allows you to quickly get category information, by numerical value, bypassing other information found in the WorkflowsProcessedSummary call.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedbycategory?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.insight_workflowsProcessedGraphBPreCategory
+      parameters:
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.workflowsInsightsByCategory'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/identityGovernance/lifecycleWorkflows/insights/microsoft.graph.identityGovernance.workflowsProcessedSummary(startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function workflowsProcessedSummary
+      description: 'Provide a summary of all workflows processed within a tenant for a specified period. Because the amount of results for listed workflows as returned by the List workflows does not tell you which workflows were processed from the list of created workflows, this summary gives you a quick overview of processed status based on counts.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedsummary?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.insight_workflowsProcessedSummary
+      parameters:
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.workflowsInsightsSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /identityGovernance/lifecycleWorkflows/settings:
     get:
       tags:
@@ -68178,6 +68448,8 @@ components:
               x-ms-navigationProperty: true
             deletedItems:
               $ref: '#/components/schemas/microsoft.graph.deletedItemContainer'
+            insights:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.insights'
             settings:
               $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
             taskDefinitions:
@@ -69352,6 +69624,237 @@ components:
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.identityGovernance.insights:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: insights
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.identityGovernance.topTasksInsightsSummary:
+      title: topTasksInsightsSummary
+      type: object
+      properties:
+        failedTasks:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of failed runs of the task.
+          format: int32
+        failedUsers:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of failed users who were processed by the task.
+          format: int32
+        successfulTasks:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of successful runs of the task.
+          format: int32
+        successfulUsers:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of successful users processed by the task.
+          format: int32
+        taskDefinitionDisplayName:
+          type: string
+          description: The name of the task.
+        taskDefinitionId:
+          type: string
+          description: The task ID.
+        totalTasks:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of total runs of the task.
+          format: int32
+        totalUsers:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of total users processed by the task.
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.topWorkflowsInsightsSummary:
+      title: topWorkflowsInsightsSummary
+      type: object
+      properties:
+        failedRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of failed runs for workflow.
+          format: int32
+        failedUsers:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of failed users who were processed.
+          format: int32
+        successfulRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of successful runs of the workflow.
+          format: int32
+        successfulUsers:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of successful users processed by the workflow.
+          format: int32
+        totalRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of total runs of workflow.
+          format: int32
+        totalUsers:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total number of users processed by the workflow.
+          format: int32
+        workflowCategory:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowCategory'
+        workflowDisplayName:
+          type: string
+          description: The name of the workflow.
+        workflowId:
+          type: string
+          description: The workflow ID.
+        workflowVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The version of the workflow that was a top workflow ran.
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.workflowsInsightsByCategory:
+      title: workflowsInsightsByCategory
+      type: object
+      properties:
+        failedJoinerRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Failed 'Joiner' workflows processed in a tenant.
+          format: int32
+        failedLeaverRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Failed 'Leaver' workflows processed in a tenant.
+          format: int32
+        failedMoverRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Failed 'Mover' workflows processed in a tenant.
+          format: int32
+        successfulJoinerRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Successful 'Joiner' workflows processed in a tenant.
+          format: int32
+        successfulLeaverRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Successful 'Leaver' workflows processed in a tenant.
+          format: int32
+        successfulMoverRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Successful 'Mover' workflows processed in a tenant.
+          format: int32
+        totalJoinerRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total 'Joiner' workflows processed in a tenant.
+          format: int32
+        totalLeaverRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total 'Leaver' workflows processed in a tenant.
+          format: int32
+        totalMoverRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total 'Mover' workflows processed in a tenant.
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.workflowsInsightsSummary:
+      title: workflowsInsightsSummary
+      type: object
+      properties:
+        failedRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of failed workflow runs processed in the tenant.
+          format: int32
+        failedTasks:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of failed tasks processed in the tenant.
+          format: int32
+        failedUsers:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of failed users processed by workflows in the tenant.
+          format: int32
+        successfulRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of successful workflow runs processed in the tenant.
+          format: int32
+        successfulTasks:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of successful tasks processed in the tenant.
+          format: int32
+        successfulUsers:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of successful users processed by workflows in the tenant.
+          format: int32
+        totalRuns:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of total workflows processed in the tenant.
+          format: int32
+        totalTasks:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of total tasks processed by workflows in the tenant.
+          format: int32
+        totalUsers:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of total users processed by workflows in the tenant.
+          format: int32
+      additionalProperties:
+        type: object
     microsoft.graph.identityGovernance.lifecycleManagementSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -71557,7 +72060,7 @@ components:
             appRoleId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
+              description: 'The identifier (id) for the app role that''s assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application hasn''t declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
               format: uuid
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -73467,10 +73970,10 @@ components:
           properties:
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
-              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
+              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for work or school is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
             contributionToContentDiscoveryDisabled:
               type: boolean
-              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
+              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for work or school is affected. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             shiftPreferences:
@@ -73496,7 +73999,7 @@ components:
               nullable: true
             region:
               type: string
-              description: 'Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user''s region (if available). For users without multigeo licenses, the property contains the organization''s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.'
+              description: 'Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user''s region (if available). For users without multigeo licenses, the property contains the organization''s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.'
               nullable: true
             associatedTeams:
               type: array
@@ -73715,6 +74218,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identityGovernance.valueType'
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.lifecycleWorkflowCategory:
+      title: lifecycleWorkflowCategory
+      enum:
+        - joiner
+        - leaver
+        - unknownFutureValue
+        - mover
+      type: string
     microsoft.graph.emailSettings:
       title: emailSettings
       type: object
@@ -73727,14 +74238,6 @@ components:
           description: Specifies if the organization’s banner logo should be included in email notifications. The banner logo will replace the Microsoft logo at the top of the email notification. If true the banner logo will be taken from the tenant’s branding settings. This value can only be set to true if the organizationalBranding bannerLogo property is set.
       additionalProperties:
         type: object
-    microsoft.graph.identityGovernance.lifecycleWorkflowCategory:
-      title: lifecycleWorkflowCategory
-      enum:
-        - joiner
-        - leaver
-        - unknownFutureValue
-        - mover
-      type: string
     microsoft.graph.identityGovernance.workflowExecutionConditions:
       title: workflowExecutionConditions
       type: object
@@ -75287,13 +75790,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
@@ -78373,15 +78876,29 @@ components:
         - title: callRecording
           type: object
           properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this recording. Read-only.
+              nullable: true
             content:
               type: string
               description: The content of the recording. Read-only.
               format: base64url
               nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingId:
@@ -78402,15 +78919,29 @@ components:
         - title: callTranscript
           type: object
           properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this transcript. Read-only.
+              nullable: true
             content:
               type: string
               description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingId:
@@ -78687,6 +79218,7 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.
           additionalProperties:
             type: object
     microsoft.graph.shiftPreferences:
@@ -86737,37 +87269,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

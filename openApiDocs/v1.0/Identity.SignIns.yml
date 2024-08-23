@@ -922,7 +922,7 @@ paths:
       tags:
         - identity.authenticationEventsFlow
       summary: Get conditions property value
-      description: The conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.
+      description: The conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
       operationId: identity.authenticationEventsFlow_GetCondition
       parameters:
         - name: authenticationEventsFlow-id
@@ -967,7 +967,7 @@ paths:
       tags:
         - identity.authenticationEventsFlow
       summary: List includeApplications (for a user flow)
-      description: List the applications linked to an authenticationEventsFlow. These are the applications for which the authentication experience defined by the user flow is enabled.
+      description: 'List the applications linked to an external identities self-service sign up user flow that''s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that''s defined by the user flow is enabled. To find the user flow that''s linked to an application, see Example 4: List user flow associated with specific application ID.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationconditionsapplications-list-includeapplications?view=graph-rest-1.0
@@ -1029,7 +1029,7 @@ paths:
       tags:
         - identity.authenticationEventsFlow
       summary: Add includeApplication (to a user flow)
-      description: 'Add or link an application to a user flow, or authenticationEventsFlow. This enables the authentication experience defined by the user flow to be enabled for the application. An application can only be linked to one user flow.'
+      description: 'Add or link an application to a user flow, or authenticationEventsFlow. This enables the authentication experience defined by the user flow to be enabled for the application. An application can only be linked to one user flow. The app must have an associated service principal in the tenant.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationconditionsapplications-post-includeapplications?view=graph-rest-1.0
@@ -1261,7 +1261,7 @@ paths:
       tags:
         - identity.authenticationEventsFlow
       summary: Get conditions property value
-      description: The conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.
+      description: The conditions representing the context of the authentication request that's used to decide whether the events policy is invoked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
       operationId: identity.authenticationEventsFlowAsExternalUsersSelfServiceSignUpEventsFlow_GetCondition
       parameters:
         - name: authenticationEventsFlow-id
@@ -1775,7 +1775,7 @@ paths:
       tags:
         - identity.authenticationEventsFlow
       summary: Add attribute (to user flow)
-      description: 'Add an attribute to an external identities self-service user flow represented by an externalUsersSelfServiceSignupEventsFlow object. You can add both custom and built-in attributes to a user flow. Prerequisite: PATCH the user flow with the updated onAttributeCollection event that includes the new attribute.'
+      description: 'Add an attribute to an external identities self-service sign up user flow that''s represented by an externalUsersSelfServiceSignupEventsFlow object. You can add both custom and built-in attributes to a user flow. The attribute is added to both the attributeCollection> attributes and attributeCollection> attributeCollectionPage > views collections on the user flow. In the views collection, the attribute is assigned the default settings. You can PATCH the user flow to customize the settings of the attribute on the views object, for example, marking it as required or updating the allowed input types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-post-attributes?view=graph-rest-1.0
@@ -1836,7 +1836,7 @@ paths:
       tags:
         - identity.authenticationEventsFlow
       summary: Get onAuthenticationMethodLoadStart property value
-      description: Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.
+      description: Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.  Supports $filter (eq). See support for filtering on user flows for syntax information.
       operationId: identity.authenticationEventsFlowAsExternalUsersSelfServiceSignUpEventsFlow_GetOnAuthenticationMethodLoadStart
       parameters:
         - name: authenticationEventsFlow-id
@@ -5874,11 +5874,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update countryNamedLocation
-      description: Update the properties of a countryNamedLocation object.
+      summary: Update ipNamedlocation
+      description: Update the properties of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -5909,11 +5909,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete namedLocation
+      description: Delete a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -13040,11 +13040,11 @@ paths:
     put:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create identitySynchronization
-      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
+      summary: Update crossTenantIdentitySyncPolicyPartner
+      description: Update the user synchronization policy of a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_SetIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -22163,13 +22163,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
@@ -23284,7 +23284,7 @@ components:
             appRoleId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
+              description: 'The identifier (id) for the app role that''s assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application hasn''t declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
               format: uuid
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25100,10 +25100,10 @@ components:
           properties:
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
-              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
+              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for work or school is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
             contributionToContentDiscoveryDisabled:
               type: boolean
-              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
+              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for work or school is affected. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             shiftPreferences:
@@ -25129,7 +25129,7 @@ components:
               nullable: true
             region:
               type: string
-              description: 'Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user''s region (if available). For users without multigeo licenses, the property contains the organization''s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.'
+              description: 'Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user''s region (if available). For users without multigeo licenses, the property contains the organization''s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.'
               nullable: true
             associatedTeams:
               type: array
@@ -26557,7 +26557,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.authenticationAttributeCollectionInputConfiguration'
-          description: The display configuration of attributes being collected on the attribute collection page.
+          description: 'The display configuration of attributes being collected on the attribute collection page. You must specify all attributes that you want to retain, otherwise they''re removed from the user flow.'
         title:
           type: string
           description: The title of the attribute collection page.
@@ -30223,15 +30223,29 @@ components:
         - title: callRecording
           type: object
           properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this recording. Read-only.
+              nullable: true
             content:
               type: string
               description: The content of the recording. Read-only.
               format: base64url
               nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingId:
@@ -30252,15 +30266,29 @@ components:
         - title: callTranscript
           type: object
           properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this transcript. Read-only.
+              nullable: true
             content:
               type: string
               description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingId:
@@ -30537,6 +30565,7 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.
           additionalProperties:
             type: object
     microsoft.graph.shiftPreferences:
@@ -30813,21 +30842,21 @@ components:
           description: The built-in or custom attribute for which a value is being collected.
         defaultValue:
           type: string
-          description: The default value of the attribute displayed to the end user.
+          description: The default value of the attribute displayed to the end user. The capability to set the default value isn't available through the Microsoft Entra admin center.
           nullable: true
         editable:
           type: boolean
-          description: Whether the attribute is editable by the end user.
+          description: Defines whether the attribute is editable by the end user.
           nullable: true
         hidden:
           type: boolean
-          description: Whether the attribute is displayed to the end user.
+          description: Defines whether the attribute is displayed to the end user. The capability to hide isn't available through the Microsoft Entra admin center.
           nullable: true
         inputType:
           $ref: '#/components/schemas/microsoft.graph.authenticationAttributeCollectionInputType'
         label:
           type: string
-          description: 'The label of the attribute field that is displayed to end user, unless overridden.'
+          description: 'The label of the attribute field that''s displayed to end user, unless overridden.'
         options:
           type: array
           items:
@@ -30835,15 +30864,15 @@ components:
           description: The option values for certain multiple-option input types.
         required:
           type: boolean
-          description: Whether the field is required.
+          description: Defines whether the field is required.
           nullable: true
         validationRegEx:
           type: string
-          description: The regex for the value of the field.
+          description: 'The regex for the value of the field. For more information about the supported regexes, see validationRegEx values for inputType objects. To understand how to specify regexes, see the Regular expressions cheat sheet.'
           nullable: true
         writeToDirectory:
           type: boolean
-          description: Whether the value collected is stored.
+          description: Defines whether Microsoft Entra ID stores the value that it collects.
           nullable: true
       additionalProperties:
         type: object
@@ -38886,37 +38915,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

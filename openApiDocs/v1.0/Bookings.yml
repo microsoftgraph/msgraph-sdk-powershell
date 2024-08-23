@@ -65,6 +65,240 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /solutions/backupRestore/microsoft.graph.enable:
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action enable
+      description: Enable the Microsoft 365 Backup Storage service for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-1.0
+      operationId: solution.backupRestore_enable
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appOwnerTenantId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}/microsoft.graph.activate':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action activate
+      description: Activate a protectionPolicyBase.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/protectionpolicybase-activate?view=graph-rest-1.0
+      operationId: solution.backupRestore.protectionPolicy_activate
+      parameters:
+        - name: protectionPolicyBase-id
+          in: path
+          description: The unique identifier of protectionPolicyBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: protectionPolicyBase
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}/microsoft.graph.deactivate':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action deactivate
+      description: Deactivate a protectionPolicyBase.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/protectionpolicybase-deactivate?view=graph-rest-1.0
+      operationId: solution.backupRestore.protectionPolicy_deactivate
+      parameters:
+        - name: protectionPolicyBase-id
+          in: path
+          description: The unique identifier of protectionPolicyBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: protectionPolicyBase
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /solutions/backupRestore/restorePoints/microsoft.graph.search:
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action search
+      description: Search for the restorePoint objects associated with a protectionUnit.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-1.0
+      operationId: solution.backupRestore.restorePoint_search
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                protectionUnitIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                protectionTimePeriod:
+                  $ref: '#/components/schemas/microsoft.graph.timePeriod'
+                restorePointPreference:
+                  $ref: '#/components/schemas/microsoft.graph.restorePointPreference'
+                tags:
+                  $ref: '#/components/schemas/microsoft.graph.restorePointTags'
+                artifactQuery:
+                  $ref: '#/components/schemas/microsoft.graph.artifactQuery'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.restorePointSearchResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/backupRestore/restoreSessions/{restoreSessionBase-id}/microsoft.graph.activate':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action activate
+      description: Activate a draft restoreSessionBase object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-1.0
+      operationId: solution.backupRestore.restoreSession_activate
+      parameters:
+        - name: restoreSessionBase-id
+          in: path
+          description: The unique identifier of restoreSessionBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: restoreSessionBase
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/backupRestore/serviceApps/{serviceApp-id}/microsoft.graph.activate':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action activate
+      description: Activate a serviceApp.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceapp-activate?view=graph-rest-1.0
+      operationId: solution.backupRestore.serviceApp_activate
+      parameters:
+        - name: serviceApp-id
+          in: path
+          description: The unique identifier of serviceApp
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceApp
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                effectiveDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceApp'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/backupRestore/serviceApps/{serviceApp-id}/microsoft.graph.deactivate':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action deactivate
+      description: Deactivate a serviceApp.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceapp-deactivate?view=graph-rest-1.0
+      operationId: solution.backupRestore.serviceApp_deactivate
+      parameters:
+        - name: serviceApp-id
+          in: path
+          description: The unique identifier of serviceApp
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceApp
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceApp'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /solutions/bookingBusinesses:
     get:
       tags:
@@ -7602,6 +7836,8 @@ components:
       title: solutionsRoot
       type: object
       properties:
+        backupRestore:
+          $ref: '#/components/schemas/microsoft.graph.backupRestoreRoot'
         bookingBusinesses:
           type: array
           items:
@@ -7616,6 +7852,206 @@ components:
           $ref: '#/components/schemas/microsoft.graph.virtualEventsRoot'
       additionalProperties:
         type: object
+    microsoft.graph.serviceStatus:
+      title: serviceStatus
+      type: object
+      properties:
+        backupServiceConsumer:
+          $ref: '#/components/schemas/microsoft.graph.backupServiceConsumer'
+        disableReason:
+          $ref: '#/components/schemas/microsoft.graph.disableReason'
+        gracePeriodDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The expiration time of the grace period.
+          format: date-time
+          nullable: true
+        lastModifiedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Timestamp of the last modification of the entity.
+          format: date-time
+          nullable: true
+        restoreAllowedTillDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The expiration time of the restoration allowed period.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.backupServiceStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.protectionPolicyBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: protectionPolicyBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of creation of the policy.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the policy to be created.
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp of the last modification of the policy.
+              format: date-time
+              nullable: true
+            retentionSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.retentionSetting'
+              description: Contains the retention setting details for the policy.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.protectionPolicyStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.timePeriod:
+      title: timePeriod
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date time of the end of the time period.
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date time of the start of the time period.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.restorePointPreference:
+      title: restorePointPreference
+      enum:
+        - latest
+        - oldest
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restorePointTags:
+      title: restorePointTags
+      enum:
+        - none
+        - fastRestore
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.artifactQuery:
+      title: artifactQuery
+      type: object
+      properties:
+        artifactType:
+          $ref: '#/components/schemas/microsoft.graph.restorableArtifact'
+        queryExpression:
+          type: string
+          description: Specifies criteria to retrieve artifacts.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.restorePointSearchResponse:
+      title: restorePointSearchResponse
+      type: object
+      properties:
+        noResultProtectionUnitIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Contains  alist of protection units with no restore points.
+        searchResponseId:
+          type: string
+          description: The unique identifier of the search response.
+          nullable: true
+        searchResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.restorePointSearchResult'
+          description: Contains a collection of restore points.
+      additionalProperties:
+        type: object
+    microsoft.graph.restoreSessionBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: restoreSessionBase
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of completion of the restore session.
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of creation of the restore session.
+              format: date-time
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last modification of the restore session.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.restoreSessionStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.serviceApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: serviceApp
+          type: object
+          properties:
+            application:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            effectiveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the effective activation of the service app.
+              format: date-time
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last modification of the entity.
+              format: date-time
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the creation of the service app entity.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.serviceAppStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.bookingBusiness:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8098,6 +8534,8 @@ components:
               nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventSettings'
             startDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             status:
@@ -8341,6 +8779,155 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.backupRestoreRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: backupRestoreRoot
+          type: object
+          properties:
+            serviceStatus:
+              $ref: '#/components/schemas/microsoft.graph.serviceStatus'
+            driveInclusionRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionRule'
+              description: The list of drive inclusion rules applied to the tenant.
+              x-ms-navigationProperty: true
+            driveProtectionUnits:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
+              description: The list of drive protection units in the tenant.
+              x-ms-navigationProperty: true
+            exchangeProtectionPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
+              description: The list of Exchange protection policies in the tenant.
+              x-ms-navigationProperty: true
+            exchangeRestoreSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.exchangeRestoreSession'
+              description: The list of Exchange restore sessions available in the tenant.
+              x-ms-navigationProperty: true
+            mailboxInclusionRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionRule'
+              description: The list of mailbox inclusion rules applied to the tenant.
+              x-ms-navigationProperty: true
+            mailboxProtectionUnits:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
+              description: The list of mailbox protection units in the tenant.
+              x-ms-navigationProperty: true
+            oneDriveForBusinessProtectionPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
+              description: The list of OneDrive for Business protection policies in the tenant.
+              x-ms-navigationProperty: true
+            oneDriveForBusinessRestoreSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessRestoreSession'
+              description: The list of OneDrive for Business restore sessions available in the tenant.
+              x-ms-navigationProperty: true
+            protectionPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+              description: List of protection policies in the tenant.
+              x-ms-navigationProperty: true
+            protectionUnits:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
+              description: List of protection units in the tenant.
+              x-ms-navigationProperty: true
+            restorePoints:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.restorePoint'
+              description: List of restore points in the tenant.
+              x-ms-navigationProperty: true
+            restoreSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
+              description: List of restore sessions in the tenant.
+              x-ms-navigationProperty: true
+            serviceApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceApp'
+              description: List of Backup Storage apps in the tenant.
+              x-ms-navigationProperty: true
+            sharePointProtectionPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
+              description: The list of SharePoint protection policies in the tenant.
+              x-ms-navigationProperty: true
+            sharePointRestoreSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharePointRestoreSession'
+              description: The list of SharePoint restore sessions available in the tenant.
+              x-ms-navigationProperty: true
+            siteInclusionRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionRule'
+              description: The list of site inclusion rules applied to the tenant.
+              x-ms-navigationProperty: true
+            siteProtectionUnits:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
+              description: The list of site protection units in the tenant.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.backupServiceConsumer:
+      title: backupServiceConsumer
+      enum:
+        - unknown
+        - firstparty
+        - thirdparty
+        - unknownFutureValue
+      type: string
+    microsoft.graph.disableReason:
+      title: disableReason
+      enum:
+        - none
+        - invalidBillingProfile
+        - userRequested
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.backupServiceStatus:
+      title: backupServiceStatus
+      enum:
+        - disabled
+        - enabled
+        - protectionChangeLocked
+        - restoreLocked
+        - unknownFutureValue
+      type: string
     microsoft.graph.entity:
       title: entity
       type: object
@@ -8350,6 +8937,111 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.retentionSetting:
+      title: retentionSetting
+      type: object
+      properties:
+        interval:
+          type: string
+          description: The frequency of the backup.
+          nullable: true
+        period:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The period of time to retain the protected data for a single Microsoft 365 service.
+          format: duration
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectionPolicyStatus:
+      title: protectionPolicyStatus
+      enum:
+        - inactive
+        - activeWithErrors
+        - updating
+        - active
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restorableArtifact:
+      title: restorableArtifact
+      enum:
+        - message
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restorePointSearchResult:
+      title: restorePointSearchResult
+      type: object
+      properties:
+        artifactHitCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total number of artifacts restored.
+          format: int32
+          nullable: true
+        restorePoint:
+          $ref: '#/components/schemas/microsoft.graph.restorePoint'
+      additionalProperties:
+        type: object
+    microsoft.graph.publicError:
+      title: publicError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Represents the error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: Details of the error.
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.publicInnerError'
+        message:
+          type: string
+          description: A non-localized message for the developer.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.restoreSessionStatus:
+      title: restoreSessionStatus
+      enum:
+        - draft
+        - activating
+        - active
+        - completedWithError
+        - completed
+        - unknownFutureValue
+        - failed
+      type: string
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceAppStatus:
+      title: serviceAppStatus
+      enum:
+        - inactive
+        - active
+        - pendingActive
+        - pendingInactive
+        - unknownFutureValue
+      type: string
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -8637,6 +9329,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventSettings:
+      title: virtualEventSettings
+      type: object
+      properties:
+        isAttendeeEmailNotificationEnabled:
+          type: boolean
+          description: Indicates whether virtual event attendees receive email notifications.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.virtualEventStatus:
       title: virtualEventStatus
       enum:
@@ -8645,20 +9347,6 @@ components:
         - canceled
         - unknownFutureValue
       type: string
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.virtualEventPresenterDetails:
       title: virtualEventPresenterDetails
       type: object
@@ -9087,6 +9775,312 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.driveProtectionRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionRuleBase'
+        - title: driveProtectionRule
+          type: object
+          properties:
+            driveExpression:
+              type: string
+              description: 'Contains a drive expression. For examples, see driveExpression examples.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.driveProtectionUnit:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
+        - title: driveProtectionUnit
+          type: object
+          properties:
+            directoryObjectId:
+              type: string
+              description: ID of the directory object.
+              nullable: true
+            displayName:
+              type: string
+              description: Display name of the directory object.
+              nullable: true
+              readOnly: true
+            email:
+              type: string
+              description: Email associated with the directory object.
+              nullable: true
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.exchangeProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+        - title: exchangeProtectionPolicy
+          type: object
+          properties:
+            mailboxInclusionRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionRule'
+              description: The rules associated with the Exchange protection policy.
+              x-ms-navigationProperty: true
+            mailboxProtectionUnits:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
+              description: The protection units (mailboxes) that are  protected under the Exchange protection policy.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.exchangeRestoreSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
+        - title: exchangeRestoreSession
+          type: object
+          properties:
+            granularMailboxRestoreArtifacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
+              x-ms-navigationProperty: true
+            mailboxRestoreArtifacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
+              description: A collection of restore points and destination details that can be used to restore Exchange mailboxes.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.mailboxProtectionRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionRuleBase'
+        - title: mailboxProtectionRule
+          type: object
+          properties:
+            mailboxExpression:
+              type: string
+              description: 'Contains a mailbox expression. For examples, see mailboxExpression examples.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.mailboxProtectionUnit:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
+        - title: mailboxProtectionUnit
+          type: object
+          properties:
+            directoryObjectId:
+              type: string
+              description: The ID of the directory object.
+              nullable: true
+            displayName:
+              type: string
+              description: Display name of the directory object.
+              nullable: true
+              readOnly: true
+            email:
+              type: string
+              description: Email address associated with the directory object.
+              nullable: true
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.oneDriveForBusinessProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+        - title: oneDriveForBusinessProtectionPolicy
+          type: object
+          properties:
+            driveInclusionRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionRule'
+              description: Contains the details of the Onedrive for Business protection rule.
+              x-ms-navigationProperty: true
+            driveProtectionUnits:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
+              description: Contains the protection units associated with a  OneDrive for Business protection policy.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.oneDriveForBusinessRestoreSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
+        - title: oneDriveForBusinessRestoreSession
+          type: object
+          properties:
+            driveRestoreArtifacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifact'
+              description: A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.protectionUnitBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: protectionUnitBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of creation of the protection unit.
+              format: date-time
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last modification of this protection unit.
+              format: date-time
+              nullable: true
+            policyId:
+              type: string
+              description: The unique identifier of the protection policy based on which protection unit was created.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.protectionUnitStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.restorePoint:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: restorePoint
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Expiration date time of the restore point.
+              format: date-time
+              nullable: true
+            protectionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date time when the restore point was created.
+              format: date-time
+              nullable: true
+            tags:
+              $ref: '#/components/schemas/microsoft.graph.restorePointTags'
+            protectionUnit:
+              $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
+          additionalProperties:
+            type: object
+    microsoft.graph.sharePointProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+        - title: sharePointProtectionPolicy
+          type: object
+          properties:
+            siteInclusionRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionRule'
+              description: The rules associated with the SharePoint Protection policy.
+              x-ms-navigationProperty: true
+            siteProtectionUnits:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
+              description: The protection units (sites) that are protected under the site protection policy.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.sharePointRestoreSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
+        - title: sharePointRestoreSession
+          type: object
+          properties:
+            siteRestoreArtifacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifact'
+              description: A collection of restore points and destination details that can be used to restore SharePoint sites.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.siteProtectionRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionRuleBase'
+        - title: siteProtectionRule
+          type: object
+          properties:
+            siteExpression:
+              type: string
+              description: 'Contains a site expression. For examples, see siteExpression example.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.siteProtectionUnit:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
+        - title: siteProtectionUnit
+          type: object
+          properties:
+            siteId:
+              type: string
+              description: Unique identifier of the SharePoint site.
+              nullable: true
+            siteName:
+              type: string
+              description: Name of the SharePoint site.
+              nullable: true
+              readOnly: true
+            siteWebUrl:
+              type: string
+              description: The web URL of the SharePoint site.
+              nullable: true
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.publicErrorDetail:
+      title: publicErrorDetail
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.publicInnerError:
+      title: publicInnerError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: A collection of error details.
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.bookingPageAccessControl:
       title: bookingPageAccessControl
       enum:
@@ -9225,18 +10219,6 @@ components:
         - outOfOffice
         - unknownFutureValue
       type: string
-    microsoft.graph.identitySet:
-      title: identitySet
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        device:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-      additionalProperties:
-        type: object
     microsoft.graph.endpointType:
       title: endpointType
       enum:
@@ -9394,6 +10376,127 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.protectionRuleBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: protectionRuleBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of creation of the rule.
+              format: date-time
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            isAutoApplyEnabled:
+              type: boolean
+              description: Indicates whether the protection rule is static or dynamic.
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last modification made to the rule.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.protectionRuleStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.granularMailboxRestoreArtifact:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
+        - title: granularMailboxRestoreArtifact
+          type: object
+          properties:
+            artifactCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: .
+              format: int32
+              nullable: true
+            searchResponseId:
+              type: string
+              description: .
+          additionalProperties:
+            type: object
+    microsoft.graph.mailboxRestoreArtifact:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactBase'
+        - title: mailboxRestoreArtifact
+          type: object
+          properties:
+            restoredFolderId:
+              type: string
+              description: The new restored folder identifier for the user.
+              nullable: true
+            restoredFolderName:
+              type: string
+              description: The new restored folder name.
+              nullable: true
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.driveRestoreArtifact:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactBase'
+        - title: driveRestoreArtifact
+          type: object
+          properties:
+            restoredSiteId:
+              type: string
+              description: 'The new site identifier if destinationType is new, and the input site ID if the destinationType is inPlace.'
+              nullable: true
+            restoredSiteName:
+              type: string
+              description: The name of the restored site.
+              nullable: true
+              readOnly: true
+            restoredSiteWebUrl:
+              type: string
+              description: The web URL of the restored site.
+              nullable: true
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.protectionUnitStatus:
+      title: protectionUnitStatus
+      enum:
+        - protectRequested
+        - protected
+        - unprotectRequested
+        - unprotected
+        - removeRequested
+        - unknownFutureValue
+      type: string
+    microsoft.graph.siteRestoreArtifact:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactBase'
+        - title: siteRestoreArtifact
+          type: object
+          properties:
+            restoredSiteId:
+              type: string
+              description: 'The new site identifier if the value of the destinationType property is new, and the existing site ID if the value is inPlace.'
+              nullable: true
+            restoredSiteName:
+              type: string
+              description: The name of the restored site.
+              nullable: true
+              readOnly: true
+            restoredSiteWebUrl:
+              type: string
+              description: The web URL of the restored site.
+              nullable: true
+              readOnly: true
+          additionalProperties:
+            type: object
     microsoft.graph.bookingsServiceAvailabilityType:
       title: bookingsServiceAvailabilityType
       enum:
@@ -9433,6 +10536,61 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.protectionRuleStatus:
+      title: protectionRuleStatus
+      enum:
+        - draft
+        - active
+        - completed
+        - completedWithErrors
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restoreArtifactBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: restoreArtifactBase
+          type: object
+          properties:
+            completionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time when restoration of restore artifact is completed.
+              format: date-time
+              nullable: true
+            destinationType:
+              $ref: '#/components/schemas/microsoft.graph.destinationType'
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time when restoration of restore artifact is started.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.artifactRestoreStatus'
+            restorePoint:
+              $ref: '#/components/schemas/microsoft.graph.restorePoint'
+          additionalProperties:
+            type: object
+    microsoft.graph.destinationType:
+      title: destinationType
+      enum:
+        - new
+        - inPlace
+        - unknownFutureValue
+      type: string
+    microsoft.graph.artifactRestoreStatus:
+      title: artifactRestoreStatus
+      enum:
+        - added
+        - scheduling
+        - scheduled
+        - inProgress
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
   responses:
     error:
       description: error

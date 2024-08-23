@@ -1130,6 +1130,298 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/granularMailboxRestoreArtifacts':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get granularMailboxRestoreArtifacts from solutions
+      operationId: solution.backupRestore.exchangeRestoreSession_ListGranularMailboxRestoreArtifact
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.granularMailboxRestoreArtifactCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Create new navigation property to granularMailboxRestoreArtifacts for solutions
+      operationId: solution.backupRestore.exchangeRestoreSession_CreateGranularMailboxRestoreArtifact
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/granularMailboxRestoreArtifacts/{granularMailboxRestoreArtifact-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get granularMailboxRestoreArtifacts from solutions
+      operationId: solution.backupRestore.exchangeRestoreSession_GetGranularMailboxRestoreArtifact
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - name: granularMailboxRestoreArtifact-id
+          in: path
+          description: The unique identifier of granularMailboxRestoreArtifact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: granularMailboxRestoreArtifact
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Update the navigation property granularMailboxRestoreArtifacts in solutions
+      operationId: solution.backupRestore.exchangeRestoreSession_UpdateGranularMailboxRestoreArtifact
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - name: granularMailboxRestoreArtifact-id
+          in: path
+          description: The unique identifier of granularMailboxRestoreArtifact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: granularMailboxRestoreArtifact
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Delete navigation property granularMailboxRestoreArtifacts for solutions
+      operationId: solution.backupRestore.exchangeRestoreSession_DeleteGranularMailboxRestoreArtifact
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - name: granularMailboxRestoreArtifact-id
+          in: path
+          description: The unique identifier of granularMailboxRestoreArtifact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: granularMailboxRestoreArtifact
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/granularMailboxRestoreArtifacts/{granularMailboxRestoreArtifact-id}/restorePoint':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get restorePoint from solutions
+      description: Represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
+      operationId: solution.backupRestore.exchangeRestoreSession.granularMailboxRestoreArtifact_GetRestorePoint
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - name: granularMailboxRestoreArtifact-id
+          in: path
+          description: The unique identifier of granularMailboxRestoreArtifact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: granularMailboxRestoreArtifact
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.restorePoint'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/granularMailboxRestoreArtifacts/$count':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.exchangeRestoreSession.granularMailboxRestoreArtifact_GetCount
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifacts':
     get:
       tags:
@@ -5316,6 +5608,11 @@ components:
         - title: exchangeRestoreSession
           type: object
           properties:
+            granularMailboxRestoreArtifacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
+              x-ms-navigationProperty: true
             mailboxRestoreArtifacts:
               type: array
               items:
@@ -5324,21 +5621,22 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.mailboxRestoreArtifact:
+    microsoft.graph.granularMailboxRestoreArtifact:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactBase'
-        - title: mailboxRestoreArtifact
+        - $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
+        - title: granularMailboxRestoreArtifact
           type: object
           properties:
-            restoredFolderId:
-              type: string
-              description: The new restored folder identifier for the user.
+            artifactCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: .
+              format: int32
               nullable: true
-            restoredFolderName:
+            searchResponseId:
               type: string
-              description: The new restored folder name.
-              nullable: true
-              readOnly: true
+              description: .
           additionalProperties:
             type: object
     microsoft.graph.restorePoint:
@@ -5363,6 +5661,23 @@ components:
               $ref: '#/components/schemas/microsoft.graph.restorePointTags'
             protectionUnit:
               $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
+          additionalProperties:
+            type: object
+    microsoft.graph.mailboxRestoreArtifact:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactBase'
+        - title: mailboxRestoreArtifact
+          type: object
+          properties:
+            restoredFolderId:
+              type: string
+              description: The new restored folder identifier for the user.
+              nullable: true
+            restoredFolderName:
+              type: string
+              description: The new restored folder name.
+              nullable: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.oneDriveForBusinessProtectionPolicy:
@@ -5717,6 +6032,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.protectionRuleStatus'
           additionalProperties:
             type: object
+    microsoft.graph.restorePointTags:
+      title: restorePointTags
+      enum:
+        - none
+        - fastRestore
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.restoreArtifactBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5745,15 +6069,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.restorePoint'
           additionalProperties:
             type: object
-    microsoft.graph.restorePointTags:
-      title: restorePointTags
-      enum:
-        - none
-        - fastRestore
-        - unknownFutureValue
-      type: string
-      x-ms-enum-flags:
-        isFlags: true
     microsoft.graph.identitySet:
       title: identitySet
       type: object
@@ -5843,11 +6158,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -5945,6 +6260,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.exchangeRestoreSession'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.granularMailboxRestoreArtifactCollectionResponse:
+      title: Collection of granularMailboxRestoreArtifact
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -6147,6 +6475,7 @@ components:
         - invalidBillingProfile
         - userRequested
         - unknownFutureValue
+        - controllerServiceAppDeleted
       type: string
     microsoft.graph.backupServiceStatus:
       title: backupServiceStatus
@@ -6316,6 +6645,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.exchangeRestoreSessionCollectionResponse'
+    microsoft.graph.granularMailboxRestoreArtifactCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifactCollectionResponse'
     microsoft.graph.mailboxRestoreArtifactCollectionResponse:
       description: Retrieved collection
       content:
