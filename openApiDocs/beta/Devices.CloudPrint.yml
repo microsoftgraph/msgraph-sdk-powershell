@@ -10192,7 +10192,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
@@ -11688,11 +11688,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -12040,7 +12040,7 @@ components:
               nullable: true
             isOnlineMeeting:
               type: boolean
-              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
+              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Outlook then ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
               nullable: true
             isOrganizer:
               type: boolean
@@ -12078,7 +12078,7 @@ components:
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property isn''t returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Represents the start time of an event when it''s initially created as an occurrence or exception in a recurring series. This property isn''t returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
@@ -12116,7 +12116,7 @@ components:
               nullable: true
             transactionId:
               type: string
-              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations if the client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you can''t change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
@@ -12126,7 +12126,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you''re signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can''t be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -12151,7 +12151,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -13304,7 +13304,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordSingleSignOnSettings'
             preferredSingleSignOnMode:
               type: string
-              description: 'Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.'
+              description: 'Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc. Note: This field might be null for older SAML apps and for OIDC applications where it isn''t set automatically.'
               nullable: true
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -13888,7 +13888,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The contact''s display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.'
+              description: 'The contact''s display name. You can specify the display name in a create or update operation. Later updates to other properties might cause an automatically generated value to overwrite the displayName value you specified. To preserve a pre-existing value, always include it as displayName in an update operation.'
               nullable: true
             emailAddresses:
               type: array
@@ -15258,7 +15258,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23167,7 +23167,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-              description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
+              description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -29837,17 +29837,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.companyDetail'
         description:
           type: string
-          description: Description of the position in question.
+          description: A description for the position in question.
           nullable: true
         endMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: When the position ended.
+          description: The date when the position ended.
           format: date
           nullable: true
         jobTitle:
           type: string
-          description: The title held when in that position.
+          description: The title of the position.
           nullable: true
         layer:
           maximum: 2147483647
@@ -29866,19 +29866,21 @@ components:
           nullable: true
         secondaryJobTitle:
           type: string
+          description: An optional job title for the position.
           nullable: true
         secondaryRole:
           type: string
+          description: An optional role for the position entailed.
           nullable: true
         startMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: The start month and year of the position.
+          description: The start date of the position.
           format: date
           nullable: true
         summary:
           type: string
-          description: summary of the position.
+          description: The summary of the position.
           nullable: true
       additionalProperties:
         type: object
@@ -29909,6 +29911,7 @@ components:
           nullable: true
         secondaryDepartment:
           type: string
+          description: Secondary Department Name within a company.
           nullable: true
         webUrl:
           type: string

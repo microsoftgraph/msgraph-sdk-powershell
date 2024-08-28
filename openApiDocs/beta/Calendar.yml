@@ -1545,7 +1545,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.calendarView.exceptionOccurrence_ListInstance
       parameters:
         - name: group-id
@@ -1637,7 +1637,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: group-id
@@ -2854,7 +2854,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.calendarView_ListInstance
       parameters:
         - name: group-id
@@ -2938,7 +2938,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.calendarView_GetInstance
       parameters:
         - name: group-id
@@ -6024,7 +6024,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.event.exceptionOccurrence_ListInstance
       parameters:
         - name: group-id
@@ -6116,7 +6116,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.event.exceptionOccurrence_GetInstance
       parameters:
         - name: group-id
@@ -7333,7 +7333,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.event_ListInstance
       parameters:
         - name: group-id
@@ -7417,7 +7417,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.event_GetInstance
       parameters:
         - name: group-id
@@ -10434,7 +10434,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendarView.exceptionOccurrence_ListInstance
       parameters:
         - name: group-id
@@ -10526,7 +10526,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: group-id
@@ -11743,7 +11743,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendarView_ListInstance
       parameters:
         - name: group-id
@@ -11827,7 +11827,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendarView_GetInstance
       parameters:
         - name: group-id
@@ -14947,7 +14947,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.event.exceptionOccurrence_ListInstance
       parameters:
         - name: group-id
@@ -15039,7 +15039,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.event.exceptionOccurrence_GetInstance
       parameters:
         - name: group-id
@@ -16263,7 +16263,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.event_ListInstance
       parameters:
         - name: group-id
@@ -16347,7 +16347,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.event_GetInstance
       parameters:
         - name: group-id
@@ -20933,7 +20933,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView.exceptionOccurrence_ListInstance
       parameters:
         - name: user-id
@@ -21030,7 +21030,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -22352,7 +22352,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView_ListInstance
       parameters:
         - name: user-id
@@ -22441,7 +22441,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView_GetInstance
       parameters:
         - name: user-id
@@ -25802,7 +25802,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event.exceptionOccurrence_ListInstance
       parameters:
         - name: user-id
@@ -25899,7 +25899,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -27221,7 +27221,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event_ListInstance
       parameters:
         - name: user-id
@@ -27310,7 +27310,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event_GetInstance
       parameters:
         - name: user-id
@@ -31828,7 +31828,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence_ListInstance
       parameters:
         - name: user-id
@@ -31941,7 +31941,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -33599,7 +33599,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.calendarView_ListInstance
       parameters:
         - name: user-id
@@ -33704,7 +33704,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.calendarView_GetInstance
       parameters:
         - name: user-id
@@ -37945,7 +37945,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.event.exceptionOccurrence_ListInstance
       parameters:
         - name: user-id
@@ -38058,7 +38058,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.event.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -39716,7 +39716,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.event_ListInstance
       parameters:
         - name: user-id
@@ -39821,7 +39821,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.event_GetInstance
       parameters:
         - name: user-id
@@ -44374,7 +44374,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView.exceptionOccurrence_ListInstance
       parameters:
         - name: user-id
@@ -44479,7 +44479,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -45969,7 +45969,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView_ListInstance
       parameters:
         - name: user-id
@@ -46066,7 +46066,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView_GetInstance
       parameters:
         - name: user-id
@@ -49867,7 +49867,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event.exceptionOccurrence_ListInstance
       parameters:
         - name: user-id
@@ -49972,7 +49972,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -51462,7 +51462,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event_ListInstance
       parameters:
         - name: user-id
@@ -51559,7 +51559,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event_GetInstance
       parameters:
         - name: user-id
@@ -55100,7 +55100,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarView.exceptionOccurrence_ListInstance
       parameters:
         - name: user-id
@@ -55197,7 +55197,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -56519,7 +56519,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarView_ListInstance
       parameters:
         - name: user-id
@@ -56608,7 +56608,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarView_GetInstance
       parameters:
         - name: user-id
@@ -59969,7 +59969,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.event.exceptionOccurrence_ListInstance
       parameters:
         - name: user-id
@@ -60066,7 +60066,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.event.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -61388,7 +61388,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.event_ListInstance
       parameters:
         - name: user-id
@@ -61477,7 +61477,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.event_GetInstance
       parameters:
         - name: user-id
@@ -63569,7 +63569,7 @@ components:
               nullable: true
             isOnlineMeeting:
               type: boolean
-              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
+              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Outlook then ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
               nullable: true
             isOrganizer:
               type: boolean
@@ -63607,7 +63607,7 @@ components:
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property isn''t returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Represents the start time of an event when it''s initially created as an occurrence or exception in a recurring series. This property isn''t returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
@@ -63645,7 +63645,7 @@ components:
               nullable: true
             transactionId:
               type: string
-              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations if the client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you can''t change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
@@ -63655,7 +63655,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you''re signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can''t be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -63680,7 +63680,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
