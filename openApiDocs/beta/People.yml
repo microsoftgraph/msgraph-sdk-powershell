@@ -7054,17 +7054,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.companyDetail'
         description:
           type: string
-          description: Description of the position in question.
+          description: A description for the position in question.
           nullable: true
         endMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: When the position ended.
+          description: The date when the position ended.
           format: date
           nullable: true
         jobTitle:
           type: string
-          description: The title held when in that position.
+          description: The title of the position.
           nullable: true
         layer:
           maximum: 2147483647
@@ -7083,19 +7083,21 @@ components:
           nullable: true
         secondaryJobTitle:
           type: string
+          description: An optional job title for the position.
           nullable: true
         secondaryRole:
           type: string
+          description: An optional role for the position entailed.
           nullable: true
         startMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: The start month and year of the position.
+          description: The start date of the position.
           format: date
           nullable: true
         summary:
           type: string
-          description: summary of the position.
+          description: The summary of the position.
           nullable: true
       additionalProperties:
         type: object
@@ -7126,6 +7128,7 @@ components:
           nullable: true
         secondaryDepartment:
           type: string
+          description: Secondary Department Name within a company.
           nullable: true
         webUrl:
           type: string
@@ -7640,11 +7643,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

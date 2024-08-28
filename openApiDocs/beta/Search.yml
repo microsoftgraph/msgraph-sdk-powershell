@@ -1250,11 +1250,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Create externalItem
-      description: Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
+      summary: Update externalItem
+      description: Update the properties of an externalitem.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-beta
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -2373,11 +2373,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update azureDataLakeConnector
-      description: Update the properties of an azureDataLakeConnector object.
+      summary: Update oneRosterApiDataConnector
+      description: Update the properties of a oneRosterApiDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-onerosterapidataconnector-update?view=graph-rest-beta
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2653,11 +2653,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundApiFlow
-      description: Update the properties of an inboundApiFlow object.
+      summary: Update inboundFileFlow
+      description: Update the properties of an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
