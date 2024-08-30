@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Bookings
 
-Get-MgVirtualEventWebinar -VirtualEventWebinarId $virtualEventWebinarId
+Get-MgVirtualEventWebinar
 
 ```
 This example shows how to use the Get-MgVirtualEventWebinar Cmdlet.

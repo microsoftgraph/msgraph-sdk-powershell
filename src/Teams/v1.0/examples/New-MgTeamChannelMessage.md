@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Send a Hello World message in a channel
 
 ```powershell
 
@@ -13,9 +13,9 @@ $params = @{
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example will send a hello world message in a channel
 
-### Example 2: Code snippet
+### Example 2: @mentions a user in a channel message
 
 ```powershell
 
@@ -44,9 +44,51 @@ $params = @{
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example @mentions a user in a channel message
 
-### Example 3: Code snippet
+### Example 3: Send a message containing cards
+
+```powershell
+
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	subject = $null
+	body = @{
+		contentType = "html"
+		content = "<attachment id="74d20c7f34aa4a7fb74e2b30004247c5"></attachment>"
+	}
+	attachments = @(
+		@{
+			id = "74d20c7f34aa4a7fb74e2b30004247c5"
+			contentType = "application/vnd.microsoft.card.thumbnail"
+			contentUrl = $null
+			content = '{
+  "title": "This is an example of posting a card",
+  "subtitle": "<h3>This is the subtitle</h3>",
+  "text": "Here is some body text. <br>\r\nAnd a <a href=\"http://microsoft.com/\">hyperlink</a>. <br>\r\nAnd below that is some buttons:",
+  "buttons": [
+    {
+      "type": "messageBack",
+      "title": "Login to FakeBot",
+      "text": "login",
+      "displayText": "login",
+      "value": "login"
+    }
+  ]
+}'
+			name = $null
+			thumbnailUrl = $null
+		}
+	)
+}
+
+New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+
+```
+This example will send a message containing cards
+
+### Example 4: Send a message with file attachment in it
 
 ```powershell
 
@@ -70,9 +112,34 @@ $params = @{
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example will send a message with file attachment in it
 
-### Example 4: Code snippet
+### Example 5: Send a message that includes a file attachment using a file share link
+
+```powershell
+
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	body = @{
+		contentType = "html"
+		content = "Testing with file share link. <attachment id="668f7fa8-8129-4de7-b32b-fe1b442e6ef1"></attachment>"
+	}
+	attachments = @(
+		@{
+			id = "668f7fa8-8129-4de7-b32b-fe1b442e6ef1"
+			contentType = "reference"
+			contentUrl = "https://teamsgraph-my.sharepoint.com/:w:/g/personal/test_teamsgraph_onmicrosoft_com/Eah_j2YpgedNsyv-G0QubvEBma6Sd_76UtYkXwoJ-nYVEg?e=0H2Ibm"
+		}
+	)
+}
+
+New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+
+```
+This example will send a message that includes a file attachment using a file share link
+
+### Example 6: Send a card with inline images
 
 ```powershell
 
@@ -190,9 +257,9 @@ $params = @{
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example will send a card with inline images
 
-### Example 5: Code snippet
+### Example 7: @mention a channel in a channel message
 
 ```powershell
 
@@ -221,9 +288,9 @@ $params = @{
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example will @mention a channel in a channel message
 
-### Example 6: Code snippet
+### Example 8: @mention a team in a channel message
 
 ```powershell
 
@@ -256,9 +323,9 @@ $params = @{
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example will @mention a team in a channel message
 
-### Example 7: Code snippet
+### Example 9: Send message that contains cards that are attributed to a Teams app
 
 ```powershell
 
@@ -299,5 +366,46 @@ $params = @{
 New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example will### Example 9: send message that contains cards that are attributed to a teams app
+
+### Example 10: Send a message that contains an announcement
+
+```powershell
+
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	subject = "Announcement Subheading"
+	body = @{
+		contentType = "text"
+		content = "<attachment id="d7ddbf876ae340c3a03bada395ec7da7"></attachment>Announcement text"
+	}
+	attachments = @(
+		@{
+			id = "d7ddbf876ae340c3a03bada395ec7da7"
+			contentType = "application/vnd.microsoft.teams.messaging-announcementBanner"
+			contentUrl = $null
+			content = '{"title":"Announcement heading","cardImageType":"uploadedImage","cardImageDetails":{"uploadedImageDetail":{"originalImage":{"source":"../hostedContents/1/$value","width":1379,"height":268,"croppedWidth":918.0,"croppedHeight":178.4075416968818,"leftMargin":0.0,"topMargin":90.7962291515591,"imageContentType":"image/png"},"croppedImage":{"source":"../hostedContents/2/$value"}}}}'
+			name = $null
+			thumbnailUrl = $null
+		}
+	)
+	hostedContents = @(
+		@{
+			"@microsoft.graph.temporaryId" = "1"
+			contentBytes = [System.Text.Encoding]::ASCII.GetBytes("iVBORw0KGgoAAAANSUhEUgAABWMAAAEMCAYAAAChuaTsAAAAAXNSR0IArs4")
+			contentType = "image/png"
+		}
+		@{
+			"@microsoft.graph.temporaryId" = "2"
+			contentBytes = [System.Text.Encoding]::ASCII.GetBytes("iVBORw0KGgoAAAANSUhEUgAAA5YAAAB4CAYAAACJrW0RAAAAAXNSR0IArs4")
+			contentType = "image/png"
+		}
+	)
+}
+
+New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+
+```
+This example will### Example 10: send a message that contains an announcement
 

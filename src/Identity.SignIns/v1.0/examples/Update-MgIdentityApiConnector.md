@@ -1,6 +1,7 @@
-### Example 1: Changing display name, targetUrl, and username &amp; password used for basic authentication
+### Example 1: Changing display name, targetUrl, and username & password used for basic authentication
 
 ```powershell
+
 Import-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
@@ -8,20 +9,20 @@ $params = @{
 	targetUrl = "https://otherapi.com/api/endpoint"
 	authenticationConfiguration = @{
 		"@odata.type" = "microsoft.graph.basicAuthentication"
-		username = "&lt;NEW_USERNAME&gt;"
-		password = "&lt;NEW_PASSWORD&gt;"
+		username = "<NEW_USERNAME>"
+		password = "<NEW_PASSWORD>"
 	}
 }
 
 Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
-```
-This example shows how to use the Update-MgIdentityApiConnector Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example shows changing display name, targeturl, and username & password used for basic authentication
 
 ### Example 2: Changing API connector to use client certificate authentication
 
 ```powershell
+
 Import-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
@@ -33,8 +34,7 @@ $params = @{
 }
 
 Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
-```
-This example shows how to use the Update-MgIdentityApiConnector Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example shows changing api connector to use client certificate authentication
 

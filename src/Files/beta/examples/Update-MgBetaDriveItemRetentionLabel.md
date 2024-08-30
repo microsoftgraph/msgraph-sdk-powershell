@@ -5,9 +5,7 @@
 Import-Module Microsoft.Graph.Beta.Files
 
 $params = @{
-	retentionSettings = @{
-		isRecordLocked = $true
-	}
+	name = "Retention label for Contracts"
 }
 
 Update-MgBetaDriveItemRetentionLabel -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params

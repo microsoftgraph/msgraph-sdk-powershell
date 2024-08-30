@@ -1,6 +1,7 @@
-### Example 1: Code snippet
+### Example 1: Block outbound B2B collaboration for a group of users
 
 ```powershell
+
 Import-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
@@ -27,8 +28,51 @@ $params = @{
 }
 
 Update-MgPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
-```
-This example shows how to use the Update-MgPolicyCrossTenantAccessPolicyDefault Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will block outbound b2b collaboration for a group of users
+
+### Example 2: Update default invitation redemption configuration
+
+```powershell
+
+Import-Module Microsoft.Graph.Identity.SignIns
+
+$params = @{
+	invitationRedemptionIdentityProviderConfiguration = @{
+		primaryIdentityProviderPrecedenceOrder = @(
+		"externalFederation"
+	"azureActiveDirectory"
+"socialIdentityProviders"
+)
+fallbackIdentityProvider = "defaultConfiguredIdp"
+}
+}
+
+Update-MgPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
+
+```
+This example will update default invitation redemption configuration
+
+### Example 3: Disallow Microsoft accounts as an option for redeeming B2B invitations
+
+```powershell
+
+Import-Module Microsoft.Graph.Identity.SignIns
+
+$params = @{
+	invitationRedemptionIdentityProviderConfiguration = @{
+		primaryIdentityProviderPrecedenceOrder = @(
+		"externalFederation"
+	"azureActiveDirectory"
+"socialIdentityProviders"
+)
+fallbackIdentityProvider = "emailOneTimePasscode"
+}
+}
+
+Update-MgPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
+
+```
+This example will disallow microsoft accounts as an option for redeeming b2b invitations
 

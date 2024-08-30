@@ -5,31 +5,27 @@
 Import-Module Microsoft.Graph.DeviceManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.androidWorkProfileCompliancePolicy"
+	"@odata.type" = "#microsoft.graph.macOSCompliancePolicy"
 	description = "Description value"
 	displayName = "Display Name value"
 	version = 7
 	passwordRequired = $true
-	passwordMinimumLength = 
-	passwordRequiredType = "alphabetic"
-	passwordMinutesOfInactivityBeforeLock = 
+	passwordBlockSimple = $true
 	passwordExpirationDays = 
+	passwordMinimumLength = 
+	passwordMinutesOfInactivityBeforeLock = 
 	passwordPreviousPasswordBlockCount = 
-	securityPreventInstallAppsFromUnknownSources = $true
-	securityDisableUsbDebugging = $true
-	securityRequireVerifyApps = $true
-	deviceThreatProtectionEnabled = $true
-	deviceThreatProtectionRequiredSecurityLevel = "secured"
-	securityBlockJailbrokenDevices = $true
+	passwordMinimumCharacterSetCount = 
+	passwordRequiredType = "alphanumeric"
 	osMinimumVersion = "Os Minimum Version value"
 	osMaximumVersion = "Os Maximum Version value"
-	minAndroidSecurityPatchLevel = "Min Android Security Patch Level value"
+	systemIntegrityProtectionEnabled = $true
+	deviceThreatProtectionEnabled = $true
+	deviceThreatProtectionRequiredSecurityLevel = "secured"
 	storageRequireEncryption = $true
-	securityRequireSafetyNetAttestationBasicIntegrity = $true
-	securityRequireSafetyNetAttestationCertifiedDevice = $true
-	securityRequireGooglePlayServices = $true
-	securityRequireUpToDateSecurityProviders = $true
-	securityRequireCompanyPortalAppIntegrity = $true
+	firewallEnabled = $true
+	firewallBlockAllIncoming = $true
+	firewallEnableStealthMode = $true
 }
 
 New-MgDeviceManagementDeviceCompliancePolicy -BodyParameter $params

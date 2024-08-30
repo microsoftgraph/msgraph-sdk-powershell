@@ -1,13 +1,18 @@
-### Example 1: Using the New-MgBetaAdministrativeUnitScopedRoleMember Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
 $params = @{
-	RoleId = "roleId-value"
-	RoleMemberInfo = @{
-		Id = "id-value"
+	roleId = "roleId-value"
+	roleMemberInfo = @{
+		id = "id-value"
 	}
 }
+
 New-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaAdministrativeUnitScopedRoleMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
