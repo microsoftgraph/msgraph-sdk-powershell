@@ -2022,11 +2022,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: List deviceAndAppManagementRoleDefinitions
-      description: List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+      summary: List roleDefinitions
+      description: List properties and relationships of the roleDefinition objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-list?view=graph-rest-1.0
       operationId: deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2103,11 +2103,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: Get deviceAndAppManagementRoleDefinition
-      description: Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
+      summary: Get roleDefinition
+      description: Read properties and relationships of the roleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-get?view=graph-rest-1.0
       operationId: deviceManagement_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2186,11 +2186,11 @@ paths:
     delete:
       tags:
         - deviceManagement.roleDefinition
-      summary: Delete roleDefinition
-      description: Deletes a roleDefinition.
+      summary: Delete deviceAndAppManagementRoleDefinition
+      description: Deletes a deviceAndAppManagementRoleDefinition.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -7420,6 +7420,8 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+            solutions:
+              $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
             sponsors:
               type: array
               items:
@@ -10450,6 +10452,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userSolutionRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userSolutionRoot
+          type: object
+          properties:
+            workingTimeSchedule:
+              $ref: '#/components/schemas/microsoft.graph.workingTimeSchedule'
+          additionalProperties:
+            type: object
     microsoft.graph.userTeamwork:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12968,7 +12980,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
@@ -15115,6 +15127,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
               description: A collection of setting values for a given windowsSetting.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workingTimeSchedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workingTimeSchedule
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:

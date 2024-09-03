@@ -17103,7 +17103,7 @@ components:
               description: The collection of password credentials associated with the application. Not nullable.
             preferredSingleSignOnMode:
               type: string
-              description: 'Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the My Apps portal. The supported values are password, saml, notSupported, and oidc.'
+              description: 'Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the My Apps portal. The supported values are password, saml, notSupported, and oidc. Note: This field might be null for older SAML apps and for OIDC applications where it isn''t set automatically.'
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
@@ -17799,6 +17799,8 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+            solutions:
+              $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
             sponsors:
               type: array
               items:
@@ -18301,7 +18303,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
@@ -21488,6 +21490,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSetting'
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userSolutionRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userSolutionRoot
+          type: object
+          properties:
+            workingTimeSchedule:
+              $ref: '#/components/schemas/microsoft.graph.workingTimeSchedule'
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -26315,6 +26327,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
               description: A collection of setting values for a given windowsSetting.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workingTimeSchedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workingTimeSchedule
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:
