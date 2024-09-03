@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Install an app in a team
 
 ```powershell
 
@@ -11,9 +11,9 @@ $params = @{
 New-MgTeamInstalledApp -TeamId $teamId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgTeamInstalledApp Cmdlet.
+This example will install an app in a team
 
-### Example 2: Code snippet
+### Example 2: Install an app in a team with consent to the resource-specific permissions required by the app
 
 ```powershell
 
@@ -38,5 +38,5 @@ $params = @{
 New-MgTeamInstalledApp -TeamId $teamId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgTeamInstalledApp Cmdlet.
+This example will install an app in a team with consent to the resource-specific permissions required by the app
 
