@@ -360,7 +360,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update plannerPlanConfiguration
-      description: Update the properties of a plannerPlanConfiguration object for a businessScenario.
+      description: Update the properties of a plannerPlanConfiguration object and its plannerPlanConfigurationLocalization collection for a businessScenario.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-beta
@@ -483,11 +483,7 @@ paths:
     post:
       tags:
         - solutions.businessScenario
-      summary: Create plannerPlanConfigurationLocalization
-      description: Create a new plannerPlanConfigurationLocalization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-beta
+      summary: Create new navigation property to localizations for solutions
       operationId: solution.businessScenario.planner.planConfiguration_CreateLocalization
       parameters:
         - name: businessScenario-id
@@ -519,11 +515,8 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get plannerPlanConfigurationLocalization
-      description: Read the properties and relationships of a plannerPlanConfigurationLocalization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-beta
+      summary: Get localizations from solutions
+      description: Localized names for the plan configuration.
       operationId: solution.businessScenario.planner.planConfiguration_GetLocalization
       parameters:
         - name: businessScenario-id
@@ -575,11 +568,7 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update plannerPlanConfigurationLocalization
-      description: Update the properties of a plannerPlanConfigurationLocalization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-beta
+      summary: Update the navigation property localizations in solutions
       operationId: solution.businessScenario.planner.planConfiguration_UpdateLocalization
       parameters:
         - name: businessScenario-id
@@ -618,11 +607,7 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete plannerPlanConfigurationLocalization
-      description: Delete a plannerPlanConfigurationLocalization object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-beta
+      summary: Delete navigation property localizations for solutions
       operationId: solution.businessScenario.planner.planConfiguration_DeleteLocalization
       parameters:
         - name: businessScenario-id

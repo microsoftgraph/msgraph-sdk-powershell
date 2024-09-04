@@ -1,6 +1,7 @@
 ### Example 1: Create an API connector with basic authentication
 
 ```powershell
+
 Import-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
@@ -14,14 +15,14 @@ $params = @{
 }
 
 New-MgIdentityApiConnector -BodyParameter $params
-```
-This example shows how to use the New-MgIdentityApiConnector Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will create an api connector with basic authentication
 
 ### Example 2: Create an API connector with client certificate authentication
 
 ```powershell
+
 Import-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
@@ -35,8 +36,7 @@ $params = @{
 }
 
 New-MgIdentityApiConnector -BodyParameter $params
-```
-This example shows how to use the New-MgIdentityApiConnector Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will create an api connector with client certificate authentication
 

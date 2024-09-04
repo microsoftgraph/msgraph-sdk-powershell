@@ -8123,6 +8123,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerUser'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8161,6 +8166,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerUser'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8187,6 +8197,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/all':
     get:
@@ -8243,6 +8258,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerDeltaCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8277,6 +8297,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerDelta'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/all/{plannerDelta-id}':
     get:
@@ -8330,6 +8355,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerDelta'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8369,6 +8399,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerDelta'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8403,6 +8438,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/all/$count':
     get:
@@ -8426,6 +8466,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/planner/favoritePlans':
     get:
       tags:
@@ -8482,6 +8527,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8539,6 +8589,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/favoritePlans/$count':
     get:
@@ -8562,6 +8617,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/planner/myDayTasks':
     get:
       tags:
@@ -8618,6 +8678,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8675,6 +8740,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/myDayTasks/$count':
     get:
@@ -8698,6 +8768,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/planner/plans':
     get:
       tags:
@@ -8753,6 +8828,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8787,6 +8867,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}':
     get:
@@ -8840,6 +8925,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8879,6 +8969,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8913,6 +9008,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets':
     get:
@@ -8978,6 +9078,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerBucketCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9020,6 +9125,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}':
     get:
@@ -9082,6 +9192,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9129,6 +9244,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9171,6 +9291,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks':
     get:
@@ -9244,6 +9369,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9294,6 +9424,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}':
     get:
@@ -9364,6 +9499,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9419,6 +9559,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9469,6 +9614,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat':
     get:
@@ -9539,6 +9689,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9601,6 +9756,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9651,6 +9811,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat':
     get:
@@ -9721,6 +9886,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9783,6 +9953,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9833,6 +10008,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details':
     get:
@@ -9903,6 +10083,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9965,6 +10150,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10015,6 +10205,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat':
     get:
@@ -10085,6 +10280,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10147,6 +10347,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10197,6 +10402,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count':
     get:
@@ -10236,6 +10446,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/$count':
     get:
       tags:
@@ -10266,6 +10481,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/planner/plans/{plannerPlan-id}/details':
     get:
       tags:
@@ -10319,6 +10539,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10365,6 +10590,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10399,6 +10629,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/tasks':
     get:
@@ -10464,6 +10699,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10506,6 +10746,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}':
     get:
@@ -10568,6 +10813,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10615,6 +10865,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10657,6 +10912,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat':
     get:
@@ -10719,6 +10979,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10773,6 +11038,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10815,6 +11085,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat':
     get:
@@ -10877,6 +11152,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10931,6 +11211,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10973,6 +11258,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details':
     get:
@@ -11035,6 +11325,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11089,6 +11384,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11131,6 +11431,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat':
     get:
@@ -11193,6 +11498,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11247,6 +11557,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11289,6 +11604,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/$count':
     get:
@@ -11320,6 +11640,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/planner/plans/$count':
     get:
       tags:
@@ -11342,6 +11667,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/planner/recentPlans':
     get:
       tags:
@@ -11398,6 +11728,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11455,6 +11790,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/recentPlans/$count':
     get:
@@ -11478,6 +11818,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/planner/rosterPlans':
     get:
       tags:
@@ -11537,6 +11882,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11594,6 +11944,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/rosterPlans/$count':
     get:
@@ -11617,6 +11972,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/planner/tasks':
     get:
       tags:
@@ -11673,6 +12033,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11707,6 +12072,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/tasks/{plannerTask-id}':
     get:
@@ -11761,6 +12131,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11800,6 +12175,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11834,6 +12214,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat':
     get:
@@ -11888,6 +12273,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11934,6 +12324,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11968,6 +12363,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat':
     get:
@@ -12022,6 +12422,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12068,6 +12473,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12102,6 +12512,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/tasks/{plannerTask-id}/details':
     get:
@@ -12156,6 +12571,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12202,6 +12622,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12236,6 +12661,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat':
     get:
@@ -12290,6 +12720,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12336,6 +12771,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12370,6 +12810,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/tasks/$count':
     get:
@@ -12393,6 +12838,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
 components:
   schemas:
     microsoft.graph.plannerGroup:

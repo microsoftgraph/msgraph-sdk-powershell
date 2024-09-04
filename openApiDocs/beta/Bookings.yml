@@ -2118,6 +2118,47 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/approval/approvalItems/{approvalItem-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action cancel
+      description: Cancel the approval item. The owner of the approval can trigger this endpoint.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/approvalitem-cancel?view=graph-rest-beta
+      operationId: solution.approval.approvalItem_cancel
+      parameters:
+        - name: approvalItem-id
+          in: path
+          description: The unique identifier of approvalItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalItem
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /solutions/approval/microsoft.graph.provision:
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action provision
+      description: Provision an approvalSolution on behalf of a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/approvalsolution-provision?view=graph-rest-beta
+      operationId: solution.approval_provision
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /solutions/backupRestore/microsoft.graph.enable:
     post:
       tags:
@@ -2236,6 +2277,8 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.restorePointPreference'
                 tags:
                   $ref: '#/components/schemas/microsoft.graph.restorePointTags'
+                artifactQuery:
+                  $ref: '#/components/schemas/microsoft.graph.artifactQuery'
               additionalProperties:
                 type: object
         required: true
@@ -10195,7 +10238,7 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: List sessions
+      summary: List sessions for a virtual event registration
       description: Get a list of sessions that a registrant registered for in a webinar.
       externalDocs:
         description: Find more info here
@@ -10760,7 +10803,7 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: List sessions
+      summary: List sessions for virtualEvent
       description: 'Get a list of all virtualEventSession objects under a virtual event. Currently, the following virtual event types are supported: virtualEventTownhall and virtualEventWebinar.'
       externalDocs:
         description: Find more info here
@@ -12907,6 +12950,8 @@ components:
       title: solutionsRoot
       type: object
       properties:
+        approval:
+          $ref: '#/components/schemas/microsoft.graph.approvalSolution'
         backupRestore:
           $ref: '#/components/schemas/microsoft.graph.backupRestoreRoot'
         bookingBusinesses:
@@ -13032,6 +13077,18 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.artifactQuery:
+      title: artifactQuery
+      type: object
+      properties:
+        artifactType:
+          $ref: '#/components/schemas/microsoft.graph.restorableArtifact'
+        queryExpression:
+          type: string
+          description: Specifies criteria to retrieve artifacts.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.restorePointSearchResponse:
       title: restorePointSearchResponse
       type: object
@@ -13774,6 +13831,27 @@ components:
         - scheduler
         - teamMember
       type: string
+    microsoft.graph.approvalSolution:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalSolution
+          type: object
+          properties:
+            provisioningStatus:
+              $ref: '#/components/schemas/microsoft.graph.provisionState'
+            approvalItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalItem'
+              description: A collection of approval items.
+              x-ms-navigationProperty: true
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalOperation'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.backupRestoreRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13939,6 +14017,7 @@ components:
         - invalidBillingProfile
         - userRequested
         - unknownFutureValue
+        - controllerServiceAppDeleted
       type: string
     microsoft.graph.identitySet:
       title: identitySet
@@ -13986,10 +14065,23 @@ components:
         - active
         - unknownFutureValue
       type: string
+    microsoft.graph.restorableArtifact:
+      title: restorableArtifact
+      enum:
+        - message
+        - unknownFutureValue
+      type: string
     microsoft.graph.restorePointSearchResult:
       title: restorePointSearchResult
       type: object
       properties:
+        artifactHitCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total number of artifacts restored.
+          format: int32
+          nullable: true
         restorePoint:
           $ref: '#/components/schemas/microsoft.graph.restorePoint'
       additionalProperties:
@@ -14162,6 +14254,7 @@ components:
               nullable: true
             allowBreakoutRooms:
               type: boolean
+              description: Indicates whether breakout rooms are enabled for the meeting.
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
@@ -14175,6 +14268,7 @@ components:
               nullable: true
             allowPowerPointSharing:
               type: boolean
+              description: Indicates whether PowerPoint live is enabled for the meeting.
               nullable: true
             allowRecording:
               type: boolean
@@ -14190,6 +14284,7 @@ components:
               nullable: true
             allowWhiteboard:
               type: boolean
+              description: Indicates whether whiteboard is enabled for the meeting.
               nullable: true
             anonymizeIdentityForRoles:
               type: array
@@ -14729,6 +14824,118 @@ components:
         - outOfOffice
         - unknownFutureValue
       type: string
+    microsoft.graph.provisionState:
+      title: provisionState
+      enum:
+        - notProvisioned
+        - provisioningInProgress
+        - provisioningFailed
+        - provisioningCompleted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.approvalItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalItem
+          type: object
+          properties:
+            allowCancel:
+              type: boolean
+              description: Indicates whether the approval item can be canceled.
+              nullable: true
+              readOnly: true
+            allowEmailNotification:
+              type: boolean
+              description: Indicates whether email notification is enabled.
+              nullable: true
+            approvalType:
+              $ref: '#/components/schemas/microsoft.graph.approvalItemType'
+            approvers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalIdentitySet'
+              description: The identity of the principals to whom the approval item was initially assigned. Required.
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Approval request completion date and time. Read-only.
+              format: date-time
+              nullable: true
+              readOnly: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Creation date and time of the approval request. Read-only.
+              format: date-time
+              nullable: true
+              readOnly: true
+            description:
+              type: string
+              description: The description of the approval request.
+              nullable: true
+            displayName:
+              type: string
+              description: The displayName of the approval request. Required.
+              nullable: true
+            owner:
+              $ref: '#/components/schemas/microsoft.graph.approvalIdentitySet'
+            responsePrompts:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Approval response prompts. Only provide a value for this property when creating a custom approval item. For custom approval items, supply two response prompt strings. The default response prompts are ''Approve'' and ''Reject''.'
+            result:
+              type: string
+              description: 'The result field is only populated once the approval item is in its final state. The result of the approval item is based on the approvalType. For basic approval items, the result is either ''Approved'' or ''Rejected''. For custom approval items, the result could either be a single response or multiple responses separated by a semi-colon. Read-only.'
+              nullable: true
+              readOnly: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.approvalItemState'
+            viewPoint:
+              $ref: '#/components/schemas/microsoft.graph.approvalItemViewPoint'
+            requests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalItemRequest'
+              description: A collection of requests created for each approver on the approval item.
+              x-ms-navigationProperty: true
+            responses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalItemResponse'
+              description: A collection of responses created for the approval item.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.approvalOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalOperation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the operation was created.
+              format: date-time
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when this operation was most recently updated.
+              format: date-time
+              nullable: true
+            resourceLocation:
+              type: string
+              description: The URL for the resource that was newly created or acted upon.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.approvalOperationStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.driveProtectionRule:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionRuleBase'
@@ -14789,6 +14996,11 @@ components:
         - title: exchangeRestoreSession
           type: object
           properties:
+            granularMailboxRestoreArtifacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
+              x-ms-navigationProperty: true
             mailboxRestoreArtifacts:
               type: array
               items:
@@ -15239,6 +15451,110 @@ components:
         - customWeeklyHours
         - unknownFutureValue
       type: string
+    microsoft.graph.approvalItemType:
+      title: approvalItemType
+      enum:
+        - basic
+        - basicAwaitAll
+        - custom
+        - customAwaitAll
+        - unknownFutureValue
+      type: string
+    microsoft.graph.approvalIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: approvalIdentitySet
+          type: object
+          properties:
+            group:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
+    microsoft.graph.approvalItemState:
+      title: approvalItemState
+      enum:
+        - canceled
+        - created
+        - pending
+        - completed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.approvalItemViewPoint:
+      title: approvalItemViewPoint
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.approverRole'
+          description: 'Collection of roles associated with the requesting user for the approval item. If the owner of the approval item is making the request, the collection of roles includes the role owner. If the requesting user was assigned as an approver, the collection includes the role approver.'
+      additionalProperties:
+        type: object
+    microsoft.graph.approvalItemRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalItemRequest
+          type: object
+          properties:
+            approver:
+              $ref: '#/components/schemas/microsoft.graph.approvalIdentitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Creation date and time for the request.
+              format: date-time
+              nullable: true
+              readOnly: true
+            isReassigned:
+              type: boolean
+              description: Indicates whether a request was reassigned.
+              nullable: true
+              readOnly: true
+            reassignedFrom:
+              $ref: '#/components/schemas/microsoft.graph.approvalIdentitySet'
+          additionalProperties:
+            type: object
+    microsoft.graph.approvalItemResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalItemResponse
+          type: object
+          properties:
+            comments:
+              type: string
+              description: The comment made by the approver.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.approvalIdentitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Creation date and time of the response.
+              format: date-time
+              nullable: true
+              readOnly: true
+            owners:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalIdentitySet'
+              description: The identity set of the principal who owns the approval item.
+              readOnly: true
+            response:
+              type: string
+              description: Approver response based on the response options. The default response options are 'Approved' and 'Rejected'. The approval item creator can also define custom response options during approval item creation.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.approvalOperationStatus:
+      title: approvalOperationStatus
+      enum:
+        - scheduled
+        - inProgress
+        - succeeded
+        - failed
+        - timeout
+        - unknownFutureValue
+      type: string
     microsoft.graph.protectionRuleBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15269,6 +15585,24 @@ components:
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.protectionRuleStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.granularMailboxRestoreArtifact:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
+        - title: granularMailboxRestoreArtifact
+          type: object
+          properties:
+            artifactCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: .
+              format: int32
+              nullable: true
+            searchResponseId:
+              type: string
+              description: .
           additionalProperties:
             type: object
     microsoft.graph.mailboxRestoreArtifact:
@@ -15432,6 +15766,15 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.approverRole:
+      title: approverRole
+      enum:
+        - owner
+        - approver
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.protectionRuleStatus:
       title: protectionRuleStatus
       enum:

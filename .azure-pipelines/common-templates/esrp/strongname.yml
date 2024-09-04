@@ -10,11 +10,16 @@ parameters:
     default: ".*.dll"
 
 steps:
-  - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@2
+  - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@5
     displayName: ESRP DLL Strong Name
     enabled: true
     inputs:
-      ConnectedServiceName: microsoftgraph ESRP CodeSign DLL and NuGet (AKV)
+      ConnectedServiceName: Federated DevX ESRP Managed Identity Connection
+      AppRegistrationClientId: 65035b7f-7357-4f29-bf25-c5ee5c3949f8
+      AppRegistrationTenantId: cdc5aeea-15c5-4db6-b079-fcadd2505dc2
+      AuthAKVName: akv-prod-eastus
+      AuthCertName: ReferenceLibraryPrivateCert
+      AuthSignCertName: ReferencePackagePublisherCertificate
       FolderPath: ${{ parameters.FolderPath }}
       Pattern: ${{ parameters.Pattern }}
       signConfigType: inlineSignParams
@@ -36,3 +41,6 @@ steps:
             }
         ]
       SessionTimeout: 20
+      MaxConcurrency: 50
+      MaxRetryAttempts: 5
+      PendingAnalysisWaitTimeoutMinutes: 5

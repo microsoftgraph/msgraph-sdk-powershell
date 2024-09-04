@@ -1958,8 +1958,8 @@ paths:
     get:
       tags:
         - applications.directoryObject
-      summary: List owners
-      description: Retrieve a list of owners for an application that are directoryObject objects.
+      summary: List owners of an application
+      description: Retrieve a list of owners for an application that are directoryObject types.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-beta
@@ -2252,6 +2252,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/applications/{application-id}/owners/$count':
     get:
       tags:
@@ -2288,8 +2293,8 @@ paths:
     get:
       tags:
         - applications.directoryObject
-      summary: List owners
-      description: Retrieve a list of owners for an application that are directoryObject objects.
+      summary: List owners of an application
+      description: Retrieve a list of owners for an application that are directoryObject types.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-beta
@@ -2341,7 +2346,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Add owner
-      description: Use this API to add an owner to an application by posting to the owners collection.
+      description: 'Add an owner to an application. Currently, only individual users are supported as owners of applications.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-owners?view=graph-rest-beta
@@ -2666,6 +2671,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2701,6 +2711,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/applications/{application-id}/synchronization':
     get:
       tags:
@@ -15671,11 +15686,8 @@ paths:
     get:
       tags:
         - servicePrincipals.directoryObject
-      summary: 'servicePrincipals: List owners'
-      description: Retrieve a list of owners of the servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-beta
+      summary: Get owners from servicePrincipals
+      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       operationId: servicePrincipal_ListOwner
       parameters:
         - name: servicePrincipal-id
@@ -15965,6 +15977,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/servicePrincipals/{servicePrincipal-id}/owners/$count':
     get:
       tags:
@@ -16001,11 +16018,8 @@ paths:
     get:
       tags:
         - servicePrincipals.directoryObject
-      summary: 'servicePrincipals: List owners'
-      description: Retrieve a list of owners of the servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-beta
+      summary: Get ref of owners from servicePrincipals
+      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       operationId: servicePrincipal_ListOwnerGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -16379,6 +16393,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -16414,6 +16433,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/servicePrincipals/{servicePrincipal-id}/permissionGrantPreApprovalPolicies':
     get:
       tags:
@@ -20878,6 +20902,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.appRoleAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -20886,7 +20915,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Grant an appRoleAssignment to a user
-      description: 'Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:'
+      description: 'Use this API to assign an app role to a user, creating an appRoleAssignment object. To grant an app role assignment to a user, you need three identifiers:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-beta
@@ -20916,6 +20945,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/appRoleAssignments/{appRoleAssignment-id}':
     get:
@@ -20980,6 +21014,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -21019,6 +21058,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -21057,6 +21101,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/appRoleAssignments/$count':
     get:
@@ -21090,6 +21139,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
 components:
   schemas:
     microsoft.graph.application:
@@ -21602,7 +21656,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordSingleSignOnSettings'
             preferredSingleSignOnMode:
               type: string
-              description: 'Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.'
+              description: 'Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc. Note: This field might be null for older SAML apps and for OIDC applications where it isn''t set automatically.'
               nullable: true
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -21931,7 +21985,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
+              description: 'true if the user is a member of a restricted management administrative unit. Default value is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -22847,7 +22901,7 @@ components:
             appRoleId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
+              description: 'The identifier (id) for the app role that is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application hasn''t declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
               format: uuid
             creationTimestamp:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -23257,7 +23311,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
@@ -23331,7 +23385,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a group member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -23866,14 +23920,15 @@ components:
       properties:
         blockAzureADGraphAccess:
           type: boolean
+          description: 'If false, allows the app to have extended access to Azure AD Graph until June 30, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.'
           nullable: true
         removeUnverifiedEmailClaim:
           type: boolean
-          description: Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
+          description: 'If true, removes the email claim from tokens sent to an application when the email address''s domain can''t be verified.'
           nullable: true
         requireClientServicePrincipal:
           type: boolean
-          description: Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
+          description: 'If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they''re granted access tokens. This property is only modifiable for multitenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.'
           nullable: true
       additionalProperties:
         type: object
@@ -24073,7 +24128,7 @@ components:
           type: array
           items:
             type: string
-          description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
+          description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. For iOS and macOS apps, specify the value following the syntax msauth.{BUNDLEID}://auth, replacing ''{BUNDLEID}''. For example, if the bundle ID is com.microsoft.identitysample.MSALiOS, the URI is msauth.com.microsoft.identitysample.MSALiOS://auth.'
       additionalProperties:
         type: object
     microsoft.graph.requestSignatureVerification:
@@ -25190,7 +25245,7 @@ components:
               nullable: true
             isOnlineMeeting:
               type: boolean
-              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
+              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Outlook then ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
               nullable: true
             isOrganizer:
               type: boolean
@@ -25228,7 +25283,7 @@ components:
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property isn''t returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Represents the start time of an event when it''s initially created as an occurrence or exception in a recurring series. This property isn''t returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
@@ -25266,7 +25321,7 @@ components:
               nullable: true
             transactionId:
               type: string
-              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations if the client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you can''t change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
@@ -25276,7 +25331,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you''re signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can''t be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -25301,7 +25356,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -25606,7 +25661,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The contact''s display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.'
+              description: 'The contact''s display name. You can specify the display name in a create or update operation. Later updates to other properties might cause an automatically generated value to overwrite the displayName value you specified. To preserve a pre-existing value, always include it as displayName in an update operation.'
               nullable: true
             emailAddresses:
               type: array
@@ -25889,7 +25944,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
-              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.'
               nullable: true
             extensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
@@ -25909,7 +25964,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isRooted:
               type: boolean
@@ -27251,7 +27306,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -27926,7 +27981,7 @@ components:
               nullable: true
             region:
               type: string
-              description: 'Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user''s region (if available). For users without multigeo licenses, the property contains the organization''s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.'
+              description: 'Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user''s region (if available). For users without multigeo licenses, the property contains the organization''s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.'
               nullable: true
             associatedTeams:
               type: array
@@ -34754,6 +34809,7 @@ components:
               nullable: true
             allowBreakoutRooms:
               type: boolean
+              description: Indicates whether breakout rooms are enabled for the meeting.
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
@@ -34767,6 +34823,7 @@ components:
               nullable: true
             allowPowerPointSharing:
               type: boolean
+              description: Indicates whether PowerPoint live is enabled for the meeting.
               nullable: true
             allowRecording:
               type: boolean
@@ -34782,6 +34839,7 @@ components:
               nullable: true
             allowWhiteboard:
               type: boolean
+              description: Indicates whether whiteboard is enabled for the meeting.
               nullable: true
             anonymizeIdentityForRoles:
               type: array
@@ -35074,7 +35132,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.categoryColor'
             displayName:
               type: string
-              description: 'A unique name that identifies a category in the user''s mailbox. After a category is created, the name cannot be changed. Read-only.'
+              description: 'A unique name that identifies a category in the user''s mailbox. After a category is created, the name can''t be changed. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -35206,7 +35264,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-              description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
+              description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -36323,7 +36381,7 @@ components:
           properties:
             isEnabled:
               type: boolean
-              description: true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+              description: True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.
           additionalProperties:
             type: object
     microsoft.graph.regionalAndLanguageSettings:
@@ -37766,13 +37824,17 @@ components:
           type: string
           description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        displayName:
+          type: string
+          description: The name of the reaction.
+          nullable: true
         reactionContentUrl:
           type: string
           description: The hosted content URL for the custom reaction type.
           nullable: true
         reactionType:
           type: string
-          description: 'Supported values are Unicode characters and custom. Some backward-compatible reaction types include like, angry, sad, laugh, heart, and surprised.'
+          description: 'The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -42428,17 +42490,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.companyDetail'
         description:
           type: string
-          description: Description of the position in question.
+          description: A description for the position in question.
           nullable: true
         endMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: When the position ended.
+          description: The date when the position ended.
           format: date
           nullable: true
         jobTitle:
           type: string
-          description: The title held when in that position.
+          description: The title of the position.
           nullable: true
         layer:
           maximum: 2147483647
@@ -42457,19 +42519,21 @@ components:
           nullable: true
         secondaryJobTitle:
           type: string
+          description: An optional job title for the position.
           nullable: true
         secondaryRole:
           type: string
+          description: An optional role for the position entailed.
           nullable: true
         startMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: The start month and year of the position.
+          description: The start date of the position.
           format: date
           nullable: true
         summary:
           type: string
-          description: summary of the position.
+          description: The summary of the position.
           nullable: true
       additionalProperties:
         type: object
@@ -42500,6 +42564,7 @@ components:
           nullable: true
         secondaryDepartment:
           type: string
+          description: Secondary Department Name within a company.
           nullable: true
         webUrl:
           type: string
@@ -43864,6 +43929,9 @@ components:
       title: teamsAppAuthorization
       type: object
       properties:
+        clientAppId:
+          type: string
+          nullable: true
         requiredPermissionSet:
           $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
       additionalProperties:
@@ -44430,11 +44498,12 @@ components:
               nullable: true
             contentType:
               type: string
-              description: Indicates the type for the comment.
+              description: The content type of the comment.
             replies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
+              description: The list of replies to the comment. Read-only. Nullable.
               x-ms-navigationProperty: true
             task:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
@@ -44455,7 +44524,7 @@ components:
           properties:
             comment:
               type: string
-              description: Represents the comment associated with this name.
+              description: The comment associated with this name.
               nullable: true
             name:
               type: string
@@ -44466,13 +44535,13 @@ components:
               description: Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
             type:
               type: string
-              description: 'Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.'
+              description: 'The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
-              description: 'Represents the formula that the name is defined to refer to. For example, =Sheet14!$B$2:$H$12 and =4.75. Read-only.'
+              description: 'The formula that the name is defined to refer to. For example, =Sheet14!$B$2:$H$12 and =4.75. Read-only.'
             visible:
               type: boolean
-              description: Specifies whether the object is visible or not.
+              description: Indicates whether the object is visible.
             worksheet:
               $ref: '#/components/schemas/microsoft.graph.workbookWorksheet'
           additionalProperties:
@@ -44507,11 +44576,11 @@ components:
               description: Indicates whether the last column contains special formatting.
             legacyId:
               type: string
-              description: Legacy Id used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
+              description: A legacy identifier used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
               nullable: true
             name:
               type: string
-              description: Name of the table.
+              description: The name of the table.
               nullable: true
             showBandedColumns:
               type: boolean
@@ -44530,19 +44599,19 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'Constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'A constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTableColumn'
-              description: Represents a collection of all the columns in the table. Read-only.
+              description: The list of all the columns in the table. Read-only.
               x-ms-navigationProperty: true
             rows:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTableRow'
-              description: Represents a collection of all the rows in the table. Read-only.
+              description: The list of all the rows in the table. Read-only.
               x-ms-navigationProperty: true
             sort:
               $ref: '#/components/schemas/microsoft.graph.workbookTableSort'
@@ -44573,19 +44642,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChart'
-              description: Returns collection of charts that are part of the worksheet. Read-only.
+              description: The list of charts that are part of the worksheet. Read-only.
               x-ms-navigationProperty: true
             names:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookNamedItem'
-              description: Returns collection of names that are associated with the worksheet. Read-only.
+              description: The list of names that are associated with the worksheet. Read-only.
               x-ms-navigationProperty: true
             pivotTables:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookPivotTable'
-              description: Collection of PivotTables that are part of the worksheet.
+              description: The list of piot tables that are part of the worksheet.
               x-ms-navigationProperty: true
             protection:
               $ref: '#/components/schemas/microsoft.graph.workbookWorksheetProtection'
@@ -44593,7 +44662,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
-              description: Collection of tables that are part of the worksheet. Read-only.
+              description: The list of tables that are part of the worksheet. Read-only.
               x-ms-navigationProperty: true
             tasks:
               type: array
@@ -47809,11 +47878,11 @@ components:
           properties:
             content:
               type: string
-              description: The content of replied comment.
+              description: The content of the reply.
               nullable: true
             contentType:
               type: string
-              description: Indicates the type for the replied comment.
+              description: The content type for the reply.
             task:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
@@ -47909,14 +47978,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
+              description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
               type: string
-              description: Returns the name of the table column.
+              description: The name of the table column.
               nullable: true
             values:
-              description: 'Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.'
+              description: 'Represents the raw values of the specified range. The data returned could be of type string, number, or a Boolean. Cell that contain an error will return the error string.'
             filter:
               $ref: '#/components/schemas/microsoft.graph.workbookFilter'
           additionalProperties:
@@ -47931,10 +48000,10 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
+              description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
-              description: 'Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.'
+              description: 'The raw values of the specified range. The data returned could be of type string, number, or a Boolean. Any cell that contain an error will return the error string.'
           additionalProperties:
             type: object
     microsoft.graph.workbookTableSort:
@@ -47947,12 +48016,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookSortField'
+              description: The list of the current conditions last used to sort the table. Read-only.
             matchCase:
               type: boolean
-              description: Represents whether the casing impacted the last sort of the table. Read-only.
+              description: Indicates whether the casing impacted the last sort of the table. Read-only.
             method:
               type: string
-              description: 'Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.'
+              description: 'The Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.'
           additionalProperties:
             type: object
     microsoft.graph.workbookChart:
@@ -48009,7 +48079,7 @@ components:
           properties:
             name:
               type: string
-              description: Name of the PivotTable.
+              description: The name of the pivot table.
               nullable: true
             worksheet:
               $ref: '#/components/schemas/microsoft.graph.workbookWorksheet'
@@ -48025,7 +48095,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookWorksheetProtectionOptions'
             protected:
               type: boolean
-              description: Indicates if the worksheet is protected.  Read-only.
+              description: Indicates whether the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
     microsoft.graph.accessAction:
@@ -48705,31 +48775,31 @@ components:
               nullable: true
             separator:
               type: string
-              description: String representing the separator used for the data labels on a chart.
+              description: String that represents the separator used for the data labels on a chart.
               nullable: true
             showBubbleSize:
               type: boolean
-              description: Boolean value representing if the data label bubble size is visible or not.
+              description: Boolean value that represents whether the data label bubble size is visible.
               nullable: true
             showCategoryName:
               type: boolean
-              description: Boolean value representing if the data label category name is visible or not.
+              description: Boolean value that represents whether the data label category name is visible.
               nullable: true
             showLegendKey:
               type: boolean
-              description: Boolean value representing if the data label legend key is visible or not.
+              description: Boolean value that represents whether the data label legend key is visible.
               nullable: true
             showPercentage:
               type: boolean
-              description: Boolean value representing if the data label percentage is visible or not.
+              description: Boolean value that represents whether the data label percentage is visible.
               nullable: true
             showSeriesName:
               type: boolean
-              description: Boolean value representing if the data label series name is visible or not.
+              description: Boolean value that represents whether the data label series name is visible.
               nullable: true
             showValue:
               type: boolean
-              description: Boolean value representing if the data label value is visible or not.
+              description: Boolean value that represents whether the data label value is visible.
               nullable: true
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartDataLabelFormat'
@@ -48755,7 +48825,7 @@ components:
           properties:
             overlay:
               type: boolean
-              description: Boolean value for whether the chart legend should overlap with the main body of the chart.
+              description: Indicates whether the chart legend should overlap with the main body of the chart.
               nullable: true
             position:
               type: string
@@ -48763,7 +48833,7 @@ components:
               nullable: true
             visible:
               type: boolean
-              description: A boolean value the represents the visibility of a ChartLegend object.
+              description: Indicates whether the chart legend is visible.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartLegendFormat'
           additionalProperties:
@@ -48776,7 +48846,7 @@ components:
           properties:
             name:
               type: string
-              description: Represents the name of a series in a chart.
+              description: The name of a series in a chart.
               nullable: true
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartSeriesFormat'
@@ -48784,7 +48854,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChartPoint'
-              description: Represents a collection of all points in the series. Read-only.
+              description: A collection of all points in the series. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -48796,15 +48866,15 @@ components:
           properties:
             overlay:
               type: boolean
-              description: Boolean value representing if the chart title will overlay the chart or not.
+              description: Indicates whether the chart title will overlay the chart or not.
               nullable: true
             text:
               type: string
-              description: Represents the title text of a chart.
+              description: The title text of the chart.
               nullable: true
             visible:
               type: boolean
-              description: A boolean value that represents the visibility of a chart title object.
+              description: Indicates whether the chart title is visible.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartTitleFormat'
           additionalProperties:
@@ -48963,11 +49033,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Represents the index of the icon in the given set.
+          description: The index of the icon in the given set.
           format: int32
         set:
           type: string
-          description: 'Represents the set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.'
+          description: 'The set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.'
       additionalProperties:
         type: object
     microsoft.graph.workbookChartAxis:
@@ -49021,28 +49091,28 @@ components:
           properties:
             bold:
               type: boolean
-              description: Represents the bold status of font.
+              description: Indicates whether the fond is bold.
               nullable: true
             color:
               type: string
-              description: 'HTML color code representation of the text color. for example #FF0000 represents Red.'
+              description: 'The HTML color code representation of the text color. For example #FF0000 represents Red.'
               nullable: true
             italic:
               type: boolean
-              description: Represents the italic status of the font.
+              description: Indicates whether the fond is italic.
               nullable: true
             name:
               type: string
-              description: Font name (for example 'Calibri')
+              description: The font name. For example 'Calibri'.
               nullable: true
             size:
               type: number
-              description: Size of the font (for example 11)
+              description: 'The size of the font. For example,  11.'
               format: double
               nullable: true
             underline:
               type: string
-              description: 'Type of underline applied to the font. The possible values are: None, Single.'
+              description: 'The type of underlining applied to the font. The possible values are: None, Single.'
               nullable: true
           additionalProperties:
             type: object
@@ -49077,7 +49147,7 @@ components:
           type: object
           properties:
             value:
-              description: Returns the value of a chart point. Read-only.
+              description: The value of a chart point. Read-only.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartPointFormat'
           additionalProperties:
@@ -49149,7 +49219,7 @@ components:
           properties:
             visible:
               type: boolean
-              description: Boolean value representing if the axis gridlines are visible or not.
+              description: Indicates whether the axis gridlines are visible.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartGridlinesFormat'
           additionalProperties:
@@ -49166,7 +49236,7 @@ components:
               nullable: true
             visible:
               type: boolean
-              description: A boolean that specifies the visibility of an axis title.
+              description: A Boolean that specifies the visibility of an axis title.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxisTitleFormat'
           additionalProperties:
@@ -49179,7 +49249,7 @@ components:
           properties:
             color:
               type: string
-              description: HTML color code representing the color of lines in the chart.
+              description: The HTML color code that represents the color of lines in the chart.
               nullable: true
           additionalProperties:
             type: object

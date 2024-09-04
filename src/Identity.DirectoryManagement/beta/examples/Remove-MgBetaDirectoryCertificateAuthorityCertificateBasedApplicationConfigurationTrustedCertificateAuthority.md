@@ -1,0 +1,11 @@
+### Example 1: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Remove-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthority -CertificateBasedApplicationConfigurationId $certificateBasedApplicationConfigurationId -CertificateAuthorityAsEntityId $certificateAuthorityAsEntityId
+
+```
+This example shows how to use the Remove-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthority Cmdlet.
+

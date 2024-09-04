@@ -50,6 +50,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userAnalytics'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -81,6 +86,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userAnalytics'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -107,6 +117,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/analytics/activityStatistics':
     get:
@@ -164,6 +179,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.activityStatisticsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -198,6 +218,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}':
     get:
@@ -252,6 +277,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -291,6 +321,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -325,6 +360,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/analytics/activityStatistics/$count':
     get:
@@ -348,6 +388,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/people':
     get:
       tags:
@@ -404,6 +449,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -461,6 +511,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.person'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/people/$count':
     get:
@@ -484,6 +539,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile':
     get:
       tags:
@@ -529,6 +589,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profile'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -560,6 +625,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profile'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -586,6 +656,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/account':
     get:
@@ -642,6 +717,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userAccountInformationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -676,6 +756,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/account/{userAccountInformation-id}':
     get:
@@ -729,6 +814,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -768,6 +858,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -802,6 +897,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/account/$count':
     get:
@@ -825,6 +925,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/addresses':
     get:
       tags:
@@ -881,6 +986,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemAddressCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -915,6 +1025,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/addresses/{itemAddress-id}':
     get:
@@ -969,6 +1084,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1012,6 +1132,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1050,6 +1175,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/addresses/$count':
     get:
@@ -1073,6 +1203,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/anniversaries':
     get:
       tags:
@@ -1129,6 +1264,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personAnnualEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1163,6 +1303,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/anniversaries/{personAnnualEvent-id}':
     get:
@@ -1217,6 +1362,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1256,6 +1406,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1290,6 +1445,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/anniversaries/$count':
     get:
@@ -1313,6 +1473,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/awards':
     get:
       tags:
@@ -1369,6 +1534,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personAwardCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1403,6 +1573,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/awards/{personAward-id}':
     get:
@@ -1457,6 +1632,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1500,6 +1680,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1538,6 +1723,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/awards/$count':
     get:
@@ -1561,6 +1751,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/certifications':
     get:
       tags:
@@ -1617,6 +1812,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personCertificationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1651,6 +1851,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/certifications/{personCertification-id}':
     get:
@@ -1705,6 +1910,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1748,6 +1958,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1786,6 +2001,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/certifications/$count':
     get:
@@ -1809,6 +2029,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/educationalActivities':
     get:
       tags:
@@ -1865,6 +2090,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.educationalActivityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1899,6 +2129,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/educationalActivities/{educationalActivity-id}':
     get:
@@ -1953,6 +2188,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1992,6 +2232,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2026,6 +2271,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/educationalActivities/$count':
     get:
@@ -2049,6 +2299,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/emails':
     get:
       tags:
@@ -2105,6 +2360,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemEmailCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2139,6 +2399,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/emails/{itemEmail-id}':
     get:
@@ -2196,6 +2461,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2239,6 +2509,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2273,6 +2548,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/emails/$count':
     get:
@@ -2296,6 +2576,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/interests':
     get:
       tags:
@@ -2352,6 +2637,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personInterestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2386,6 +2676,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/interests/{personInterest-id}':
     get:
@@ -2440,6 +2735,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2479,6 +2779,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2513,6 +2818,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/interests/$count':
     get:
@@ -2536,6 +2846,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/languages':
     get:
       tags:
@@ -2592,6 +2907,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.languageProficiencyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2626,6 +2946,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/languages/{languageProficiency-id}':
     get:
@@ -2680,6 +3005,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2719,6 +3049,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2753,6 +3088,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/languages/$count':
     get:
@@ -2776,6 +3116,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/names':
     get:
       tags:
@@ -2832,6 +3177,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personNameCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2866,6 +3216,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personName'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/names/{personName-id}':
     get:
@@ -2920,6 +3275,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personName'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2959,6 +3319,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personName'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2993,6 +3358,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/names/$count':
     get:
@@ -3016,6 +3386,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/notes':
     get:
       tags:
@@ -3072,6 +3447,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personAnnotationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3106,6 +3486,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/notes/{personAnnotation-id}':
     get:
@@ -3160,6 +3545,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3203,6 +3593,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3241,6 +3636,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/notes/$count':
     get:
@@ -3264,6 +3664,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/patents':
     get:
       tags:
@@ -3320,6 +3725,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemPatentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3354,6 +3764,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/patents/{itemPatent-id}':
     get:
@@ -3408,6 +3823,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3451,6 +3871,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3489,6 +3914,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/patents/$count':
     get:
@@ -3512,6 +3942,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/phones':
     get:
       tags:
@@ -3568,6 +4003,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemPhoneCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3602,6 +4042,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/phones/{itemPhone-id}':
     get:
@@ -3656,6 +4101,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3699,6 +4149,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3737,6 +4192,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/phones/$count':
     get:
@@ -3760,6 +4220,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/positions':
     get:
       tags:
@@ -3816,6 +4281,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.workPositionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3850,6 +4320,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/positions/{workPosition-id}':
     get:
@@ -3904,6 +4379,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3943,6 +4423,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3977,6 +4462,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/positions/$count':
     get:
@@ -4000,6 +4490,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/projects':
     get:
       tags:
@@ -4056,6 +4551,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.projectParticipationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4090,6 +4590,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/projects/{projectParticipation-id}':
     get:
@@ -4144,6 +4649,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4183,6 +4693,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4217,6 +4732,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/projects/$count':
     get:
@@ -4240,6 +4760,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/publications':
     get:
       tags:
@@ -4296,6 +4821,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemPublicationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4330,6 +4860,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/publications/{itemPublication-id}':
     get:
@@ -4384,6 +4919,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4427,6 +4967,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4461,6 +5006,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/publications/$count':
     get:
@@ -4484,6 +5034,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/skills':
     get:
       tags:
@@ -4540,6 +5095,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.skillProficiencyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4574,6 +5134,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/skills/{skillProficiency-id}':
     get:
@@ -4628,6 +5193,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4667,6 +5237,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4701,6 +5276,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/skills/$count':
     get:
@@ -4724,6 +5304,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/webAccounts':
     get:
       tags:
@@ -4780,6 +5365,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.webAccountCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4814,6 +5404,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/webAccounts/{webAccount-id}':
     get:
@@ -4868,6 +5463,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4907,6 +5507,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4941,6 +5546,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/webAccounts/$count':
     get:
@@ -4964,6 +5574,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/profile/websites':
     get:
       tags:
@@ -5020,6 +5635,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personWebsiteCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5054,6 +5674,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/websites/{personWebsite-id}':
     get:
@@ -5108,6 +5733,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5147,6 +5777,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5181,6 +5816,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/websites/$count':
     get:
@@ -5204,6 +5844,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
 components:
   schemas:
     microsoft.graph.userAnalytics:
@@ -6409,17 +7054,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.companyDetail'
         description:
           type: string
-          description: Description of the position in question.
+          description: A description for the position in question.
           nullable: true
         endMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: When the position ended.
+          description: The date when the position ended.
           format: date
           nullable: true
         jobTitle:
           type: string
-          description: The title held when in that position.
+          description: The title of the position.
           nullable: true
         layer:
           maximum: 2147483647
@@ -6438,19 +7083,21 @@ components:
           nullable: true
         secondaryJobTitle:
           type: string
+          description: An optional job title for the position.
           nullable: true
         secondaryRole:
           type: string
+          description: An optional role for the position entailed.
           nullable: true
         startMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: The start month and year of the position.
+          description: The start date of the position.
           format: date
           nullable: true
         summary:
           type: string
-          description: summary of the position.
+          description: The summary of the position.
           nullable: true
       additionalProperties:
         type: object
@@ -6481,6 +7128,7 @@ components:
           nullable: true
         secondaryDepartment:
           type: string
+          description: Secondary Department Name within a company.
           nullable: true
         webUrl:
           type: string

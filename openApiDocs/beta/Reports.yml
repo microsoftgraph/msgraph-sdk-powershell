@@ -13413,7 +13413,7 @@ components:
           properties:
             displayConcealedNames:
               type: boolean
-              description: 'If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.'
+              description: 'If set to true, all reports conceal user information such as usernames, groups, and sites. If false, all reports show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.'
           additionalProperties:
             type: object
     microsoft.graph.auditLogRoot:
@@ -13666,7 +13666,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValue'
-              description: 'More authentication processing details, such as the agent name for  PTA and PHS, or a server or farm name for federated authentication.'
+              description: 'More authentication processing details, such as the agent name for PTA and PHS, or a server or farm name for federated authentication.'
             authenticationProtocol:
               $ref: '#/components/schemas/microsoft.graph.protocolType'
             authenticationRequirement:
@@ -13699,12 +13699,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessAudience'
-              description: A list that indicates the audience that was evaluated by Conditional Access during a sign-in event.  Supports $filter (eq).
+              description: A list that indicates the audience that Conditional Access evaluated during a sign-in event.  Supports $filter (eq).
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The identifier the client sends when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
+              description: The identifier the client sends when sign-in is initiated. This property is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -13733,7 +13733,7 @@ components:
               nullable: true
             homeTenantName:
               type: string
-              description: 'For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.'
+              description: 'For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant provides affirmative consent to Microsoft Entra ID to show the tenant content.'
               nullable: true
             incomingTokenType:
               $ref: '#/components/schemas/microsoft.graph.incomingTokenType'
@@ -14102,7 +14102,7 @@ components:
           properties:
             appId:
               type: string
-              description: The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
+              description: The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credentialed application.
             appObjectId:
               type: string
               description: The ID of the credential application instance.
@@ -14411,7 +14411,7 @@ components:
       properties:
         content:
           type: string
-          description: Report content; details vary by report type.
+          description: The http content that has the data
           format: base64url
           nullable: true
       additionalProperties:
@@ -15408,7 +15408,7 @@ components:
           properties:
             appId:
               type: string
-              description: The application ID of the resource.
+              description: The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credentialed resource application.
             applicationAuthenticationClientSignInActivity:
               $ref: '#/components/schemas/microsoft.graph.signInActivity'
             applicationAuthenticationResourceSignInActivity:
@@ -16301,18 +16301,18 @@ components:
       properties:
         browser:
           type: string
-          description: Indicates the browser information of the used for signing-in.
+          description: Indicates the browser information of the used in the sign-in. Populated for devices registered in Microsoft Entra.
           nullable: true
         browserId:
           type: string
           nullable: true
         deviceId:
           type: string
-          description: Refers to the UniqueID of the device used for signing-in.
+          description: Refers to the unique ID of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
           nullable: true
         displayName:
           type: string
-          description: Refers to the name of the device used for signing-in.
+          description: Refers to the name of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
           nullable: true
         isCompliant:
           type: boolean
@@ -16324,11 +16324,11 @@ components:
           nullable: true
         operatingSystem:
           type: string
-          description: Indicates the OS name and version used for signing-in.
+          description: Indicates the OS name and version used in the sign-in.
           nullable: true
         trustType:
           type: string
-          description: 'Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
+          description: 'Indicates information on whether the device used in the sign-in is workplace-joined, Microsoft Entra-joined, domain-joined.'
           nullable: true
       additionalProperties:
         type: object
@@ -16341,6 +16341,7 @@ components:
         - saml20
         - unknownFutureValue
         - remoteDesktopToken
+        - refreshToken
       type: string
       x-ms-enum-flags:
         isFlags: true
