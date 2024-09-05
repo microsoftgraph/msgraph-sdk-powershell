@@ -61754,11 +61754,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Search for sites
-      description: Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
+      summary: List sites
+      description: "List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.\nIf you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-search?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/site-list?view=graph-rest-1.0
       operationId: site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -65138,11 +65138,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: List operations on a list
-      description: Get a list of rich long-running operations associated with a list.
+      summary: Get metadata for a list
+      description: Returns the metadata for a list.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0
       operationId: site_GetList
       parameters:
         - name: site-id
@@ -113826,6 +113826,8 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+            solutions:
+              $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
             sponsors:
               type: array
               items:
@@ -118269,6 +118271,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userSolutionRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userSolutionRoot
+          type: object
+          properties:
+            workingTimeSchedule:
+              $ref: '#/components/schemas/microsoft.graph.workingTimeSchedule'
+          additionalProperties:
+            type: object
     microsoft.graph.userTeamwork:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -120953,7 +120965,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
@@ -122891,6 +122903,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
               description: A collection of setting values for a given windowsSetting.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workingTimeSchedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workingTimeSchedule
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:

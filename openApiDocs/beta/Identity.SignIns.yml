@@ -9166,11 +9166,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get namedLocation
-      description: Retrieve the properties and relationships of a namedLocation object.
+      summary: Get ipNamedLocation
+      description: Retrieve the properties and relationships of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-beta
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9787,11 +9787,11 @@ paths:
     get:
       tags:
         - identity.customAuthenticationExtension
-      summary: Get authenticationEventListener
-      description: Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+      summary: Get customAuthenticationExtension
+      description: Read the properties and relationships of a customAuthenticationExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-beta
       operationId: identity_GetCustomAuthenticationExtension
       parameters:
         - name: customAuthenticationExtension-id
@@ -10805,11 +10805,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: Get riskDetection
-      description: Retrieve the properties of a riskDetection object.
+      summary: List riskDetection
+      description: Retrieve the properties of a collection of riskDetection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-beta
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -19927,11 +19927,11 @@ paths:
     get:
       tags:
         - policies.federatedTokenValidationPolicy
-      summary: List federatedTokenValidationPolicy
-      description: Get a list of the federatedTokenValidationPolicy objects and their properties.
+      summary: Get federatedTokenValidationPolicy
+      description: Read the properties and relationships of a federatedTokenValidationPolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/policyroot-list-federatedtokenvalidationpolicy?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-get?view=graph-rest-beta
       operationId: policy_GetFederatedTokenValidationPolicy
       parameters:
         - name: $select
@@ -41121,11 +41121,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -50535,11 +50535,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -57148,6 +57148,7 @@ components:
       properties:
         clientAppId:
           type: string
+          description: The registration ID of the Microsoft Entra app ID associated with the teamsApp.
           nullable: true
         requiredPermissionSet:
           $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'

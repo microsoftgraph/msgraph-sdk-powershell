@@ -7112,11 +7112,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List resourceRoleScopes
-      description: Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+      summary: Get accessPackage
+      description: Retrieve the properties and relationships of an accessPackage object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement_GetAccessPackage
       parameters:
         - name: accessPackage-id
@@ -12326,7 +12326,11 @@ paths:
     put:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update the navigation property assignmentPolicies in identityGovernance
+      summary: Update accessPackageAssignmentPolicy
+      description: 'Update an existing accessPackageAssignmentPolicy object to change one or more of its properties, such as the display name or description.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement_SetAssignmentPolicy
       parameters:
         - name: accessPackageAssignmentPolicy-id
@@ -14559,11 +14563,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+      summary: Get accessPackageAssignmentRequestWorkflowExtension
+      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14615,11 +14619,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentRequestWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+      summary: Update accessPackageAssignmentWorkflowExtension
+      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -44556,7 +44560,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskDefinitions
-      description: Get a list of the taskDefinition objects and their properties.
+      description: Get a list of built-in tasks in Lifecycle Workflows. A task is represented by the taskDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-taskdefinitions?view=graph-rest-1.0
@@ -44611,7 +44615,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get taskDefinition
-      description: Read the details of a built-in workflow task.
+      description: Read the details of a built-in workflow task in Lifecycle Workflows.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskdefinition-get?view=graph-rest-1.0
@@ -56525,11 +56529,11 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: Get agreement
-      description: Retrieve the properties and relationships of an agreement object.
+      summary: List files (terms of use agreement files)
+      description: Retrieve all files related to an agreement. This includes the default file and all localized files.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0
       operationId: identityGovernance.termsGraphOPreUse_GetAgreement
       parameters:
         - name: agreement-id
@@ -69051,6 +69055,8 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+            solutions:
+              $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
             sponsors:
               type: array
               items:
@@ -70029,7 +70035,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
@@ -73985,6 +73991,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSetting'
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userSolutionRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userSolutionRoot
+          type: object
+          properties:
+            workingTimeSchedule:
+              $ref: '#/components/schemas/microsoft.graph.workingTimeSchedule'
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -79266,6 +79282,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
               description: A collection of setting values for a given windowsSetting.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workingTimeSchedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workingTimeSchedule
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:

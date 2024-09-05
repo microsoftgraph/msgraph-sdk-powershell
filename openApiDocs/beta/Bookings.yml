@@ -2164,7 +2164,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action enable
-      description: Enable the Microsoft 365 Backup Storage service for a tenant.
+      description: 'Enable the Microsoft 365 Backup Storage service for a tenant. Before you call this API, call List protection policies to initialize the data store in the tenant. Data store initialization takes about 5 minutes. If you call this API before the data store is initialized, the call results in an error.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-beta
@@ -2196,7 +2196,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action activate
-      description: Activate a protectionPolicyBase.
+      description: 'Activate a protectionPolicyBase. Currently, only one active backup policy per underlying service is supported (that is, one for OneDrive accounts, one for SharePoint sites, and one for Exchange Online users). You can add or remove artifacts (sites or user accounts) to or from each active policy.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionpolicybase-activate?view=graph-rest-beta
@@ -2297,7 +2297,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action activate
-      description: Activate a draft restoreSessionBase object.
+      description: 'Activate a draft restoreSessionBase object to restore a protection unit. The following points apply to restoring a protection unit:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-beta
@@ -14128,11 +14128,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
