@@ -16248,10 +16248,10 @@ paths:
       tags:
         - organization.organization
       summary: List organizations
-      description: List properties and relationships of the organization objects.
+      description: Retrieve a list of organization objects. There's only one organization object in the collection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16325,10 +16325,10 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
-      description: 'Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.'
+      description: Read properties and relationships of the organization object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0
       operationId: organization_GetOrganization
       parameters:
         - name: organization-id
@@ -20586,6 +20586,8 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+            solutions:
+              $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
             sponsors:
               type: array
               items:
@@ -20656,7 +20658,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
@@ -21357,7 +21359,7 @@ components:
               description: The collection of password credentials associated with the application. Not nullable.
             preferredSingleSignOnMode:
               type: string
-              description: 'Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the My Apps portal. The supported values are password, saml, notSupported, and oidc.'
+              description: 'Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the My Apps portal. The supported values are password, saml, notSupported, and oidc. Note: This field might be null for older SAML apps and for OIDC applications where it isn''t set automatically.'
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
@@ -24745,6 +24747,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSetting'
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userSolutionRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userSolutionRoot
+          type: object
+          properties:
+            workingTimeSchedule:
+              $ref: '#/components/schemas/microsoft.graph.workingTimeSchedule'
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -30260,6 +30272,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
               description: A collection of setting values for a given windowsSetting.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workingTimeSchedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workingTimeSchedule
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:

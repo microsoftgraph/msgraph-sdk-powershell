@@ -6911,11 +6911,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: 'driveItem: setRetentionLabel'
-      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      summary: 'driveItem: lockOrUnlockRecord'
+      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
       operationId: drive.item_UpdateRetentionLabel
       parameters:
         - name: drive-id
@@ -67123,6 +67123,8 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+            solutions:
+              $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
             sponsors:
               type: array
               items:
@@ -70928,6 +70930,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userSolutionRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userSolutionRoot
+          type: object
+          properties:
+            workingTimeSchedule:
+              $ref: '#/components/schemas/microsoft.graph.workingTimeSchedule'
+          additionalProperties:
+            type: object
     microsoft.graph.userTeamwork:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -73502,7 +73514,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
@@ -75635,6 +75647,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
               description: A collection of setting values for a given windowsSetting.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workingTimeSchedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workingTimeSchedule
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:
