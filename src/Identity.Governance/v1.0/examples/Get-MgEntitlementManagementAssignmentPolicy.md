@@ -1,11 +1,22 @@
-### Example 1: Code snippet
+### Example 1: Retrieve a policy
 
 ```powershell
 
 Import-Module Microsoft.Graph.Identity.Governance
 
-Get-MgEntitlementManagementAssignmentPolicy
+Get-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentPolicyId $accessPackageAssignmentPolicyId
 
 ```
-This example shows how to use the Get-MgEntitlementManagementAssignmentPolicy Cmdlet.
+This example will retrieve a policy
+
+### Example 2: Retrieve the custom extension stage settings for a policy
+
+```powershell
+
+Import-Module Microsoft.Graph.Identity.Governance
+
+Get-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentPolicyId $accessPackageAssignmentPolicyId -ExpandProperty "customExtensionStageSettings(`$expand=customExtension)" 
+
+```
+This example will retrieve the custom extension stage settings for a policy
 
