@@ -24,6 +24,11 @@ directive:
       verb: Get|Update
       subject: ^Security$
     remove: true
+# Removes overgenerated cmdlets. Related issue: https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2961
+  - where:
+      verb: Get
+      subject: ^(SecurityAuditLog|SecurityAuditLogQuery|SecurityAuditLogQueryCount|SecurityAuditLogQueryRecord|SecurityAuditLogQueryRecordCount)$
+    remove: true
   - where:
       verb: Update
       subject: ^SecurityAttackSimulation$
