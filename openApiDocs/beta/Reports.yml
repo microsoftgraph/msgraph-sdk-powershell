@@ -4933,6 +4933,108 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getMicrosoft365CopilotUsageUserDetail(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getMicrosoft365CopilotUsageUserDetail
+      description: Get the most recent activity data for enabled users of Copilot for Microsoft 365 apps.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusageuserdetail?view=graph-rest-beta
+      operationId: report_getMicrosoft365CopilotUsageUserDetail
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getMicrosoft365CopilotUserCountSummary(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getMicrosoft365CopilotUserCountSummary
+      description: Get the aggregated number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercountsummary?view=graph-rest-beta
+      operationId: report_getMicrosoft365CopilotUserCountSummary
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getMicrosoft365CopilotUserCountTrend(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getMicrosoft365CopilotUserCountTrend
+      description: Get the trend in the daily number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercounttrend?view=graph-rest-beta
+      operationId: report_getMicrosoft365CopilotUserCountTrend
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /reports/microsoft.graph.getOffice365ActivationCounts():
     get:
       tags:
@@ -14411,7 +14513,7 @@ components:
       properties:
         content:
           type: string
-          description: Report content; details vary by report type.
+          description: The http content that has the data
           format: base64url
           nullable: true
       additionalProperties:
@@ -15907,11 +16009,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -16583,7 +16685,7 @@ components:
         - json
         - unknownFutureValue
       type: string
-      description: Possible values for the file format of a report.
+      description: Possible values for the file format of a report to be exported.
       x-ms-enum:
         name: deviceManagementReportFileFormat
         modelAsString: false
