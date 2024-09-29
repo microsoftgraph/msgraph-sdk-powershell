@@ -1004,7 +1004,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         private void ResetGraphSessionEnvironment()
         {
             _originalEnvironment = GraphSession.Instance.Environment;
-            GraphSession.Instance.Environment = _originalEnvironment;
         }
 
         #region CmdLet LifeCycle
