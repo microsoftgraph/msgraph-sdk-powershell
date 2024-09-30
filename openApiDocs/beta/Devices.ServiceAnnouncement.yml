@@ -2442,7 +2442,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
+      description: 'Update the members and exclusions relationships of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it doesn''t already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, the deployment doesn''t apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-beta
@@ -3255,7 +3255,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
+      description: 'Update the members and exclusions relationships of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it doesn''t already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, the deployment doesn''t apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-beta
@@ -3775,7 +3775,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      description: 'Enroll updatableAsset resources in update management by the deployment service. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.'
+      description: 'Enroll updatableAsset resources in update management by Windows Autopatch. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.'
       operationId: admin.window.update.updatableAsset_enrollAsset
       requestBody:
         description: Action parameters
@@ -3804,7 +3804,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssetsById
-      description: Enroll updatableAsset resources of the same type in update management by the deployment service. You can also use the method enrollAssets to enroll assets.
+      description: Enroll updatableAsset resources of the same type in update management by Windows Autopatch. You can also use the method enrollAssets to enroll assets.
       operationId: admin.window.update.updatableAsset_enrollAssetsGraphBPreId
       requestBody:
         description: Action parameters
@@ -3837,7 +3837,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      description: Unenroll updatableAsset resources from update management by the deployment service. You can also use the method unenrollAssetsById to unenroll assets.
+      description: Unenroll updatableAsset resources from update management by Windows Autopatch. You can also use the method unenrollAssetsById to unenroll assets.
       operationId: admin.window.update.updatableAsset_unenrollAsset
       requestBody:
         description: Action parameters
@@ -3866,7 +3866,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssetsById
-      description: Unenroll updatableAsset resources of the same type from update management by the deployment service. You can also use the method unenrollAssets to unenroll assets.
+      description: Unenroll updatableAsset resources of the same type from update management by Windows Autopatch. You can also use the method unenrollAssets to unenroll assets.
       operationId: admin.window.update.updatableAsset_unenrollAssetsGraphBPreId
       requestBody:
         description: Action parameters
@@ -4603,7 +4603,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
+      description: 'Update the members and exclusions relationships of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it doesn''t already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, the deployment doesn''t apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-beta
@@ -5809,7 +5809,7 @@ components:
             deployableUntilDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The date on which the content is no longer available to deploy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             displayName:

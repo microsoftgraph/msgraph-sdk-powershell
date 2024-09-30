@@ -618,7 +618,7 @@ components:
               description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
-              description: Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
+              $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
               description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
@@ -722,6 +722,11 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.Json:
+      title: Json
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.status:
       title: status
       enum:
@@ -742,7 +747,7 @@ components:
           description: Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
           nullable: true
         content:
-          description: Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
+          $ref: '#/components/schemas/microsoft.graph.Json'
         description:
           type: string
           description: 'Optional. Longer text description of the user''s unique activity (example: document name, first sentence, and/or metadata)'
