@@ -6623,6 +6623,1867 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /roleManagement/defender:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get defender from roleManagement
+      operationId: roleManagement_GetDefender
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property defender in roleManagement
+      operationId: roleManagement_UpdateDefender
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property defender for roleManagement
+      operationId: roleManagement_DeleteDefender
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/defender/resourceNamespaces:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceNamespaces from roleManagement
+      operationId: roleManagement.defender_ListResourceNamespace
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to resourceNamespaces for roleManagement
+      operationId: roleManagement.defender_CreateResourceNamespace
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceNamespaces from roleManagement
+      operationId: roleManagement.defender_GetResourceNamespace
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property resourceNamespaces in roleManagement
+      operationId: roleManagement.defender_UpdateResourceNamespace
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property resourceNamespaces for roleManagement
+      operationId: roleManagement.defender_DeleteResourceNamespace
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
+      operationId: roleManagement.defender.resourceNamespace_ListResourceAction
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceActionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to resourceActions for roleManagement
+      operationId: roleManagement.defender.resourceNamespace_CreateResourceAction
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
+      operationId: roleManagement.defender.resourceNamespace_GetResourceAction
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property resourceActions in roleManagement
+      operationId: roleManagement.defender.resourceNamespace_UpdateResourceAction
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property resourceActions for roleManagement
+      operationId: roleManagement.defender.resourceNamespace_DeleteResourceAction
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/authenticationContext':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get authenticationContext from roleManagement
+      operationId: roleManagement.defender.resourceNamespace.resourceAction_GetAuthenticationContext
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/resourceScope':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceScope from roleManagement
+      operationId: roleManagement.defender.resourceNamespace.resourceAction_GetResourceScope
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property resourceScope in roleManagement
+      operationId: roleManagement.defender.resourceNamespace.resourceAction_UpdateResourceScope
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property resourceScope for roleManagement
+      operationId: roleManagement.defender.resourceNamespace.resourceAction_DeleteResourceScope
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.defender.resourceNamespace.resourceAction_GetCount
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /roleManagement/defender/resourceNamespaces/$count:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.defender.resourceNamespace_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /roleManagement/defender/roleAssignments:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleAssignments from roleManagement
+      operationId: roleManagement.defender_ListRoleAssignment
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.unifiedRoleAssignmentMultipleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to roleAssignments for roleManagement
+      operationId: roleManagement.defender_CreateRoleAssignment
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleAssignments from roleManagement
+      operationId: roleManagement.defender_GetRoleAssignment
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property roleAssignments in roleManagement
+      operationId: roleManagement.defender_UpdateRoleAssignment
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property roleAssignments for roleManagement
+      operationId: roleManagement.defender_DeleteRoleAssignment
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get appScopes from roleManagement
+      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
+      operationId: roleManagement.defender.roleAssignment_ListAppScope
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.appScopeCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to appScopes for roleManagement
+      operationId: roleManagement.defender.roleAssignment_CreateAppScope
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/{appScope-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get appScopes from roleManagement
+      description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
+      operationId: roleManagement.defender.roleAssignment_GetAppScope
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: appScope-id
+          in: path
+          description: The unique identifier of appScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appScope
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property appScopes in roleManagement
+      operationId: roleManagement.defender.roleAssignment_UpdateAppScope
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: appScope-id
+          in: path
+          description: The unique identifier of appScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appScope
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property appScopes for roleManagement
+      operationId: roleManagement.defender.roleAssignment_DeleteAppScope
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: appScope-id
+          in: path
+          description: The unique identifier of appScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appScope
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.defender.roleAssignment.appScope_GetCount
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get directoryScopes from roleManagement
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      operationId: roleManagement.defender.roleAssignment_ListDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/{directoryObject-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get directoryScopes from roleManagement
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      operationId: roleManagement.defender.roleAssignment_GetDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.defender.roleAssignment.directoryScope_GetCount
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get principals from roleManagement
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      operationId: roleManagement.defender.roleAssignment_ListPrincipal
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/{directoryObject-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get principals from roleManagement
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      operationId: roleManagement.defender.roleAssignment_GetPrincipal
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.defender.roleAssignment.principal_GetCount
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleDefinition from roleManagement
+      description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
+      operationId: roleManagement.defender.roleAssignment_GetRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: The unique identifier of unifiedRoleAssignmentMultiple
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/defender/roleAssignments/$count:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.defender.roleAssignment_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /roleManagement/defender/roleDefinitions:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleDefinitions from roleManagement
+      operationId: roleManagement.defender_ListRoleDefinition
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to roleDefinitions for roleManagement
+      operationId: roleManagement.defender_CreateRoleDefinition
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleDefinitions from roleManagement
+      operationId: roleManagement.defender_GetRoleDefinition
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property roleDefinitions in roleManagement
+      operationId: roleManagement.defender_UpdateRoleDefinition
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property roleDefinitions for roleManagement
+      operationId: roleManagement.defender_DeleteRoleDefinition
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
+      operationId: roleManagement.defender.roleDefinition_ListInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
+      operationId: roleManagement.defender.roleDefinition_CreateInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
+      operationId: roleManagement.defender.roleDefinition_GetInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property inheritsPermissionsFrom in roleManagement
+      operationId: roleManagement.defender.roleDefinition_UpdateInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property inheritsPermissionsFrom for roleManagement
+      operationId: roleManagement.defender.roleDefinition_DeleteInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.defender.roleDefinition.inheritsPermissionsFrom_GetCount
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /roleManagement/defender/roleDefinitions/$count:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get the number of the resource
+      operationId: roleManagement.defender.roleDefinition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /roleManagement/deviceManagement:
     get:
       tags:
@@ -7313,11 +9174,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List unifiedRoleAssignmentMultiple
-      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      summary: Get unifiedRoleAssignmentMultiple
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11945,6 +13806,8 @@ components:
       type: object
       properties:
         cloudPC:
+          $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+        defender:
           $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
         deviceManagement:
           $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
