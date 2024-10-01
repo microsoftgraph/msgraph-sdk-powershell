@@ -31334,6 +31334,7 @@ components:
               nullable: true
             passwordResetUri:
               type: string
+              description: URI that clients are redirected to for resetting their password.
               nullable: true
             promptLoginBehavior:
               $ref: '#/components/schemas/microsoft.graph.promptLoginBehavior'
@@ -35909,7 +35910,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -36687,11 +36688,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

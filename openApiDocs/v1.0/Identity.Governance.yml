@@ -56529,11 +56529,11 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: List files (terms of use agreement files)
-      description: Retrieve all files related to an agreement. This includes the default file and all localized files.
+      summary: Get agreement
+      description: Retrieve the properties and relationships of an agreement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
       operationId: identityGovernance.termsGraphOPreUse_GetAgreement
       parameters:
         - name: agreement-id
