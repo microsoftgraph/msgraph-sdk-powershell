@@ -83,7 +83,7 @@ To learn about other permissions for this resource, see the [Group permissions r
 
 To consent to these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
-### Example 5: Use -Filter to get all the applications with a display name that starts with 'A' including a count of the returned users, with the results ordered by display name
+### Example 5: Use -Filter to get all the groups with a display name that starts with 'A' including a count of the returned groups, with the results ordered by display name
 
 ```powershell
 Connect-MgGraph -Scopes 'Group.Read.All'
