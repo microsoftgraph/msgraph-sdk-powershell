@@ -545,7 +545,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Get catalog from admin
-      description: Catalog of content that can be approved for deployment by the deployment service. Read-only.
+      description: Catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
       operationId: admin.window.update_GetCatalog
       parameters:
         - name: $select
@@ -2780,7 +2780,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
+      description: 'Update the members and exclusions relationships of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it doesn''t already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, the deployment doesn''t apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-beta
@@ -4967,7 +4967,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
+      description: 'Update the members and exclusions relationships of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it doesn''t already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, the deployment doesn''t apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-beta
@@ -6835,11 +6835,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get resourceConnection
-      description: Read the properties and relationships of a resourceConnection object.
+      summary: Get operationalInsightsConnection
+      description: Read the properties and relationships of an operationalInsightsConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-beta
       operationId: admin.window.update_GetResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6914,11 +6914,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete operationalInsightsConnection
-      description: Delete an operationalInsightsConnection object.
+      summary: Delete resourceConnection
+      description: Delete a resourceConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -7040,11 +7040,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get azureADDevice
-      description: Read the properties of an azureADDevice object.
+      summary: Get updatableAsset
+      description: Read the properties and relationships of an updatableAsset object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-beta
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -7119,11 +7119,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete updatableAsset
-      description: Delete an updatableAsset object.
+      summary: Delete azureADDevice
+      description: 'Delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered and automatically unenrolled from management for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -7329,7 +7329,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssets
-      description: 'Enroll updatableAsset resources in update management by the deployment service. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.'
+      description: 'Enroll updatableAsset resources in update management by Windows Autopatch. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.'
       operationId: admin.window.update.updatableAsset_enrollAsset
       requestBody:
         description: Action parameters
@@ -7358,7 +7358,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action enrollAssetsById
-      description: Enroll updatableAsset resources of the same type in update management by the deployment service. You can also use the method enrollAssets to enroll assets.
+      description: Enroll updatableAsset resources of the same type in update management by Windows Autopatch. You can also use the method enrollAssets to enroll assets.
       operationId: admin.window.update.updatableAsset_enrollAssetsGraphBPreId
       requestBody:
         description: Action parameters
@@ -7391,7 +7391,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssets
-      description: Unenroll updatableAsset resources from update management by the deployment service. You can also use the method unenrollAssetsById to unenroll assets.
+      description: Unenroll updatableAsset resources from update management by Windows Autopatch. You can also use the method unenrollAssetsById to unenroll assets.
       operationId: admin.window.update.updatableAsset_unenrollAsset
       requestBody:
         description: Action parameters
@@ -7420,7 +7420,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unenrollAssetsById
-      description: Unenroll updatableAsset resources of the same type from update management by the deployment service. You can also use the method unenrollAssets to unenroll assets.
+      description: Unenroll updatableAsset resources of the same type from update management by Windows Autopatch. You can also use the method unenrollAssets to unenroll assets.
       operationId: admin.window.update.updatableAsset_unenrollAssetsGraphBPreId
       requestBody:
         description: Action parameters
@@ -9517,7 +9517,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
+      description: 'Update the members and exclusions relationships of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it doesn''t already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, the deployment doesn''t apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-beta
@@ -9723,11 +9723,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get complianceChange
-      description: Read the properties and relationships of a complianceChange object.
+      summary: Get contentApproval
+      description: Read the properties and relationships of a contentApproval object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -9779,11 +9779,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update contentApproval
-      description: Update the properties of a contentApproval object.
+      summary: Update complianceChange
+      description: Update the properties of a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_UpdateComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -9822,11 +9822,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete contentApproval
-      description: Delete a contentApproval object.
+      summary: Delete complianceChange
+      description: Delete a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_DeleteComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -10123,7 +10123,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
-              description: Deployments created using the deployment service.
+              description: Deployments created using Windows Autopatch.
               x-ms-navigationProperty: true
             products:
               type: array
@@ -10141,7 +10141,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
-              description: Assets registered with the deployment service that can receive updates.
+              description: Assets registered with Windows Autopatch that can receive updates.
               x-ms-navigationProperty: true
             updatePolicies:
               type: array
@@ -10174,7 +10174,7 @@ components:
             deployableUntilDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The date on which the content is no longer available to deploy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             displayName:

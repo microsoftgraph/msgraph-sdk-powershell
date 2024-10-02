@@ -3580,7 +3580,7 @@ components:
           type: string
           description: 'The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.'
         layout:
-          description: 'The definition of the content''s appearance, represented by an Adaptive Card, which is a JSON-serialized card object model.'
+          $ref: '#/components/schemas/microsoft.graph.Json'
         priority:
           maximum: 2147483647
           minimum: -2147483648
@@ -3836,6 +3836,11 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.Json:
+      title: Json
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.propertyRule:

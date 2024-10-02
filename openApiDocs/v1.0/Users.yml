@@ -11,10 +11,10 @@ paths:
       tags:
         - users.user
       summary: List users
-      description: Retrieve a list of user objects.
+      description: List properties and relationships of the user objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -73,11 +73,11 @@ paths:
     post:
       tags:
         - users.user
-      summary: Create user
-      description: Create a new user object.
+      summary: Create User
+      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
       operationId: user_CreateUser
       requestBody:
         description: New entity
@@ -183,11 +183,11 @@ paths:
     delete:
       tags:
         - users.user
-      summary: Delete user
-      description: Deletes a user.
+      summary: Delete a user
+      description: 'Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
       operationId: user_DeleteUser
       parameters:
         - name: user-id
@@ -11192,6 +11192,9 @@ components:
                 type: string
                 nullable: true
               description: A list for the user to describe their interests. Returned only on $select.
+            isManagementRestricted:
+              type: boolean
+              nullable: true
             isResourceAccount:
               type: boolean
               description: Don't use – reserved for future use.
@@ -12131,6 +12134,18 @@ components:
               type: string
               description: 'Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
+            isMemberManagementRestricted:
+              type: boolean
+              nullable: true
+            membershipRule:
+              type: string
+              nullable: true
+            membershipRuleProcessingState:
+              type: string
+              nullable: true
+            membershipType:
+              type: string
+              nullable: true
             visibility:
               type: string
               description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
@@ -12259,6 +12274,9 @@ components:
             isAssignableToRole:
               type: boolean
               description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can''t be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              nullable: true
+            isManagementRestricted:
+              type: boolean
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -12446,7 +12464,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property isn''t specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+              description: 'The owners of the group who can be users or service principals. Limited to 100 owners. Nullable. If this property isn''t specified when creating a Microsoft 365 group the calling user (admin or non-admin) is automatically assigned as the group owner. A non-admin user can''t explicitly add themselves to this collection when they''re creating the group. For more information, see the related known issue. For security groups, the admin user isn''t automatically added to this collection. For more information, see the related known issue. Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -12669,6 +12687,9 @@ components:
             isManaged:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
+              nullable: true
+            isManagementRestricted:
+              type: boolean
               nullable: true
             isRooted:
               type: boolean
@@ -13723,7 +13744,7 @@ components:
               description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
-              description: Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
+              $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
               description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
@@ -17307,6 +17328,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printer'
           additionalProperties:
             type: object
+    microsoft.graph.Json:
+      title: Json
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.status:
       title: status
       enum:
@@ -17327,7 +17353,7 @@ components:
           description: Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
           nullable: true
         content:
-          description: Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
+          $ref: '#/components/schemas/microsoft.graph.Json'
         description:
           type: string
           description: 'Optional. Longer text description of the user''s unique activity (example: document name, first sentence, and/or metadata)'
@@ -25640,7 +25666,7 @@ components:
               description: 'The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
-              description: 'The formula that the name is defined to refer to. For example, =Sheet14!$B$2:$H$12 and =4.75. Read-only.'
+              $ref: '#/components/schemas/microsoft.graph.Json'
             visible:
               type: boolean
               description: Indicates whether the object is visible.
@@ -28216,7 +28242,7 @@ components:
               description: The name of the table column.
               nullable: true
             values:
-              description: 'TRepresents the raw values of the specified range. The data returned could be of type string, number, or a Boolean. Cell that contain an error will return the error string.'
+              $ref: '#/components/schemas/microsoft.graph.Json'
             filter:
               $ref: '#/components/schemas/microsoft.graph.workbookFilter'
           additionalProperties:
@@ -28234,7 +28260,7 @@ components:
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
-              description: 'The raw values of the specified range. The data returned could be of type string, number, or a Boolean. Any cell that contain an error will return the error string.'
+              $ref: '#/components/schemas/microsoft.graph.Json'
           additionalProperties:
             type: object
     microsoft.graph.workbookTableSort:
@@ -28905,37 +28931,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:
@@ -29123,7 +29149,7 @@ components:
           type: string
           description: 'An operator in a cell; for example, =, >, <, <=, or <>.'
         values:
-          description: The values that appear in the cell.
+          $ref: '#/components/schemas/microsoft.graph.Json'
       additionalProperties:
         type: object
     microsoft.graph.workbookIcon:
@@ -29148,13 +29174,13 @@ components:
           type: object
           properties:
             majorUnit:
-              description: Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
+              $ref: '#/components/schemas/microsoft.graph.Json'
             maximum:
-              description: Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
+              $ref: '#/components/schemas/microsoft.graph.Json'
             minimum:
-              description: Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
+              $ref: '#/components/schemas/microsoft.graph.Json'
             minorUnit:
-              description: Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
+              $ref: '#/components/schemas/microsoft.graph.Json'
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxisFormat'
             majorGridlines:
@@ -29248,7 +29274,7 @@ components:
           type: object
           properties:
             value:
-              description: The value of a chart point. Read-only.
+              $ref: '#/components/schemas/microsoft.graph.Json'
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartPointFormat'
           additionalProperties:
