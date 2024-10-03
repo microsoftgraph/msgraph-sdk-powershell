@@ -9166,11 +9166,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get ipNamedLocation
-      description: Retrieve the properties and relationships of an ipNamedLocation object.
+      summary: Get namedLocation
+      description: Retrieve the properties and relationships of a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-beta
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9787,11 +9787,11 @@ paths:
     get:
       tags:
         - identity.customAuthenticationExtension
-      summary: Get customAuthenticationExtension
-      description: Read the properties and relationships of a customAuthenticationExtension object.
+      summary: Get authenticationEventListener
+      description: Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-beta
       operationId: identity_GetCustomAuthenticationExtension
       parameters:
         - name: customAuthenticationExtension-id
@@ -18810,11 +18810,11 @@ paths:
     put:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create identitySynchronization
-      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
+      summary: Update crossTenantIdentitySyncPolicyPartner
+      description: Update the user synchronization policy of a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-beta
       operationId: policy.crossTenantAccessPolicy.partner_SetIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -39768,7 +39768,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -50621,11 +50621,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

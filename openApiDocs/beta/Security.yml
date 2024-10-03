@@ -12963,7 +12963,11 @@ paths:
     get:
       tags:
         - security.identityContainer
-      summary: Get sensors from security
+      summary: List sensors
+      description: Get a list of sensor objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identitycontainer-list-sensors?view=graph-rest-beta
       operationId: security.identity_ListSensor
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13036,7 +13040,11 @@ paths:
     get:
       tags:
         - security.identityContainer
-      summary: Get sensors from security
+      summary: Get sensor
+      description: Read the properties and relationships of a sensor object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-get?view=graph-rest-beta
       operationId: security.identity_GetSensor
       parameters:
         - name: sensor-id
@@ -13080,7 +13088,11 @@ paths:
     patch:
       tags:
         - security.identityContainer
-      summary: Update the navigation property sensors in security
+      summary: Update sensor
+      description: Update the properties of a sensor object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-update?view=graph-rest-beta
       operationId: security.identity_UpdateSensor
       parameters:
         - name: sensor-id
@@ -13111,7 +13123,11 @@ paths:
     delete:
       tags:
         - security.identityContainer
-      summary: Delete navigation property sensors for security
+      summary: Delete sensor
+      description: Delete a sensor object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identitycontainer-delete-sensors?view=graph-rest-beta
       operationId: security.identity_DeleteSensor
       parameters:
         - name: sensor-id
@@ -13139,6 +13155,7 @@ paths:
       tags:
         - security.identityContainer
       summary: Get healthIssues from security
+      description: Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
       operationId: security.identity.sensor_ListHealthIssue
       parameters:
         - name: sensor-id
@@ -13198,6 +13215,7 @@ paths:
       tags:
         - security.identityContainer
       summary: Get healthIssues from security
+      description: Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
       operationId: security.identity.sensor_GetHealthIssue
       parameters:
         - name: sensor-id
@@ -13287,6 +13305,10 @@ paths:
       tags:
         - security.Functions
       summary: Invoke function getDeploymentAccessKey
+      description: 'Get the deployment access key associated with a Microsoft Defender for Identity, needed to install sensors associated with the workspace.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentaccesskey?view=graph-rest-beta
       operationId: security.identity.sensor_getDeploymentAccessKey
       responses:
         2XX:
@@ -13303,6 +13325,10 @@ paths:
       tags:
         - security.Functions
       summary: Invoke function getDeploymentPackageUri
+      description: Get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentpackageuri?view=graph-rest-beta
       operationId: security.identity.sensor_getDeploymentPackageUri
       responses:
         2XX:
@@ -13319,6 +13345,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action regenerateDeploymentAccessKey
+      description: Generate a new deployment access key that can be used to install a sensor associated with the workspace.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-regeneratedeploymentaccesskey?view=graph-rest-beta
       operationId: security.identity.sensor_regenerateDeploymentAccessKey
       responses:
         2XX:
@@ -32557,12 +32587,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
-              description: Represents potential issues identified by Microsoft Defender for Identity within a customer's Microsoft Defender for Identity configuration.
+              description: Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
               x-ms-navigationProperty: true
             sensors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.sensor'
+              description: Represents a customer's Microsoft Defender for Identity sensors.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -32637,17 +32668,21 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the sensor was generated.
               format: date-time
             deploymentStatus:
               $ref: '#/components/schemas/microsoft.graph.security.deploymentStatus'
             displayName:
               type: string
+              description: The display name of the sensor.
             domainName:
               type: string
+              description: The fully qualified domain name of the sensor.
             healthStatus:
               $ref: '#/components/schemas/microsoft.graph.security.sensorHealthStatus'
             openHealthIssuesCount:
               type: integer
+              description: This field displays the count of health issues related to this sensor.
               format: int64
             sensorType:
               $ref: '#/components/schemas/microsoft.graph.security.sensorType'
@@ -32655,10 +32690,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.sensorSettings'
             version:
               type: string
+              description: The version of the sensor.
             healthIssues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
+              description: Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -32668,6 +32705,7 @@ components:
       properties:
         deploymentAccessKey:
           type: string
+          description: The deployment access key.
       additionalProperties:
         type: object
     microsoft.graph.security.sensorDeploymentPackage:
@@ -32676,8 +32714,10 @@ components:
       properties:
         downloadUrl:
           type: string
+          description: URL to download the sensor deployment package.
         version:
           type: string
+          description: Version of the sensor.
       additionalProperties:
         type: object
     microsoft.graph.security.incident:
@@ -39506,14 +39546,17 @@ components:
       properties:
         description:
           type: string
+          description: Description of the sensor.
           nullable: true
         domainControllerDnsNames:
           type: array
           items:
             type: string
             nullable: true
+          description: DNS names for the domain controller
         isDelayedDeploymentEnabled:
           type: boolean
+          description: Indicates whether to delay updates for the sensor.
           nullable: true
         networkAdapters:
           type: array
@@ -42729,7 +42772,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -48082,9 +48125,11 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Indicates whether the network adapter is selected for capturing and analyzing network traffic.
               nullable: true
             name:
               type: string
+              description: The name of the network adapter.
               nullable: true
           additionalProperties:
             type: object
@@ -55933,11 +55978,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

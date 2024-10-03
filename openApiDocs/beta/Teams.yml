@@ -19256,11 +19256,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-beta
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -39045,11 +39045,11 @@ paths:
     get:
       tags:
         - teamwork.teamTemplate
-      summary: List teamTemplates
-      description: 'Get the list of teamTemplate objects that are available for a tenant. '
+      summary: List definitions
+      description: 'List the teamTemplateDefinition objects associated with a teamTemplate. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-beta
       operationId: teamwork_ListTeamTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -69794,7 +69794,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -81060,11 +81060,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
