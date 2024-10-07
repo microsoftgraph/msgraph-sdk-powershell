@@ -13,6 +13,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     {
         [Parameter]
         public bool EnableLoginByWAM { get; set; }
+        
+        [Parameter]
+        public bool EnableATPoP { get; set; }
 
         protected override void BeginProcessing()
         {
@@ -26,6 +29,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 GraphSession.Instance.GraphOption.EnableWAMForMSGraph = EnableLoginByWAM;
                 WriteDebug($"Signin by Web Account Manager (WAM) is {(EnableLoginByWAM ? "enabled" : "disabled")}.");
+            }
+            if (this.IsParameterBound(nameof(EnableATPoP)))
+            {
+                GraphSession.Instance.GraphOption.EnableATPoPForMSGraph = EnableATPoP;
+                WriteDebug($"Access Token Proof of Posession (AT-PoP) is {(EnableATPoP ? "enabled" : "disabled")}.");
             }
             File.WriteAllText(Constants.GraphOptionsFilePath, JsonConvert.SerializeObject(GraphSession.Instance.GraphOption, Formatting.Indented));
         }
