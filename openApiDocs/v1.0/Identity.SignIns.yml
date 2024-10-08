@@ -457,7 +457,7 @@ paths:
   '/identity/apiConnectors/{identityApiConnector-id}/microsoft.graph.uploadClientCertificate':
     post:
       tags:
-        - identity.Actions
+        - identity.identityApiConnector
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
       externalDocs:
@@ -2618,7 +2618,7 @@ paths:
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postAttributeCollection/microsoft.graph.uploadClientCertificate':
     post:
       tags:
-        - identity.Actions
+        - identity.b2xIdentityUserFlow
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
       externalDocs:
@@ -2838,7 +2838,7 @@ paths:
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postFederationSignup/microsoft.graph.uploadClientCertificate':
     post:
       tags:
-        - identity.Actions
+        - identity.b2xIdentityUserFlow
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
       externalDocs:
@@ -4456,7 +4456,7 @@ paths:
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.getOrder()':
     get:
       tags:
-        - identity.Functions
+        - identity.b2xIdentityUserFlow
       summary: Invoke function getOrder
       description: Get the order of identityUserFlowAttributeAssignments being collected within a user flow.
       externalDocs:
@@ -4485,7 +4485,7 @@ paths:
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.setOrder':
     post:
       tags:
-        - identity.Actions
+        - identity.b2xIdentityUserFlow
       summary: Invoke action setOrder
       description: Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
       externalDocs:
@@ -5658,7 +5658,7 @@ paths:
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/microsoft.graph.updateAllowedCombinations':
     post:
       tags:
-        - identity.Actions
+        - identity.conditionalAccessRoot
       summary: Invoke action updateAllowedCombinations
       description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
       externalDocs:
@@ -5701,7 +5701,7 @@ paths:
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/microsoft.graph.usage()':
     get:
       tags:
-        - identity.Functions
+        - identity.conditionalAccessRoot
       summary: Invoke function usage
       description: 'Allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.'
       externalDocs:
@@ -5826,11 +5826,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get ipNamedLocation
-      description: Retrieve the properties and relationships of an ipNamedLocation object.
+      summary: Get namedLocation
+      description: Retrieve the properties and relationships of a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -6475,7 +6475,7 @@ paths:
   '/identity/customAuthenticationExtensions/{customAuthenticationExtension-id}/microsoft.graph.validateAuthenticationConfiguration':
     post:
       tags:
-        - identity.Actions
+        - identity.customAuthenticationExtension
       summary: Invoke action validateAuthenticationConfiguration
       description: An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
       externalDocs:
@@ -6518,7 +6518,7 @@ paths:
   /identity/customAuthenticationExtensions/microsoft.graph.validateAuthenticationConfiguration:
     post:
       tags:
-        - identity.Actions
+        - identity.customAuthenticationExtension
       summary: Invoke action validateAuthenticationConfiguration
       operationId: identity.customAuthenticationExtension_validateAuthenticationConfiguration
       requestBody:
@@ -6757,7 +6757,7 @@ paths:
   /identity/identityProviders/microsoft.graph.availableProviderTypes():
     get:
       tags:
-        - identity.Functions
+        - identity.identityProviderBase
       summary: Invoke function availableProviderTypes
       description: Get all identity providers supported in a directory.
       externalDocs:
@@ -7702,7 +7702,7 @@ paths:
   /identityProtection/riskyServicePrincipals/microsoft.graph.confirmCompromised:
     post:
       tags:
-        - identityProtection.Actions
+        - identityProtection.riskyServicePrincipal
       summary: Invoke action confirmCompromised
       description: Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high.
       externalDocs:
@@ -7733,7 +7733,7 @@ paths:
   /identityProtection/riskyServicePrincipals/microsoft.graph.dismiss:
     post:
       tags:
-        - identityProtection.Actions
+        - identityProtection.riskyServicePrincipal
       summary: Invoke action dismiss
       description: Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to none. You can dismiss up to 60 service principal accounts in one request.
       externalDocs:
@@ -8204,7 +8204,7 @@ paths:
   /identityProtection/riskyUsers/microsoft.graph.confirmCompromised:
     post:
       tags:
-        - identityProtection.Actions
+        - identityProtection.riskyUser
       summary: Invoke action confirmCompromised
       description: Confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
       externalDocs:
@@ -8235,7 +8235,7 @@ paths:
   /identityProtection/riskyUsers/microsoft.graph.dismiss:
     post:
       tags:
-        - identityProtection.Actions
+        - identityProtection.riskyUser
       summary: Invoke action dismiss
       description: Dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
       externalDocs:
@@ -8708,7 +8708,7 @@ paths:
   /identityProviders/microsoft.graph.availableProviderTypes():
     get:
       tags:
-        - identityProviders.Functions
+        - identityProviders.identityProvider
       summary: Invoke function availableProviderTypes
       description: Retrieves all identity provider types available in a directory.
       externalDocs:
@@ -9982,7 +9982,7 @@ paths:
   /oauth2PermissionGrants/microsoft.graph.delta():
     get:
       tags:
-        - oauth2PermissionGrants.Functions
+        - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted oauth2permissiongrant objects without performing a full read of the entire resource collection. For details, see Using delta query.'
       externalDocs:
@@ -11901,7 +11901,7 @@ paths:
   '/policies/authenticationStrengthPolicies/{authenticationStrengthPolicy-id}/microsoft.graph.updateAllowedCombinations':
     post:
       tags:
-        - policies.Actions
+        - policies.authenticationStrengthPolicy
       summary: Invoke action updateAllowedCombinations
       description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
       externalDocs:
@@ -11944,7 +11944,7 @@ paths:
   '/policies/authenticationStrengthPolicies/{authenticationStrengthPolicy-id}/microsoft.graph.usage()':
     get:
       tags:
-        - policies.Functions
+        - policies.authenticationStrengthPolicy
       summary: Invoke function usage
       description: 'Allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.'
       externalDocs:
@@ -12780,7 +12780,7 @@ paths:
   /policies/crossTenantAccessPolicy/default/microsoft.graph.resetToSystemDefault:
     post:
       tags:
-        - policies.Actions
+        - policies.crossTenantAccessPolicy
       summary: Invoke action resetToSystemDefault
       description: Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
       externalDocs:
@@ -13040,11 +13040,11 @@ paths:
     put:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update crossTenantIdentitySyncPolicyPartner
-      description: Update the user synchronization policy of a partner-specific configuration.
+      summary: Create identitySynchronization
+      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_SetIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -16763,11 +16763,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Update multiTenantOrganization
-      description: Update the properties of a multitenant organization.
+      summary: Create multiTenantOrganization
+      description: 'Create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -17771,6 +17771,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/methods/{authenticationMethod-id}/microsoft.graph.resetPassword':
+    post:
+      tags:
+        - users.authentication
+      summary: Invoke action resetPassword
+      description: 'Reset a user''s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and can''t be performed on a user''s own account. To reset a user''s password in Azure AD B2C, use the Update user API operation and update the passwordProfile > forceChangePasswordNextSignIn object. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0
+      operationId: user.authentication.method_resetPassword
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: authenticationMethod-id
+          in: path
+          description: The unique identifier of authenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationMethod
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                newPassword:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.passwordResetResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/authentication/methods/$count':
     get:
       tags:
@@ -18663,6 +18713,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}/microsoft.graph.disableSmsSignIn':
+    post:
+      tags:
+        - users.authentication
+      summary: Invoke action disableSmsSignIn
+      description: 'Disable SMS sign-in for an existing mobile phone number registered to a user. The number will no longer be available for SMS sign-in, which can prevent your user from signing in.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-disablesmssignin?view=graph-rest-1.0
+      operationId: user.authentication.phoneMethod_disableSmsSignIn
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: phoneAuthenticationMethod-id
+          in: path
+          description: The unique identifier of phoneAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: phoneAuthenticationMethod
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}/microsoft.graph.enableSmsSignIn':
+    post:
+      tags:
+        - users.authentication
+      summary: Invoke action enableSmsSignIn
+      description: 'Enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled:'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-1.0
+      operationId: user.authentication.phoneMethod_enableSmsSignIn
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: phoneAuthenticationMethod-id
+          in: path
+          description: The unique identifier of phoneAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: phoneAuthenticationMethod
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/authentication/phoneMethods/$count':
     get:
       tags:
@@ -19326,6 +19442,7 @@ components:
               type: number
               description: Specifies the progress of an operation.
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.dataPolicyOperationStatus'
             storageLocation:
@@ -20523,7 +20640,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -21004,6 +21121,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -21963,6 +22081,16 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.passwordResetResponse:
+      title: passwordResetResponse
+      type: object
+      properties:
+        newPassword:
+          type: string
+          description: The Microsoft Entra ID-generated password.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -22192,6 +22320,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -22317,6 +22446,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.dataPolicyOperationStatus:
       title: dataPolicyOperationStatus
       enum:
@@ -28151,6 +28282,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -28808,6 +28940,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.teamsAsyncOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -29805,6 +29938,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -32904,6 +33038,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -38434,10 +38569,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -38446,10 +38583,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:

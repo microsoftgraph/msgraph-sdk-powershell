@@ -4165,6 +4165,44 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/microsoft.graph.managedTenants.addUserInputLog':
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Invoke action addUserInputLog
+      operationId: tenantRelationship.managedTenant.managedTenantAlert_addUserInputLog
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: The unique identifier of managedTenantAlert
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                logInformation:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /tenantRelationships/managedTenants/managedTenantAlerts/$count:
     get:
       tags:
@@ -5019,6 +5057,68 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managementActions/{managementAction-id}/microsoft.graph.managedTenants.apply':
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Invoke action apply
+      description: Applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multifactor authentication for admins management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/managedtenants-managementaction-apply?view=graph-rest-beta
+      operationId: tenantRelationship.managedTenant.managementAction_apply
+      parameters:
+        - name: managementAction-id
+          in: path
+          description: The unique identifier of managementAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementAction
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantId:
+                  type: string
+                  nullable: true
+                tenantGroupId:
+                  type: string
+                  nullable: true
+                managementTemplateId:
+                  type: string
+                  nullable: true
+                includeAllUsers:
+                  type: boolean
+                  default: false
+                  nullable: true
+                includeGroups:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                excludeGroups:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionDeploymentStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /tenantRelationships/managedTenants/managementActions/$count:
     get:
       tags:
@@ -5230,6 +5330,53 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /tenantRelationships/managedTenants/managementActionTenantDeploymentStatuses/microsoft.graph.managedTenants.changeDeploymentStatus:
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Invoke action changeDeploymentStatus
+      description: 'Changes the tenant level deployment status for the management action. This information is used to provide insights into what management actions are in a specific state. As example there might be a plan to apply the require multi-factor authentication for admins, so it would be ideal to change the status to planned to reflect the appropriate status.'
+      operationId: tenantRelationship.managedTenant.managementActionTenantDeploymentStatus_changeDeploymentStatus
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantGroupId:
+                  type: string
+                  nullable: true
+                tenantId:
+                  type: string
+                  nullable: true
+                managementActionId:
+                  type: string
+                  nullable: true
+                managementTemplateId:
+                  type: string
+                  nullable: true
+                managementTemplateVersion:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                status:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionDeploymentStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /tenantRelationships/managedTenants/managementIntents:
     get:
       tags:
@@ -7442,6 +7589,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion-id}/deployments/{managementTemplateStepDeployment-id}/microsoft.graph.managedTenants.changeDeploymentStatus':
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Invoke action changeDeploymentStatus
+      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion.deployment_changeDeploymentStatus
+      parameters:
+        - name: managementTemplateStepVersion-id
+          in: path
+          description: The unique identifier of managementTemplateStepVersion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateStepVersion
+        - name: managementTemplateStepDeployment-id
+          in: path
+          description: The unique identifier of managementTemplateStepDeployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateStepDeployment
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantId:
+                  type: string
+                  nullable: true
+                managementTemplateStepId:
+                  type: string
+                  nullable: true
+                status:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion-id}/deployments/{managementTemplateStepDeployment-id}/templateStepVersion':
     get:
       tags:
@@ -7967,6 +8166,50 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /tenantRelationships/managedTenants/tenantGroups/microsoft.graph.managedTenants.tenantSearch:
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Invoke action tenantSearch
+      description: Searches for the specified managed tenants across tenant groups.
+      operationId: tenantRelationship.managedTenant.tenantGroup_tenantSearch
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of tenantGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /tenantRelationships/managedTenants/tenants:
     get:
       tags:
@@ -8150,6 +8393,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/tenants/{tenant-id}/microsoft.graph.managedTenants.offboardTenant':
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Invoke action offboardTenant
+      description: 'Carries out the appropriate procedures to remove a managed tenant from the multitenant management platform. No relationships, such as commerce and delegate administrative privileges, will be impacted. The only change made by invoking this action is the tenant will be deprovisioned from the multitenant management platform.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/managedtenants-tenant-offboardtenant?view=graph-rest-beta
+      operationId: tenantRelationship.managedTenant.tenant_offboardTenant
+      parameters:
+        - name: tenant-id
+          in: path
+          description: The unique identifier of tenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenant
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/tenantRelationships/managedTenants/tenants/{tenant-id}/microsoft.graph.managedTenants.resetTenantOnboardingStatus':
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Invoke action resetTenantOnboardingStatus
+      description: Carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multitenant management platform using the offboardTenant action. By invoking this action the platform attempts to onboard the managed tenant for management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/managedtenants-tenant-resettenantonboardingstatus?view=graph-rest-beta
+      operationId: tenantRelationship.managedTenant.tenant_resetTenantOnboardingStatus
+      parameters:
+        - name: tenant-id
+          in: path
+          description: The unique identifier of tenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenant
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /tenantRelationships/managedTenants/tenants/$count:
     get:
       tags:
@@ -8757,6 +9058,94 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/tenantTags/{tenantTag-id}/microsoft.graph.managedTenants.assignTag':
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Invoke action assignTag
+      description: Assign the tenant tag to the specified managed tenants.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-beta
+      operationId: tenantRelationship.managedTenant.tenantTag_assignTag
+      parameters:
+        - name: tenantTag-id
+          in: path
+          description: The unique identifier of tenantTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantTag
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/tenantRelationships/managedTenants/tenantTags/{tenantTag-id}/microsoft.graph.managedTenants.unassignTag':
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Invoke action unassignTag
+      description: Un-assigns the tenant tag from the specified managed tenants.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-unassigntag?view=graph-rest-beta
+      operationId: tenantRelationship.managedTenant.tenantTag_unassignTag
+      parameters:
+        - name: tenantTag-id
+          in: path
+          description: The unique identifier of tenantTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantTag
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /tenantRelationships/managedTenants/tenantTags/$count:
     get:
       tags:
@@ -10574,6 +10963,30 @@ components:
               description: The collection of workload actions associated with the management action. Required. Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.managedTenants.managementActionDeploymentStatus:
+      title: managementActionDeploymentStatus
+      type: object
+      properties:
+        managementActionId:
+          type: string
+          description: The identifier for the management action. Required. Read-only.
+        managementTemplateId:
+          type: string
+          description: The management template identifier that was used to generate the management action. Required. Read-only.
+        managementTemplateVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        status:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionStatus'
+        workloadActionDeploymentStatuses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadActionDeploymentStatus'
+          description: The collection of workload action deployment statues for the given management action. Optional.
+      additionalProperties:
+        type: object
     microsoft.graph.managedTenants.managementActionTenantDeploymentStatus:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11475,6 +11888,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.managedTenants.alertLogContent:
       title: alertLogContent
       type: object
@@ -11612,28 +12027,53 @@ components:
           description: The collection of settings associated with the workload action. Optional. Read-only.
       additionalProperties:
         type: object
-    microsoft.graph.managedTenants.managementActionDeploymentStatus:
-      title: managementActionDeploymentStatus
+    microsoft.graph.managedTenants.managementActionStatus:
+      title: managementActionStatus
+      enum:
+        - toAddress
+        - completed
+        - error
+        - timeOut
+        - inProgress
+        - planned
+        - resolvedBy3rdParty
+        - resolvedThroughAlternateMitigation
+        - riskAccepted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.workloadActionDeploymentStatus:
+      title: workloadActionDeploymentStatus
       type: object
       properties:
-        managementActionId:
+        actionId:
           type: string
-          description: The identifier for the management action. Required. Read-only.
-        managementTemplateId:
+          description: The unique identifier for the workload action. Required. Read-only.
+        deployedPolicyId:
           type: string
-          description: The management template identifier that was used to generate the management action. Required. Read-only.
-        managementTemplateVersion:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-        status:
-          $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionStatus'
-        workloadActionDeploymentStatuses:
+          description: The identifier of any policy that was created by applying the workload action. Optional. Read-only.
+          nullable: true
+        error:
+          $ref: '#/components/schemas/microsoft.graph.genericError'
+        excludeGroups:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadActionDeploymentStatus'
-          description: The collection of workload action deployment statues for the given management action. Optional.
+            type: string
+            nullable: true
+        includeAllUsers:
+          type: boolean
+        includeGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+        lastDeploymentDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time the workload action was last deployed. Optional.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadActionStatus'
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.managementTemplateDetailedInfo:
@@ -12395,55 +12835,30 @@ components:
           $ref: '#/components/schemas/microsoft.graph.managedTenants.managementParameterValueType'
       additionalProperties:
         type: object
-    microsoft.graph.managedTenants.managementActionStatus:
-      title: managementActionStatus
+    microsoft.graph.genericError:
+      title: genericError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.workloadActionStatus:
+      title: workloadActionStatus
       enum:
         - toAddress
         - completed
         - error
         - timeOut
         - inProgress
-        - planned
-        - resolvedBy3rdParty
-        - resolvedThroughAlternateMitigation
-        - riskAccepted
         - unknownFutureValue
       type: string
-    microsoft.graph.managedTenants.workloadActionDeploymentStatus:
-      title: workloadActionDeploymentStatus
-      type: object
-      properties:
-        actionId:
-          type: string
-          description: The unique identifier for the workload action. Required. Read-only.
-        deployedPolicyId:
-          type: string
-          description: The identifier of any policy that was created by applying the workload action. Optional. Read-only.
-          nullable: true
-        error:
-          $ref: '#/components/schemas/microsoft.graph.genericError'
-        excludeGroups:
-          type: array
-          items:
-            type: string
-            nullable: true
-        includeAllUsers:
-          type: boolean
-        includeGroups:
-          type: array
-          items:
-            type: string
-            nullable: true
-        lastDeploymentDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date and time the workload action was last deployed. Optional.
-          format: date-time
-          nullable: true
-        status:
-          $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadActionStatus'
-      additionalProperties:
-        type: object
     microsoft.graph.managedTenants.managementParameterValueType:
       title: managementParameterValueType
       enum:
@@ -12549,30 +12964,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    microsoft.graph.genericError:
-      title: genericError
-      type: object
-      properties:
-        code:
-          type: string
-          description: The error code.
-          nullable: true
-        message:
-          type: string
-          description: The error message.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.managedTenants.workloadActionStatus:
-      title: workloadActionStatus
-      enum:
-        - toAddress
-        - completed
-        - error
-        - timeOut
-        - inProgress
-        - unknownFutureValue
-      type: string
     microsoft.graph.managedTenants.workloadOnboardingStatus:
       title: workloadOnboardingStatus
       enum:

@@ -1393,7 +1393,7 @@ paths:
   '/external/connections/{externalConnection-id}/items/{externalItem-id}/microsoft.graph.externalConnectors.addActivities':
     post:
       tags:
-        - external.Actions
+        - external.externalConnection
       summary: Invoke action addActivities
       operationId: external.connection.item_addActivity
       parameters:
@@ -2294,7 +2294,7 @@ paths:
   /search/microsoft.graph.query:
     post:
       tags:
-        - search.Actions
+        - search.searchEntity
       summary: Invoke action query
       description: Runs the query specified in the request body. Search results are provided in the response.
       externalDocs:

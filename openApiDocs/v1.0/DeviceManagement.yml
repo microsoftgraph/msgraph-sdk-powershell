@@ -357,6 +357,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/admin/edge/internetExplorerMode/siteLists/{browserSiteList-id}/microsoft.graph.publish':
+    post:
+      tags:
+        - admin.edge
+      summary: Invoke action publish
+      description: Publish the specified browserSiteList for devices to download.
+      operationId: admin.edge.internetExplorerMode.siteList_publish
+      parameters:
+        - name: browserSiteList-id
+          in: path
+          description: The unique identifier of browserSiteList
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: browserSiteList
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                revision:
+                  type: string
+                sites:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.browserSite'
+                sharedCookies:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.browserSharedCookie'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.browserSiteList'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/admin/edge/internetExplorerMode/siteLists/{browserSiteList-id}/sharedCookies':
     get:
       tags:
@@ -895,7 +941,7 @@ paths:
       description: Read properties and relationships of the deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-androidforwork-devicemanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-devicemanagement-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -935,7 +981,7 @@ paths:
       description: Update the properties of a deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-policyset-devicemanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicemanagement-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
@@ -1512,11 +1558,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: List deviceCompliancePolicies
-      description: List properties and relationships of the deviceCompliancePolicy objects.
+      summary: List iosCompliancePolicies
+      description: List properties and relationships of the iosCompliancePolicy objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceCompliancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1566,11 +1612,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create windowsPhone81CompliancePolicy
-      description: Create a new windowsPhone81CompliancePolicy object.
+      summary: Create windows10MobileCompliancePolicy
+      description: Create a new windows10MobileCompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceCompliancePolicy
       requestBody:
         description: New navigation property
@@ -1593,11 +1639,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get iosCompliancePolicy
-      description: Read properties and relationships of the iosCompliancePolicy object.
+      summary: Get windows10CompliancePolicy
+      description: Read properties and relationships of the windows10CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1641,11 +1687,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update windowsPhone81CompliancePolicy
-      description: Update the properties of a windowsPhone81CompliancePolicy object.
+      summary: Update androidWorkProfileCompliancePolicy
+      description: Update the properties of a androidWorkProfileCompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1676,11 +1722,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete windows10CompliancePolicy
-      description: Deletes a windows10CompliancePolicy.
+      summary: Delete androidWorkProfileCompliancePolicy
+      description: Deletes a androidWorkProfileCompliancePolicy.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2569,6 +2615,102 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.deviceCompliancePolicy
+      summary: Invoke action assign
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-assign?view=graph-rest-1.0
+      operationId: deviceManagement.deviceCompliancePolicy_assign
+      parameters:
+        - name: deviceCompliancePolicy-id
+          in: path
+          description: The unique identifier of deviceCompliancePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCompliancePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of deviceCompliancePolicyAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.scheduleActionsForRules':
+    post:
+      tags:
+        - deviceManagement.deviceCompliancePolicy
+      summary: Invoke action scheduleActionsForRules
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-scheduleactionsforrules?view=graph-rest-1.0
+      operationId: deviceManagement.deviceCompliancePolicy_scheduleActionsGraphFPreRule
+      parameters:
+        - name: deviceCompliancePolicy-id
+          in: path
+          description: The unique identifier of deviceCompliancePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCompliancePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deviceComplianceScheduledActionForRules:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/scheduledActionsForRule':
     get:
       tags:
@@ -4156,11 +4298,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: List windows10EndpointProtectionConfigurations
-      description: List properties and relationships of the windows10EndpointProtectionConfiguration objects.
+      summary: List editionUpgradeConfigurations
+      description: List properties and relationships of the editionUpgradeConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10endpointprotectionconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-editionupgradeconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4210,11 +4352,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create windows10EnterpriseModernAppManagementConfiguration
-      description: Create a new windows10EnterpriseModernAppManagementConfiguration object.
+      summary: Create windowsPhone81CustomConfiguration
+      description: Create a new windowsPhone81CustomConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10enterprisemodernappmanagementconfiguration-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81customconfiguration-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceConfiguration
       requestBody:
         description: New navigation property
@@ -4237,11 +4379,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get macOSCustomConfiguration
-      description: Read properties and relationships of the macOSCustomConfiguration object.
+      summary: Get windowsPhone81CustomConfiguration
+      description: Read properties and relationships of the windowsPhone81CustomConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscustomconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81customconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4285,11 +4427,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update sharedPCConfiguration
-      description: Update the properties of a sharedPCConfiguration object.
+      summary: Update macOSDeviceFeaturesConfiguration
+      description: Update the properties of a macOSDeviceFeaturesConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-sharedpcconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macosdevicefeaturesconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4320,11 +4462,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete windows10SecureAssessmentConfiguration
-      description: Deletes a windows10SecureAssessmentConfiguration.
+      summary: Delete windowsUpdateForBusinessConfiguration
+      description: Deletes a windowsUpdateForBusinessConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10secureassessmentconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsupdateforbusinessconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -5231,6 +5373,102 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.deviceConfiguration
+      summary: Invoke action assign
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfiguration-assign?view=graph-rest-1.0
+      operationId: deviceManagement.deviceConfiguration_assign
+      parameters:
+        - name: deviceConfiguration-id
+          in: path
+          description: The unique identifier of deviceConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of deviceConfigurationAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId=''{secretReferenceValueId}'')':
+    get:
+      tags:
+        - deviceManagement.deviceConfiguration
+      summary: Invoke function getOmaSettingPlainTextValue
+      operationId: deviceManagement.deviceConfiguration_getOmaSettingPlainTextValue
+      parameters:
+        - name: deviceConfiguration-id
+          in: path
+          description: The unique identifier of deviceConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfiguration
+        - name: secretReferenceValueId
+          in: path
+          description: 'Usage: secretReferenceValueId=''{secretReferenceValueId}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/userStatuses':
     get:
       tags:
@@ -6637,6 +6875,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.createDownloadUrl':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action createDownloadUrl
+      operationId: deviceManagement.managedDevice.logCollectionRequest_createDownloadUrl
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: deviceLogCollectionResponse-id
+          in: path
+          description: The unique identifier of deviceLogCollectionResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceLogCollectionResponse
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/logCollectionRequests/$count':
     get:
       tags:
@@ -6659,6 +6936,532 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-bypassactivationlock?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_bypassActivationLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.cleanWindowsDevice':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-cleanwindowsdevice?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_cleanWindowsDevice
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keepUserData:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-deleteuserfromsharedappledevice?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_deleteUserFromSharedAppleDevice
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.disableLostMode':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action disableLostMode
+      description: Disable lost mode
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-disablelostmode?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_disableLostMode
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action locateDevice
+      description: Locate a device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-locatedevice?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_locateDevice
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.logoutSharedAppleDeviceActiveUser':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-logoutsharedappledeviceactiveuser?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_logoutSharedAppleDeviceActiveUser
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.rebootNow':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action rebootNow
+      description: Reboot device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-rebootnow?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_rebootNow
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.recoverPasscode':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action recoverPasscode
+      description: Recover passcode
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-recoverpasscode?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_recoverPasscode
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.remoteLock':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action remoteLock
+      description: Remote lock
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-remotelock?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_remoteLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteAssistance':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-requestremoteassistance?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_requestRemoteAssistance
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.resetPasscode':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action resetPasscode
+      description: Reset passcode
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-resetpasscode?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_resetPasscode
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.retire':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action retire
+      description: Retire a device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-retire?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_retire
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.shutDown':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action shutDown
+      description: Shut down device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-shutdown?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_shutDown
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.syncDevice':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action syncDevice
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-syncdevice?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_syncDevice
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.updateWindowsDeviceAccount':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action updateWindowsDeviceAccount
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-updatewindowsdeviceaccount?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_updateWindowsDeviceAccount
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateWindowsDeviceAccountActionParameter:
+                  $ref: '#/components/schemas/microsoft.graph.updateWindowsDeviceAccountActionParameter'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderScan':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action windowsDefenderScan
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderscan?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_windowsDefenderScan
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quickScan:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderUpdateSignatures':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action windowsDefenderUpdateSignatures
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderupdatesignatures?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_windowsDefenderUpdateSignature
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.wipe':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action wipe
+      description: Wipe a device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-wipe?view=graph-rest-1.0
+      operationId: deviceManagement.managedDevice_wipe
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keepEnrollmentData:
+                  type: boolean
+                  default: false
+                  nullable: true
+                keepUserData:
+                  type: boolean
+                  default: false
+                  nullable: true
+                macOsUnlockCode:
+                  type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/users':
     get:
       tags:
@@ -7076,6 +7879,100 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
+    get:
+      tags:
+        - deviceManagement.deviceManagement
+      summary: Invoke function getEffectivePermissions
+      description: Retrieves the effective permissions of the currently authenticated user
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-geteffectivepermissions?view=graph-rest-1.0
+      operationId: deviceManagement_getEffectivePermission
+      parameters:
+        - name: scope
+          in: path
+          description: 'Usage: scope=''{scope}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.rolePermission'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/microsoft.graph.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices():
+    get:
+      tags:
+        - deviceManagement.deviceManagement
+      summary: Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+      operationId: deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevice
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName=''{domainName}'')':
+    get:
+      tags:
+        - deviceManagement.deviceManagement
+      summary: Invoke function verifyWindowsEnrollmentAutoDiscovery
+      operationId: deviceManagement_verifyWindowsEnrollmentAutoDiscovery
+      parameters:
+        - name: domainName
+          in: path
+          description: 'Usage: domainName=''{domainName}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /deviceManagement/mobileAppTroubleshootingEvents:
     get:
       tags:
@@ -7507,6 +8404,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}/microsoft.graph.createDownloadUrl':
+    post:
+      tags:
+        - deviceManagement.mobileAppTroubleshootingEvent
+      summary: Invoke action createDownloadUrl
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-createdownloadurl?view=graph-rest-1.0
+      operationId: deviceManagement.mobileAppTroubleshootingEvent.appLogCollectionRequest_createDownloadUrl
+      parameters:
+        - name: mobileAppTroubleshootingEvent-id
+          in: path
+          description: The unique identifier of mobileAppTroubleshootingEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileAppTroubleshootingEvent
+        - name: appLogCollectionRequest-id
+          in: path
+          description: The unique identifier of appLogCollectionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appLogCollectionRequest
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appLogCollectionDownloadDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/$count':
     get:
       tags:
@@ -7996,6 +8930,31 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate-id}/microsoft.graph.sendTestMessage':
+    post:
+      tags:
+        - deviceManagement.notificationMessageTemplate
+      summary: Invoke action sendTestMessage
+      description: Sends test message using the specified notificationMessageTemplate in the default locale
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-sendtestmessage?view=graph-rest-1.0
+      operationId: deviceManagement.notificationMessageTemplate_sendTestMessage
+      parameters:
+        - name: notificationMessageTemplate-id
+          in: path
+          description: The unique identifier of notificationMessageTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notificationMessageTemplate
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/notificationMessageTemplates/$count:
     get:
       tags:
@@ -11174,6 +12133,79 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/userExperienceAnalyticsDevicePerformance/microsoft.graph.summarizeDevicePerformanceDevices(summarizeBy=''{summarizeBy}'')':
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsDevicePerformance
+      summary: Invoke function summarizeDevicePerformanceDevices
+      operationId: deviceManagement.userExperienceAnalyticsDevicePerformance_summarizeDevicePerformanceDevice
+      parameters:
+        - name: summarizeBy
+          in: path
+          description: 'Usage: summarizeBy=''{summarizeBy}'''
+          required: true
+          style: simple
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of userExperienceAnalyticsDevicePerformance
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDevicePerformance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/userExperienceAnalyticsDeviceScores:
     get:
       tags:
@@ -14247,6 +15279,55 @@ components:
           additionalProperties:
             type: object
           description: A singleton entity which is used to specify IE mode site list metadata
+    microsoft.graph.browserSite:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: browserSite
+          type: object
+          properties:
+            allowRedirect:
+              type: boolean
+              description: 'Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.'
+            comment:
+              type: string
+              description: The comment for the site.
+            compatibilityMode:
+              $ref: '#/components/schemas/microsoft.graph.browserSiteCompatibilityMode'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the site was created.
+              format: date-time
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the site was deleted.
+              format: date-time
+              nullable: true
+            history:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.browserSiteHistory'
+              description: The history of modifications applied to the site.
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the site was last modified.
+              format: date-time
+            mergeType:
+              $ref: '#/components/schemas/microsoft.graph.browserSiteMergeType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.browserSiteStatus'
+            targetEnvironment:
+              $ref: '#/components/schemas/microsoft.graph.browserSiteTargetEnvironment'
+            webUrl:
+              type: string
+              description: The URL of the site.
+          additionalProperties:
+            type: object
+          description: Singleton entity which is used to specify IE mode site metadata
     microsoft.graph.browserSharedCookie:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14297,55 +15378,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.browserSharedCookieStatus'
           additionalProperties:
             type: object
-    microsoft.graph.browserSite:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: browserSite
-          type: object
-          properties:
-            allowRedirect:
-              type: boolean
-              description: 'Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.'
-            comment:
-              type: string
-              description: The comment for the site.
-            compatibilityMode:
-              $ref: '#/components/schemas/microsoft.graph.browserSiteCompatibilityMode'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the site was created.
-              format: date-time
-            deletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the site was deleted.
-              format: date-time
-              nullable: true
-            history:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.browserSiteHistory'
-              description: The history of modifications applied to the site.
-            lastModifiedBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the site was last modified.
-              format: date-time
-            mergeType:
-              $ref: '#/components/schemas/microsoft.graph.browserSiteMergeType'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.browserSiteStatus'
-            targetEnvironment:
-              $ref: '#/components/schemas/microsoft.graph.browserSiteTargetEnvironment'
-            webUrl:
-              type: string
-              description: The URL of the site.
-          additionalProperties:
-            type: object
-          description: Singleton entity which is used to specify IE mode site metadata
     microsoft.graph.deviceManagement:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15959,11 +16991,40 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
             type: object
           description: Windows Log Collection request entity.
+    microsoft.graph.updateWindowsDeviceAccountActionParameter:
+      title: updateWindowsDeviceAccountActionParameter
+      type: object
+      properties:
+        calendarSyncEnabled:
+          type: boolean
+          description: Not yet documented
+          nullable: true
+        deviceAccount:
+          $ref: '#/components/schemas/microsoft.graph.windowsDeviceAccount'
+        deviceAccountEmail:
+          type: string
+          description: Not yet documented
+          nullable: true
+        exchangeServer:
+          type: string
+          description: Not yet documented
+          nullable: true
+        passwordRotationEnabled:
+          type: boolean
+          description: Not yet documented
+          nullable: true
+        sessionInitiationProtocalAddress:
+          type: string
+          description: Not yet documented
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsProtectionState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16107,6 +17168,93 @@ components:
           additionalProperties:
             type: object
           description: Malware detection entity.
+    microsoft.graph.rolePermission:
+      title: rolePermission
+      type: object
+      properties:
+        resourceActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.resourceAction'
+          description: Resource Actions each containing a set of allowed and not allowed permissions.
+      additionalProperties:
+        type: object
+      description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
+    microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary:
+      title: userExperienceAnalyticsWorkFromAnywhereDevicesSummary
+      type: object
+      properties:
+        autopilotDevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary'
+        cloudIdentityDevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsCloudIdentityDevicesSummary'
+        cloudManagementDevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary'
+        coManagedDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total number of co-managed devices. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        devicesNotAutopilotRegistered:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        devicesWithoutAutopilotProfileAssigned:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of intune devices not autopilot profile assigned. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        devicesWithoutCloudIdentity:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of devices that are not cloud identity. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        intuneDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        tenantAttachDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total count of tenant attach devices. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        totalDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The total count of devices. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        unsupportedOSversionDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of Windows 10 devices that have unsupported OS versions. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        windows10Devices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of windows 10 devices. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        windows10DevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary'
+        windows10DevicesWithoutTenantAttach:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of windows 10 devices that are Intune and co-managed. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics Work From Anywhere metrics devices summary.
     microsoft.graph.mobileAppTroubleshootingEvent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16148,6 +17296,22 @@ components:
           additionalProperties:
             type: object
           description: Entity for AppLogCollectionRequest contains all logs values.
+    microsoft.graph.appLogCollectionDownloadDetails:
+      title: appLogCollectionDownloadDetails
+      type: object
+      properties:
+        appLogDecryptionAlgorithm:
+          $ref: '#/components/schemas/microsoft.graph.appLogDecryptionAlgorithm'
+        decryptionKey:
+          type: string
+          description: Decryption key that used to decrypt the log.
+          nullable: true
+        downloadUrl:
+          type: string
+          description: Download SAS (Shared Access Signature) Url for completed app log request.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.notificationMessageTemplate:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16355,6 +17519,7 @@ components:
               type: number
               description: 'The health score of the application. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             appName:
               type: string
               description: 'The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.'
@@ -16550,6 +17715,7 @@ components:
               type: number
               description: 'The application health score of the device model. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
           additionalProperties:
             type: object
           description: The user experience analytics device model performance entity contains device model performance details.
@@ -16581,6 +17747,7 @@ components:
               type: number
               description: 'The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             deviceDisplayName:
               type: string
               description: 'The name of the device. Supports: $select, $OrderBy. Read-only.'
@@ -16681,6 +17848,7 @@ components:
               type: number
               description: 'The application health score of the OS version. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
           additionalProperties:
             type: object
           description: The user experience analytics device OS version performance entity contains OS version performance details.
@@ -16718,6 +17886,7 @@ components:
               type: number
               description: The value of the user experience analytics metric.
               format: double
+              nullable: true
           additionalProperties:
             type: object
           description: The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
@@ -16766,10 +17935,12 @@ components:
               type: number
               description: Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
               format: double
+              nullable: true
             averageRestarts:
               type: number
               description: Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
               format: double
+              nullable: true
             blueScreenCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -16836,6 +18007,7 @@ components:
               type: number
               description: The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             operatingSystemVersion:
               type: string
               description: The user experience analytics device Operating System version.
@@ -16856,9 +18028,47 @@ components:
               type: number
               description: The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
           additionalProperties:
             type: object
           description: The user experience analytics device performance entity contains device boot performance details.
+    microsoft.graph.userExperienceAnalyticsSummarizedBy:
+      title: userExperienceAnalyticsSummarizedBy
+      enum:
+        - none
+        - model
+        - allRegressions
+        - modelRegression
+        - manufacturerRegression
+        - operatingSystemVersionRegression
+        - unknownFutureValue
+      type: string
+      description: 'Indicates type of summarization. Possible values are: None, Model, AllRegressions, ModelRegression, ManufacturerRegression, OperatingSystemVersionRegression.'
+      x-ms-enum:
+        name: userExperienceAnalyticsSummarizedBy
+        modelAsString: false
+        values:
+          - value: none
+            description: Indicates that the summarization is none.
+            name: none
+          - value: model
+            description: Indicates that the summarization is by model.
+            name: model
+          - value: allRegressions
+            description: Indicates that the summarization is by all regressions.
+            name: allRegressions
+          - value: modelRegression
+            description: Indicates that the summarization is by model regression.
+            name: modelRegression
+          - value: manufacturerRegression
+            description: Indicates that the summarization is by manufacturer regression.
+            name: manufacturerRegression
+          - value: operatingSystemVersionRegression
+            description: Indicates that the summarization is by operating system version regression.
+            name: operatingSystemVersionRegression
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.userExperienceAnalyticsDeviceScores:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16869,10 +18079,12 @@ components:
               type: number
               description: Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             batteryHealthScore:
               type: number
               description: Indicates a calulated score indicating the health of the device's battery. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             deviceName:
               type: string
               description: 'The name of the device. Supports: $select, $OrderBy. Read-only.'
@@ -16881,6 +18093,7 @@ components:
               type: number
               description: Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             healthStatus:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
             manufacturer:
@@ -16895,10 +18108,12 @@ components:
               type: number
               description: Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             workFromAnywhereScore:
               type: number
               description: Indicates a weighted score of the work from anywhere on a device level. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
           additionalProperties:
             type: object
           description: The user experience analytics device scores entity consolidates the various Endpoint Analytics scores.
@@ -17084,14 +18299,17 @@ components:
               type: number
               description: Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             batteryHealthScore:
               type: number
               description: Indicates a calulated score indicating the health of the device's battery. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             endpointAnalyticsScore:
               type: number
               description: Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             healthStatus:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
             manufacturer:
@@ -17110,10 +18328,12 @@ components:
               type: number
               description: Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             workFromAnywhereScore:
               type: number
               description: Indicates a weighted score of the work from anywhere on a device level. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
           additionalProperties:
             type: object
           description: The user experience analytics model scores entity consolidates the various Endpoint Analytics scores.
@@ -17155,34 +18375,42 @@ components:
               type: number
               description: 'The percentage of devices for which OS check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             processor64BitCheckFailedPercentage:
               type: number
               description: 'The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             processorCoreCountCheckFailedPercentage:
               type: number
               description: 'The percentage of devices for which processor hardware core count check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             processorFamilyCheckFailedPercentage:
               type: number
               description: 'The percentage of devices for which processor hardware family check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             processorSpeedCheckFailedPercentage:
               type: number
               description: 'The percentage of devices for which processor hardware speed check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             ramCheckFailedPercentage:
               type: number
               description: 'The percentage of devices for which RAM hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             secureBootCheckFailedPercentage:
               type: number
               description: 'The percentage of devices for which secure boot hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             storageCheckFailedPercentage:
               type: number
               description: 'The percentage of devices for which storage hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             totalDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -17193,6 +18421,7 @@ components:
               type: number
               description: 'The percentage of devices for which Trusted Platform Module (TPM) hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             upgradeEligibleDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -17373,14 +18602,17 @@ components:
               type: number
               description: 'The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             cloudManagementScore:
               type: number
               description: 'The cloud management score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             cloudProvisioningScore:
               type: number
               description: 'The cloud provisioning score of the device model.  Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             healthStatus:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
             manufacturer:
@@ -17401,10 +18633,12 @@ components:
               type: number
               description: 'The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
             workFromAnywhereScore:
               type: number
               description: 'The work from anywhere score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
               format: double
+              nullable: true
           additionalProperties:
             type: object
           description: The user experience analytics work from anywhere model performance.
@@ -17562,91 +18796,6 @@ components:
           - value: unknownFutureValue
             description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shoudn''t be necessary.'
             name: unknownFutureValue
-    microsoft.graph.browserSharedCookieHistory:
-      title: browserSharedCookieHistory
-      type: object
-      properties:
-        comment:
-          type: string
-          description: The comment for the shared cookie.
-          nullable: true
-        displayName:
-          type: string
-          description: The name of the cookie.
-        hostOnly:
-          type: boolean
-          description: Controls whether a cookie is a host-only or domain cookie.
-        hostOrDomain:
-          type: string
-          description: The URL of the cookie.
-          nullable: true
-        lastModifiedBy:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        path:
-          type: string
-          description: The path of the cookie.
-          nullable: true
-        publishedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date and time when the cookie was last published.
-          format: date-time
-        sourceEnvironment:
-          $ref: '#/components/schemas/microsoft.graph.browserSharedCookieSourceEnvironment'
-      additionalProperties:
-        type: object
-    microsoft.graph.browserSharedCookieSourceEnvironment:
-      title: browserSharedCookieSourceEnvironment
-      enum:
-        - microsoftEdge
-        - internetExplorer11
-        - both
-        - unknownFutureValue
-      type: string
-      x-ms-enum:
-        name: browserSharedCookieSourceEnvironment
-        modelAsString: false
-        values:
-          - value: microsoftEdge
-            description: Share session cookies from Microsoft Edge to Internet Explorer.
-            name: microsoftEdge
-          - value: internetExplorer11
-            description: Share session cookies from Internet Explorer to Microsoft Edge.
-            name: internetExplorer11
-          - value: both
-            description: Share session cookies to and from Microsoft Edge and Internet Explorer.
-            name: both
-          - value: unknownFutureValue
-            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
-            name: unknownFutureValue
-    microsoft.graph.browserSharedCookieStatus:
-      title: browserSharedCookieStatus
-      enum:
-        - published
-        - pendingAdd
-        - pendingEdit
-        - pendingDelete
-        - unknownFutureValue
-      type: string
-      x-ms-enum:
-        name: browserSharedCookieStatus
-        modelAsString: false
-        values:
-          - value: published
-            description: A sharedcookie that has been published
-            name: published
-          - value: pendingAdd
-            description: A sharedcookie that has been added pending publish
-            name: pendingAdd
-          - value: pendingEdit
-            description: A sharedcookie that has been edited pending publish
-            name: pendingEdit
-          - value: pendingDelete
-            description: A sharedcookie that has been deleted pending publish
-            name: pendingDelete
-          - value: unknownFutureValue
-            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
-            name: unknownFutureValue
     microsoft.graph.browserSiteCompatibilityMode:
       title: browserSiteCompatibilityMode
       enum:
@@ -17799,6 +18948,91 @@ components:
           - value: none
             description: Open in the browser the employee chooses.
             name: none
+          - value: unknownFutureValue
+            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
+            name: unknownFutureValue
+    microsoft.graph.browserSharedCookieHistory:
+      title: browserSharedCookieHistory
+      type: object
+      properties:
+        comment:
+          type: string
+          description: The comment for the shared cookie.
+          nullable: true
+        displayName:
+          type: string
+          description: The name of the cookie.
+        hostOnly:
+          type: boolean
+          description: Controls whether a cookie is a host-only or domain cookie.
+        hostOrDomain:
+          type: string
+          description: The URL of the cookie.
+          nullable: true
+        lastModifiedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        path:
+          type: string
+          description: The path of the cookie.
+          nullable: true
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the cookie was last published.
+          format: date-time
+        sourceEnvironment:
+          $ref: '#/components/schemas/microsoft.graph.browserSharedCookieSourceEnvironment'
+      additionalProperties:
+        type: object
+    microsoft.graph.browserSharedCookieSourceEnvironment:
+      title: browserSharedCookieSourceEnvironment
+      enum:
+        - microsoftEdge
+        - internetExplorer11
+        - both
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: browserSharedCookieSourceEnvironment
+        modelAsString: false
+        values:
+          - value: microsoftEdge
+            description: Share session cookies from Microsoft Edge to Internet Explorer.
+            name: microsoftEdge
+          - value: internetExplorer11
+            description: Share session cookies from Internet Explorer to Microsoft Edge.
+            name: internetExplorer11
+          - value: both
+            description: Share session cookies to and from Microsoft Edge and Internet Explorer.
+            name: both
+          - value: unknownFutureValue
+            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
+            name: unknownFutureValue
+    microsoft.graph.browserSharedCookieStatus:
+      title: browserSharedCookieStatus
+      enum:
+        - published
+        - pendingAdd
+        - pendingEdit
+        - pendingDelete
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: browserSharedCookieStatus
+        modelAsString: false
+        values:
+          - value: published
+            description: A sharedcookie that has been published
+            name: published
+          - value: pendingAdd
+            description: A sharedcookie that has been added pending publish
+            name: pendingAdd
+          - value: pendingEdit
+            description: A sharedcookie that has been edited pending publish
+            name: pendingEdit
+          - value: pendingDelete
+            description: A sharedcookie that has been deleted pending publish
+            name: pendingDelete
           - value: unknownFutureValue
             description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
             name: unknownFutureValue
@@ -19512,7 +20746,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -19993,6 +21227,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -20318,6 +21553,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.appLogUploadState:
       title: appLogUploadState
       enum:
@@ -20343,6 +21580,16 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+    microsoft.graph.windowsDeviceAccount:
+      title: windowsDeviceAccount
+      type: object
+      properties:
+        password:
+          type: string
+          description: Not yet documented
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -20874,6 +22121,117 @@ components:
           - value: noStatusCleared
             description: No status cleared
             name: noStatusCleared
+    microsoft.graph.resourceAction:
+      title: resourceAction
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Allowed Actions
+        notAllowedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Not Allowed Actions.
+      additionalProperties:
+        type: object
+      description: Set of allowed and not allowed actions for a resource.
+    microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary:
+      title: userExperienceAnalyticsAutopilotDevicesSummary
+      type: object
+      properties:
+        devicesNotAutopilotRegistered:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of intune devices that are not autopilot registerd. Read-only.
+          format: int32
+        devicesWithoutAutopilotProfileAssigned:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of intune devices not autopilot profile assigned. Read-only.
+          format: int32
+        totalWindows10DevicesWithoutTenantAttached:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of windows 10 devices that are Intune and co-managed. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics summary of Devices not windows autopilot ready.
+    microsoft.graph.userExperienceAnalyticsCloudIdentityDevicesSummary:
+      title: userExperienceAnalyticsCloudIdentityDevicesSummary
+      type: object
+      properties:
+        deviceWithoutCloudIdentityCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of devices that are not cloud identity. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics work from anywhere cloud identity devices summary.
+    microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary:
+      title: userExperienceAnalyticsCloudManagementDevicesSummary
+      type: object
+      properties:
+        coManagedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total number of  co-managed devices. Read-only.
+          format: int32
+        intuneDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of intune devices that are not autopilot registerd. Read-only.
+          format: int32
+        tenantAttachDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total count of tenant attach devices. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience work from anywhere Cloud management devices summary.
+    microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary:
+      title: userExperienceAnalyticsWindows10DevicesSummary
+      type: object
+      properties:
+        unsupportedOSversionDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of Windows 10 devices that have unsupported OS versions. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics work from anywhere Windows 10 devices summary.
+    microsoft.graph.appLogDecryptionAlgorithm:
+      title: appLogDecryptionAlgorithm
+      enum:
+        - aes256
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: appLogDecryptionAlgorithm
+        modelAsString: false
+        values:
+          - value: aes256
+            description: decrypting using Aes256.
+            name: aes256
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.notificationTemplateBrandingOptions:
       title: notificationTemplateBrandingOptions
       enum:
@@ -22387,18 +23745,6 @@ components:
           additionalProperties:
             type: object
           description: The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
-    microsoft.graph.rolePermission:
-      title: rolePermission
-      type: object
-      properties:
-        resourceActions:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.resourceAction'
-          description: Resource Actions each containing a set of allowed and not allowed permissions.
-      additionalProperties:
-        type: object
-      description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
     microsoft.graph.termsAndConditionsAcceptanceStatus:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25248,25 +26594,6 @@ components:
           - value: failed
             description: Report generation has failed.
             name: failed
-    microsoft.graph.resourceAction:
-      title: resourceAction
-      type: object
-      properties:
-        allowedResourceActions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Allowed Actions
-        notAllowedResourceActions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Not Allowed Actions.
-      additionalProperties:
-        type: object
-      description: Set of allowed and not allowed actions for a resource.
     microsoft.graph.cloudPcAuditActivityOperationType:
       title: cloudPcAuditActivityOperationType
       enum:
@@ -25847,6 +27174,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -27143,6 +28471,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -27800,6 +29129,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.teamsAsyncOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31246,6 +32576,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -35861,10 +37192,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -35873,10 +37206,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:

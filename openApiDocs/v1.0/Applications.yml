@@ -1346,7 +1346,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.addKey':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action addKey
       description: 'Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. You can use the Update application operation to perform an update instead.'
       externalDocs:
@@ -1391,7 +1391,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.addPassword':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action addPassword
       description: Adds a strong password or secret to an application. You can also add passwords while creating the application.
       externalDocs:
@@ -1432,7 +1432,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -1488,7 +1488,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action checkMemberObjects
       operationId: application_checkMemberObject
       parameters:
@@ -1540,7 +1540,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -1596,7 +1596,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -1652,7 +1652,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.removeKey':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action removeKey
       description: 'Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
       externalDocs:
@@ -1693,7 +1693,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.removePassword':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action removePassword
       description: Remove a password from an application.
       externalDocs:
@@ -1732,7 +1732,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.restore':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -1748,20 +1748,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -1775,7 +1761,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.setVerifiedPublisher':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action setVerifiedPublisher
       description: 'Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.'
       externalDocs:
@@ -1812,7 +1798,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.unsetVerifiedPublisher':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action unsetVerifiedPublisher
       description: 'Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.'
       externalDocs:
@@ -3298,7 +3284,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action pause
       description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
       externalDocs:
@@ -3331,7 +3317,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action provisionOnDemand
       description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
       externalDocs:
@@ -3382,7 +3368,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action restart
       description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
       externalDocs:
@@ -3427,7 +3413,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action start
       description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
       externalDocs:
@@ -3460,7 +3446,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action validateCredentials
       description: Validate that the credentials are valid in the tenant.
       externalDocs:
@@ -3902,7 +3888,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
@@ -3977,7 +3963,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
-        - applications.Functions
+        - applications.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
       externalDocs:
@@ -4063,7 +4049,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()':
     get:
       tags:
-        - applications.Functions
+        - applications.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
       externalDocs:
@@ -4149,7 +4135,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
@@ -4225,7 +4211,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/microsoft.graph.validateCredentials':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action validateCredentials
       operationId: application.synchronization.job_validateCredential
       parameters:
@@ -4270,7 +4256,7 @@ paths:
   '/applications/{application-id}/synchronization/microsoft.graph.acquireAccessToken':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action acquireAccessToken
       description: Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
       externalDocs:
@@ -4983,7 +4969,7 @@ paths:
   '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
@@ -5058,7 +5044,7 @@ paths:
   '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
-        - applications.Functions
+        - applications.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
       externalDocs:
@@ -5144,7 +5130,7 @@ paths:
   '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()':
     get:
       tags:
-        - applications.Functions
+        - applications.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
       externalDocs:
@@ -5230,7 +5216,7 @@ paths:
   '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.parseExpression':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
@@ -6020,7 +6006,7 @@ paths:
   /applications/microsoft.graph.delta():
     get:
       tags:
-        - applications.Functions
+        - applications.application
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted applications without performing a full read of the entire resource collection. For details, see Using delta query.'
       externalDocs:
@@ -6093,7 +6079,7 @@ paths:
   /applications/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -6141,7 +6127,7 @@ paths:
   /applications/microsoft.graph.getByIds:
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -6194,7 +6180,7 @@ paths:
   /applications/microsoft.graph.validateProperties:
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -6338,7 +6324,7 @@ paths:
   '/applicationTemplates/{applicationTemplate-id}/microsoft.graph.instantiate':
     post:
       tags:
-        - applicationTemplates.Actions
+        - applicationTemplates.applicationTemplate
       summary: Invoke action instantiate
       description: Add an instance of an application from the Microsoft Entra application gallery into your directory. The application template with ID 8adf8e6e-67b2-4cf2-a259-e3dc5476c621 can be used to add a non-gallery app that you can configure different single-sign on (SSO) modes like SAML SSO and password-based SSO.
       externalDocs:
@@ -9781,7 +9767,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addKey':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action addKey
       description: 'Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. Update servicePrincipal can be used to perform an update instead.'
       externalDocs:
@@ -9826,7 +9812,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addPassword':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action addPassword
       description: Add a strong password or secret to a servicePrincipal object.
       externalDocs:
@@ -9867,7 +9853,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addTokenSigningCertificate':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action addTokenSigningCertificate
       description: "Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with usage set to Sign.\n    + A public key object with usage set to Verify.\n+ The passwordCredentials object.  All the objects have the same value of customKeyIdentifier. The passwordCredential is used to open the PFX file (private key). It and the associated private key object have the same value of keyId. When set during creation through the displayName property, the subject of the certificate cannot be updated. The startDateTime is set to the same time the certificate is created using the action. The endDateTime can be up to three years after the certificate is created."
       externalDocs:
@@ -9914,7 +9900,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -9970,7 +9956,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action checkMemberObjects
       operationId: servicePrincipal_checkMemberObject
       parameters:
@@ -10022,7 +10008,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -10078,7 +10064,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -10134,7 +10120,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.removeKey':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action removeKey
       description: 'Remove a key credential from a servicePrincipal. This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
       externalDocs:
@@ -10175,7 +10161,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.removePassword':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action removePassword
       description: Remove a password from a servicePrincipal object.
       externalDocs:
@@ -10214,7 +10200,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.restore':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -10230,20 +10216,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -13033,7 +13005,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action pause
       description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
       externalDocs:
@@ -13066,7 +13038,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action provisionOnDemand
       description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
       externalDocs:
@@ -13117,7 +13089,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action restart
       description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
       externalDocs:
@@ -13162,7 +13134,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action start
       description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
       externalDocs:
@@ -13195,7 +13167,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action validateCredentials
       description: Validate that the credentials are valid in the tenant.
       externalDocs:
@@ -13644,7 +13616,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
@@ -13719,7 +13691,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
       externalDocs:
@@ -13805,7 +13777,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()':
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
       externalDocs:
@@ -13891,7 +13863,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
@@ -13967,7 +13939,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/microsoft.graph.validateCredentials':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action validateCredentials
       operationId: servicePrincipal.synchronization.job_validateCredential
       parameters:
@@ -14012,7 +13984,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/microsoft.graph.acquireAccessToken':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action acquireAccessToken
       description: Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
       externalDocs:
@@ -14728,7 +14700,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
@@ -14803,7 +14775,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
       externalDocs:
@@ -14889,7 +14861,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()':
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
       externalDocs:
@@ -14975,7 +14947,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.parseExpression':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
@@ -16118,7 +16090,7 @@ paths:
   /servicePrincipals/microsoft.graph.delta():
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.servicePrincipal
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection.'
       externalDocs:
@@ -16191,7 +16163,7 @@ paths:
   /servicePrincipals/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -16239,7 +16211,7 @@ paths:
   /servicePrincipals/microsoft.graph.getByIds:
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -16292,7 +16264,7 @@ paths:
   /servicePrincipals/microsoft.graph.validateProperties:
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -16887,7 +16859,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Friendly name for the key. Optional.
+          description: 'The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.'
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -16897,7 +16869,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -17369,7 +17341,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -17850,6 +17822,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.synchronization:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18651,6 +18624,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.selfSignedCertificate:
       title: selfSignedCertificate
       type: object
@@ -22912,6 +22886,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -24195,6 +24170,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -25530,6 +25506,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -29009,6 +28986,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -29723,6 +29701,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.appLogUploadState:
       title: appLogUploadState
       enum:
@@ -34361,10 +34341,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -34373,10 +34355,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:

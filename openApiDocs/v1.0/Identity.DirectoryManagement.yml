@@ -1639,7 +1639,7 @@ paths:
   '/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - contacts.Actions
+        - contacts.orgContact
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -1695,7 +1695,7 @@ paths:
   '/contacts/{orgContact-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - contacts.Actions
+        - contacts.orgContact
       summary: Invoke action checkMemberObjects
       operationId: contact_checkMemberObject
       parameters:
@@ -1747,7 +1747,7 @@ paths:
   '/contacts/{orgContact-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - contacts.Actions
+        - contacts.orgContact
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -1803,7 +1803,7 @@ paths:
   '/contacts/{orgContact-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - contacts.Actions
+        - contacts.orgContact
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -1859,7 +1859,7 @@ paths:
   '/contacts/{orgContact-id}/microsoft.graph.restore':
     post:
       tags:
-        - contacts.Actions
+        - contacts.orgContact
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -1875,20 +1875,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: orgContact
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -1902,7 +1888,7 @@ paths:
   '/contacts/{orgContact-id}/microsoft.graph.retryServiceProvisioning':
     post:
       tags:
-        - contacts.Actions
+        - contacts.orgContact
       summary: Invoke action retryServiceProvisioning
       operationId: contact_retryServiceProvisioning
       parameters:
@@ -2531,7 +2517,7 @@ paths:
   /contacts/microsoft.graph.delta():
     get:
       tags:
-        - contacts.Functions
+        - contacts.orgContact
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. See change tracking for details.'
       externalDocs:
@@ -2604,7 +2590,7 @@ paths:
   /contacts/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - contacts.Actions
+        - contacts.orgContact
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -2652,7 +2638,7 @@ paths:
   /contacts/microsoft.graph.getByIds:
     post:
       tags:
-        - contacts.Actions
+        - contacts.orgContact
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -2705,7 +2691,7 @@ paths:
   /contacts/microsoft.graph.validateProperties:
     post:
       tags:
-        - contacts.Actions
+        - contacts.orgContact
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -2928,7 +2914,7 @@ paths:
   '/contracts/{contract-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - contracts.Actions
+        - contracts.contract
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -2984,7 +2970,7 @@ paths:
   '/contracts/{contract-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - contracts.Actions
+        - contracts.contract
       summary: Invoke action checkMemberObjects
       operationId: contract_checkMemberObject
       parameters:
@@ -3036,7 +3022,7 @@ paths:
   '/contracts/{contract-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - contracts.Actions
+        - contracts.contract
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -3092,7 +3078,7 @@ paths:
   '/contracts/{contract-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - contracts.Actions
+        - contracts.contract
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -3148,7 +3134,7 @@ paths:
   '/contracts/{contract-id}/microsoft.graph.restore':
     post:
       tags:
-        - contracts.Actions
+        - contracts.contract
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -3164,20 +3150,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contract
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -3205,7 +3177,7 @@ paths:
   /contracts/microsoft.graph.delta():
     get:
       tags:
-        - contracts.Functions
+        - contracts.contract
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.'
       externalDocs:
@@ -3278,7 +3250,7 @@ paths:
   /contracts/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - contracts.Actions
+        - contracts.contract
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -3326,7 +3298,7 @@ paths:
   /contracts/microsoft.graph.getByIds:
     post:
       tags:
-        - contracts.Actions
+        - contracts.contract
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -3379,7 +3351,7 @@ paths:
   /contracts/microsoft.graph.validateProperties:
     post:
       tags:
-        - contracts.Actions
+        - contracts.contract
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -4365,7 +4337,7 @@ paths:
   '/devices/{device-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - devices.Actions
+        - devices.device
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -4421,7 +4393,7 @@ paths:
   '/devices/{device-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - devices.Actions
+        - devices.device
       summary: Invoke action checkMemberObjects
       operationId: device_checkMemberObject
       parameters:
@@ -4473,7 +4445,7 @@ paths:
   '/devices/{device-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - devices.Actions
+        - devices.device
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -4529,7 +4501,7 @@ paths:
   '/devices/{device-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - devices.Actions
+        - devices.device
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -4585,7 +4557,7 @@ paths:
   '/devices/{device-id}/microsoft.graph.restore':
     post:
       tags:
-        - devices.Actions
+        - devices.device
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -4601,20 +4573,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -7085,7 +7043,7 @@ paths:
   /devices/microsoft.graph.delta():
     get:
       tags:
-        - devices.Functions
+        - devices.device
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.'
       externalDocs:
@@ -7158,7 +7116,7 @@ paths:
   /devices/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - devices.Actions
+        - devices.device
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -7206,7 +7164,7 @@ paths:
   /devices/microsoft.graph.getByIds:
     post:
       tags:
-        - devices.Actions
+        - devices.device
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -7259,7 +7217,7 @@ paths:
   /devices/microsoft.graph.validateProperties:
     post:
       tags:
-        - devices.Actions
+        - devices.device
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -9329,7 +9287,7 @@ paths:
   /directory/administrativeUnits/microsoft.graph.delta():
     get:
       tags:
-        - directory.Functions
+        - directory.administrativeUnit
       summary: Invoke function delta
       operationId: directory.administrativeUnit_delta
       parameters:
@@ -10281,7 +10239,7 @@ paths:
   '/directory/deletedItems/{directoryObject-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - directory.Actions
+        - directory.directoryObject
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -10337,7 +10295,7 @@ paths:
   '/directory/deletedItems/{directoryObject-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - directory.Actions
+        - directory.directoryObject
       summary: Invoke action checkMemberObjects
       operationId: directory.deletedItem_checkMemberObject
       parameters:
@@ -10433,7 +10391,7 @@ paths:
   '/directory/deletedItems/{directoryObject-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - directory.Actions
+        - directory.directoryObject
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -10489,7 +10447,7 @@ paths:
   '/directory/deletedItems/{directoryObject-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - directory.Actions
+        - directory.directoryObject
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -10593,7 +10551,7 @@ paths:
   '/directory/deletedItems/{directoryObject-id}/microsoft.graph.restore':
     post:
       tags:
-        - directory.Actions
+        - directory.directoryObject
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -10609,20 +10567,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -10930,7 +10874,7 @@ paths:
   /directory/deletedItems/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - directory.Actions
+        - directory.directoryObject
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -10978,7 +10922,7 @@ paths:
   /directory/deletedItems/microsoft.graph.getByIds:
     post:
       tags:
-        - directory.Actions
+        - directory.directoryObject
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -11227,7 +11171,7 @@ paths:
   /directory/deletedItems/microsoft.graph.validateProperties:
     post:
       tags:
-        - directory.Actions
+        - directory.directoryObject
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -11659,7 +11603,7 @@ paths:
   /directory/federationConfigurations/microsoft.graph.availableProviderTypes():
     get:
       tags:
-        - directory.Functions
+        - directory.identityProviderBase
       summary: Invoke function availableProviderTypes
       description: Get all identity providers supported in a directory.
       externalDocs:
@@ -13620,7 +13564,7 @@ paths:
   '/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - directoryRoles.Actions
+        - directoryRoles.directoryRole
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -13676,7 +13620,7 @@ paths:
   '/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - directoryRoles.Actions
+        - directoryRoles.directoryRole
       summary: Invoke action checkMemberObjects
       operationId: directoryRole_checkMemberObject
       parameters:
@@ -13728,7 +13672,7 @@ paths:
   '/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - directoryRoles.Actions
+        - directoryRoles.directoryRole
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -13784,7 +13728,7 @@ paths:
   '/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - directoryRoles.Actions
+        - directoryRoles.directoryRole
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -13840,7 +13784,7 @@ paths:
   '/directoryRoles/{directoryRole-id}/microsoft.graph.restore':
     post:
       tags:
-        - directoryRoles.Actions
+        - directoryRoles.directoryRole
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -13856,20 +13800,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryRole
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -14246,7 +14176,7 @@ paths:
   /directoryRoles/microsoft.graph.delta():
     get:
       tags:
-        - directoryRoles.Functions
+        - directoryRoles.directoryRole
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted directory roles without having to perform a full read of the entire resource collection. See Using Delta Query for details.'
       externalDocs:
@@ -14319,7 +14249,7 @@ paths:
   /directoryRoles/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - directoryRoles.Actions
+        - directoryRoles.directoryRole
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -14367,7 +14297,7 @@ paths:
   /directoryRoles/microsoft.graph.getByIds:
     post:
       tags:
-        - directoryRoles.Actions
+        - directoryRoles.directoryRole
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -14420,7 +14350,7 @@ paths:
   /directoryRoles/microsoft.graph.validateProperties:
     post:
       tags:
-        - directoryRoles.Actions
+        - directoryRoles.directoryRole
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -14643,7 +14573,7 @@ paths:
   '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - directoryRoleTemplates.Actions
+        - directoryRoleTemplates.directoryRoleTemplate
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -14699,7 +14629,7 @@ paths:
   '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - directoryRoleTemplates.Actions
+        - directoryRoleTemplates.directoryRoleTemplate
       summary: Invoke action checkMemberObjects
       operationId: directoryRoleTemplate_checkMemberObject
       parameters:
@@ -14751,7 +14681,7 @@ paths:
   '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - directoryRoleTemplates.Actions
+        - directoryRoleTemplates.directoryRoleTemplate
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -14807,7 +14737,7 @@ paths:
   '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - directoryRoleTemplates.Actions
+        - directoryRoleTemplates.directoryRoleTemplate
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -14863,7 +14793,7 @@ paths:
   '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.restore':
     post:
       tags:
-        - directoryRoleTemplates.Actions
+        - directoryRoleTemplates.directoryRoleTemplate
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -14879,20 +14809,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryRoleTemplate
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -14920,7 +14836,7 @@ paths:
   /directoryRoleTemplates/microsoft.graph.delta():
     get:
       tags:
-        - directoryRoleTemplates.Functions
+        - directoryRoleTemplates.directoryRoleTemplate
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.'
       externalDocs:
@@ -14993,7 +14909,7 @@ paths:
   /directoryRoleTemplates/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - directoryRoleTemplates.Actions
+        - directoryRoleTemplates.directoryRoleTemplate
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -15041,7 +14957,7 @@ paths:
   /directoryRoleTemplates/microsoft.graph.getByIds:
     post:
       tags:
-        - directoryRoleTemplates.Actions
+        - directoryRoleTemplates.directoryRoleTemplate
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -15094,7 +15010,7 @@ paths:
   /directoryRoleTemplates/microsoft.graph.validateProperties:
     post:
       tags:
-        - directoryRoleTemplates.Actions
+        - directoryRoleTemplates.directoryRoleTemplate
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -15394,7 +15310,7 @@ paths:
       tags:
         - domains.directoryObject
       summary: Get domainNameReferences from domains
-      description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
+      description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn''t support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
       operationId: domain_GetDomainNameReference
       parameters:
         - name: domain-id
@@ -15726,7 +15642,7 @@ paths:
   '/domains/{domain-id}/microsoft.graph.forceDelete':
     post:
       tags:
-        - domains.Actions
+        - domains.domain
       summary: Invoke action forceDelete
       description: 'Delete a domain using an asynchronous long-running operation. Before performing this operation, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain return an HTTP 404 status code. To verify deletion of a domain, you can perform a get domain operation.'
       externalDocs:
@@ -15765,7 +15681,7 @@ paths:
   '/domains/{domain-id}/microsoft.graph.promote':
     post:
       tags:
-        - domains.Actions
+        - domains.domain
       summary: Invoke action promote
       description: Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
       externalDocs:
@@ -15801,7 +15717,7 @@ paths:
   '/domains/{domain-id}/microsoft.graph.verify':
     post:
       tags:
-        - domains.Actions
+        - domains.domain
       summary: Invoke action verify
       description: Validates the ownership of the domain.
       externalDocs:
@@ -15971,7 +15887,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get serviceConfigurationRecords from domains
-      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn''t support $expand.'
       operationId: domain_GetServiceConfigurationRecord
       parameters:
         - name: domain-id
@@ -16214,7 +16130,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get verificationDnsRecords from domains
-      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.'
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Doesn''t support $expand.'
       operationId: domain_GetVerificationDnsRecord
       parameters:
         - name: domain-id
@@ -16377,10 +16293,10 @@ paths:
       tags:
         - organization.organization
       summary: List organizations
-      description: Retrieve a list of organization objects. There's only one organization object in the collection.
+      description: List properties and relationships of the organization objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16454,10 +16370,10 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
-      description: 'Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.'
+      description: Read properties and relationships of the organization object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0
       operationId: organization_GetOrganization
       parameters:
         - name: organization-id
@@ -16502,10 +16418,10 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
-      description: Update the properties of a organization object.
+      description: 'Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
       operationId: organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -19140,7 +19056,7 @@ paths:
   '/organization/{organization-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - organization.Actions
+        - organization.organization
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -19196,7 +19112,7 @@ paths:
   '/organization/{organization-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - organization.Actions
+        - organization.organization
       summary: Invoke action checkMemberObjects
       operationId: organization_checkMemberObject
       parameters:
@@ -19248,7 +19164,7 @@ paths:
   '/organization/{organization-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - organization.Actions
+        - organization.organization
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -19304,7 +19220,7 @@ paths:
   '/organization/{organization-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - organization.Actions
+        - organization.organization
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -19360,7 +19276,7 @@ paths:
   '/organization/{organization-id}/microsoft.graph.restore':
     post:
       tags:
-        - organization.Actions
+        - organization.organization
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -19376,20 +19292,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: organization
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -19403,7 +19305,7 @@ paths:
   '/organization/{organization-id}/microsoft.graph.setMobileDeviceManagementAuthority':
     post:
       tags:
-        - organization.Actions
+        - organization.organization
       summary: Invoke action setMobileDeviceManagementAuthority
       description: Set mobile device management authority
       externalDocs:
@@ -19451,10 +19353,83 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /organization/microsoft.graph.delta():
+    get:
+      tags:
+        - organization.organization
+      summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0
+      operationId: organization_delta
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /organization/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - organization.Actions
+        - organization.organization
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -19502,7 +19477,7 @@ paths:
   /organization/microsoft.graph.getByIds:
     post:
       tags:
-        - organization.Actions
+        - organization.organization
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -19555,7 +19530,7 @@ paths:
   /organization/microsoft.graph.validateProperties:
     post:
       tags:
-        - organization.Actions
+        - organization.organization
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -20271,7 +20246,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -20752,6 +20727,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.administrativeUnit:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -21121,6 +21097,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.extensionProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -22177,16 +22154,16 @@ components:
               description: 'The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable'
             isDefault:
               type: boolean
-              description: true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable
+              description: true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable.
             isInitial:
               type: boolean
               description: true if this is the initial domain created by Microsoft Online Services (contoso.com). There's only one initial domain per company. Not nullable
             isRoot:
               type: boolean
-              description: 'true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable'
+              description: 'true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable.'
             isVerified:
               type: boolean
-              description: true if the domain has completed domain ownership verification. Not nullable
+              description: true if the domain completed domain ownership verification. Not nullable.
             manufacturer:
               type: string
               nullable: true
@@ -22197,7 +22174,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Specifies the number of days before a user receives notification that their password will expire. If the property isn''t set, a default value of 14 days is used.'
+              description: 'Specifies the number of days before a user receives notification that their password expires. If the property isn''t set, a default value of 14 days is used.'
               format: int32
               nullable: true
             passwordValidityPeriodInDays:
@@ -22218,13 +22195,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
+              description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn''t support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
               x-ms-navigationProperty: true
             federationConfiguration:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internalDomainFederation'
-              description: Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+              description: Domain settings configured by a customer when federated with Microsoft Entra ID. Doesn't support $expand.
               x-ms-navigationProperty: true
             rootDomain:
               $ref: '#/components/schemas/microsoft.graph.domain'
@@ -22232,13 +22209,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
-              description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
+              description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn''t support $expand.'
               x-ms-navigationProperty: true
             verificationDnsRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
-              description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.'
+              description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Doesn''t support $expand.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -25240,7 +25217,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Friendly name for the key. Optional.
+          description: 'The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.'
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25250,7 +25227,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -25850,7 +25827,7 @@ components:
           nullable: true
         passwordWritebackEnabled:
           type: boolean
-          description: Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.
+          description: Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled. This property isn't in use and updating it isn't supported.
           nullable: true
         quarantineUponProxyAddressesConflictEnabled:
           type: boolean
@@ -27008,6 +26985,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -28316,6 +28294,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -29627,6 +29606,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -32972,6 +32952,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -33686,6 +33667,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.appLogUploadState:
       title: appLogUploadState
       enum:
@@ -38531,10 +38514,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -38543,10 +38528,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:

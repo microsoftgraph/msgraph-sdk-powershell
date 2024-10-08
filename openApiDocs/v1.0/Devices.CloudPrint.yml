@@ -1420,7 +1420,7 @@ paths:
   '/print/printers/{printer-id}/jobs/{printJob-id}/documents/{printDocument-id}/microsoft.graph.createUploadSession':
     post:
       tags:
-        - print.Actions
+        - print.printer
       summary: Invoke action createUploadSession
       description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
       externalDocs:
@@ -1507,7 +1507,7 @@ paths:
   '/print/printers/{printer-id}/jobs/{printJob-id}/microsoft.graph.abort':
     post:
       tags:
-        - print.Actions
+        - print.printer
       summary: Invoke action abort
       description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
       externalDocs:
@@ -1553,7 +1553,7 @@ paths:
   '/print/printers/{printer-id}/jobs/{printJob-id}/microsoft.graph.cancel':
     post:
       tags:
-        - print.Actions
+        - print.printer
       summary: Invoke action cancel
       description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
       externalDocs:
@@ -1586,7 +1586,7 @@ paths:
   '/print/printers/{printer-id}/jobs/{printJob-id}/microsoft.graph.redirect':
     post:
       tags:
-        - print.Actions
+        - print.printer
       summary: Invoke action redirect
       description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
       externalDocs:
@@ -1637,7 +1637,7 @@ paths:
   '/print/printers/{printer-id}/jobs/{printJob-id}/microsoft.graph.start':
     post:
       tags:
-        - print.Actions
+        - print.printer
       summary: Invoke action start
       description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.'
       externalDocs:
@@ -2108,7 +2108,7 @@ paths:
   '/print/printers/{printer-id}/microsoft.graph.restoreFactoryDefaults':
     post:
       tags:
-        - print.Actions
+        - print.printer
       summary: Invoke action restoreFactoryDefaults
       description: Restore a printer's default settings to the values specified by the manufacturer.
       externalDocs:
@@ -2594,7 +2594,7 @@ paths:
   /print/printers/microsoft.graph.create:
     post:
       tags:
-        - print.Actions
+        - print.printer
       summary: Invoke action create
       description: 'Create (register) a printer with the Universal Print service. This is a long-running operation and as such, it returns a printerCreateOperation that can be used to track and verify the registration of the printer. For help creating the required Certificate Signing Request (CSR) for creating printer, see the CSR generation code sample.'
       externalDocs:
@@ -4632,7 +4632,7 @@ paths:
   '/print/shares/{printerShare-id}/jobs/{printJob-id}/documents/{printDocument-id}/microsoft.graph.createUploadSession':
     post:
       tags:
-        - print.Actions
+        - print.printerShare
       summary: Invoke action createUploadSession
       description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
       externalDocs:
@@ -4719,7 +4719,7 @@ paths:
   '/print/shares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.abort':
     post:
       tags:
-        - print.Actions
+        - print.printerShare
       summary: Invoke action abort
       description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
       externalDocs:
@@ -4765,7 +4765,7 @@ paths:
   '/print/shares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.cancel':
     post:
       tags:
-        - print.Actions
+        - print.printerShare
       summary: Invoke action cancel
       description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
       externalDocs:
@@ -4798,7 +4798,7 @@ paths:
   '/print/shares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.redirect':
     post:
       tags:
-        - print.Actions
+        - print.printerShare
       summary: Invoke action redirect
       description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
       externalDocs:
@@ -4849,7 +4849,7 @@ paths:
   '/print/shares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.start':
     post:
       tags:
-        - print.Actions
+        - print.printerShare
       summary: Invoke action start
       description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.'
       externalDocs:
@@ -7167,6 +7167,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.user:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -7262,7 +7263,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -7743,6 +7744,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.automaticRepliesSetting:
       title: automaticRepliesSetting
       type: object
@@ -8041,6 +8043,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.printOperationProcessingState:
       title: printOperationProcessingState
       enum:
@@ -12931,6 +12935,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -13717,6 +13722,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -14973,6 +14979,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -18190,6 +18197,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -21249,10 +21257,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -21261,10 +21271,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
