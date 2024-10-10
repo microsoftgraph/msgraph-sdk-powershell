@@ -29,3 +29,14 @@ pipelines:
         spotbugs:
           lastModifiedDate: 2024-10-02
     usedNonDefaultBranch: true
+  187:
+    retail:
+      source:
+        credscan:
+          lastModifiedDate: 2024-10-10
+        eslint:
+          lastModifiedDate: 2024-10-10
+        psscriptanalyzer:
+          lastModifiedDate: 2024-10-10
+        armory:
+          lastModifiedDate: 2024-10-10
