@@ -14,6 +14,14 @@ parameters:
 - name: Sign
   type: boolean
   default: true
+- name: InternalFeed
+  type: string
+  default: '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
+  displayName: Internal NuGet Feed
+  values:
+    - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_v2'
+    - 'ATPopFeed'
+    - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
 
 variables:
   BuildAgent: ${{ parameters.BuildAgent }}
@@ -64,13 +72,6 @@ extends:
               targetPath: '$(Build.ArtifactStagingDirectory)'
               artifactName: 'drop'
               publishLocation: 'Container'
-          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-            - output: nuget
-              displayName: 'Publish NuGet to feed'
-              packageParentPath: '$(Build.ArtifactStagingDirectory)'
-              packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: $(PROJECT_NAME)/$(FEED_NAME)
-              allowPackageConflicts: true
         steps:
         - script: |
             git submodule update --init --recursive
@@ -104,3 +105,20 @@ extends:
               Pattern: "Microsoft.Graph*.nupkg"
 
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
+    - stage: 'Deploy'
+      dependsOn: stage
+      jobs:
+      - deployment: DeployToInternalFeed
+        displayName: 'Deploy to Internal Feed'
+        environment: 'InternalFeed'
+        templateContext:
+          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+            - output: nuget
+              displayName: 'Publish NuGet to feed'
+              packageParentPath: '$(Build.ArtifactStagingDirectory)'
+              packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
+              publishVstsFeed: '{{ parameters.InternalFeed }}'
+              allowPackageConflicts: true 
+
+
+    
