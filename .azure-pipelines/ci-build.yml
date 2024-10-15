@@ -116,22 +116,23 @@ extends:
           runOnce:
             deploy:
               steps:
-              - task: DownloadPipelineArtifact@2
-                displayName: 'Download Build Artifacts'
+              # - task: DownloadPipelineArtifact@2
+              #   displayName: 'Download Build Artifacts'
+              #   inputs:
+              #     buildType: 'specific'
+              #     project: 'Graph Developer Experiences'
+              #     definition: 'PowerShell V2 Build'
+              #     buildVersionToDownload: 'latest'
+              #     targetPath: '$(System.DefaultWorkingDirectory)'
+              - task: 1ES.PublishNuget@1
+                displayName: 'Publish NuGet to feed'
                 inputs:
-                  buildType: 'specific'
-                  project: 'Graph Developer Experiences'
-                  definition: 'PowerShell V2 Build'
-                  buildVersionToDownload: 'latest'
-                  targetPath: '$(System.DefaultWorkingDirectory)'
-        templateContext:
-          outputs:
-          - output: nuget
-            displayName: 'Publish NuGet to feed'
-            packageParentPath: '$(System.DefaultWorkingDirectory)'
-            packagesToPush: $(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg
-            publishVstsFeed: ${{ parameters.InternalFeed }}
-            allowPackageConflicts: true
+                  useDotNetTask: false
+                  packageParentPath: '$(Build.ArtifactStagingDirectory)'
+                  packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
+                  publishVstsFeed: ${{ parameters.InternalFeed }}
+                  nuGetFeedType: internal
+                  allowPackageConflicts: true
 
       
 
