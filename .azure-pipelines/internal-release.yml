@@ -1,0 +1,25 @@
+
+steps:
+- task: DownloadPipelineArtifact@2
+  displayName: 'Download Build Artifacts'
+  inputs:
+    buildType: 'specific'
+    project: 'Graph Developer Experiences'
+    definition: '_PowerShell V2 Build'
+    buildVersionToDownload: 'latest'
+    targetPath: '$(System.DefaultWorkingDirectory)'
+
+- task: NuGetToolInstaller@1
+  displayName: 'Use NuGet  6.5.0'
+  inputs:
+    versionSpec: ' 6.5.0'
+
+- task: NuGetAuthenticate@1
+  displayName: 'NuGet Authenticate'
+
+- task: NuGetCommand@2
+  displayName: 'NuGet push'
+  inputs:
+    command: push
+    packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
+    publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/16482707-2136-4062-ab37-943ffcec1ef5'
