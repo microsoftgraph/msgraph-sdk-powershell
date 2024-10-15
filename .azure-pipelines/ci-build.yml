@@ -59,7 +59,7 @@ extends:
     customBuildTags:
     - ES365AIMigrationTooling
     stages:
-    - stage: stage
+    - stage: 'Build'
       jobs:
       - job: MsGraphPsSdkCiBuild
         displayName: Microsoft Graph PowerShell SDK CI Build
