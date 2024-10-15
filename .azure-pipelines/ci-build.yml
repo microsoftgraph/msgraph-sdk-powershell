@@ -113,13 +113,12 @@ extends:
         environment: 'InternalFeed'
         templateContext:
           outputs:
-          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-            - output: nuget
-              displayName: 'Publish NuGet to feed'
-              packageParentPath: '$(Build.ArtifactStagingDirectory)'
-              packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: '{{ parameters.InternalFeed }}'
-              allowPackageConflicts: true 
+          - output: nuget
+            displayName: 'Publish NuGet to feed'
+            packageParentPath: '$(Build.ArtifactStagingDirectory)'
+            packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
+            publishVstsFeed: '{{ parameters.InternalFeed }}'
+            allowPackageConflicts: true 
 
 
     
