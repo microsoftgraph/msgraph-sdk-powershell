@@ -111,16 +111,16 @@ extends:
       - job: MsGraphPsSdkCiPublish
         displayName: Microsoft Graph PowerShell SDK CI Publish
         timeoutInMinutes: 60
-      steps:
-      - task: 1ES.PublishNuget@1
-        displayName: 'Publish NuGet to feed'
-        inputs:
-          useDotNetTask: false
-          packageParentPath: '$(Build.ArtifactStagingDirectory)'
-          packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-          publishVstsFeed: ${{ parameters.InternalFeed }}
-          nuGetFeedType: internal
-          allowPackageConflicts: true
+        steps:
+        - task: 1ES.PublishNuget@1
+          displayName: 'Publish NuGet to feed'
+          inputs:
+            useDotNetTask: false
+            packageParentPath: '$(Build.ArtifactStagingDirectory)'
+            packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
+            publishVstsFeed: ${{ parameters.InternalFeed }}
+            nuGetFeedType: internal
+            allowPackageConflicts: true
         
 
       
