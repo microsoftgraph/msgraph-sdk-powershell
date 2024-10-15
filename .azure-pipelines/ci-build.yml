@@ -120,7 +120,7 @@ extends:
                 inputs:
                   buildType: 'specific'
                   project: 'Graph Developer Experiences'
-                  definition: '_PowerShell V2 Build'
+                  definition: 'PowerShell V2 Build'
                   buildVersionToDownload: 'latest'
                   targetPath: '$(System.DefaultWorkingDirectory)'
         templateContext:
