@@ -110,7 +110,7 @@ extends:
       - deployment: DeployToInternalFeed
         displayName: 'Deploy to Internal Feed'
         environment: 'InternalFeed'
-        steps:
+      steps:
         # - task: DownloadPipelineArtifact@2
         #   displayName: 'Download Build Artifacts'
         #   inputs:
