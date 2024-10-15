@@ -1018,6 +1018,90 @@ paths:
         date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
+  '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/microsoft.graph.getFinalAttachment()':
+    get:
+      tags:
+        - privacy.subjectRightsRequest
+      summary: Invoke function getFinalAttachment
+      description: Get the final attachment for a subject rights request. The attachment is a zip file that contains all the files that were included by the privacy administrator.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-getfinalattachment?view=graph-rest-1.0
+      operationId: privacy.subjectRightsRequest_getFinalAttachment
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
+        version: 2022-02/PrivacyDeprecate
+        description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
+      x-ms-docs-operation-type: function
+  '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/microsoft.graph.getFinalReport()':
+    get:
+      tags:
+        - privacy.subjectRightsRequest
+      summary: Invoke function getFinalReport
+      description: Get the final report for a subject rights request. The report is a text file that contains information about the files that were included by the privacy administrator.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-getfinalreport?view=graph-rest-1.0
+      operationId: privacy.subjectRightsRequest_getFinalReport
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
+        version: 2022-02/PrivacyDeprecate
+        description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
+      x-ms-docs-operation-type: function
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/notes':
     get:
       tags:
@@ -1591,7 +1675,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -2072,6 +2156,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -5356,6 +5441,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5936,6 +6022,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -7157,6 +7244,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -8102,6 +8190,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -11666,6 +11755,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -12076,6 +12166,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.appLogUploadState:
       title: appLogUploadState
       enum:
@@ -16654,10 +16746,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -16666,10 +16760,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:

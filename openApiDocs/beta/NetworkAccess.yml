@@ -302,7 +302,7 @@ paths:
   '/networkAccess/alerts/microsoft.graph.networkaccess.getAlertFrequencies(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.alert
       summary: Invoke function getAlertFrequencies
       operationId: networkAccess.alert_getAlertFrequency
       parameters:
@@ -360,7 +360,7 @@ paths:
   '/networkAccess/alerts/microsoft.graph.networkaccess.getAlertSeveritySummaries(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.alert
       summary: Invoke function getAlertSeveritySummaries
       operationId: networkAccess.alert_getAlertSeveritySummary
       parameters:
@@ -4838,7 +4838,7 @@ paths:
   '/networkAccess/forwardingPolicies/{forwardingPolicy-id}/microsoft.graph.networkaccess.updatePolicyRules':
     post:
       tags:
-        - networkAccess.Actions
+        - networkAccess.forwardingPolicy
       summary: Invoke action updatePolicyRules
       description: Update the rules within a forwarding policy.
       externalDocs:
@@ -6419,7 +6419,7 @@ paths:
   /networkAccess/microsoft.graph.networkaccess.onboard:
     post:
       tags:
-        - networkAccess.Actions
+        - networkAccess.networkAccessRoot
       summary: Invoke action onboard
       operationId: networkAccess_onboard
       responses:
@@ -6509,7 +6509,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.crossTenantAccessReport(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function crossTenantAccessReport
       operationId: networkAccess.report_crossTenantAccessReport
       parameters:
@@ -6562,7 +6562,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.destinationReport(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function destinationReport
       operationId: networkAccess.report_destinationReport
       parameters:
@@ -6615,7 +6615,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.deviceReport(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function deviceReport
       operationId: networkAccess.report_deviceReport
       parameters:
@@ -6668,7 +6668,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.entitiesSummaries(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function entitiesSummaries
       description: 'Get the number of users, devices, and workloads per traffic type in a specified time period.'
       externalDocs:
@@ -6725,7 +6725,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.getCrossTenantSummary(startDateTime={startDateTime},endDateTime={endDateTime},discoveryPivotDateTime={discoveryPivotDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function getCrossTenantSummary
       description: Get a summary of the cross-tenant access patterns.
       operationId: networkAccess.report_getCrossTenantSummary
@@ -6770,7 +6770,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.getDestinationSummaries(startDateTime={startDateTime},endDateTime={endDateTime},aggregatedBy=''{aggregatedBy}'')':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function getDestinationSummaries
       description: Get counts of the visits to the top destination aggregations.
       operationId: networkAccess.report_getDestinationSummary
@@ -6831,7 +6831,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.getDeviceUsageSummary(startDateTime={startDateTime},endDateTime={endDateTime},activityPivotDateTime={activityPivotDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function getDeviceUsageSummary
       description: 'Get a summary of device onboarding and offboarding within a specified timeframe. This summary includes the total number of devices, active devices, and inactive devices.'
       operationId: networkAccess.report_getDeviceUsageSummary
@@ -6876,7 +6876,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.getDiscoveredApplicationSegmentReport(startDateTime={startDateTime},endDateTime={endDateTime},userId=''@userId'')':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function getDiscoveredApplicationSegmentReport
       operationId: networkAccess.report_getDiscoveredApplicationSegmentReport
       parameters:
@@ -6937,7 +6937,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.transactionSummaries(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function transactionSummaries
       description: 'Get the total number of transactions and the number of blocked transactions, grouped by traffic type.'
       externalDocs:
@@ -6994,7 +6994,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.usageProfiling(startDateTime={startDateTime},endDateTime={endDateTime},aggregatedBy=''{aggregatedBy}'',discoveredApplicationSegmentId=''@discoveredApplicationSegmentId'')':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function usageProfiling
       operationId: networkAccess.report_usageProfiling
       parameters:
@@ -7062,7 +7062,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.userReport(startDateTime={startDateTime},endDateTime={endDateTime},discoveredApplicationSegmentId=''@discoveredApplicationSegmentId'')':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function userReport
       operationId: networkAccess.report_userReport
       parameters:
@@ -7123,7 +7123,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.webCategoryReport(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function webCategoryReport
       operationId: networkAccess.report_webCategoryReport
       parameters:
@@ -8940,7 +8940,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -9047,11 +9047,11 @@ components:
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+              description: Contains the on-premises Active Directory distinguished name or DN.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
@@ -9072,11 +9072,11 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+              description: 'Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Must be in the format of SID, such as ''S-1-5-21-1180699209-877415012-3182824384-1006''. Supports $filter (eq including on null values).'
               nullable: true
             onPremisesSipInfo:
               $ref: '#/components/schemas/microsoft.graph.onPremisesSipInfo'
@@ -9086,7 +9086,7 @@ components:
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             otherMails:
               type: array
@@ -9533,6 +9533,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -10434,7 +10435,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Friendly name for the key. Optional.
+          description: 'The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.'
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -10444,7 +10445,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
+          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -13141,6 +13142,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14122,7 +14124,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -15285,6 +15287,9 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
         - title: customAppManagementConfiguration
           type: object
+          properties:
+            applicationRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.customAppManagementApplicationConfiguration'
           additionalProperties:
             type: object
     microsoft.graph.stsPolicy:
@@ -15856,6 +15861,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -17735,6 +17741,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -20336,10 +20343,12 @@ components:
               type: number
               description: The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             sizeInKB:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -22730,6 +22739,14 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
           description: Collection of password restrictions settings to be applied to an application or service principal.
+      additionalProperties:
+        type: object
+    microsoft.graph.customAppManagementApplicationConfiguration:
+      title: customAppManagementApplicationConfiguration
+      type: object
+      properties:
+        identifierUris:
+          $ref: '#/components/schemas/microsoft.graph.identifierUriConfiguration'
       additionalProperties:
         type: object
     microsoft.graph.customClaimConfiguration:
@@ -25588,6 +25605,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -26454,6 +26472,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
       enum:
@@ -29125,6 +29145,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
         state:
           $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+      additionalProperties:
+        type: object
+    microsoft.graph.identifierUriConfiguration:
+      title: identifierUriConfiguration
+      type: object
+      properties:
+        nonDefaultUriAddition:
+          $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
       additionalProperties:
         type: object
     microsoft.graph.customClaimAttributeBase:
@@ -32669,6 +32697,28 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.identifierUriRestriction:
+      title: identifierUriRestriction
+      type: object
+      properties:
+        excludeAppsReceivingV2Tokens:
+          type: boolean
+          description: 'If true, the restriction isn''t enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn''t enforced for those applications.'
+          nullable: true
+        excludeSaml:
+          type: boolean
+          description: 'If true, the restriction isn''t enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.'
+          nullable: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
+          format: date-time
+          nullable: true
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+      additionalProperties:
+        type: object
     microsoft.graph.transformationAttribute:
       title: transformationAttribute
       type: object
@@ -34389,10 +34439,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -34401,10 +34453,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
