@@ -107,8 +107,7 @@ extends:
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
     - stage: 'Deploy'
       jobs:
-      - job:
-        deployment: DeployToInternalFeed
+      - deployment: DeployToInternalFeed
         displayName: 'Deploy to Internal Feed'
         environment: 'InternalFeed'
         steps:
