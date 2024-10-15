@@ -107,10 +107,11 @@ extends:
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
     - stage: 'Deploy'
       jobs:
-      - deployment: DeployToInternalFeed
+      - job:
+        deployment: DeployToInternalFeed
         displayName: 'Deploy to Internal Feed'
         environment: 'InternalFeed'
-      steps:
+        steps:
         # - task: DownloadPipelineArtifact@2
         #   displayName: 'Download Build Artifacts'
         #   inputs:
