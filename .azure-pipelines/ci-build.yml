@@ -111,7 +111,6 @@ extends:
       - deployment: DeployToInternalFeed
         displayName: 'Deploy to Internal Feed'
         environment: 'InternalFeed'
-        pool: 'Hosted Windows 2019 with VS2019'
         strategy:
           runOnce:
             deploy:
@@ -124,12 +123,14 @@ extends:
                   definition: '_PowerShell V2 Build'
                   buildVersionToDownload: 'latest'
                   targetPath: '$(System.DefaultWorkingDirectory)'
-              - task: NuGetCommand@2
-                displayName: 'NuGet push'
+              - task: 1ES.PublishBuildArtifacts@1
+                displayName: 'Publish Build Artifacts'
                 inputs:
-                  command: push
-                  packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
-                  publishVstsFeed: '$(InternalFeed)'
+                  packageParentPath: '$(Build.ArtifactStagingDirectory)'
+                  packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
+                  publishVstsFeed: ${{ parameters.InternalFeed }}
+                  allowPackageConflicts: true
+      
 
 
     
