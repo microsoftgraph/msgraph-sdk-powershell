@@ -16,7 +16,7 @@ parameters:
   default: true
 - name: InternalFeed
   type: string
-  default: '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
+  default: 'ATPopFeed'
   displayName: Internal NuGet Feed
   values:
     - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_v2'
@@ -123,13 +123,15 @@ extends:
                   definition: '_PowerShell V2 Build'
                   buildVersionToDownload: 'latest'
                   targetPath: '$(System.DefaultWorkingDirectory)'
-              - task: 1ES.PublishBuildArtifacts@1
-                displayName: 'Publish Build Artifacts'
-                inputs:
-                  packageParentPath: '$(Build.ArtifactStagingDirectory)'
-                  packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-                  publishVstsFeed: ${{ parameters.InternalFeed }}
-                  allowPackageConflicts: true
+        templateContext:
+          outputs:
+          - output: nuget
+            displayName: 'Publish NuGet to feed'
+            packageParentPath: '$(System.DefaultWorkingDirectory)'
+            packagesToPush: $(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg
+            publishVstsFeed: ${{ parameters.InternalFeed }}
+            allowPackageConflicts: true
+
       
 
 
