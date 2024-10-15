@@ -112,12 +112,20 @@ extends:
         displayName: Microsoft Graph PowerShell SDK CI Publish
         timeoutInMinutes: 60
         steps:
+        - task: DownloadPipelineArtifact@2
+          displayName: 'Download Build Artifacts'
+          inputs:
+            buildType: 'specific'
+            project: 'Graph Developer Experiences'
+            definition: 'PowerShell V2 Build'
+            buildVersionToDownload: 'latest'
+            targetPath: '$(System.DefaultWorkingDirectory)'
         - task: 1ES.PublishNuget@1
           displayName: 'Publish NuGet to feed'
           inputs:
             useDotNetTask: false
-            packageParentPath: '$(Build.ArtifactStagingDirectory)'
-            packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
+            packageParentPath: '$(System.DefaultWorkingDirectory)'
+            packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
             publishVstsFeed: ${{ parameters.InternalFeed }}
             nuGetFeedType: internal
             allowPackageConflicts: true
