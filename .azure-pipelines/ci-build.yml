@@ -59,7 +59,7 @@ extends:
     customBuildTags:
     - ES365AIMigrationTooling
     stages:
-    - stage: 'Build'
+    - stage: stage
       jobs:
       - job: MsGraphPsSdkCiBuild
         displayName: Microsoft Graph PowerShell SDK CI Build
@@ -106,7 +106,6 @@ extends:
 
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
     - stage: 'Deploy'
-      dependsOn: stage
       jobs:
       - deployment: DeployToInternalFeed
         displayName: 'Deploy to Internal Feed'
