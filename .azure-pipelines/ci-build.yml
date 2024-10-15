@@ -106,11 +106,13 @@ extends:
 
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
     - stage: 'Deploy'
+      dependsOn: stage
       jobs:
       - deployment: DeployToInternalFeed
         displayName: 'Deploy to Internal Feed'
         environment: 'InternalFeed'
         templateContext:
+          outputs:
           - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
             - output: nuget
               displayName: 'Publish NuGet to feed'
