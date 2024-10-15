@@ -106,6 +106,7 @@ extends:
 
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
     - stage: 'Deploy'
+      checkout: none
       dependsOn: stage
       jobs:
       - deployment: DeployToInternalFeed
