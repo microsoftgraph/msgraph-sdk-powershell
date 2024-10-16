@@ -119,10 +119,10 @@ extends:
               - task: DownloadPipelineArtifact@2
                 displayName: 'Download Build Artifacts'
                 inputs:
-                  buildType: 'specific'
-                  project: 'Graph Developer Experiences'
-                  definition: 'PowerShell V2 Build'
-                  buildVersionToDownload: 'latest'
+                  buildType: 'current'
+                  # project: 'Graph Developer Experiences'
+                  # definition: 'PowerShell V2 Build'
+                  # buildVersionToDownload: 'latest'
                   targetPath: '$(System.DefaultWorkingDirectory)'
               - task: 1ES.PublishNuget@1
                 displayName: 'Publish NuGet to feed'
