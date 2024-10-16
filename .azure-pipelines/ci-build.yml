@@ -115,6 +115,7 @@ extends:
           runOnce:
             deploy:
               steps:
+              - checkout: self
               - task: DownloadPipelineArtifact@2
                 displayName: 'Download Build Artifacts'
                 inputs:
