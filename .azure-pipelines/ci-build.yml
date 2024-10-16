@@ -16,7 +16,7 @@ parameters:
   default: true
 - name: InternalFeed
   type: string
-  default: 'ATPopFeed'
+  default: '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
   displayName: Internal NuGet Feed
   values:
     - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_v2'
@@ -105,12 +105,12 @@ extends:
               Pattern: "Microsoft.Graph*.nupkg"
 
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
-    - stage: 'Deploy'
+    - stage: 'Deploy_to_Internal_Feed'
       dependsOn: stage
       jobs:
       - deployment: 'DeployToInternalFeed'
         displayName: 'Deploy to Internal Feed'
-        environment: 'InternalFeed'
+        environment: 'PowerShellInternalFeed'
         strategy:
           runOnce:
             deploy:
@@ -120,9 +120,6 @@ extends:
                 displayName: 'Download Build Artifacts'
                 inputs:
                   buildType: 'current'
-                  # project: 'Graph Developer Experiences'
-                  # definition: 'PowerShell V2 Build'
-                  # buildVersionToDownload: 'latest'
                   targetPath: '$(System.DefaultWorkingDirectory)'
               - task: 1ES.PublishNuget@1
                 displayName: 'Publish NuGet to feed'
@@ -133,7 +130,31 @@ extends:
                   publishVstsFeed: ${{ parameters.InternalFeed }}
                   nuGetFeedType: internal
                   allowPackageConflicts: true
-        
+    - stage: 'Deploy_to_PsGallery'
+    dependsOn: stage
+    jobs:
+    - deployment: 'DeployToPowerShellGallery'
+      displayName: 'Deploy to PowerShell Gallery'
+      environment: 'PowerShellGallery'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - checkout: self
+            - task: DownloadPipelineArtifact@2
+              displayName: 'Download Build Artifacts'
+              inputs:
+                buildType: 'current'
+                targetPath: '$(System.DefaultWorkingDirectory)'
+            - task: 1ES.PublishNuget@1
+              displayName: 'Publish NuGet to feed'
+              inputs:
+                useDotNetTask: false
+                packageParentPath: '$(System.DefaultWorkingDirectory)'
+                packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
+                publishVstsFeed: ${{ parameters.InternalFeed }}
+                nuGetFeedType: internal
+                allowPackageConflicts: true
 
       
 
