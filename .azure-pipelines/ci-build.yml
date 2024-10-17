@@ -14,6 +14,14 @@ parameters:
 - name: Sign
   type: boolean
   default: true
+- name: InternalFeed
+  type: string
+  default: '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
+  displayName: Internal NuGet Feed
+  values:
+    - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_v2'
+    - 'ATPopFeed'
+    - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
 
 variables:
   BuildAgent: ${{ parameters.BuildAgent }}
@@ -64,13 +72,6 @@ extends:
               targetPath: '$(Build.ArtifactStagingDirectory)'
               artifactName: 'drop'
               publishLocation: 'Container'
-          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-            - output: nuget
-              displayName: 'Publish NuGet to feed'
-              packageParentPath: '$(Build.ArtifactStagingDirectory)'
-              packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: $(PROJECT_NAME)/$(FEED_NAME)
-              allowPackageConflicts: true
         steps:
         - script: |
             git submodule update --init --recursive
@@ -104,3 +105,57 @@ extends:
               Pattern: "Microsoft.Graph*.nupkg"
 
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
+    - stage: 'Deploy_to_Internal_Feed'
+      dependsOn: stage
+      jobs:
+      - deployment: 'DeployToInternalFeed'
+        displayName: 'Deploy to Internal Feed'
+        environment: 'PowerShellInternalFeed'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - checkout: self
+              - task: DownloadPipelineArtifact@2
+                displayName: 'Download Build Artifacts'
+                inputs:
+                  buildType: 'current'
+                  targetPath: '$(System.DefaultWorkingDirectory)'
+              - task: 1ES.PublishNuget@1
+                displayName: 'Publish NuGet to feed'
+                inputs:
+                  useDotNetTask: false
+                  packageParentPath: '$(System.DefaultWorkingDirectory)'
+                  packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
+                  publishVstsFeed: ${{ parameters.InternalFeed }}
+                  nuGetFeedType: internal
+                  allowPackageConflicts: true
+    - stage: 'Deploy_to_PsGallery'
+      dependsOn: stage
+      jobs:
+      - deployment: 'DeployToPowerShellGallery'
+        displayName: 'Deploy to PowerShell Gallery'
+        environment: 'PowerShellGallery'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - checkout: self
+              - task: DownloadPipelineArtifact@2
+                displayName: 'Download Build Artifacts'
+                inputs:
+                  buildType: 'current'
+                  targetPath: '$(System.DefaultWorkingDirectory)'
+              - task: 1ES.PublishNuget@1
+                displayName: 'Publish NuGet to feed'
+                inputs:
+                  useDotNetTask: false
+                  packageParentPath: '$(System.DefaultWorkingDirectory)'
+                  packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
+                  nuGetFeedType: external
+                  publishFeedCredentials: 'microsoftgraph PowerShell Gallery connection'
+
+      
+
+
+    
