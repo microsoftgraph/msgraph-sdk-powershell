@@ -132,6 +132,7 @@ extends:
                   allowPackageConflicts: true
     - stage: 'Deploy_to_PsGallery'
       dependsOn: stage
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main')) # Only deploy to PSGallery on main branch
       jobs:
       - deployment: 'DeployToPowerShellGallery'
         displayName: 'Deploy to PowerShell Gallery'
