@@ -1,7 +1,7 @@
 ### Example 1: Get a permission grant policy exclude by ID
 
 ```powershell
-Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant" 
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant" 
 Get-MgBetaPolicyPermissionGrantPolicyExclude -PermissionGrantPolicyId "microsoft-application-admin" | fl  
 
 CertifiedClientApplicationsOnly             : False

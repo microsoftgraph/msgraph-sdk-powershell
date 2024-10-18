@@ -1,6 +1,6 @@
 ### Example 1: List history of a specific user
 ```powershell
-Connect-MgBetaGraph -Scopes "IdentityRiskyUser.Read.All"
+Connect-MgGraph -Scopes "IdentityRiskyUser.Read.All"
 Select-MgBetaProfile beta
 Get-MgBetaRiskyUserHistory -RiskyUserId 375844b0-2026-4265-b9f1-ee1708491e05 | Format-Table RiskDetail, RiskLastUpdatedDateTime, RiskState, UserDisplayName
 
@@ -17,7 +17,7 @@ The command return all the user risk history
 
 ### Example 2: List history of a specific user with detailed risk detection
 ```powershell
-Connect-MgBetaGraph -Scopes "IdentityRiskyUser.Read.All"
+Connect-MgGraph -Scopes "IdentityRiskyUser.Read.All"
 Select-MgBetaProfile beta
 Get-MgBetaRiskyUserHistory -RiskyUserId 375844b0-2026-4265-b9f1-ee1708491e05| Format-Table RiskDetail, RiskLastUpdatedDateTime, @{N="RiskDetection";E={($_). Activity.RiskEventTypes}}, RiskState, UserDisplayName
 

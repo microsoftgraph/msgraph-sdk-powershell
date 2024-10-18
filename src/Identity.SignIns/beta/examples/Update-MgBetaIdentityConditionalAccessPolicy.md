@@ -1,7 +1,7 @@
 ### Example 1: Add sign in risk levels to an existing conditional access policy
 
 ```powershell
-Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
   
 $params = @{
   Conditions = @{
