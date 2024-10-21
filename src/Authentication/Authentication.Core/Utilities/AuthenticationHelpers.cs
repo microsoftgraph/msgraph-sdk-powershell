@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 using Azure.Core;
 using Azure.Core.Diagnostics;
+using Azure.Core.Pipeline;
 using Azure.Identity;
 using Azure.Identity.Broker;
 using Microsoft.Graph.Authentication;
@@ -14,6 +15,8 @@ using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
@@ -113,23 +116,44 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var interactiveOptions = IsWamSupported() ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
+            var interactiveOptions = IsWamSupported() ?
+                                        new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) :
+                                        new InteractiveBrowserCredentialOptions();
             interactiveOptions.ClientId = authContext.ClientId;
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
             interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
 
+            var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
+            var popTokenRequestContext = new PopTokenRequestContext();
+            if (GraphSession.Instance.GraphOption.EnableATPoPForMSGraph)
+            {
+                popTokenRequestContext = await CreatePopTokenRequestContext(authContext);
+                GraphSession.Instance.GraphRequestPopContext.PopInteractiveBrowserCredential = interactiveBrowserCredential;
+            }
+
             if (!File.Exists(Constants.AuthRecordPath))
             {
                 AuthenticationRecord authRecord;
-                var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
                 if (IsWamSupported())
                 {
-                    authRecord = await Task.Run(() =>
+                    // Adding a scenario to account for Access Token Proof of Possession
+                    if (GraphSession.Instance.GraphOption.EnableATPoPForMSGraph)
                     {
-                        // Run the thread in MTA.
-                        return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
-                    });
+                        authRecord = await Task.Run(() =>
+                        {
+                            // Run the thread in MTA.
+                            return interactiveBrowserCredential.AuthenticateAsync(popTokenRequestContext, cancellationToken);
+                        });
+                    }
+                    else
+                    {
+                        authRecord = await Task.Run(() =>
+                        {
+                            // Run the thread in MTA.
+                            return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                        });
+                    }
                 }
                 else
                 {
@@ -446,5 +470,34 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 File.Delete(Constants.AuthRecordPath);
             return Task.CompletedTask;
         }
+
+        private static async Task<PopTokenRequestContext> CreatePopTokenRequestContext(IAuthContext authContext)
+        {
+            // Creating a httpclient that would handle all pop calls
+            Uri popResourceUri = GraphSession.Instance.GraphRequestPopContext.Uri ?? new Uri("https://graph.microsoft.com/beta/organization");
+            HttpClient popHttpClient = new(new HttpClientHandler());
+
+            // Find the nonce in the WWW-Authenticate header in the response.
+            var popMethod = GraphSession.Instance.GraphRequestPopContext.HttpMethod ?? HttpMethod.Get;
+            var popResponse = await popHttpClient.SendAsync(new HttpRequestMessage(popMethod, popResourceUri));
+            
+            // Refresh token logic --- start
+            var popPipelineOptions = new HttpPipelineOptions(new PopClientOptions()
+            {
+
+            });
+
+            GraphSession.Instance.GraphRequestPopContext.PopPipeline = HttpPipelineBuilder.Build(popPipelineOptions, new HttpPipelineTransportOptions());
+            var popRequest = GraphSession.Instance.GraphRequestPopContext.PopPipeline.CreateRequest();
+            popRequest.Method = RequestMethod.Parse(popMethod.Method.ToUpper());
+            popRequest.Uri.Reset(popResourceUri);
+
+            // Refresh token logic --- end
+            var popContext = new PopTokenRequestContext(authContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: WwwAuthenticateParameters.CreateFromAuthenticationHeaders(popResponse.Headers, "Pop").Nonce, request: popRequest);
+            return popContext;
+        }
+    }
+    internal class PopClientOptions : ClientOptions
+    {
     }
 }
