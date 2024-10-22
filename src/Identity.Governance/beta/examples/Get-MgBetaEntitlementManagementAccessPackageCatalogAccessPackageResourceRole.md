@@ -1,7 +1,7 @@
 ### Example 1: Get catalog resource roles
 
 ```powershell
-Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "originSystem eq 'AadGroup' and accessPackageResource/id eq '36d8d18f-b081-4867-acf5-4a8b893761e8'"
 
 Id                                   Description DisplayName OriginId                                    OriginSystem
@@ -15,7 +15,7 @@ This example gets the resource roles for the specified catalog id and filtering 
 ### Example 2: Extend the -Filter to get the resource roles with the display name 'Member'
 
 ```powershell
-Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "originSystem eq 'AadGroup' and accessPackageResource/id eq '36d8d18f-b081-4867-acf5-4a8b893761e8' and DisplayName eq 'Member'"
 
 Id                                   Description DisplayName OriginId                                    OriginSystem
