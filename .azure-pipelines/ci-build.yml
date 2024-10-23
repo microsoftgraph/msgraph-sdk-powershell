@@ -3,7 +3,7 @@
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 parameters:
 - name: BuildAgent
-  default: 1es-windows-ps-compute
+  default: 1es-windows-ps-compute-m
   displayName: Build Agent
 - name: Test
   type: boolean

@@ -10,7 +10,7 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 parameters:
 - name: BuildAgent
   displayName: Build Agent
-  default: 1es-windows-ps-compute
+  default: 1es-windows-ps-compute-m
 - name: BaseBranch
   displayName: Base Branch
   default: dev

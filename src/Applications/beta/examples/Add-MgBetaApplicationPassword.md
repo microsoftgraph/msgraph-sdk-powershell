@@ -2,7 +2,7 @@
 
 ```powershell
 
-Connect-MgBetaGraph -Scopes 'Application.ReadWrite.All'
+Connect-MgGraph -Scopes 'Application.ReadWrite.All'
 
 $appObjectId = 'eaf1e531-0d58-4874-babe-b9a9f436e6c3'
 
@@ -31,7 +31,7 @@ Add a password to an application that expires in six months from the current dat
 
 ```powershell
 
-Connect-MgBetaGraph -Scopes 'Application.ReadWrite.All'
+Connect-MgGraph -Scopes 'Application.ReadWrite.All'
 
 $appObjectId = 'eaf1e531-0d58-4874-babe-b9a9f436e6c3'
 
