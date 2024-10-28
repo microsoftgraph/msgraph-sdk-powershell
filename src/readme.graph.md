@@ -208,6 +208,10 @@ directive:
     set:
       subject: $1Of$2
   - where:
+      subject: ^(\w*[a-z])GraphRPre(\w*)$
+    set:
+      subject: $1Or$2
+  - where:
       verb: Clear
       subject: ^UserManagedAppRegistrationByDeviceTag$
       variant: ^Wipe$|^WipeExpanded$|^WipeViaIdentity$|^WipeViaIdentityExpanded$
