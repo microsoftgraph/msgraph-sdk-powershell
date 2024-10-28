@@ -183,6 +183,63 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile-id}/microsoft.graph.createToken':
+    post:
+      tags:
+        - deviceManagement.androidDeviceOwnerEnrollmentProfile
+      summary: Invoke action createToken
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_createToken
+      parameters:
+        - name: androidDeviceOwnerEnrollmentProfile-id
+          in: path
+          description: The unique identifier of androidDeviceOwnerEnrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tokenValidityInSeconds:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile-id}/microsoft.graph.revokeToken':
+    post:
+      tags:
+        - deviceManagement.androidDeviceOwnerEnrollmentProfile
+      summary: Invoke action revokeToken
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_revokeToken
+      parameters:
+        - name: androidDeviceOwnerEnrollmentProfile-id
+          in: path
+          description: The unique identifier of androidDeviceOwnerEnrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/androidDeviceOwnerEnrollmentProfiles/$count:
     get:
       tags:
@@ -374,6 +431,63 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/androidForWorkEnrollmentProfiles/{androidForWorkEnrollmentProfile-id}/microsoft.graph.createToken':
+    post:
+      tags:
+        - deviceManagement.androidForWorkEnrollmentProfile
+      summary: Invoke action createToken
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfile_createToken
+      parameters:
+        - name: androidForWorkEnrollmentProfile-id
+          in: path
+          description: The unique identifier of androidForWorkEnrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: androidForWorkEnrollmentProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tokenValidityInSeconds:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/androidForWorkEnrollmentProfiles/{androidForWorkEnrollmentProfile-id}/microsoft.graph.revokeToken':
+    post:
+      tags:
+        - deviceManagement.androidForWorkEnrollmentProfile
+      summary: Invoke action revokeToken
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfile_revokeToken
+      parameters:
+        - name: androidForWorkEnrollmentProfile-id
+          in: path
+          description: The unique identifier of androidForWorkEnrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: androidForWorkEnrollmentProfile
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/androidForWorkEnrollmentProfiles/$count:
     get:
       tags:
@@ -805,6 +919,42 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/appleUserInitiatedEnrollmentProfiles/{appleUserInitiatedEnrollmentProfile-id}/microsoft.graph.setPriority':
+    post:
+      tags:
+        - deviceManagement.appleUserInitiatedEnrollmentProfile
+      summary: Invoke action setPriority
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_setPriority
+      parameters:
+        - name: appleUserInitiatedEnrollmentProfile-id
+          in: path
+          description: The unique identifier of appleUserInitiatedEnrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appleUserInitiatedEnrollmentProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                priority:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/appleUserInitiatedEnrollmentProfiles/$count:
     get:
       tags:
@@ -996,246 +1146,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent-id}/policyStatusDetails':
-    get:
-      tags:
-        - deviceManagement.deviceManagementAutopilotEvent
-      summary: Get policyStatusDetails from deviceManagement
-      description: Policy and application status details for this device.
-      operationId: deviceManagement.autopilotEvent_ListPolicyStatusDetail
-      parameters:
-        - name: deviceManagementAutopilotEvent-id
-          in: path
-          description: The unique identifier of deviceManagementAutopilotEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementAutopilotEvent
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.deviceManagementAutopilotPolicyStatusDetailCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - deviceManagement.deviceManagementAutopilotEvent
-      summary: Create new navigation property to policyStatusDetails for deviceManagement
-      operationId: deviceManagement.autopilotEvent_CreatePolicyStatusDetail
-      parameters:
-        - name: deviceManagementAutopilotEvent-id
-          in: path
-          description: The unique identifier of deviceManagementAutopilotEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementAutopilotEvent
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent-id}/policyStatusDetails/{deviceManagementAutopilotPolicyStatusDetail-id}':
-    get:
-      tags:
-        - deviceManagement.deviceManagementAutopilotEvent
-      summary: Get policyStatusDetails from deviceManagement
-      description: Policy and application status details for this device.
-      operationId: deviceManagement.autopilotEvent_GetPolicyStatusDetail
-      parameters:
-        - name: deviceManagementAutopilotEvent-id
-          in: path
-          description: The unique identifier of deviceManagementAutopilotEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementAutopilotEvent
-        - name: deviceManagementAutopilotPolicyStatusDetail-id
-          in: path
-          description: The unique identifier of deviceManagementAutopilotPolicyStatusDetail
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementAutopilotPolicyStatusDetail
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceManagement.deviceManagementAutopilotEvent
-      summary: Update the navigation property policyStatusDetails in deviceManagement
-      operationId: deviceManagement.autopilotEvent_UpdatePolicyStatusDetail
-      parameters:
-        - name: deviceManagementAutopilotEvent-id
-          in: path
-          description: The unique identifier of deviceManagementAutopilotEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementAutopilotEvent
-        - name: deviceManagementAutopilotPolicyStatusDetail-id
-          in: path
-          description: The unique identifier of deviceManagementAutopilotPolicyStatusDetail
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementAutopilotPolicyStatusDetail
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.deviceManagementAutopilotEvent
-      summary: Delete navigation property policyStatusDetails for deviceManagement
-      operationId: deviceManagement.autopilotEvent_DeletePolicyStatusDetail
-      parameters:
-        - name: deviceManagementAutopilotEvent-id
-          in: path
-          description: The unique identifier of deviceManagementAutopilotEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementAutopilotEvent
-        - name: deviceManagementAutopilotPolicyStatusDetail-id
-          in: path
-          description: The unique identifier of deviceManagementAutopilotPolicyStatusDetail
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementAutopilotPolicyStatusDetail
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent-id}/policyStatusDetails/$count':
-    get:
-      tags:
-        - deviceManagement.deviceManagementAutopilotEvent
-      summary: Get the number of the resource
-      operationId: deviceManagement.autopilotEvent.policyStatusDetail_GetCount
-      parameters:
-        - name: deviceManagementAutopilotEvent-id
-          in: path
-          description: The unique identifier of deviceManagementAutopilotEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementAutopilotEvent
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
   /deviceManagement/autopilotEvents/$count:
     get:
       tags:
@@ -1815,6 +1725,119 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles/{enrollmentProfile-id}/microsoft.graph.exportMobileConfig()':
+    get:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke function exportMobileConfig
+      description: Exports the mobile configuration
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_exportMobileConfig
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+        - name: enrollmentProfile-id
+          in: path
+          description: The unique identifier of enrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: enrollmentProfile
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles/{enrollmentProfile-id}/microsoft.graph.setDefaultProfile':
+    post:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke action setDefaultProfile
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_setDefaultProfile
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+        - name: enrollmentProfile-id
+          in: path
+          description: The unique identifier of enrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: enrollmentProfile
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles/{enrollmentProfile-id}/microsoft.graph.updateDeviceProfileAssignment':
+    post:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke action updateDeviceProfileAssignment
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_updateDeviceProfileAssignment
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+        - name: enrollmentProfile-id
+          in: path
+          description: The unique identifier of enrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: enrollmentProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles/$count':
     get:
       tags:
@@ -2077,6 +2100,228 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/importedAppleDeviceIdentities/microsoft.graph.importAppleDeviceIdentityList':
+    post:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke action importAppleDeviceIdentityList
+      operationId: deviceManagement.depOnboardingSetting.importedAppleDeviceIdentity_importAppleDeviceIdentityList
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                importedAppleDeviceIdentities:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentity'
+                overwriteImportedDeviceIdentities:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of importedAppleDeviceIdentityResult
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentityResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.generateEncryptionPublicKey':
+    post:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke action generateEncryptionPublicKey
+      description: Generate a public key to use to encrypt the Apple device enrollment program token
+      operationId: deviceManagement.depOnboardingSetting_generateEncryptionPublicKey
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.getEncryptionPublicKey()':
+    get:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke function getEncryptionPublicKey
+      description: Get a public key to use to encrypt the Apple device enrollment program token
+      operationId: deviceManagement.depOnboardingSetting_getEncryptionPublicKey
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.shareForSchoolDataSyncService':
+    post:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke action shareForSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSetting_shareGraphFPreSchoolDataSyncService
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.syncWithAppleDeviceEnrollmentProgram':
+    post:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke action syncWithAppleDeviceEnrollmentProgram
+      description: Synchronizes between Apple Device Enrollment Program and Intune
+      operationId: deviceManagement.depOnboardingSetting_syncGraphWPreAppleDeviceEnrollmentProgram
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.unshareForSchoolDataSyncService':
+    post:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke action unshareForSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSetting_unshareGraphFPreSchoolDataSyncService
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.uploadDepToken':
+    post:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke action uploadDepToken
+      description: Uploads a new Device Enrollment Program token
+      operationId: deviceManagement.depOnboardingSetting_uploadDepToken
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appleId:
+                  type: string
+                  nullable: true
+                depToken:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/depOnboardingSettings/$count:
     get:
       tags:
@@ -2091,6 +2336,39 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/depOnboardingSettings/microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime=''{expiringBeforeDateTime}'')':
+    get:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke function getExpiringVppTokenCount
+      operationId: deviceManagement.depOnboardingSetting_getExpiringVppTokenCount
+      parameters:
+        - name: expiringBeforeDateTime
+          in: path
+          description: 'Usage: expiringBeforeDateTime=''{expiringBeforeDateTime}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    maximum: 2147483647
+                    minimum: -2147483648
+                    type: number
+                    format: int32
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /deviceManagement/deviceEnrollmentConfigurations:
     get:
       tags:
@@ -2508,6 +2786,77 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Invoke action assign
+      operationId: deviceManagement.deviceEnrollmentConfiguration_assign
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: The unique identifier of deviceEnrollmentConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                enrollmentConfigurationAssignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.setPriority':
+    post:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Invoke action setPriority
+      operationId: deviceManagement.deviceEnrollmentConfiguration_setPriority
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: The unique identifier of deviceEnrollmentConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                priority:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/deviceEnrollmentConfigurations/$count:
     get:
       tags:
@@ -2522,6 +2871,76 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /deviceManagement/deviceEnrollmentConfigurations/microsoft.graph.createEnrollmentNotificationConfiguration:
+    post:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Invoke action createEnrollmentNotificationConfiguration
+      operationId: deviceManagement.deviceEnrollmentConfiguration_createEnrollmentNotificationConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deviceEnrollmentNotificationConfigurations:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/deviceEnrollmentConfigurations/microsoft.graph.hasPayloadLinks:
+    post:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Invoke action hasPayloadLinks
+      operationId: deviceManagement.deviceEnrollmentConfiguration_hasPayloadLink
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payloadIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/importedDeviceIdentities:
     get:
       tags:
@@ -2713,6 +3132,97 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /deviceManagement/importedDeviceIdentities/microsoft.graph.importDeviceIdentityList:
+    post:
+      tags:
+        - deviceManagement.importedDeviceIdentity
+      summary: Invoke action importDeviceIdentityList
+      operationId: deviceManagement.importedDeviceIdentity_importDeviceIdentityList
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                importedDeviceIdentities:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentity'
+                overwriteImportedDeviceIdentities:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of importedDeviceIdentityResult
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentityResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/importedDeviceIdentities/microsoft.graph.searchExistingIdentities:
+    post:
+      tags:
+        - deviceManagement.importedDeviceIdentity
+      summary: Invoke action searchExistingIdentities
+      operationId: deviceManagement.importedDeviceIdentity_searchExistingIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                importedDeviceIdentities:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentity'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of importedDeviceIdentity
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentity'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/importedWindowsAutopilotDeviceIdentities:
     get:
       tags:
@@ -2904,6 +3414,50 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /deviceManagement/importedWindowsAutopilotDeviceIdentities/microsoft.graph.import:
+    post:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Invoke action import
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentity_import
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                importedWindowsAutopilotDeviceIdentities:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of importedWindowsAutopilotDeviceIdentity
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice:
     get:
       tags:
@@ -3598,6 +4152,252 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.allowNextEnrollment':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Invoke action allowNextEnrollment
+      description: Unblocks next autopilot enrollment.
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_allowNextEnrollment
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeploymentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.assignResourceAccountToDevice':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Invoke action assignResourceAccountToDevice
+      description: Assigns resource account to Autopilot devices.
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_assignResourceAccountToDevice
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeploymentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+                resourceAccountName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.assignUserToDevice':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_assignUserToDevice
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeploymentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.unassignResourceAccountFromDevice':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Invoke action unassignResourceAccountFromDevice
+      description: Unassigns the resource account from an Autopilot device.
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_unassignResourceAccountFromDevice
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeploymentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.unassignUserFromDevice':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_unassignUserFromDevice
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeploymentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.updateDeviceProperties':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_updateDeviceProperty
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeploymentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+                groupTag:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                deviceAccountUpn:
+                  type: string
+                  nullable: true
+                deviceAccountPassword:
+                  type: string
+                  nullable: true
+                deviceFriendlyName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/$count':
     get:
       tags:
@@ -3860,6 +4660,42 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Invoke action assign
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_assign
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeploymentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/windowsAutopilotDeploymentProfiles/$count:
     get:
       tags:
@@ -3874,6 +4710,50 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /deviceManagement/windowsAutopilotDeploymentProfiles/microsoft.graph.hasPayloadLinks:
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeploymentProfile
+      summary: Invoke action hasPayloadLinks
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_hasPayloadLink
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payloadIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /deviceManagement/windowsAutopilotDeviceIdentities:
     get:
       tags:
@@ -4143,6 +5023,204 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.allowNextEnrollment':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Invoke action allowNextEnrollment
+      description: Unblocks next autopilot enrollment.
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_allowNextEnrollment
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.assignResourceAccountToDevice':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Invoke action assignResourceAccountToDevice
+      description: Assigns resource account to Autopilot devices.
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_assignResourceAccountToDevice
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+                resourceAccountName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.assignUserToDevice':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_assignUserToDevice
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.unassignResourceAccountFromDevice':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Invoke action unassignResourceAccountFromDevice
+      description: Unassigns the resource account from an Autopilot device.
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_unassignResourceAccountFromDevice
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.unassignUserFromDevice':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_unassignUserFromDevice
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.updateDeviceProperties':
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_updateDeviceProperty
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: The unique identifier of windowsAutopilotDeviceIdentity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+                groupTag:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                deviceAccountUpn:
+                  type: string
+                  nullable: true
+                deviceAccountPassword:
+                  type: string
+                  nullable: true
+                deviceFriendlyName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/windowsAutopilotDeviceIdentities/$count:
     get:
       tags:
@@ -4235,6 +5313,19 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/windowsAutopilotSettings/microsoft.graph.sync:
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotSettings
+      summary: Invoke action sync
+      description: 'Initiates a sync of all AutoPilot registered devices from Store for Business and other portals. If the sync successful, this action returns a 204 No Content response code. If a sync is already in progress, the action returns a 409 Conflict response code.  If this sync action is called within 10 minutes of the previous sync, the action returns a 429 Too Many Requests response code.'
+      operationId: deviceManagement.windowsAutopilotSetting_sync
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/windowsFeatureUpdateProfiles:
     get:
       tags:
@@ -4652,6 +5743,41 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.windowsFeatureUpdateProfile
+      summary: Invoke action assign
+      operationId: deviceManagement.windowsFeatureUpdateProfile_assign
+      parameters:
+        - name: windowsFeatureUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsFeatureUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsFeatureUpdateProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfileAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/windowsFeatureUpdateProfiles/$count:
     get:
       tags:
@@ -4977,6 +6103,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action importResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_importResourceAction
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                format:
+                  type: string
+                value:
+                  type: string
+                overwriteResourceNamespace:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
     get:
       tags:
@@ -6587,6 +7755,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke function assignedPrincipals
+      description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
+      operationId: roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive=@transitive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
@@ -6609,6 +7885,106 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke function assignedPrincipals
+      description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
+      operationId: roleManagement.cloudPC.roleDefinition_assignedPrincipal
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive=@transitive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/cloudPC/roleDefinitions/$count:
     get:
       tags:
@@ -6875,6 +8251,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action importResourceActions
+      operationId: roleManagement.defender.resourceNamespace_importResourceAction
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                format:
+                  type: string
+                value:
+                  type: string
+                overwriteResourceNamespace:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
     get:
       tags:
@@ -8448,6 +9866,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke function assignedPrincipals
+      description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
+      operationId: roleManagement.defender.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive=@transitive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
@@ -8470,6 +9996,106 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke function assignedPrincipals
+      description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
+      operationId: roleManagement.defender.roleDefinition_assignedPrincipal
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive=@transitive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/defender/roleDefinitions/$count:
     get:
       tags:
@@ -8737,6 +10363,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action importResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_importResourceAction
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                format:
+                  type: string
+                value:
+                  type: string
+                overwriteResourceNamespace:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
     get:
       tags:
@@ -9174,11 +10842,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      summary: List unifiedRoleAssignmentMultiple
+      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10330,6 +11998,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke function assignedPrincipals
+      description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
+      operationId: roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive=@transitive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
@@ -10352,6 +12128,106 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke function assignedPrincipals
+      description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
+      operationId: roleManagement.deviceManagement.roleDefinition_assignedPrincipal
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive=@transitive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/deviceManagement/roleDefinitions/$count:
     get:
       tags:
@@ -10829,6 +12705,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/exchange/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions':
+    post:
+      tags:
+        - roleManagement.unifiedRbacApplication
+      summary: Invoke action importResourceActions
+      operationId: roleManagement.exchange.resourceNamespace_importResourceAction
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: The unique identifier of unifiedRbacResourceNamespace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                format:
+                  type: string
+                value:
+                  type: string
+                overwriteResourceNamespace:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/exchange/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
     get:
       tags:
@@ -12109,6 +14027,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
+    get:
+      tags:
+        - roleManagement.unifiedRbacApplication
+      summary: Invoke function assignedPrincipals
+      description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
+      operationId: roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive=@transitive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
@@ -12131,6 +14157,106 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
+    get:
+      tags:
+        - roleManagement.unifiedRbacApplication
+      summary: Invoke function assignedPrincipals
+      description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
+      operationId: roleManagement.exchange.roleDefinition_assignedPrincipal
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: transitive
+          in: query
+          description: 'Usage: transitive=@transitive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+        - name: directoryScopeType
+          in: query
+          description: 'Usage: directoryScopeType=''@directoryScopeType'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: directoryScopeId
+          in: query
+          description: 'Usage: directoryScopeId=''@directoryScopeId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /roleManagement/exchange/roleDefinitions/$count:
     get:
       tags:
@@ -12608,7 +14734,7 @@ components:
             enrolledDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of Android devices that have enrolled using this enrollment profile.
               format: int32
             enrollmentMode:
@@ -12618,7 +14744,7 @@ components:
             enrollmentTokenUsageCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of AOSP devices that have enrolled using the current token. Valid values 0 to 20000
               format: int32
             isTeamsDeviceProfile:
@@ -12697,7 +14823,7 @@ components:
             enrolledDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of Android devices that have enrolled using this enrollment profile.
               format: int32
             lastModifiedDateTime:
@@ -12759,7 +14885,7 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Priority, 0 is highest'
               format: int32
             assignments:
@@ -12821,11 +14947,6 @@ components:
               type: string
               description: Device id associated with the object
               nullable: true
-            devicePreparationDuration:
-              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-              type: string
-              description: Time spent in device enrollment.
-              format: duration
             deviceRegisteredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -12868,18 +14989,10 @@ components:
               type: string
               description: Device operating system version.
               nullable: true
-            targetedAppCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Count of applications targeted.
-              format: int32
-            targetedPolicyCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Count of policies targeted.
-              format: int32
+            userId:
+              type: string
+              description: UserId id associated with the object
+              nullable: true
             userPrincipalName:
               type: string
               description: User principal name used to enroll the device.
@@ -12896,46 +15009,9 @@ components:
               type: string
               description: Autopilot profile name.
               nullable: true
-            policyStatusDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
-              description: Policy and application status details for this device.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
           description: Represents an Autopilot flow event.
-    microsoft.graph.deviceManagementAutopilotPolicyStatusDetail:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: deviceManagementAutopilotPolicyStatusDetail
-          type: object
-          properties:
-            complianceStatus:
-              $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyComplianceStatus'
-            displayName:
-              type: string
-              description: The friendly name of the policy.
-              nullable: true
-            errorCode:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.
-              format: int32
-            lastReportedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp of the reported policy status
-              format: date-time
-            policyType:
-              $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyType'
-            trackedOnEnrollmentStatus:
-              type: boolean
-              description: Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session
-          additionalProperties:
-            type: object
-          description: Policy status detail item contained by an autopilot event.
     microsoft.graph.onPremisesConditionalAccessSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12991,7 +15067,7 @@ components:
             lastSyncErrorCode:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Error code reported by Apple during last dep sync.
               format: int32
             lastSyncTriggeredDateTime:
@@ -13011,7 +15087,7 @@ components:
             syncedDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Gets synced device count
               format: int32
             tokenExpirationDateTime:
@@ -13101,7 +15177,7 @@ components:
             passcodeLockGracePeriodInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Indicates timeout before locked screen requires the user to enter the device passocde to unlock it
               format: int32
               nullable: true
@@ -13117,7 +15193,7 @@ components:
             sharedIPadMaximumUserCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
               format: int32
             simSetupScreenDisabled:
@@ -13129,7 +15205,7 @@ components:
             temporarySessionTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Indicates timeout of temporary session
               format: int32
             updateCompleteScreenDisabled:
@@ -13141,7 +15217,7 @@ components:
             userSessionTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Indicates timeout of temporary session
               format: int32
             watchMigrationScreenDisabled:
@@ -13313,6 +15389,18 @@ components:
           additionalProperties:
             type: object
           description: The importedAppleDeviceIdentity resource represents the imported device identity of an Apple device .
+    microsoft.graph.importedAppleDeviceIdentityResult:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.importedAppleDeviceIdentity'
+        - title: importedAppleDeviceIdentityResult
+          type: object
+          properties:
+            status:
+              type: boolean
+              description: Status of imported device identity
+          additionalProperties:
+            type: object
+          description: The importedAppleDeviceIdentityResult resource represents the result of attempting to import Apple devices identities.
     microsoft.graph.deviceEnrollmentConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13342,7 +15430,7 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
               format: int32
             roleScopeTagIds:
@@ -13354,7 +15442,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the device enrollment configuration
               format: int32
             assignments:
@@ -13383,6 +15471,30 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
+    microsoft.graph.hasPayloadLinkResultItem:
+      title: hasPayloadLinkResultItem
+      type: object
+      properties:
+        error:
+          type: string
+          description: Exception information indicates if check for this item was successful or not.Empty string for no error.
+          nullable: true
+        hasLink:
+          type: boolean
+          description: Indicate whether a payload has any link or not.
+          nullable: true
+        payloadId:
+          type: string
+          description: 'Key of the Payload, In the format of Guid.'
+          nullable: true
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentSource'
+          description: The reason where the link comes from.
+      additionalProperties:
+        type: object
+      description: A class containing the result of HasPayloadLinks action.
     microsoft.graph.importedDeviceIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13421,6 +15533,18 @@ components:
           additionalProperties:
             type: object
           description: The importedDeviceIdentity resource represents a unique hardware identity of a device that has been pre-staged for pre-enrollment configuration.
+    microsoft.graph.importedDeviceIdentityResult:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.importedDeviceIdentity'
+        - title: importedDeviceIdentityResult
+          type: object
+          properties:
+            status:
+              type: boolean
+              description: Status of imported device identity
+          additionalProperties:
+            type: object
+          description: The importedDeviceIdentityResult resource represents the result of attempting to import a device identity.
     microsoft.graph.importedWindowsAutopilotDeviceIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14372,7 +16496,7 @@ components:
       properties:
         deviceAndAppManagementAssignmentFilterId:
           type: string
-          description: The Id of the filter for the target assignment.
+          description: The ID of the filter for the target assignment.
           nullable: true
         deviceAndAppManagementAssignmentFilterType:
           $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
@@ -14464,24 +16588,6 @@ components:
         - azureADJoinedWithWhiteGlove
         - offlineDomainJoinedWithWhiteGlove
         - offlineDomainJoinedWithOfflineAutopilotProfile
-      type: string
-    microsoft.graph.deviceManagementAutopilotPolicyComplianceStatus:
-      title: deviceManagementAutopilotPolicyComplianceStatus
-      enum:
-        - unknown
-        - compliant
-        - installed
-        - notCompliant
-        - notInstalled
-        - error
-      type: string
-    microsoft.graph.deviceManagementAutopilotPolicyType:
-      title: deviceManagementAutopilotPolicyType
-      enum:
-        - unknown
-        - application
-        - appModel
-        - configurationPolicy
       type: string
     microsoft.graph.depTokenType:
       title: depTokenType
@@ -14783,7 +16889,7 @@ components:
         deviceErrorCode:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Device error code reported by Device Directory Service(DDS).
           format: int32
         deviceErrorName:
@@ -14856,7 +16962,7 @@ components:
         installProgressTimeoutInMinutes:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Set installation progress timeout in minutes
           format: int32
           nullable: true
@@ -15072,7 +17178,7 @@ components:
         offerIntervalInDays:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of day(s) between each set of offers to be set, updated, and displayed for a feature update profile, for example: if OfferStartDateTimeInUTC is 2020-06-09T10:00:00Z, and OfferIntervalInDays is 1, then the next two sets of offers will be made consecutively on 2020-06-10T10:00:00Z (next day at the same specified time) and 2020-06-11T10:00:00Z (next next day at the same specified time) with 1 day in between each set of offers.'
           format: int32
           nullable: true
@@ -15257,19 +17363,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotEvent'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.deviceManagementAutopilotPolicyStatusDetailCollectionResponse:
-      title: Collection of deviceManagementAutopilotPolicyStatusDetail
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetail'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -16191,7 +18284,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -16206,13 +18299,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -16232,7 +18325,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -16329,12 +18422,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotEventCollectionResponse'
-    microsoft.graph.deviceManagementAutopilotPolicyStatusDetailCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyStatusDetailCollectionResponse'
     microsoft.graph.depOnboardingSettingCollectionResponse:
       description: Retrieved collection
       content:

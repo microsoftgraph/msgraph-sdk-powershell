@@ -3059,7 +3059,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: 'Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.'
       externalDocs:
@@ -3152,7 +3152,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.acceptRecommendations':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.accessReviewSet
       summary: Invoke action acceptRecommendations
       description: Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed on an accessReviewInstance object for which the calling user is a reviewer.
       externalDocs:
@@ -3185,7 +3185,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.applyDecisions':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.accessReviewSet
       summary: Invoke action applyDecisions
       description: Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings. The status of the accessReviewInstance must be Completed to call this method.
       externalDocs:
@@ -3218,7 +3218,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.batchRecordDecisions':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.accessReviewSet
       summary: Invoke action batchRecordDecisions
       description: 'Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.'
       externalDocs:
@@ -3273,7 +3273,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.resetDecisions':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.accessReviewSet
       summary: Invoke action resetDecisions
       description: Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
       externalDocs:
@@ -3306,7 +3306,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.sendReminder':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.accessReviewSet
       summary: Invoke action sendReminder
       description: Send a reminder to the reviewers of an active accessReviewInstance.
       externalDocs:
@@ -3339,7 +3339,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.stop':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.accessReviewSet
       summary: Invoke action stop
       description: 'Stop a currently active accessReviewInstance. After the access review instance stops, the instance status is marked as Completed, the reviewers can no longer give input, and the access review decisions are applied. Stopping an instance will not stop future instances. To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.'
       externalDocs:
@@ -4370,7 +4370,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: 'Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.'
       externalDocs:
@@ -4471,7 +4471,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/microsoft.graph.stop':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.accessReviewSet
       summary: Invoke action stop
       description: 'Stop an access review stage that is inProgress. After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created.  The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.'
       externalDocs:
@@ -4542,7 +4542,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: Return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
       externalDocs:
@@ -4657,7 +4657,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: Retrieve all accessReviewInstance objects on a given accessReviewScheduleDefinition where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
       externalDocs:
@@ -4742,7 +4742,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/microsoft.graph.stop':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.accessReviewSet
       summary: Invoke action stop
       operationId: identityGovernance.accessReview.definition_stop
       parameters:
@@ -4777,7 +4777,7 @@ paths:
   '/identityGovernance/accessReviews/definitions/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: Returns accessReviewScheduleDefinition objects where the calling user is a reviewer on one or more accessReviewInstance objects.
       externalDocs:
@@ -5262,7 +5262,7 @@ paths:
   '/identityGovernance/accessReviews/historyDefinitions/{accessReviewHistoryDefinition-id}/instances/{accessReviewHistoryInstance-id}/microsoft.graph.generateDownloadUri':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.accessReviewSet
       summary: Invoke action generateDownloadUri
       description: Generates a URI for an accessReviewHistoryInstance object the status for which is done. Each URI can be used to retrieve the instance's review history data. Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object.
       externalDocs:
@@ -6256,7 +6256,7 @@ paths:
   '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.appConsentApprovalRoute
       summary: Invoke function filterByCurrentUser
       description: 'Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.'
       externalDocs:
@@ -6355,7 +6355,7 @@ paths:
   '/identityGovernance/appConsent/appConsentRequests/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.appConsentApprovalRoute
       summary: Invoke function filterByCurrentUser
       description: Retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
       externalDocs:
@@ -6953,7 +6953,7 @@ paths:
   '/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
       externalDocs:
@@ -8955,7 +8955,7 @@ paths:
   '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/microsoft.graph.getApplicablePolicyRequirements':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.entitlementManagement
       summary: Invoke action getApplicablePolicyRequirements
       description: 'In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.'
       externalDocs:
@@ -12119,7 +12119,7 @@ paths:
   '/identityGovernance/entitlementManagement/accessPackages/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.'
       externalDocs:
@@ -13087,7 +13087,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackageAssignmentRequest
-      description: 'In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.'
+      description: 'In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object. This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0
@@ -13314,7 +13314,7 @@ paths:
   '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.cancel':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.entitlementManagement
       summary: Invoke action cancel
       description: 'In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.'
       externalDocs:
@@ -13339,7 +13339,7 @@ paths:
   '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.reprocess':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.entitlementManagement
       summary: Invoke action reprocess
       description: 'In Microsoft Entra entitlement management, callers can automatically retry a user''s request for access to an access package. It''s performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.'
       externalDocs:
@@ -13364,7 +13364,7 @@ paths:
   '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.entitlementManagement
       summary: Invoke action resume
       description: 'Resume a user''s access package request after waiting for a callback from a custom extension. In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It''s performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.'
       externalDocs:
@@ -13467,7 +13467,7 @@ paths:
   '/identityGovernance/entitlementManagement/assignmentRequests/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignmentRequest objects filtered on the signed-in user.'
       externalDocs:
@@ -13819,7 +13819,7 @@ paths:
   '/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/microsoft.graph.reprocess':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.entitlementManagement
       summary: Invoke action reprocess
       description: 'In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The state of the access package assignment must be Delivered for the administrator to reprocess the user''s assignment. Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action.'
       externalDocs:
@@ -13904,7 +13904,7 @@ paths:
   /identityGovernance/entitlementManagement/assignments/microsoft.graph.additionalAccess():
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.entitlementManagement
       summary: Invoke function additionalAccess
       description: 'In Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  This can be used to prepare to configure the incompatible access packages for a specific access package.'
       externalDocs:
@@ -13974,7 +13974,7 @@ paths:
   '/identityGovernance/entitlementManagement/assignments/microsoft.graph.additionalAccess(accessPackageId=''{accessPackageId}'',incompatibleAccessPackageId=''{incompatibleAccessPackageId}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.entitlementManagement
       summary: Invoke function additionalAccess
       operationId: identityGovernance.entitlementManagement.assignment_additionalAccess
       parameters:
@@ -14056,7 +14056,7 @@ paths:
   '/identityGovernance/entitlementManagement/assignments/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignment objects filtered on the signed-in user.'
       externalDocs:
@@ -14619,11 +14619,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
+      summary: Update accessPackageAssignmentRequestWorkflowExtension
+      description: Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14662,11 +14662,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
+      summary: Delete accessPackageAssignmentRequestWorkflowExtension
+      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -20541,7 +20541,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganization.externalSponsor_DeleteDirectoryObjectGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedGraphRPreganization.externalSponsor_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -20598,7 +20598,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of externalSponsors from identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganization_ListExternalSponsorGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedGraphRPreganization_ListExternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -20640,7 +20640,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-post-externalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganization_CreateExternalSponsorGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedGraphRPreganization_CreateExternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -20666,7 +20666,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganization_DeleteExternalSponsorGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedGraphRPreganization_DeleteExternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -20764,7 +20764,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganization.internalSponsor_DeleteDirectoryObjectGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedGraphRPreganization.internalSponsor_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -20821,7 +20821,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of internalSponsors from identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganization_ListInternalSponsorGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedGraphRPreganization_ListInternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -20863,7 +20863,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-post-internalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganization_CreateInternalSponsorGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedGraphRPreganization_CreateInternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -20889,7 +20889,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-1.0
-      operationId: identityGovernance.entitlementManagement.connectedOrganization_DeleteInternalSponsorGraphBPreRef
+      operationId: identityGovernance.entitlementManagement.connectedGraphRPreganization_DeleteInternalSponsorGraphBPreRef
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -37951,7 +37951,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/microsoft.graph.identityGovernance.activate':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action activate
       description: 'Run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the ''Real-time employee termination'' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.'
       externalDocs:
@@ -37990,7 +37990,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/microsoft.graph.identityGovernance.createNewVersion':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action createNewVersion
       description: Create a new version of the workflow object.
       externalDocs:
@@ -38031,7 +38031,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/microsoft.graph.identityGovernance.restore':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action restore
       description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
       externalDocs:
@@ -38304,7 +38304,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/runs/{run-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -39295,7 +39295,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/runs/{run-id}/userProcessingResults/{userProcessingResult-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -39822,7 +39822,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/runs/{run-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run.userProcessingResult_summary
       parameters:
@@ -39895,7 +39895,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/runs/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run_summary
       parameters:
@@ -40290,7 +40290,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/taskReports/{taskReport-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -40745,7 +40745,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.taskReport_summary
       parameters:
@@ -41136,7 +41136,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/tasks/{task-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -42077,7 +42077,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/userProcessingResults/{userProcessingResult-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -42532,7 +42532,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.userProcessingResult_summary
       parameters:
@@ -42656,7 +42656,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -42713,7 +42713,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -42770,7 +42770,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -42824,7 +42824,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
       requestBody:
@@ -42867,7 +42867,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/top'
@@ -42936,7 +42936,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/search'
@@ -42970,7 +42970,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -43027,7 +43027,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -43081,7 +43081,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
       requestBody:
@@ -43124,7 +43124,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/top'
@@ -43193,7 +43193,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/search'
@@ -43227,7 +43227,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/top'
@@ -43296,7 +43296,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
       requestBody:
@@ -43340,7 +43340,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -43403,7 +43403,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -43453,7 +43453,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -43500,7 +43500,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -43579,7 +43579,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -43631,7 +43631,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/versions/{workflowVersion-versionNumber}/tasks/{task-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -43655,7 +43655,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -43722,7 +43722,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -43795,7 +43795,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -43865,7 +43865,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -43924,7 +43924,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -44009,7 +44009,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -44059,7 +44059,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -44131,7 +44131,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -44172,7 +44172,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/search'
@@ -44299,7 +44299,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/insights/microsoft.graph.identityGovernance.topTasksProcessedSummary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function topTasksProcessedSummary
       description: 'Provide a summary of the most processed tasks, known as top tasks, for a specified time period in a tenant. The task definition is provided, along with numerical counts of total, successful, and failed runs. For information about workflows processed, see insights: topWorkflowsProcessedSummary.'
       externalDocs:
@@ -44356,7 +44356,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/insights/microsoft.graph.identityGovernance.topWorkflowsProcessedSummary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function topWorkflowsProcessedSummary
       description: 'Provide a summary of the workflows processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.'
       externalDocs:
@@ -44413,7 +44413,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/insights/microsoft.graph.identityGovernance.workflowsProcessedByCategory(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function workflowsProcessedByCategory
       description: 'Provide a summary of workflows processed, by category, in a tenant. This allows you to quickly get category information, by numerical value, bypassing other information found in the WorkflowsProcessedSummary call.'
       externalDocs:
@@ -44452,7 +44452,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/insights/microsoft.graph.identityGovernance.workflowsProcessedSummary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function workflowsProcessedSummary
       description: 'Provide a summary of all workflows processed within a tenant for a specified period. Because the amount of results for listed workflows as returned by the List workflows does not tell you which workflows were processed from the list of created workflows, this summary gives you a quick overview of processed status based on counts.'
       externalDocs:
@@ -45411,7 +45411,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/microsoft.graph.identityGovernance.activate':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action activate
       description: 'Run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the ''Real-time employee termination'' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.'
       externalDocs:
@@ -45450,7 +45450,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/microsoft.graph.identityGovernance.createNewVersion':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action createNewVersion
       description: Create a new version of the workflow object.
       externalDocs:
@@ -45491,7 +45491,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/microsoft.graph.identityGovernance.restore':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action restore
       description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
       externalDocs:
@@ -45773,7 +45773,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/runs/{run-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -46773,7 +46773,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/runs/{run-id}/userProcessingResults/{userProcessingResult-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -47300,7 +47300,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/runs/{run-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
       operationId: identityGovernance.lifecycleWorkflow.workflow.run.userProcessingResult_summary
       parameters:
@@ -47373,7 +47373,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/runs/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
       description: 'Get a summary of runs for a specified time period. Because the amount of runs returned by the List API call can be overwhelming, this summary allows the administrator to get a quick overview based on counts.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.run_summary
@@ -47775,7 +47775,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/taskReports/{taskReport-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -48230,7 +48230,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
       description: 'Get a taskReportSummary object. This API provides a summary of task processing results for a specified time period. Because the volume of task processing results and task reports returned by the List API calls can be overwhelming, this summary allows the administrator to get a quick overview based on counts.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.taskReport_summary
@@ -48628,7 +48628,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/tasks/{task-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -49575,7 +49575,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/userProcessingResults/{userProcessingResult-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -50030,7 +50030,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
       operationId: identityGovernance.lifecycleWorkflow.workflow.userProcessingResult_summary
       parameters:
@@ -50160,7 +50160,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -50217,7 +50217,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -50274,7 +50274,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -50328,7 +50328,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
       requestBody:
@@ -50371,7 +50371,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/top'
@@ -50440,7 +50440,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/search'
@@ -50474,7 +50474,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -50531,7 +50531,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: $select
@@ -50585,7 +50585,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
       requestBody:
@@ -50628,7 +50628,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/top'
@@ -50697,7 +50697,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/search'
@@ -50734,7 +50734,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/top'
@@ -50803,7 +50803,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
       requestBody:
@@ -50850,7 +50850,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -50913,7 +50913,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -50963,7 +50963,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51010,7 +51010,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51089,7 +51089,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51141,7 +51141,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/versions/{workflowVersion-versionNumber}/tasks/{task-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -51165,7 +51165,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51232,7 +51232,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51305,7 +51305,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51375,7 +51375,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51434,7 +51434,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51519,7 +51519,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51569,7 +51569,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51641,7 +51641,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - name: task-id
@@ -51682,7 +51682,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
           x-ms-docs-key-type: workflowVersion
         - $ref: '#/components/parameters/search'
@@ -52079,7 +52079,7 @@ paths:
   '/identityGovernance/lifecycleWorkflows/workflowTemplates/{workflowTemplate-id}/tasks/{task-id}/taskProcessingResults/{taskProcessingResult-id}/microsoft.graph.identityGovernance.resume':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
@@ -53132,7 +53132,7 @@ paths:
   '/identityGovernance/privilegedAccess/group/assignmentApprovals/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
       externalDocs:
@@ -53625,7 +53625,7 @@ paths:
   '/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
       externalDocs:
@@ -54062,7 +54062,7 @@ paths:
   '/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/{privilegedAccessGroupAssignmentScheduleRequest-id}/microsoft.graph.cancel':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.privilegedAccessRoot
       summary: Invoke action cancel
       description: Cancel an access assignment request to a group whose membership and ownership are governed by PIM.
       externalDocs:
@@ -54193,7 +54193,7 @@ paths:
   '/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In PIM for groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
       externalDocs:
@@ -54686,7 +54686,7 @@ paths:
   '/identityGovernance/privilegedAccess/group/assignmentSchedules/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In PIM for groups, retrieve the schedules for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
       externalDocs:
@@ -55133,7 +55133,7 @@ paths:
   '/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: Return instances of membership and ownership eligibility schedules for the calling principal.
       externalDocs:
@@ -55524,7 +55524,7 @@ paths:
   '/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/{privilegedAccessGroupEligibilityScheduleRequest-id}/microsoft.graph.cancel':
     post:
       tags:
-        - identityGovernance.Actions
+        - identityGovernance.privilegedAccessRoot
       summary: Invoke action cancel
       description: Cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
       externalDocs:
@@ -55655,7 +55655,7 @@ paths:
   '/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.'
       externalDocs:
@@ -56102,7 +56102,7 @@ paths:
   '/identityGovernance/privilegedAccess/group/eligibilitySchedules/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - identityGovernance.Functions
+        - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: Retrieve schedules of membership and ownership eligibility requests for the calling principal.
       externalDocs:
@@ -56529,11 +56529,11 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: Get agreement
-      description: Retrieve the properties and relationships of an agreement object.
+      summary: List files (terms of use agreement files)
+      description: Retrieve all files related to an agreement. This includes the default file and all localized files.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0
       operationId: identityGovernance.termsGraphOPreUse_GetAgreement
       parameters:
         - name: agreement-id
@@ -59442,7 +59442,7 @@ paths:
   '/roleManagement/directory/roleAssignmentScheduleInstances/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Get the instances of active role assignments for the calling principal.
       externalDocs:
@@ -59844,7 +59844,7 @@ paths:
   '/roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/microsoft.graph.cancel':
     post:
       tags:
-        - roleManagement.Actions
+        - roleManagement.rbacApplication
       summary: Invoke action cancel
       description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.'
       externalDocs:
@@ -60021,7 +60021,7 @@ paths:
   '/roleManagement/directory/roleAssignmentScheduleRequests/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: 'In PIM, retrieve the requests for active role assignments for a particular principal. The principal can be the creator or approver of the unifiedRoleAssignmentScheduleRequest object, or they can be the target of the assignment.'
       externalDocs:
@@ -60525,7 +60525,7 @@ paths:
   '/roleManagement/directory/roleAssignmentSchedules/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
       externalDocs:
@@ -61432,7 +61432,7 @@ paths:
   '/roleManagement/directory/roleEligibilityScheduleInstances/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Get the instances of eligible roles for the calling principal.
       externalDocs:
@@ -61788,7 +61788,7 @@ paths:
   '/roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/microsoft.graph.cancel':
     post:
       tags:
-        - roleManagement.Actions
+        - roleManagement.rbacApplication
       summary: Invoke action cancel
       description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days. After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.'
       externalDocs:
@@ -61965,7 +61965,7 @@ paths:
   '/roleManagement/directory/roleEligibilityScheduleRequests/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: 'In PIM, retrieve the requests for role eligibilities for a particular principal. The principal can be the creator or approver of the unifiedRoleEligibilityScheduleRequest object, or they can be the target of the role eligibility.'
       externalDocs:
@@ -62423,7 +62423,7 @@ paths:
   '/roleManagement/directory/roleEligibilitySchedules/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Retrieve the schedules for role eligibilities for which the signed-in user is the principal.
       externalDocs:
@@ -63865,7 +63865,7 @@ paths:
   '/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Get the instances of active role assignments for the calling principal.
       externalDocs:
@@ -64257,7 +64257,7 @@ paths:
   '/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest-id}/microsoft.graph.cancel':
     post:
       tags:
-        - roleManagement.Actions
+        - roleManagement.rbacApplication
       summary: Invoke action cancel
       description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.'
       externalDocs:
@@ -64434,7 +64434,7 @@ paths:
   '/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: 'In PIM, retrieve the requests for active role assignments for a particular principal. The principal can be the creator or approver of the unifiedRoleAssignmentScheduleRequest object, or they can be the target of the assignment.'
       externalDocs:
@@ -64932,7 +64932,7 @@ paths:
   '/roleManagement/entitlementManagement/roleAssignmentSchedules/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
       externalDocs:
@@ -65818,7 +65818,7 @@ paths:
   '/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Get the instances of eligible roles for the calling principal.
       externalDocs:
@@ -66164,7 +66164,7 @@ paths:
   '/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest-id}/microsoft.graph.cancel':
     post:
       tags:
-        - roleManagement.Actions
+        - roleManagement.rbacApplication
       summary: Invoke action cancel
       description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days. After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.'
       externalDocs:
@@ -66341,7 +66341,7 @@ paths:
   '/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: 'In PIM, retrieve the requests for role eligibilities for a particular principal. The principal can be the creator or approver of the unifiedRoleEligibilityScheduleRequest object, or they can be the target of the role eligibility.'
       externalDocs:
@@ -66793,7 +66793,7 @@ paths:
   '/roleManagement/entitlementManagement/roleEligibilitySchedules/microsoft.graph.filterByCurrentUser(on=''{on}'')':
     get:
       tags:
-        - roleManagement.Functions
+        - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Retrieve the schedules for role eligibilities for which the signed-in user is the principal.
       externalDocs:
@@ -67994,7 +67994,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Relative position of this question when displaying a list of questions to the requestor.
               format: int32
               nullable: true
@@ -68577,7 +68577,7 @@ components:
             deviceEnrollmentLimit:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
             displayName:
@@ -68597,7 +68597,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -69078,6 +69078,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -69148,7 +69149,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The current version number of the workflow. Value is 1 when the workflow is first created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.'
               format: int32
               nullable: true
@@ -69199,7 +69200,7 @@ components:
             failedTasksCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of tasks that failed in the workflow execution.
               format: int32
             processingStatus:
@@ -69218,13 +69219,13 @@ components:
             totalTasksCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The total number of tasks that in the workflow execution.
               format: int32
             totalUnprocessedTasksCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The total number of unprocessed tasks for the workflow.
               format: int32
             workflowExecutionType:
@@ -69232,7 +69233,7 @@ components:
             workflowVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the workflow that was executed.
               format: int32
             subject:
@@ -69260,13 +69261,13 @@ components:
             failedTasksCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of tasks that failed in the run execution.
               format: int32
             failedUsersCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of users that failed in the run execution.
               format: int32
             lastUpdatedDateTime:
@@ -69291,24 +69292,24 @@ components:
             successfulUsersCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of successfully completed users in the run.
               format: int32
             totalTasksCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
             totalUnprocessedTasksCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The total number of unprocessed tasks in the run execution.
               format: int32
             totalUsersCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The total number of users in the workflow execution.
               format: int32
             workflowExecutionType:
@@ -69398,7 +69399,7 @@ components:
             executionSequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: An integer that states in what order the task runs in a workflow.Supports $orderby.
               format: int32
             isEnabled:
@@ -69422,31 +69423,31 @@ components:
         failedTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of failed tasks for users in a user summary.
           format: int32
         failedUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of failed users in a user summary.
           format: int32
         successfulUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of successful users in a user summary.
           format: int32
         totalTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total tasks of users in a user summary.
           format: int32
         totalUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of users in a user summary
           format: int32
       additionalProperties:
@@ -69458,37 +69459,37 @@ components:
         failedRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of failed workflow runs.
           format: int32
         failedTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of failed tasks of a workflow.
           format: int32
         successfulRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of successful workflow runs.
           format: int32
         totalRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of runs for a workflow.
           format: int32
         totalTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tasks processed by a workflow.
           format: int32
         totalUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of users processed by a workflow.
           format: int32
       additionalProperties:
@@ -69508,7 +69509,7 @@ components:
             failedUsersCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The number of users in the run execution for which the associated task failed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.'
               format: int32
             lastUpdatedDateTime:
@@ -69531,19 +69532,19 @@ components:
             successfulUsersCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The number of users in the run execution for which the associated task succeeded.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.'
               format: int32
             totalUsersCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The total number of users in the run execution for which the associated task was scheduled to execute.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.'
               format: int32
             unprocessedUsersCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The number of users in the run execution for which the associated task is queued, in progress, or canceled.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.'
               format: int32
             task:
@@ -69584,7 +69585,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.'
               format: int32
           additionalProperties:
@@ -69596,25 +69597,25 @@ components:
         failedTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of failed tasks in a report.
           format: int32
         successfulTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of successful tasks in a report.
           format: int32
         totalTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tasks in a report.
           format: int32
         unprocessedTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of unprocessed tasks in a report.
           format: int32
       additionalProperties:
@@ -69628,7 +69629,7 @@ components:
             versionNumber:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.'
               format: int32
           additionalProperties:
@@ -69647,25 +69648,25 @@ components:
         failedTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of failed runs of the task.
           format: int32
         failedUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of failed users who were processed by the task.
           format: int32
         successfulTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of successful runs of the task.
           format: int32
         successfulUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of successful users processed by the task.
           format: int32
         taskDefinitionDisplayName:
@@ -69677,13 +69678,13 @@ components:
         totalTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of total runs of the task.
           format: int32
         totalUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of total users processed by the task.
           format: int32
       additionalProperties:
@@ -69695,37 +69696,37 @@ components:
         failedRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of failed runs for workflow.
           format: int32
         failedUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of failed users who were processed.
           format: int32
         successfulRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of successful runs of the workflow.
           format: int32
         successfulUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of successful users processed by the workflow.
           format: int32
         totalRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of total runs of workflow.
           format: int32
         totalUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Total number of users processed by the workflow.
           format: int32
         workflowCategory:
@@ -69739,7 +69740,7 @@ components:
         workflowVersion:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The version of the workflow that was a top workflow ran.
           format: int32
       additionalProperties:
@@ -69751,55 +69752,55 @@ components:
         failedJoinerRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Failed 'Joiner' workflows processed in a tenant.
           format: int32
         failedLeaverRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Failed 'Leaver' workflows processed in a tenant.
           format: int32
         failedMoverRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Failed 'Mover' workflows processed in a tenant.
           format: int32
         successfulJoinerRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Successful 'Joiner' workflows processed in a tenant.
           format: int32
         successfulLeaverRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Successful 'Leaver' workflows processed in a tenant.
           format: int32
         successfulMoverRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Successful 'Mover' workflows processed in a tenant.
           format: int32
         totalJoinerRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Total 'Joiner' workflows processed in a tenant.
           format: int32
         totalLeaverRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Total 'Leaver' workflows processed in a tenant.
           format: int32
         totalMoverRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Total 'Mover' workflows processed in a tenant.
           format: int32
       additionalProperties:
@@ -69811,55 +69812,55 @@ components:
         failedRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of failed workflow runs processed in the tenant.
           format: int32
         failedTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of failed tasks processed in the tenant.
           format: int32
         failedUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of failed users processed by workflows in the tenant.
           format: int32
         successfulRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of successful workflow runs processed in the tenant.
           format: int32
         successfulTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of successful tasks processed in the tenant.
           format: int32
         successfulUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of successful users processed by workflows in the tenant.
           format: int32
         totalRuns:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of total workflows processed in the tenant.
           format: int32
         totalTasks:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of total tasks processed by workflows in the tenant.
           format: int32
         totalUsers:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of total users processed by workflows in the tenant.
           format: int32
       additionalProperties:
@@ -69875,7 +69876,7 @@ components:
             workflowScheduleIntervalInHours:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
               format: int32
           additionalProperties:
@@ -70200,7 +70201,7 @@ components:
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
@@ -70343,6 +70344,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -71120,7 +71122,7 @@ components:
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of an access review instance in days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.'
           format: int32
         justificationRequiredOnApproval:
@@ -71168,7 +71170,7 @@ components:
         durationInDays:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Can''t exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays can''t exceed 7.'
           format: int32
         fallbackReviewers:
@@ -71489,14 +71491,14 @@ components:
         maximumRetries:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.'
           format: int32
           nullable: true
         timeoutInMilliseconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
           format: int32
           nullable: true
@@ -72384,7 +72386,7 @@ components:
             reminderMinutesBeforeStart:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
@@ -72773,7 +72775,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -73097,7 +73099,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -73116,14 +73118,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -73340,7 +73342,7 @@ components:
               format: date-time
               readOnly: true
             freeStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
@@ -73424,7 +73426,7 @@ components:
               nullable: true
               readOnly: true
             physicalMemoryInBytes:
-              type: integer
+              type: number
               description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
@@ -73454,7 +73456,7 @@ components:
               nullable: true
               readOnly: true
             totalStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Total Storage in Bytes. This property is read-only.
               format: int64
               readOnly: true
@@ -73907,14 +73909,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
@@ -74375,7 +74377,7 @@ components:
             groupLifetimeInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
@@ -75684,7 +75686,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
@@ -75838,6 +75840,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -75907,7 +75910,7 @@ components:
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
@@ -76248,7 +76251,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -76596,12 +76599,12 @@ components:
       type: object
       properties:
         deleted:
-          type: integer
+          type: number
           description: 'Total space consumed by files in the recycle bin, in bytes. Read-only.'
           format: int64
           nullable: true
         remaining:
-          type: integer
+          type: number
           description: 'Total space remaining before reaching the quota limit, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -76612,12 +76615,12 @@ components:
         storagePlanInformation:
           $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
         total:
-          type: integer
+          type: number
           description: 'Total allowed storage space, in bytes. Read-only.'
           format: int64
           nullable: true
         used:
-          type: integer
+          type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -76714,7 +76717,7 @@ components:
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             size:
-              type: integer
+              type: number
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
@@ -76831,7 +76834,7 @@ components:
             completionPercentage:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The percentage completion value of the course activity. Optional.
               format: int32
               nullable: true
@@ -77110,7 +77113,7 @@ components:
             percentageComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
@@ -77124,6 +77127,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -77363,21 +77367,21 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a team.
           format: int32
           nullable: true
@@ -77471,7 +77475,7 @@ components:
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             createdDateTime:
@@ -77619,7 +77623,7 @@ components:
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of users assigned to the tag.
               format: int32
               nullable: true
@@ -77699,7 +77703,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -78028,11 +78032,11 @@ components:
           description: Informational attribute that identifies the HASH algorithm that was used by TPM
           nullable: true
         resetCount:
-          type: integer
+          type: number
           description: The number of times a PC device has hibernated or resumed
           format: int64
         restartCount:
-          type: integer
+          type: number
           description: The number of times a PC device has rebooted
           format: int64
         safeMode:
@@ -78367,7 +78371,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -78379,7 +78383,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -78400,7 +78404,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -78412,7 +78416,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -78459,6 +78463,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -78685,7 +78690,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -78694,7 +78699,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -79118,7 +79123,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -79137,7 +79142,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -79178,7 +79183,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Percentage of task completion. When set to 100, the task is considered completed.'
               format: int32
               nullable: true
@@ -79191,14 +79196,14 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2, 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Additionally, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -79513,7 +79518,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -79528,13 +79533,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -79554,7 +79559,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -79737,7 +79742,7 @@ components:
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: For internal use only.
               format: int32
               nullable: true
@@ -80169,7 +80174,7 @@ components:
         id:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
@@ -80334,7 +80339,7 @@ components:
           description: The performing artist for the audio file.
           nullable: true
         bitrate:
-          type: integer
+          type: number
           description: Bitrate expressed in kbps.
           format: int64
           nullable: true
@@ -80349,19 +80354,19 @@ components:
         disc:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The number of the disc this audio file came from.
           format: int16
           nullable: true
         discCount:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The total number of discs in this album.
           format: int16
           nullable: true
         duration:
-          type: integer
+          type: number
           description: 'Duration of the audio file, expressed in milliseconds'
           format: int64
           nullable: true
@@ -80384,21 +80389,21 @@ components:
         track:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of the track on the original disc for this audio file.
           format: int32
           nullable: true
         trackCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tracks on the original disc for this audio file.
           format: int32
           nullable: true
         year:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The year the audio file was recorded.
           format: int32
           nullable: true
@@ -80413,7 +80418,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -80475,7 +80480,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -80490,14 +80495,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Height of the image, in pixels. Read-only.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
           nullable: true
@@ -80587,14 +80592,14 @@ components:
         iso:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
         orientation:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
@@ -80667,7 +80672,7 @@ components:
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         size:
-          type: integer
+          type: number
           description: Size of the remote item. Read-only.
           format: int64
           nullable: true
@@ -80732,14 +80737,14 @@ components:
         audioBitsPerSample:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio bits per sample.
           format: int32
           nullable: true
         audioChannels:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio channels.
           format: int32
           nullable: true
@@ -80750,19 +80755,19 @@ components:
         audioSamplesPerSecond:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio samples per second.
           format: int32
           nullable: true
         bitrate:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Bit rate of the video in bits per second.
           format: int32
           nullable: true
         duration:
-          type: integer
+          type: number
           description: Duration of the file in milliseconds.
           format: int64
           nullable: true
@@ -80778,14 +80783,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Height of the video, in pixels.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
@@ -80937,7 +80942,7 @@ components:
               format: base64url
               nullable: true
             size:
-              type: integer
+              type: number
               description: Indicates the size of the content stream for this version of the item.
               format: int64
               nullable: true
@@ -81318,14 +81323,14 @@ components:
         linesForEditing:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the text box.
           format: int32
           nullable: true
         maxLength:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum number of characters for the value.
           format: int32
           nullable: true
@@ -81447,7 +81452,7 @@ components:
         position:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
@@ -81658,6 +81663,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -81700,7 +81706,7 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a channel.
           format: int32
           nullable: true
@@ -81711,14 +81717,14 @@ components:
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a channel.
           format: int32
           nullable: true
@@ -82256,7 +82262,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -82322,7 +82328,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -82372,6 +82378,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.appLogUploadState:
       title: appLogUploadState
       enum:
@@ -82562,7 +82570,7 @@ components:
             detectionCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the malware is detected
               format: int32
               nullable: true
@@ -82863,7 +82871,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -83152,25 +83160,25 @@ components:
           type: object
           properties:
             deleted:
-              type: integer
+              type: number
               format: int64
               nullable: true
             manageWebUrl:
               type: string
               nullable: true
             remaining:
-              type: integer
+              type: number
               format: int64
               nullable: true
             state:
               type: string
               nullable: true
             total:
-              type: integer
+              type: number
               format: int64
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
             services:
@@ -83380,7 +83388,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported bottom margins(in microns) for the printer.
@@ -83406,7 +83414,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: The list of print resolutions in DPI that are supported by the printer.
@@ -83444,7 +83452,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported left margins(in microns) for the printer.
@@ -83487,7 +83495,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: Supported number of Input Pages to impose upon a single Impression.
@@ -83501,7 +83509,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported right margins(in microns) for the printer.
@@ -83519,7 +83527,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported top margins(in microns) for the printer.
@@ -83538,14 +83546,14 @@ components:
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of copies printed per job.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default resolution in DPI to use when printing the job.
           format: int32
           nullable: true
@@ -83587,7 +83595,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -83604,7 +83612,7 @@ components:
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The altitude, in meters, that the printer is located at.'
           format: int32
           nullable: true
@@ -83794,7 +83802,7 @@ components:
         type:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: For internal use only.
           format: int32
           nullable: true
@@ -84104,7 +84112,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The height of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -84119,7 +84127,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The width of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -84298,7 +84306,7 @@ components:
             position:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The zero-based position of the worksheet within the workbook.
               format: int32
             visibility:
@@ -84347,14 +84355,14 @@ components:
         actionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times the action took place. Read-only.
           format: int32
           nullable: true
         actorCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of distinct actors that performed the action. Read-only.
           format: int32
           nullable: true
@@ -84668,7 +84676,7 @@ components:
             openSlotCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of the number of slots for the given open shift.
               format: int32
           additionalProperties:
@@ -84754,14 +84762,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -85209,7 +85217,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -85414,7 +85422,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -85509,12 +85517,12 @@ components:
       type: object
       properties:
         end:
-          type: integer
+          type: number
           description: The inclusive upper bound of the integer range.
           format: int64
           nullable: true
         start:
-          type: integer
+          type: number
           description: The inclusive lower bound of the integer range.
           format: int64
           nullable: true
@@ -86497,14 +86505,14 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of copies that should be printed. Read-only.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
           format: int32
           nullable: true
@@ -86551,7 +86559,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -86595,7 +86603,7 @@ components:
               description: The document's name. Read-only.
               nullable: true
             size:
-              type: integer
+              type: number
               description: The document's size in bytes. Read-only.
               format: int64
           additionalProperties:
@@ -86734,7 +86742,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
@@ -86756,7 +86764,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
@@ -86792,10 +86800,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -86804,10 +86814,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
@@ -86997,7 +87009,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -87028,7 +87040,7 @@ components:
               type: string
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
           additionalProperties:
@@ -87040,28 +87052,28 @@ components:
         bottom:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the bottom edge.
           format: int32
           nullable: true
         left:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the left edge.
           format: int32
           nullable: true
         right:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the right edge.
           format: int32
           nullable: true
         top:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the top edge.
           format: int32
           nullable: true
@@ -87162,7 +87174,7 @@ components:
         key:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).'
           format: int32
         sortOn:
@@ -87306,37 +87318,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:
@@ -87403,7 +87415,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The index of the icon in the given set.
           format: int32
         set:
