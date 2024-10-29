@@ -962,11 +962,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Create externalItem
-      description: Create a new externalItem object.
+      summary: Update externalItem
+      description: Update the properties of an externalItem object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-1.0
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -1393,7 +1393,7 @@ paths:
   '/external/connections/{externalConnection-id}/items/{externalItem-id}/microsoft.graph.externalConnectors.addActivities':
     post:
       tags:
-        - external.Actions
+        - external.externalConnection
       summary: Invoke action addActivities
       operationId: external.connection.item_addActivity
       parameters:
@@ -2294,7 +2294,7 @@ paths:
   /search/microsoft.graph.query:
     post:
       tags:
-        - search.Actions
+        - search.searchEntity
       summary: Invoke action query
       description: Runs the query specified in the request body. Search results are provided in the response.
       externalDocs:
@@ -2861,7 +2861,7 @@ components:
         from:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
           format: int32
         query:
@@ -2879,7 +2879,7 @@ components:
         size:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the page to be retrieved. The maximum value is 500. Optional.
           format: int32
         sortProperties:
@@ -3285,7 +3285,7 @@ components:
         size:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of searchBucket resources to be returned. This isn''t required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.'
           format: int32
           nullable: true
@@ -3303,7 +3303,7 @@ components:
         limit:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
           format: int16
       additionalProperties:
@@ -3403,7 +3403,7 @@ components:
         total:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The total number of results. Note this isn''t the number of results on the page, but the total number of results satisfying the query.'
           format: int32
           nullable: true
@@ -3566,7 +3566,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
           format: int32
           nullable: true
@@ -3584,7 +3584,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
           format: int32
         rules:
@@ -3711,7 +3711,7 @@ components:
         minimumCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
           format: int32
           nullable: true
@@ -3769,7 +3769,7 @@ components:
         rank:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The rank or the order of the result.
           format: int32
           nullable: true
@@ -3904,7 +3904,7 @@ components:
         count:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
           format: int32
           nullable: true
@@ -3921,14 +3921,14 @@ components:
         length:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the length of a changed segment.
           format: int32
           nullable: true
         offset:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the offset of a changed segment.
           format: int32
           nullable: true

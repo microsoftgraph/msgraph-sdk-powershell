@@ -302,7 +302,7 @@ paths:
   '/networkAccess/alerts/microsoft.graph.networkaccess.getAlertFrequencies(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.alert
       summary: Invoke function getAlertFrequencies
       operationId: networkAccess.alert_getAlertFrequency
       parameters:
@@ -360,7 +360,7 @@ paths:
   '/networkAccess/alerts/microsoft.graph.networkaccess.getAlertSeveritySummaries(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.alert
       summary: Invoke function getAlertSeveritySummaries
       operationId: networkAccess.alert_getAlertSeveritySummary
       parameters:
@@ -4838,7 +4838,7 @@ paths:
   '/networkAccess/forwardingPolicies/{forwardingPolicy-id}/microsoft.graph.networkaccess.updatePolicyRules':
     post:
       tags:
-        - networkAccess.Actions
+        - networkAccess.forwardingPolicy
       summary: Invoke action updatePolicyRules
       description: Update the rules within a forwarding policy.
       externalDocs:
@@ -6220,11 +6220,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-07-02'
-        date: '2024-07-02'
-        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/networkAccess/logs/traffic/{networkAccessTraffic-transactionId}/user/mailboxSettings':
     get:
@@ -6271,11 +6266,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-07-02'
-        date: '2024-07-02'
-        version: 2024-07/PrivatePreview:copilotExportAPI
     patch:
       tags:
         - networkAccess.logs
@@ -6306,11 +6296,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-07-02'
-        date: '2024-07-02'
-        version: 2024-07/PrivatePreview:copilotExportAPI
   '/networkAccess/logs/traffic/{networkAccessTraffic-transactionId}/user/serviceProvisioningErrors':
     get:
       tags:
@@ -6367,11 +6352,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.serviceProvisioningErrorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-07-02'
-        date: '2024-07-02'
-        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6397,11 +6377,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-07-02'
-        date: '2024-07-02'
-        version: 2024-07/PrivatePreview:copilotExportAPI
   /networkAccess/logs/traffic/$count:
     get:
       tags:
@@ -6419,7 +6394,7 @@ paths:
   /networkAccess/microsoft.graph.networkaccess.onboard:
     post:
       tags:
-        - networkAccess.Actions
+        - networkAccess.networkAccessRoot
       summary: Invoke action onboard
       operationId: networkAccess_onboard
       responses:
@@ -6509,7 +6484,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.crossTenantAccessReport(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function crossTenantAccessReport
       operationId: networkAccess.report_crossTenantAccessReport
       parameters:
@@ -6562,7 +6537,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.destinationReport(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function destinationReport
       operationId: networkAccess.report_destinationReport
       parameters:
@@ -6615,7 +6590,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.deviceReport(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function deviceReport
       operationId: networkAccess.report_deviceReport
       parameters:
@@ -6668,7 +6643,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.entitiesSummaries(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function entitiesSummaries
       description: 'Get the number of users, devices, and workloads per traffic type in a specified time period.'
       externalDocs:
@@ -6725,7 +6700,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.getCrossTenantSummary(startDateTime={startDateTime},endDateTime={endDateTime},discoveryPivotDateTime={discoveryPivotDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function getCrossTenantSummary
       description: Get a summary of the cross-tenant access patterns.
       operationId: networkAccess.report_getCrossTenantSummary
@@ -6770,7 +6745,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.getDestinationSummaries(startDateTime={startDateTime},endDateTime={endDateTime},aggregatedBy=''{aggregatedBy}'')':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function getDestinationSummaries
       description: Get counts of the visits to the top destination aggregations.
       operationId: networkAccess.report_getDestinationSummary
@@ -6831,7 +6806,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.getDeviceUsageSummary(startDateTime={startDateTime},endDateTime={endDateTime},activityPivotDateTime={activityPivotDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function getDeviceUsageSummary
       description: 'Get a summary of device onboarding and offboarding within a specified timeframe. This summary includes the total number of devices, active devices, and inactive devices.'
       operationId: networkAccess.report_getDeviceUsageSummary
@@ -6876,7 +6851,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.getDiscoveredApplicationSegmentReport(startDateTime={startDateTime},endDateTime={endDateTime},userId=''@userId'')':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function getDiscoveredApplicationSegmentReport
       operationId: networkAccess.report_getDiscoveredApplicationSegmentReport
       parameters:
@@ -6937,7 +6912,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.transactionSummaries(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function transactionSummaries
       description: 'Get the total number of transactions and the number of blocked transactions, grouped by traffic type.'
       externalDocs:
@@ -6994,7 +6969,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.usageProfiling(startDateTime={startDateTime},endDateTime={endDateTime},aggregatedBy=''{aggregatedBy}'',discoveredApplicationSegmentId=''@discoveredApplicationSegmentId'')':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function usageProfiling
       operationId: networkAccess.report_usageProfiling
       parameters:
@@ -7062,7 +7037,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.userReport(startDateTime={startDateTime},endDateTime={endDateTime},discoveredApplicationSegmentId=''@discoveredApplicationSegmentId'')':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function userReport
       operationId: networkAccess.report_userReport
       parameters:
@@ -7123,7 +7098,7 @@ paths:
   '/networkAccess/reports/microsoft.graph.networkaccess.webCategoryReport(startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - networkAccess.Functions
+        - networkAccess.reports
       summary: Invoke function webCategoryReport
       operationId: networkAccess.report_webCategoryReport
       parameters:
@@ -7777,16 +7752,16 @@ components:
       type: object
       properties:
         highSeverityCount:
-          type: integer
+          type: number
           format: int64
         informationalSeverityCount:
-          type: integer
+          type: number
           format: int64
         lowSeverityCount:
-          type: integer
+          type: number
           format: int64
         mediumSeverityCount:
-          type: integer
+          type: number
           format: int64
         timeStampDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7799,7 +7774,7 @@ components:
       type: object
       properties:
         count:
-          type: integer
+          type: number
           format: int64
         severity:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.alertSeverity'
@@ -7836,7 +7811,7 @@ components:
           type: object
           properties:
             bandwidthCapacity:
-              type: integer
+              type: number
               description: 'Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.'
               format: int64
               nullable: true
@@ -7954,7 +7929,7 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Profile priority.
               format: int32
             trafficForwardingType:
@@ -8353,7 +8328,7 @@ components:
               description: The date and time when the filteringProfile was created.
               format: date-time
             priority:
-              type: integer
+              type: number
               description: The priority used to order the profile for processing within a list.
               format: int64
             conditionalAccessPolicies:
@@ -8439,7 +8414,7 @@ components:
             bgpRoutesAdvertisedCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of BGP routes advertised through tunnel.
               format: int32
               nullable: true
@@ -8457,7 +8432,7 @@ components:
               description: The IP address of the destination.
               nullable: true
             receivedBytes:
-              type: integer
+              type: number
               description: The number of bytes sent from the destination to the source.
               format: int64
               nullable: true
@@ -8465,7 +8440,7 @@ components:
               type: string
               description: A unique identifier for each remoteNetwork site. Supports $filter (eq).
             sentBytes:
-              type: integer
+              type: number
               description: The number of bytes sent from the source to the destination for the connection or session.
               format: int64
               nullable: true
@@ -8512,7 +8487,7 @@ components:
         destinationPort:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.
           format: int32
           nullable: true
@@ -8543,6 +8518,8 @@ components:
           nullable: true
         headers:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.headers'
+        httpMethod:
+          $ref: '#/components/schemas/microsoft.graph.networkaccess.httpMethod'
         initiatingProcessName:
           type: string
           nullable: true
@@ -8565,7 +8542,7 @@ components:
         privateAccessDetails:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.privateAccessDetails'
         receivedBytes:
-          type: integer
+          type: number
           description: Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
           format: int64
           nullable: true
@@ -8575,8 +8552,14 @@ components:
         resourceTenantId:
           type: string
           nullable: true
+        responseCode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
         sentBytes:
-          type: integer
+          type: number
           description: Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.
           format: int64
           nullable: true
@@ -8591,7 +8574,7 @@ components:
         sourcePort:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Represents the network port number on the source host or device in a network communication. Supports $filter (eq) and $orderby.
           format: int32
           nullable: true
@@ -8673,7 +8656,7 @@ components:
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: For internal use only.
               format: int32
               nullable: true
@@ -8916,7 +8899,7 @@ components:
             deviceEnrollmentLimit:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
             deviceKeys:
@@ -8940,7 +8923,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -9047,11 +9030,11 @@ components:
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+              description: Contains the on-premises Active Directory distinguished name or DN.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
@@ -9072,11 +9055,11 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+              description: 'Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Must be in the format of SID, such as ''S-1-5-21-1180699209-877415012-3182824384-1006''. Supports $filter (eq including on null values).'
               nullable: true
             onPremisesSipInfo:
               $ref: '#/components/schemas/microsoft.graph.onPremisesSipInfo'
@@ -9086,7 +9069,7 @@ components:
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             otherMails:
               type: array
@@ -9533,6 +9516,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -9579,7 +9563,7 @@ components:
       type: object
       properties:
         deviceCount:
-          type: integer
+          type: number
           description: The number of devices that accessed the external tenant.
           format: int64
         lastAccessDateTime:
@@ -9600,7 +9584,7 @@ components:
         usageStatus:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.usageStatus'
         userCount:
-          type: integer
+          type: number
           description: The number of users that accessed the external tenant.
           format: int64
       additionalProperties:
@@ -9612,7 +9596,7 @@ components:
         deviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of unique devices that were seen.
           format: int32
         firstAccessDateTime:
@@ -9636,32 +9620,32 @@ components:
         port:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The numeric identifier that is associated with a specific endpoint in a network.
           format: int32
         threatCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
         totalBytesReceived:
-          type: integer
+          type: number
           format: int64
         totalBytesSent:
-          type: integer
+          type: number
           format: int64
         trafficType:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.trafficType'
         transactionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of transactions.
           format: int32
         userCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of unique Microsoft Entra ID users that were seen.
           format: int32
       additionalProperties:
@@ -9696,17 +9680,17 @@ components:
       type: object
       properties:
         deviceCount:
-          type: integer
+          type: number
           description: The number of unique devices that were seen.
           format: int64
         trafficType:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.trafficType'
         userCount:
-          type: integer
+          type: number
           description: The number of unique Microsoft Entra ID users that were seen.
           format: int64
         workloadCount:
-          type: integer
+          type: number
           description: The number of unique target workloads/hosts that were seen.
           format: int64
       additionalProperties:
@@ -9718,37 +9702,37 @@ components:
         authTransactionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of authentication sessions between startDateTime and endDateTime.
           format: int32
         deviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of unique devices that performed cross-tenant access.
           format: int32
         newTenantCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of unique tenants that were accessed between endDateTime and discoveryPivotDateTime, but weren''t accessed between discoveryPivotDateTime and startDateTime.'
           format: int32
         rarelyUsedTenantCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of tenants that are rarely used.
           format: int32
         tenantCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of unique tenants that were accessed, not including the device''s tenant.'
           format: int32
         userCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of unique users that performed cross-tenant access.
           format: int32
       additionalProperties:
@@ -9769,7 +9753,7 @@ components:
       type: object
       properties:
         count:
-          type: integer
+          type: number
           description: 'The number of the destinationSummary objects, aggregated by Global Secure Access service.'
           format: int64
         destination:
@@ -9786,19 +9770,19 @@ components:
         activeDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of distinct device IDs between the discovery pivot time and the end of the reporting period.
           format: int32
         inactiveDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The discovery pivot time and the end of the reporting period, but were seen between the start of the reporting period and the discovery pivot time.'
           format: int32
         totalDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of distinct device IDs that were seen during the reporting period.
           format: int32
       additionalProperties:
@@ -9812,7 +9796,7 @@ components:
         deviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
         discoveredApplicationSegmentId:
           type: string
@@ -9833,25 +9817,25 @@ components:
         port:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
         totalBytesReceived:
-          type: integer
+          type: number
           format: int64
         totalBytesSent:
-          type: integer
+          type: number
           format: int64
         transactionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
         transportProtocol:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.networkingProtocol'
         userCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
       additionalProperties:
         type: object
@@ -9862,13 +9846,13 @@ components:
         blockedCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of transactions that were blocked.
           format: int32
         totalCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of transactions.
           format: int32
         trafficType:
@@ -9880,20 +9864,20 @@ components:
       type: object
       properties:
         internetAccessTrafficCount:
-          type: integer
+          type: number
           format: int64
         microsoft365AccessTrafficCount:
-          type: integer
+          type: number
           format: int64
         privateAccessTrafficCount:
-          type: integer
+          type: number
           format: int64
         timeStampDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
           format: date-time
         totalTrafficCount:
-          type: integer
+          type: number
           format: int64
       additionalProperties:
         type: object
@@ -9914,15 +9898,15 @@ components:
           description: The date and time of the most recent access.
           format: date-time
         totalBytesReceived:
-          type: integer
+          type: number
           format: int64
         totalBytesSent:
-          type: integer
+          type: number
           format: int64
         trafficType:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.trafficType'
         transactionCount:
-          type: integer
+          type: number
           format: int64
         userId:
           type: string
@@ -9941,15 +9925,15 @@ components:
         action:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.filteringPolicyAction'
         deviceCount:
-          type: integer
+          type: number
           description: The number of unique devices that were seen.
           format: int64
         transactionCount:
-          type: integer
+          type: number
           description: The number of transactions that were seen.
           format: int64
         userCount:
-          type: integer
+          type: number
           description: The number of unique Microsoft Entra ID users that were seen.
           format: int64
         webCategory:
@@ -10161,7 +10145,7 @@ components:
         asn:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies ASN of one end of IPSec tunnel (local or peer).
           format: int32
         bgpAddress:
@@ -10181,7 +10165,7 @@ components:
         asn:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies ASN of one end of IPSec tunnel (local or peer).
           format: int32
         bgpAddress:
@@ -10208,7 +10192,7 @@ components:
         asn:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the ASN of the BGP.
           format: int32
         ipAddress:
@@ -10434,7 +10418,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Friendly name for the key. Optional.
+          description: 'The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.'
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -10444,7 +10428,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
+          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -10945,6 +10929,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.networkaccess.httpMethod:
+      title: httpMethod
+      enum:
+        - get
+        - post
+        - put
+        - delete
+        - head
+        - options
+        - connect
+        - patch
+        - trace
+        - unknownFutureValue
+      type: string
     microsoft.graph.networkaccess.networkingProtocol:
       title: networkingProtocol
       enum:
@@ -11024,7 +11022,7 @@ components:
         type:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: For internal use only.
           format: int32
           nullable: true
@@ -11951,7 +11949,7 @@ components:
             reminderMinutesBeforeStart:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
@@ -12483,7 +12481,7 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
               format: int32
             roleScopeTagIds:
@@ -12495,7 +12493,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the device enrollment configuration
               format: int32
             assignments:
@@ -12975,21 +12973,21 @@ components:
             unseenConversationsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
               format: int32
               nullable: true
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             unseenMessagesCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Returned only on $select.
               format: int32
               nullable: true
@@ -13141,6 +13139,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13159,7 +13158,7 @@ components:
               nullable: true
             description:
               type: string
-              description: 'An optional description for the team. Maximum length: 1024 characters.'
+              description: 'An optional description for the team. Maximum length: 1,024 characters.'
               nullable: true
             discoverySettings:
               $ref: '#/components/schemas/microsoft.graph.teamDiscoverySettings'
@@ -13199,7 +13198,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
-              description: 'A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              description: 'A hyperlink that goes to the team in the Microsoft Teams client. It''s the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
             allChannels:
               type: array
@@ -13278,7 +13277,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -13297,14 +13296,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -13583,7 +13582,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
             deviceName:
               type: string
-              description: Name of the device. This property is read-only.
+              description: Name of the device. Supports $filter operator 'eq' and 'contains'. This property is read-only.
               nullable: true
               readOnly: true
             deviceRegistrationState:
@@ -13642,7 +13641,7 @@ components:
               format: date-time
               readOnly: true
             freeStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
@@ -13738,7 +13737,7 @@ components:
               nullable: true
               readOnly: true
             physicalMemoryInBytes:
-              type: integer
+              type: number
               description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
@@ -13794,7 +13793,7 @@ components:
             skuNumber:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
               readOnly: true
@@ -13809,7 +13808,7 @@ components:
               nullable: true
               readOnly: true
             totalStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Total Storage in Bytes. This property is read-only.
               format: int64
               readOnly: true
@@ -13847,14 +13846,14 @@ components:
             windowsActiveMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
@@ -14122,7 +14121,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -14136,7 +14135,7 @@ components:
             displayTimeToLive:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Sets how long (in seconds) this notification content stays in each platform''s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user''s Windows Action Center.'
               format: int32
               nullable: true
@@ -14518,14 +14517,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
@@ -15236,11 +15235,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -15285,6 +15284,9 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
         - title: customAppManagementConfiguration
           type: object
+          properties:
+            applicationRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.customAppManagementApplicationConfiguration'
           additionalProperties:
             type: object
     microsoft.graph.stsPolicy:
@@ -15573,7 +15575,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
@@ -15856,6 +15858,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -15947,7 +15950,7 @@ components:
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
@@ -16288,7 +16291,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -16527,7 +16530,7 @@ components:
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             createdDateTime:
@@ -17110,12 +17113,12 @@ components:
       type: object
       properties:
         deleted:
-          type: integer
+          type: number
           description: 'Total space consumed by files in the recycle bin, in bytes. Read-only.'
           format: int64
           nullable: true
         remaining:
-          type: integer
+          type: number
           description: 'Total space remaining before reaching the quota limit, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -17126,12 +17129,12 @@ components:
         storagePlanInformation:
           $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
         total:
-          type: integer
+          type: number
           description: 'Total allowed storage space, in bytes. Read-only.'
           format: int64
           nullable: true
         used:
-          type: integer
+          type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -17253,7 +17256,7 @@ components:
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             size:
-              type: integer
+              type: number
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
@@ -17392,7 +17395,7 @@ components:
             completionPercentage:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The percentage completion value of the course activity. Optional.
               format: int32
               nullable: true
@@ -17721,7 +17724,7 @@ components:
             percentageComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
@@ -17735,6 +17738,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -17823,6 +17827,8 @@ components:
         - title: recycleBin
           type: object
           properties:
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.recycleBinSettings'
             items:
               type: array
               items:
@@ -17947,7 +17953,7 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
               nullable: true
             toolTip:
@@ -18144,7 +18150,7 @@ components:
             groupLifetimeInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
@@ -18353,21 +18359,21 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a team.
           format: int32
           nullable: true
@@ -18608,7 +18614,7 @@ components:
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of users assigned to the tag.
               format: int32
               nullable: true
@@ -18718,7 +18724,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -19017,7 +19023,7 @@ components:
         errorCode:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Error code for failed state.
           format: int32
         lastSyncDateTime:
@@ -19093,6 +19099,8 @@ components:
         - androidEnterpriseCorporateWorkProfile
         - androidAOSPUserOwnedDeviceEnrollment
         - androidAOSPUserlessDeviceEnrollment
+        - appleAccountDrivenUserEnrollment
+        - unknownFutureValue
       type: string
       description: Possible ways of adding a mobile device to management.
       x-ms-enum:
@@ -19156,6 +19164,12 @@ components:
           - value: androidAOSPUserlessDeviceEnrollment
             description: Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.
             name: androidAOSPUserlessDeviceEnrollment
+          - value: appleAccountDrivenUserEnrollment
+            description: 'Indicates the device is enrolled via Apple Account Driven User Enrollment, a form of enrollment where the user enrolls via iOS Settings without using the iOS Company Portal. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities.'
+            name: appleAccountDrivenUserEnrollment
+          - value: unknownFutureValue
+            description: Evolvable enum member
+            name: unknownFutureValue
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -19260,11 +19274,11 @@ components:
           description: Informational attribute that identifies the HASH algorithm that was used by TPM
           nullable: true
         resetCount:
-          type: integer
+          type: number
           description: The number of times a PC device has hibernated or resumed
           format: int64
         restartCount:
-          type: integer
+          type: number
           description: The number of times a PC device has rebooted
           format: int64
         safeMode:
@@ -19570,13 +19584,13 @@ components:
         batteryChargeCycles:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
           format: int32
         batteryHealthPercentage:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The device’s current battery’s health percentage. Valid values 0 to 100
           format: int32
         batteryLevelPercentage:
@@ -19605,7 +19619,7 @@ components:
         deviceLicensingLastErrorCode:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'A standard error code indicating the last error, or 0 indicating no error (default). The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. Valid values 0 to 2147483647'
           format: int32
         deviceLicensingLastErrorDescription:
@@ -19619,7 +19633,7 @@ components:
           description: eSIM identifier
           nullable: true
         freeStorageSpace:
-          type: integer
+          type: number
           description: Free storage space of the device.
           format: int64
         imei:
@@ -19662,7 +19676,7 @@ components:
         operatingSystemProductType:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
           format: int32
         osBuildNumber:
@@ -19680,7 +19694,7 @@ components:
         residentUsersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647'
           format: int32
           nullable: true
@@ -19706,7 +19720,7 @@ components:
           description: BIOS version as reported by SMBIOS
           nullable: true
         totalStorageSpace:
-          type: integer
+          type: number
           description: Total storage space of the device.
           format: int64
         tpmManufacturer:
@@ -20078,7 +20092,7 @@ components:
             deviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of devices that have installed this application
               format: int32
             displayName:
@@ -20092,7 +20106,7 @@ components:
               description: 'Indicates the publisher of the discovered application. For example: ''Microsoft''.  The default value is an empty string.'
               nullable: true
             sizeInByte:
-              type: integer
+              type: number
               description: Discovered application size in bytes. Read-only
               format: int64
             version:
@@ -20146,7 +20160,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -20166,7 +20180,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -20187,7 +20201,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -20207,7 +20221,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -20302,7 +20316,7 @@ components:
               description: The User Principal Name (UPN) of the user that enrolled the device.
               nullable: true
             errorCode:
-              type: integer
+              type: number
               description: 'The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18'
               format: int64
             expirationDateTimeUTC:
@@ -20336,10 +20350,12 @@ components:
               type: number
               description: The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             sizeInKB:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -20360,7 +20376,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -20380,7 +20396,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -20771,7 +20787,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -20780,7 +20796,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -21086,7 +21102,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -21160,7 +21176,7 @@ components:
             registrationPageViewCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of times the registration page has been visited. Read-only.
               format: int32
               nullable: true
@@ -21738,7 +21754,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -21759,7 +21775,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -21823,7 +21839,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The percentage of task completion. When set to 100, the task is completed.'
               format: int32
               nullable: true
@@ -21836,7 +21852,7 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''. Currently, planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
@@ -21845,7 +21861,7 @@ components:
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -22732,6 +22748,14 @@ components:
           description: Collection of password restrictions settings to be applied to an application or service principal.
       additionalProperties:
         type: object
+    microsoft.graph.customAppManagementApplicationConfiguration:
+      title: customAppManagementApplicationConfiguration
+      type: object
+      properties:
+        identifierUris:
+          $ref: '#/components/schemas/microsoft.graph.identifierUriConfiguration'
+      additionalProperties:
+        type: object
     microsoft.graph.customClaimConfiguration:
       title: customClaimConfiguration
       type: object
@@ -22849,7 +22873,7 @@ components:
         code:
           $ref: '#/components/schemas/microsoft.graph.synchronizationStatusCode'
         countSuccessiveCompleteFailures:
-          type: integer
+          type: number
           description: Number of consecutive times this job failed.
           format: int64
         escrowsPruned:
@@ -23281,7 +23305,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -23296,13 +23320,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -23322,7 +23346,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -23540,7 +23564,7 @@ components:
         id:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
@@ -23827,7 +23851,7 @@ components:
       properties:
         deviceAndAppManagementAssignmentFilterId:
           type: string
-          description: The Id of the filter for the target assignment.
+          description: The ID of the filter for the target assignment.
           nullable: true
         deviceAndAppManagementAssignmentFilterType:
           $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
@@ -24004,7 +24028,7 @@ components:
           description: The performing artist for the audio file.
           nullable: true
         bitrate:
-          type: integer
+          type: number
           description: Bitrate expressed in kbps.
           format: int64
           nullable: true
@@ -24019,19 +24043,19 @@ components:
         disc:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The number of the disc this audio file came from.
           format: int16
           nullable: true
         discCount:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The total number of discs in this album.
           format: int16
           nullable: true
         duration:
-          type: integer
+          type: number
           description: 'Duration of the audio file, expressed in milliseconds'
           format: int64
           nullable: true
@@ -24054,21 +24078,21 @@ components:
         track:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of the track on the original disc for this audio file.
           format: int32
           nullable: true
         trackCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tracks on the original disc for this audio file.
           format: int32
           nullable: true
         year:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The year the audio file was recorded.
           format: int32
           nullable: true
@@ -24083,7 +24107,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -24135,7 +24159,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -24150,14 +24174,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Height of the image, in pixels. Read-only.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
           nullable: true
@@ -24259,14 +24283,14 @@ components:
         iso:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
         orientation:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
@@ -24339,7 +24363,7 @@ components:
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         size:
-          type: integer
+          type: number
           description: Size of the remote item. Read-only.
           format: int64
           nullable: true
@@ -24416,14 +24440,14 @@ components:
         audioBitsPerSample:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio bits per sample.
           format: int32
           nullable: true
         audioChannels:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio channels.
           format: int32
           nullable: true
@@ -24434,19 +24458,19 @@ components:
         audioSamplesPerSecond:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio samples per second.
           format: int32
           nullable: true
         bitrate:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Bit rate of the video in bits per second.
           format: int32
           nullable: true
         duration:
-          type: integer
+          type: number
           description: Duration of the file in milliseconds.
           format: int64
           nullable: true
@@ -24461,14 +24485,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Height of the video, in pixels.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
@@ -24603,7 +24627,7 @@ components:
               format: base64url
               nullable: true
             size:
-              type: integer
+              type: number
               description: Indicates the size of the content stream for this version of the item.
               format: int64
               nullable: true
@@ -24942,14 +24966,14 @@ components:
         linesForEditing:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the text box.
           format: int32
           nullable: true
         maxLength:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum number of characters for the value.
           format: int32
           nullable: true
@@ -25082,7 +25106,7 @@ components:
         position:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
@@ -25277,6 +25301,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.recycleBinSettings:
+      title: recycleBinSettings
+      type: object
+      properties:
+        retentionPeriodOverrideDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Recycle bin retention period override in days for deleted content. The default value is 93; the value range is 93 to 180. The setting applies to newly deleted content only. Setting this property to null reverts to its default value. Read-write.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.recycleBinItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -25294,7 +25331,7 @@ components:
               description: Relative URL of the list or folder that originally contained the item.
               nullable: true
             size:
-              type: integer
+              type: number
               description: Size of the item in bytes.
               format: int64
               nullable: true
@@ -25430,7 +25467,7 @@ components:
             sensitivity:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The sensitivity value of the label, where lower is less sensitive.'
               format: int32
             tooltip:
@@ -25588,6 +25625,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -25749,7 +25787,7 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a channel.
           format: int32
           nullable: true
@@ -25760,14 +25798,14 @@ components:
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a channel.
           format: int32
           nullable: true
@@ -26454,6 +26492,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
       enum:
@@ -26624,7 +26664,7 @@ components:
       type: object
       properties:
         dataQuota:
-          type: integer
+          type: number
           description: Data quota
           format: int64
           nullable: true
@@ -26632,7 +26672,7 @@ components:
           type: boolean
           description: Data to sync
         dataUsed:
-          type: integer
+          type: number
           description: Data quota
           format: int64
         userPrincipalName:
@@ -26760,7 +26800,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -26830,7 +26870,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -26979,7 +27019,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -27266,7 +27306,7 @@ components:
             detectionCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the malware is detected
               format: int32
               nullable: true
@@ -27777,7 +27817,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -27989,7 +28029,7 @@ components:
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of each recurrence of review (accessReviewInstance) in number of days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.'
           format: int32
         justificationRequiredOnApproval:
@@ -28037,7 +28077,7 @@ components:
         durationInDays:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Can''t exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays can''t exceed 7.'
           format: int32
         fallbackReviewers:
@@ -28212,7 +28252,7 @@ components:
         occurrenceId:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
           format: int32
         previousInSeriesTaskId:
@@ -28493,7 +28533,7 @@ components:
         layer:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The place where the employee is within the organizational hierarchy.
           format: int32
           nullable: true
@@ -28639,7 +28679,7 @@ components:
             sensitivity:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The sensitivity value of the label, where lower is less sensitive.'
               format: int32
             tooltip:
@@ -28753,7 +28793,7 @@ components:
           type: object
           properties:
             deleted:
-              type: integer
+              type: number
               format: int64
               nullable: true
             manageWebUrl:
@@ -28761,7 +28801,7 @@ components:
               description: A URL that can be used in a browser to manage the breakdown. Read-only.
               nullable: true
             remaining:
-              type: integer
+              type: number
               description: Total space remaining before reaching the quota limit in bytes.
               format: int64
               nullable: true
@@ -28770,12 +28810,12 @@ components:
               description: 'Indicates the state of the storage space. The possible values are: normal, nearing, critical, full, and overLimit.'
               nullable: true
             total:
-              type: integer
+              type: number
               description: Total allowed storage space in bytes.
               format: int64
               nullable: true
             used:
-              type: integer
+              type: number
               description: Total space used in bytes.
               format: int64
               nullable: true
@@ -29127,6 +29167,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
       additionalProperties:
         type: object
+    microsoft.graph.identifierUriConfiguration:
+      title: identifierUriConfiguration
+      type: object
+      properties:
+        nonDefaultUriAddition:
+          $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
+      additionalProperties:
+        type: object
     microsoft.graph.customClaimAttributeBase:
       title: customClaimAttributeBase
       type: object
@@ -29192,39 +29240,39 @@ components:
           description: Identifier of the job run.
           nullable: true
         countEntitled:
-          type: integer
+          type: number
           description: Count of processed entries that were assigned for this application.
           format: int64
         countEntitledForProvisioning:
-          type: integer
+          type: number
           description: Count of processed entries that were assigned for provisioning.
           format: int64
         countEscrowed:
-          type: integer
+          type: number
           description: Count of entries that were escrowed (errors).
           format: int64
         countEscrowedRaw:
-          type: integer
+          type: number
           description: 'Count of entries that were escrowed, including system-generated escrows.'
           format: int64
         countExported:
-          type: integer
+          type: number
           description: Count of exported entries.
           format: int64
         countExports:
-          type: integer
+          type: number
           description: Count of entries that were expected to be exported.
           format: int64
         countImported:
-          type: integer
+          type: number
           description: Count of imported entries.
           format: int64
         countImportedDeltas:
-          type: integer
+          type: number
           description: Count of imported delta-changes.
           format: int64
         countImportedReferenceDeltas:
-          type: integer
+          type: number
           description: Count of imported delta-changes pertaining to reference changes.
           format: int64
         error:
@@ -29248,7 +29296,7 @@ components:
       type: object
       properties:
         completedUnits:
-          type: integer
+          type: number
           description: The numerator of a progress ratio; the number of units of changes already processed.
           format: int64
         progressObservationDateTime:
@@ -29257,7 +29305,7 @@ components:
           description: The time of a progress observation as an offset in minutes from UTC.
           format: date-time
         totalUnits:
-          type: integer
+          type: number
           description: The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
           format: int64
         units:
@@ -29290,7 +29338,7 @@ components:
           description: 'Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         seriesCount:
-          type: integer
+          type: number
           description: 'Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).'
           format: int64
       additionalProperties:
@@ -29304,7 +29352,7 @@ components:
           description: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra synchronization worker to user - For Workday to Microsoft Entra synchronization.
           nullable: true
         value:
-          type: integer
+          type: number
           description: Total number of synchronized objects.
           format: int64
       additionalProperties:
@@ -29341,7 +29389,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
           format: int32
         sourceDirectoryName:
@@ -29408,7 +29456,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported bottom margins(in microns) for the printer.
@@ -29434,7 +29482,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: The list of print resolutions in DPI that are supported by the printer.
@@ -29476,7 +29524,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported left margins(in microns) for the printer.
@@ -29519,7 +29567,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: Supported number of Input Pages to impose upon a single Impression.
@@ -29533,7 +29581,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported right margins(in microns) for the printer.
@@ -29603,7 +29651,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported top margins(in microns) for the printer.
@@ -29622,7 +29670,7 @@ components:
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of copies printed per job.
           format: int32
           nullable: true
@@ -29632,7 +29680,7 @@ components:
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default resolution in DPI to use when printing the job.
           format: int32
           nullable: true
@@ -29676,7 +29724,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -29702,7 +29750,7 @@ components:
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The altitude, in meters, that the printer is located at.'
           format: int32
           nullable: true
@@ -29729,7 +29777,7 @@ components:
         floorNumber:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         latitude:
@@ -29763,7 +29811,7 @@ components:
         roomNumber:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         site:
@@ -29849,7 +29897,7 @@ components:
             errorCode:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
               nullable: true
             isFetchable:
@@ -30529,7 +30577,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The height of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -30544,7 +30592,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The width of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -30725,7 +30773,7 @@ components:
             position:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The zero-based position of the worksheet within the workbook.
               format: int32
             visibility:
@@ -30780,14 +30828,14 @@ components:
         actionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times the action took place. Read-only.
           format: int32
           nullable: true
         actorCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of distinct actors that performed the action. Read-only.
           format: int32
           nullable: true
@@ -31103,7 +31151,7 @@ components:
         sensitivity:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The sensitivity value of the label, where lower is less sensitive.'
           format: int32
         tooltip:
@@ -31279,7 +31327,7 @@ components:
             openSlotCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of the number of slots for the given open shift.
               format: int32
           additionalProperties:
@@ -31488,14 +31536,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -31969,7 +32017,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -32416,7 +32464,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -32591,7 +32639,7 @@ components:
             capacity:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total capacity of the virtual event.
               format: int32
               nullable: true
@@ -32669,6 +32717,28 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.identifierUriRestriction:
+      title: identifierUriRestriction
+      type: object
+      properties:
+        excludeAppsReceivingV2Tokens:
+          type: boolean
+          description: 'If true, the restriction isn''t enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn''t enforced for those applications.'
+          nullable: true
+        excludeSaml:
+          type: boolean
+          description: 'If true, the restriction isn''t enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.'
+          nullable: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
+          format: date-time
+          nullable: true
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+      additionalProperties:
+        type: object
     microsoft.graph.transformationAttribute:
       title: transformationAttribute
       type: object
@@ -32841,20 +32911,20 @@ components:
       type: object
       properties:
         end:
-          type: integer
+          type: number
           description: The inclusive upper bound of the integer range.
           format: int64
           nullable: true
         maximum:
-          type: integer
+          type: number
           format: int64
           nullable: true
         minimum:
-          type: integer
+          type: number
           format: int64
           nullable: true
         start:
-          type: integer
+          type: number
           description: The inclusive lower bound of the integer range.
           format: int64
           nullable: true
@@ -33925,14 +33995,14 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of copies that should be printed. Read-only.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
           format: int32
           nullable: true
@@ -33978,7 +34048,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -34037,7 +34107,7 @@ components:
               format: date-time
               nullable: true
             size:
-              type: integer
+              type: number
               description: The document's size in bytes. Read-only.
               format: int64
             uploadedDateTime:
@@ -34271,14 +34341,14 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: An integer value from 0 to 100 that represents the percentage of the completion of the task. 100 means that the task is completed. Nullable.
               format: int32
               nullable: true
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. Nullable.
               format: int32
               nullable: true
@@ -34331,7 +34401,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
@@ -34353,7 +34423,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
@@ -34389,10 +34459,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -34401,10 +34473,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
@@ -34545,7 +34619,7 @@ components:
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
               format: int32
               nullable: true
@@ -34722,7 +34796,7 @@ components:
               type: string
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
           additionalProperties:
@@ -34803,7 +34877,7 @@ components:
         matchingPriority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.'
           format: int32
         source:
@@ -34923,28 +34997,28 @@ components:
         bottom:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the bottom edge.
           format: int32
           nullable: true
         left:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the left edge.
           format: int32
           nullable: true
         right:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the right edge.
           format: int32
           nullable: true
         top:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the top edge.
           format: int32
           nullable: true
@@ -34987,13 +35061,13 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         duplexMode:
@@ -35034,7 +35108,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         quality:
@@ -35219,14 +35293,14 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'An integer value from 0 to 100 that represents the percentage of the completion of the task and associated comment. 100 means that the task and associated comment are completed. If you change the completion from 100 to a lower value, the associated task and comment are reactivated. Only present when the type property is setPercentComplete. Nullable.'
               format: int32
               nullable: true
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. 5 indicates the default priority if not set. Only present when the type property is setPriority. Nullable.
               format: int32
               nullable: true
@@ -35278,7 +35352,7 @@ components:
         key:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).'
           format: int32
         sortOn:
@@ -35674,7 +35748,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The index of the icon in the given set.
           format: int32
         set:
@@ -35875,7 +35949,7 @@ components:
         defaultExpirationInDays:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Default link expiration in days. Returns -1 if there is no required expiration time.
           format: int32
           nullable: true

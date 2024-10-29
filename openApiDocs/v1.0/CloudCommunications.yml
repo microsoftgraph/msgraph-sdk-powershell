@@ -1195,7 +1195,7 @@ paths:
       tags:
         - communications.call
       summary: Create call
-      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below. This API supports the following PSTN scenarios:'
+      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You need to register the calling bot and go through the list of permissions needed. This API supports the following PSTN scenarios:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
@@ -1834,7 +1834,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.addLargeGalleryView':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action addLargeGalleryView
       description: 'Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.'
       externalDocs:
@@ -1876,9 +1876,9 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.answer':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action answer
-      description: 'Enable a bot to answer an incoming call. The incoming call request can be an invitation from a participant in a group call or a peer-to-peer call. If an invitation to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer, reject, or redirect the call before the call times out. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios. This API supports the following PSTN scenarios:'
+      description: 'Enable a bot to answer an incoming call. The incoming call request can be an invitation from a participant in a group call or a peer-to-peer call. If an invitation to a group call is received, the notification contains the chatInfo and meetingInfo parameters. The bot is expected to answer, reject, or redirect the call before the call times out. The current timeout value is 15 seconds for regular scenarios and 5 seconds for policy-based recording scenarios. This API supports the following PSTN scenarios:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-answer?view=graph-rest-1.0
@@ -1910,7 +1910,7 @@ paths:
                 participantCapacity:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: integer
+                  type: number
                   format: int32
                   nullable: true
                 callOptions:
@@ -1927,7 +1927,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.cancelMediaProcessing':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action cancelMediaProcessing
       description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this method can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a subscribeToTone operation because it operates independent of any operation queue.'
       externalDocs:
@@ -1969,7 +1969,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.changeScreenSharingRole':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action changeScreenSharingRole
       description: Allow applications to share screen content with the participants of a group call.
       externalDocs:
@@ -2006,7 +2006,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.keepAlive':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action keepAlive
       description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that does not receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a 404 Not-Found error. The resources related to the call should be cleaned up on the application side.'
       externalDocs:
@@ -2031,7 +2031,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.mute':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action mute
       description: 'Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation'
       externalDocs:
@@ -2073,7 +2073,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.playPrompt':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action playPrompt
       description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation'
       externalDocs:
@@ -2119,7 +2119,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.recordResponse':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action recordResponse
       description: "Records a short audio response from the caller.\nA bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification."
       externalDocs:
@@ -2153,19 +2153,19 @@ paths:
                 initialSilenceTimeoutInSeconds:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: integer
+                  type: number
                   format: int32
                   nullable: true
                 maxSilenceTimeoutInSeconds:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: integer
+                  type: number
                   format: int32
                   nullable: true
                 maxRecordDurationInSeconds:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: integer
+                  type: number
                   format: int32
                   nullable: true
                 playBeep:
@@ -2196,7 +2196,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.redirect':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action redirect
       description: Redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
       externalDocs:
@@ -2226,7 +2226,7 @@ paths:
                 timeout:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: integer
+                  type: number
                   format: int32
                   nullable: true
                 callbackUri:
@@ -2244,7 +2244,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.reject':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action reject
       description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.'
       externalDocs:
@@ -2284,7 +2284,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.sendDtmfTones':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action sendDtmfTones
       operationId: communication.call_sendDtmfTone
       parameters:
@@ -2310,7 +2310,7 @@ paths:
                 delayBetweenTonesMs:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: integer
+                  type: number
                   format: int32
                   nullable: true
                 clientContext:
@@ -2332,7 +2332,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.subscribeToTone':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action subscribeToTone
       description: Subscribe to DTMF (dual-tone multi-frequency signaling) which allows you to be notified when the user presses keys on a 'dialpad'.
       externalDocs:
@@ -2374,7 +2374,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.transfer':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action transfer
       description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.'
       externalDocs:
@@ -2413,7 +2413,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.unmute':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action unmute
       description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.'
       externalDocs:
@@ -2455,7 +2455,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.updateRecordingStatus':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action updateRecordingStatus
       description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
       externalDocs:
@@ -2970,7 +2970,7 @@ paths:
   '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.mute':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action mute
       description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
       externalDocs:
@@ -3020,7 +3020,7 @@ paths:
   '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.startHoldMusic':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action startHoldMusic
       description: Put a participant on hold and play music in the background.
       externalDocs:
@@ -3072,7 +3072,7 @@ paths:
   '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.stopHoldMusic':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action stopHoldMusic
       description: Reincorporate a participant previously put on hold to the call.
       externalDocs:
@@ -3144,7 +3144,7 @@ paths:
   '/communications/calls/{call-id}/participants/microsoft.graph.invite':
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action invite
       description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
       externalDocs:
@@ -3204,7 +3204,7 @@ paths:
   /communications/calls/microsoft.graph.logTeleconferenceDeviceQuality:
     post:
       tags:
-        - communications.Actions
+        - communications.call
       summary: Invoke action logTeleconferenceDeviceQuality
       description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data.'
       externalDocs:
@@ -3232,7 +3232,7 @@ paths:
   /communications/microsoft.graph.getPresencesByUserId:
     post:
       tags:
-        - communications.Actions
+        - communications.cloudCommunications
       summary: Invoke action getPresencesByUserId
       description: Get the presence information for multiple users.
       externalDocs:
@@ -4067,7 +4067,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
     get:
       tags:
-        - communications.Functions
+        - communications.onlineMeeting
       summary: Invoke function getVirtualAppointmentJoinWebUrl
       description: 'Get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
       externalDocs:
@@ -4102,7 +4102,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentReminderSms':
     post:
       tags:
-        - communications.Actions
+        - communications.onlineMeeting
       summary: Invoke action sendVirtualAppointmentReminderSms
       description: Send an SMS reminder to external attendees for a Teams virtual appointment. This feature requires Teams premium and attendees must have a valid United States phone number to receive SMS notifications.
       externalDocs:
@@ -4143,7 +4143,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentSms':
     post:
       tags:
-        - communications.Actions
+        - communications.onlineMeeting
       summary: Invoke action sendVirtualAppointmentSms
       description: 'Send an SMS notification to external attendees when a Teams virtual appointment is confirmed, rescheduled, or canceled. This feature requires Teams premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
       externalDocs:
@@ -4532,7 +4532,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/recordings/microsoft.graph.delta()':
     get:
       tags:
-        - communications.Functions
+        - communications.onlineMeeting
       summary: Invoke function delta
       operationId: communication.onlineMeeting.recording_delta
       parameters:
@@ -5061,7 +5061,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/transcripts/microsoft.graph.delta()':
     get:
       tags:
-        - communications.Functions
+        - communications.onlineMeeting
       summary: Invoke function delta
       operationId: communication.onlineMeeting.transcript_delta
       parameters:
@@ -5152,13 +5152,13 @@ paths:
   /communications/onlineMeetings/microsoft.graph.createOrGet:
     post:
       tags:
-        - communications.Actions
+        - communications.onlineMeeting
       summary: Invoke action createOrGet
       description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
-      operationId: communication.onlineMeeting_createOrGet
+      operationId: communication.onlineMeeting_createGraphRPreGet
       requestBody:
         description: Action parameters
         content:
@@ -5201,7 +5201,7 @@ paths:
   '/communications/onlineMeetings/microsoft.graph.getAllRecordings(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
     get:
       tags:
-        - communications.Functions
+        - communications.onlineMeeting
       summary: Invoke function getAllRecordings
       description: 'Get all recordings from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call recordings from channel meetings. You can apply the delta function on getAllRecordings to synchronize and get callRecording resources as they''re added for onlineMeeting instances organized by the specified user. The delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the recordings for online meetings organized by the user. Incremental synchronization gets recordings that are added since the last synchronization. Typically, you perform an initial full synchronization, and then get incremental changes to that recording view periodically. Find more information in the delta query documentation. For more examples, see callRecording: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
       externalDocs:
@@ -5299,7 +5299,7 @@ paths:
   '/communications/onlineMeetings/microsoft.graph.getAllTranscripts(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
     get:
       tags:
-        - communications.Functions
+        - communications.onlineMeeting
       summary: Invoke function getAllTranscripts
       description: 'Get all transcripts from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call transcripts from channel meetings. You can apply the delta function on getAllTranscripts to synchronize and get callTranscript resources as they''re added for onlineMeeting instances organized by the specified user. Delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the transcripts for online meetings organized by the user. Incremental synchronization gets transcripts that are added since the last synchronization. Typically, you perform an initial full synchronization, and then get incremental changes to that recording view periodically. For more information, see delta query. For more examples, see callTranscript: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
       externalDocs:
@@ -5577,7 +5577,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.clearPresence':
     post:
       tags:
-        - communications.Actions
+        - communications.presence
       summary: Invoke action clearPresence
       description: 'Clear the application''s presence session for a user. If it is the user''s only presence session, the user''s presence will change to Offline/Offline. For details about presences sessions, see presence: setPresence.'
       externalDocs:
@@ -5615,7 +5615,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.clearUserPreferredPresence':
     post:
       tags:
-        - communications.Actions
+        - communications.presence
       summary: Invoke action clearUserPreferredPresence
       description: Clear the preferred availability and activity status for a user.
       externalDocs:
@@ -5640,7 +5640,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.setPresence':
     post:
       tags:
-        - communications.Actions
+        - communications.presence
       summary: Invoke action setPresence
       description: Set the state of a user's presence session as an application.
       externalDocs:
@@ -5687,7 +5687,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.setStatusMessage':
     post:
       tags:
-        - communications.Actions
+        - communications.presence
       summary: Invoke action setStatusMessage
       description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
@@ -5724,7 +5724,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.setUserPreferredPresence':
     post:
       tags:
-        - communications.Actions
+        - communications.presence
       summary: Invoke action setUserPreferredPresence
       description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user''s presence shows as Offline. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.'
       externalDocs:
@@ -6725,6 +6725,147 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Invoke function getVirtualAppointmentJoinWebUrl
+      description: 'Get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0
+      operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentReminderSms':
+    post:
+      tags:
+        - users.onlineMeeting
+      summary: Invoke action sendVirtualAppointmentReminderSms
+      description: Send an SMS reminder to external attendees for a Teams virtual appointment. This feature requires Teams premium and attendees must have a valid United States phone number to receive SMS notifications.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-1.0
+      operationId: user.onlineMeeting_sendVirtualAppointmentReminderSm
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                remindBeforeTimeInMinutesType:
+                  $ref: '#/components/schemas/microsoft.graph.remindBeforeTimeInMinutesType'
+                attendees:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentSms':
+    post:
+      tags:
+        - users.onlineMeeting
+      summary: Invoke action sendVirtualAppointmentSms
+      description: 'Send an SMS notification to external attendees when a Teams virtual appointment is confirmed, rescheduled, or canceled. This feature requires Teams premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-1.0
+      operationId: user.onlineMeeting_sendVirtualAppointmentSm
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageType:
+                  $ref: '#/components/schemas/microsoft.graph.virtualAppointmentMessageType'
+                attendees:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings':
     get:
       tags:
@@ -7148,6 +7289,91 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Invoke function delta
+      operationId: user.onlineMeeting.recording_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callRecording
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecording'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts':
     get:
       tags:
@@ -7708,6 +7934,91 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Invoke function delta
+      operationId: user.onlineMeeting.transcript_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callTranscript
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/onlineMeetings/$count':
     get:
       tags:
@@ -7730,6 +8041,276 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onlineMeetings/microsoft.graph.createOrGet':
+    post:
+      tags:
+        - users.onlineMeeting
+      summary: Invoke action createOrGet
+      description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
+      operationId: user.onlineMeeting_createGraphRPreGet
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                chatInfo:
+                  $ref: '#/components/schemas/microsoft.graph.chatInfo'
+                endDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                externalId:
+                  type: string
+                participants:
+                  $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+                startDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                subject:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onlineMeetings/microsoft.graph.getAllRecordings(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Invoke function getAllRecordings
+      description: 'Get all recordings from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call recordings from channel meetings. You can apply the delta function on getAllRecordings to synchronize and get callRecording resources as they''re added for onlineMeeting instances organized by the specified user. The delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the recordings for online meetings organized by the user. Incremental synchronization gets recordings that are added since the last synchronization. Typically, you perform an initial full synchronization, and then get incremental changes to that recording view periodically. Find more information in the delta query documentation. For more examples, see callRecording: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-1.0
+      operationId: user.onlineMeeting_getAllRecording
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: meetingOrganizerUserId
+          in: query
+          description: 'Usage: meetingOrganizerUserId=''@meetingOrganizerUserId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+            nullable: true
+        - name: startDateTime
+          in: query
+          description: 'Usage: startDateTime=@startDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: query
+          description: 'Usage: endDateTime=@endDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callRecording
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecording'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/onlineMeetings/microsoft.graph.getAllTranscripts(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Invoke function getAllTranscripts
+      description: 'Get all transcripts from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call transcripts from channel meetings. You can apply the delta function on getAllTranscripts to synchronize and get callTranscript resources as they''re added for onlineMeeting instances organized by the specified user. Delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the transcripts for online meetings organized by the user. Incremental synchronization gets transcripts that are added since the last synchronization. Typically, you perform an initial full synchronization, and then get incremental changes to that recording view periodically. For more information, see delta query. For more examples, see callTranscript: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-1.0
+      operationId: user.onlineMeeting_getAllTranscript
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: meetingOrganizerUserId
+          in: query
+          description: 'Usage: meetingOrganizerUserId=''@meetingOrganizerUserId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+            nullable: true
+        - name: startDateTime
+          in: query
+          description: 'Usage: startDateTime=@startDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: query
+          description: 'Usage: endDateTime=@endDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callTranscript
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/presence':
     get:
       tags:
@@ -7836,6 +8417,197 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/presence/microsoft.graph.clearPresence':
+    post:
+      tags:
+        - users.presence
+      summary: Invoke action clearPresence
+      description: 'Clear the application''s presence session for a user. If it is the user''s only presence session, the user''s presence will change to Offline/Offline. For details about presences sessions, see presence: setPresence.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
+      operationId: user.presence_clearPresence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/presence/microsoft.graph.clearUserPreferredPresence':
+    post:
+      tags:
+        - users.presence
+      summary: Invoke action clearUserPreferredPresence
+      description: Clear the preferred availability and activity status for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
+      operationId: user.presence_clearUserPreferredPresence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/presence/microsoft.graph.setPresence':
+    post:
+      tags:
+        - users.presence
+      summary: Invoke action setPresence
+      description: Set the state of a user's presence session as an application.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
+      operationId: user.presence_setPresence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionId:
+                  type: string
+                  nullable: true
+                availability:
+                  type: string
+                activity:
+                  type: string
+                expirationDuration:
+                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                  type: string
+                  format: duration
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/presence/microsoft.graph.setStatusMessage':
+    post:
+      tags:
+        - users.presence
+      summary: Invoke action setStatusMessage
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
+      operationId: user.presence_setStatusMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                statusMessage:
+                  $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/presence/microsoft.graph.setUserPreferredPresence':
+    post:
+      tags:
+        - users.presence
+      summary: Invoke action setUserPreferredPresence
+      description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user''s presence shows as Offline. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
+      operationId: user.presence_setUserPreferredPresence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                availability:
+                  type: string
+                activity:
+                  type: string
+                expirationDuration:
+                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                  type: string
+                  format: duration
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.cloudCommunications:
@@ -7904,7 +8676,7 @@ components:
             type:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callType'
             version:
-              type: integer
+              type: number
               description: Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
               format: int64
             organizer_v2:
@@ -8359,7 +9131,7 @@ components:
             restrictedExperience:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingRestricted'
             rosterSequenceNumber:
-              type: integer
+              type: number
               description: Indicates the roster sequence number in which the participant was last updated.
               format: int64
               nullable: true
@@ -8533,7 +9305,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -8569,7 +9341,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -8903,7 +9675,7 @@ components:
         code:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The result code.
           format: int32
         message:
@@ -8913,7 +9685,7 @@ components:
         subcode:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The result subcode.
           format: int32
       additionalProperties:
@@ -8937,7 +9709,7 @@ components:
       type: object
       properties:
         sequenceId:
-          type: integer
+          type: number
           description: An incremental identifier used for ordering DTMF events.
           format: int64
         tone:
@@ -9081,11 +9853,11 @@ components:
         channelIndex:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.'
           format: int32
         inboundPackets:
-          type: integer
+          type: number
           description: The total number of the inbound packets.
           format: int64
           nullable: true
@@ -9096,7 +9868,7 @@ components:
         localPort:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The local media port.
           format: int32
           nullable: true
@@ -9141,12 +9913,12 @@ components:
           format: duration
           nullable: true
         networkLinkSpeedInBytes:
-          type: integer
+          type: number
           description: The network link speed in bytes
           format: int64
           nullable: true
         outboundPackets:
-          type: integer
+          type: number
           description: The total number of the outbound packets.
           format: int64
           nullable: true
@@ -9157,7 +9929,7 @@ components:
         remotePort:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The remote media port.
           format: int32
           nullable: true
@@ -9264,7 +10036,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -9623,7 +10395,7 @@ components:
         howlingEventCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of times during the call that the media endpoint detected howling or screeching audio.
           format: int32
           nullable: true
@@ -9650,14 +10422,14 @@ components:
         receivedNoiseLevel:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
           format: int32
           nullable: true
         receivedSignalLevel:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Average energy level of received audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.'
           format: int32
           nullable: true
@@ -9687,14 +10459,14 @@ components:
         sentNoiseLevel:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Average energy level of sent audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
           format: int32
           nullable: true
         sentSignalLevel:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Average energy level of sent audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.'
           format: int32
           nullable: true
@@ -9734,7 +10506,7 @@ components:
           description: IP address of the media endpoint.
           nullable: true
         linkSpeed:
-          type: integer
+          type: number
           description: Link speed in bits per second reported by the network adapter used by the media endpoint.
           format: int64
           nullable: true
@@ -9747,7 +10519,7 @@ components:
         port:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Network port number used by media endpoint.
           format: int32
           nullable: true
@@ -9767,7 +10539,7 @@ components:
         relayPort:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Network port number allocated on the media relay server by the media endpoint.
           format: int32
           nullable: true
@@ -9790,14 +10562,14 @@ components:
         wifiBatteryCharge:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Estimated remaining battery charge in percentage reported by the media endpoint.
           format: int32
           nullable: true
         wifiChannel:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: WiFi channel used by the media endpoint.
           format: int32
           nullable: true
@@ -9814,7 +10586,7 @@ components:
         wifiSignalStrength:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: WiFi signal strength in percentage reported by the media endpoint.
           format: int32
           nullable: true
@@ -9846,7 +10618,7 @@ components:
           format: duration
           nullable: true
         averageBandwidthEstimate:
-          type: integer
+          type: number
           description: Average estimated bandwidth available between two endpoints in bits per second.
           format: int64
           nullable: true
@@ -9947,7 +10719,7 @@ components:
           format: duration
           nullable: true
         packetUtilization:
-          type: integer
+          type: number
           description: Packet count for the stream.
           format: int64
           nullable: true
@@ -10034,6 +10806,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.onlineMeetingPresenters:
       title: onlineMeetingPresenters
       enum:
@@ -10226,7 +11000,7 @@ components:
         hopCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The network path count of this hop that was used to compute the RTT.
           format: int32
           nullable: true

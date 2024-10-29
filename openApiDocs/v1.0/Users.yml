@@ -11,10 +11,10 @@ paths:
       tags:
         - users.user
       summary: List users
-      description: List properties and relationships of the user objects.
+      description: Retrieve a list of user objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -73,11 +73,11 @@ paths:
     post:
       tags:
         - users.user
-      summary: Create User
-      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties."
+      summary: Create user
+      description: Create a new user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-create?view=graph-rest-1.0
       operationId: user_CreateUser
       requestBody:
         description: New entity
@@ -104,7 +104,7 @@ paths:
       description: Read properties and relationships of the user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-get?view=graph-rest-1.0
       operationId: user_GetUser
       parameters:
         - name: user-id
@@ -183,11 +183,11 @@ paths:
     delete:
       tags:
         - users.user
-      summary: Delete a user
-      description: 'Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.'
+      summary: Delete user
+      description: Deletes a user.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-delete?view=graph-rest-1.0
       operationId: user_DeleteUser
       parameters:
         - name: user-id
@@ -2486,6 +2486,35 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/licenseDetails/microsoft.graph.getTeamsLicensingDetails()':
+    get:
+      tags:
+        - users.licenseDetails
+      summary: Invoke function getTeamsLicensingDetails
+      description: Get the license status of a user in Microsoft Teams.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-1.0
+      operationId: user.licenseDetail_getTeamsLicensingDetail
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsLicensingDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/mailboxSettings':
     get:
       tags:
@@ -3358,6 +3387,815 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/microsoft.graph.assignLicense':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action assignLicense
+      description: 'Add or remove licenses for the user to enable or disable their use of Microsoft cloud offerings that the company has licenses to. For example, an organization can have a Microsoft 365 Enterprise E3 subscription with 100 licenses, and this request assigns one of those licenses to a specific user. You can also enable and disable specific plans associated with a subscription. Direct user licensing method is an alternative to group-based licensing.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0
+      operationId: user_assignLicense
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/assignLicenseRequestBody'
+      responses:
+        2XX:
+          $ref: '#/components/responses/assignLicenseResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.changePassword':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action changePassword
+      description: Update the signed-in user's password. Any user can update their password without belonging to any administrator role.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0
+      operationId: user_changePassword
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/changePasswordRequestBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action checkMemberGroups
+      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+      operationId: user_checkMemberGroup
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action checkMemberObjects
+      operationId: user_checkMemberObject
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.exportDeviceAndAppManagementData()':
+    get:
+      tags:
+        - users.user
+      summary: Invoke function exportDeviceAndAppManagementData
+      operationId: user_exportDeviceAndAppManagementData
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          $ref: '#/components/responses/exportDeviceAndAppManagementDataResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})':
+    get:
+      tags:
+        - users.user
+      summary: Invoke function exportDeviceAndAppManagementData
+      operationId: user_exportDeviceAndAppManagementData
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: skip
+          in: path
+          description: 'Usage: skip={skip}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+        - name: top
+          in: path
+          description: 'Usage: top={top}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+      responses:
+        2XX:
+          $ref: '#/components/responses/exportDeviceAndAppManagementDataResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/microsoft.graph.exportPersonalData':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action exportPersonalData
+      description: 'Submit a data policy operation request from a company administrator or an application to export an organizational user''s data. This data includes the user''s data stored in OneDrive and their activity reports. For more information about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-exportpersonaldata?view=graph-rest-1.0
+      operationId: user_exportPersonalData
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/exportPersonalDataRequestBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.findMeetingTimes':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action findMeetingTimes
+      description: "Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.\nBased on this value, you can better adjust the parameters and call findMeetingTimes again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-findmeetingtimes?view=graph-rest-1.0
+      operationId: user_findMeetingTime
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/findMeetingTimesRequestBody'
+      responses:
+        2XX:
+          $ref: '#/components/responses/findMeetingTimesResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.getMailTips':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action getMailTips
+      description: "Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\nbe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
+      operationId: user_getMailTip
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/getMailTipsRequestBody'
+      responses:
+        2XX:
+          $ref: '#/components/responses/getMailTipsResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.getManagedAppDiagnosticStatuses()':
+    get:
+      tags:
+        - users.user
+      summary: Invoke function getManagedAppDiagnosticStatuses
+      description: Gets diagnostics validation status for a given user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0
+      operationId: user_getManagedAppDiagnosticStatus
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          $ref: '#/components/responses/getManagedAppDiagnosticStatusesResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.getManagedAppPolicies()':
+    get:
+      tags:
+        - users.user
+      summary: Invoke function getManagedAppPolicies
+      description: Gets app restrictions for a given user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedapppolicies?view=graph-rest-1.0
+      operationId: user_getManagedAppPolicy
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/getManagedAppPoliciesResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.getManagedDevicesWithAppFailures()':
+    get:
+      tags:
+        - users.user
+      summary: Invoke function getManagedDevicesWithAppFailures
+      description: Retrieves the list of devices with failed apps
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-troubleshooting-user-getmanageddeviceswithappfailures?view=graph-rest-1.0
+      operationId: user_getManagedDevicesGraphWPreAppFailure
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          $ref: '#/components/responses/getManagedDevicesWithAppFailuresResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action getMemberGroups
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+      operationId: user_getMemberGroup
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action getMemberObjects
+      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
+      operationId: user_getMemberObject
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.reminderView(StartDateTime=''{StartDateTime}'',EndDateTime=''{EndDateTime}'')':
+    get:
+      tags:
+        - users.user
+      summary: Invoke function reminderView
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-1.0
+      operationId: user_reminderView
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: StartDateTime
+          in: path
+          description: 'Usage: StartDateTime=''{StartDateTime}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: EndDateTime
+          in: path
+          description: 'Usage: EndDateTime=''{EndDateTime}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          $ref: '#/components/responses/reminderViewResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.removeAllDevicesFromManagement':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action removeAllDevicesFromManagement
+      description: Retire all devices from management for this user
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-user-removealldevicesfrommanagement?view=graph-rest-1.0
+      operationId: user_removeAllDevicesFromManagement
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.reprocessLicenseAssignment':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action reprocessLicenseAssignment
+      description: 'Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-1.0
+      operationId: user_reprocessLicenseAssignment
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          $ref: '#/components/responses/reprocessLicenseAssignmentResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action restore
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+      operationId: user_restore
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.retryServiceProvisioning':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action retryServiceProvisioning
+      description: Retry the user service provisioning.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-retryserviceprovisioning?view=graph-rest-1.0
+      operationId: user_retryServiceProvisioning
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.revokeSignInSessions':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action revokeSignInSessions
+      description: 'Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user''s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization''s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0
+      operationId: user_revokeSignInSession
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          $ref: '#/components/responses/revokeSignInSessionsResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.sendMail':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action sendMail
+      description: 'Send the message specified in the request body using either JSON or MIME format. When using JSON format, you can include a file attachment in the same sendMail action call. When using MIME format: This method saves the message in the Sent Items folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0
+      operationId: user_sendMail
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/sendMailRequestBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.translateExchangeIds':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action translateExchangeIds
+      description: Translate identifiers of Outlook-related resources between formats.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
+      operationId: user_translateExchangeId
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/translateExchangeIdsRequestBody'
+      responses:
+        2XX:
+          $ref: '#/components/responses/translateExchangeIdsResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/microsoft.graph.wipeManagedAppRegistrationsByDeviceTag':
+    post:
+      tags:
+        - users.user
+      summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
+      description: Issues a wipe operation on an app registration with specified device tag.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-wipemanagedappregistrationsbydevicetag?view=graph-rest-1.0
+      operationId: user_wipeManagedAppRegistrationsGraphBPreDeviceTag
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/wipeManagedAppRegistrationsByDeviceTagRequestBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/oauth2PermissionGrants':
     get:
       tags:
@@ -3781,6 +4619,146 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/outlook/microsoft.graph.supportedLanguages()':
+    get:
+      tags:
+        - users.outlookUser
+      summary: Invoke function supportedLanguages
+      description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by\ngetting the user's mailbox settings."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
+      operationId: user.outlook_supportedLanguage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.localeInfo'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/outlook/microsoft.graph.supportedTimeZones()':
+    get:
+      tags:
+        - users.outlookUser
+      summary: Invoke function supportedTimeZones
+      operationId: user.outlook_supportedTimeZone
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.timeZoneInformation'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/outlook/microsoft.graph.supportedTimeZones(TimeZoneStandard=''{TimeZoneStandard}'')':
+    get:
+      tags:
+        - users.outlookUser
+      summary: Invoke function supportedTimeZones
+      operationId: user.outlook_supportedTimeZone
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: TimeZoneStandard
+          in: path
+          description: 'Usage: TimeZoneStandard=''{TimeZoneStandard}'''
+          required: true
+          style: simple
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.timeZoneStandard'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.timeZoneInformation'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/ownedDevices':
     get:
       tags:
@@ -8864,6 +9842,63 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/attachments/microsoft.graph.createUploadSession':
+    post:
+      tags:
+        - users.todo
+      summary: Invoke action createUploadSession
+      description: 'Create an upload session to iteratively upload ranges of a file as an attachment to a todoTask. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. The request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows the transfer to be resumed, in case the network connection is dropped during the upload. The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/taskfileattachment-createuploadsession?view=graph-rest-1.0
+      operationId: user.todo.list.task.attachment_createUploadSession
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: The unique identifier of todoTaskList
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: The unique identifier of todoTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                attachmentInfo:
+                  $ref: '#/components/schemas/microsoft.graph.attachmentInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.uploadSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/attachmentSessions':
     get:
       tags:
@@ -10345,6 +11380,95 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.todo
+      summary: Invoke function delta
+      description: 'Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user''s todoTask resources without having to fetch the entire set from the server every time.  '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0
+      operationId: user.todo.list.task_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: The unique identifier of todoTaskList
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of todoTask
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.todoTask'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/todo/lists/$count':
     get:
       tags:
@@ -10367,6 +11491,87 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/todo/lists/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.todo
+      summary: Invoke function delta
+      description: "Get a set of todoTaskList resources that have been added, deleted, or removed in Microsoft To Do. A delta function call for todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, \nyou can query for incremental changes in the todoTaskList. This allows you to maintain and synchronize a local store of a user's todoTaskList without having to fetch all the todoTaskList from the server every time."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/todotasklist-delta?view=graph-rest-1.0
+      operationId: user.todo.list_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of todoTaskList
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/transitiveMemberOf':
     get:
       tags:
@@ -11046,6 +12251,220 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /users/microsoft.graph.delta():
+    get:
+      tags:
+        - users.user
+      summary: Invoke function delta
+      description: 'Get newly created, updated, or deleted users without having to perform a full read of the entire user collection. See change tracking for details.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-delta?view=graph-rest-1.0
+      operationId: user_delta
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of user
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.user'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /users/microsoft.graph.getAvailableExtensionProperties:
+    post:
+      tags:
+        - users.user
+      summary: Invoke action getAvailableExtensionProperties
+      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
+      operationId: user_getAvailableExtensionProperty
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isSyncedFromOnPremises:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of extensionProperty
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /users/microsoft.graph.getByIds:
+    post:
+      tags:
+        - users.user
+      summary: Invoke action getByIds
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+      operationId: user_getGraphBPreId
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /users/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - users.user
+      summary: Invoke action validateProperties
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+      operationId: user_validateProperty
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.user:
@@ -11123,7 +12542,7 @@ components:
             deviceEnrollmentLimit:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
             displayName:
@@ -11143,7 +12562,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -11624,6 +13043,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12045,6 +13465,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -12085,6 +13506,18 @@ components:
             skuPartNumber:
               type: string
               description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsLicensingDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsLicensingDetails
+          type: object
+          properties:
+            hasTeamsLicense:
+              type: boolean
+              description: Indicates whether the user has a valid license to use Microsoft Teams.
               nullable: true
           additionalProperties:
             type: object
@@ -12378,7 +13811,7 @@ components:
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
@@ -12521,6 +13954,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12575,6 +14009,40 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.localeInfo:
+      title: localeInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
+          nullable: true
+        locale:
+          type: string
+          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.timeZoneInformation:
+      title: timeZoneInformation
+      type: object
+      properties:
+        alias:
+          type: string
+          description: An identifier for the time zone.
+          nullable: true
+        displayName:
+          type: string
+          description: A display string that represents the time zone.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.timeZoneStandard:
+      title: timeZoneStandard
+      enum:
+        - windows
+        - iana
+      type: string
     microsoft.graph.appRoleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -12664,7 +14132,7 @@ components:
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: For internal use only.
               format: int32
               nullable: true
@@ -13006,14 +14474,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
@@ -13085,25 +14553,25 @@ components:
           type: object
           properties:
             deleted:
-              type: integer
+              type: number
               format: int64
               nullable: true
             manageWebUrl:
               type: string
               nullable: true
             remaining:
-              type: integer
+              type: number
               format: int64
               nullable: true
             state:
               type: string
               nullable: true
             total:
-              type: integer
+              type: number
               format: int64
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
             services:
@@ -13325,11 +14793,54 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.attachmentInfo:
+      title: attachmentInfo
+      type: object
+      properties:
+        attachmentType:
+          $ref: '#/components/schemas/microsoft.graph.attachmentType'
+        contentType:
+          type: string
+          description: The nature of the data in the attachment. Optional.
+          nullable: true
+        name:
+          type: string
+          description: The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
+          nullable: true
+        size:
+          type: number
+          description: The length of the attachment in bytes. Required.
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.uploadSession:
+      title: uploadSession
+      type: object
+      properties:
+        expirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+          format: date-time
+          nullable: true
+        nextExpectedRanges:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format ''start-end'' (for example ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
+        uploadUrl:
+          type: string
+          description: The URL endpoint that accepts PUT requests for byte ranges of the file.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attachmentSession:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13404,6 +14915,36 @@ components:
               type: string
               description: Deep link to the linkedResource.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.extensionProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: extensionProperty
+          type: object
+          properties:
+            appDisplayName:
+              type: string
+              description: Display name of the application object on which this extension property is defined. Read-only.
+              nullable: true
+            dataType:
+              type: string
+              description: 'Specifies the data type of the value the extension property can hold. Following values are supported. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximumNot nullable. For multivalued directory extensions, these limits apply per value in the collection.'
+            isMultiValued:
+              type: boolean
+              description: 'Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of string types such as ''extensionb7b1c57b532f40b8b5ed4b7a7ba67401jobGroupTracker'': [''String 1'', ''String 2'']. The default value is false. Supports $filter (eq).'
+            isSyncedFromOnPremises:
+              type: boolean
+              description: Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
+              nullable: true
+            name:
+              type: string
+              description: Name of the extension property. Not nullable. Supports $filter (eq).
+            targetObjects:
+              type: array
+              items:
+                type: string
+              description: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
           additionalProperties:
             type: object
     microsoft.graph.assignedLicense:
@@ -14127,7 +15668,7 @@ components:
             reminderMinutesBeforeStart:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
@@ -14516,7 +16057,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -14803,7 +16344,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -14822,14 +16363,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -15046,7 +16587,7 @@ components:
               format: date-time
               readOnly: true
             freeStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
@@ -15130,7 +16671,7 @@ components:
               nullable: true
               readOnly: true
             physicalMemoryInBytes:
-              type: integer
+              type: number
               description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
@@ -15160,7 +16701,7 @@ components:
               nullable: true
               readOnly: true
             totalStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Total Storage in Bytes. This property is read-only.
               format: int64
               readOnly: true
@@ -15748,7 +17289,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Friendly name for the key. Optional.
+          description: 'The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.'
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -15758,7 +17299,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -16213,6 +17754,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.usageDetails:
       title: usageDetails
       type: object
@@ -16284,20 +17827,6 @@ components:
         - sendToDelegateAndPrincipal
         - sendToDelegateOnly
       type: string
-    microsoft.graph.localeInfo:
-      title: localeInfo
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
-          nullable: true
-        locale:
-          type: string
-          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.userPurpose:
       title: userPurpose
       enum:
@@ -16403,7 +17932,7 @@ components:
             groupLifetimeInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
@@ -16539,7 +18068,7 @@ components:
         type:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: For internal use only.
           format: int32
           nullable: true
@@ -16574,7 +18103,7 @@ components:
         requestedAccessTokenVersion:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount, the value for this property must be 2.'
           format: int32
           nullable: true
@@ -16755,36 +18284,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.redirectUriSettings'
       additionalProperties:
         type: object
-    microsoft.graph.extensionProperty:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: extensionProperty
-          type: object
-          properties:
-            appDisplayName:
-              type: string
-              description: Display name of the application object on which this extension property is defined. Read-only.
-              nullable: true
-            dataType:
-              type: string
-              description: 'Specifies the data type of the value the extension property can hold. Following values are supported. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximumNot nullable. For multivalued directory extensions, these limits apply per value in the collection.'
-            isMultiValued:
-              type: boolean
-              description: 'Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of string types such as ''extensionb7b1c57b532f40b8b5ed4b7a7ba67401jobGroupTracker'': [''String 1'', ''String 2'']. The default value is false. Supports $filter (eq).'
-            isSyncedFromOnPremises:
-              type: boolean
-              description: Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
-              nullable: true
-            name:
-              type: string
-              description: Name of the extension property. Not nullable. Supports $filter (eq).
-            targetObjects:
-              type: array
-              items:
-                type: string
-              description: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
-          additionalProperties:
-            type: object
     microsoft.graph.changeTrackedEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16839,7 +18338,7 @@ components:
               type: string
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
           additionalProperties:
@@ -16910,6 +18409,13 @@ components:
         - waitingOnOthers
         - deferred
       type: string
+    microsoft.graph.attachmentType:
+      title: attachmentType
+      enum:
+        - file
+        - item
+        - reference
+      type: string
     ReferenceUpdate:
       type: object
       properties:
@@ -16920,6 +18426,72 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.attendeeBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.recipient'
+        - title: attendeeBase
+          type: object
+          properties:
+            type:
+              $ref: '#/components/schemas/microsoft.graph.attendeeType'
+          additionalProperties:
+            type: object
+    microsoft.graph.locationConstraint:
+      title: locationConstraint
+      type: object
+      properties:
+        isRequired:
+          type: boolean
+          description: 'The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes won''t return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.'
+          nullable: true
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.locationConstraintItem'
+          description: Constraint information for one or more locations that the client requests for the meeting.
+        suggestLocation:
+          type: boolean
+          description: The client requests the service to suggest one or more meeting locations.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.timeConstraint:
+      title: timeConstraint
+      type: object
+      properties:
+        activityDomain:
+          $ref: '#/components/schemas/microsoft.graph.activityDomain'
+        timeSlots:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeSlot'
+      additionalProperties:
+        type: object
+    microsoft.graph.mailTipsType:
+      title: mailTipsType
+      enum:
+        - automaticReplies
+        - mailboxFullStatus
+        - customMailTip
+        - externalMemberCount
+        - totalMemberCount
+        - maxMessageSize
+        - deliveryRestriction
+        - moderationStatus
+        - recipientScope
+        - recipientSuggestions
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.exchangeIdFormat:
+      title: exchangeIdFormat
+      enum:
+        - entryId
+        - ewsId
+        - immutableEntryId
+        - restId
+        - restImmutableEntryId
+      type: string
     microsoft.graph.userCollectionResponse:
       title: Collection of user
       type: object
@@ -17085,6 +18657,184 @@ components:
             $ref: '#/components/schemas/microsoft.graph.group'
         '@odata.nextLink':
           type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceAndAppManagementData:
+      title: deviceAndAppManagementData
+      type: object
+      properties:
+        content:
+          type: string
+          description: Not yet documented
+          format: base64url
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Exported Data
+    microsoft.graph.meetingTimeSuggestionsResult:
+      title: meetingTimeSuggestionsResult
+      type: object
+      properties:
+        emptySuggestionsReason:
+          type: string
+          description: 'A reason for not returning any meeting suggestions. The possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.'
+          nullable: true
+        meetingTimeSuggestions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingTimeSuggestion'
+          description: An array of meeting suggestions.
+      additionalProperties:
+        type: object
+    microsoft.graph.mailTips:
+      title: mailTips
+      type: object
+      properties:
+        automaticReplies:
+          $ref: '#/components/schemas/microsoft.graph.automaticRepliesMailTips'
+        customMailTip:
+          type: string
+          description: A custom mail tip that can be set on the recipient's mailbox.
+          nullable: true
+        deliveryRestricted:
+          type: boolean
+          description: 'Whether the recipient''s mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.'
+          nullable: true
+        emailAddress:
+          $ref: '#/components/schemas/microsoft.graph.emailAddress'
+        error:
+          $ref: '#/components/schemas/microsoft.graph.mailTipsError'
+        externalMemberCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of external members if the recipient is a distribution list.
+          format: int32
+          nullable: true
+        isModerated:
+          type: boolean
+          description: 'Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient''s manager.'
+          nullable: true
+        mailboxFull:
+          type: boolean
+          description: The mailbox full status of the recipient.
+          nullable: true
+        maxMessageSize:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The maximum message size that has been configured for the recipient's organization or mailbox.
+          format: int32
+          nullable: true
+        recipientScope:
+          $ref: '#/components/schemas/microsoft.graph.recipientScopeType'
+        recipientSuggestions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: Recipients suggested based on previous contexts where they appear in the same message.
+        totalMemberCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of members if the recipient is a distribution list.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedAppDiagnosticStatus:
+      title: managedAppDiagnosticStatus
+      type: object
+      properties:
+        mitigationInstruction:
+          type: string
+          description: Instruction on how to mitigate a failed validation
+          nullable: true
+        state:
+          type: string
+          description: The state of the operation
+          nullable: true
+        validationName:
+          type: string
+          description: The validation friendly name
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Represents diagnostics status.
+    microsoft.graph.managedAppPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppPolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the policy was created.
+              format: date-time
+            description:
+              type: string
+              description: The policy's description.
+              nullable: true
+            displayName:
+              type: string
+              description: Policy display name.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last time the policy was modified.
+              format: date-time
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The ManagedAppPolicy resource represents a base type for platform specific policies.
+    microsoft.graph.reminder:
+      title: reminder
+      type: object
+      properties:
+        changeKey:
+          type: string
+          description: 'Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.'
+          nullable: true
+        eventEndTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        eventId:
+          type: string
+          description: The unique ID of the event. Read only.
+          nullable: true
+        eventLocation:
+          $ref: '#/components/schemas/microsoft.graph.location'
+        eventStartTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        eventSubject:
+          type: string
+          description: The text of the event's subject line.
+          nullable: true
+        eventWebLink:
+          type: string
+          description: The URL to open the event in Outlook on the web.The event opens in the browser if you're logged in to your mailbox via Outlook on the web. You're prompted to log in if you aren't already logged in with the browser.This URL can't be accessed from within an iFrame.
+          nullable: true
+        reminderFireTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
+    microsoft.graph.convertIdResult:
+      title: convertIdResult
+      type: object
+      properties:
+        errorDetails:
+          $ref: '#/components/schemas/microsoft.graph.genericError'
+        sourceId:
+          type: string
+          description: 'The identifier that was converted. This value is the original, un-converted identifier.'
+          nullable: true
+        targetId:
+          type: string
+          description: The converted identifier. This value isn't present if the conversion failed.
           nullable: true
       additionalProperties:
         type: object
@@ -17372,7 +19122,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
@@ -17533,6 +19283,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -17602,7 +19353,7 @@ components:
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
@@ -17911,7 +19662,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -18271,12 +20022,12 @@ components:
       type: object
       properties:
         deleted:
-          type: integer
+          type: number
           description: 'Total space consumed by files in the recycle bin, in bytes. Read-only.'
           format: int64
           nullable: true
         remaining:
-          type: integer
+          type: number
           description: 'Total space remaining before reaching the quota limit, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -18287,12 +20038,12 @@ components:
         storagePlanInformation:
           $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
         total:
-          type: integer
+          type: number
           description: 'Total allowed storage space, in bytes. Read-only.'
           format: int64
           nullable: true
         used:
-          type: integer
+          type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -18389,7 +20140,7 @@ components:
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             size:
-              type: integer
+              type: number
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
@@ -18506,7 +20257,7 @@ components:
             completionPercentage:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The percentage completion value of the course activity. Optional.
               format: int32
               nullable: true
@@ -18785,7 +20536,7 @@ components:
             percentageComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
@@ -18799,6 +20550,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -19012,21 +20764,21 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a team.
           format: int32
           nullable: true
@@ -19120,7 +20872,7 @@ components:
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             createdDateTime:
@@ -19268,7 +21020,7 @@ components:
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of users assigned to the tag.
               format: int32
               nullable: true
@@ -19324,7 +21076,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -19353,36 +21105,6 @@ components:
           - value: rootedDevice
             description: The app registration is running on a rooted/unlocked device.
             name: rootedDevice
-    microsoft.graph.managedAppPolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: managedAppPolicy
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time the policy was created.
-              format: date-time
-            description:
-              type: string
-              description: The policy's description.
-              nullable: true
-            displayName:
-              type: string
-              description: Policy display name.
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Last time the policy was modified.
-              format: date-time
-            version:
-              type: string
-              description: Version of the entity.
-              nullable: true
-          additionalProperties:
-            type: object
-          description: The ManagedAppPolicy resource represents a base type for platform specific policies.
     microsoft.graph.managedAppOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -19653,11 +21375,11 @@ components:
           description: Informational attribute that identifies the HASH algorithm that was used by TPM
           nullable: true
         resetCount:
-          type: integer
+          type: number
           description: The number of times a PC device has hibernated or resumed
           format: int64
         restartCount:
-          type: integer
+          type: number
           description: The number of times a PC device has rebooted
           format: int64
         safeMode:
@@ -19992,7 +21714,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -20004,7 +21726,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -20025,7 +21747,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -20037,7 +21759,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -20084,6 +21806,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -20310,7 +22033,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -20319,7 +22042,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -20711,7 +22434,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -20730,7 +22453,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -20771,7 +22494,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Percentage of task completion. When set to 100, the task is considered completed.'
               format: int32
               nullable: true
@@ -20784,14 +22507,14 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2, 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Additionally, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -21241,7 +22964,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         uri:
@@ -21280,7 +23003,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -21295,13 +23018,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -21321,7 +23044,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -21336,6 +23059,43 @@ components:
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
+      additionalProperties:
+        type: object
+    microsoft.graph.attendeeType:
+      title: attendeeType
+      enum:
+        - required
+        - optional
+        - resource
+      type: string
+    microsoft.graph.locationConstraintItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.location'
+        - title: locationConstraintItem
+          type: object
+          properties:
+            resolveAvailability:
+              type: boolean
+              description: 'If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user''s cache without checking if it''s free. Default is true.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.activityDomain:
+      title: activityDomain
+      enum:
+        - unknown
+        - work
+        - personal
+        - unrestricted
+      type: string
+    microsoft.graph.timeSlot:
+      title: timeSlot
+      type: object
+      properties:
+        end:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        start:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.MainError:
@@ -21358,6 +23118,97 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingTimeSuggestion:
+      title: meetingTimeSuggestion
+      type: object
+      properties:
+        attendeeAvailability:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.attendeeAvailability'
+          description: An array that shows the availability status of each attendee for this meeting suggestion.
+        confidence:
+          type: number
+          description: A percentage that represents the likelhood of all the attendees attending.
+          format: double
+          nullable: true
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.location'
+          description: An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
+        meetingTimeSlot:
+          $ref: '#/components/schemas/microsoft.graph.timeSlot'
+        order:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.'
+          format: int32
+          nullable: true
+        organizerAvailability:
+          $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
+        suggestionReason:
+          type: string
+          description: Reason for suggesting the meeting time.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.automaticRepliesMailTips:
+      title: automaticRepliesMailTips
+      type: object
+      properties:
+        message:
+          type: string
+          description: The automatic reply message.
+          nullable: true
+        messageLanguage:
+          $ref: '#/components/schemas/microsoft.graph.localeInfo'
+        scheduledEndTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        scheduledStartTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
+    microsoft.graph.mailTipsError:
+      title: mailTipsError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.recipientScopeType:
+      title: recipientScopeType
+      enum:
+        - none
+        - internal
+        - external
+        - externalPartner
+        - externalNonPartner
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.genericError:
+      title: genericError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.printerBase:
@@ -21527,26 +23378,6 @@ components:
         - delegateWithPrivateEventAccess
         - custom
       type: string
-    microsoft.graph.attendeeBase:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.recipient'
-        - title: attendeeBase
-          type: object
-          properties:
-            type:
-              $ref: '#/components/schemas/microsoft.graph.attendeeType'
-          additionalProperties:
-            type: object
-    microsoft.graph.timeSlot:
-      title: timeSlot
-      type: object
-      properties:
-        end:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        start:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-      additionalProperties:
-        type: object
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
@@ -21781,7 +23612,7 @@ components:
         id:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
@@ -21946,7 +23777,7 @@ components:
           description: The performing artist for the audio file.
           nullable: true
         bitrate:
-          type: integer
+          type: number
           description: Bitrate expressed in kbps.
           format: int64
           nullable: true
@@ -21961,19 +23792,19 @@ components:
         disc:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The number of the disc this audio file came from.
           format: int16
           nullable: true
         discCount:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The total number of discs in this album.
           format: int16
           nullable: true
         duration:
-          type: integer
+          type: number
           description: 'Duration of the audio file, expressed in milliseconds'
           format: int64
           nullable: true
@@ -21996,21 +23827,21 @@ components:
         track:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of the track on the original disc for this audio file.
           format: int32
           nullable: true
         trackCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tracks on the original disc for this audio file.
           format: int32
           nullable: true
         year:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The year the audio file was recorded.
           format: int32
           nullable: true
@@ -22025,7 +23856,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -22087,7 +23918,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -22102,14 +23933,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Height of the image, in pixels. Read-only.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
           nullable: true
@@ -22199,14 +24030,14 @@ components:
         iso:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
         orientation:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
@@ -22279,7 +24110,7 @@ components:
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         size:
-          type: integer
+          type: number
           description: Size of the remote item. Read-only.
           format: int64
           nullable: true
@@ -22344,14 +24175,14 @@ components:
         audioBitsPerSample:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio bits per sample.
           format: int32
           nullable: true
         audioChannels:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio channels.
           format: int32
           nullable: true
@@ -22362,19 +24193,19 @@ components:
         audioSamplesPerSecond:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio samples per second.
           format: int32
           nullable: true
         bitrate:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Bit rate of the video in bits per second.
           format: int32
           nullable: true
         duration:
-          type: integer
+          type: number
           description: Duration of the file in milliseconds.
           format: int64
           nullable: true
@@ -22390,14 +24221,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Height of the video, in pixels.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
@@ -22549,7 +24380,7 @@ components:
               format: base64url
               nullable: true
             size:
-              type: integer
+              type: number
               description: Indicates the size of the content stream for this version of the item.
               format: int64
               nullable: true
@@ -22930,14 +24761,14 @@ components:
         linesForEditing:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the text box.
           format: int32
           nullable: true
         maxLength:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum number of characters for the value.
           format: int32
           nullable: true
@@ -23059,7 +24890,7 @@ components:
         position:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
@@ -23250,7 +25081,7 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a channel.
           format: int32
           nullable: true
@@ -23261,14 +25092,14 @@ components:
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a channel.
           format: int32
           nullable: true
@@ -23806,7 +25637,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -23872,7 +25703,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -24107,7 +25938,7 @@ components:
             detectionCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the malware is detected
               format: int32
               nullable: true
@@ -24408,7 +26239,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -24714,7 +26545,7 @@ components:
         code:
           $ref: '#/components/schemas/microsoft.graph.synchronizationStatusCode'
         countSuccessiveCompleteFailures:
-          type: integer
+          type: number
           description: Number of consecutive times this job failed.
           format: int64
         escrowsPruned:
@@ -24855,6 +26686,16 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.attendeeAvailability:
+      title: attendeeAvailability
+      type: object
+      properties:
+        attendee:
+          $ref: '#/components/schemas/microsoft.graph.attendeeBase'
+        availability:
+          $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.printerCapabilities:
       title: printerCapabilities
       type: object
@@ -24864,7 +26705,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported bottom margins(in microns) for the printer.
@@ -24890,7 +26731,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: The list of print resolutions in DPI that are supported by the printer.
@@ -24928,7 +26769,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported left margins(in microns) for the printer.
@@ -24971,7 +26812,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: Supported number of Input Pages to impose upon a single Impression.
@@ -24985,7 +26826,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported right margins(in microns) for the printer.
@@ -25003,7 +26844,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported top margins(in microns) for the printer.
@@ -25022,14 +26863,14 @@ components:
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of copies printed per job.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default resolution in DPI to use when printing the job.
           format: int32
           nullable: true
@@ -25071,7 +26912,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -25088,7 +26929,7 @@ components:
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The altitude, in meters, that the printer is located at.'
           format: int32
           nullable: true
@@ -25262,13 +27103,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
           additionalProperties:
             type: object
-    microsoft.graph.attendeeType:
-      title: attendeeType
-      enum:
-        - required
-        - optional
-        - resource
-      type: string
     microsoft.graph.teamworkUserIdentityType:
       title: teamworkUserIdentityType
       enum:
@@ -25566,7 +27400,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The height of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -25581,7 +27415,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The width of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -25760,7 +27594,7 @@ components:
             position:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The zero-based position of the worksheet within the workbook.
               format: int32
             visibility:
@@ -25809,14 +27643,14 @@ components:
         actionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times the action took place. Read-only.
           format: int32
           nullable: true
         actorCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of distinct actors that performed the action. Read-only.
           format: int32
           nullable: true
@@ -26018,7 +27852,7 @@ components:
             openSlotCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of the number of slots for the given open shift.
               format: int32
           additionalProperties:
@@ -26104,14 +27938,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -26559,7 +28393,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -26772,39 +28606,39 @@ components:
           description: Identifier of the job run.
           nullable: true
         countEntitled:
-          type: integer
+          type: number
           description: Count of processed entries that were assigned for this application.
           format: int64
         countEntitledForProvisioning:
-          type: integer
+          type: number
           description: Count of processed entries that were assigned for provisioning.
           format: int64
         countEscrowed:
-          type: integer
+          type: number
           description: Count of entries that were escrowed (errors).
           format: int64
         countEscrowedRaw:
-          type: integer
+          type: number
           description: 'Count of entries that were escrowed, including system-generated escrows.'
           format: int64
         countExported:
-          type: integer
+          type: number
           description: Count of exported entries.
           format: int64
         countExports:
-          type: integer
+          type: number
           description: Count of entries that were expected to be exported.
           format: int64
         countImported:
-          type: integer
+          type: number
           description: Count of imported entries.
           format: int64
         countImportedDeltas:
-          type: integer
+          type: number
           description: Count of imported delta-changes.
           format: int64
         countImportedReferenceDeltas:
-          type: integer
+          type: number
           description: Count of imported delta-changes pertaining to reference changes.
           format: int64
         error:
@@ -26828,7 +28662,7 @@ components:
       type: object
       properties:
         completedUnits:
-          type: integer
+          type: number
           description: The numerator of a progress ratio; the number of units of changes already processed.
           format: int64
         progressObservationDateTime:
@@ -26837,7 +28671,7 @@ components:
           description: The time of a progress observation as an offset in minutes from UTC.
           format: date-time
         totalUnits:
-          type: integer
+          type: number
           description: The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
           format: int64
         units:
@@ -26870,7 +28704,7 @@ components:
           description: 'Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         seriesCount:
-          type: integer
+          type: number
           description: 'Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).'
           format: int64
       additionalProperties:
@@ -26884,7 +28718,7 @@ components:
           description: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra ID synchronization worker to user - For Workday to Microsoft Entra synchronization.
           nullable: true
         value:
-          type: integer
+          type: number
           description: Total number of synchronized objects.
           format: int64
       additionalProperties:
@@ -26921,7 +28755,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
           format: int32
         sourceDirectoryName:
@@ -26993,12 +28827,12 @@ components:
       type: object
       properties:
         end:
-          type: integer
+          type: number
           description: The inclusive upper bound of the integer range.
           format: int64
           nullable: true
         start:
-          type: integer
+          type: number
           description: The inclusive lower bound of the integer range.
           format: int64
           nullable: true
@@ -27981,14 +29815,14 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of copies that should be printed. Read-only.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
           format: int32
           nullable: true
@@ -28035,7 +29869,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -28095,7 +29929,7 @@ components:
               description: The document's name. Read-only.
               nullable: true
             size:
-              type: integer
+              type: number
               description: The document's size in bytes. Read-only.
               format: int64
           additionalProperties:
@@ -28234,7 +30068,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
@@ -28256,7 +30090,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
@@ -28292,10 +30126,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -28304,10 +30140,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
@@ -28479,7 +30317,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -28665,28 +30503,28 @@ components:
         bottom:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the bottom edge.
           format: int32
           nullable: true
         left:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the left edge.
           format: int32
           nullable: true
         right:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the right edge.
           format: int32
           nullable: true
         top:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the top edge.
           format: int32
           nullable: true
@@ -28787,7 +30625,7 @@ components:
         key:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).'
           format: int32
         sortOn:
@@ -28931,37 +30769,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:
@@ -28999,7 +30837,7 @@ components:
         matchingPriority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.'
           format: int32
         source:
@@ -29159,7 +30997,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The index of the icon in the given set.
           format: int32
         set:
@@ -29637,6 +31475,141 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.groupCollectionResponse'
+    assignLicenseResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.user'
+    exportDeviceAndAppManagementDataResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementData'
+    findMeetingTimesResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.meetingTimeSuggestionsResult'
+    getMailTipsResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.mailTips'
+              '@odata.nextLink':
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
+    getManagedAppDiagnosticStatusesResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.managedAppDiagnosticStatus'
+              '@odata.nextLink':
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
+    getManagedAppPoliciesResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of managedAppPolicy
+            type: object
+            properties:
+              value:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+              '@odata.nextLink':
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
+    getManagedDevicesWithAppFailuresResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: array
+                items:
+                  type: string
+                  nullable: true
+              '@odata.nextLink':
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
+    reminderViewResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.reminder'
+              '@odata.nextLink':
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
+    reprocessLicenseAssignmentResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.user'
+    revokeSignInSessionsResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: boolean
+                default: false
+                nullable: true
+            additionalProperties:
+              type: object
+    translateExchangeIdsResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.convertIdResult'
+              '@odata.nextLink':
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
     microsoft.graph.oAuth2PermissionGrantCollectionResponse:
       description: Retrieved collection
       content:
@@ -29784,6 +31757,159 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ReferenceUpdate'
+      required: true
+    assignLicenseRequestBody:
+      description: Action parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              addLicenses:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.assignedLicense'
+              removeLicenses:
+                type: array
+                items:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+            additionalProperties:
+              type: object
+      required: true
+    changePasswordRequestBody:
+      description: Action parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              currentPassword:
+                type: string
+                nullable: true
+              newPassword:
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
+      required: true
+    exportPersonalDataRequestBody:
+      description: Action parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              storageLocation:
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
+      required: true
+    findMeetingTimesRequestBody:
+      description: Action parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              attendees:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.attendeeBase'
+              locationConstraint:
+                $ref: '#/components/schemas/microsoft.graph.locationConstraint'
+              timeConstraint:
+                $ref: '#/components/schemas/microsoft.graph.timeConstraint'
+              meetingDuration:
+                pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                type: string
+                format: duration
+                nullable: true
+              maxCandidates:
+                maximum: 2147483647
+                minimum: -2147483648
+                type: number
+                format: int32
+                nullable: true
+              isOrganizerOptional:
+                type: boolean
+                default: false
+                nullable: true
+              returnSuggestionReasons:
+                type: boolean
+                default: false
+                nullable: true
+              minimumAttendeePercentage:
+                type: number
+                format: double
+                nullable: true
+            additionalProperties:
+              type: object
+      required: true
+    getMailTipsRequestBody:
+      description: Action parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              EmailAddresses:
+                type: array
+                items:
+                  type: string
+              MailTipsOptions:
+                $ref: '#/components/schemas/microsoft.graph.mailTipsType'
+            additionalProperties:
+              type: object
+      required: true
+    sendMailRequestBody:
+      description: Action parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              Message:
+                $ref: '#/components/schemas/microsoft.graph.message'
+              SaveToSentItems:
+                type: boolean
+                default: false
+                nullable: true
+            additionalProperties:
+              type: object
+      required: true
+    translateExchangeIdsRequestBody:
+      description: Action parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              InputIds:
+                type: array
+                items:
+                  type: string
+              TargetIdType:
+                $ref: '#/components/schemas/microsoft.graph.exchangeIdFormat'
+              SourceIdType:
+                $ref: '#/components/schemas/microsoft.graph.exchangeIdFormat'
+            additionalProperties:
+              type: object
+      required: true
+    wipeManagedAppRegistrationsByDeviceTagRequestBody:
+      description: Action parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              deviceTag:
+                type: string
+                nullable: true
+            additionalProperties:
+              type: object
       required: true
   securitySchemes:
     azureaadv2:
