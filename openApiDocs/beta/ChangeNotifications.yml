@@ -194,7 +194,7 @@ paths:
   '/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
     post:
       tags:
-        - subscriptions.Actions
+        - subscriptions.subscription
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
       externalDocs:

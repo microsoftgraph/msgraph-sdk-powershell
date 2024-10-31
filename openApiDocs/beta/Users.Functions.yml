@@ -9867,7 +9867,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedDevicesWithFailedOrPendingApps
       description: Retrieves the list of devices with failed or pending apps
-      operationId: user_getManagedDevicesGraphWPreFailedOrPendingApp
+      operationId: user_getManagedDevicesGraphWPreFailedGraphRPrePendingApp
       parameters:
         - name: user-id
           in: path

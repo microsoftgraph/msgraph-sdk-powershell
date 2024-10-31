@@ -1250,11 +1250,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Update externalItem
-      description: Update the properties of an externalitem.
+      summary: Create externalItem
+      description: Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -1681,7 +1681,7 @@ paths:
   '/external/connections/{externalConnection-id}/items/{externalItem-id}/microsoft.graph.externalConnectors.addActivities':
     post:
       tags:
-        - external.Actions
+        - external.externalConnection
       summary: Invoke action addActivities
       operationId: external.connection.item_addActivity
       parameters:
@@ -2157,11 +2157,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Create schema
-      description: Create a new or update an existing schema for a Microsoft Search connection.
+      summary: Update schema
+      description: Update the properties of a schema for an externalConnection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2438,7 +2438,7 @@ paths:
   '/external/industryData/dataConnectors/{industryDataConnector-id}/microsoft.graph.industryData.validate':
     post:
       tags:
-        - external.Actions
+        - external.industryDataRoot
       summary: Invoke action validate
       description: Perform validations applicable for the specific instance of the data connector.
       externalDocs:
@@ -2653,11 +2653,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundApiFlow
-      description: Update the properties of an inboundApiFlow object.
+      summary: Update inboundFileFlow
+      description: Update the properties of an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -3421,7 +3421,7 @@ paths:
   '/external/industryData/outboundProvisioningFlowSets/{outboundProvisioningFlowSet-id}/provisioningFlows/{provisioningFlow-id}/microsoft.graph.industryData.reset':
     post:
       tags:
-        - external.Actions
+        - external.industryDataRoot
       summary: Invoke action reset
       description: 'Reset a provisioningFlow. This action reprovisions all current data as if it were the initial run, and clears out the existing errors associated with the flow.'
       externalDocs:
@@ -4182,7 +4182,7 @@ paths:
   '/external/industryData/runs/{industryDataRun-id}/microsoft.graph.industryData.getStatistics()':
     get:
       tags:
-        - external.Functions
+        - external.industryDataRoot
       summary: Invoke function getStatistics
       description: Get statistics for an industryDataRun.
       externalDocs:
@@ -4225,7 +4225,7 @@ paths:
   /external/industryData/runs/microsoft.graph.industryData.getStatistics():
     get:
       tags:
-        - external.Functions
+        - external.industryDataRoot
       summary: Invoke function getStatistics
       operationId: external.industryData.run_getStatistics
       responses:
@@ -5136,7 +5136,7 @@ paths:
   /search/microsoft.graph.query:
     post:
       tags:
-        - search.Actions
+        - search.searchEntity
       summary: Invoke action query
       description: Run a specified search query. Search results are provided in the response.
       externalDocs:
@@ -5462,7 +5462,7 @@ components:
             enabledContentExperiences:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.contentExperienceType'
             ingestedItemsCount:
-              type: integer
+              type: number
               description: 'The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.'
               format: int64
               nullable: true
@@ -5596,7 +5596,7 @@ components:
           type: object
           properties:
             itemsRemaining:
-              type: integer
+              type: number
               description: 'The minimum of two values, one representing the items remaining in the connection and the other remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min ({max capacity in the connection} – {number of items in the connection}, {tenant quota} – {number of items indexed in all connections}). If the connection is not monetized, such as in a preview connector or preview content experience, then this property is simply the number of remaining items in the connection.'
               format: int64
               nullable: true
@@ -5790,6 +5790,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.industryData.outboundProvisioningFlowSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5881,7 +5882,7 @@ components:
             sortIndex:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.
               format: int32
             source:
@@ -6138,7 +6139,7 @@ components:
         from:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
           format: int32
         query:
@@ -6156,7 +6157,7 @@ components:
         size:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the page to be retrieved. The maximum value is 500. Optional.
           format: int32
         sortProperties:
@@ -6459,7 +6460,7 @@ components:
         priorityOrder:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The priority order to apply when a user has multiple RefRole codes assigned.
           format: int32
         sourceIdentifier:
@@ -6556,7 +6557,7 @@ components:
         errors:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of errors encountered by activities during this run.
           format: int32
           nullable: true
@@ -6564,7 +6565,7 @@ components:
         groups:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of active inbound groups processed during the run.
           format: int32
           nullable: true
@@ -6578,7 +6579,7 @@ components:
         memberships:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of active inbound memberships processed during the run.
           format: int32
           nullable: true
@@ -6586,7 +6587,7 @@ components:
         organizations:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of active inbound organizations processed during the run.
           format: int32
           nullable: true
@@ -6594,7 +6595,7 @@ components:
         people:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of active inbound people processed during the run.
           format: int32
           nullable: true
@@ -6608,7 +6609,7 @@ components:
         warnings:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of warnings generated by activities during this run.
           format: int32
           nullable: true
@@ -6773,7 +6774,7 @@ components:
         size:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of searchBucket resources to be returned. This isn''t required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.'
           format: int32
           nullable: true
@@ -6791,7 +6792,7 @@ components:
         limit:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
           format: int16
       additionalProperties:
@@ -6894,7 +6895,7 @@ components:
         total:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.'
           format: int32
           nullable: true
@@ -7213,7 +7214,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
           format: int32
           nullable: true
@@ -7231,7 +7232,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
           format: int32
         rules:
@@ -7385,7 +7386,7 @@ components:
         count:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of people in this role.
           format: int32
           nullable: true
@@ -7419,7 +7420,7 @@ components:
         minimumCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
           format: int32
           nullable: true
@@ -7479,7 +7480,7 @@ components:
         rank:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The rank or the order of the result.
           format: int32
           nullable: true
@@ -7497,7 +7498,7 @@ components:
         _score:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         _summary:
@@ -7637,7 +7638,7 @@ components:
         count:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
           format: int32
           nullable: true
@@ -7654,14 +7655,14 @@ components:
         length:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the length of a changed segment.
           format: int32
           nullable: true
         offset:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the offset of a changed segment.
           format: int32
           nullable: true
