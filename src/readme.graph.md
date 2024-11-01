@@ -844,5 +844,10 @@ directive:
       subject: OnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupOnPremiseAgentGroupByRef
     set:
       alias: ${verb}-Mg${subject-prefix}OnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
+  - where:
+      verb: New
+      subject: UserOnlineMeetingOrGet
+    set:
+      alias: Invoke-Mg${subject-prefix}CreateOrGetUserOnlineMeeting
       
 ```
