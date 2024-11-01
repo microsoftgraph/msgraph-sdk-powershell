@@ -50,7 +50,7 @@ $params = @{
 applicationRestrictions = @{
 	identifierUris = @{
 		nonDefaultUriAddition = @{
-			restrictForAppsCreatedAfterDateTime = "2024-01-01T10:37:00Z"
+			restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2024-01-01T10:37:00Z")
 			excludeAppsReceivingV2Tokens = $true
 			excludeSaml = $true
 		}
