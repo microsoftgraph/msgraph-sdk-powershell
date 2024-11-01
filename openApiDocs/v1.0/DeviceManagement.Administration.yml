@@ -91,32 +91,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /deviceManagement/applePushNotificationCertificate/microsoft.graph.downloadApplePushNotificationCertificateSigningRequest():
-    get:
-      tags:
-        - deviceManagement.applePushNotificationCertificate
-      summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
-      description: Download Apple push notification certificate signing request
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-downloadapplepushnotificationcertificatesigningrequest?view=graph-rest-1.0
-      operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   /deviceManagement/auditEvents:
     get:
       tags:
@@ -326,90 +300,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/deviceManagement/auditEvents/microsoft.graph.getAuditActivityTypes(category=''{category}'')':
-    get:
-      tags:
-        - deviceManagement.auditEvent
-      summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.auditEvent_getAuditActivityType
-      parameters:
-        - name: category
-          in: path
-          description: 'Usage: category=''{category}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  /deviceManagement/auditEvents/microsoft.graph.getAuditCategories():
-    get:
-      tags:
-        - deviceManagement.auditEvent
-      summary: Invoke function getAuditCategories
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0
-      operationId: deviceManagement.auditEvent_getAuditCategory
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/complianceManagementPartners:
     get:
       tags:
@@ -814,31 +704,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/deviceManagementPartners/{deviceManagementPartner-id}/microsoft.graph.terminate':
-    post:
-      tags:
-        - deviceManagement.deviceManagementPartner
-      summary: Invoke action terminate
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-terminate?view=graph-rest-1.0
-      operationId: deviceManagement.deviceManagementPartner_terminate
-      parameters:
-        - name: deviceManagementPartner-id
-          in: path
-          description: The unique identifier of deviceManagementPartner
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementPartner
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/deviceManagementPartners/$count:
     get:
       tags:
@@ -1048,43 +913,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector-id}/microsoft.graph.sync':
-    post:
-      tags:
-        - deviceManagement.deviceManagementExchangeConnector
-      summary: Invoke action sync
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-sync?view=graph-rest-1.0
-      operationId: deviceManagement.exchangeConnector_sync
-      parameters:
-        - name: deviceManagementExchangeConnector-id
-          in: path
-          description: The unique identifier of deviceManagementExchangeConnector
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementExchangeConnector
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                syncType:
-                  $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnectorSyncType'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/exchangeConnectors/$count:
     get:
       tags:
@@ -1712,56 +1540,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.beginOnboarding':
-    post:
-      tags:
-        - deviceManagement.remoteAssistancePartner
-      summary: Invoke action beginOnboarding
-      description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-beginonboarding?view=graph-rest-1.0
-      operationId: deviceManagement.remoteAssistancePartner_beginOnboarding
-      parameters:
-        - name: remoteAssistancePartner-id
-          in: path
-          description: The unique identifier of remoteAssistancePartner
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: remoteAssistancePartner
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.disconnect':
-    post:
-      tags:
-        - deviceManagement.remoteAssistancePartner
-      summary: Invoke action disconnect
-      description: A request to remove the active TeamViewer connector
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-disconnect?view=graph-rest-1.0
-      operationId: deviceManagement.remoteAssistancePartner_disconnect
-      parameters:
-        - name: remoteAssistancePartner-id
-          in: path
-          description: The unique identifier of remoteAssistancePartner
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: remoteAssistancePartner
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/remoteAssistancePartners/$count:
     get:
       tags:
@@ -2325,11 +2103,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: Get roleDefinition
-      description: Read properties and relationships of the roleDefinition object.
+      summary: Get deviceAndAppManagementRoleDefinition
+      description: Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-get?view=graph-rest-1.0
       operationId: deviceManagement_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2373,11 +2151,11 @@ paths:
     patch:
       tags:
         - deviceManagement.roleDefinition
-      summary: Update deviceAndAppManagementRoleDefinition
-      description: Update the properties of a deviceAndAppManagementRoleDefinition object.
+      summary: Update roleDefinition
+      description: Update the properties of a roleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2408,11 +2186,11 @@ paths:
     delete:
       tags:
         - deviceManagement.roleDefinition
-      summary: Delete deviceAndAppManagementRoleDefinition
-      description: Deletes a deviceAndAppManagementRoleDefinition.
+      summary: Delete roleDefinition
+      description: Deletes a roleDefinition.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -4024,46 +3802,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /deviceManagement/virtualEndpoint/auditEvents/microsoft.graph.getAuditActivityTypes():
-    get:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke function getAuditActivityTypes
-      description: Get audit activity types by tenant ID.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/virtualEndpoint/cloudPCs:
     get:
       tags:
@@ -4247,157 +3985,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.endGracePeriod':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action endGracePeriod
-      description: End the grace period for a specific cloudPC object. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before deprovisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_endGracePeriod
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.reboot':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action reboot
-      description: Reboot a specific cloudPC object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_reboot
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.rename':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action rename
-      description: Rename a specific cloudPC object. Use this API to update the displayName of a Cloud PC entity.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_rename
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                displayName:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.restore':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action restore
-      description: Restore a specific cloudPC object to a previous state from a snapshot. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_restore
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                cloudPcSnapshotId:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action troubleshoot
-      description: Troubleshoot a specific cloudPC object. Use this API to check the health status of the Cloud PC and the session host.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_troubleshoot
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/cloudPCs/$count:
     get:
       tags:
@@ -4617,45 +4204,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages():
-    get:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke function getSourceImages
-      description: Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.cloudPcSourceDeviceImage'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/virtualEndpoint/galleryImages:
     get:
       tags:
@@ -5048,31 +4596,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection-id}/microsoft.graph.runHealthChecks':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action runHealthChecks
-      description: 'Run health checks on the cloudPcOnPremisesConnection object. It triggers a new health check for the cloudPcOnPremisesConnection (../resources/cloudpconpremisesconnection.md) object and changes the healthCheckStatus and [healthCheckStatusDetail properties when check finished.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.onPremisesConnection_runHealthCheck
-      parameters:
-        - name: cloudPcOnPremisesConnection-id
-          in: path
-          description: The unique identifier of cloudPcOnPremisesConnection
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPcOnPremisesConnection
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/onPremisesConnections/$count:
     get:
       tags:
@@ -5902,45 +5425,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/microsoft.graph.assign':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action assign
-      description: Assign a cloudPcProvisioningPolicy to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_assign
-      parameters:
-        - name: cloudPcProvisioningPolicy-id
-          in: path
-          description: The unique identifier of cloudPcProvisioningPolicy
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPcProvisioningPolicy
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                assignments:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/provisioningPolicies/$count:
     get:
       tags:
@@ -6390,45 +5874,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}/microsoft.graph.assign':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action assign
-      description: Assign a cloudPcUserSetting to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.userSetting_assign
-      parameters:
-        - name: cloudPcUserSetting-id
-          in: path
-          description: The unique identifier of cloudPcUserSetting
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPcUserSetting
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                assignments:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/userSettings/$count:
     get:
       tags:
@@ -6675,23 +6120,6 @@ components:
           additionalProperties:
             type: object
           description: Entity which represents a connection to an Exchange environment.
-    microsoft.graph.deviceManagementExchangeConnectorSyncType:
-      title: deviceManagementExchangeConnectorSyncType
-      enum:
-        - fullSync
-        - deltaSync
-      type: string
-      description: The type of Exchange Connector sync requested.
-      x-ms-enum:
-        name: deviceManagementExchangeConnectorSyncType
-        modelAsString: false
-        values:
-          - value: fullSync
-            description: Discover all the device in Exchange.
-            name: fullSync
-          - value: deltaSync
-            description: Discover only the device in Exchange which have updated during the delta sync window.
-            name: deltaSync
     microsoft.graph.iosUpdateDeviceStatus:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6785,7 +6213,7 @@ components:
             partnerUnresponsivenessThresholdInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
               format: int32
             partnerUnsupportedOsVersionBlocked:
@@ -6982,7 +6410,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
               format: int32
             acceptanceStatuses:
@@ -7014,7 +6442,7 @@ components:
             acceptedVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Most recent version number of the T&C accepted by the user.
               format: int32
             userDisplayName:
@@ -7244,27 +6672,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.cloudPcSourceDeviceImage:
-      title: cloudPcSourceDeviceImage
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The display name for the source image. Read-only.
-          nullable: true
-        resourceId:
-          type: string
-          description: 'The fully qualified unique identifier (ID) of the source image resource in Azure. The ID format is: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}''. Read-only.'
-        subscriptionDisplayName:
-          type: string
-          description: The display name of the subscription that hosts the source image. Read-only.
-          nullable: true
-        subscriptionId:
-          type: string
-          description: The unique identifier (ID) of the subscription that hosts the source image. Read-only.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.cloudPcGalleryImage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7298,7 +6705,7 @@ components:
             sizeInGB:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: 'Indicates the size of this image in gigabytes. For example, 64. Read-only.'
               format: int32
               nullable: true
@@ -7414,7 +6821,7 @@ components:
             gracePeriodInHours:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
               format: int32
               nullable: true
@@ -7535,7 +6942,7 @@ components:
             deviceEnrollmentLimit:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
             displayName:
@@ -7555,7 +6962,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -7604,9 +7011,6 @@ components:
                 type: string
                 nullable: true
               description: A list for the user to describe their interests. Returned only on $select.
-            isManagementRestricted:
-              type: boolean
-              nullable: true
             isResourceAccount:
               type: boolean
               description: Don't use – reserved for future use.
@@ -8016,8 +7420,6 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
-            solutions:
-              $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
             sponsors:
               type: array
               items:
@@ -8036,7 +7438,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -8920,15 +8321,15 @@ components:
       properties:
         capabilityStatus:
           type: string
-          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
+          description: 'For example, ''Enabled''.'
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn''t provisioned and is in an error state.PendingInput - The service isn''t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn''t activated in the tenant.'
+          description: 'For example, ''Success''.'
           nullable: true
         service:
           type: string
-          description: 'The name of the service; for example, ''AccessControlS2S''.'
+          description: 'The name of the service; for example, ''AccessControlS2S'''
           nullable: true
       additionalProperties:
         type: object
@@ -9008,7 +8409,7 @@ components:
               description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
             contentUrl:
               type: string
               description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
@@ -9434,7 +8835,7 @@ components:
             reminderMinutesBeforeStart:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
@@ -9823,7 +9224,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -10147,7 +9548,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -10166,14 +9567,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -10390,7 +9791,7 @@ components:
               format: date-time
               readOnly: true
             freeStorageSpaceInBytes:
-              type: number
+              type: integer
               description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
@@ -10474,7 +9875,7 @@ components:
               nullable: true
               readOnly: true
             physicalMemoryInBytes:
-              type: number
+              type: integer
               description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
@@ -10504,7 +9905,7 @@ components:
               nullable: true
               readOnly: true
             totalStorageSpaceInBytes:
-              type: number
+              type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
               readOnly: true
@@ -10957,14 +10358,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
@@ -11047,16 +10448,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSetting'
               x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.userSolutionRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: userSolutionRoot
-          type: object
-          properties:
-            workingTimeSchedule:
-              $ref: '#/components/schemas/microsoft.graph.workingTimeSchedule'
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -11717,11 +11108,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printer'
           additionalProperties:
             type: object
-    microsoft.graph.Json:
-      title: Json
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.status:
       title: status
       enum:
@@ -11742,7 +11128,7 @@ components:
           description: Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
           nullable: true
         content:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
         description:
           type: string
           description: 'Optional. Longer text description of the user''s unique activity (example: document name, first sentence, and/or metadata)'
@@ -11761,7 +11147,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
@@ -11922,7 +11308,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -11992,7 +11377,7 @@ components:
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
@@ -12343,7 +11728,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -12703,12 +12088,12 @@ components:
       type: object
       properties:
         deleted:
-          type: number
+          type: integer
           description: 'Total space consumed by files in the recycle bin, in bytes. Read-only.'
           format: int64
           nullable: true
         remaining:
-          type: number
+          type: integer
           description: 'Total space remaining before reaching the quota limit, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -12719,12 +12104,12 @@ components:
         storagePlanInformation:
           $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
         total:
-          type: number
+          type: integer
           description: 'Total allowed storage space, in bytes. Read-only.'
           format: int64
           nullable: true
         used:
-          type: number
+          type: integer
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -12821,7 +12206,7 @@ components:
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             size:
-              type: number
+              type: integer
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
@@ -12938,7 +12323,7 @@ components:
             completionPercentage:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The percentage completion value of the course activity. Optional.
               format: int32
               nullable: true
@@ -13217,7 +12602,7 @@ components:
             percentageComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
@@ -13231,7 +12616,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -13471,21 +12855,21 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Count of owners in a team.
           format: int32
           nullable: true
@@ -13584,7 +12968,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
             assignedLicenses:
               type: array
               items:
@@ -13642,9 +13026,6 @@ components:
             isAssignableToRole:
               type: boolean
               description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can''t be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
-              nullable: true
-            isManagementRestricted:
-              type: boolean
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -13746,7 +13127,7 @@ components:
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
@@ -13832,7 +13213,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group who can be users or service principals. Limited to 100 owners. Nullable. If this property isn''t specified when creating a Microsoft 365 group the calling user (admin or non-admin) is automatically assigned as the group owner. A non-admin user can''t explicitly add themselves to this collection when they''re creating the group. For more information, see the related known issue. For security groups, the admin user isn''t automatically added to this collection. For more information, see the related known issue. Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property isn''t specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -13889,7 +13270,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft Entra group.
     microsoft.graph.teamsAsyncOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13899,7 +13279,7 @@ components:
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             createdDateTime:
@@ -14047,7 +13427,7 @@ components:
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of users assigned to the tag.
               format: int32
               nullable: true
@@ -14127,7 +13507,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -14456,11 +13836,11 @@ components:
           description: Informational attribute that identifies the HASH algorithm that was used by TPM
           nullable: true
         resetCount:
-          type: number
+          type: integer
           description: The number of times a PC device has hibernated or resumed
           format: int64
         restartCount:
-          type: number
+          type: integer
           description: The number of times a PC device has rebooted
           format: int64
         safeMode:
@@ -14795,7 +14175,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -14807,7 +14187,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -14828,7 +14208,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -14840,7 +14220,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -14887,7 +14267,6 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
-              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -15114,7 +14493,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -15123,7 +14502,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -15547,7 +14926,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: 'Number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -15566,7 +14945,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -15607,7 +14986,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: 'Percentage of task completion. When set to 100, the task is considered completed.'
               format: int32
               nullable: true
@@ -15620,14 +14999,14 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: 'Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2, 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Additionally, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -15736,13 +15115,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
               description: A collection of setting values for a given windowsSetting.
               x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.workingTimeSchedule:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: workingTimeSchedule
-          type: object
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:
@@ -16100,7 +15472,7 @@ components:
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: For internal use only.
               format: int32
               nullable: true
@@ -16123,9 +15495,6 @@ components:
             isManaged:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
-              nullable: true
-            isManagementRestricted:
-              type: boolean
               nullable: true
             isRooted:
               type: boolean
@@ -16359,7 +15728,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -16374,13 +15743,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -16400,7 +15769,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -16597,7 +15966,7 @@ components:
         id:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
@@ -16649,19 +16018,11 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
           format: date-time
-        displayName:
-          type: string
-          description: The name of the reaction.
-          nullable: true
-        reactionContentUrl:
-          type: string
-          description: The hosted content URL for the custom reaction type.
-          nullable: true
         reactionType:
           type: string
-          description: 'The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.'
+          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -16770,7 +16131,7 @@ components:
           description: The performing artist for the audio file.
           nullable: true
         bitrate:
-          type: number
+          type: integer
           description: Bitrate expressed in kbps.
           format: int64
           nullable: true
@@ -16785,19 +16146,19 @@ components:
         disc:
           maximum: 32767
           minimum: -32768
-          type: number
+          type: integer
           description: The number of the disc this audio file came from.
           format: int16
           nullable: true
         discCount:
           maximum: 32767
           minimum: -32768
-          type: number
+          type: integer
           description: The total number of discs in this album.
           format: int16
           nullable: true
         duration:
-          type: number
+          type: integer
           description: 'Duration of the audio file, expressed in milliseconds'
           format: int64
           nullable: true
@@ -16820,21 +16181,21 @@ components:
         track:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The number of the track on the original disc for this audio file.
           format: int32
           nullable: true
         trackCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The total number of tracks on the original disc for this audio file.
           format: int32
           nullable: true
         year:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The year the audio file was recorded.
           format: int32
           nullable: true
@@ -16849,7 +16210,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -16911,7 +16272,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -16926,14 +16287,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Optional. Height of the image, in pixels. Read-only.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
           nullable: true
@@ -17023,14 +16384,14 @@ components:
         iso:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
         orientation:
           maximum: 32767
           minimum: -32768
-          type: number
+          type: integer
           description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
@@ -17103,7 +16464,7 @@ components:
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         size:
-          type: number
+          type: integer
           description: Size of the remote item. Read-only.
           format: int64
           nullable: true
@@ -17168,14 +16529,14 @@ components:
         audioBitsPerSample:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Number of audio bits per sample.
           format: int32
           nullable: true
         audioChannels:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Number of audio channels.
           format: int32
           nullable: true
@@ -17186,19 +16547,19 @@ components:
         audioSamplesPerSecond:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Number of audio samples per second.
           format: int32
           nullable: true
         bitrate:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Bit rate of the video in bits per second.
           format: int32
           nullable: true
         duration:
-          type: number
+          type: integer
           description: Duration of the file in milliseconds.
           format: int64
           nullable: true
@@ -17214,14 +16575,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Height of the video, in pixels.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
@@ -17373,7 +16734,7 @@ components:
               format: base64url
               nullable: true
             size:
-              type: number
+              type: integer
               description: Indicates the size of the content stream for this version of the item.
               format: int64
               nullable: true
@@ -17754,14 +17115,14 @@ components:
         linesForEditing:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The size of the text box.
           format: int32
           nullable: true
         maxLength:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The maximum number of characters for the value.
           format: int32
           nullable: true
@@ -17883,7 +17244,7 @@ components:
         position:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
@@ -18094,7 +17455,6 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
-              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -18137,7 +17497,7 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Count of guests in a channel.
           format: int32
           nullable: true
@@ -18148,14 +17508,14 @@ components:
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Count of owners in a channel.
           format: int32
           nullable: true
@@ -18248,7 +17608,7 @@ components:
             groupLifetimeInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
@@ -18852,7 +18212,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: number
+          type: integer
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -18906,7 +18266,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: number
+          type: integer
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -18956,8 +18316,6 @@ components:
         - '-INF'
         - INF
         - NaN
-      type: string
-      nullable: true
     microsoft.graph.appLogUploadState:
       title: appLogUploadState
       enum:
@@ -19148,7 +18506,7 @@ components:
             detectionCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Number of times the malware is detected
               format: int32
               nullable: true
@@ -19449,7 +18807,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -19738,25 +19096,25 @@ components:
           type: object
           properties:
             deleted:
-              type: number
+              type: integer
               format: int64
               nullable: true
             manageWebUrl:
               type: string
               nullable: true
             remaining:
-              type: number
+              type: integer
               format: int64
               nullable: true
             state:
               type: string
               nullable: true
             total:
-              type: number
+              type: integer
               format: int64
               nullable: true
             used:
-              type: number
+              type: integer
               format: int64
               nullable: true
             services:
@@ -19940,7 +19298,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: number
+            type: integer
             format: int32
             nullable: true
           description: A list of supported bottom margins(in microns) for the printer.
@@ -19966,7 +19324,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: number
+            type: integer
             format: int32
             nullable: true
           description: The list of print resolutions in DPI that are supported by the printer.
@@ -20004,7 +19362,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: number
+            type: integer
             format: int32
             nullable: true
           description: A list of supported left margins(in microns) for the printer.
@@ -20047,7 +19405,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: number
+            type: integer
             format: int32
             nullable: true
           description: Supported number of Input Pages to impose upon a single Impression.
@@ -20061,7 +19419,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: number
+            type: integer
             format: int32
             nullable: true
           description: A list of supported right margins(in microns) for the printer.
@@ -20079,7 +19437,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: number
+            type: integer
             format: int32
             nullable: true
           description: A list of supported top margins(in microns) for the printer.
@@ -20098,14 +19456,14 @@ components:
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The default number of copies printed per job.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The default resolution in DPI to use when printing the job.
           format: int32
           nullable: true
@@ -20147,7 +19505,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The default number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -20164,7 +19522,7 @@ components:
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'The altitude, in meters, that the printer is located at.'
           format: int32
           nullable: true
@@ -20354,7 +19712,7 @@ components:
         type:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: For internal use only.
           format: int32
           nullable: true
@@ -20430,10 +19788,6 @@ components:
       title: teamsAppAuthorization
       type: object
       properties:
-        clientAppId:
-          type: string
-          description: The registration ID of the Microsoft Entra app ID associated with the teamsApp.
-          nullable: true
         requiredPermissionSet:
           $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
       additionalProperties:
@@ -20694,7 +20048,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'The height of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -20709,7 +20063,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'The width of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -20794,7 +20148,7 @@ components:
               description: 'The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'The formula that the name is defined to refer to. For example, =Sheet14!$B$2:$H$12 and =4.75. Read-only.'
             visible:
               type: boolean
               description: Indicates whether the object is visible.
@@ -20888,7 +20242,7 @@ components:
             position:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The zero-based position of the worksheet within the workbook.
               format: int32
             visibility:
@@ -20937,14 +20291,14 @@ components:
         actionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The number of times the action took place. Read-only.
           format: int32
           nullable: true
         actorCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The number of distinct actors that performed the action. Read-only.
           format: int32
           nullable: true
@@ -21333,7 +20687,7 @@ components:
             openSlotCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Count of the number of slots for the given open shift.
               format: int32
           additionalProperties:
@@ -21419,14 +20773,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -21874,7 +21228,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -22079,7 +21433,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -22174,12 +21528,12 @@ components:
       type: object
       properties:
         end:
-          type: number
+          type: integer
           description: The inclusive upper bound of the integer range.
           format: int64
           nullable: true
         start:
-          type: number
+          type: integer
           description: The inclusive lower bound of the integer range.
           format: int64
           nullable: true
@@ -23162,14 +22516,14 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The number of copies that should be printed. Read-only.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
           format: int32
           nullable: true
@@ -23216,7 +22570,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -23276,7 +22630,7 @@ components:
               description: The document's name. Read-only.
               nullable: true
             size:
-              type: number
+              type: integer
               description: The document's size in bytes. Read-only.
               format: int64
           additionalProperties:
@@ -23415,7 +22769,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
@@ -23423,7 +22777,7 @@ components:
               description: The name of the table column.
               nullable: true
             values:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'TRepresents the raw values of the specified range. The data returned could be of type string, number, or a Boolean. Cell that contain an error will return the error string.'
             filter:
               $ref: '#/components/schemas/microsoft.graph.workbookFilter'
           additionalProperties:
@@ -23437,11 +22791,11 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: 'The raw values of the specified range. The data returned could be of type string, number, or a Boolean. Any cell that contain an error will return the error string.'
           additionalProperties:
             type: object
     microsoft.graph.workbookTableSort:
@@ -23473,12 +22827,10 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
-              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
-              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -23487,12 +22839,10 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
-              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
-              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
@@ -23682,7 +23032,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -23713,7 +23063,7 @@ components:
               type: string
               nullable: true
             used:
-              type: number
+              type: integer
               format: int64
               nullable: true
           additionalProperties:
@@ -23725,28 +23075,28 @@ components:
         bottom:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The margin in microns from the bottom edge.
           format: int32
           nullable: true
         left:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The margin in microns from the left edge.
           format: int32
           nullable: true
         right:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The margin in microns from the right edge.
           format: int32
           nullable: true
         top:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The margin in microns from the top edge.
           format: int32
           nullable: true
@@ -23847,7 +23197,7 @@ components:
         key:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).'
           format: int32
         sortOn:
@@ -23991,37 +23341,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:
@@ -24078,7 +23428,7 @@ components:
           type: string
           description: 'An operator in a cell; for example, =, >, <, <=, or <>.'
         values:
-          $ref: '#/components/schemas/microsoft.graph.Json'
+          description: The values that appear in the cell.
       additionalProperties:
         type: object
     microsoft.graph.workbookIcon:
@@ -24088,7 +23438,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The index of the icon in the given set.
           format: int32
         set:
@@ -24103,13 +23453,13 @@ components:
           type: object
           properties:
             majorUnit:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
             maximum:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
             minimum:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
             minorUnit:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxisFormat'
             majorGridlines:
@@ -24203,7 +23553,7 @@ components:
           type: object
           properties:
             value:
-              $ref: '#/components/schemas/microsoft.graph.Json'
+              description: The value of a chart point. Read-only.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartPointFormat'
           additionalProperties:
