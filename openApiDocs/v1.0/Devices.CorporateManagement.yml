@@ -14,7 +14,7 @@ paths:
       description: Read properties and relationships of the deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-deviceappmanagement-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetDeviceAppManagement
       parameters:
         - name: $select
@@ -54,7 +54,7 @@ paths:
       description: Update the properties of a deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-unlock-deviceappmanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-policyset-deviceappmanagement-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateDeviceAppManagement
       requestBody:
         description: New property values
@@ -2252,11 +2252,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: List managedAppConfigurations
-      description: List properties and relationships of the managedAppConfiguration objects.
+      summary: List targetedManagedAppProtections
+      description: List properties and relationships of the targetedManagedAppProtection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2329,11 +2329,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: Get windowsInformationProtection
-      description: Read properties and relationships of the windowsInformationProtection object.
+      summary: Get managedAppConfiguration
+      description: Read properties and relationships of the managedAppConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappconfiguration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppPolicy
       parameters:
         - name: managedAppPolicy-id
@@ -2434,7 +2434,7 @@ paths:
   '/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.managedAppPolicy
       summary: Invoke action targetApps
       description: Not yet documented
       externalDocs:
@@ -2488,11 +2488,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: List androidManagedAppRegistrations
-      description: List properties and relationships of the androidManagedAppRegistration objects.
+      summary: List managedAppRegistrations
+      description: List properties and relationships of the managedAppRegistration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppRegistration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2892,7 +2892,7 @@ paths:
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.managedAppRegistration
       summary: Invoke action targetApps
       description: Not yet documented
       externalDocs:
@@ -3179,7 +3179,7 @@ paths:
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.managedAppRegistration
       summary: Invoke action targetApps
       description: Not yet documented
       externalDocs:
@@ -3520,7 +3520,7 @@ paths:
   /deviceAppManagement/managedAppRegistrations/microsoft.graph.getUserIdsWithFlaggedAppRegistration():
     get:
       tags:
-        - deviceAppManagement.Functions
+        - deviceAppManagement.managedAppRegistration
       summary: Invoke function getUserIdsWithFlaggedAppRegistration
       description: Not yet documented
       externalDocs:
@@ -3758,11 +3758,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: List iosVppEBooks
-      description: List properties and relationships of the iosVppEBook objects.
+      summary: List managedEBooks
+      description: List properties and relationships of the managedEBook objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebook-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedEBook
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4015,11 +4015,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Create managedEBookAssignment
-      description: Create a new managedEBookAssignment object.
+      summary: Create iosVppEBookAssignment
+      description: Create a new iosVppEBookAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-create?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_CreateAssignment
       parameters:
         - name: managedEBook-id
@@ -4051,11 +4051,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get managedEBookAssignment
-      description: Read properties and relationships of the managedEBookAssignment object.
+      summary: Get iosVppEBookAssignment
+      description: Read properties and relationships of the iosVppEBookAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-get?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_GetAssignment
       parameters:
         - name: managedEBook-id
@@ -4107,11 +4107,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Update managedEBookAssignment
-      description: Update the properties of a managedEBookAssignment object.
+      summary: Update iosVppEBookAssignment
+      description: Update the properties of a iosVppEBookAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-update?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_UpdateAssignment
       parameters:
         - name: managedEBook-id
@@ -4150,11 +4150,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Delete iosVppEBookAssignment
-      description: Deletes a iosVppEBookAssignment.
+      summary: Delete managedEBookAssignment
+      description: Deletes a managedEBookAssignment.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_DeleteAssignment
       parameters:
         - name: managedEBook-id
@@ -4578,7 +4578,7 @@ paths:
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/microsoft.graph.assign':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.managedEBook
       summary: Invoke action assign
       description: Not yet documented
       externalDocs:
@@ -6106,7 +6106,7 @@ paths:
   /deviceAppManagement/microsoft.graph.syncMicrosoftStoreForBusinessApps:
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.deviceAppManagement
       summary: Invoke action syncMicrosoftStoreForBusinessApps
       description: Syncs Intune account with Microsoft Store For Business
       externalDocs:
@@ -7152,7 +7152,7 @@ paths:
   '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/microsoft.graph.assign':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Invoke action assign
       description: Not yet documented
       externalDocs:
@@ -7574,11 +7574,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: List managedMobileLobApps
-      description: List properties and relationships of the managedMobileLobApp objects.
+      summary: List iosiPadOSWebClips
+      description: List properties and relationships of the iosiPadOSWebClip objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managedmobilelobapp-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-iosipadoswebclip-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileApp
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7655,11 +7655,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get managedApp
-      description: Read properties and relationships of the managedApp object.
+      summary: Get androidLobApp
+      description: Read properties and relationships of the androidLobApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managedapp-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-androidlobapp-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileApp
       parameters:
         - name: mobileApp-id
@@ -7703,11 +7703,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Update managedAndroidStoreApp
-      description: Update the properties of a managedAndroidStoreApp object.
+      summary: Update webApp
+      description: Update the properties of a webApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-webapp-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateMobileApp
       parameters:
         - name: mobileApp-id
@@ -7738,11 +7738,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Delete androidStoreApp
-      description: Deletes a androidStoreApp.
+      summary: Delete iosStoreApp
+      description: Deletes a iosStoreApp.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-androidstoreapp-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-iosstoreapp-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMobileApp
       parameters:
         - name: mobileApp-id
@@ -9346,7 +9346,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.androidLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.androidLobApp.contentVersion.file_commit
@@ -9396,7 +9396,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.androidLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.androidLobApp.contentVersion.file_renewUpload
@@ -9906,7 +9906,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.assign':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action assign
       operationId: deviceAppManagement.mobileApp_assign
       parameters:
@@ -11125,7 +11125,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.iosLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.iosLobApp.contentVersion.file_commit
@@ -11175,7 +11175,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.iosLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.iosLobApp.contentVersion.file_renewUpload
@@ -13289,7 +13289,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.macOSDmgApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.macOSDmgApp.contentVersion.file_commit
@@ -13339,7 +13339,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.macOSDmgApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.macOSDmgApp.contentVersion.file_renewUpload
@@ -14613,7 +14613,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.macOSLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.macOSLobApp.contentVersion.file_commit
@@ -14663,7 +14663,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.macOSLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.macOSLobApp.contentVersion.file_renewUpload
@@ -15937,7 +15937,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.managedAndroidLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.managedAndroidLobApp.contentVersion.file_commit
@@ -15987,7 +15987,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.managedAndroidLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.managedAndroidLobApp.contentVersion.file_renewUpload
@@ -17261,7 +17261,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.managedIOSLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.managedIOSLobApp.contentVersion.file_commit
@@ -17311,7 +17311,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.managedIOSLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.managedIOSLobApp.contentVersion.file_renewUpload
@@ -18585,7 +18585,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.managedMobileLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.managedMobileLobApp.contentVersion.file_commit
@@ -18635,7 +18635,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.managedMobileLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.managedMobileLobApp.contentVersion.file_renewUpload
@@ -20329,7 +20329,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.win32LobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.win32LobApp.contentVersion.file_commit
@@ -20379,7 +20379,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.win32LobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.win32LobApp.contentVersion.file_renewUpload
@@ -21653,7 +21653,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.windowsAppX/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.windowsAppX.contentVersion.file_commit
@@ -21703,7 +21703,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.windowsAppX/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.windowsAppX.contentVersion.file_renewUpload
@@ -22977,7 +22977,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.windowsMobileMSI/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.windowsMobileMSI.contentVersion.file_commit
@@ -23027,7 +23027,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.windowsMobileMSI/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.windowsMobileMSI.contentVersion.file_renewUpload
@@ -24541,7 +24541,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.windowsUniversalAppX/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.commit':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action commit
       description: Commits a file of a given app.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.windowsUniversalAppX.contentVersion.file_commit
@@ -24591,7 +24591,7 @@ paths:
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.windowsUniversalAppX/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/microsoft.graph.renewUpload':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.mobileApp
       summary: Invoke action renewUpload
       description: Renews the SAS URI for an application file upload.
       operationId: deviceAppManagement.mobileApp.microsoft.graph.windowsUniversalAppX.contentVersion.file_renewUpload
@@ -26917,7 +26917,7 @@ paths:
   '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/microsoft.graph.assign':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.targetedManagedAppConfiguration
       summary: Invoke action assign
       description: Not yet documented
       externalDocs:
@@ -26956,7 +26956,7 @@ paths:
   '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/microsoft.graph.targetApps':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.targetedManagedAppConfiguration
       summary: Invoke action targetApps
       description: Not yet documented
       externalDocs:
@@ -27206,7 +27206,7 @@ paths:
   '/deviceAppManagement/vppTokens/{vppToken-id}/microsoft.graph.syncLicenses':
     post:
       tags:
-        - deviceAppManagement.Actions
+        - deviceAppManagement.vppToken
       summary: Invoke action syncLicenses
       description: Syncs licenses associated with a specific appleVolumePurchaseProgramToken
       externalDocs:
@@ -28914,6 +28914,104 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/managedDevices/{managedDevice-id}/deviceCategory/$ref':
+    get:
+      tags:
+        - users.managedDevice
+      summary: Get ref of deviceCategory from users
+      description: Device category
+      operationId: user.managedDevice_GetDeviceCategoryGraphBPreRef
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.managedDevice
+      summary: Update the ref of navigation property deviceCategory in users
+      operationId: user.managedDevice_SetDeviceCategoryGraphBPreRef
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        $ref: '#/components/requestBodies/refPutBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.managedDevice
+      summary: Delete ref of navigation property deviceCategory for users
+      operationId: user.managedDevice_DeleteDeviceCategoryGraphBPreRef
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/managedDevices/{managedDevice-id}/deviceCompliancePolicyStates':
     get:
       tags:
@@ -29748,6 +29846,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.createDownloadUrl':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action createDownloadUrl
+      operationId: user.managedDevice.logCollectionRequest_createDownloadUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: deviceLogCollectionResponse-id
+          in: path
+          description: The unique identifier of deviceLogCollectionResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceLogCollectionResponse
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/managedDevices/{managedDevice-id}/logCollectionRequests/$count':
     get:
       tags:
@@ -29778,6 +29923,676 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-bypassactivationlock?view=graph-rest-1.0
+      operationId: user.managedDevice_bypassActivationLock
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.cleanWindowsDevice':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-cleanwindowsdevice?view=graph-rest-1.0
+      operationId: user.managedDevice_cleanWindowsDevice
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keepUserData:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-deleteuserfromsharedappledevice?view=graph-rest-1.0
+      operationId: user.managedDevice_deleteUserFromSharedAppleDevice
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.disableLostMode':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action disableLostMode
+      description: Disable lost mode
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-disablelostmode?view=graph-rest-1.0
+      operationId: user.managedDevice_disableLostMode
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action locateDevice
+      description: Locate a device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-locatedevice?view=graph-rest-1.0
+      operationId: user.managedDevice_locateDevice
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.logoutSharedAppleDeviceActiveUser':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-logoutsharedappledeviceactiveuser?view=graph-rest-1.0
+      operationId: user.managedDevice_logoutSharedAppleDeviceActiveUser
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.rebootNow':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action rebootNow
+      description: Reboot device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-rebootnow?view=graph-rest-1.0
+      operationId: user.managedDevice_rebootNow
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.recoverPasscode':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action recoverPasscode
+      description: Recover passcode
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-recoverpasscode?view=graph-rest-1.0
+      operationId: user.managedDevice_recoverPasscode
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.remoteLock':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action remoteLock
+      description: Remote lock
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-remotelock?view=graph-rest-1.0
+      operationId: user.managedDevice_remoteLock
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteAssistance':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-requestremoteassistance?view=graph-rest-1.0
+      operationId: user.managedDevice_requestRemoteAssistance
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.resetPasscode':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action resetPasscode
+      description: Reset passcode
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-resetpasscode?view=graph-rest-1.0
+      operationId: user.managedDevice_resetPasscode
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.retire':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action retire
+      description: Retire a device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-retire?view=graph-rest-1.0
+      operationId: user.managedDevice_retire
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.shutDown':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action shutDown
+      description: Shut down device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-shutdown?view=graph-rest-1.0
+      operationId: user.managedDevice_shutDown
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.syncDevice':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action syncDevice
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-syncdevice?view=graph-rest-1.0
+      operationId: user.managedDevice_syncDevice
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.updateWindowsDeviceAccount':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action updateWindowsDeviceAccount
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-updatewindowsdeviceaccount?view=graph-rest-1.0
+      operationId: user.managedDevice_updateWindowsDeviceAccount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateWindowsDeviceAccountActionParameter:
+                  $ref: '#/components/schemas/microsoft.graph.updateWindowsDeviceAccountActionParameter'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderScan':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action windowsDefenderScan
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderscan?view=graph-rest-1.0
+      operationId: user.managedDevice_windowsDefenderScan
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quickScan:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderUpdateSignatures':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action windowsDefenderUpdateSignatures
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderupdatesignatures?view=graph-rest-1.0
+      operationId: user.managedDevice_windowsDefenderUpdateSignature
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.wipe':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action wipe
+      description: Wipe a device
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-wipe?view=graph-rest-1.0
+      operationId: user.managedDevice_wipe
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keepEnrollmentData:
+                  type: boolean
+                  default: false
+                  nullable: true
+                keepUserData:
+                  type: boolean
+                  default: false
+                  nullable: true
+                macOsUnlockCode:
+                  type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/managedDevices/{managedDevice-id}/users':
     get:
       tags:
@@ -30412,7 +31227,7 @@ components:
             deployedAppCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of apps to which the current policy is deployed.
               format: int32
             disableAppEncryptionIfDeviceEncryptionIsEnabled:
@@ -30478,7 +31293,7 @@ components:
             configurationDeployedUserCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Not yet documented
               format: int32
             configurationDeploymentSummaryPerApp:
@@ -30518,7 +31333,7 @@ components:
             deployedAppCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of apps to which the current policy is deployed.
               format: int32
             disableAppEncryptionIfDeviceEncryptionIsEnabled:
@@ -30571,7 +31386,7 @@ components:
             deployedAppCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of apps to which the current policy is deployed.
               format: int32
             faceIdBlocked:
@@ -30868,37 +31683,37 @@ components:
             failedDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of Devices that have failed to install this book.
               format: int32
             failedUserCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of Users that have 1 or more device that failed to install this book.
               format: int32
             installedDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of Devices that have successfully installed this book.
               format: int32
             installedUserCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of Users whose devices have all succeeded to install this book.
               format: int32
             notInstalledDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of Devices that does not have this book installed.
               format: int32
             notInstalledUserCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of Users that did not install this book.
               format: int32
           additionalProperties:
@@ -30913,19 +31728,19 @@ components:
             failedDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Failed Device Count.
               format: int32
             installedDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Installed Device Count.
               format: int32
             notInstalledDeviceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Not installed device count.
               format: int32
             userName:
@@ -31026,7 +31841,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Version of the device configuration.
               format: int32
             assignments:
@@ -31111,19 +31926,19 @@ components:
             configurationVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Version of the policy for that overview
               format: int32
             errorCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of error devices
               format: int32
             failedCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of failed devices
               format: int32
             lastUpdateDateTime:
@@ -31134,19 +31949,19 @@ components:
             notApplicableCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of not applicable devices
               format: int32
             pendingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of pending devices
               format: int32
             successCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of succeeded devices
               format: int32
           additionalProperties:
@@ -31161,7 +31976,7 @@ components:
             devicesCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Devices count for that user.
               format: int32
             lastReportedDateTime:
@@ -31191,19 +32006,19 @@ components:
             configurationVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Version of the policy for that overview
               format: int32
             errorCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of error Users
               format: int32
             failedCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of failed Users
               format: int32
             lastUpdateDateTime:
@@ -31214,19 +32029,19 @@ components:
             notApplicableCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of not applicable users
               format: int32
             pendingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of pending Users
               format: int32
             successCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of succeeded Users
               format: int32
           additionalProperties:
@@ -31412,11 +32227,11 @@ components:
               description: the file name.
               nullable: true
             size:
-              type: integer
+              type: number
               description: The size of the file prior to encryption.
               format: int64
             sizeEncrypted:
-              type: integer
+              type: number
               description: The size of the file after encryption.
               format: int64
             uploadState:
@@ -31563,13 +32378,13 @@ components:
             totalLicenseCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The total number of VPP licenses.
               format: int32
             usedLicenseCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of VPP licenses in use.
               format: int32
             vppTokenAccountType:
@@ -31644,7 +32459,7 @@ components:
             md5HashChunkSize:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The chunk size for MD5 hash. This is ''0'' or empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.'
               format: int32
             minimumSupportedOperatingSystem:
@@ -31725,7 +32540,7 @@ components:
               description: The name of the main Lob application file.
               nullable: true
             size:
-              type: integer
+              type: number
               description: 'The total size, including all uploaded files.'
               format: int64
               readOnly: true
@@ -31757,13 +32572,13 @@ components:
             totalLicenseCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The total number of Microsoft Store for Business licenses.
               format: int32
             usedLicenseCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of Microsoft Store for Business licenses in use.
               format: int32
           additionalProperties:
@@ -31786,28 +32601,28 @@ components:
             minimumCpuSpeedInMHz:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The value for the minimum CPU speed which is required to install this app.
               format: int32
               nullable: true
             minimumFreeDiskSpaceInMB:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The value for the minimum free disk space which is required to install this app.
               format: int32
               nullable: true
             minimumMemoryInMB:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The value for the minimum physical memory which is required to install this app.
               format: int32
               nullable: true
             minimumNumberOfProcessors:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The value for the minimum number of processors which is required to install this app.
               format: int32
               nullable: true
@@ -31954,7 +32769,7 @@ components:
             deployedAppCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of apps to which the current policy is deployed.
               format: int32
             isAssigned:
@@ -32060,7 +32875,7 @@ components:
             daysWithoutContactBeforeUnenroll:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Offline interval before app data is wiped (days)
               format: int32
             mdmEnrollmentUrl:
@@ -32070,25 +32885,25 @@ components:
             minutesOfInactivityBeforeDeviceLock:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999.
               format: int32
             numberOfPastPinsRemembered:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Integer value that specifies the number of past PINs that can be associated to a user account that can''t be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.'
               format: int32
             passwordMaximumAttemptCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices.
               format: int32
             pinExpirationDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user''s PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.'
               format: int32
             pinLowercaseLetters:
@@ -32096,7 +32911,7 @@ components:
             pinMinimumLength:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.'
               format: int32
             pinSpecialCharacters:
@@ -32235,7 +33050,7 @@ components:
               format: date-time
               readOnly: true
             freeStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
@@ -32319,7 +33134,7 @@ components:
               nullable: true
               readOnly: true
             physicalMemoryInBytes:
-              type: integer
+              type: number
               description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
@@ -32349,7 +33164,7 @@ components:
               nullable: true
               readOnly: true
             totalStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Total Storage in Bytes. This property is read-only.
               format: int64
               readOnly: true
@@ -32441,7 +33256,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -32453,7 +33268,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -32474,7 +33289,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -32486,7 +33301,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -32533,11 +33348,40 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
             type: object
           description: Windows Log Collection request entity.
+    microsoft.graph.updateWindowsDeviceAccountActionParameter:
+      title: updateWindowsDeviceAccountActionParameter
+      type: object
+      properties:
+        calendarSyncEnabled:
+          type: boolean
+          description: Not yet documented
+          nullable: true
+        deviceAccount:
+          $ref: '#/components/schemas/microsoft.graph.windowsDeviceAccount'
+        deviceAccountEmail:
+          type: string
+          description: Not yet documented
+          nullable: true
+        exchangeServer:
+          type: string
+          description: Not yet documented
+          nullable: true
+        passwordRotationEnabled:
+          type: boolean
+          description: Not yet documented
+          nullable: true
+        sessionInitiationProtocalAddress:
+          type: string
+          description: Not yet documented
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsProtectionState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32650,7 +33494,7 @@ components:
             detectionCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the malware is detected
               format: int32
               nullable: true
@@ -32727,7 +33571,7 @@ components:
         configurationAppliedUserCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of users the policy is applied.
           format: int32
         mobileAppIdentifier:
@@ -32775,13 +33619,13 @@ components:
             maximumPinRetries:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
               format: int32
             minimumPinLength:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Minimum pin length required for an app-level pin if PinRequired is set to True
               format: int32
             minimumRequiredAppVersion:
@@ -33138,7 +33982,7 @@ components:
               description: The name of the main Lob application file.
               nullable: true
             size:
-              type: integer
+              type: number
               description: 'The total size, including all uploaded files.'
               format: int64
               readOnly: true
@@ -33478,7 +34322,7 @@ components:
         returnCode:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Return code.
           format: int32
         type:
@@ -33879,11 +34723,11 @@ components:
           description: Informational attribute that identifies the HASH algorithm that was used by TPM
           nullable: true
         resetCount:
-          type: integer
+          type: number
           description: The number of times a PC device has hibernated or resumed
           format: int64
         restartCount:
-          type: integer
+          type: number
           description: The number of times a PC device has rebooted
           format: int64
         safeMode:
@@ -34261,7 +35105,7 @@ components:
             deviceEnrollmentLimit:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
             displayName:
@@ -34281,7 +35125,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -34762,6 +35606,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -34812,7 +35657,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -34866,7 +35711,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -34916,6 +35761,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.appLogUploadState:
       title: appLogUploadState
       enum:
@@ -34941,6 +35788,16 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+    microsoft.graph.windowsDeviceAccount:
+      title: windowsDeviceAccount
+      type: object
+      properties:
+        password:
+          type: string
+          description: Not yet documented
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -35472,6 +36329,16 @@ components:
           - value: noStatusCleared
             description: No status cleared
             name: noStatusCleared
+    ReferenceUpdate:
+      type: object
+      properties:
+        '@odata.id':
+          type: string
+        '@odata.type':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -36834,15 +37701,15 @@ components:
       properties:
         capabilityStatus:
           type: string
-          description: 'For example, ''Enabled''.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
           nullable: true
         provisioningStatus:
           type: string
-          description: 'For example, ''Success''.'
+          description: 'The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn''t provisioned and is in an error state.PendingInput - The service isn''t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn''t activated in the tenant.'
           nullable: true
         service:
           type: string
-          description: 'The name of the service; for example, ''AccessControlS2S'''
+          description: 'The name of the service; for example, ''AccessControlS2S''.'
           nullable: true
       additionalProperties:
         type: object
@@ -37348,7 +38215,7 @@ components:
             reminderMinutesBeforeStart:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
@@ -37719,7 +38586,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -38043,7 +38910,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -38062,14 +38929,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -38498,14 +39365,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
@@ -38854,7 +39721,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
@@ -39015,6 +39882,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -39084,7 +39952,7 @@ components:
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
@@ -39435,7 +40303,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -39795,12 +40663,12 @@ components:
       type: object
       properties:
         deleted:
-          type: integer
+          type: number
           description: 'Total space consumed by files in the recycle bin, in bytes. Read-only.'
           format: int64
           nullable: true
         remaining:
-          type: integer
+          type: number
           description: 'Total space remaining before reaching the quota limit, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -39811,12 +40679,12 @@ components:
         storagePlanInformation:
           $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
         total:
-          type: integer
+          type: number
           description: 'Total allowed storage space, in bytes. Read-only.'
           format: int64
           nullable: true
         used:
-          type: integer
+          type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -39913,7 +40781,7 @@ components:
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             size:
-              type: integer
+              type: number
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
@@ -40030,7 +40898,7 @@ components:
             completionPercentage:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The percentage completion value of the course activity. Optional.
               format: int32
               nullable: true
@@ -40309,7 +41177,7 @@ components:
             percentageComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
@@ -40323,6 +41191,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -40562,21 +41431,21 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a team.
           format: int32
           nullable: true
@@ -40837,7 +41706,7 @@ components:
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
@@ -40980,6 +41849,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.teamsAsyncOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -40989,7 +41859,7 @@ components:
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             createdDateTime:
@@ -41137,7 +42007,7 @@ components:
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of users assigned to the tag.
               format: int32
               nullable: true
@@ -41217,7 +42087,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -41347,7 +42217,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -41356,7 +42226,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -41780,7 +42650,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -41799,7 +42669,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -41840,7 +42710,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Percentage of task completion. When set to 100, the task is considered completed.'
               format: int32
               nullable: true
@@ -41853,14 +42723,14 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2, 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Additionally, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -42254,7 +43124,7 @@ components:
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: For internal use only.
               format: int32
               nullable: true
@@ -42513,7 +43383,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -42528,13 +43398,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -42554,7 +43424,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -42751,7 +43621,7 @@ components:
         id:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
@@ -42803,11 +43673,19 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        displayName:
+          type: string
+          description: The name of the reaction.
+          nullable: true
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -42916,7 +43794,7 @@ components:
           description: The performing artist for the audio file.
           nullable: true
         bitrate:
-          type: integer
+          type: number
           description: Bitrate expressed in kbps.
           format: int64
           nullable: true
@@ -42931,19 +43809,19 @@ components:
         disc:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The number of the disc this audio file came from.
           format: int16
           nullable: true
         discCount:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The total number of discs in this album.
           format: int16
           nullable: true
         duration:
-          type: integer
+          type: number
           description: 'Duration of the audio file, expressed in milliseconds'
           format: int64
           nullable: true
@@ -42966,21 +43844,21 @@ components:
         track:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of the track on the original disc for this audio file.
           format: int32
           nullable: true
         trackCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tracks on the original disc for this audio file.
           format: int32
           nullable: true
         year:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The year the audio file was recorded.
           format: int32
           nullable: true
@@ -42995,7 +43873,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -43057,7 +43935,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -43072,14 +43950,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Height of the image, in pixels. Read-only.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
           nullable: true
@@ -43169,14 +44047,14 @@ components:
         iso:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
         orientation:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
@@ -43249,7 +44127,7 @@ components:
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         size:
-          type: integer
+          type: number
           description: Size of the remote item. Read-only.
           format: int64
           nullable: true
@@ -43314,14 +44192,14 @@ components:
         audioBitsPerSample:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio bits per sample.
           format: int32
           nullable: true
         audioChannels:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio channels.
           format: int32
           nullable: true
@@ -43332,19 +44210,19 @@ components:
         audioSamplesPerSecond:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio samples per second.
           format: int32
           nullable: true
         bitrate:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Bit rate of the video in bits per second.
           format: int32
           nullable: true
         duration:
-          type: integer
+          type: number
           description: Duration of the file in milliseconds.
           format: int64
           nullable: true
@@ -43360,14 +44238,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Height of the video, in pixels.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
@@ -43519,7 +44397,7 @@ components:
               format: base64url
               nullable: true
             size:
-              type: integer
+              type: number
               description: Indicates the size of the content stream for this version of the item.
               format: int64
               nullable: true
@@ -43900,14 +44778,14 @@ components:
         linesForEditing:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the text box.
           format: int32
           nullable: true
         maxLength:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum number of characters for the value.
           format: int32
           nullable: true
@@ -44029,7 +44907,7 @@ components:
         position:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
@@ -44240,6 +45118,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -44282,7 +45161,7 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a channel.
           format: int32
           nullable: true
@@ -44293,14 +45172,14 @@ components:
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a channel.
           format: int32
           nullable: true
@@ -44393,7 +45272,7 @@ components:
             groupLifetimeInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
@@ -45180,7 +46059,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -45469,25 +46348,25 @@ components:
           type: object
           properties:
             deleted:
-              type: integer
+              type: number
               format: int64
               nullable: true
             manageWebUrl:
               type: string
               nullable: true
             remaining:
-              type: integer
+              type: number
               format: int64
               nullable: true
             state:
               type: string
               nullable: true
             total:
-              type: integer
+              type: number
               format: int64
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
             services:
@@ -45651,7 +46530,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported bottom margins(in microns) for the printer.
@@ -45677,7 +46556,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: The list of print resolutions in DPI that are supported by the printer.
@@ -45715,7 +46594,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported left margins(in microns) for the printer.
@@ -45758,7 +46637,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: Supported number of Input Pages to impose upon a single Impression.
@@ -45772,7 +46651,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported right margins(in microns) for the printer.
@@ -45790,7 +46669,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported top margins(in microns) for the printer.
@@ -45809,14 +46688,14 @@ components:
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of copies printed per job.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default resolution in DPI to use when printing the job.
           format: int32
           nullable: true
@@ -45858,7 +46737,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -45875,7 +46754,7 @@ components:
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The altitude, in meters, that the printer is located at.'
           format: int32
           nullable: true
@@ -46065,7 +46944,7 @@ components:
         type:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: For internal use only.
           format: int32
           nullable: true
@@ -46141,6 +47020,10 @@ components:
       title: teamsAppAuthorization
       type: object
       properties:
+        clientAppId:
+          type: string
+          description: The registration ID of the Microsoft Entra app ID associated with the teamsApp.
+          nullable: true
         requiredPermissionSet:
           $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
       additionalProperties:
@@ -46401,7 +47284,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The height of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -46416,7 +47299,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The width of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -46595,7 +47478,7 @@ components:
             position:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The zero-based position of the worksheet within the workbook.
               format: int32
             visibility:
@@ -46644,14 +47527,14 @@ components:
         actionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times the action took place. Read-only.
           format: int32
           nullable: true
         actorCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of distinct actors that performed the action. Read-only.
           format: int32
           nullable: true
@@ -47040,7 +47923,7 @@ components:
             openSlotCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of the number of slots for the given open shift.
               format: int32
           additionalProperties:
@@ -47126,14 +48009,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -47184,7 +48067,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -47389,7 +48272,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -47484,12 +48367,12 @@ components:
       type: object
       properties:
         end:
-          type: integer
+          type: number
           description: The inclusive upper bound of the integer range.
           format: int64
           nullable: true
         start:
-          type: integer
+          type: number
           description: The inclusive lower bound of the integer range.
           format: int64
           nullable: true
@@ -48472,14 +49355,14 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of copies that should be printed. Read-only.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
           format: int32
           nullable: true
@@ -48526,7 +49409,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -48586,7 +49469,7 @@ components:
               description: The document's name. Read-only.
               nullable: true
             size:
-              type: integer
+              type: number
               description: The document's size in bytes. Read-only.
               format: int64
           additionalProperties:
@@ -48725,7 +49608,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
@@ -48747,7 +49630,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
@@ -48783,10 +49666,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -48795,10 +49680,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
@@ -48982,7 +49869,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -49013,7 +49900,7 @@ components:
               type: string
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
           additionalProperties:
@@ -49025,28 +49912,28 @@ components:
         bottom:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the bottom edge.
           format: int32
           nullable: true
         left:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the left edge.
           format: int32
           nullable: true
         right:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the right edge.
           format: int32
           nullable: true
         top:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the top edge.
           format: int32
           nullable: true
@@ -49147,7 +50034,7 @@ components:
         key:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).'
           format: int32
         sortOn:
@@ -49388,7 +50275,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The index of the icon in the given set.
           format: int32
         set:
@@ -49967,6 +50854,14 @@ components:
       explode: false
       schema:
         type: boolean
+  requestBodies:
+    refPutBody:
+      description: New navigation property ref values
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReferenceUpdate'
+      required: true
   securitySchemes:
     azureaadv2:
       type: oauth2
