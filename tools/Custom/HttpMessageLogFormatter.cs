@@ -112,7 +112,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             return stringBuilder.ToString();
         }
 
-        public static async Task<string> GetErrorLogAsync(HttpResponseMessage response, IMicrosoftGraphODataErrorsMainError odataError)
+        public static async Task<string> GetErrorLogAsync(HttpResponseMessage response, IMicrosoftExoServicesApiODataErrorsMainError odataError)
         {
             if (response == null) return string.Empty;
 
@@ -120,7 +120,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             stringBuilder.AppendLine($"{odataError?.Message}{Environment.NewLine}");
             stringBuilder.AppendLine($"Status: {((int)response.StatusCode)} ({response.StatusCode})");
             stringBuilder.AppendLine($"ErrorCode: {odataError?.Code}");
-            stringBuilder.AppendLine($"Date: {odataError?.InnerError?.Date}{Environment.NewLine}");
+           // stringBuilder.AppendLine($"Date: {odataError?.InnerError?.Date}{Environment.NewLine}");
             stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(response.Headers)}{Environment.NewLine}");
             return stringBuilder.ToString();
         }

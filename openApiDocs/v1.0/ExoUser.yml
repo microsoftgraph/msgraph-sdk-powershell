@@ -15,7 +15,7 @@ paths:
       tags:
         - users.user
       summary: Get entities from users
-      operationId: users.user.ListUser
+      operationId: users_ListUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -53,7 +53,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/Microsoft.ExoServices.Api.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -61,7 +61,7 @@ paths:
       tags:
         - users.user
       summary: Add new entity to users
-      operationId: users.user.CreateUser
+      operationId: users_CreateUser
       requestBody:
         description: New entity
         content:
@@ -70,7 +70,7 @@ paths:
               $ref: '#/components/schemas/Microsoft.ExoServices.Api.user'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -85,7 +85,7 @@ paths:
       tags:
         - users.user
       summary: Get entity from users by key
-      operationId: users.user.GetUser
+      operationId: users_GetUser
       parameters:
         - name: id
           in: path
@@ -115,7 +115,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -128,7 +128,7 @@ paths:
       tags:
         - users.user
       summary: Update entity in users
-      operationId: users.user.UpdateUser
+      operationId: users_UpdateUser
       parameters:
         - name: id
           in: path
@@ -154,7 +154,7 @@ paths:
       tags:
         - users.user
       summary: Delete entity from users
-      operationId: users.user.DeleteUser
+      operationId: users_DeleteUser
       parameters:
         - name: id
           in: path
@@ -169,7 +169,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -180,7 +180,7 @@ paths:
       tags:
         - users.exchangeUserConfiguration
       summary: Get exchangeConfiguration from users
-      operationId: users.GetExchangeConfiguration
+      operationId: users_GetExchangeConfiguration
       parameters:
         - name: id
           in: path
@@ -210,7 +210,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -223,7 +223,7 @@ paths:
       tags:
         - users.exchangeUserConfiguration
       summary: Update the navigation property exchangeConfiguration in users
-      operationId: users.UpdateExchangeConfiguration
+      operationId: users_UpdateExchangeConfiguration
       parameters:
         - name: id
           in: path
@@ -240,7 +240,7 @@ paths:
               $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUserConfiguration'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -249,7 +249,7 @@ paths:
       tags:
         - users.exchangeUserConfiguration
       summary: Delete navigation property exchangeConfiguration for users
-      operationId: users.DeleteExchangeConfiguration
+      operationId: users_DeleteExchangeConfiguration
       parameters:
         - name: id
           in: path
@@ -264,7 +264,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -273,7 +273,7 @@ paths:
     description: Provides operations to manage the roleAssignmentPolicy property of the Microsoft.ExoServices.Api.exchangeUserConfiguration entity.
     get:
       tags:
-        - users.exchangeConfiguration.roleAssignmentPolicy
+        - users_exchangeConfiguration_roleAssignmentPolicy
       summary: Get roleAssignmentPolicy from users
       operationId: users.exchangeConfiguration.GetRoleAssignmentPolicy
       parameters:
@@ -305,7 +305,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -320,7 +320,7 @@ paths:
       tags:
         - users.exchangeMailbox
       summary: Get mailbox from users
-      operationId: users.GetMailbox
+      operationId: users_GetMailbox
       parameters:
         - name: id
           in: path
@@ -350,7 +350,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -363,7 +363,7 @@ paths:
       tags:
         - users.exchangeMailbox
       summary: Update the navigation property mailbox in users
-      operationId: users.UpdateMailbox
+      operationId: users_UpdateMailbox
       parameters:
         - name: id
           in: path
@@ -389,7 +389,7 @@ paths:
       tags:
         - users.exchangeMailbox
       summary: Delete navigation property mailbox for users
-      operationId: users.DeleteMailbox
+      operationId: users_DeleteMailbox
       parameters:
         - name: id
           in: path
@@ -404,7 +404,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -415,7 +415,7 @@ paths:
       tags:
         - users.mailbox.mailboxPlan
       summary: Get plan from users
-      operationId: users.mailbox.GetPlan
+      operationId: users_mailbox_GetPlan
       parameters:
         - name: id
           in: path
@@ -445,7 +445,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -460,12 +460,12 @@ paths:
       tags:
         - users.user
       summary: Get the number of the resource
-      operationId: users.GetCount-ee47
+      operationId: users_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -829,6 +829,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/Microsoft.ExoServices.Api.ODataErrors.MainError'
+      additionalProperties:
+        type: object
     Microsoft.ExoServices.Api.ODataErrors.MainError:
       required:
         - code
@@ -849,6 +851,8 @@ components:
             $ref: '#/components/schemas/Microsoft.ExoServices.Api.ODataErrors.ErrorDetails'
         innerError:
           $ref: '#/components/schemas/Microsoft.ExoServices.Api.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
     Microsoft.ExoServices.Api.ODataErrors.ErrorDetails:
       required:
         - code
@@ -862,8 +866,12 @@ components:
         target:
           type: string
           nullable: true
+      additionalProperties:
+        type: object
     Microsoft.ExoServices.Api.ODataErrors.InnerError:
       type: object
+      additionalProperties:
+        type: object
       description: The structure of this object is service-specific
     ODataCountResponse:
       type: integer

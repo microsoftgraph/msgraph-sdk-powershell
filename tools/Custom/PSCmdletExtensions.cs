@@ -107,7 +107,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             }
         }
         
-        internal static async Task<ErrorDetails> GetErrorDetailsAsync(this PSCmdlet cmdlet, IMicrosoftGraphODataErrorsMainError odataError, HttpResponseMessage response)
+        internal static async Task<ErrorDetails> GetErrorDetailsAsync(this PSCmdlet cmdlet, IMicrosoftExoServicesApiODataErrorsMainError odataError, HttpResponseMessage response)
         {
             var serviceErrorDoc = "https://learn.microsoft.com/graph/errors";
             var recommendedAction = $"See service error codes: {serviceErrorDoc}";
