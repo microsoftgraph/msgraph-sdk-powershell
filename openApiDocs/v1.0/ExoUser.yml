@@ -15,7 +15,7 @@ paths:
       tags:
         - users.user
       summary: Get entities from users
-      operationId: users_ListUser
+      operationId: users_ListExoUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -61,7 +61,7 @@ paths:
       tags:
         - users.user
       summary: Add new entity to users
-      operationId: users_CreateUser
+      operationId: users_CreateExoUser
       requestBody:
         description: New entity
         content:
@@ -85,7 +85,7 @@ paths:
       tags:
         - users.user
       summary: Get entity from users by key
-      operationId: users_GetUser
+      operationId: users_GetExoUser
       parameters:
         - name: id
           in: path
@@ -128,7 +128,7 @@ paths:
       tags:
         - users.user
       summary: Update entity in users
-      operationId: users_UpdateUser
+      operationId: users_UpdateExoUser
       parameters:
         - name: id
           in: path
@@ -180,7 +180,7 @@ paths:
       tags:
         - users.exchangeUserConfiguration
       summary: Get exchangeConfiguration from users
-      operationId: users_GetExchangeConfiguration
+      operationId: users_GetExoExchangeConfiguration
       parameters:
         - name: id
           in: path
@@ -223,7 +223,7 @@ paths:
       tags:
         - users.exchangeUserConfiguration
       summary: Update the navigation property exchangeConfiguration in users
-      operationId: users_UpdateExchangeConfiguration
+      operationId: users_UpdateExoExchangeConfiguration
       parameters:
         - name: id
           in: path
@@ -249,7 +249,7 @@ paths:
       tags:
         - users.exchangeUserConfiguration
       summary: Delete navigation property exchangeConfiguration for users
-      operationId: users_DeleteExchangeConfiguration
+      operationId: users_DeleteExoExchangeConfiguration
       parameters:
         - name: id
           in: path
@@ -275,7 +275,7 @@ paths:
       tags:
         - users_exchangeConfiguration_roleAssignmentPolicy
       summary: Get roleAssignmentPolicy from users
-      operationId: users.exchangeConfiguration.GetRoleAssignmentPolicy
+      operationId: users.exchangeConfiguration.GetExoRoleAssignmentPolicy
       parameters:
         - name: id
           in: path
@@ -320,7 +320,7 @@ paths:
       tags:
         - users.exchangeMailbox
       summary: Get mailbox from users
-      operationId: users_GetMailbox
+      operationId: users_GetExoMailbox
       parameters:
         - name: id
           in: path
@@ -363,7 +363,7 @@ paths:
       tags:
         - users.exchangeMailbox
       summary: Update the navigation property mailbox in users
-      operationId: users_UpdateMailbox
+      operationId: users_UpdateExoMailbox
       parameters:
         - name: id
           in: path
@@ -389,7 +389,7 @@ paths:
       tags:
         - users.exchangeMailbox
       summary: Delete navigation property mailbox for users
-      operationId: users_DeleteMailbox
+      operationId: users_DeleteExoMailbox
       parameters:
         - name: id
           in: path
@@ -415,7 +415,7 @@ paths:
       tags:
         - users.mailbox.mailboxPlan
       summary: Get plan from users
-      operationId: users_mailbox_GetPlan
+      operationId: users_mailbox_GetExoPlan
       parameters:
         - name: id
           in: path
@@ -460,7 +460,7 @@ paths:
       tags:
         - users.user
       summary: Get the number of the resource
-      operationId: users_GetCount
+      operationId: users_GetExoCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
