@@ -5,6 +5,10 @@
 Import-Module Microsoft.Graph.Beta.Bookings
 
 $params = @{
+	externalRegistrationInformation = @{
+		referrer = "Facebook"
+		registrationId = "myExternalRegistrationId"
+	}
 	preferredTimezone = "Pacific Standard Time"
 	preferredLanguage = "en-us"
 	registrationQuestionAnswers = @(
@@ -51,6 +55,10 @@ $params = @{
 	firstName = "Diane"
 	lastName = "Demoss"
 	email = "DianeDemoss@contoso.com"
+	externalRegistrationInformation = @{
+		referrer = "Facebook"
+		registrationId = "myExternalRegistrationId"
+	}
 	preferredTimezone = "Pacific Standard Time"
 	preferredLanguage = "en-us"
 	registrationQuestionAnswers = @(
