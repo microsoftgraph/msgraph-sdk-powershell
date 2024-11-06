@@ -16,7 +16,7 @@
   // "DeviceManagement.Enrollment": "^deviceManagement.(.*Enrollment.*|.*Autopilot.*|.*depOnboarding.*|importedDeviceIdentity|onPremisesConditionalAccessSettings|windowsFeatureUpdateProfile)$|^roleManagement.roleManagement$|^roleManagement.rbacApplicationMultiple$|^roleManagement.unifiedRbacApplication$",
   // "DeviceManagement.Actions": "^deviceManagement.Actions$",
   // "DeviceManagement.Functions": "^deviceManagement.Functions$",
-  // "DirectoryObjects": "^directoryObjects\\.",
+   "DirectoryObjects": "^directoryObjects\\.",
    "Education": "^education\\.",
   // "Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
   // "Financials": "^financials\\.",
