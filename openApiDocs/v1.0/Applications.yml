@@ -1346,7 +1346,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.addKey':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action addKey
       description: 'Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. You can use the Update application operation to perform an update instead.'
       externalDocs:
@@ -1391,7 +1391,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.addPassword':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action addPassword
       description: Adds a strong password or secret to an application. You can also add passwords while creating the application.
       externalDocs:
@@ -1432,7 +1432,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -1488,7 +1488,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action checkMemberObjects
       operationId: application_checkMemberObject
       parameters:
@@ -1540,7 +1540,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -1596,7 +1596,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -1652,7 +1652,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.removeKey':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action removeKey
       description: 'Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
       externalDocs:
@@ -1693,7 +1693,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.removePassword':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action removePassword
       description: Remove a password from an application.
       externalDocs:
@@ -1732,7 +1732,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.restore':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -1748,20 +1748,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -1775,7 +1761,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.setVerifiedPublisher':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action setVerifiedPublisher
       description: 'Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.'
       externalDocs:
@@ -1812,7 +1798,7 @@ paths:
   '/applications/{application-id}/microsoft.graph.unsetVerifiedPublisher':
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action unsetVerifiedPublisher
       description: 'Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.'
       externalDocs:
@@ -3298,7 +3284,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action pause
       description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
       externalDocs:
@@ -3331,7 +3317,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action provisionOnDemand
       description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
       externalDocs:
@@ -3382,7 +3368,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action restart
       description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
       externalDocs:
@@ -3427,7 +3413,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action start
       description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
       externalDocs:
@@ -3460,7 +3446,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action validateCredentials
       description: Validate that the credentials are valid in the tenant.
       externalDocs:
@@ -3902,7 +3888,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
@@ -3977,7 +3963,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
-        - applications.Functions
+        - applications.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
       externalDocs:
@@ -4063,7 +4049,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()':
     get:
       tags:
-        - applications.Functions
+        - applications.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
       externalDocs:
@@ -4149,7 +4135,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
@@ -4225,7 +4211,7 @@ paths:
   '/applications/{application-id}/synchronization/jobs/microsoft.graph.validateCredentials':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action validateCredentials
       operationId: application.synchronization.job_validateCredential
       parameters:
@@ -4270,7 +4256,7 @@ paths:
   '/applications/{application-id}/synchronization/microsoft.graph.acquireAccessToken':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action acquireAccessToken
       description: Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
       externalDocs:
@@ -4983,7 +4969,7 @@ paths:
   '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
@@ -5058,7 +5044,7 @@ paths:
   '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
-        - applications.Functions
+        - applications.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
       externalDocs:
@@ -5144,7 +5130,7 @@ paths:
   '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()':
     get:
       tags:
-        - applications.Functions
+        - applications.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
       externalDocs:
@@ -5230,7 +5216,7 @@ paths:
   '/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.parseExpression':
     post:
       tags:
-        - applications.Actions
+        - applications.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
@@ -6020,9 +6006,9 @@ paths:
   /applications/microsoft.graph.delta():
     get:
       tags:
-        - applications.Functions
+        - applications.application
       summary: Invoke function delta
-      description: 'Get newly created, updated, or deleted applications without performing a full read of the entire resource collection. For details, see Using delta query.'
+      description: 'Get newly created, updated, or deleted applications without performing a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delta?view=graph-rest-1.0
@@ -6093,7 +6079,7 @@ paths:
   /applications/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -6141,7 +6127,7 @@ paths:
   /applications/microsoft.graph.getByIds:
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -6194,7 +6180,7 @@ paths:
   /applications/microsoft.graph.validateProperties:
     post:
       tags:
-        - applications.Actions
+        - applications.application
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -6338,9 +6324,9 @@ paths:
   '/applicationTemplates/{applicationTemplate-id}/microsoft.graph.instantiate':
     post:
       tags:
-        - applicationTemplates.Actions
+        - applicationTemplates.applicationTemplate
       summary: Invoke action instantiate
-      description: Add an instance of an application from the Microsoft Entra application gallery into your directory. The application template with ID 8adf8e6e-67b2-4cf2-a259-e3dc5476c621 can be used to add a non-gallery app that you can configure different single-sign on (SSO) modes like SAML SSO and password-based SSO.
+      description: 'Add an instance of an application from the Microsoft Entra application gallery into your directory. For non-gallery apps, use an application template with one of the following IDs to configure different single sign-on (SSO) modes like SAML SSO and password-based SSO.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
@@ -6362,6 +6348,9 @@ paths:
               type: object
               properties:
                 displayName:
+                  type: string
+                  nullable: true
+                serviceManagementReference:
                   type: string
                   nullable: true
               additionalProperties:
@@ -9781,7 +9770,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addKey':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action addKey
       description: 'Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. Update servicePrincipal can be used to perform an update instead.'
       externalDocs:
@@ -9826,7 +9815,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addPassword':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action addPassword
       description: Add a strong password or secret to a servicePrincipal object.
       externalDocs:
@@ -9867,7 +9856,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addTokenSigningCertificate':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action addTokenSigningCertificate
       description: "Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with usage set to Sign.\n    + A public key object with usage set to Verify.\n+ The passwordCredentials object.  All the objects have the same value of customKeyIdentifier. The passwordCredential is used to open the PFX file (private key). It and the associated private key object have the same value of keyId. When set during creation through the displayName property, the subject of the certificate cannot be updated. The startDateTime is set to the same time the certificate is created using the action. The endDateTime can be up to three years after the certificate is created."
       externalDocs:
@@ -9914,7 +9903,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -9970,7 +9959,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action checkMemberObjects
       operationId: servicePrincipal_checkMemberObject
       parameters:
@@ -10022,7 +10011,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -10078,7 +10067,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action getMemberObjects
       description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
@@ -10134,7 +10123,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.removeKey':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action removeKey
       description: 'Remove a key credential from a servicePrincipal. This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
       externalDocs:
@@ -10175,7 +10164,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.removePassword':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action removePassword
       description: Remove a password from a servicePrincipal object.
       externalDocs:
@@ -10214,7 +10203,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.restore':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action restore
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -10230,20 +10219,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -13033,7 +13008,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action pause
       description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
       externalDocs:
@@ -13066,7 +13041,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action provisionOnDemand
       description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
       externalDocs:
@@ -13117,7 +13092,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action restart
       description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
       externalDocs:
@@ -13162,7 +13137,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action start
       description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
       externalDocs:
@@ -13195,7 +13170,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action validateCredentials
       description: Validate that the credentials are valid in the tenant.
       externalDocs:
@@ -13644,7 +13619,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
@@ -13719,7 +13694,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
       externalDocs:
@@ -13805,7 +13780,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()':
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
       externalDocs:
@@ -13891,7 +13866,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
@@ -13967,7 +13942,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/microsoft.graph.validateCredentials':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action validateCredentials
       operationId: servicePrincipal.synchronization.job_validateCredential
       parameters:
@@ -14012,7 +13987,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/microsoft.graph.acquireAccessToken':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action acquireAccessToken
       description: Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
       externalDocs:
@@ -14728,7 +14703,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
@@ -14803,7 +14778,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
       externalDocs:
@@ -14889,7 +14864,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()':
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
       externalDocs:
@@ -14975,7 +14950,7 @@ paths:
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.parseExpression':
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
@@ -16118,9 +16093,9 @@ paths:
   /servicePrincipals/microsoft.graph.delta():
     get:
       tags:
-        - servicePrincipals.Functions
+        - servicePrincipals.servicePrincipal
       summary: Invoke function delta
-      description: 'Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection.'
+      description: 'Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-1.0
@@ -16191,7 +16166,7 @@ paths:
   /servicePrincipals/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
       externalDocs:
@@ -16239,7 +16214,7 @@ paths:
   /servicePrincipals/microsoft.graph.getByIds:
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
@@ -16292,7 +16267,7 @@ paths:
   /servicePrincipals/microsoft.graph.validateProperties:
     post:
       tags:
-        - servicePrincipals.Actions
+        - servicePrincipals.servicePrincipal
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
@@ -16887,7 +16862,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Friendly name for the key. Optional.
+          description: 'The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.'
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -16897,7 +16872,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -17349,7 +17324,7 @@ components:
             deviceEnrollmentLimit:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
             displayName:
@@ -17369,7 +17344,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -17850,6 +17825,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.synchronization:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18269,16 +18245,19 @@ components:
               nullable: true
             membershipRule:
               type: string
+              description: 'The dynamic membership rule for the administrative unit. For more information about the rules you can use for dynamic administrative units and dynamic groups, see Manage rules for dynamic membership groups in Microsoft Entra ID.'
               nullable: true
             membershipRuleProcessingState:
               type: string
+              description: 'Controls whether the dynamic membership rule is actively processed. Set to On to activate the dynamic membership rule, or Paused to stop updating membership dynamically.'
               nullable: true
             membershipType:
               type: string
+              description: 'Indicates the membership type for the administrative unit. The possible values are: dynamic, assigned. If not set, the default value is null and the default behavior is assigned.'
               nullable: true
             visibility:
               type: string
-              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
+              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set, the default value is null and the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
               nullable: true
             extensions:
               type: array
@@ -18508,7 +18487,7 @@ components:
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
@@ -18651,6 +18630,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.selfSignedCertificate:
       title: selfSignedCertificate
       type: object
@@ -18819,7 +18799,7 @@ components:
         requestedAccessTokenVersion:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount, the value for this property must be 2.'
           format: int32
           nullable: true
@@ -19478,15 +19458,15 @@ components:
       properties:
         capabilityStatus:
           type: string
-          description: 'For example, ''Enabled''.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
           nullable: true
         provisioningStatus:
           type: string
-          description: 'For example, ''Success''.'
+          description: 'The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn''t provisioned and is in an error state.PendingInput - The service isn''t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn''t activated in the tenant.'
           nullable: true
         service:
           type: string
-          description: 'The name of the service; for example, ''AccessControlS2S'''
+          description: 'The name of the service; for example, ''AccessControlS2S''.'
           nullable: true
       additionalProperties:
         type: object
@@ -19949,7 +19929,7 @@ components:
             reminderMinutesBeforeStart:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
@@ -20338,7 +20318,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -20662,7 +20642,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -20681,14 +20661,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -20905,7 +20885,7 @@ components:
               format: date-time
               readOnly: true
             freeStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
@@ -20989,7 +20969,7 @@ components:
               nullable: true
               readOnly: true
             physicalMemoryInBytes:
-              type: integer
+              type: number
               description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
@@ -21019,7 +20999,7 @@ components:
               nullable: true
               readOnly: true
             totalStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Total Storage in Bytes. This property is read-only.
               format: int64
               readOnly: true
@@ -21446,14 +21426,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
@@ -21616,7 +21596,7 @@ components:
         code:
           $ref: '#/components/schemas/microsoft.graph.synchronizationStatusCode'
         countSuccessiveCompleteFailures:
-          type: integer
+          type: number
           description: Number of consecutive times this job failed.
           format: int64
         escrowsPruned:
@@ -21779,7 +21759,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
           format: int32
         sourceDirectoryName:
@@ -22072,7 +22052,7 @@ components:
             groupLifetimeInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
@@ -22588,7 +22568,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         uri:
@@ -22751,7 +22731,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
@@ -22912,6 +22892,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -22981,7 +22962,7 @@ components:
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
@@ -23332,7 +23313,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -23692,12 +23673,12 @@ components:
       type: object
       properties:
         deleted:
-          type: integer
+          type: number
           description: 'Total space consumed by files in the recycle bin, in bytes. Read-only.'
           format: int64
           nullable: true
         remaining:
-          type: integer
+          type: number
           description: 'Total space remaining before reaching the quota limit, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -23708,12 +23689,12 @@ components:
         storagePlanInformation:
           $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
         total:
-          type: integer
+          type: number
           description: 'Total allowed storage space, in bytes. Read-only.'
           format: int64
           nullable: true
         used:
-          type: integer
+          type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -23810,7 +23791,7 @@ components:
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             size:
-              type: integer
+              type: number
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
@@ -23927,7 +23908,7 @@ components:
             completionPercentage:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The percentage completion value of the course activity. Optional.
               format: int32
               nullable: true
@@ -24181,7 +24162,7 @@ components:
             percentageComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
@@ -24195,6 +24176,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -24434,21 +24416,21 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a team.
           format: int32
           nullable: true
@@ -24542,7 +24524,7 @@ components:
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             createdDateTime:
@@ -24690,7 +24672,7 @@ components:
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of users assigned to the tag.
               format: int32
               nullable: true
@@ -24770,7 +24752,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -25099,11 +25081,11 @@ components:
           description: Informational attribute that identifies the HASH algorithm that was used by TPM
           nullable: true
         resetCount:
-          type: integer
+          type: number
           description: The number of times a PC device has hibernated or resumed
           format: int64
         restartCount:
-          type: integer
+          type: number
           description: The number of times a PC device has rebooted
           format: int64
         safeMode:
@@ -25438,7 +25420,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -25450,7 +25432,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -25471,7 +25453,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -25483,7 +25465,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -25530,6 +25512,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -25756,7 +25739,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -25765,7 +25748,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -26189,7 +26172,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -26208,7 +26191,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -26249,7 +26232,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Percentage of task completion. When set to 100, the task is considered completed.'
               format: int32
               nullable: true
@@ -26262,14 +26245,14 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2, 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Additionally, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -26461,39 +26444,39 @@ components:
           description: Identifier of the job run.
           nullable: true
         countEntitled:
-          type: integer
+          type: number
           description: Count of processed entries that were assigned for this application.
           format: int64
         countEntitledForProvisioning:
-          type: integer
+          type: number
           description: Count of processed entries that were assigned for provisioning.
           format: int64
         countEscrowed:
-          type: integer
+          type: number
           description: Count of entries that were escrowed (errors).
           format: int64
         countEscrowedRaw:
-          type: integer
+          type: number
           description: 'Count of entries that were escrowed, including system-generated escrows.'
           format: int64
         countExported:
-          type: integer
+          type: number
           description: Count of exported entries.
           format: int64
         countExports:
-          type: integer
+          type: number
           description: Count of entries that were expected to be exported.
           format: int64
         countImported:
-          type: integer
+          type: number
           description: Count of imported entries.
           format: int64
         countImportedDeltas:
-          type: integer
+          type: number
           description: Count of imported delta-changes.
           format: int64
         countImportedReferenceDeltas:
-          type: integer
+          type: number
           description: Count of imported delta-changes pertaining to reference changes.
           format: int64
         error:
@@ -26517,7 +26500,7 @@ components:
       type: object
       properties:
         completedUnits:
-          type: integer
+          type: number
           description: The numerator of a progress ratio; the number of units of changes already processed.
           format: int64
         progressObservationDateTime:
@@ -26526,7 +26509,7 @@ components:
           description: The time of a progress observation as an offset in minutes from UTC.
           format: date-time
         totalUnits:
-          type: integer
+          type: number
           description: The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
           format: int64
         units:
@@ -26559,7 +26542,7 @@ components:
           description: 'Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         seriesCount:
-          type: integer
+          type: number
           description: 'Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).'
           format: int64
       additionalProperties:
@@ -26573,7 +26556,7 @@ components:
           description: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra ID synchronization worker to user - For Workday to Microsoft Entra synchronization.
           nullable: true
         value:
-          type: integer
+          type: number
           description: Total number of synchronized objects.
           format: int64
       additionalProperties:
@@ -27064,7 +27047,7 @@ components:
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: For internal use only.
               format: int32
               nullable: true
@@ -27323,7 +27306,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -27338,13 +27321,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -27364,7 +27347,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -27561,7 +27544,7 @@ components:
         id:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
@@ -27613,11 +27596,19 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        displayName:
+          type: string
+          description: The name of the reaction.
+          nullable: true
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -27726,7 +27717,7 @@ components:
           description: The performing artist for the audio file.
           nullable: true
         bitrate:
-          type: integer
+          type: number
           description: Bitrate expressed in kbps.
           format: int64
           nullable: true
@@ -27741,19 +27732,19 @@ components:
         disc:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The number of the disc this audio file came from.
           format: int16
           nullable: true
         discCount:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The total number of discs in this album.
           format: int16
           nullable: true
         duration:
-          type: integer
+          type: number
           description: 'Duration of the audio file, expressed in milliseconds'
           format: int64
           nullable: true
@@ -27776,21 +27767,21 @@ components:
         track:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of the track on the original disc for this audio file.
           format: int32
           nullable: true
         trackCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tracks on the original disc for this audio file.
           format: int32
           nullable: true
         year:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The year the audio file was recorded.
           format: int32
           nullable: true
@@ -27805,7 +27796,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -27867,7 +27858,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -27882,14 +27873,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Height of the image, in pixels. Read-only.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
           nullable: true
@@ -27979,14 +27970,14 @@ components:
         iso:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
         orientation:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
@@ -28059,7 +28050,7 @@ components:
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         size:
-          type: integer
+          type: number
           description: Size of the remote item. Read-only.
           format: int64
           nullable: true
@@ -28124,14 +28115,14 @@ components:
         audioBitsPerSample:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio bits per sample.
           format: int32
           nullable: true
         audioChannels:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio channels.
           format: int32
           nullable: true
@@ -28142,19 +28133,19 @@ components:
         audioSamplesPerSecond:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio samples per second.
           format: int32
           nullable: true
         bitrate:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Bit rate of the video in bits per second.
           format: int32
           nullable: true
         duration:
-          type: integer
+          type: number
           description: Duration of the file in milliseconds.
           format: int64
           nullable: true
@@ -28170,14 +28161,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Height of the video, in pixels.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
@@ -28329,7 +28320,7 @@ components:
               format: base64url
               nullable: true
             size:
-              type: integer
+              type: number
               description: Indicates the size of the content stream for this version of the item.
               format: int64
               nullable: true
@@ -28669,14 +28660,14 @@ components:
         linesForEditing:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the text box.
           format: int32
           nullable: true
         maxLength:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum number of characters for the value.
           format: int32
           nullable: true
@@ -28798,7 +28789,7 @@ components:
         position:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
@@ -29009,6 +29000,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -29051,7 +29043,7 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a channel.
           format: int32
           nullable: true
@@ -29062,14 +29054,14 @@ components:
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a channel.
           format: int32
           nullable: true
@@ -29607,7 +29599,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -29673,7 +29665,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -29723,6 +29715,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.appLogUploadState:
       title: appLogUploadState
       enum:
@@ -29913,7 +29907,7 @@ components:
             detectionCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the malware is detected
               format: int32
               nullable: true
@@ -30214,7 +30208,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -30503,25 +30497,25 @@ components:
           type: object
           properties:
             deleted:
-              type: integer
+              type: number
               format: int64
               nullable: true
             manageWebUrl:
               type: string
               nullable: true
             remaining:
-              type: integer
+              type: number
               format: int64
               nullable: true
             state:
               type: string
               nullable: true
             total:
-              type: integer
+              type: number
               format: int64
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
             services:
@@ -30730,7 +30724,7 @@ components:
         matchingPriority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.'
           format: int32
         source:
@@ -30864,7 +30858,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported bottom margins(in microns) for the printer.
@@ -30890,7 +30884,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: The list of print resolutions in DPI that are supported by the printer.
@@ -30928,7 +30922,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported left margins(in microns) for the printer.
@@ -30971,7 +30965,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: Supported number of Input Pages to impose upon a single Impression.
@@ -30985,7 +30979,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported right margins(in microns) for the printer.
@@ -31003,7 +30997,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported top margins(in microns) for the printer.
@@ -31022,14 +31016,14 @@ components:
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of copies printed per job.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default resolution in DPI to use when printing the job.
           format: int32
           nullable: true
@@ -31071,7 +31065,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -31088,7 +31082,7 @@ components:
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The altitude, in meters, that the printer is located at.'
           format: int32
           nullable: true
@@ -31278,7 +31272,7 @@ components:
         type:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: For internal use only.
           format: int32
           nullable: true
@@ -31354,6 +31348,10 @@ components:
       title: teamsAppAuthorization
       type: object
       properties:
+        clientAppId:
+          type: string
+          description: The registration ID of the Microsoft Entra app ID associated with the teamsApp.
+          nullable: true
         requiredPermissionSet:
           $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
       additionalProperties:
@@ -31614,7 +31612,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The height of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -31629,7 +31627,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The width of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -31808,7 +31806,7 @@ components:
             position:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The zero-based position of the worksheet within the workbook.
               format: int32
             visibility:
@@ -31857,14 +31855,14 @@ components:
         actionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times the action took place. Read-only.
           format: int32
           nullable: true
         actorCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of distinct actors that performed the action. Read-only.
           format: int32
           nullable: true
@@ -32164,7 +32162,7 @@ components:
             openSlotCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of the number of slots for the given open shift.
               format: int32
           additionalProperties:
@@ -32250,14 +32248,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -32705,7 +32703,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -32910,7 +32908,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -33062,12 +33060,12 @@ components:
       type: object
       properties:
         end:
-          type: integer
+          type: number
           description: The inclusive upper bound of the integer range.
           format: int64
           nullable: true
         start:
-          type: integer
+          type: number
           description: The inclusive lower bound of the integer range.
           format: int64
           nullable: true
@@ -34050,14 +34048,14 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of copies that should be printed. Read-only.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
           format: int32
           nullable: true
@@ -34104,7 +34102,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -34164,7 +34162,7 @@ components:
               description: The document's name. Read-only.
               nullable: true
             size:
-              type: integer
+              type: number
               description: The document's size in bytes. Read-only.
               format: int64
           additionalProperties:
@@ -34303,7 +34301,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
@@ -34325,7 +34323,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
@@ -34361,10 +34359,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -34373,10 +34373,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
@@ -34566,7 +34568,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -34597,7 +34599,7 @@ components:
               type: string
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
           additionalProperties:
@@ -34625,28 +34627,28 @@ components:
         bottom:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the bottom edge.
           format: int32
           nullable: true
         left:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the left edge.
           format: int32
           nullable: true
         right:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the right edge.
           format: int32
           nullable: true
         top:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the top edge.
           format: int32
           nullable: true
@@ -34747,7 +34749,7 @@ components:
         key:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).'
           format: int32
         sortOn:
@@ -35000,7 +35002,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The index of the icon in the given set.
           format: int32
         set:
