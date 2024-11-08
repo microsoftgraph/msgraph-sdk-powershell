@@ -18,7 +18,7 @@ require:
 ``` yaml
 # Directives go here!
 directive:
-  - remove-path-by-operation: ^user.mailFolder.childFolder.message_(reply|replyAll)$
+  - remove-path-by-operation: ^user.mailFolder.childFolder.message_(reply|replyAll)$|^user.mailFolder.message_(reply|replyAll)$
 # Remove cmdlets.
   - where:
       verb: Get
