@@ -1,4 +1,7 @@
 ﻿using System.Text.Json;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.Extensions;
+using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 
 namespace openapiinfo;
@@ -6,20 +9,31 @@ internal class Program
 {
     public static string openApiInfoFile = "openApiInfo.json";
     public static string openApiFileError = "openAPIErrors.csv";
+    public static string duplicateOperationIdsFile = "duplicateOperationIds.csv";
     private const string openApiInfoMetadataUrl_v1 = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/docs/OpenApiInfo/v1.0/openApiInfo.json";
     private const string openApiInfoMetadataUrl_beta = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/docs/OpenApiInfo/beta/openApiInfo.json";
+    private const string metadataJsonFile = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/refs/heads/dev/src/Authentication/Authentication/custom/common/MgCommandMetadata.json";
     private static IList<Model> openApiInfo_v1 = new OriginalMetadata(openApiInfoMetadataUrl_v1).GetOpenApiInfo();
     private static IList<Model> openApiInfo_beta = new OriginalMetadata(openApiInfoMetadataUrl_beta).GetOpenApiInfo();
+    private static IList<CmdMetadata> cmdMetaData = new OriginalMetadata(metadataJsonFile, "cmdletmetadata").GetMetadataInfo();
     private static IDictionary<string, IList<Model>> openApiVersions = new Dictionary<string, IList<Model>>();
+     public static Dictionary<string, string> operationIds =new ();
+    public static HashSet<string> duplicateOperationIds = new();
+    public static HashSet<string> opIdDetails = new();
     private static void Main(string[] args)
     {
         openApiVersions.Add("v1.0", openApiInfo_v1);
-        openApiVersions.Add("beta", openApiInfo_beta);
+       // openApiVersions.Add("beta", openApiInfo_beta);
 
         foreach (var version in openApiVersions)
         {
             CompareOpenApiInfo(version.Key, version.Value);
         }
+        
+        // foreach (var v in operationIds)
+        // {
+        //     Console.WriteLine(v);
+        // }
 
     }
 
@@ -47,18 +61,16 @@ internal class Program
             //Go through list of openapi files
             foreach (var file in Directory.GetFiles(openApiPath))
             {
+                Console.WriteLine($"Processing {file}");
                 using (var sr = new StreamReader(file))
                 {
                     var fileName = Path.GetFileNameWithoutExtension(file);
-                    var openApiDoc = new OpenApiStreamReader().Read(sr.BaseStream, out var diagnostic);
-                    if (diagnostic.Errors.Count > 0)
-                    {
-                        throw new Exception($"Error reading openapi file {file}");
-                    }
+                    var openApiDoc = GetOpenApiStream(sr);
 
                     //Go through each path in the openapi file
                     foreach (var path in openApiDoc.Paths)
                     {
+                        
                         //Go through each operation in the path
                         foreach (var operation in path.Value.Operations)
                         {
@@ -74,11 +86,9 @@ internal class Program
                             //Get the operationId
                             var operationId = operation.Value.OperationId;
                             methodInfo.OperationId = operationId.ToString();
-
                             //Get the method
                             var method = operation.Key.ToString();
                             methodInfo.Method = method.ToString();
-                            //Console.WriteLine("here" + methodInfo.Method);
                             //Get the parameters
                             var parameters = new List<Parameters>();
                             foreach (var parameter in operation.Value.Parameters)
@@ -90,6 +100,15 @@ internal class Program
                             }
                             methodInfo.Parameters = parameters;
                             model.MethodInfo = methodInfo;
+                            //Check if operationId already exists
+                            if (operationIds.ContainsKey(operationId))
+                            {
+                                duplicateOperationIds.Add($"Duplicate {operationId}, {fileName},{apiPath},{method},{operationIds[operationId]}");
+                            }
+                            else
+                            {
+                                operationIds.Add(operationId, $"{fileName},{apiPath},{method},{file}");
+                            }
 
                             var originalPathDetails = PathDetails(openApiInfoMetadata, operationId, apiPath, method, fileName);
                             if (originalPathDetails == null || originalPathDetails.PathInfo == null)
@@ -136,8 +155,77 @@ internal class Program
                 File.AppendAllText($"{openApiInfoPath}\\{openApiFileError}", report + Environment.NewLine);
             }
         }
+        if (duplicateOperationIds.Count > 1)
+        {
+            foreach (var duplicate in duplicateOperationIds)
+            {
+                var dupList = duplicate.Split(",");
+                var report = $"{dupList[0]},{dupList[1]},{dupList[2]},{dupList[3]},{dupList[4]},{dupList[5]},{dupList[6]}";
+                File.AppendAllText($"{openApiInfoPath}\\{duplicateOperationIdsFile}", report + Environment.NewLine);
+                RemoveDuplicateOperationId(dupList[1],dupList[2],dupList[3],dupList[4],dupList[5], dupList[7]);
+
+            }
+        }
 
     }
+
+    private static void RemoveDuplicateOperationId(string firstModule, string firstPath, string firstOperation, string secondModule, string secondPath,string file)
+    {
+        bool firstModuleInfo = firstModuleInfoFound(firstModule, firstPath, firstOperation);
+        if(firstModuleInfo)
+        {
+            using (var sr = new StreamReader(file))
+            {
+             var openApiDoc = GetOpenApiStream(sr);
+                int count = 0;
+                if(openApiDoc.Paths.ContainsKey(secondPath))
+                {
+                    count++;
+                }
+                var operation = OperationType.Get;
+                operation = firstOperation switch
+                {
+                    "get" => OperationType.Get,
+                    "post" => OperationType.Post,
+                    "put" => OperationType.Put,
+                    "delete" => OperationType.Delete,
+                    "patch" => OperationType.Patch,
+                    _ => OperationType.Get
+                };
+                
+                if(count > 1)
+                {
+                    openApiDoc.Paths[secondPath].Operations.Remove(operation);
+                }
+                else
+                {
+                    openApiDoc.Paths.Remove(secondPath);    
+                }
+                var modified = openApiDoc.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
+                File.WriteAllText(file, modified);
+            }
+        }
+    }
+
+    private static bool firstModuleInfoFound(string module, string uri, string method){
+        //Console.WriteLine($"Module: {module}, Path: {uri}, Method: {method}");
+        var uriSegments = uri.Split('/');
+        uriSegments[uriSegments.Length - 1] = uriSegments[uriSegments.Length - 1].Replace("microsoft.graph.", "");
+        var newUri = string.Join("/", uriSegments);
+        //Remove white spaces from beginning and end of uri
+        newUri = newUri.Trim();
+        module = module.Trim();
+        method = method.Trim();
+
+        //Console.WriteLine($"Module: {module}, Path: {newUri}, Method: {method}");
+        var moduleInfo = cmdMetaData.Where(c => c.Module == module && c.Uri == newUri && c.Method == method.ToUpper()).FirstOrDefault(); 
+        if(moduleInfo != null){
+            //Console.WriteLine($"Module: {module}, Path: {newUri}, Method: {method}");
+            return true;
+        }   
+        return false;
+    }
+
     private static Model PathDetails(IList<Model> openApiInfo, string operationId, string apiPath, string method, string module)
     {
         if (openApiInfo == null || openApiInfo.Count == 0)
@@ -150,5 +238,15 @@ internal class Program
         var pathDetails = matchedPaths.FirstOrDefault();
 
         return pathDetails ?? new Model();
+    }
+
+    private static OpenApiDocument GetOpenApiStream(StreamReader sr)
+    {
+        var openApiDoc = new OpenApiStreamReader().Read(sr.BaseStream, out var diagnostic);
+        if (diagnostic.Errors.Count > 0)
+        {
+            return null;
+        }
+        return openApiDoc;
     }
 }

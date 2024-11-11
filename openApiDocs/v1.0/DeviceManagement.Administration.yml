@@ -326,50 +326,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/deviceManagement/auditEvents/microsoft.graph.getAuditActivityTypes(category=''{category}'')':
-    get:
-      tags:
-        - deviceManagement.auditEvent
-      summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.auditEvent_getAuditActivityType
-      parameters:
-        - name: category
-          in: path
-          description: 'Usage: category=''{category}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/auditEvents/microsoft.graph.getAuditCategories():
     get:
       tags:
