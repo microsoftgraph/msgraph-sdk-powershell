@@ -6515,36 +6515,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /identity/customAuthenticationExtensions/microsoft.graph.validateAuthenticationConfiguration:
-    post:
-      tags:
-        - identity.customAuthenticationExtension
-      summary: Invoke action validateAuthenticationConfiguration
-      operationId: identity.customAuthenticationExtension_validateAuthenticationConfiguration
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                endpointConfiguration:
-                  $ref: '#/components/schemas/microsoft.graph.customExtensionEndpointConfiguration'
-                authenticationConfiguration:
-                  $ref: '#/components/schemas/microsoft.graph.customExtensionAuthenticationConfiguration'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.authenticationConfigurationValidation'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /identity/identityProviders:
     get:
       tags:

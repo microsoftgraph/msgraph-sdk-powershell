@@ -61,7 +61,7 @@ internal class Program
             //Go through list of openapi files
             foreach (var file in Directory.GetFiles(openApiPath))
             {
-                Console.WriteLine($"Processing {file}");
+                //Console.WriteLine($"Processing {file}");
                 using (var sr = new StreamReader(file))
                 {
                     var fileName = Path.GetFileNameWithoutExtension(file);
@@ -70,7 +70,6 @@ internal class Program
                     //Go through each path in the openapi file
                     foreach (var path in openApiDoc.Paths)
                     {
-                        
                         //Go through each operation in the path
                         foreach (var operation in path.Value.Operations)
                         {
@@ -101,13 +100,23 @@ internal class Program
                             methodInfo.Parameters = parameters;
                             model.MethodInfo = methodInfo;
                             //Check if operationId already exists
+
                             if (operationIds.ContainsKey(operationId))
                             {
-                                duplicateOperationIds.Add($"Duplicate {operationId}, {fileName},{apiPath},{method},{operationIds[operationId]}");
+                                string duplicates = operationIds[operationId];
+                                string[] dupList = duplicates.Split("**");
+                                string duplicateOpId = operationId;
+                                string dupModule = dupList[0];
+                                string dupPath = dupList[1];
+                                string dupMethod = dupList[2];
+                                string dupFile = dupList[3];
+                                var duplicate = duplicateOpId+"**"+dupModule+"**"+dupPath+"**"+dupMethod+"**"+dupFile+"**"+apiPath+"**"+method+"**"+fileName+"**"+file;
+                                duplicateOperationIds.Add(duplicate);
                             }
                             else
                             {
-                                operationIds.Add(operationId, $"{fileName},{apiPath},{method},{file}");
+                                var opIdDetails = fileName+"**"+apiPath+"**"+method+"**"+file;
+                                operationIds.Add(operationId, opIdDetails);
                             }
 
                             var originalPathDetails = PathDetails(openApiInfoMetadata, operationId, apiPath, method, fileName);
@@ -159,58 +168,63 @@ internal class Program
         {
             foreach (var duplicate in duplicateOperationIds)
             {
-                var dupList = duplicate.Split(",");
-                var report = $"{dupList[0]},{dupList[1]},{dupList[2]},{dupList[3]},{dupList[4]},{dupList[5]},{dupList[6]}";
+                var dupList = duplicate.Split("**");
+                //{duplicateOpId},{dupModule},{dupPath},{dupMethod},{dupFile},{apiPath},{method},{fileName},{file}");
+                var report = $"{dupList[0]},{dupList[1]},{dupList[2]},{dupList[3]},{dupList[5]},{dupList[6]}";
                 File.AppendAllText($"{openApiInfoPath}\\{duplicateOperationIdsFile}", report + Environment.NewLine);
-                RemoveDuplicateOperationId(dupList[1],dupList[2],dupList[3],dupList[4],dupList[5], dupList[7]);
+                RemoveDuplicateOperationId(dupList[1],dupList[2],dupList[3],dupList[4],dupList[5],dupList[6], dupList[7], dupList[8]);
 
             }
         }
 
     }
 
-    private static void RemoveDuplicateOperationId(string firstModule, string firstPath, string firstOperation, string secondModule, string secondPath,string file)
+    private static void RemoveDuplicateOperationId(string firstModule,string firstPath, string firstOperation, string firstFile, string secondPath, string secondOperation, string secondModule, string secondFile)
     {
+        //Console.WriteLine($"First module: {firstModule}  FirstPath: {firstPath} First operation: {firstOperation} Second module: {secondModule} Second path: {secondPath} first file {firstFile} Second file: {secondFile}");
+        try{
         bool firstModuleInfo = firstModuleInfoFound(firstModule, firstPath, firstOperation);
-        if(firstModuleInfo)
+        //Check if the second path is available
+        bool secondModuleInfo  = firstModuleInfoFound(secondModule, secondPath, secondOperation);
+        string pathToRemove = secondPath;
+        string fileToModify = secondFile;
+        
+        if(secondModuleInfo)
         {
-            using (var sr = new StreamReader(file))
-            {
-             var openApiDoc = GetOpenApiStream(sr);
-                int count = 0;
-                if(openApiDoc.Paths.ContainsKey(secondPath))
-                {
-                    count++;
-                }
-                var operation = OperationType.Get;
-                operation = firstOperation switch
-                {
-                    "get" => OperationType.Get,
-                    "post" => OperationType.Post,
-                    "put" => OperationType.Put,
-                    "delete" => OperationType.Delete,
-                    "patch" => OperationType.Patch,
-                    _ => OperationType.Get
-                };
-                
-                if(count > 1)
-                {
-                    openApiDoc.Paths[secondPath].Operations.Remove(operation);
-                }
-                else
-                {
-                    openApiDoc.Paths.Remove(secondPath);    
-                }
-                var modified = openApiDoc.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
-                File.WriteAllText(file, modified);
-            }
+            pathToRemove = firstPath;
+            fileToModify = firstFile;
+            //Console.WriteLine($"Removing path {pathToRemove} {firstModuleInfo} {file}");
         }
+        // if(fileToModify.Equals("Get") || fileToModify.Equals("Post") || fileToModify.Equals("Patch") || fileToModify.Equals("Delete") || fileToModify.Equals("Put") || fileToModify.Equals("Invoke"))
+        // {
+        //     Console.WriteLine($"Removing path {pathToRemove} File to modify {fileToModify}");
+        // }
+        
+            //The rest are new paths with duplicate operation ids and should be removed
+            using (var sr = new StreamReader(fileToModify))
+            {
+                var openApiDoc = GetOpenApiStream(sr);
+                if(openApiDoc.Paths.ContainsKey(pathToRemove))
+                {
+                    openApiDoc.Paths.Remove(pathToRemove);
+                    var modified = openApiDoc.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
+                    using (StreamWriter sw = new StreamWriter(fileToModify))
+                    {
+                        sw.Write(modified);
+                    }   
+
+                }
+            }
+        }catch(Exception e){
+            Console.WriteLine(e.Message);
+        }   
+        
     }
 
     private static bool firstModuleInfoFound(string module, string uri, string method){
         //Console.WriteLine($"Module: {module}, Path: {uri}, Method: {method}");
         var uriSegments = uri.Split('/');
-        uriSegments[uriSegments.Length - 1] = uriSegments[uriSegments.Length - 1].Replace("microsoft.graph.", "");
+        uriSegments[uriSegments.Length - 1] = uriSegments[uriSegments.Length - 1].Replace("microsoft.graph.", "").Replace("()", "");
         var newUri = string.Join("/", uriSegments);
         //Remove white spaces from beginning and end of uri
         newUri = newUri.Trim();
@@ -218,8 +232,8 @@ internal class Program
         method = method.Trim();
 
         //Console.WriteLine($"Module: {module}, Path: {newUri}, Method: {method}");
-        var moduleInfo = cmdMetaData.Where(c => c.Module == module && c.Uri == newUri && c.Method == method.ToUpper()).FirstOrDefault(); 
-        if(moduleInfo != null){
+        var moduleInfo = cmdMetaData.Where(c => c.Module == module && c.Uri == newUri && c.Method == method.ToUpper()).ToList(); 
+        if(moduleInfo.Count > 0){
             //Console.WriteLine($"Module: {module}, Path: {newUri}, Method: {method}");
             return true;
         }   

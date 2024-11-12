@@ -91,32 +91,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /deviceManagement/applePushNotificationCertificate/microsoft.graph.downloadApplePushNotificationCertificateSigningRequest():
-    get:
-      tags:
-        - deviceManagement.applePushNotificationCertificate
-      summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
-      description: Download Apple push notification certificate signing request
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-downloadapplepushnotificationcertificatesigningrequest?view=graph-rest-1.0
-      operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   /deviceManagement/auditEvents:
     get:
       tags:
@@ -326,46 +300,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /deviceManagement/auditEvents/microsoft.graph.getAuditCategories():
-    get:
-      tags:
-        - deviceManagement.auditEvent
-      summary: Invoke function getAuditCategories
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0
-      operationId: deviceManagement.auditEvent_getAuditCategory
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/complianceManagementPartners:
     get:
       tags:
@@ -770,31 +704,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/deviceManagementPartners/{deviceManagementPartner-id}/microsoft.graph.terminate':
-    post:
-      tags:
-        - deviceManagement.deviceManagementPartner
-      summary: Invoke action terminate
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-terminate?view=graph-rest-1.0
-      operationId: deviceManagement.deviceManagementPartner_terminate
-      parameters:
-        - name: deviceManagementPartner-id
-          in: path
-          description: The unique identifier of deviceManagementPartner
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementPartner
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/deviceManagementPartners/$count:
     get:
       tags:
@@ -1004,43 +913,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector-id}/microsoft.graph.sync':
-    post:
-      tags:
-        - deviceManagement.deviceManagementExchangeConnector
-      summary: Invoke action sync
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-sync?view=graph-rest-1.0
-      operationId: deviceManagement.exchangeConnector_sync
-      parameters:
-        - name: deviceManagementExchangeConnector-id
-          in: path
-          description: The unique identifier of deviceManagementExchangeConnector
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementExchangeConnector
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                syncType:
-                  $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnectorSyncType'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/exchangeConnectors/$count:
     get:
       tags:
@@ -1668,56 +1540,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.beginOnboarding':
-    post:
-      tags:
-        - deviceManagement.remoteAssistancePartner
-      summary: Invoke action beginOnboarding
-      description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-beginonboarding?view=graph-rest-1.0
-      operationId: deviceManagement.remoteAssistancePartner_beginOnboarding
-      parameters:
-        - name: remoteAssistancePartner-id
-          in: path
-          description: The unique identifier of remoteAssistancePartner
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: remoteAssistancePartner
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.disconnect':
-    post:
-      tags:
-        - deviceManagement.remoteAssistancePartner
-      summary: Invoke action disconnect
-      description: A request to remove the active TeamViewer connector
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-disconnect?view=graph-rest-1.0
-      operationId: deviceManagement.remoteAssistancePartner_disconnect
-      parameters:
-        - name: remoteAssistancePartner-id
-          in: path
-          description: The unique identifier of remoteAssistancePartner
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: remoteAssistancePartner
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/remoteAssistancePartners/$count:
     get:
       tags:
@@ -3980,46 +3802,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /deviceManagement/virtualEndpoint/auditEvents/microsoft.graph.getAuditActivityTypes():
-    get:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke function getAuditActivityTypes
-      description: Get audit activity types by tenant ID.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/virtualEndpoint/cloudPCs:
     get:
       tags:
@@ -4203,157 +3985,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.endGracePeriod':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action endGracePeriod
-      description: End the grace period for a specific cloudPC object. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before deprovisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_endGracePeriod
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.reboot':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action reboot
-      description: Reboot a specific cloudPC object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_reboot
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.rename':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action rename
-      description: Rename a specific cloudPC object. Use this API to update the displayName of a Cloud PC entity.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_rename
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                displayName:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.restore':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action restore
-      description: Restore a specific cloudPC object to a previous state from a snapshot. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_restore
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                cloudPcSnapshotId:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action troubleshoot
-      description: Troubleshoot a specific cloudPC object. Use this API to check the health status of the Cloud PC and the session host.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPC_troubleshoot
-      parameters:
-        - name: cloudPC-id
-          in: path
-          description: The unique identifier of cloudPC
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPC
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/cloudPCs/$count:
     get:
       tags:
@@ -4573,45 +4204,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages():
-    get:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke function getSourceImages
-      description: Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.cloudPcSourceDeviceImage'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceManagement/virtualEndpoint/galleryImages:
     get:
       tags:
@@ -5004,31 +4596,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection-id}/microsoft.graph.runHealthChecks':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action runHealthChecks
-      description: 'Run health checks on the cloudPcOnPremisesConnection object. It triggers a new health check for the cloudPcOnPremisesConnection (../resources/cloudpconpremisesconnection.md) object and changes the healthCheckStatus and [healthCheckStatusDetail properties when check finished.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.onPremisesConnection_runHealthCheck
-      parameters:
-        - name: cloudPcOnPremisesConnection-id
-          in: path
-          description: The unique identifier of cloudPcOnPremisesConnection
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPcOnPremisesConnection
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/onPremisesConnections/$count:
     get:
       tags:
@@ -5920,45 +5487,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/microsoft.graph.assign':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action assign
-      description: Assign a cloudPcProvisioningPolicy to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_assign
-      parameters:
-        - name: cloudPcProvisioningPolicy-id
-          in: path
-          description: The unique identifier of cloudPcProvisioningPolicy
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPcProvisioningPolicy
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                assignments:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/provisioningPolicies/$count:
     get:
       tags:
@@ -6408,45 +5936,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}/microsoft.graph.assign':
-    post:
-      tags:
-        - deviceManagement.virtualEndpoint
-      summary: Invoke action assign
-      description: Assign a cloudPcUserSetting to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.userSetting_assign
-      parameters:
-        - name: cloudPcUserSetting-id
-          in: path
-          description: The unique identifier of cloudPcUserSetting
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: cloudPcUserSetting
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                assignments:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/userSettings/$count:
     get:
       tags:
