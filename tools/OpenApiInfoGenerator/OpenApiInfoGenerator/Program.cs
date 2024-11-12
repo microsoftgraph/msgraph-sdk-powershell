@@ -22,8 +22,8 @@ internal class Program
     public static HashSet<string> opIdDetails = new();
     private static void Main(string[] args)
     {
-        openApiVersions.Add("v1.0", openApiInfo_v1);
-       // openApiVersions.Add("beta", openApiInfo_beta);
+        //openApiVersions.Add("v1.0", openApiInfo_v1);
+        openApiVersions.Add("beta", openApiInfo_beta);
 
         foreach (var version in openApiVersions)
         {
