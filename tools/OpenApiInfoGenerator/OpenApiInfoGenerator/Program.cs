@@ -22,8 +22,8 @@ internal class Program
     public static HashSet<string> opIdDetails = new();
     private static void Main(string[] args)
     {
-        //openApiVersions.Add("v1.0", openApiInfo_v1);
-        openApiVersions.Add("beta", openApiInfo_beta);
+        openApiVersions.Add("v1.0", openApiInfo_v1);
+        //openApiVersions.Add("beta", openApiInfo_beta);
 
         foreach (var version in openApiVersions)
         {
@@ -166,11 +166,12 @@ internal class Program
         }
         if (duplicateOperationIds.Count > 1)
         {
+            var duplicateHeader = "OperationId,FirstModule,FirstPath,FirstMethod,SecondModule,SecondPath,SecondMethod";
+            File.AppendAllText($"{openApiInfoPath}\\{duplicateOperationIdsFile}", duplicateHeader + Environment.NewLine);
             foreach (var duplicate in duplicateOperationIds)
             {
                 var dupList = duplicate.Split("**");
-                //{duplicateOpId},{dupModule},{dupPath},{dupMethod},{dupFile},{apiPath},{method},{fileName},{file}");
-                var report = $"{dupList[0]},{dupList[1]},{dupList[2]},{dupList[3]},{dupList[5]},{dupList[6]}";
+                var report = $"{dupList[0]},{dupList[1]},{dupList[2]},{dupList[3]},{dupList[7]},{dupList[5]},{dupList[6]}";
                 File.AppendAllText($"{openApiInfoPath}\\{duplicateOperationIdsFile}", report + Environment.NewLine);
                 RemoveDuplicateOperationId(dupList[1],dupList[2],dupList[3],dupList[4],dupList[5],dupList[6], dupList[7], dupList[8]);
 

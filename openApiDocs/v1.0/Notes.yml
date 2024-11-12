@@ -4629,7 +4629,7 @@ paths:
       tags:
         - groups.onenote
       summary: Invoke action onenotePatchContent
-      operationId: group.onenote.page_onenotePatchContent
+      operationId: group.onenote_PatchPageContent
       parameters:
         - name: group-id
           in: path
@@ -12815,7 +12815,7 @@ paths:
       tags:
         - sites.onenote
       summary: Invoke action onenotePatchContent
-      operationId: site.onenote.page_onenotePatchContent
+      operationId: site.onenote_PatchPageContent
       parameters:
         - name: site-id
           in: path
