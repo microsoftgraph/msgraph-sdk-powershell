@@ -17923,7 +17923,7 @@ paths:
       tags:
         - groups.site
       summary: Invoke action onenotePatchContent
-      operationId: group.site.onenote.notebook.section.page_onenotePatchContent
+      operationId: group.site.onenote.notebook.section_onenotePatchPageContent
       parameters:
         - name: group-id
           in: path
@@ -19315,7 +19315,7 @@ paths:
       tags:
         - groups.site
       summary: Invoke action onenotePatchContent
-      operationId: group.site.onenote.page_onenotePatchContent
+      operationId: group.site.onenote_onenotePatchPageContent
       parameters:
         - name: group-id
           in: path
@@ -21602,7 +21602,7 @@ paths:
       tags:
         - groups.site
       summary: Invoke action onenotePatchContent
-      operationId: group.site.onenote.sectionGroup.section.page_onenotePatchContent
+      operationId: group.site.onenote.sectionGroup.section_onenotePatchPageContent
       parameters:
         - name: group-id
           in: path
@@ -23033,7 +23033,7 @@ paths:
       tags:
         - groups.site
       summary: Invoke action onenotePatchContent
-      operationId: group.site.onenote.section.page_onenotePatchContent
+      operationId: group.site.onenote.section_onenotePatchPageContent
       parameters:
         - name: group-id
           in: path
