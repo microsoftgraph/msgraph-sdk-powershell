@@ -16300,7 +16300,7 @@ paths:
       tags:
         - groups.site
       summary: Invoke action onenotePatchContent
-      operationId: group.site.onenote.notebook.sectionGroup.section.page_onenotePatchContent
+      operationId: group.site.onenote.notebook.sectionGroup.section_PatchPageContent
       parameters:
         - name: group-id
           in: path
