@@ -38,7 +38,7 @@ $OpenApiTagPattern = '\[OpenAPI\].s*(.*)=>(.*):\"(.*)\"'
 $ExternalDocsPattern = 'https://learn.microsoft.com/graph/api/(.*?(graph-rest-1.0|graph-rest-beta))'
 $AliasPattern = '\[global::System.Management.Automation.Alias(.*?)\]'
 $ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
-$PermissionsUrl = "https://graphexplorerapi.azurewebsites.net/permissions"
+$PermissionsUrl = "https://devxapi-func-prod-eastus.azurewebsites.net/permissions"
 
 Write-Debug "Crawling cmdlets in $CmdletPathPattern."
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
