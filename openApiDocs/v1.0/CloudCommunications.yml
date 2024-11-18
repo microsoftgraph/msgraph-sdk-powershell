@@ -3146,10 +3146,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -5203,10 +5203,6 @@ paths:
       tags:
         - communications.Functions
       summary: Invoke function getAllRecordings
-      description: 'Get all recordings from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call recordings from channel meetings. You can apply the delta function on getAllRecordings to synchronize and get callRecording resources as they''re added for onlineMeeting instances organized by the specified user. The delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the recordings for online meetings organized by the user. Incremental synchronization gets recordings that are added since the last synchronization. Typically, you perform an initial full synchronization, and then get incremental changes to that recording view periodically. Find more information in the delta query documentation. For more examples, see callRecording: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-1.0
       operationId: communication.onlineMeeting_getAllRecording
       parameters:
         - name: meetingOrganizerUserId
@@ -5301,10 +5297,6 @@ paths:
       tags:
         - communications.Functions
       summary: Invoke function getAllTranscripts
-      description: 'Get all transcripts from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call transcripts from channel meetings. You can apply the delta function on getAllTranscripts to synchronize and get callTranscript resources as they''re added for onlineMeeting instances organized by the specified user. Delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the transcripts for online meetings organized by the user. Incremental synchronization gets transcripts that are added since the last synchronization. Typically, you perform an initial full synchronization, and then get incremental changes to that recording view periodically. For more information, see delta query. For more examples, see callTranscript: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-1.0
       operationId: communication.onlineMeeting_getAllTranscript
       parameters:
         - name: meetingOrganizerUserId
@@ -7734,11 +7726,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence
-      description: Get a user's presence information.
+      summary: 'presence: setStatusMessage'
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
