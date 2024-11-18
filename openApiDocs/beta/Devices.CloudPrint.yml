@@ -2262,57 +2262,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/print/printers/{printer-id}/share':
-    get:
-      tags:
-        - print.printer
-      summary: Get share from print
-      operationId: print.printer_GetShare
-      parameters:
-        - name: printer-id
-          in: path
-          description: The unique identifier of printer
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printerShare'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-07-31'
-        date: '2023-06-13'
-        version: 2023-06/Tasks_And_Plans
-        description: 'The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
-      x-ms-docs-operation-type: operation
   '/print/printers/{printer-id}/shares':
     get:
       tags:

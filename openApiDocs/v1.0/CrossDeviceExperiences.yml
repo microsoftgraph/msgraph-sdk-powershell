@@ -670,7 +670,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true

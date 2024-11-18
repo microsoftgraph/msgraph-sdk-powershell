@@ -4653,7 +4653,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -4672,14 +4672,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -4746,7 +4746,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -4910,11 +4910,62 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.attachmentItem:
+      title: attachmentItem
+      type: object
+      properties:
+        attachmentType:
+          $ref: '#/components/schemas/microsoft.graph.attachmentType'
+        contentId:
+          type: string
+          description: The CID or Content-Id of the attachment for referencing for the in-line attachments using the <img src='cid:contentId'> tag in HTML messages. Optional.
+          nullable: true
+        contentType:
+          type: string
+          description: The nature of the data in the attachment. Optional.
+          nullable: true
+        isInline:
+          type: boolean
+          description: 'true if the attachment is an inline attachment; otherwise, false. Optional.'
+          nullable: true
+        name:
+          type: string
+          description: The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
+          nullable: true
+        size:
+          type: number
+          description: The length of the attachment in bytes. Required.
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.uploadSession:
+      title: uploadSession
+      type: object
+      properties:
+        expirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+          format: date-time
+          nullable: true
+        nextExpectedRanges:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format ''start-end'' (for example ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
+        uploadUrl:
+          type: string
+          description: The URL endpoint that accepts PUT requests for byte ranges of the file.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4922,6 +4973,14 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.recipient:
+      title: recipient
+      type: object
+      properties:
+        emailAddress:
+          $ref: '#/components/schemas/microsoft.graph.emailAddress'
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -5194,14 +5253,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.recipient:
-      title: recipient
-      type: object
-      properties:
-        emailAddress:
-          $ref: '#/components/schemas/microsoft.graph.emailAddress'
-      additionalProperties:
-        type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -5249,6 +5300,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.attachmentType:
+      title: attachmentType
+      enum:
+        - file
+        - item
+        - reference
+      type: string
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -5369,14 +5427,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true

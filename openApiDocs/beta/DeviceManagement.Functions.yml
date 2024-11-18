@@ -1159,42 +1159,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  /deviceManagement/microsoft.graph.getEffectivePermissions():
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement_getEffectivePermission
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
     get:
       tags:

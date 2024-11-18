@@ -3340,14 +3340,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The width of the photo. Read-only.
               format: int32
               nullable: true

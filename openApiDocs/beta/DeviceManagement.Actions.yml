@@ -13070,45 +13070,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/userExperienceAnalyticsDeviceScopes/{userExperienceAnalyticsDeviceScope-id}/microsoft.graph.triggerDeviceScopeAction':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action triggerDeviceScopeAction
-      operationId: deviceManagement.userExperienceAnalyticsDeviceScope_triggerDeviceScopeAction
-      parameters:
-        - name: userExperienceAnalyticsDeviceScope-id
-          in: path
-          description: The unique identifier of userExperienceAnalyticsDeviceScope
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsDeviceScope
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                actionName:
-                  $ref: '#/components/schemas/microsoft.graph.deviceScopeAction'
-                deviceScopeId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.deviceScopeActionResult'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.changeUserAccountType':
     post:
       tags:

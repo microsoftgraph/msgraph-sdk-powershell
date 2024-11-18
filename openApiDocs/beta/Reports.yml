@@ -2194,37 +2194,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes=''{includedUserTypes}'',includedUserRoles=''{includedUserRoles}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function usersRegisteredByFeature
-      operationId: report.authenticationMethod_usersRegisteredGraphBPreFeature
-      parameters:
-        - name: includedUserTypes
-          in: path
-          description: 'Usage: includedUserTypes=''{includedUserTypes}'''
-          required: true
-          style: simple
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
-        - name: includedUserRoles
-          in: path
-          description: 'Usage: includedUserRoles=''{includedUserRoles}'''
-          required: true
-          style: simple
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userRegistrationFeatureSummary'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   /reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod():
     get:
       tags:
@@ -2235,37 +2204,6 @@ paths:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbymethod?view=graph-rest-beta
       operationId: report.authenticationMethod_usersRegisteredGraphBPreMethod
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userRegistrationMethodSummary'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes=''{includedUserTypes}'',includedUserRoles=''{includedUserRoles}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function usersRegisteredByMethod
-      operationId: report.authenticationMethod_usersRegisteredGraphBPreMethod
-      parameters:
-        - name: includedUserTypes
-          in: path
-          description: 'Usage: includedUserTypes=''{includedUserTypes}'''
-          required: true
-          style: simple
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
-        - name: includedUserRoles
-          in: path
-          description: 'Usage: includedUserRoles=''{includedUserRoles}'''
-          required: true
-          style: simple
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
       responses:
         2XX:
           description: Success
@@ -4311,36 +4249,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getEmailActivityUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getEmailActivityUserDetail
-      operationId: report_getEmailActivityUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getEmailAppUsageAppsUserCounts(period=''{period}'')':
     get:
       tags:
@@ -4417,36 +4325,6 @@ paths:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
             format: date
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getEmailAppUsageUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getEmailAppUsageUserDetail
-      operationId: report_getEmailAppUsageUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -4569,36 +4447,6 @@ paths:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
             format: date
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getFormsUserActivityUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getFormsUserActivityUserDetail
-      operationId: report_getFormsUserActivityUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -4766,37 +4614,6 @@ paths:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
             format: date
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getM365AppUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getM365AppUserDetail
-      description: Get a report that provides the details about which apps and platforms users have used.
-      operationId: report_getM365AppUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -5249,79 +5066,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/reports/microsoft.graph.getOffice365ActiveUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getOffice365ActiveUserDetail
-      operationId: report_getOffice365ActiveUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of office365ActiveUserDetail
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/reports/microsoft.graph.getOffice365GroupsActivityCounts(period=''{period}'')':
     get:
       tags:
@@ -5411,79 +5155,6 @@ paths:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
             format: date
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of office365GroupsActivityDetail
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/reports/microsoft.graph.getOffice365GroupsActivityDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getOffice365GroupsActivityDetail
-      operationId: report_getOffice365GroupsActivityDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5927,36 +5598,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getOneDriveActivityUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getOneDriveActivityUserDetail
-      operationId: report_getOneDriveActivityUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getOneDriveUsageAccountCounts(period=''{period}'')':
     get:
       tags:
@@ -6003,36 +5644,6 @@ paths:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
             format: date
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getOneDriveUsageAccountDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getOneDriveUsageAccountDetail
-      operationId: report_getOneDriveUsageAccountDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -6374,36 +5985,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getSharePointActivityUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getSharePointActivityUserDetail
-      operationId: report_getSharePointActivityUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getSharePointSiteUsageDetail(date={date})':
     get:
       tags:
@@ -6420,36 +6001,6 @@ paths:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
             format: date
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getSharePointSiteUsageDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getSharePointSiteUsageDetail
-      operationId: report_getSharePointSiteUsageDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -6678,36 +6229,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getSkypeForBusinessActivityUserDetail
-      operationId: report_getSkypeGraphFPreBusinessActivityUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageDistributionUserCounts(period=''{period}'')':
     get:
       tags:
@@ -6784,36 +6305,6 @@ paths:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
             format: date
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
-      operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -7252,36 +6743,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getTeamsDeviceUsageUserDetail
-      operationId: report_getTeamsDeviceUsageUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getTeamsTeamActivityCounts(period=''{period}'')':
     get:
       tags:
@@ -7328,36 +6789,6 @@ paths:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
             format: date
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getTeamsTeamActivityDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getTeamsTeamActivityDetail
-      operationId: report_getTeamsTeamActivityDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -7676,36 +7107,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getTeamsUserActivityUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getTeamsUserActivityUserDetail
-      operationId: report_getTeamsUserActivityUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
@@ -7864,36 +7265,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getYammerActivityUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getYammerActivityUserDetail
-      operationId: report_getYammerActivityUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getYammerDeviceUsageDistributionUserCounts(period=''{period}'')':
     get:
       tags:
@@ -7986,36 +7357,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getYammerDeviceUsageUserDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getYammerDeviceUsageUserDetail
-      operationId: report_getYammerDeviceUsageUserDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getYammerGroupsActivityCounts(period=''{period}'')':
     get:
       tags:
@@ -8062,36 +7403,6 @@ paths:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
             type: string
             format: date
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getYammerGroupsActivityDetail(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getYammerGroupsActivityDetail
-      operationId: report_getYammerGroupsActivityDetail
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -8266,61 +7577,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter=''{filter}'',skipToken=''{skipToken}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: report_managedDeviceEnrollmentFailureDetail
-      parameters:
-        - name: skip
-          in: path
-          description: 'Usage: skip={skip}'
-          required: true
-          style: simple
-          schema:
-            maximum: 2147483647
-            minimum: -2147483648
-            type: integer
-            format: int32
-            nullable: true
-        - name: top
-          in: path
-          description: 'Usage: top={top}'
-          required: true
-          style: simple
-          schema:
-            maximum: 2147483647
-            minimum: -2147483648
-            type: integer
-            format: int32
-            nullable: true
-        - name: filter
-          in: path
-          description: 'Usage: filter=''{filter}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-        - name: skipToken
-          in: path
-          description: 'Usage: skipToken=''{skipToken}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   /reports/microsoft.graph.managedDeviceEnrollmentFailureTrends():
     get:
       tags:
@@ -8344,31 +7600,6 @@ paths:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
       operationId: report_managedDeviceEnrollmentTopFailure
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.managedDeviceEnrollmentTopFailures(period=''{period}'')':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: report_managedDeviceEnrollmentTopFailure
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period=''{period}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
       responses:
         2XX:
           description: Success
