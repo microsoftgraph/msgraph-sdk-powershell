@@ -100,7 +100,13 @@ internal class Program
                             methodInfo.Parameters = parameters;
                             model.MethodInfo = methodInfo;
                             //Check if operationId already exists
+                            if(fileName.Equals("Users.Actions") || fileName.Equals("Users.Functions") || fileName.Equals("DeviceManagement.Functions") || fileName.Equals("DeviceManagement.Actions"))
+                            {
+                                //Skip
+                            }else
+                            {
 
+                            
                             if (operationIds.ContainsKey(operationId))
                             {
                                 string duplicates = operationIds[operationId];
@@ -118,6 +124,7 @@ internal class Program
                                 var opIdDetails = fileName+"**"+apiPath+"**"+method+"**"+file;
                                 operationIds.Add(operationId, opIdDetails);
                             }
+                        }
 
                             var originalPathDetails = PathDetails(openApiInfoMetadata, operationId, apiPath, method, fileName);
                             if (originalPathDetails == null || originalPathDetails.PathInfo == null)
@@ -173,7 +180,7 @@ internal class Program
                 var dupList = duplicate.Split("**");
                 var report = $"{dupList[0]},{dupList[1]},{dupList[2]},{dupList[3]},{dupList[7]},{dupList[5]},{dupList[6]}";
                 File.AppendAllText($"{openApiInfoPath}\\{duplicateOperationIdsFile}", report + Environment.NewLine);
-                RemoveDuplicateOperationId(dupList[1],dupList[2],dupList[3],dupList[4],dupList[5],dupList[6], dupList[7], dupList[8]);
+                //RemoveDuplicateOperationId(dupList[1],dupList[2],dupList[3],dupList[4],dupList[5],dupList[6], dupList[7], dupList[8]);
 
             }
         }
