@@ -10,6 +10,7 @@ internal class Program
     public static string openApiInfoFile = "openApiInfo.json";
     public static string openApiFileError = "openAPIErrors.csv";
     public static string duplicateOperationIdsFile = "duplicateOperationIds.csv";
+    public static string experimentReport = "newPaths_Methods.csv";
     private const string openApiInfoMetadataUrl_v1 = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/docs/OpenApiInfo/v1.0/openApiInfo.json";
     private const string openApiInfoMetadataUrl_beta = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/docs/OpenApiInfo/beta/openApiInfo.json";
     private const string metadataJsonFile = "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/refs/heads/dev/src/Authentication/Authentication/custom/common/MgCommandMetadata.json";
@@ -19,6 +20,7 @@ internal class Program
     private static IDictionary<string, IList<Model>> openApiVersions = new Dictionary<string, IList<Model>>();
      public static Dictionary<string, string> operationIds =new ();
     public static HashSet<string> duplicateOperationIds = new();
+    public static HashSet<string> dupOperationExperiment = new();
     public static HashSet<string> opIdDetails = new();
     private static void Main(string[] args)
     {
@@ -41,6 +43,7 @@ internal class Program
     {
         var models = new HashSet<Model>();
         var newPathsAdded = new HashSet<string>();
+        var experimentation = new HashSet<string>();
         var openApiErrors = new HashSet<string>();
         newPathsAdded.Add("Module,Path,Method");
         openApiErrors.Add("Module,ApiPath,Method,From,To");
@@ -118,6 +121,7 @@ internal class Program
                                 string dupFile = dupList[3];
                                 var duplicate = duplicateOpId+"**"+dupModule+"**"+dupPath+"**"+dupMethod+"**"+dupFile+"**"+apiPath+"**"+method+"**"+fileName+"**"+file;
                                 duplicateOperationIds.Add(duplicate);
+                                dupOperationExperiment.Add(apiPath);
                             }
                             else
                             {
@@ -129,7 +133,14 @@ internal class Program
                             var originalPathDetails = PathDetails(openApiInfoMetadata, operationId, apiPath, method, fileName);
                             if (originalPathDetails == null || originalPathDetails.PathInfo == null)
                             {
-                                newPathsAdded.Add($"{fileName},{apiPath},{method}");
+                                newPathsAdded.Add($"{fileName},{apiPath},{method},{operationId}");
+                                experimentation.Add($"{fileName}**{apiPath}**{method}**{operationId}");
+                                continue;
+                            }
+                            //Check if path exists but method does not exist
+                            if (originalPathDetails.MethodInfo == null)
+                            {
+                                experimentation.Add($"{fileName},{apiPath},{method},{operationId}");
                                 continue;
                             }
                             if (originalPathDetails.MethodInfo != null && originalPathDetails.MethodInfo.Parameters != null && originalPathDetails.MethodInfo.Parameters.Count > methodInfo.Parameters.Count)
@@ -183,6 +194,25 @@ internal class Program
                 //RemoveDuplicateOperationId(dupList[1],dupList[2],dupList[3],dupList[4],dupList[5],dupList[6], dupList[7], dupList[8]);
 
             }
+        }
+
+        if(dupOperationExperiment.Count > 1 && experimentation.Count > 1)
+        {
+            foreach(var experiment in experimentation)
+            {
+                var expList = experiment.Split("**");
+                //check if api path exists in dupOperation experiment list
+                if(dupOperationExperiment.Contains(expList[1]))
+                {
+                    //Create a report
+                    var report = $"{expList[0]},{expList[1]},{expList[2]},{expList[3]}";
+                    File.AppendAllText($"{openApiInfoPath}\\{experimentReport}", report + Environment.NewLine);
+                }
+
+            }
+        }
+        {
+            
         }
 
     }
