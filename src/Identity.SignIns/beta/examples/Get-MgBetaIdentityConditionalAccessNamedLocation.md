@@ -1,7 +1,7 @@
 ### Example 1: Get a list of all named locations
 
 ```powershell
-Connect-MgBetaGraph -Scopes 'Policy.Read.All'
+Connect-MgGraph -Scopes 'Policy.Read.All'
 Get-MgBetaIdentityConditionalAccessNamedLocation
 
 Id                                   CreatedDateTime       DisplayName                 ModifiedDateTime
@@ -16,7 +16,7 @@ This example lists all existing named location rules.
 ### Example 2: Get a named location by Id
 
 ```powershell
-Connect-MgBetaGraph -Scopes 'Policy.Read.All'
+Connect-MgGraph -Scopes 'Policy.Read.All'
 Get-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId '1f0fd623-bf8f-4003-9627-32a68c3cdcc1'
 
 Id                                   CreatedDateTime      DisplayName            ModifiedDateTime

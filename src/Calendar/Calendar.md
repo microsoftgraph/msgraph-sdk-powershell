@@ -31,4 +31,9 @@ directive:
       variant: ^List$|^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
     set:
       subject: $1Default$2
+# Remove duplicate cmdlet
+  - where:
+      verb: Get
+      subject: ^(UserCalendarSchedule)$
+    remove: true
 ```

@@ -6,6 +6,545 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
+  /directory/publicKeyInfrastructure:
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get publicKeyInfrastructure from directory
+      operationId: directory_GetPublicKeyInfrastructure
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Update the navigation property publicKeyInfrastructure in directory
+      operationId: directory_UpdatePublicKeyInfrastructure
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Delete navigation property publicKeyInfrastructure for directory
+      operationId: directory_DeletePublicKeyInfrastructure
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/publicKeyInfrastructure/certificateBasedAuthConfigurations:
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get certificateBasedAuthConfigurations from directory
+      operationId: directory.publicKeyInfrastructure_ListCertificateBasedAuthConfiguration
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.certificateBasedAuthPkiCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Create new navigation property to certificateBasedAuthConfigurations for directory
+      operationId: directory.publicKeyInfrastructure_CreateCertificateBasedAuthConfiguration
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}':
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get certificateBasedAuthConfigurations from directory
+      operationId: directory.publicKeyInfrastructure_GetCertificateBasedAuthConfiguration
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Update the navigation property certificateBasedAuthConfigurations in directory
+      operationId: directory.publicKeyInfrastructure_UpdateCertificateBasedAuthConfiguration
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Delete navigation property certificateBasedAuthConfigurations for directory
+      operationId: directory.publicKeyInfrastructure_DeleteCertificateBasedAuthConfiguration
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities':
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get certificateAuthorities from directory
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_ListCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.certificateAuthorityDetailCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Create new navigation property to certificateAuthorities for directory
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_CreateCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/{certificateAuthorityDetail-id}':
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get certificateAuthorities from directory
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_GetCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: certificateAuthorityDetail-id
+          in: path
+          description: The unique identifier of certificateAuthorityDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateAuthorityDetail
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Update the navigation property certificateAuthorities in directory
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_UpdateCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: certificateAuthorityDetail-id
+          in: path
+          description: The unique identifier of certificateAuthorityDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateAuthorityDetail
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Delete navigation property certificateAuthorities for directory
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_DeleteCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: certificateAuthorityDetail-id
+          in: path
+          description: The unique identifier of certificateAuthorityDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateAuthorityDetail
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/$count':
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get the number of the resource
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration.certificateAuthority_GetCount
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/microsoft.graph.upload':
+    post:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Invoke action upload
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_upload
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                uploadUrl:
+                  type: string
+                sha256FileHash:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/$count:
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get the number of the resource
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directoryObjects:
     get:
       tags:
@@ -202,7 +741,7 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - directoryObjects.Actions
+        - directoryObjects.directoryObject
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -258,7 +797,7 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - directoryObjects.Actions
+        - directoryObjects.directoryObject
       summary: Invoke action checkMemberObjects
       operationId: directoryObject_checkMemberObject
       parameters:
@@ -310,7 +849,7 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - directoryObjects.Actions
+        - directoryObjects.directoryObject
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -366,7 +905,7 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - directoryObjects.Actions
+        - directoryObjects.directoryObject
       summary: Invoke action getMemberObjects
       operationId: directoryObject_getMemberObject
       parameters:
@@ -418,7 +957,7 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.restore':
     post:
       tags:
-        - directoryObjects.Actions
+        - directoryObjects.directoryObject
       summary: Invoke action restore
       description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
@@ -434,20 +973,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                autoReconcileProxyConflict:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
       responses:
         2XX:
           description: Success
@@ -485,9 +1010,9 @@ paths:
   /directoryObjects/microsoft.graph.delta():
     get:
       tags:
-        - directoryObjects.Functions
+        - directoryObjects.directoryObject
       summary: Invoke function delta
-      description: 'Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.'
+      description: 'Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-beta
@@ -558,7 +1083,7 @@ paths:
   /directoryObjects/microsoft.graph.getByIds:
     post:
       tags:
-        - directoryObjects.Actions
+        - directoryObjects.directoryObject
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
@@ -611,7 +1136,7 @@ paths:
   /directoryObjects/microsoft.graph.getUserOwnedObjects:
     post:
       tags:
-        - directoryObjects.Actions
+        - directoryObjects.directoryObject
       summary: Invoke action getUserOwnedObjects
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
@@ -647,7 +1172,7 @@ paths:
   /directoryObjects/microsoft.graph.validateProperties:
     post:
       tags:
-        - directoryObjects.Actions
+        - directoryObjects.directoryObject
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
@@ -686,6 +1211,87 @@ paths:
       x-ms-docs-operation-type: action
 components:
   schemas:
+    microsoft.graph.publicKeyInfrastructureRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: publicKeyInfrastructureRoot
+          type: object
+          properties:
+            certificateBasedAuthConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.certificateBasedAuthPki:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: certificateBasedAuthPki
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            status:
+              type: string
+              nullable: true
+            statusDetails:
+              type: string
+              nullable: true
+            certificateAuthorities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.certificateAuthorityDetail:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: certificateAuthorityDetail
+          type: object
+          properties:
+            certificate:
+              type: string
+              format: base64url
+            certificateAuthorityType:
+              $ref: '#/components/schemas/microsoft.graph.certificateAuthorityType'
+            certificateRevocationListUrl:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            deltacertificateRevocationListUrl:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            isIssuerHintEnabled:
+              type: boolean
+              nullable: true
+            issuer:
+              type: string
+              nullable: true
+            issuerSubjectKeyIdentifier:
+              type: string
+              nullable: true
+            thumbprint:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -709,6 +1315,51 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.certificateAuthorityType:
+      title: certificateAuthorityType
+      enum:
+        - root
+        - intermediate
+        - unknownFutureValue
+      type: string
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.certificateBasedAuthPkiCollectionResponse:
+      title: Collection of certificateBasedAuthPki
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.certificateAuthorityDetailCollectionResponse:
+      title: Collection of certificateAuthorityDetail
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
@@ -722,18 +1373,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
-    ODataCountResponse:
-      type: integer
-      format: int32
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -777,24 +1416,36 @@ components:
         type: object
       description: The structure of this object is service-specific
   responses:
-    microsoft.graph.directoryObjectCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.certificateBasedAuthPkiCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPkiCollectionResponse'
+    microsoft.graph.certificateAuthorityDetailCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetailCollectionResponse'
     ODataCountResponse:
       description: The count of the resource
       content:
         text/plain:
           schema:
             $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.directoryObjectCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
   parameters:
     top:
       name: $top

@@ -4938,7 +4938,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getMicrosoft365CopilotUsageUserDetail
-      description: Get the most recent activity data for enabled users of Copilot for Microsoft 365 apps.
+      description: Get the most recent activity data for enabled users of Microsoft 365 Copilot apps.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusageuserdetail?view=graph-rest-beta
@@ -4972,7 +4972,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getMicrosoft365CopilotUserCountSummary
-      description: Get the aggregated number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
+      description: Get the aggregated number of active and enabled users of Microsoft 365 Copilot for a specified time period.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercountsummary?view=graph-rest-beta
@@ -5006,7 +5006,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getMicrosoft365CopilotUserCountTrend
-      description: Get the trend in the daily number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
+      description: Get the trend in the daily number of active and enabled users of Microsoft 365 Copilot for a specified time period.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercounttrend?view=graph-rest-beta
@@ -16009,11 +16009,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

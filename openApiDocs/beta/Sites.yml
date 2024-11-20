@@ -52502,11 +52502,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Search for sites
-      description: Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
+      summary: List sites
+      description: "List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.\nIf you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-search?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/site-list?view=graph-rest-beta
       operationId: site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -56857,11 +56857,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get metadata for a list
-      description: Return the metadata for a list.
+      summary: List operations
+      description: Get the list of richLongRunningOperations associated with a list.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-beta
       operationId: site_GetList
       parameters:
         - name: site-id
@@ -96142,7 +96142,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -97664,11 +97664,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
