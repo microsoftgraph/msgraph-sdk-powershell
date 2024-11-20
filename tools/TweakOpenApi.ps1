@@ -16,12 +16,12 @@ $prepositionReplacements = @{
     At   = "GraphAPre"
     For  = "GraphFPre"
     Of   = "GraphOPre"
-    Or   = "GraphRPre"
+    #Or   = "GraphRPre" Handling of this preposition needs to be reviewed
 }
 
 $wordReplacements = @{
-    Deltum = "delta"
-    Quotum = "quota"
+    Deltum    = "delta"
+    Quotum    = "quota"
     Statistic = "statistics"
 }
 $targetOperationIdRegex = [Regex]::new("([a-z*])($($prepositionReplacements.Keys -join "|"))([A-Z*]|$)", "Compiled")
@@ -50,6 +50,7 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
                     Write-Debug "$_ -> $operationId".Trim()
                 }
             }
+            
             return $operationId
         }
 
