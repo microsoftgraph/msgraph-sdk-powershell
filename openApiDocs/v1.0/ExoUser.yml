@@ -1,21 +1,150 @@
 openapi: 3.0.1
 info:
-  title: OData Service for namespace Microsoft.ExoServices.Api
-  description: This OData service is located at http://localhost
+  title: OData Service for namespace microsoft.exoServices.api
+  description: This OData service is located at https://canary.graph.microsoft.com/testprodbetaexoUsersPart4
   version: 1.0.0
   x-ms-generated-by:
     toolName: Microsoft.OpenApi.OData
     toolVersion: 1.0.9.0
 servers:
-  - url: http://localhost
+  - url: https://canary.graph.microsoft.com/testprodbetaexoUsersPart4
 paths:
-  /users:
-    description: Provides operations to manage the collection of user entities.
+  /admin:
+    description: Provides operations to manage the admin singleton.
     get:
       tags:
-        - users.user
-      summary: Get entities from users
-      operationId: users_ListExoUser
+        - admin.admin
+      summary: Get admin
+      operationId: admin.admin_GetAdmin
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.admin'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.admin
+      summary: Update admin
+      operationId: admin.admin_UpdateAdmin
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.admin'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/exchange:
+    description: Provides operations to manage the exchange property of the microsoft.graph.admin entity.
+    get:
+      tags:
+        - admin.exchangeAdmin
+      summary: Get exchange from admin
+      operationId: admin_GetExchange
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.exchangeAdmin'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchangeAdmin
+      summary: Update the navigation property exchange in admin
+      operationId: admin_UpdateExchange
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.exchangeAdmin'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchangeAdmin
+      summary: Delete navigation property exchange for admin
+      operationId: admin_DeleteExchange
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/exchange/aadUsers:
+    description: Provides operations to manage the aadUsers property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.aadUser
+      summary: Get aadUsers from admin
+      operationId: admin.exchange_ListAadUsers
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -53,47 +182,48 @@ paths:
             items:
               type: string
       responses:
-        2XX:
-          $ref: '#/components/responses/Microsoft.ExoServices.Api.userCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-    post:
-      tags:
-        - users.user
-      summary: Add new entity to users
-      operationId: users_CreateExoUser
-      requestBody:
-        description: New entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Microsoft.ExoServices.Api.user'
-        required: true
-      responses:
-        2XX:
-          description: Created entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Microsoft.ExoServices.Api.user'
+        '200':
+          $ref: '#/components/responses/microsoft.exoServices.api.aadUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users({id})':
-    description: Provides operations to manage the collection of user entities.
+    post:
+      tags:
+        - admin.exchange.aadUser
+      summary: Create new navigation property to aadUsers for admin
+      operationId: admin.exchange_CreateAadUsers
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.aadUser'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.aadUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/aadUsers/{id}':
+    description: Provides operations to manage the aadUsers property of the microsoft.exoServices.api.exchangeAdmin entity.
     get:
       tags:
-        - users.user
-      summary: Get entity from users by key
-      operationId: users_GetExoUser
+        - admin.exchange.aadUser
+      summary: Get aadUsers from admin
+      operationId: admin.exchange_GetAadUsers
       parameters:
         - name: id
           in: path
-          description: The unique identifier of user
+          description: The unique identifier of aadUser
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: user
+          x-ms-docs-key-type: aadUser
         - name: $select
           in: query
           description: Select properties to be returned
@@ -115,12 +245,2284 @@ paths:
             items:
               type: string
       responses:
-        2XX:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.aadUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchange.aadUser
+      summary: Update the navigation property aadUsers in admin
+      operationId: admin.exchange_UpdateAadUsers
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.aadUser'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchange.aadUser
+      summary: Delete navigation property aadUsers for admin
+      operationId: admin.exchange_DeleteAadUsers
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/aadUsers/{id}/directReports':
+    description: Provides operations to manage the directReports property of the microsoft.exoServices.api.orgPerson entity.
+    get:
+      tags:
+        - admin.exchange.aadUsers.directoryObject
+      summary: Get directReports from admin
+      operationId: admin.exchange.aadUsers_ListDirectReports
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.directoryService.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/users/{id}/directReports'
+  '/admin/exchange/aadUsers/{id}/directReports()':
+    description: Provides operations to manage the directReports property of the microsoft.exoServices.api.orgPerson entity.
+    get:
+      tags:
+        - admin.exchange.aadUsers.directoryObject
+      summary: Get directReports from admin
+      operationId: admin.exchange.aadUsers_GetDirectReports
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/users/{id}/directReports()'
+  '/admin/exchange/aadUsers/{id}/directReports/$count':
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.aadUsers.directoryObject
+      summary: Get the number of the resource
+      operationId: admin.exchange.aadUsers.directReports_GetCount
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/exchange/aadUsers/{id}/exchange':
+    description: Provides operations to manage the exchange property of the microsoft.exoServices.api.aadUser entity.
+    get:
+      tags:
+        - admin.exchange.aadUsers.userExchangeDetails
+      summary: Get exchange from admin
+      operationId: admin.exchange.aadUsers_GetExchange
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchange.aadUsers.userExchangeDetails
+      summary: Update the navigation property exchange in admin
+      operationId: admin.exchange.aadUsers_UpdateExchange
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetails'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchange.aadUsers.userExchangeDetails
+      summary: Delete navigation property exchange for admin
+      operationId: admin.exchange.aadUsers_DeleteExchange
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/aadUsers/{id}/exchange/roleAssignmentPolicy':
+    description: Provides operations to manage the roleAssignmentPolicy property of the microsoft.exoServices.api.userExchangeDetails entity.
+    get:
+      tags:
+        - admin.exchange.aadUsers.userExchangeDetails
+      summary: Get roleAssignmentPolicy from admin
+      operationId: admin.exchange.aadUsers.exchange_GetRoleAssignmentPolicy
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/aadUsers/{id}/manager':
+    description: Provides operations to manage the manager property of the microsoft.exoServices.api.orgPerson entity.
+    get:
+      tags:
+        - admin.exchange.aadUsers.directoryObject
+      summary: Get manager from admin
+      operationId: admin.exchange.aadUsers_GetManager
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of aadUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: aadUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/users/{id}/manager'
+  /admin/exchange/aadUsers/$count:
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.aadUser
+      summary: Get the number of the resource
+      operationId: admin.exchange.aadUsers_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/exchange/mailboxPlans:
+    description: Provides operations to manage the mailboxPlans property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.mailboxPlan
+      summary: Get mailboxPlans from admin
+      operationId: admin.exchange_ListMailboxPlans
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.exoServices.api.mailboxPlanCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.exchange.mailboxPlan
+      summary: Create new navigation property to mailboxPlans for admin
+      operationId: admin.exchange_CreateMailboxPlans
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.mailboxPlan'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.mailboxPlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/mailboxPlans/{id}':
+    description: Provides operations to manage the mailboxPlans property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.mailboxPlan
+      summary: Get mailboxPlans from admin
+      operationId: admin.exchange_GetMailboxPlans
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of mailboxPlan
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxPlan
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.mailboxPlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchange.mailboxPlan
+      summary: Update the navigation property mailboxPlans in admin
+      operationId: admin.exchange_UpdateMailboxPlans
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of mailboxPlan
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxPlan
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.mailboxPlan'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchange.mailboxPlan
+      summary: Delete navigation property mailboxPlans for admin
+      operationId: admin.exchange_DeleteMailboxPlans
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of mailboxPlan
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxPlan
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/exchange/mailboxPlans/$count:
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.mailboxPlan
+      summary: Get the number of the resource
+      operationId: admin.exchange.mailboxPlans_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/exchange/retentionPolicies:
+    description: Provides operations to manage the retentionPolicies property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.retentionPolicy
+      summary: Get retentionPolicies from admin
+      operationId: admin.exchange_ListRetentionPolicies
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.exoServices.api.retentionPolicyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.exchange.retentionPolicy
+      summary: Create new navigation property to retentionPolicies for admin
+      operationId: admin.exchange_CreateRetentionPolicies
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicy'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/retentionPolicies/{id}':
+    description: Provides operations to manage the retentionPolicies property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.retentionPolicy
+      summary: Get retentionPolicies from admin
+      operationId: admin.exchange_GetRetentionPolicies
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of retentionPolicy
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchange.retentionPolicy
+      summary: Update the navigation property retentionPolicies in admin
+      operationId: admin.exchange_UpdateRetentionPolicies
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of retentionPolicy
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchange.retentionPolicy
+      summary: Delete navigation property retentionPolicies for admin
+      operationId: admin.exchange_DeleteRetentionPolicies
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of retentionPolicy
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: retentionPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/exchange/retentionPolicies/$count:
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.retentionPolicy
+      summary: Get the number of the resource
+      operationId: admin.exchange.retentionPolicies_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/exchange/roleAssignmentPolicies:
+    description: Provides operations to manage the roleAssignmentPolicies property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.roleAssignmentPolicy
+      summary: Get roleAssignmentPolicies from admin
+      operationId: admin.exchange_ListRoleAssignmentPolicies
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.exoServices.api.roleAssignmentPolicyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.exchange.roleAssignmentPolicy
+      summary: Create new navigation property to roleAssignmentPolicies for admin
+      operationId: admin.exchange_CreateRoleAssignmentPolicies
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/roleAssignmentPolicies/{id}':
+    description: Provides operations to manage the roleAssignmentPolicies property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.roleAssignmentPolicy
+      summary: Get roleAssignmentPolicies from admin
+      operationId: admin.exchange_GetRoleAssignmentPolicies
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of roleAssignmentPolicy
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignmentPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchange.roleAssignmentPolicy
+      summary: Update the navigation property roleAssignmentPolicies in admin
+      operationId: admin.exchange_UpdateRoleAssignmentPolicies
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of roleAssignmentPolicy
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignmentPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchange.roleAssignmentPolicy
+      summary: Delete navigation property roleAssignmentPolicies for admin
+      operationId: admin.exchange_DeleteRoleAssignmentPolicies
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of roleAssignmentPolicy
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignmentPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/exchange/roleAssignmentPolicies/$count:
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.roleAssignmentPolicy
+      summary: Get the number of the resource
+      operationId: admin.exchange.roleAssignmentPolicies_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/exchange/userMailboxes:
+    description: Provides operations to manage the userMailboxes property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.userMailbox
+      summary: Get userMailboxes from admin
+      operationId: admin.exchange_ListUserMailboxes
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.exoServices.api.userMailboxCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.exchange.userMailbox
+      summary: Create new navigation property to userMailboxes for admin
+      operationId: admin.exchange_CreateUserMailboxes
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.userMailbox'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.userMailbox'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/userMailboxes/{id}':
+    description: Provides operations to manage the userMailboxes property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.userMailbox
+      summary: Get userMailboxes from admin
+      operationId: admin.exchange_GetUserMailboxes
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.userMailbox'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchange.userMailbox
+      summary: Update the navigation property userMailboxes in admin
+      operationId: admin.exchange_UpdateUserMailboxes
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.userMailbox'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchange.userMailbox
+      summary: Delete navigation property userMailboxes for admin
+      operationId: admin.exchange_DeleteUserMailboxes
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/userMailboxes/{id}/archive':
+    description: Provides operations to manage the archive property of the microsoft.exoServices.api.userMailbox entity.
+    get:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Get archive from admin
+      operationId: admin.exchange.userMailboxes_GetArchive
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Update the navigation property archive in admin
+      operationId: admin.exchange.userMailboxes_UpdateArchive
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Delete navigation property archive for admin
+      operationId: admin.exchange.userMailboxes_DeleteArchive
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/userMailboxes/{id}/archive/shards':
+    description: Provides operations to manage the shards property of the microsoft.exoServices.api.exchangeMailbox entity.
+    get:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Get shards from admin
+      operationId: admin.exchange.userMailboxes.archive_ListShards
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.exoServices.api.mailboxShardCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/userMailboxes/{id}/primary/shards'
+  '/admin/exchange/userMailboxes/{id}/archive/shards/{id1}':
+    description: Provides operations to manage the shards property of the microsoft.exoServices.api.exchangeMailbox entity.
+    get:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Get shards from admin
+      operationId: admin.exchange.userMailboxes.archive_GetShards
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - name: id1
+          in: path
+          description: The unique identifier of mailboxShard
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxShard
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.mailboxShard'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/userMailboxes/{id}/primary/shards/{id1}'
+  '/admin/exchange/userMailboxes/{id}/archive/shards/$count':
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Get the number of the resource
+      operationId: admin.exchange.userMailboxes.archive.shards_GetCount
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/exchange/userMailboxes/{id}/primary':
+    description: Provides operations to manage the primary property of the microsoft.exoServices.api.userMailbox entity.
+    get:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Get primary from admin
+      operationId: admin.exchange.userMailboxes_GetPrimary
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Update the navigation property primary in admin
+      operationId: admin.exchange.userMailboxes_UpdatePrimary
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Delete navigation property primary for admin
+      operationId: admin.exchange.userMailboxes_DeletePrimary
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/userMailboxes/{id}/primary/shards':
+    description: Provides operations to manage the shards property of the microsoft.exoServices.api.exchangeMailbox entity.
+    get:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Get shards from admin
+      operationId: admin.exchange.userMailboxes.primary_ListShards
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.exoServices.api.mailboxShardCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/userMailboxes/{id}/archive/shards'
+  '/admin/exchange/userMailboxes/{id}/primary/shards/{id1}':
+    description: Provides operations to manage the shards property of the microsoft.exoServices.api.exchangeMailbox entity.
+    get:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Get shards from admin
+      operationId: admin.exchange.userMailboxes.primary_GetShards
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - name: id1
+          in: path
+          description: The unique identifier of mailboxShard
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxShard
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.mailboxShard'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/userMailboxes/{id}/archive/shards/{id1}'
+  '/admin/exchange/userMailboxes/{id}/primary/shards/$count':
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.userMailboxes.exchangeMailbox
+      summary: Get the number of the resource
+      operationId: admin.exchange.userMailboxes.primary.shards_GetCount
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/exchange/userMailboxes/{id}/user':
+    description: Provides operations to manage the user property of the microsoft.exoServices.api.userMailbox entity.
+    get:
+      tags:
+        - admin.exchange.userMailboxes.user
+      summary: Get user from admin
+      operationId: admin.exchange.userMailboxes_GetUser
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of userMailbox
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userMailbox
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.directoryService.user'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/exchange/userMailboxes/$count:
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.userMailbox
+      summary: Get the number of the resource
+      operationId: admin.exchange.userMailboxes_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/exchange/users:
+    description: Provides operations to manage the users property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.exchangeUser
+      summary: Get users from admin
+      operationId: admin.exchange_ListUsers
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.exoServices.api.exchangeUserCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.exchange.exchangeUser
+      summary: Create new navigation property to users for admin
+      operationId: admin.exchange_CreateUsers
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.exchangeUser'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.exchangeUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/users/{id}':
+    description: Provides operations to manage the users property of the microsoft.exoServices.api.exchangeAdmin entity.
+    get:
+      tags:
+        - admin.exchange.exchangeUser
+      summary: Get users from admin
+      operationId: admin.exchange_GetUsers
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of exchangeUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.exchangeUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.exchange.exchangeUser
+      summary: Update the navigation property users in admin
+      operationId: admin.exchange_UpdateUsers
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of exchangeUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeUser
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.exoServices.api.exchangeUser'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.exchange.exchangeUser
+      summary: Delete navigation property users for admin
+      operationId: admin.exchange_DeleteUsers
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of exchangeUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeUser
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/exchange/users/{id}/directReports':
+    description: Provides operations to manage the directReports property of the microsoft.exoServices.api.orgPerson entity.
+    get:
+      tags:
+        - admin.exchange.users.directoryObject
+      summary: Get directReports from admin
+      operationId: admin.exchange.users_ListDirectReports
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of exchangeUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeUser
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.directoryService.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/aadUsers/{id}/directReports'
+  '/admin/exchange/users/{id}/directReports()':
+    description: Provides operations to manage the directReports property of the microsoft.exoServices.api.orgPerson entity.
+    get:
+      tags:
+        - admin.exchange.users.directoryObject
+      summary: Get directReports from admin
+      operationId: admin.exchange.users_GetDirectReports
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of exchangeUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/aadUsers/{id}/directReports()'
+  '/admin/exchange/users/{id}/directReports/$count':
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.users.directoryObject
+      summary: Get the number of the resource
+      operationId: admin.exchange.users.directReports_GetCount
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of exchangeUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeUser
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/exchange/users/{id}/manager':
+    description: Provides operations to manage the manager property of the microsoft.exoServices.api.orgPerson entity.
+    get:
+      tags:
+        - admin.exchange.users.directoryObject
+      summary: Get manager from admin
+      operationId: admin.exchange.users_GetManager
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of exchangeUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    x-ms-docs-grouped-path:
+      - '/admin/exchange/aadUsers/{id}/manager'
+  '/admin/exchange/users/{id}/roleAssignmentPolicy':
+    description: Provides operations to manage the roleAssignmentPolicy property of the microsoft.exoServices.api.exchangeUser entity.
+    get:
+      tags:
+        - admin.exchange.users.roleAssignmentPolicy
+      summary: Get roleAssignmentPolicy from admin
+      operationId: admin.exchange.users_GetRoleAssignmentPolicy
+      parameters:
+        - name: id
+          in: path
+          description: The unique identifier of exchangeUser
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/exchange/users/$count:
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - admin.exchange.exchangeUser
+      summary: Get the number of the resource
+      operationId: admin.exchange.users_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directoryObjects:
+    description: Provides operations to manage the collection of directoryObject entities.
+    get:
+      tags:
+        - directoryObjects.directoryObject
+      summary: Get entities from directoryObjects
+      operationId: directoryObjects.directoryObject_ListDirectoryObject
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.directoryService.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - directoryObjects.directoryObject
+      summary: Add new entity to directoryObjects
+      operationId: directoryObjects.directoryObject_CreateDirectoryObject
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directoryObjects():
+    description: Provides operations to manage the collection of directoryObject entities.
+    get:
+      tags:
+        - directoryObjects.directoryObject
+      summary: Get entity from directoryObjects by key
+      operationId: directoryObjects.directoryObject_GetDirectoryObject
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
           description: Retrieved entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Microsoft.ExoServices.Api.user'
+                $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directoryObjects.directoryObject
+      summary: Update entity in directoryObjects
+      operationId: directoryObjects.directoryObject_UpdateDirectoryObject
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directoryObjects.directoryObject
+      summary: Delete entity from directoryObjects
+      operationId: directoryObjects.directoryObject_DeleteDirectoryObject
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directoryObjects/$count:
+    description: Provides operations to count the resources in the collection.
+    get:
+      tags:
+        - directoryObjects.directoryObject
+      summary: Get the number of the resource
+      operationId: directoryObjects_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /users:
+    description: Provides operations to manage the collection of user entities.
+    get:
+      tags:
+        - users.user
+      summary: Get entities from users
+      operationId: users.user_ListUser
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.directoryService.userCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - users.user
+      summary: Add new entity to users
+      operationId: users.user_CreateUser
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.directoryService.user'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.directoryService.user'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /users():
+    description: Provides operations to manage the collection of user entities.
+    get:
+      tags:
+        - users.user
+      summary: Get entity from users by key
+      operationId: users.user_GetUser
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.directoryService.user'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -128,21 +2530,13 @@ paths:
       tags:
         - users.user
       summary: Update entity in users
-      operationId: users_UpdateExoUser
-      parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
+      operationId: users.user_UpdateUser
       requestBody:
         description: New property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Microsoft.ExoServices.Api.user'
+              $ref: '#/components/schemas/microsoft.directoryService.user'
         required: true
       responses:
         '204':
@@ -154,41 +2548,27 @@ paths:
       tags:
         - users.user
       summary: Delete entity from users
-      operationId: users_DeleteUser
+      operationId: users.user_DeleteUser
       parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users({id})/exchangeConfiguration':
-    description: Provides operations to manage the exchangeConfiguration property of the Microsoft.ExoServices.Api.user entity.
+  /users()/exchange:
+    description: Provides operations to manage the exchange property of the microsoft.directoryService.user entity.
     get:
       tags:
-        - users.exchangeUserConfiguration
-      summary: Get exchangeConfiguration from users
-      operationId: users_GetExoExchangeConfiguration
+        - users.userExchangeDetails
+      summary: Get exchange from users
+      operationId: users_GetExchange
       parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -210,174 +2590,26 @@ paths:
             items:
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUserConfiguration'
+                $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - users.exchangeUserConfiguration
-      summary: Update the navigation property exchangeConfiguration in users
-      operationId: users_UpdateExoExchangeConfiguration
-      parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
+        - users.userExchangeDetails
+      summary: Update the navigation property exchange in users
+      operationId: users_UpdateExchange
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUserConfiguration'
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.exchangeUserConfiguration
-      summary: Delete navigation property exchangeConfiguration for users
-      operationId: users_DeleteExoExchangeConfiguration
-      parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users({id})/exchangeConfiguration/roleAssignmentPolicy':
-    description: Provides operations to manage the roleAssignmentPolicy property of the Microsoft.ExoServices.Api.exchangeUserConfiguration entity.
-    get:
-      tags:
-        - users_exchangeConfiguration_roleAssignmentPolicy
-      summary: Get roleAssignmentPolicy from users
-      operationId: users.exchangeConfiguration.GetExoRoleAssignmentPolicy
-      parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Microsoft.ExoServices.Api.roleAssignmentPolicy'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users({id})/mailbox':
-    description: Provides operations to manage the mailbox property of the Microsoft.ExoServices.Api.user entity.
-    get:
-      tags:
-        - users.exchangeMailbox
-      summary: Get mailbox from users
-      operationId: users_GetExoMailbox
-      parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeMailbox'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.exchangeMailbox
-      summary: Update the navigation property mailbox in users
-      operationId: users_UpdateExoMailbox
-      parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeMailbox'
+              $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetails'
         required: true
       responses:
         '204':
@@ -387,43 +2619,29 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - users.exchangeMailbox
-      summary: Delete navigation property mailbox for users
-      operationId: users_DeleteExoMailbox
+        - users.userExchangeDetails
+      summary: Delete navigation property exchange for users
+      operationId: users_DeleteExchange
       parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
           schema:
             type: string
       responses:
-        2XX:
+        '204':
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users({id})/mailbox/plan':
-    description: Provides operations to manage the plan property of the Microsoft.ExoServices.Api.exchangeMailbox entity.
+  /users()/exchange/roleAssignmentPolicy:
+    description: Provides operations to manage the roleAssignmentPolicy property of the microsoft.exoServices.api.userExchangeDetails entity.
     get:
       tags:
-        - users.mailbox.mailboxPlan
-      summary: Get plan from users
-      operationId: users_mailbox_GetExoPlan
+        - users.exchange.roleAssignmentPolicy
+      summary: Get roleAssignmentPolicy from users
+      operationId: users.exchange_GetRoleAssignmentPolicy
       parameters:
-        - name: id
-          in: path
-          description: The unique identifier of user
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -445,12 +2663,12 @@ paths:
             items:
               type: string
       responses:
-        2XX:
+        '200':
           description: Retrieved navigation property
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Microsoft.ExoServices.Api.mailboxPlan'
+                $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -460,19 +2678,120 @@ paths:
       tags:
         - users.user
       summary: Get the number of the resource
-      operationId: users_GetExoCount
+      operationId: users_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        2XX:
+        '200':
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
 components:
   schemas:
-    Microsoft.ExoServices.Api.entity:
-      title: entity
+    microsoft.directoryService.user:
+      title: user
+      type: object
+      properties:
+        exchange:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetails'
+            - type: object
+              nullable: true
+          x-ms-navigationProperty: true
+    microsoft.directoryService.directoryObject:
+      title: directoryObject
+      type: object
+    microsoft.graph.admin:
+      title: admin
+      type: object
+      properties:
+        exchange:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeAdmin'
+            - type: object
+              nullable: true
+          x-ms-navigationProperty: true
+    microsoft.exoServices.api.exchangeAdmin:
+      title: exchangeAdmin
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.exchangeUser'
+          x-ms-navigationProperty: true
+        aadUsers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.aadUser'
+          x-ms-navigationProperty: true
+        roleAssignmentPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+          x-ms-navigationProperty: true
+        mailboxPlans:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.mailboxPlan'
+          x-ms-navigationProperty: true
+        retentionPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicy'
+          x-ms-navigationProperty: true
+        userMailboxes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.userMailbox'
+          x-ms-navigationProperty: true
+    microsoft.exoServices.api.userExchangeDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
+        - title: userExchangeDetails
+          type: object
+          properties:
+            isModerationEnabled:
+              type: boolean
+              nullable: true
+            moderatedBy:
+              type: string
+              nullable: true
+            customAttributes:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.customAttributes'
+                - type: object
+                  nullable: true
+            emailReceiveRestrictionSettings:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.emailReceiveRestrictionSettings'
+                - type: object
+                  nullable: true
+            isAccountDisabled:
+              type: boolean
+              nullable: true
+            userType:
+              type: string
+              nullable: true
+            lastManagerChangedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            mailbox:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.mailboxContainer'
+                - type: object
+                  nullable: true
+            roleAssignmentPolicy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+    microsoft.exoServices.api.exchangeEntity:
+      title: exchangeEntity
       type: object
       properties:
         id:
@@ -487,117 +2806,79 @@ components:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
           format: date-time
-    Microsoft.ExoServices.Api.orgPerson:
+    microsoft.exoServices.api.exchangeMailbox:
       allOf:
-        - $ref: '#/components/schemas/Microsoft.ExoServices.Api.entity'
-        - title: orgPerson
-          type: object
-          properties:
-            lastManagerChangedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            manager:
-              anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.orgPerson'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
-            directReports:
-              type: array
-              items:
-                $ref: '#/components/schemas/Microsoft.ExoServices.Api.orgPerson'
-              x-ms-navigationProperty: true
-    Microsoft.ExoServices.Api.user:
-      allOf:
-        - $ref: '#/components/schemas/Microsoft.ExoServices.Api.entity'
-        - title: user
-          type: object
-          properties:
-            mailbox:
-              anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeMailbox'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
-            exchangeConfiguration:
-              anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUserConfiguration'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
-    Microsoft.ExoServices.Api.exchangeUserConfiguration:
-      allOf:
-        - $ref: '#/components/schemas/Microsoft.ExoServices.Api.entity'
-        - title: exchangeUserConfiguration
-          type: object
-          properties:
-            isModerationEnabled:
-              type: boolean
-              nullable: true
-            moderatedBy:
-              type: string
-              nullable: true
-            customAttributes:
-              anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.customAttributes'
-                - type: object
-                  nullable: true
-            emailReceiveRestrictionSettings:
-              anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.emailReceiveRestrictionSettings'
-                - type: object
-                  nullable: true
-            isAccountDisabled:
-              type: boolean
-              nullable: true
-            userType:
-              type: string
-              nullable: true
-            lastManagerChangedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            roleAssignmentPolicy:
-              anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.roleAssignmentPolicy'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
-    Microsoft.ExoServices.Api.exchangeMailbox:
-      allOf:
-        - $ref: '#/components/schemas/Microsoft.ExoServices.Api.entity'
+        - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
         - title: exchangeMailbox
           type: object
           properties:
-            settings:
+            type:
               anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeMailboxSettings'
+                - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailboxType'
                 - type: object
                   nullable: true
-            plan:
-              anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.mailboxPlan'
-                - type: object
-                  nullable: true
+            shards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.exoServices.api.mailboxShard'
               x-ms-navigationProperty: true
-    Microsoft.ExoServices.Api.exchangeMailboxSettings:
+    microsoft.exoServices.api.mailboxShard:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
+        - title: mailboxShard
+          type: object
+          properties:
+            type:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.mailboxShardType'
+                - type: object
+                  nullable: true
+            databaseId:
+              type: string
+              nullable: true
+    microsoft.exoServices.api.mailboxContainer:
+      title: mailboxContainer
+      type: object
+      properties:
+        settings:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailboxSettings'
+            - type: object
+              nullable: true
+        enabledMailboxTypes:
+          type: array
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailboxType'
+              - type: object
+                nullable: true
+        primary:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
+            - type: object
+              nullable: true
+          x-ms-navigationProperty: true
+        archive:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
+            - type: object
+              nullable: true
+          x-ms-navigationProperty: true
+    microsoft.exoServices.api.exchangeMailboxSettings:
       title: exchangeMailboxSettings
       type: object
       properties:
         dataRetentionSettings:
           anyOf:
-            - $ref: '#/components/schemas/Microsoft.ExoServices.Api.dataRetentionSettings'
+            - $ref: '#/components/schemas/microsoft.exoServices.api.dataRetentionSettings'
             - type: object
               nullable: true
         auditingSettings:
           anyOf:
-            - $ref: '#/components/schemas/Microsoft.ExoServices.Api.auditingSettings'
+            - $ref: '#/components/schemas/microsoft.exoServices.api.auditingSettings'
             - type: object
               nullable: true
-    Microsoft.ExoServices.Api.customAttributes:
+    microsoft.exoServices.api.customAttributes:
       title: customAttributes
       type: object
       properties:
@@ -609,16 +2890,16 @@ components:
           items:
             type: string
             nullable: true
-    Microsoft.ExoServices.Api.emailReceiveRestrictionSettings:
+    microsoft.exoServices.api.emailReceiveRestrictionSettings:
       title: emailReceiveRestrictionSettings
       type: object
       properties:
         acceptMessagesOnlyFrom:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.entity'
+            $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
           x-ms-navigationProperty: true
-    Microsoft.ExoServices.Api.dataRetentionSettings:
+    microsoft.exoServices.api.dataRetentionSettings:
       title: dataRetentionSettings
       type: object
       properties:
@@ -641,11 +2922,11 @@ components:
             nullable: true
         retentionPolicy:
           anyOf:
-            - $ref: '#/components/schemas/Microsoft.ExoServices.Api.retentionPolicy'
+            - $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicy'
             - type: object
               nullable: true
           x-ms-navigationProperty: true
-    Microsoft.ExoServices.Api.auditingSettings:
+    microsoft.exoServices.api.auditingSettings:
       title: auditingSettings
       type: object
       properties:
@@ -656,56 +2937,90 @@ components:
           type: array
           items:
             anyOf:
-              - $ref: '#/components/schemas/Microsoft.ExoServices.Api.mailboxAuditOperation'
+              - $ref: '#/components/schemas/microsoft.exoServices.api.mailboxAuditOperation'
               - type: object
                 nullable: true
-    Microsoft.ExoServices.Api.exchangeAdmin:
-      title: exchangeAdmin
-      type: object
-      properties:
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUser'
-          x-ms-navigationProperty: true
-        aadUsers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.aadUser'
-          x-ms-navigationProperty: true
-        roleAssignmentPolicies:
-          type: array
-          items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.roleAssignmentPolicy'
-          x-ms-navigationProperty: true
-        mailboxPlans:
-          type: array
-          items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.mailboxPlan'
-          x-ms-navigationProperty: true
-        retentionPolicies:
-          type: array
-          items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.retentionPolicy'
-          x-ms-navigationProperty: true
-    Microsoft.ExoServices.Api.roleAssignmentPolicy:
+    microsoft.exoServices.api.userMailbox:
       allOf:
-        - $ref: '#/components/schemas/Microsoft.ExoServices.Api.entity'
+        - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
+        - title: userMailbox
+          type: object
+          properties:
+            mailboxSettings:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailboxSettings'
+                - type: object
+                  nullable: true
+            enabledMailboxTypes:
+              type: array
+              items:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailboxType'
+                  - type: object
+                    nullable: true
+            userExchangeConfigurations:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeConfigurations'
+                - type: object
+                  nullable: true
+            primary:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            archive:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            user:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.directoryService.user'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+    microsoft.exoServices.api.roleAssignmentPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
         - title: roleAssignmentPolicy
           type: object
-    Microsoft.ExoServices.Api.mailboxPlan:
+    microsoft.exoServices.api.mailboxPlan:
       allOf:
-        - $ref: '#/components/schemas/Microsoft.ExoServices.Api.entity'
+        - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
         - title: mailboxPlan
           type: object
-    Microsoft.ExoServices.Api.retentionPolicy:
+    microsoft.exoServices.api.retentionPolicy:
       allOf:
-        - $ref: '#/components/schemas/Microsoft.ExoServices.Api.entity'
+        - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
         - title: retentionPolicy
           type: object
-    Microsoft.ExoServices.Api.aadUser:
+    microsoft.exoServices.api.orgPerson:
       allOf:
-        - $ref: '#/components/schemas/Microsoft.ExoServices.Api.orgPerson'
+        - $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
+        - title: orgPerson
+          type: object
+          properties:
+            lastManagerChangedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            manager:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            directReports:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+              x-ms-navigationProperty: true
+    microsoft.exoServices.api.aadUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.exoServices.api.orgPerson'
         - title: aadUser
           type: object
           properties:
@@ -722,21 +3037,15 @@ components:
             userPrincipalName:
               type: string
               nullable: true
-            mailbox:
+            exchange:
               anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeMailbox'
+                - $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetails'
                 - type: object
                   nullable: true
               x-ms-navigationProperty: true
-            exchangeConfiguration:
-              anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUserConfiguration'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
-    Microsoft.ExoServices.Api.exchangeUser:
+    microsoft.exoServices.api.exchangeUser:
       allOf:
-        - $ref: '#/components/schemas/Microsoft.ExoServices.Api.orgPerson'
+        - $ref: '#/components/schemas/microsoft.exoServices.api.orgPerson'
         - title: exchangeUser
           type: object
           properties:
@@ -761,12 +3070,12 @@ components:
               nullable: true
             customAttributes:
               anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.customAttributes'
+                - $ref: '#/components/schemas/microsoft.exoServices.api.customAttributes'
                 - type: object
                   nullable: true
             emailReceiveRestrictionSettings:
               anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.emailReceiveRestrictionSettings'
+                - $ref: '#/components/schemas/microsoft.exoServices.api.emailReceiveRestrictionSettings'
                 - type: object
                   nullable: true
             isAccountDisabled:
@@ -775,19 +3084,50 @@ components:
             userType:
               type: string
               nullable: true
-            roleAssignmentPolicy:
-              anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.roleAssignmentPolicy'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
             mailbox:
               anyOf:
-                - $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeMailbox'
+                - $ref: '#/components/schemas/microsoft.exoServices.api.mailboxContainer'
+                - type: object
+                  nullable: true
+            roleAssignmentPolicy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
                 - type: object
                   nullable: true
               x-ms-navigationProperty: true
-    Microsoft.ExoServices.Api.mailboxAuditOperation:
+    microsoft.exoServices.api.userExchangeConfigurations:
+      title: userExchangeConfigurations
+      type: object
+      properties:
+        isModerationEnabled:
+          type: boolean
+          nullable: true
+        moderatedBy:
+          type: string
+          nullable: true
+        customAttributes:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.exoServices.api.customAttributes'
+            - type: object
+              nullable: true
+        emailReceiveRestrictionSettings:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.exoServices.api.emailReceiveRestrictionSettings'
+            - type: object
+              nullable: true
+        isAccountDisabled:
+          type: boolean
+          nullable: true
+        userType:
+          type: string
+          nullable: true
+        roleAssignmentPolicy:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+            - type: object
+              nullable: true
+          x-ms-navigationProperty: true
+    microsoft.exoServices.api.mailboxAuditOperation:
       title: mailboxAuditOperation
       enum:
         - none
@@ -822,16 +3162,31 @@ components:
         - preservedMailItemProactively
         - unknownFutureValue
       type: string
-    Microsoft.ExoServices.Api.ODataErrors.ODataError:
+    microsoft.exoServices.api.exchangeMailboxType:
+      title: exchangeMailboxType
+      enum:
+        - primary
+        - archive
+        - unknownFutureValue
+      type: string
+    microsoft.exoServices.api.mailboxShardType:
+      title: mailboxShardType
+      enum:
+        - primary
+        - auxPrimary
+        - archive
+        - auxArchive
+        - componentShared
+        - unknownFutureValue
+      type: string
+    microsoft.directoryService.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/Microsoft.ExoServices.Api.ODataErrors.MainError'
-      additionalProperties:
-        type: object
-    Microsoft.ExoServices.Api.ODataErrors.MainError:
+          $ref: '#/components/schemas/microsoft.directoryService.ODataErrors.MainError'
+    microsoft.directoryService.ODataErrors.MainError:
       required:
         - code
         - message
@@ -848,12 +3203,10 @@ components:
         details:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.ODataErrors.ErrorDetails'
+            $ref: '#/components/schemas/microsoft.directoryService.ODataErrors.ErrorDetails'
         innerError:
-          $ref: '#/components/schemas/Microsoft.ExoServices.Api.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    Microsoft.ExoServices.Api.ODataErrors.ErrorDetails:
+          $ref: '#/components/schemas/microsoft.directoryService.ODataErrors.InnerError'
+    microsoft.directoryService.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -866,96 +3219,116 @@ components:
         target:
           type: string
           nullable: true
-      additionalProperties:
-        type: object
-    Microsoft.ExoServices.Api.ODataErrors.InnerError:
+    microsoft.directoryService.ODataErrors.InnerError:
       type: object
-      additionalProperties:
-        type: object
       description: The structure of this object is service-specific
     ODataCountResponse:
       type: integer
       format: int32
-    Microsoft.ExoServices.Api.userCollectionResponse:
+    microsoft.directoryService.userCollectionResponse:
       title: Collection of user
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.user'
-    Microsoft.ExoServices.Api.orgPersonCollectionResponse:
-      title: Collection of orgPerson
+            $ref: '#/components/schemas/microsoft.directoryService.user'
+    microsoft.directoryService.directoryObjectCollectionResponse:
+      title: Collection of directoryObject
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.orgPerson'
-    Microsoft.ExoServices.Api.entityCollectionResponse:
-      title: Collection of entity
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.entity'
-    Microsoft.ExoServices.Api.exchangeUserCollectionResponse:
+            $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
+    microsoft.exoServices.api.exchangeUserCollectionResponse:
       title: Collection of exchangeUser
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUser'
-    Microsoft.ExoServices.Api.aadUserCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.exchangeUser'
+    microsoft.exoServices.api.aadUserCollectionResponse:
       title: Collection of aadUser
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.aadUser'
-    Microsoft.ExoServices.Api.roleAssignmentPolicyCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.aadUser'
+    microsoft.exoServices.api.roleAssignmentPolicyCollectionResponse:
       title: Collection of roleAssignmentPolicy
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.roleAssignmentPolicy'
-    Microsoft.ExoServices.Api.mailboxPlanCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
+    microsoft.exoServices.api.mailboxPlanCollectionResponse:
       title: Collection of mailboxPlan
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.mailboxPlan'
-    Microsoft.ExoServices.Api.retentionPolicyCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.mailboxPlan'
+    microsoft.exoServices.api.retentionPolicyCollectionResponse:
       title: Collection of retentionPolicy
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.retentionPolicy'
-    Microsoft.ExoServices.Api.exchangeUserConfigurationCollectionResponse:
-      title: Collection of exchangeUserConfiguration
+            $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicy'
+    microsoft.exoServices.api.userMailboxCollectionResponse:
+      title: Collection of userMailbox
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUserConfiguration'
-    Microsoft.ExoServices.Api.exchangeMailboxCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.userMailbox'
+    microsoft.exoServices.api.mailboxShardCollectionResponse:
+      title: Collection of mailboxShard
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.mailboxShard'
+    microsoft.exoServices.api.exchangeEntityCollectionResponse:
+      title: Collection of exchangeEntity
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntity'
+    microsoft.exoServices.api.userExchangeDetailsCollectionResponse:
+      title: Collection of userExchangeDetails
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetails'
+    microsoft.exoServices.api.exchangeMailboxCollectionResponse:
       title: Collection of exchangeMailbox
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeMailbox'
+            $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
+    microsoft.exoServices.api.orgPersonCollectionResponse:
+      title: Collection of orgPerson
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.exoServices.api.orgPerson'
     StringCollectionResponse:
       title: Collection of string
       type: object
@@ -992,73 +3365,91 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.ODataErrors.ODataError'
+            $ref: '#/components/schemas/microsoft.directoryService.ODataErrors.ODataError'
     ODataCountResponse:
       description: The count of the resource
       content:
         text/plain:
           schema:
             $ref: '#/components/schemas/ODataCountResponse'
-    Microsoft.ExoServices.Api.userCollectionResponse:
+    microsoft.directoryService.userCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.userCollectionResponse'
-    Microsoft.ExoServices.Api.orgPersonCollectionResponse:
+            $ref: '#/components/schemas/microsoft.directoryService.userCollectionResponse'
+    microsoft.directoryService.directoryObjectCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.orgPersonCollectionResponse'
-    Microsoft.ExoServices.Api.entityCollectionResponse:
+            $ref: '#/components/schemas/microsoft.directoryService.directoryObjectCollectionResponse'
+    microsoft.exoServices.api.exchangeUserCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.entityCollectionResponse'
-    Microsoft.ExoServices.Api.exchangeUserCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.exchangeUserCollectionResponse'
+    microsoft.exoServices.api.aadUserCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUserCollectionResponse'
-    Microsoft.ExoServices.Api.aadUserCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.aadUserCollectionResponse'
+    microsoft.exoServices.api.roleAssignmentPolicyCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.aadUserCollectionResponse'
-    Microsoft.ExoServices.Api.roleAssignmentPolicyCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicyCollectionResponse'
+    microsoft.exoServices.api.mailboxPlanCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.roleAssignmentPolicyCollectionResponse'
-    Microsoft.ExoServices.Api.mailboxPlanCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.mailboxPlanCollectionResponse'
+    microsoft.exoServices.api.retentionPolicyCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.mailboxPlanCollectionResponse'
-    Microsoft.ExoServices.Api.retentionPolicyCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicyCollectionResponse'
+    microsoft.exoServices.api.userMailboxCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.retentionPolicyCollectionResponse'
-    Microsoft.ExoServices.Api.exchangeUserConfigurationCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.userMailboxCollectionResponse'
+    microsoft.exoServices.api.mailboxShardCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeUserConfigurationCollectionResponse'
-    Microsoft.ExoServices.Api.exchangeMailboxCollectionResponse:
+            $ref: '#/components/schemas/microsoft.exoServices.api.mailboxShardCollectionResponse'
+    microsoft.exoServices.api.exchangeEntityCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Microsoft.ExoServices.Api.exchangeMailboxCollectionResponse'
+            $ref: '#/components/schemas/microsoft.exoServices.api.exchangeEntityCollectionResponse'
+    microsoft.exoServices.api.userExchangeDetailsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetailsCollectionResponse'
+    microsoft.exoServices.api.exchangeMailboxCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailboxCollectionResponse'
+    microsoft.exoServices.api.orgPersonCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.exoServices.api.orgPersonCollectionResponse'
     StringCollectionResponse:
       description: Retrieved collection
       content:
@@ -1110,60 +3501,87 @@ components:
       schema:
         type: string
   examples:
-    Microsoft.ExoServices.Api.entity:
+    microsoft.directoryService.user:
+      value:
+        exchange:
+          '@odata.type': microsoft.exoServices.api.userExchangeDetails
+    microsoft.directoryService.directoryObject: { }
+    microsoft.graph.admin:
+      value:
+        exchange:
+          '@odata.type': microsoft.exoServices.api.exchangeAdmin
+    microsoft.exoServices.api.exchangeAdmin:
+      value:
+        aadUsers:
+          - '@odata.type': microsoft.exoServices.api.aadUser
+        mailboxPlans:
+          - '@odata.type': microsoft.exoServices.api.mailboxPlan
+        retentionPolicies:
+          - '@odata.type': microsoft.exoServices.api.retentionPolicy
+        roleAssignmentPolicies:
+          - '@odata.type': microsoft.exoServices.api.roleAssignmentPolicy
+        userMailboxes:
+          - '@odata.type': microsoft.exoServices.api.userMailbox
+        users:
+          - '@odata.type': microsoft.exoServices.api.exchangeUser
+    microsoft.exoServices.api.userExchangeDetails:
+      value:
+        customAttributes:
+          '@odata.type': microsoft.exoServices.api.customAttributes
+        emailReceiveRestrictionSettings:
+          '@odata.type': microsoft.exoServices.api.emailReceiveRestrictionSettings
+        isAccountDisabled: 'true'
+        isModerationEnabled: 'true'
+        lastManagerChangedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+        mailbox:
+          '@odata.type': microsoft.exoServices.api.mailboxContainer
+        moderatedBy: String
+        roleAssignmentPolicy:
+          '@odata.type': microsoft.exoServices.api.roleAssignmentPolicy
+        userType: String
+    microsoft.exoServices.api.exchangeEntity:
       value:
         createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
         id: String (identifier)
         lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
         objectType: String
-    Microsoft.ExoServices.Api.orgPerson:
+    microsoft.exoServices.api.exchangeMailbox:
       value:
-        directReports:
-          - '@odata.type': Microsoft.ExoServices.Api.orgPerson
-        lastManagerChangedDateTime: '0001-01-01T00:00:00.0000000+00:00'
-        manager:
-          '@odata.type': Microsoft.ExoServices.Api.orgPerson
-    Microsoft.ExoServices.Api.user:
+        shards:
+          - '@odata.type': microsoft.exoServices.api.mailboxShard
+        type:
+          '@odata.type': microsoft.exoServices.api.exchangeMailboxType
+    microsoft.exoServices.api.mailboxShard:
       value:
-        exchangeConfiguration:
-          '@odata.type': Microsoft.ExoServices.Api.exchangeUserConfiguration
-        mailbox:
-          '@odata.type': Microsoft.ExoServices.Api.exchangeMailbox
-    Microsoft.ExoServices.Api.exchangeUserConfiguration:
+        databaseId: String
+        type:
+          '@odata.type': microsoft.exoServices.api.mailboxShardType
+    microsoft.exoServices.api.mailboxContainer:
       value:
-        customAttributes:
-          '@odata.type': Microsoft.ExoServices.Api.customAttributes
-        emailReceiveRestrictionSettings:
-          '@odata.type': Microsoft.ExoServices.Api.emailReceiveRestrictionSettings
-        isAccountDisabled: 'true'
-        isModerationEnabled: 'true'
-        lastManagerChangedDateTime: '0001-01-01T00:00:00.0000000+00:00'
-        moderatedBy: String
-        roleAssignmentPolicy:
-          '@odata.type': Microsoft.ExoServices.Api.roleAssignmentPolicy
-        userType: String
-    Microsoft.ExoServices.Api.exchangeMailbox:
-      value:
-        plan:
-          '@odata.type': Microsoft.ExoServices.Api.mailboxPlan
+        archive:
+          '@odata.type': microsoft.exoServices.api.exchangeMailbox
+        enabledMailboxTypes:
+          - '@odata.type': microsoft.exoServices.api.exchangeMailboxType
+        primary:
+          '@odata.type': microsoft.exoServices.api.exchangeMailbox
         settings:
-          '@odata.type': Microsoft.ExoServices.Api.exchangeMailboxSettings
-    Microsoft.ExoServices.Api.exchangeMailboxSettings:
+          '@odata.type': microsoft.exoServices.api.exchangeMailboxSettings
+    microsoft.exoServices.api.exchangeMailboxSettings:
       value:
         auditingSettings:
-          '@odata.type': Microsoft.ExoServices.Api.auditingSettings
+          '@odata.type': microsoft.exoServices.api.auditingSettings
         dataRetentionSettings:
-          '@odata.type': Microsoft.ExoServices.Api.dataRetentionSettings
-    Microsoft.ExoServices.Api.customAttributes:
+          '@odata.type': microsoft.exoServices.api.dataRetentionSettings
+    microsoft.exoServices.api.customAttributes:
       value:
         customAttribute1: String
         extensionCustomAttribute2:
           - String
-    Microsoft.ExoServices.Api.emailReceiveRestrictionSettings:
+    microsoft.exoServices.api.emailReceiveRestrictionSettings:
       value:
         acceptMessagesOnlyFrom:
-          - '@odata.type': Microsoft.ExoServices.Api.entity
-    Microsoft.ExoServices.Api.dataRetentionSettings:
+          - '@odata.type': microsoft.exoServices.api.exchangeEntity
+    microsoft.exoServices.api.dataRetentionSettings:
       value:
         inPlaceHolds:
           - String
@@ -1172,56 +3590,75 @@ components:
         isLitigationHoldEnabled: 'true'
         isRetentionHoldEnabled: 'true'
         retentionPolicy:
-          '@odata.type': Microsoft.ExoServices.Api.retentionPolicy
-    Microsoft.ExoServices.Api.auditingSettings:
+          '@odata.type': microsoft.exoServices.api.retentionPolicy
+    microsoft.exoServices.api.auditingSettings:
       value:
         auditAdminOperations:
-          - '@odata.type': Microsoft.ExoServices.Api.mailboxAuditOperation
+          - '@odata.type': microsoft.exoServices.api.mailboxAuditOperation
         isAuditEnabled: 'true'
-    Microsoft.ExoServices.Api.exchangeAdmin:
+    microsoft.exoServices.api.userMailbox:
       value:
-        aadUsers:
-          - '@odata.type': Microsoft.ExoServices.Api.aadUser
-        mailboxPlans:
-          - '@odata.type': Microsoft.ExoServices.Api.mailboxPlan
-        retentionPolicies:
-          - '@odata.type': Microsoft.ExoServices.Api.retentionPolicy
-        roleAssignmentPolicies:
-          - '@odata.type': Microsoft.ExoServices.Api.roleAssignmentPolicy
-        users:
-          - '@odata.type': Microsoft.ExoServices.Api.exchangeUser
-    Microsoft.ExoServices.Api.roleAssignmentPolicy: { }
-    Microsoft.ExoServices.Api.mailboxPlan: { }
-    Microsoft.ExoServices.Api.retentionPolicy: { }
-    Microsoft.ExoServices.Api.aadUser:
+        archive:
+          '@odata.type': microsoft.exoServices.api.exchangeMailbox
+        enabledMailboxTypes:
+          - '@odata.type': microsoft.exoServices.api.exchangeMailboxType
+        mailboxSettings:
+          '@odata.type': microsoft.exoServices.api.exchangeMailboxSettings
+        primary:
+          '@odata.type': microsoft.exoServices.api.exchangeMailbox
+        user:
+          '@odata.type': microsoft.directoryService.user
+        userExchangeConfigurations:
+          '@odata.type': microsoft.exoServices.api.userExchangeConfigurations
+    microsoft.exoServices.api.roleAssignmentPolicy: { }
+    microsoft.exoServices.api.mailboxPlan: { }
+    microsoft.exoServices.api.retentionPolicy: { }
+    microsoft.exoServices.api.orgPerson:
       value:
-        exchangeConfiguration:
-          '@odata.type': Microsoft.ExoServices.Api.exchangeUserConfiguration
+        directReports:
+          - '@odata.type': microsoft.directoryService.directoryObject
+        lastManagerChangedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+        manager:
+          '@odata.type': microsoft.directoryService.directoryObject
+    microsoft.exoServices.api.aadUser:
+      value:
+        exchange:
+          '@odata.type': microsoft.exoServices.api.userExchangeDetails
         mail: String
-        mailbox:
-          '@odata.type': Microsoft.ExoServices.Api.exchangeMailbox
         mailNickname: String
         proxyAddresses:
           - String
         userPrincipalName: String
-    Microsoft.ExoServices.Api.exchangeUser:
+    microsoft.exoServices.api.exchangeUser:
       value:
         customAttributes:
-          '@odata.type': Microsoft.ExoServices.Api.customAttributes
+          '@odata.type': microsoft.exoServices.api.customAttributes
         emailReceiveRestrictionSettings:
-          '@odata.type': Microsoft.ExoServices.Api.emailReceiveRestrictionSettings
+          '@odata.type': microsoft.exoServices.api.emailReceiveRestrictionSettings
         isAccountDisabled: 'true'
         isModerationEnabled: 'true'
         mail: String
         mailbox:
-          '@odata.type': Microsoft.ExoServices.Api.exchangeMailbox
+          '@odata.type': microsoft.exoServices.api.mailboxContainer
         mailNickname: String
         moderatedBy: String
         proxyAddresses:
           - String
         roleAssignmentPolicy:
-          '@odata.type': Microsoft.ExoServices.Api.roleAssignmentPolicy
+          '@odata.type': microsoft.exoServices.api.roleAssignmentPolicy
         userPrincipalName: String
+        userType: String
+    microsoft.exoServices.api.userExchangeConfigurations:
+      value:
+        customAttributes:
+          '@odata.type': microsoft.exoServices.api.customAttributes
+        emailReceiveRestrictionSettings:
+          '@odata.type': microsoft.exoServices.api.emailReceiveRestrictionSettings
+        isAccountDisabled: 'true'
+        isModerationEnabled: 'true'
+        moderatedBy: String
+        roleAssignmentPolicy:
+          '@odata.type': microsoft.exoServices.api.roleAssignmentPolicy
         userType: String
   requestBodies:
     refPostBody:
@@ -1239,13 +3676,39 @@ components:
             $ref: '#/components/schemas/ReferenceUpdate'
       required: true
 tags:
+  - name: admin.admin
+    x-ms-docs-toc-type: page
+  - name: admin.exchangeAdmin
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.aadUser
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.aadUsers.directoryObject
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.aadUsers.userExchangeDetails
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.mailboxPlan
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.retentionPolicy
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.roleAssignmentPolicy
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.userMailbox
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.userMailboxes.exchangeMailbox
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.userMailboxes.user
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.exchangeUser
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.users.directoryObject
+    x-ms-docs-toc-type: page
+  - name: admin.exchange.users.roleAssignmentPolicy
+    x-ms-docs-toc-type: page
+  - name: directoryObjects.directoryObject
+    x-ms-docs-toc-type: page
   - name: users.user
     x-ms-docs-toc-type: page
-  - name: users.exchangeUserConfiguration
+  - name: users.userExchangeDetails
     x-ms-docs-toc-type: page
-  - name: users.exchangeConfiguration.roleAssignmentPolicy
-    x-ms-docs-toc-type: page
-  - name: users.exchangeMailbox
-    x-ms-docs-toc-type: page
-  - name: users.mailbox.mailboxPlan
+  - name: users.exchange.roleAssignmentPolicy
     x-ms-docs-toc-type: page
