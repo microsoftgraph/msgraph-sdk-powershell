@@ -38,7 +38,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -60,7 +60,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.admin'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -94,7 +94,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -116,7 +116,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.exchangeAdmin'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -133,7 +133,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -182,7 +182,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.exoServices.api.aadUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -200,7 +200,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.aadUser'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -245,7 +245,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -275,7 +275,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.aadUser'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -299,7 +299,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -355,7 +355,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.directoryService.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -398,7 +398,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -427,7 +427,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -467,7 +467,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -497,7 +497,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetails'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -521,7 +521,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -562,7 +562,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -607,7 +607,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -629,7 +629,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -677,7 +677,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.exoServices.api.mailboxPlanCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -695,7 +695,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.mailboxPlan'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -740,7 +740,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -770,7 +770,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.mailboxPlan'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -794,7 +794,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -810,7 +810,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -858,7 +858,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.exoServices.api.retentionPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -876,7 +876,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -921,7 +921,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -951,7 +951,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.retentionPolicy'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -975,7 +975,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -991,7 +991,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1039,7 +1039,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.exoServices.api.roleAssignmentPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1057,7 +1057,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1102,7 +1102,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1132,7 +1132,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.roleAssignmentPolicy'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1156,7 +1156,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1172,7 +1172,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1220,7 +1220,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.exoServices.api.userMailboxCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1238,7 +1238,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.userMailbox'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1283,7 +1283,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1313,7 +1313,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.userMailbox'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1337,7 +1337,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1378,7 +1378,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1408,7 +1408,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1432,7 +1432,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1488,7 +1488,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.exoServices.api.mailboxShardCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1538,7 +1538,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1567,7 +1567,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1607,7 +1607,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1637,7 +1637,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.exchangeMailbox'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1661,7 +1661,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1717,7 +1717,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.exoServices.api.mailboxShardCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1767,7 +1767,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1796,7 +1796,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1836,7 +1836,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1856,7 +1856,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1904,7 +1904,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.exoServices.api.exchangeUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1922,7 +1922,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.exchangeUser'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1967,7 +1967,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1997,7 +1997,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.exchangeUser'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2021,7 +2021,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2077,7 +2077,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.directoryService.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2120,7 +2120,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2149,7 +2149,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2189,7 +2189,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2236,7 +2236,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2256,7 +2256,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2304,7 +2304,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.directoryService.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2321,7 +2321,7 @@ paths:
               $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -2359,7 +2359,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -2381,7 +2381,7 @@ paths:
               $ref: '#/components/schemas/microsoft.directoryService.directoryObject'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2398,7 +2398,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2414,7 +2414,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2462,7 +2462,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.directoryService.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2479,7 +2479,7 @@ paths:
               $ref: '#/components/schemas/microsoft.directoryService.user'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -2517,7 +2517,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -2539,7 +2539,7 @@ paths:
               $ref: '#/components/schemas/microsoft.directoryService.user'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2556,7 +2556,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2590,7 +2590,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2612,7 +2612,7 @@ paths:
               $ref: '#/components/schemas/microsoft.exoServices.api.userExchangeDetails'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2629,7 +2629,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2663,7 +2663,7 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2683,7 +2683,7 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3179,14 +3179,16 @@ components:
         - componentShared
         - unknownFutureValue
       type: string
-    microsoft.directoryService.ODataErrors.ODataError:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/microsoft.directoryService.ODataErrors.MainError'
-    microsoft.directoryService.ODataErrors.MainError:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -3203,10 +3205,12 @@ components:
         details:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.directoryService.ODataErrors.ErrorDetails'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innerError:
-          $ref: '#/components/schemas/microsoft.directoryService.ODataErrors.InnerError'
-    microsoft.directoryService.ODataErrors.ErrorDetails:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -3219,8 +3223,12 @@ components:
         target:
           type: string
           nullable: true
-    microsoft.directoryService.ODataErrors.InnerError:
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.InnerError:
       type: object
+      additionalProperties:
+        type: object
       description: The structure of this object is service-specific
     ODataCountResponse:
       type: integer
@@ -3365,7 +3373,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.directoryService.ODataErrors.ODataError'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     ODataCountResponse:
       description: The count of the resource
       content:

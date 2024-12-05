@@ -112,7 +112,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             return stringBuilder.ToString();
         }
 
-        public static async Task<string> GetErrorLogAsync(HttpResponseMessage response, IMicrosoftExoServicesApiODataErrorsMainError odataError)
+        public static async Task<string> GetErrorLogAsync(HttpResponseMessage response, IMicrosoftGraphODataErrorsMainError odataError)
         {
             if (response == null) return string.Empty;
 
