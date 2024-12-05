@@ -34,6 +34,10 @@ parameters:
   displayName: Skip OpenAPI Docs Download
   default: false
   type: boolean
+- name: InternalFeed
+  type: string
+  default: 'https://pkgs.dev.azure.com/microsoftgraph/_packaging/ATPopFeed/nuget/v2'
+  displayName: Internal NuGet Feed
 variables:
   Branch: "WeeklyApiRefresh"
   BaseBranch: ${{ parameters.BaseBranch }}
@@ -102,7 +106,7 @@ extends:
               displayName: 'Publish NuGet to feed'
               packageParentPath: '$(Build.ArtifactStagingDirectory)'
               packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: $(PROJECT_NAME)/$(FEED_NAME)
+              publishVstsFeed: ${{ parameters.InternalFeed }}
               allowPackageConflicts: true
         steps:
         - template: .azure-pipelines/common-templates/checkout.yml@self
