@@ -461,6 +461,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.selectionLikelihoodInfo:
       title: selectionLikelihoodInfo
       enum:
