@@ -30,7 +30,7 @@ endUserNotificationSetting = @{
 	settingType = "noTraining"
 	positiveReinforcement = @{
 		deliveryPreference = "deliverAfterCampaignEnd"
-		endUserNotification = "https://graph.microsoft.com/v1.0/security/attacksimulation/endUserNotifications/1ewer3678-9abc-def0-123456789a"
+		"endUserNotification@odata.bind" = "https://graph.microsoft.com/v1.0/security/attacksimulation/endUserNotifications/1ewer3678-9abc-def0-123456789a"
 		defaultLanguage = "en"
 	}
 	simulationNotification = @{

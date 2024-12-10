@@ -12,32 +12,41 @@ $params = @{
 		passwordCredentials = @(
 			@{
 				restrictionType = "passwordAddition"
+				state = "enabled"
 				maxLifetime = $null
 				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2019-10-19T10:37:00Z")
 			}
 			@{
 				restrictionType = "passwordLifetime"
-				maxLifetime = "P4DT12H30M5S"
+				state = "enabled"
+				maxLifetime = "P90D"
 				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2014-10-19T10:37:00Z")
 			}
 			@{
 				restrictionType = "symmetricKeyAddition"
+				state = "enabled"
 				maxLifetime = $null
 				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2019-10-19T10:37:00Z")
 			}
 			@{
 				restrictionType = "symmetricKeyLifetime"
-				maxLifetime = "P4D"
-				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2014-10-19T10:37:00Z")
-			}
-		)
-		keyCredentials = @(
-			@{
-				restrictionType = "asymmetricKeyLifetime"
+				state = "enabled"
 				maxLifetime = "P90D"
 				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2014-10-19T10:37:00Z")
 			}
 		)
+		keyCredentials = @(
+		)
+		applicationRestrictions = @{
+			identifierUris = @{
+				nonDefaultUriAddition = @{
+					state = "disabled"
+					restrictForAppsCreatedAfterDateTime = $null
+					excludeAppsReceivingV2Tokens = $true
+					excludeSaml = $true
+				}
+			}
+		}
 	}
 }
 
