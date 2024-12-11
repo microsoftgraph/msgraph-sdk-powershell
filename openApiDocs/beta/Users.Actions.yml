@@ -38526,7 +38526,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta
-      operationId: user.onlineMeeting_createOrGet
+      operationId: user.onlineMeeting_createGraphRPreGet
       parameters:
         - name: user-id
           in: path
