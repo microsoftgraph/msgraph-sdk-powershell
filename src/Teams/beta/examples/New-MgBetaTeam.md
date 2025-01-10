@@ -8,6 +8,7 @@ $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	displayName = "My Sample Team"
 	description = "My Sample Team's Description"
+	firstChannelName = "My First Channel of the sample team"
 }
 
 New-MgBetaTeam -BodyParameter $params
@@ -25,6 +26,7 @@ $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	displayName = "My Sample Team"
 	description = "My Sample Team’s Description"
+	firstChannelName = "My First Channel of the sample team"
 	members = @(
 		@{
 			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -52,6 +54,7 @@ $params = @{
 	visibility = "Private"
 	displayName = "Sample Engineering Team"
 	description = "This is a sample engineering team, used to showcase the range of properties supported by this API"
+	firstChannelName = "My First Channel of the team"
 	channels = @(
 		@{
 			displayName = "Announcements 📢"
