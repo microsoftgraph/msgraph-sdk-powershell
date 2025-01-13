@@ -24,3 +24,18 @@ Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId $directoryObjectId -BodyPa
 ```
 This example shows how to use the Restore-MgBetaDirectoryDeletedItem Cmdlet.
 
+### Example 3: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+$params = @{
+	newUserPrincipalName = "johndoe@contoso.com"
+}
+
+Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId $directoryObjectId -BodyParameter $params
+
+```
+This example shows how to use the Restore-MgBetaDirectoryDeletedItem Cmdlet.
+
