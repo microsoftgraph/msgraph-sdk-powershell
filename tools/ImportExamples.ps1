@@ -313,8 +313,17 @@ function Update-ExampleFile {
                     elseif ($FirstDescriptionString.EndsWith("ing")) {
                         $DescriptionPrefix = "This example shows"
                     }
-                   
-                    $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                    elseif ($FirstDescriptionString.EndsWith("Example")) {
+                        $DescriptionPrefix = "This example shows how to use"
+                    }
+                    
+                    $Description = ""
+                    if ($FirstDescriptionString -eq "Example") {
+                        $Description = "This example shows how to use the $CommandPattern Cmdlet."
+                    }
+                    else {
+                        $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                    }
                 }
                 $TotalText = "$TitleValue`r`n`n$CodeValue`r`n$Description`r`n"
                 Add-Content -Path $ExampleFile -Value $TotalText
@@ -340,6 +349,7 @@ function Update-ExampleFile {
                 $ContainsPatternToSearch = $True
             }
         }
+        Write-Host $ContainsPatternToSearch
         if ($ContainsPatternToSearch) {
             Clear-Content $ExampleFile -Force    
             for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
@@ -360,8 +370,17 @@ function Update-ExampleFile {
                         elseif ($FirstDescriptionString.EndsWith("ing")) {
                             $DescriptionPrefix = "This example shows"
                         }
-                       
-                        $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                        elseif ($FirstDescriptionString.EndsWith("Example")) {
+                            $DescriptionPrefix = "This example shows how to use"
+                        }
+                        
+                        $Description = ""
+                        if ($FirstDescriptionString -eq "Example") {
+                            $Description = "This example shows how to use the $CommandPattern Cmdlet."
+                        }
+                        else {
+                            $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                        }
                     }      
                     $TotalText = "$TitleValue`r`n`n$CodeValue`r`n$Description`r`n"
                     Add-Content -Path $ExampleFile -Value $TotalText
@@ -573,4 +592,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/subscription-reauthorize?view=graph-rest-1.0&tabs=powershell" -GraphCommand "Invoke-MgReauthorizeSubscription" -GraphModule "ChangeNotifications" -Profile "v1.0"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&tabs=powershell" -GraphCommand "Get-MgBetaServicePrincipalSynchronizationTemplate" -GraphModule "Applications" -Profile "beta"

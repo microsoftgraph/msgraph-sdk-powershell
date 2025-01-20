@@ -7,5 +7,5 @@ Import-Module Microsoft.Graph.Beta.Identity.Governance
 Get-MgBetaEntitlementManagementAccessPackageAssignment
 
 ```
-This example will### example scenarios for using query parameters
+This example shows scenarios for using query parameters
 

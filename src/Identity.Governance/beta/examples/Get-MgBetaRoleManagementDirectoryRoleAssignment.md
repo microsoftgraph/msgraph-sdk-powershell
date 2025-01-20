@@ -7,7 +7,7 @@ Import-Module Microsoft.Graph.Beta.Identity.Governance
 Get-MgBetaRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId $unifiedRoleAssignmentId
 
 ```
-This example will### Example 1: get details of a role assignment
+This example will get details of a role assignment
 
 ### Example 2: Get details of a role assignment and expand the role definition
 
