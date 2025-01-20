@@ -6,11 +6,12 @@ using Microsoft.Graph.PowerShell.Authentication.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Common
@@ -155,6 +156,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
             }
         }
 
+        private static readonly JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            WriteIndented = true,
+            Converters = { new GraphSettingsConverter() }
+        };
         /// <summary>
         /// Safely deserializes JSON string to an object.
         /// </summary>
@@ -169,7 +176,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
             bool success = false;
             try
             {
-                result = converter == null ? JsonConvert.DeserializeObject<T>(serialization) : JsonConvert.DeserializeObject<T>(serialization, converter);
+                if (!(converter is GraphSettingsConverter))
+                {
+                    jsonSerializerOptions.Converters.Add(converter);
+                }
+                result = converter == null ? JsonSerializer.Deserialize<T>(serialization) : JsonSerializer.Deserialize<T>(serialization, jsonSerializerOptions);
                 success = true;
             }
             catch (JsonException)
@@ -303,7 +314,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// <returns>A JSON string.</returns>
         public override string ToString()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented, new GraphSettingsConverter());
+            return JsonSerializer.Serialize(this, jsonSerializerOptions);
         }
 
     }

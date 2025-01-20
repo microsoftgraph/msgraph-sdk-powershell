@@ -4,48 +4,42 @@
 
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
     /// <summary>
     /// A <see cref="JsonConverter"/> for <see cref="GraphSettings"/>.
     /// </summary>
-    internal class GraphSettingsConverter: JsonConverter
+    internal class GraphSettingsConverter : JsonConverter<IGraphEnvironment>
     {
-        public override bool CanWrite => true;
-        public override bool CanRead => true;
-        public override bool CanConvert(Type objectType)
+        public override IGraphEnvironment Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return objectType == typeof(IGraphEnvironment);
-        }
-
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            if (objectType == typeof(IGraphEnvironment))
+            if (typeToConvert == typeof(IGraphEnvironment))
             {
-                return serializer.Deserialize<GraphEnvironment>(reader);
+                return JsonSerializer.Deserialize<GraphEnvironment>(ref reader, options);
             }
-            else if (objectType == typeof(Dictionary<string, IGraphEnvironment>))
+            else if (typeToConvert == typeof(Dictionary<string, IGraphEnvironment>))
             {
-                var tempResult = serializer.Deserialize<Dictionary<string, GraphEnvironment>>(reader);
+                var tempResult = JsonSerializer.Deserialize<Dictionary<string, GraphEnvironment>>(ref reader, options);
                 var result = new Dictionary<string, IGraphEnvironment>(StringComparer.OrdinalIgnoreCase);
                 foreach (var key in tempResult.Keys)
                 {
                     result[key] = tempResult[key];
                 }
 
-                return result;
+                return (IGraphEnvironment)(object)result;
             }
 
-            return serializer.Deserialize(reader);
+            throw new JsonException($"Cannot convert to {typeToConvert}");
         }
 
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void Write(Utf8JsonWriter writer, IGraphEnvironment value, JsonSerializerOptions options)
         {
-            serializer.Serialize(writer, value);
+            JsonSerializer.Serialize(writer, value, options);
         }
     }
 }
