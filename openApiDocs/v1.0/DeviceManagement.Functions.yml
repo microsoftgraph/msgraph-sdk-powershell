@@ -6,159 +6,10 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
-  /deviceManagement/applePushNotificationCertificate/microsoft.graph.downloadApplePushNotificationCertificateSigningRequest():
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
-      description: Download Apple push notification certificate signing request
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-downloadapplepushnotificationcertificatesigningrequest?view=graph-rest-1.0
-      operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/deviceManagement/auditEvents/microsoft.graph.getAuditActivityTypes(category=''{category}'')':
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.auditEvent_getAuditActivityType
-      parameters:
-        - name: category
-          in: path
-          description: 'Usage: category=''{category}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  /deviceManagement/auditEvents/microsoft.graph.getAuditCategories():
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getAuditCategories
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0
-      operationId: deviceManagement.auditEvent_getAuditCategory
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId=''{secretReferenceValueId}'')':
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getOmaSettingPlainTextValue
-      operationId: deviceManagement.deviceConfiguration_getOmaSettingPlainTextValue
-      parameters:
-        - name: deviceConfiguration-id
-          in: path
-          description: The unique identifier of deviceConfiguration
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceConfiguration
-        - name: secretReferenceValueId
-          in: path
-          description: 'Usage: secretReferenceValueId=''{secretReferenceValueId}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
     get:
       tags:
-        - deviceManagement.Functions
+        - deviceManagement.deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
       description: Retrieves the effective permissions of the currently authenticated user
       externalDocs:
@@ -205,7 +56,7 @@ paths:
   /deviceManagement/microsoft.graph.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices():
     get:
       tags:
-        - deviceManagement.Functions
+        - deviceManagement.deviceManagement.Functions
       summary: Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
       operationId: deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevice
       responses:
@@ -221,7 +72,7 @@ paths:
   '/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName=''{domainName}'')':
     get:
       tags:
-        - deviceManagement.Functions
+        - deviceManagement.deviceManagement.Functions
       summary: Invoke function verifyWindowsEnrollmentAutoDiscovery
       operationId: deviceManagement_verifyWindowsEnrollmentAutoDiscovery
       parameters:
@@ -249,158 +100,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/deviceManagement/userExperienceAnalyticsDevicePerformance/microsoft.graph.summarizeDevicePerformanceDevices(summarizeBy=''{summarizeBy}'')':
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function summarizeDevicePerformanceDevices
-      operationId: deviceManagement.userExperienceAnalyticsDevicePerformance_summarizeDevicePerformanceDevice
-      parameters:
-        - name: summarizeBy
-          in: path
-          description: 'Usage: summarizeBy=''{summarizeBy}'''
-          required: true
-          style: simple
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of userExperienceAnalyticsDevicePerformance
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDevicePerformance'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  /deviceManagement/virtualEndpoint/auditEvents/microsoft.graph.getAuditActivityTypes():
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getAuditActivityTypes
-      description: Get audit activity types by tenant ID.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                      nullable: true
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  /deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages():
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getSourceImages
-      description: Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.cloudPcSourceDeviceImage'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
 components:
   schemas:
     microsoft.graph.rolePermission:
@@ -428,55 +127,55 @@ components:
         coManagedDevices:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Total number of co-managed devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         devicesNotAutopilotRegistered:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         devicesWithoutAutopilotProfileAssigned:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of intune devices not autopilot profile assigned. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         devicesWithoutCloudIdentity:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of devices that are not cloud identity. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         intuneDevices:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         tenantAttachDevices:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Total count of tenant attach devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         totalDevices:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total count of devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         unsupportedOSversionDevices:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of Windows 10 devices that have unsupported OS versions. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         windows10Devices:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of windows 10 devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         windows10DevicesSummary:
@@ -484,173 +183,12 @@ components:
         windows10DevicesWithoutTenantAttach:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of windows 10 devices that are Intune and co-managed. Read-only. Valid values -2147483648 to 2147483647
           format: int32
       additionalProperties:
         type: object
       description: The user experience analytics Work From Anywhere metrics devices summary.
-    microsoft.graph.userExperienceAnalyticsSummarizedBy:
-      title: userExperienceAnalyticsSummarizedBy
-      enum:
-        - none
-        - model
-        - allRegressions
-        - modelRegression
-        - manufacturerRegression
-        - operatingSystemVersionRegression
-        - unknownFutureValue
-      type: string
-      description: 'Indicates type of summarization. Possible values are: None, Model, AllRegressions, ModelRegression, ManufacturerRegression, OperatingSystemVersionRegression.'
-      x-ms-enum:
-        name: userExperienceAnalyticsSummarizedBy
-        modelAsString: false
-        values:
-          - value: none
-            description: Indicates that the summarization is none.
-            name: none
-          - value: model
-            description: Indicates that the summarization is by model.
-            name: model
-          - value: allRegressions
-            description: Indicates that the summarization is by all regressions.
-            name: allRegressions
-          - value: modelRegression
-            description: Indicates that the summarization is by model regression.
-            name: modelRegression
-          - value: manufacturerRegression
-            description: Indicates that the summarization is by manufacturer regression.
-            name: manufacturerRegression
-          - value: operatingSystemVersionRegression
-            description: Indicates that the summarization is by operating system version regression.
-            name: operatingSystemVersionRegression
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
-    microsoft.graph.userExperienceAnalyticsDevicePerformance:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: userExperienceAnalyticsDevicePerformance
-          type: object
-          properties:
-            averageBlueScreens:
-              type: number
-              description: Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
-              format: double
-            averageRestarts:
-              type: number
-              description: Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
-              format: double
-            blueScreenCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
-              format: int32
-            bootScore:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The user experience analytics device boot score.
-              format: int32
-            coreBootTimeInMs:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The user experience analytics device core boot time in milliseconds.
-              format: int32
-            coreLoginTimeInMs:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The user experience analytics device core login time in milliseconds.
-              format: int32
-            deviceCount:
-              type: integer
-              description: User experience analytics summarized device count.
-              format: int64
-            deviceName:
-              type: string
-              description: The user experience analytics device name.
-              nullable: true
-            diskType:
-              $ref: '#/components/schemas/microsoft.graph.diskType'
-            groupPolicyBootTimeInMs:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The user experience analytics device group policy boot time in milliseconds.
-              format: int32
-            groupPolicyLoginTimeInMs:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The user experience analytics device group policy login time in milliseconds.
-              format: int32
-            healthStatus:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
-            loginScore:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The user experience analytics device login score.
-              format: int32
-            manufacturer:
-              type: string
-              description: The user experience analytics device manufacturer.
-              nullable: true
-            model:
-              type: string
-              description: The user experience analytics device model.
-              nullable: true
-            modelStartupPerformanceScore:
-              type: number
-              description: The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-              format: double
-            operatingSystemVersion:
-              type: string
-              description: The user experience analytics device Operating System version.
-              nullable: true
-            responsiveDesktopTimeInMs:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The user experience analytics responsive desktop time in milliseconds.
-              format: int32
-            restartCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Restarts in the last 30 days. Valid values 0 to 9999999
-              format: int32
-            startupPerformanceScore:
-              type: number
-              description: The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-              format: double
-          additionalProperties:
-            type: object
-          description: The user experience analytics device performance entity contains device boot performance details.
-    microsoft.graph.cloudPcSourceDeviceImage:
-      title: cloudPcSourceDeviceImage
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The display name for the source image. Read-only.
-          nullable: true
-        resourceId:
-          type: string
-          description: 'The fully qualified unique identifier (ID) of the source image resource in Azure. The ID format is: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}''. Read-only.'
-        subscriptionDisplayName:
-          type: string
-          description: The display name of the subscription that hosts the source image. Read-only.
-          nullable: true
-        subscriptionId:
-          type: string
-          description: The unique identifier (ID) of the subscription that hosts the source image. Read-only.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.resourceAction:
       title: resourceAction
       type: object
@@ -677,19 +215,19 @@ components:
         devicesNotAutopilotRegistered:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of intune devices that are not autopilot registerd. Read-only.
           format: int32
         devicesWithoutAutopilotProfileAssigned:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of intune devices not autopilot profile assigned. Read-only.
           format: int32
         totalWindows10DevicesWithoutTenantAttached:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of windows 10 devices that are Intune and co-managed. Read-only.
           format: int32
       additionalProperties:
@@ -702,7 +240,7 @@ components:
         deviceWithoutCloudIdentityCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of devices that are not cloud identity. Read-only.
           format: int32
       additionalProperties:
@@ -715,19 +253,19 @@ components:
         coManagedDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Total number of  co-managed devices. Read-only.
           format: int32
         intuneDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of intune devices that are not autopilot registerd. Read-only.
           format: int32
         tenantAttachDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Total count of tenant attach devices. Read-only.
           format: int32
       additionalProperties:
@@ -740,78 +278,12 @@ components:
         unsupportedOSversionDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The count of Windows 10 devices that have unsupported OS versions. Read-only.
           format: int32
       additionalProperties:
         type: object
       description: The user experience analytics work from anywhere Windows 10 devices summary.
-    microsoft.graph.entity:
-      title: entity
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier for an entity. Read-only.
-      additionalProperties:
-        type: object
-    ReferenceNumeric:
-      enum:
-        - '-INF'
-        - INF
-        - NaN
-    microsoft.graph.diskType:
-      title: diskType
-      enum:
-        - unknown
-        - hdd
-        - ssd
-        - unknownFutureValue
-      type: string
-      x-ms-enum:
-        name: diskType
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Enum member for unknown or default diskType.
-            name: unknown
-          - value: hdd
-            description: Enum member for HDD devices.
-            name: hdd
-          - value: ssd
-            description: Enum member for SSD devices.
-            name: ssd
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value.Do not use.
-            name: unknownFutureValue
-    microsoft.graph.userExperienceAnalyticsHealthState:
-      title: userExperienceAnalyticsHealthState
-      enum:
-        - unknown
-        - insufficientData
-        - needsAttention
-        - meetingGoals
-        - unknownFutureValue
-      type: string
-      x-ms-enum:
-        name: userExperienceAnalyticsHealthState
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Indicates that the health state is unknown.
-            name: unknown
-          - value: insufficientData
-            description: Indicates that the health state is insufficient data.
-            name: insufficientData
-          - value: needsAttention
-            description: Indicates that the health state needs attention.
-            name: needsAttention
-          - value: meetingGoals
-            description: Indicates that the health state is meeting goals.
-            name: meetingGoals
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error

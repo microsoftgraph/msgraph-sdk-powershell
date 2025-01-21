@@ -457,7 +457,7 @@ paths:
   '/identity/apiConnectors/{identityApiConnector-id}/microsoft.graph.uploadClientCertificate':
     post:
       tags:
-        - identity.Actions
+        - identity.identityApiConnector
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
       externalDocs:
@@ -599,7 +599,7 @@ paths:
       tags:
         - identity.authenticationEventListener
       summary: Get authenticationEventListener
-      description: Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+      description: Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
@@ -647,7 +647,7 @@ paths:
       tags:
         - identity.authenticationEventListener
       summary: Update authenticationEventListener
-      description: Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
+      description: Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. The following derived types are currently supported.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0
@@ -682,7 +682,7 @@ paths:
       tags:
         - identity.authenticationEventListener
       summary: Delete authenticationEventListener
-      description: Delete an authenticationEventListener object.
+      description: Delete an authenticationEventListener object. The following derived types are currently supported.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0
@@ -2618,7 +2618,7 @@ paths:
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postAttributeCollection/microsoft.graph.uploadClientCertificate':
     post:
       tags:
-        - identity.Actions
+        - identity.b2xIdentityUserFlow
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
       externalDocs:
@@ -2838,7 +2838,7 @@ paths:
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postFederationSignup/microsoft.graph.uploadClientCertificate':
     post:
       tags:
-        - identity.Actions
+        - identity.b2xIdentityUserFlow
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
       externalDocs:
@@ -4456,7 +4456,7 @@ paths:
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.getOrder()':
     get:
       tags:
-        - identity.Functions
+        - identity.b2xIdentityUserFlow
       summary: Invoke function getOrder
       description: Get the order of identityUserFlowAttributeAssignments being collected within a user flow.
       externalDocs:
@@ -4485,7 +4485,7 @@ paths:
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.setOrder':
     post:
       tags:
-        - identity.Actions
+        - identity.b2xIdentityUserFlow
       summary: Invoke action setOrder
       description: Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
       externalDocs:
@@ -5658,7 +5658,7 @@ paths:
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/microsoft.graph.updateAllowedCombinations':
     post:
       tags:
-        - identity.Actions
+        - identity.conditionalAccessRoot
       summary: Invoke action updateAllowedCombinations
       description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
       externalDocs:
@@ -5701,7 +5701,7 @@ paths:
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/microsoft.graph.usage()':
     get:
       tags:
-        - identity.Functions
+        - identity.conditionalAccessRoot
       summary: Invoke function usage
       description: 'Allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.'
       externalDocs:
@@ -5826,11 +5826,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get ipNamedLocation
-      description: Retrieve the properties and relationships of an ipNamedLocation object.
+      summary: Get namedLocation
+      description: Retrieve the properties and relationships of a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -5874,11 +5874,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update countryNamedLocation
-      description: Update the properties of a countryNamedLocation object.
+      summary: Update ipNamedlocation
+      description: Update the properties of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -5909,11 +5909,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete namedLocation
+      description: Delete a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -6363,7 +6363,7 @@ paths:
       tags:
         - identity.customAuthenticationExtension
       summary: Get customAuthenticationExtension
-      description: Read the properties and relationships of a customAuthenticationExtension object.
+      description: Read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0
@@ -6411,7 +6411,7 @@ paths:
       tags:
         - identity.customAuthenticationExtension
       summary: Update customAuthenticationExtension
-      description: Update the properties of a customAuthenticationExtension object.
+      description: Update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/customauthenticationextension-update?view=graph-rest-1.0
@@ -6446,7 +6446,7 @@ paths:
       tags:
         - identity.customAuthenticationExtension
       summary: Delete customAuthenticationExtension
-      description: Delete a customAuthenticationExtension object.
+      description: Delete a customAuthenticationExtension object. The following derived types are currently supported.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/customauthenticationextension-delete?view=graph-rest-1.0
@@ -6475,9 +6475,9 @@ paths:
   '/identity/customAuthenticationExtensions/{customAuthenticationExtension-id}/microsoft.graph.validateAuthenticationConfiguration':
     post:
       tags:
-        - identity.Actions
+        - identity.customAuthenticationExtension
       summary: Invoke action validateAuthenticationConfiguration
-      description: An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
+      description: 'An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension object, which can represent one of the following derived types:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/customauthenticationextension-validateauthenticationconfiguration?view=graph-rest-1.0
@@ -6518,7 +6518,7 @@ paths:
   /identity/customAuthenticationExtensions/microsoft.graph.validateAuthenticationConfiguration:
     post:
       tags:
-        - identity.Actions
+        - identity.customAuthenticationExtension
       summary: Invoke action validateAuthenticationConfiguration
       operationId: identity.customAuthenticationExtension_validateAuthenticationConfiguration
       requestBody:
@@ -6757,7 +6757,7 @@ paths:
   /identity/identityProviders/microsoft.graph.availableProviderTypes():
     get:
       tags:
-        - identity.Functions
+        - identity.identityProviderBase
       summary: Invoke function availableProviderTypes
       description: Get all identity providers supported in a directory.
       externalDocs:
@@ -7702,7 +7702,7 @@ paths:
   /identityProtection/riskyServicePrincipals/microsoft.graph.confirmCompromised:
     post:
       tags:
-        - identityProtection.Actions
+        - identityProtection.riskyServicePrincipal
       summary: Invoke action confirmCompromised
       description: Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high.
       externalDocs:
@@ -7733,7 +7733,7 @@ paths:
   /identityProtection/riskyServicePrincipals/microsoft.graph.dismiss:
     post:
       tags:
-        - identityProtection.Actions
+        - identityProtection.riskyServicePrincipal
       summary: Invoke action dismiss
       description: Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to none. You can dismiss up to 60 service principal accounts in one request.
       externalDocs:
@@ -8204,7 +8204,7 @@ paths:
   /identityProtection/riskyUsers/microsoft.graph.confirmCompromised:
     post:
       tags:
-        - identityProtection.Actions
+        - identityProtection.riskyUser
       summary: Invoke action confirmCompromised
       description: Confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
       externalDocs:
@@ -8235,7 +8235,7 @@ paths:
   /identityProtection/riskyUsers/microsoft.graph.dismiss:
     post:
       tags:
-        - identityProtection.Actions
+        - identityProtection.riskyUser
       summary: Invoke action dismiss
       description: Dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
       externalDocs:
@@ -8708,7 +8708,7 @@ paths:
   /identityProviders/microsoft.graph.availableProviderTypes():
     get:
       tags:
-        - identityProviders.Functions
+        - identityProviders.identityProvider.Functions
       summary: Invoke function availableProviderTypes
       description: Retrieves all identity provider types available in a directory.
       externalDocs:
@@ -8852,7 +8852,7 @@ paths:
       tags:
         - informationProtection.bitlocker
       summary: List recoveryKeys
-      description: 'Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the key property. For information about how to read the key property, see Get bitlockerRecoveryKey.'
+      description: 'Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the key property. For information about how to read the key property, see Get bitlockerRecoveryKey. You can use this API to programmatically iterate through the list of recovery keys in the tenant and identify devices with BitLocker enabled. For more information, see the sample PowerShell code in BitLocker recovery process.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bitlocker-list-recoverykeys?view=graph-rest-1.0
@@ -9461,7 +9461,7 @@ paths:
       tags:
         - invitations.invitation
       summary: Create invitation
-      description: 'Use this API to create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:'
+      description: 'Use this API to create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. The invitation adds the external user to the organization as part of B2B collaboration. B2B collaboration is supported in both Microsoft Entra External ID in workforce and external tenants. When creating a new invitation, you have several options available:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0
@@ -9982,9 +9982,9 @@ paths:
   /oauth2PermissionGrants/microsoft.graph.delta():
     get:
       tags:
-        - oauth2PermissionGrants.Functions
+        - oauth2PermissionGrants.oAuth2PermissionGrant.Functions
       summary: Invoke function delta
-      description: 'Get newly created, updated, or deleted oauth2permissiongrant objects without performing a full read of the entire resource collection. For details, see Using delta query.'
+      description: 'Get newly created, updated, or deleted oauth2permissiongrant objects without performing a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/oauth2permissiongrant-delta?view=graph-rest-1.0
@@ -11901,7 +11901,7 @@ paths:
   '/policies/authenticationStrengthPolicies/{authenticationStrengthPolicy-id}/microsoft.graph.updateAllowedCombinations':
     post:
       tags:
-        - policies.Actions
+        - policies.authenticationStrengthPolicy
       summary: Invoke action updateAllowedCombinations
       description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
       externalDocs:
@@ -11944,7 +11944,7 @@ paths:
   '/policies/authenticationStrengthPolicies/{authenticationStrengthPolicy-id}/microsoft.graph.usage()':
     get:
       tags:
-        - policies.Functions
+        - policies.authenticationStrengthPolicy
       summary: Invoke function usage
       description: 'Allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.'
       externalDocs:
@@ -12780,7 +12780,7 @@ paths:
   /policies/crossTenantAccessPolicy/default/microsoft.graph.resetToSystemDefault:
     post:
       tags:
-        - policies.Actions
+        - policies.crossTenantAccessPolicy
       summary: Invoke action resetToSystemDefault
       description: Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
       externalDocs:
@@ -16763,11 +16763,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Update multiTenantOrganization
-      description: Update the properties of a multitenant organization.
+      summary: Create multiTenantOrganization
+      description: 'Create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -17225,7 +17225,7 @@ paths:
       tags:
         - users.authentication
       summary: Create emailMethod
-      description: Set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
+      description: Set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method. Self-service operations aren't supported.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-post-emailmethods?view=graph-rest-1.0
@@ -17314,7 +17314,7 @@ paths:
       tags:
         - users.authentication
       summary: Update emailAuthenticationMethod
-      description: Update a user's email address represented by an emailAuthenticationMethod object.
+      description: Update a user's email address represented by an emailAuthenticationMethod object. Self-service operations aren't supported.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/emailauthenticationmethod-update?view=graph-rest-1.0
@@ -17771,6 +17771,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/methods/{authenticationMethod-id}/microsoft.graph.resetPassword':
+    post:
+      tags:
+        - users.authentication
+      summary: Invoke action resetPassword
+      description: 'Reset a user''s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and can''t be performed on a user''s own account. To reset a user''s password in Azure AD B2C, use the Update user API operation and update the passwordProfile > forceChangePasswordNextSignIn object. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0
+      operationId: user.authentication.method_resetPassword
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: authenticationMethod-id
+          in: path
+          description: The unique identifier of authenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationMethod
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                newPassword:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.passwordResetResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/authentication/methods/$count':
     get:
       tags:
@@ -17917,7 +17967,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete microsoftAuthenticatorAuthenticationMethod
-      description: Deletes a microsoftAuthenticatorAuthenticationMethod object.
+      description: Delete a microsoftAuthenticatorAuthenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-delete?view=graph-rest-1.0
@@ -18590,7 +18640,7 @@ paths:
       tags:
         - users.authentication
       summary: Update phoneAuthenticationMethod
-      description: 'Update a user''s phone number associated with a phone authentication method object. You can''t change a phone''s type. To change a phone''s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system.'
+      description: 'Update a user''s phone number associated with a phone authentication method object. You can''t change a phone''s type. To change a phone''s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system. Self-service operations aren''t supported.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-update?view=graph-rest-1.0
@@ -18663,6 +18713,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}/microsoft.graph.disableSmsSignIn':
+    post:
+      tags:
+        - users.authentication
+      summary: Invoke action disableSmsSignIn
+      description: 'Disable SMS sign-in for an existing mobile phone number registered to a user. The number will no longer be available for SMS sign-in, which can prevent your user from signing in.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-disablesmssignin?view=graph-rest-1.0
+      operationId: user.authentication.phoneMethod_disableSmsSignIn
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: phoneAuthenticationMethod-id
+          in: path
+          description: The unique identifier of phoneAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: phoneAuthenticationMethod
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}/microsoft.graph.enableSmsSignIn':
+    post:
+      tags:
+        - users.authentication
+      summary: Invoke action enableSmsSignIn
+      description: 'Enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled:'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-1.0
+      operationId: user.authentication.phoneMethod_enableSmsSignIn
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: phoneAuthenticationMethod-id
+          in: path
+          description: The unique identifier of phoneAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: phoneAuthenticationMethod
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/authentication/phoneMethods/$count':
     get:
       tags:
@@ -19326,6 +19442,7 @@ components:
               type: number
               description: Specifies the progress of an operation.
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.dataPolicyOperationStatus'
             storageLocation:
@@ -20503,7 +20620,7 @@ components:
             deviceEnrollmentLimit:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
             displayName:
@@ -20523,7 +20640,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -20591,7 +20708,7 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined,  MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
@@ -21004,6 +21121,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -21210,7 +21328,7 @@ components:
             requestDurationInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Specifies the duration the request is active before it automatically expires if no decision is applied.
               format: int32
             reviewers:
@@ -21221,7 +21339,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.'
               format: int32
           additionalProperties:
@@ -21292,7 +21410,7 @@ components:
             reconfirmationInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
               nullable: true
             registrationEnforcement:
@@ -21545,7 +21663,7 @@ components:
             userDeviceQuota:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
           additionalProperties:
             type: object
@@ -21963,6 +22081,16 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.passwordResetResponse:
+      title: passwordResetResponse
+      type: object
+      properties:
+        newPassword:
+          type: string
+          description: The Microsoft Entra ID-generated password.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -22037,13 +22165,13 @@ components:
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: For internal use only.
               format: int32
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
+              description: 'The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             enrollmentProfileName:
               type: string
@@ -22192,6 +22320,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -22261,7 +22390,7 @@ components:
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
@@ -22317,6 +22446,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.dataPolicyOperationStatus:
       title: dataPolicyOperationStatus
       enum:
@@ -22408,6 +22539,7 @@ components:
             userFlowTypeVersion:
               type: number
               format: float
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.userAttributeValuesItem:
@@ -22494,13 +22626,15 @@ components:
       properties:
         applications:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessApplications'
+        authenticationFlows:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessAuthenticationFlows'
         clientApplications:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApplications'
         clientAppTypes:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApp'
-          description: 'Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.'
+          description: 'Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.'
         devices:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevices'
         insiderRiskLevels:
@@ -22832,7 +22966,7 @@ components:
           description: Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.
         customizedMessageBody:
           type: string
-          description: Customized message body you want to send if you don't want the default message.
+          description: Customized message body you want to send if you don't want the default message. Only plain text is allowed.
           nullable: true
         messageLanguage:
           type: string
@@ -23090,15 +23224,15 @@ components:
       properties:
         capabilityStatus:
           type: string
-          description: 'For example, ''Enabled''.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
           nullable: true
         provisioningStatus:
           type: string
-          description: 'For example, ''Success''.'
+          description: 'The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn''t provisioned and is in an error state.PendingInput - The service isn''t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn''t activated in the tenant.'
           nullable: true
         service:
           type: string
-          description: 'The name of the service; for example, ''AccessControlS2S'''
+          description: 'The name of the service; for example, ''AccessControlS2S''.'
           nullable: true
       additionalProperties:
         type: object
@@ -23302,7 +23436,7 @@ components:
               nullable: true
             principalDisplayName:
               type: string
-              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).'
+              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).'
               nullable: true
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -23316,7 +23450,7 @@ components:
               nullable: true
             resourceDisplayName:
               type: string
-              description: The display name of the resource app's service principal to which the assignment is made.
+              description: The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
               nullable: true
             resourceId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -23536,7 +23670,7 @@ components:
             reminderMinutesBeforeStart:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
@@ -23617,6 +23751,10 @@ components:
               type: string
               description: Date and time at which the chat was created. Read-only.
               format: date-time
+              nullable: true
+            isHiddenForAllMembers:
+              type: boolean
+              description: Indicates whether the chat is hidden for all its members. Read-only.
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -23925,7 +24063,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -24111,7 +24249,7 @@ components:
           properties:
             classification:
               type: string
-              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
+              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a preconfigured set in the tenant's directory.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -24121,7 +24259,7 @@ components:
               nullable: true
             description:
               type: string
-              description: 'An optional description for the team. Maximum length: 1024 characters.'
+              description: 'An optional description for the team. Maximum length: 1,024 characters.'
               nullable: true
             displayName:
               type: string
@@ -24133,7 +24271,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamGuestSettings'
             internalId:
               type: string
-              description: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+              description: A unique ID for the team that was used in a few places such as the audit log/Office 365 Management Activity API.
               nullable: true
             isArchived:
               type: boolean
@@ -24155,7 +24293,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              description: 'A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
             allChannels:
               type: array
@@ -24249,7 +24387,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -24268,14 +24406,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -24492,7 +24630,7 @@ components:
               format: date-time
               readOnly: true
             freeStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
@@ -24576,7 +24714,7 @@ components:
               nullable: true
               readOnly: true
             physicalMemoryInBytes:
-              type: integer
+              type: number
               description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
@@ -24606,7 +24744,7 @@ components:
               nullable: true
               readOnly: true
             totalStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Total Storage in Bytes. This property is read-only.
               format: int64
               readOnly: true
@@ -24874,6 +25012,10 @@ components:
               type: boolean
               description: Indicates whether this meeting is a Teams live event.
               nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
+              nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             startDateTime:
@@ -25033,14 +25175,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
@@ -25700,7 +25842,7 @@ components:
         type:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: For internal use only.
           format: int32
           nullable: true
@@ -26620,6 +26762,14 @@ components:
           description: User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
       additionalProperties:
         type: object
+    microsoft.graph.conditionalAccessAuthenticationFlows:
+      title: conditionalAccessAuthenticationFlows
+      type: object
+      properties:
+        transferMethods:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessTransferMethods'
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessClientApplications:
       title: conditionalAccessClientApplications
       type: object
@@ -26793,7 +26943,7 @@ components:
             value:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of days or hours.
               format: int32
               nullable: true
@@ -26806,14 +26956,14 @@ components:
         maximumRetries:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.'
           format: int32
           nullable: true
         timeoutInMilliseconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
           format: int32
           nullable: true
@@ -26924,7 +27074,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
@@ -27275,7 +27425,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -27375,7 +27525,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
+              description: 'The roles for that user. This property contains more qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member shouldn''t have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -27444,7 +27594,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
-              description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.'
+              description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, chat, and tag.'
             messageHistory:
               type: array
               items:
@@ -27623,13 +27773,13 @@ components:
       type: object
       properties:
         deleted:
-          type: integer
+          type: number
           description: 'Total space consumed by files in the recycle bin, in bytes. Read-only.'
           format: int64
           nullable: true
         remaining:
-          type: integer
-          description: 'Total space remaining before reaching the quota limit, in bytes. Read-only.'
+          type: number
+          description: 'Total space remaining before reaching the capacity limit, in bytes. Read-only.'
           format: int64
           nullable: true
         state:
@@ -27639,12 +27789,12 @@ components:
         storagePlanInformation:
           $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
         total:
-          type: integer
+          type: number
           description: 'Total allowed storage space, in bytes. Read-only.'
           format: int64
           nullable: true
         used:
-          type: integer
+          type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -27741,7 +27891,7 @@ components:
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             size:
-              type: integer
+              type: number
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
@@ -27858,7 +28008,7 @@ components:
             completionPercentage:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The percentage completion value of the course activity. Optional.
               format: int32
               nullable: true
@@ -28137,7 +28287,7 @@ components:
             percentageComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
@@ -28151,6 +28301,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -28390,21 +28541,21 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a team.
           format: int32
           nullable: true
@@ -28665,7 +28816,7 @@ components:
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
@@ -28808,6 +28959,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.teamsAsyncOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28817,7 +28969,7 @@ components:
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             createdDateTime:
@@ -28965,7 +29117,7 @@ components:
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of users assigned to the tag.
               format: int32
               nullable: true
@@ -29045,7 +29197,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -29374,11 +29526,11 @@ components:
           description: Informational attribute that identifies the HASH algorithm that was used by TPM
           nullable: true
         resetCount:
-          type: integer
+          type: number
           description: The number of times a PC device has hibernated or resumed
           format: int64
         restartCount:
-          type: integer
+          type: number
           description: The number of times a PC device has rebooted
           format: int64
         safeMode:
@@ -29713,7 +29865,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -29725,7 +29877,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -29746,7 +29898,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -29758,7 +29910,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -29805,6 +29957,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -30031,7 +30184,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -30040,7 +30193,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -30158,14 +30311,24 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              description: Indicates whether recording is enabled for the meeting.
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.
@@ -30464,7 +30627,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -30483,7 +30646,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -30524,7 +30687,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Percentage of task completion. When set to 100, the task is considered completed.'
               format: int32
               nullable: true
@@ -30537,14 +30700,14 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2, 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Additionally, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -30765,7 +30928,7 @@ components:
         snoozeDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Specifies the number of days that the user sees a prompt again if they select ''Not now'' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is ''0'', the user is prompted during every MFA attempt.'
           format: int32
         state:
@@ -30920,6 +31083,16 @@ components:
           description: 'Rule syntax is similar to that used for membership rules for groups in Microsoft Entra ID. For details, see rules with multiple expressions'
       additionalProperties:
         type: object
+    microsoft.graph.conditionalAccessTransferMethods:
+      title: conditionalAccessTransferMethods
+      enum:
+        - none
+        - deviceCodeFlow
+        - authenticationTransfer
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.conditionalAccessDevicePlatform:
       title: conditionalAccessDevicePlatform
       enum:
@@ -31198,7 +31371,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -31213,13 +31386,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -31239,7 +31412,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -31383,7 +31556,7 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework''s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
           nullable: true
         contentUrl:
           type: string
@@ -31391,7 +31564,7 @@ components:
           nullable: true
         id:
           type: string
-          description: Read-only. The unique id of the attachment.
+          description: Read-only. The unique ID of the attachment.
           nullable: true
         name:
           type: string
@@ -31436,7 +31609,7 @@ components:
         id:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
@@ -31488,11 +31661,19 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        displayName:
+          type: string
+          description: The name of the reaction.
+          nullable: true
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -31601,7 +31782,7 @@ components:
           description: The performing artist for the audio file.
           nullable: true
         bitrate:
-          type: integer
+          type: number
           description: Bitrate expressed in kbps.
           format: int64
           nullable: true
@@ -31616,19 +31797,19 @@ components:
         disc:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The number of the disc this audio file came from.
           format: int16
           nullable: true
         discCount:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The total number of discs in this album.
           format: int16
           nullable: true
         duration:
-          type: integer
+          type: number
           description: 'Duration of the audio file, expressed in milliseconds'
           format: int64
           nullable: true
@@ -31651,21 +31832,21 @@ components:
         track:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of the track on the original disc for this audio file.
           format: int32
           nullable: true
         trackCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tracks on the original disc for this audio file.
           format: int32
           nullable: true
         year:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The year the audio file was recorded.
           format: int32
           nullable: true
@@ -31680,7 +31861,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -31742,7 +31923,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -31757,14 +31938,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Height of the image, in pixels. Read-only.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
           nullable: true
@@ -31833,14 +32014,14 @@ components:
         iso:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
         orientation:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
@@ -31913,7 +32094,7 @@ components:
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         size:
-          type: integer
+          type: number
           description: Size of the remote item. Read-only.
           format: int64
           nullable: true
@@ -31978,14 +32159,14 @@ components:
         audioBitsPerSample:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio bits per sample.
           format: int32
           nullable: true
         audioChannels:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio channels.
           format: int32
           nullable: true
@@ -31996,19 +32177,19 @@ components:
         audioSamplesPerSecond:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio samples per second.
           format: int32
           nullable: true
         bitrate:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Bit rate of the video in bits per second.
           format: int32
           nullable: true
         duration:
-          type: integer
+          type: number
           description: Duration of the file in milliseconds.
           format: int64
           nullable: true
@@ -32024,14 +32205,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Height of the video, in pixels.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
@@ -32183,7 +32364,7 @@ components:
               format: base64url
               nullable: true
             size:
-              type: integer
+              type: number
               description: Indicates the size of the content stream for this version of the item.
               format: int64
               nullable: true
@@ -32564,14 +32745,14 @@ components:
         linesForEditing:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the text box.
           format: int32
           nullable: true
         maxLength:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum number of characters for the value.
           format: int32
           nullable: true
@@ -32693,7 +32874,7 @@ components:
         position:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
@@ -32904,6 +33085,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -32946,7 +33128,7 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a channel.
           format: int32
           nullable: true
@@ -32957,14 +33139,14 @@ components:
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a channel.
           format: int32
           nullable: true
@@ -33057,7 +33239,7 @@ components:
             groupLifetimeInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
@@ -33240,9 +33422,13 @@ components:
           properties:
             draftOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            isStagedForDeletion:
+              type: boolean
+              description: 'The openShift is marked for deletion, a process that is finalized when the schedule is shared.'
+              nullable: true
             schedulingGroupId:
               type: string
-              description: ID for the scheduling group that the open shift belongs to.
+              description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
@@ -33279,6 +33465,10 @@ components:
           properties:
             draftShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            isStagedForDeletion:
+              type: boolean
+              description: 'The shift is marked for deletion, a process that is finalized when the schedule is shared.'
+              nullable: true
             schedulingGroupId:
               type: string
               description: ID of the scheduling group the shift is part of. Required.
@@ -33353,6 +33543,10 @@ components:
           properties:
             draftTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            isStagedForDeletion:
+              type: boolean
+              description: 'The timeOff is marked for deletion, a process that is finalized when the schedule is shared.'
+              nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
             userId:
@@ -33661,7 +33855,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -33727,7 +33921,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -33962,7 +34156,7 @@ components:
             detectionCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the malware is detected
               format: int32
               nullable: true
@@ -34191,6 +34385,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -34263,7 +34466,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -34552,25 +34755,25 @@ components:
           type: object
           properties:
             deleted:
-              type: integer
+              type: number
               format: int64
               nullable: true
             manageWebUrl:
               type: string
               nullable: true
             remaining:
-              type: integer
+              type: number
               format: int64
               nullable: true
             state:
               type: string
               nullable: true
             total:
-              type: integer
+              type: number
               format: int64
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
             services:
@@ -34732,17 +34935,19 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
+          description: 'String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.'
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
           format: date-time
           nullable: true
         restrictionType:
           $ref: '#/components/schemas/microsoft.graph.appKeyCredentialRestrictionType'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
       additionalProperties:
         type: object
     microsoft.graph.passwordCredentialConfiguration:
@@ -34752,17 +34957,19 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Value that can be used as the maximum number for setting password expiration time in days, hours, minutes or seconds. Defined in ISO 8601 format for Durations. For example, ''P4DT12H30M5S'' represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restriction type is set to passwordLifetime.'
+          description: 'String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.'
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
           format: date-time
           nullable: true
         restrictionType:
           $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
       additionalProperties:
         type: object
     microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget:
@@ -34896,7 +35103,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported bottom margins(in microns) for the printer.
@@ -34922,7 +35129,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: The list of print resolutions in DPI that are supported by the printer.
@@ -34960,7 +35167,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported left margins(in microns) for the printer.
@@ -35003,7 +35210,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: Supported number of Input Pages to impose upon a single Impression.
@@ -35017,7 +35224,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported right margins(in microns) for the printer.
@@ -35035,7 +35242,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported top margins(in microns) for the printer.
@@ -35054,14 +35261,14 @@ components:
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of copies printed per job.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default resolution in DPI to use when printing the job.
           format: int32
           nullable: true
@@ -35103,7 +35310,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -35120,7 +35327,7 @@ components:
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The altitude, in meters, that the printer is located at.'
           format: int32
           nullable: true
@@ -35364,6 +35571,10 @@ components:
       title: teamsAppAuthorization
       type: object
       properties:
+        clientAppId:
+          type: string
+          description: The registration ID of the Microsoft Entra app ID associated with the teamsApp.
+          nullable: true
         requiredPermissionSet:
           $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
       additionalProperties:
@@ -35624,7 +35835,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The height of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -35639,7 +35850,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The width of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -35818,7 +36029,7 @@ components:
             position:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The zero-based position of the worksheet within the workbook.
               format: int32
             visibility:
@@ -35867,14 +36078,14 @@ components:
         actionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times the action took place. Read-only.
           format: int32
           nullable: true
         actorCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of distinct actors that performed the action. Read-only.
           format: int32
           nullable: true
@@ -36263,7 +36474,7 @@ components:
             openSlotCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of the number of slots for the given open shift.
               format: int32
           additionalProperties:
@@ -36349,14 +36560,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -36804,7 +37015,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -37009,7 +37220,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -37096,6 +37307,13 @@ components:
         - asymmetricKeyLifetime
         - unknownFutureValue
       type: string
+    microsoft.graph.appManagementRestrictionState:
+      title: appManagementRestrictionState
+      enum:
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
     microsoft.graph.appCredentialRestrictionType:
       title: appCredentialRestrictionType
       enum:
@@ -37135,12 +37353,12 @@ components:
       type: object
       properties:
         end:
-          type: integer
+          type: number
           description: The inclusive upper bound of the integer range.
           format: int64
           nullable: true
         start:
-          type: integer
+          type: number
           description: The inclusive lower bound of the integer range.
           format: int64
           nullable: true
@@ -38123,14 +38341,14 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of copies that should be printed. Read-only.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
           format: int32
           nullable: true
@@ -38177,7 +38395,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -38237,7 +38455,7 @@ components:
               description: The document's name. Read-only.
               nullable: true
             size:
-              type: integer
+              type: number
               description: The document's size in bytes. Read-only.
               format: int64
           additionalProperties:
@@ -38376,7 +38594,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
@@ -38398,7 +38616,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
@@ -38434,10 +38652,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -38446,10 +38666,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
@@ -38609,7 +38831,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         isPaid:
@@ -38619,7 +38841,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         theme:
@@ -38639,7 +38861,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -38670,7 +38892,7 @@ components:
               type: string
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
           additionalProperties:
@@ -38682,28 +38904,28 @@ components:
         bottom:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the bottom edge.
           format: int32
           nullable: true
         left:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the left edge.
           format: int32
           nullable: true
         right:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the right edge.
           format: int32
           nullable: true
         top:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the top edge.
           format: int32
           nullable: true
@@ -38804,7 +39026,7 @@ components:
         key:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).'
           format: int32
         sortOn:
@@ -39045,7 +39267,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The index of the icon in the given set.
           format: int32
         set:
