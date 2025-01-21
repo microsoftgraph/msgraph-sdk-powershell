@@ -11,6 +11,7 @@ paths:
       tags:
         - directory.publicKeyInfrastructureRoot
       summary: Get publicKeyInfrastructure from directory
+      description: The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
       operationId: directory_GetPublicKeyInfrastructure
       parameters:
         - name: $select
@@ -87,7 +88,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateBasedAuthConfigurations from directory
+      summary: List certificateBasedAuthPki objects
+      description: Get a list of the certificateBasedAuthPki objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-list-certificatebasedauthconfigurations?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure_ListCertificateBasedAuthConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -137,7 +142,11 @@ paths:
     post:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Create new navigation property to certificateBasedAuthConfigurations for directory
+      summary: Create certificateBasedAuthPki
+      description: Create a new certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-post-certificatebasedauthconfigurations?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure_CreateCertificateBasedAuthConfiguration
       requestBody:
         description: New navigation property
@@ -160,7 +169,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateBasedAuthConfigurations from directory
+      summary: Get certificateBasedAuthPki
+      description: Read the properties and relationships of a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-get?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure_GetCertificateBasedAuthConfiguration
       parameters:
         - name: certificateBasedAuthPki-id
@@ -204,7 +217,11 @@ paths:
     patch:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Update the navigation property certificateBasedAuthConfigurations in directory
+      summary: Update certificateBasedAuthPki
+      description: Update the properties of a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-update?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure_UpdateCertificateBasedAuthConfiguration
       parameters:
         - name: certificateBasedAuthPki-id
@@ -235,7 +252,11 @@ paths:
     delete:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Delete navigation property certificateBasedAuthConfigurations for directory
+      summary: Delete certificateBasedAuthPki
+      description: Delete a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-delete-certificatebasedauthconfigurations?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure_DeleteCertificateBasedAuthConfiguration
       parameters:
         - name: certificateBasedAuthPki-id
@@ -262,7 +283,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateAuthorities from directory
+      summary: List certificateAuthorityDetail objects
+      description: Get a list of the certificateAuthorityDetail objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-list-certificateauthorities?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_ListCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -320,7 +345,11 @@ paths:
     post:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Create new navigation property to certificateAuthorities for directory
+      summary: Create certificateAuthorityDetail
+      description: Create a new certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-post-certificateauthorities?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_CreateCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -352,7 +381,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateAuthorities from directory
+      summary: Get certificateAuthorityDetail
+      description: Read the properties and relationships of a certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificateauthoritydetail-get?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_GetCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -404,7 +437,11 @@ paths:
     patch:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Update the navigation property certificateAuthorities in directory
+      summary: Update certificateAuthorityDetail
+      description: Update the properties of a certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificateauthoritydetail-update?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_UpdateCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -443,7 +480,11 @@ paths:
     delete:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Delete navigation property certificateAuthorities for directory
+      summary: Delete certificateAuthorityDetail
+      description: Delete a certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-delete-certificateauthorities?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_DeleteCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -501,6 +542,10 @@ paths:
       tags:
         - directory.publicKeyInfrastructureRoot
       summary: Invoke action upload
+      description: 'Append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-upload?view=graph-rest-beta
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_upload
       parameters:
         - name: certificateBasedAuthPki-id
@@ -741,7 +786,7 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
-        - directoryObjects.directoryObject
+        - directoryObjects.directoryObject.Actions
       summary: Invoke action checkMemberGroups
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
@@ -797,7 +842,7 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
-        - directoryObjects.directoryObject
+        - directoryObjects.directoryObject.Actions
       summary: Invoke action checkMemberObjects
       operationId: directoryObject_checkMemberObject
       parameters:
@@ -849,7 +894,7 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
-        - directoryObjects.directoryObject
+        - directoryObjects.directoryObject.Actions
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
       externalDocs:
@@ -905,7 +950,7 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
-        - directoryObjects.directoryObject
+        - directoryObjects.directoryObject.Actions
       summary: Invoke action getMemberObjects
       operationId: directoryObject_getMemberObject
       parameters:
@@ -957,9 +1002,9 @@ paths:
   '/directoryObjects/{directoryObject-id}/microsoft.graph.restore':
     post:
       tags:
-        - directoryObjects.directoryObject
+        - directoryObjects.directoryObject.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- [certificateAuthorityDetail](../resources/certificateauthoritydetail.md\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
@@ -973,6 +1018,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                newUserPrincipalName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -1010,7 +1068,7 @@ paths:
   /directoryObjects/microsoft.graph.delta():
     get:
       tags:
-        - directoryObjects.directoryObject
+        - directoryObjects.directoryObject.Functions
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
       externalDocs:
@@ -1083,7 +1141,7 @@ paths:
   /directoryObjects/microsoft.graph.getByIds:
     post:
       tags:
-        - directoryObjects.directoryObject
+        - directoryObjects.directoryObject.Actions
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
@@ -1136,7 +1194,7 @@ paths:
   /directoryObjects/microsoft.graph.getUserOwnedObjects:
     post:
       tags:
-        - directoryObjects.directoryObject
+        - directoryObjects.directoryObject.Actions
       summary: Invoke action getUserOwnedObjects
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
@@ -1172,7 +1230,7 @@ paths:
   /directoryObjects/microsoft.graph.validateProperties:
     post:
       tags:
-        - directoryObjects.directoryObject
+        - directoryObjects.directoryObject.Actions
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
@@ -1221,6 +1279,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+              description: The collection of public key infrastructure instances for the certificate-based authentication feature for users.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -1232,21 +1291,26 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the object.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the object was created or last modified.
               format: date-time
             status:
               type: string
+              description: The status of any asynchronous jobs runs on the object which can be upload or delete.
               nullable: true
             statusDetails:
               type: string
+              description: The status details of the upload/deleted operation of PKI (Public Key Infrastructure).
               nullable: true
             certificateAuthorities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+              description: The collection of certificate authorities contained in this public key infrastructure resource.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -1258,38 +1322,47 @@ components:
           properties:
             certificate:
               type: string
+              description: The public key of the certificate authority.
               format: base64url
             certificateAuthorityType:
               $ref: '#/components/schemas/microsoft.graph.certificateAuthorityType'
             certificateRevocationListUrl:
               type: string
+              description: The URL to check if the certificate is revoked.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the certificate authority was created.
               format: date-time
               nullable: true
-            deltacertificateRevocationListUrl:
+            deltaCertificateRevocationListUrl:
               type: string
               nullable: true
             displayName:
               type: string
+              description: The display name of the certificate authority.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the certificate authority expires. Supports $filter (eq) and $orderby.
               format: date-time
             isIssuerHintEnabled:
               type: boolean
+              description: Indicates whether the certificate picker presents the certificate authority to the user to use for authentication. Default value is false. Optional.
               nullable: true
             issuer:
               type: string
+              description: The issuer of the certificate authority.
               nullable: true
             issuerSubjectKeyIdentifier:
               type: string
+              description: The subject key identifier of certificate authority.
               nullable: true
             thumbprint:
               type: string
+              description: 'The thumbprint of certificate authority certificate. Supports $filter (eq, startswith).'
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:

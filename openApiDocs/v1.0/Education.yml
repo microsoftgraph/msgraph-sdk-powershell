@@ -517,7 +517,7 @@ paths:
   '/education/classes/{educationClass-id}/assignmentCategories/microsoft.graph.delta()':
     get:
       tags:
-        - education.Functions
+        - education.educationClass
       summary: Invoke function delta
       description: Get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
       externalDocs:
@@ -1266,7 +1266,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/microsoft.graph.delta()':
     get:
       tags:
-        - education.Functions
+        - education.educationClass
       summary: Invoke function delta
       description: Get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
       externalDocs:
@@ -1409,7 +1409,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.activate':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action activate
       description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
       externalDocs:
@@ -1446,7 +1446,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.deactivate':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action deactivate
       description: Mark an assigned educationAssignment as inactive to signal that the assignment has no further action items for teachers and students. This action can only be performed by a teacher on assigned assignments.
       externalDocs:
@@ -1483,7 +1483,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action publish
       description: 'Publish an education assignment. Change the status of an educationAssignment from its original draft status to the published status.  You can change the status from draft to scheduled if the assignment is scheduled for a future date.  Only a teacher in the class can make this call. When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects. Calling this API creates educationSubmission objects and displays the assignment in each student''s list. The status of the assignment goes back to draft if there is any backend failure during publish process. To update the properties of a published assignment, see update an assignment.'
       externalDocs:
@@ -1520,7 +1520,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpFeedbackResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action setUpFeedbackResourcesFolder
       description: Create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
       externalDocs:
@@ -1557,7 +1557,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action setUpResourcesFolder
       description: 'Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment''s folder. '
       externalDocs:
@@ -2407,7 +2407,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.excuse':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action excuse
       description: 'Excuse a submission. Excused submissions aren''t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission shows the excused status. Otherwise, the submission status retains the returned status. For more information about how to use this header, see the Examples section.'
       externalDocs:
@@ -2452,7 +2452,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.reassign':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action reassign
       description: 'Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission is treated as a returned submission. This means that the reassigned status is mapped to the returned status, and reassignedDateTime and reassignedBy properties are mapped to returnedDateTime and returnedBy respectively. If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status. For details, see the examples section.'
       externalDocs:
@@ -2497,7 +2497,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action return
       description: Make the grade and feedback associated with this submission available to the student.  This action changes the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
       externalDocs:
@@ -2542,7 +2542,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action setUpResourcesFolder
       description: 'Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. '
       externalDocs:
@@ -2587,7 +2587,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action submit
       description: 'Indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from working to submitted. During the submit process, all the resources are copied to the submittedResources bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student''s assignment on their behalf.'
       externalDocs:
@@ -2632,7 +2632,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.unsubmit':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action unsubmit
       description: 'Indicate that a student wants to work on the submission of the assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from submitted to working. During the submit process, all the resources are copied from submittedResources to  workingResources. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student''s assignment on their behalf.'
       externalDocs:
@@ -3771,7 +3771,7 @@ paths:
   '/education/classes/{educationClass-id}/assignments/microsoft.graph.delta()':
     get:
       tags:
-        - education.Functions
+        - education.educationClass
       summary: Invoke function delta
       description: Get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
       externalDocs:
@@ -4797,7 +4797,7 @@ paths:
   '/education/classes/{educationClass-id}/modules/{educationModule-id}/microsoft.graph.pin':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action pin
       description: Pin an educationModule in the class work list. This action sets the isPinned property to true for an educationModule. Only teachers can perform this action and only one module at a time can be pinned in the class work list.
       externalDocs:
@@ -4834,7 +4834,7 @@ paths:
   '/education/classes/{educationClass-id}/modules/{educationModule-id}/microsoft.graph.publish':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action publish
       description: 'Change the state of an educationModule from its original draft status to the published status. Only teachers in the class can perform this operation. When a module is in draft status, students can''t see the module. When you call this API, the module appears in the student''s class work list.'
       externalDocs:
@@ -4871,7 +4871,7 @@ paths:
   '/education/classes/{educationClass-id}/modules/{educationModule-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action setUpResourcesFolder
       description: Create a SharePoint folder to upload files for a given educationModule. Only teachers can perform this operation. The teacher determines what resources to upload to the SharePoint folder for the module.
       externalDocs:
@@ -4908,7 +4908,7 @@ paths:
   '/education/classes/{educationClass-id}/modules/{educationModule-id}/microsoft.graph.unpin':
     post:
       tags:
-        - education.Actions
+        - education.educationClass
       summary: Invoke action unpin
       description: Unpin an educationModule in the classwork list. This action sets the isPinned property to false for an educationModule. Only teachers in the class can perform this operation.
       externalDocs:
@@ -5657,7 +5657,7 @@ paths:
   /education/classes/microsoft.graph.delta():
     get:
       tags:
-        - education.Functions
+        - education.educationClass
       summary: Invoke function delta
       description: 'Get newly created or updated classes, including membership changes, without having to perform a full read of the entire class collection. See Use delta query for details.'
       externalDocs:
@@ -6231,7 +6231,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/categories/microsoft.graph.delta()':
     get:
       tags:
-        - education.Functions
+        - education.educationUser
       summary: Invoke function delta
       description: Get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
       externalDocs:
@@ -6358,7 +6358,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.activate':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action activate
       description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
       externalDocs:
@@ -6387,7 +6387,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.deactivate':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action deactivate
       description: Mark an assigned educationAssignment as inactive to signal that the assignment has no further action items for teachers and students. This action can only be performed by a teacher on assigned assignments.
       externalDocs:
@@ -6416,7 +6416,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action publish
       description: 'Publish an education assignment. Change the status of an educationAssignment from its original draft status to the published status.  You can change the status from draft to scheduled if the assignment is scheduled for a future date.  Only a teacher in the class can make this call. When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects. Calling this API creates educationSubmission objects and displays the assignment in each student''s list. The status of the assignment goes back to draft if there is any backend failure during publish process. To update the properties of a published assignment, see update an assignment.'
       externalDocs:
@@ -6445,7 +6445,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.setUpFeedbackResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action setUpFeedbackResourcesFolder
       description: Create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
       externalDocs:
@@ -6474,7 +6474,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action setUpResourcesFolder
       description: 'Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment''s folder. '
       externalDocs:
@@ -7138,7 +7138,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.excuse':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action excuse
       description: 'Excuse a submission. Excused submissions aren''t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission shows the excused status. Otherwise, the submission status retains the returned status. For more information about how to use this header, see the Examples section.'
       externalDocs:
@@ -7175,7 +7175,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.reassign':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action reassign
       description: 'Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission is treated as a returned submission. This means that the reassigned status is mapped to the returned status, and reassignedDateTime and reassignedBy properties are mapped to returnedDateTime and returnedBy respectively. If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status. For details, see the examples section.'
       externalDocs:
@@ -7212,7 +7212,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action return
       description: Make the grade and feedback associated with this submission available to the student.  This action changes the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
       externalDocs:
@@ -7249,7 +7249,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action setUpResourcesFolder
       description: 'Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. '
       externalDocs:
@@ -7286,7 +7286,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action submit
       description: 'Indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from working to submitted. During the submit process, all the resources are copied to the submittedResources bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student''s assignment on their behalf.'
       externalDocs:
@@ -7323,7 +7323,7 @@ paths:
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.unsubmit':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action unsubmit
       description: 'Indicate that a student wants to work on the submission of the assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from submitted to working. During the submit process, all the resources are copied from submittedResources to  workingResources. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student''s assignment on their behalf.'
       externalDocs:
@@ -8254,7 +8254,7 @@ paths:
   /education/me/assignments/microsoft.graph.delta():
     get:
       tags:
-        - education.Functions
+        - education.educationUser
       summary: Invoke function delta
       description: Get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
       externalDocs:
@@ -9790,7 +9790,7 @@ paths:
   /education/schools/microsoft.graph.delta():
     get:
       tags:
-        - education.Functions
+        - education.educationSchool
       summary: Invoke function delta
       description: Get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
       externalDocs:
@@ -10579,7 +10579,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/microsoft.graph.delta()':
     get:
       tags:
-        - education.Functions
+        - education.educationUser
       summary: Invoke function delta
       description: Get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
       externalDocs:
@@ -10722,7 +10722,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.activate':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action activate
       description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
       externalDocs:
@@ -10759,7 +10759,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.deactivate':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action deactivate
       description: Mark an assigned educationAssignment as inactive to signal that the assignment has no further action items for teachers and students. This action can only be performed by a teacher on assigned assignments.
       externalDocs:
@@ -10796,7 +10796,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action publish
       description: 'Publish an education assignment. Change the status of an educationAssignment from its original draft status to the published status.  You can change the status from draft to scheduled if the assignment is scheduled for a future date.  Only a teacher in the class can make this call. When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects. Calling this API creates educationSubmission objects and displays the assignment in each student''s list. The status of the assignment goes back to draft if there is any backend failure during publish process. To update the properties of a published assignment, see update an assignment.'
       externalDocs:
@@ -10833,7 +10833,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpFeedbackResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action setUpFeedbackResourcesFolder
       description: Create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
       externalDocs:
@@ -10870,7 +10870,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action setUpResourcesFolder
       description: 'Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment''s folder. '
       externalDocs:
@@ -11678,7 +11678,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.excuse':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action excuse
       description: 'Excuse a submission. Excused submissions aren''t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission shows the excused status. Otherwise, the submission status retains the returned status. For more information about how to use this header, see the Examples section.'
       externalDocs:
@@ -11723,7 +11723,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.reassign':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action reassign
       description: 'Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission is treated as a returned submission. This means that the reassigned status is mapped to the returned status, and reassignedDateTime and reassignedBy properties are mapped to returnedDateTime and returnedBy respectively. If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status. For details, see the examples section.'
       externalDocs:
@@ -11768,7 +11768,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action return
       description: Make the grade and feedback associated with this submission available to the student.  This action changes the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
       externalDocs:
@@ -11813,7 +11813,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action setUpResourcesFolder
       description: 'Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. '
       externalDocs:
@@ -11858,7 +11858,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action submit
       description: 'Indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from working to submitted. During the submit process, all the resources are copied to the submittedResources bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student''s assignment on their behalf.'
       externalDocs:
@@ -11903,7 +11903,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.unsubmit':
     post:
       tags:
-        - education.Actions
+        - education.educationUser
       summary: Invoke action unsubmit
       description: 'Indicate that a student wants to work on the submission of the assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from submitted to working. During the submit process, all the resources are copied from submittedResources to  workingResources. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student''s assignment on their behalf.'
       externalDocs:
@@ -13002,7 +13002,7 @@ paths:
   '/education/users/{educationUser-id}/assignments/microsoft.graph.delta()':
     get:
       tags:
-        - education.Functions
+        - education.educationUser
       summary: Invoke function delta
       description: Get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
       externalDocs:
@@ -13950,7 +13950,7 @@ paths:
   /education/users/microsoft.graph.delta():
     get:
       tags:
-        - education.Functions
+        - education.educationUser
       summary: Invoke function delta
       description: Get newly created or updated educationUser without having to perform a full read of the entire collection. See Use delta query for details.
       externalDocs:
@@ -14304,7 +14304,7 @@ components:
             percentageWeight:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The weight of the category; an integer between 0 and 100.
               format: int32
           additionalProperties:
@@ -14673,7 +14673,7 @@ components:
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
@@ -14816,6 +14816,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.educationModule:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15170,7 +15171,7 @@ components:
             deviceEnrollmentLimit:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
             displayName:
@@ -15190,7 +15191,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -15258,7 +15259,7 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined,  MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
@@ -15671,6 +15672,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -15715,23 +15717,26 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
+              description: 'Display name for the administrative unit. Maximum length is 256 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             isMemberManagementRestricted:
               type: boolean
               nullable: true
             membershipRule:
               type: string
+              description: 'The dynamic membership rule for the administrative unit. For more information about the rules you can use for dynamic administrative units and dynamic groups, see Manage rules for dynamic membership groups in Microsoft Entra ID.'
               nullable: true
             membershipRuleProcessingState:
               type: string
+              description: 'Controls whether the dynamic membership rule is actively processed. Set to On to activate the dynamic membership rule, or Paused to stop updating membership dynamically.'
               nullable: true
             membershipType:
               type: string
+              description: 'Indicates the membership type for the administrative unit. The possible values are: dynamic, assigned. If not set, the default value is null and the default behavior is assigned.'
               nullable: true
             visibility:
               type: string
-              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
+              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set, the default value is null and the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
               nullable: true
             extensions:
               type: array
@@ -16086,7 +16091,7 @@ components:
               nullable: true
             principalDisplayName:
               type: string
-              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).'
+              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).'
               nullable: true
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -16100,7 +16105,7 @@ components:
               nullable: true
             resourceDisplayName:
               type: string
-              description: The display name of the resource app's service principal to which the assignment is made.
+              description: The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
               nullable: true
             resourceId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -16292,7 +16297,7 @@ components:
             reminderMinutesBeforeStart:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
@@ -16401,7 +16406,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -16461,7 +16466,7 @@ components:
             groupLifetimeInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
@@ -16552,14 +16557,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
@@ -16705,7 +16710,7 @@ components:
           properties:
             classification:
               type: string
-              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
+              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a preconfigured set in the tenant's directory.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -16715,7 +16720,7 @@ components:
               nullable: true
             description:
               type: string
-              description: 'An optional description for the team. Maximum length: 1024 characters.'
+              description: 'An optional description for the team. Maximum length: 1,024 characters.'
               nullable: true
             displayName:
               type: string
@@ -16727,7 +16732,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamGuestSettings'
             internalId:
               type: string
-              description: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+              description: A unique ID for the team that was used in a few places such as the audit log/Office 365 Management Activity API.
               nullable: true
             isArchived:
               type: boolean
@@ -16749,7 +16754,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              description: 'A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
             allChannels:
               type: array
@@ -16978,15 +16983,15 @@ components:
       properties:
         capabilityStatus:
           type: string
-          description: 'For example, ''Enabled''.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
           nullable: true
         provisioningStatus:
           type: string
-          description: 'For example, ''Success''.'
+          description: 'The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn''t provisioned and is in an error state.PendingInput - The service isn''t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn''t activated in the tenant.'
           nullable: true
         service:
           type: string
-          description: 'The name of the service; for example, ''AccessControlS2S'''
+          description: 'The name of the service; for example, ''AccessControlS2S''.'
           nullable: true
       additionalProperties:
         type: object
@@ -17484,6 +17489,10 @@ components:
               description: Date and time at which the chat was created. Read-only.
               format: date-time
               nullable: true
+            isHiddenForAllMembers:
+              type: boolean
+              description: Indicates whether the chat is hidden for all its members. Read-only.
+              nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -17849,7 +17858,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -17868,14 +17877,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -18092,7 +18101,7 @@ components:
               format: date-time
               readOnly: true
             freeStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
@@ -18176,7 +18185,7 @@ components:
               nullable: true
               readOnly: true
             physicalMemoryInBytes:
-              type: integer
+              type: number
               description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
@@ -18206,7 +18215,7 @@ components:
               nullable: true
               readOnly: true
             totalStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Total Storage in Bytes. This property is read-only.
               format: int64
               readOnly: true
@@ -18455,6 +18464,10 @@ components:
             isBroadcast:
               type: boolean
               description: Indicates whether this meeting is a Teams live event.
+              nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
               nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
@@ -19045,6 +19058,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.onlineMeetingProviderType:
       title: onlineMeetingProviderType
       enum:
@@ -19354,7 +19369,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -19408,13 +19423,13 @@ components:
       type: object
       properties:
         deleted:
-          type: integer
+          type: number
           description: 'Total space consumed by files in the recycle bin, in bytes. Read-only.'
           format: int64
           nullable: true
         remaining:
-          type: integer
-          description: 'Total space remaining before reaching the quota limit, in bytes. Read-only.'
+          type: number
+          description: 'Total space remaining before reaching the capacity limit, in bytes. Read-only.'
           format: int64
           nullable: true
         state:
@@ -19424,12 +19439,12 @@ components:
         storagePlanInformation:
           $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
         total:
-          type: integer
+          type: number
           description: 'Total allowed storage space, in bytes. Read-only.'
           format: int64
           nullable: true
         used:
-          type: integer
+          type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -19526,7 +19541,7 @@ components:
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             size:
-              type: integer
+              type: number
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
@@ -19718,7 +19733,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -19727,7 +19742,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -20134,7 +20149,7 @@ components:
             percentageComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
@@ -20148,6 +20163,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -20349,21 +20365,21 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a team.
           format: int32
           nullable: true
@@ -20477,7 +20493,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
+              description: 'The roles for that user. This property contains more qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member shouldn''t have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -20495,7 +20511,7 @@ components:
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             createdDateTime:
@@ -20643,7 +20659,7 @@ components:
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of users assigned to the tag.
               format: int32
               nullable: true
@@ -20825,7 +20841,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
@@ -20986,6 +21002,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -21055,7 +21072,7 @@ components:
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
@@ -21223,7 +21240,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
-              description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.'
+              description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, chat, and tag.'
             messageHistory:
               type: array
               items:
@@ -21342,7 +21359,7 @@ components:
             completionPercentage:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The percentage completion value of the course activity. Optional.
               format: int32
               nullable: true
@@ -21456,7 +21473,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -21785,11 +21802,11 @@ components:
           description: Informational attribute that identifies the HASH algorithm that was used by TPM
           nullable: true
         resetCount:
-          type: integer
+          type: number
           description: The number of times a PC device has hibernated or resumed
           format: int64
         restartCount:
-          type: integer
+          type: number
           description: The number of times a PC device has rebooted
           format: int64
         safeMode:
@@ -22124,7 +22141,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -22136,7 +22153,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -22157,7 +22174,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -22169,7 +22186,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -22216,6 +22233,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -22374,14 +22392,24 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              description: Indicates whether recording is enabled for the meeting.
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.
@@ -22641,7 +22669,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -22660,7 +22688,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -22701,7 +22729,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Percentage of task completion. When set to 100, the task is considered completed.'
               format: int32
               nullable: true
@@ -22714,14 +22742,14 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2, 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Additionally, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -23024,7 +23052,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -23039,13 +23067,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -23065,7 +23093,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -23155,7 +23183,7 @@ components:
           description: The performing artist for the audio file.
           nullable: true
         bitrate:
-          type: integer
+          type: number
           description: Bitrate expressed in kbps.
           format: int64
           nullable: true
@@ -23170,19 +23198,19 @@ components:
         disc:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The number of the disc this audio file came from.
           format: int16
           nullable: true
         discCount:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The total number of discs in this album.
           format: int16
           nullable: true
         duration:
-          type: integer
+          type: number
           description: 'Duration of the audio file, expressed in milliseconds'
           format: int64
           nullable: true
@@ -23205,21 +23233,21 @@ components:
         track:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of the track on the original disc for this audio file.
           format: int32
           nullable: true
         trackCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tracks on the original disc for this audio file.
           format: int32
           nullable: true
         year:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The year the audio file was recorded.
           format: int32
           nullable: true
@@ -23234,7 +23262,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -23296,7 +23324,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -23311,14 +23339,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Height of the image, in pixels. Read-only.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
           nullable: true
@@ -23408,14 +23436,14 @@ components:
         iso:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
         orientation:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
@@ -23488,7 +23516,7 @@ components:
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         size:
-          type: integer
+          type: number
           description: Size of the remote item. Read-only.
           format: int64
           nullable: true
@@ -23553,14 +23581,14 @@ components:
         audioBitsPerSample:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio bits per sample.
           format: int32
           nullable: true
         audioChannels:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio channels.
           format: int32
           nullable: true
@@ -23571,19 +23599,19 @@ components:
         audioSamplesPerSecond:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio samples per second.
           format: int32
           nullable: true
         bitrate:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Bit rate of the video in bits per second.
           format: int32
           nullable: true
         duration:
-          type: integer
+          type: number
           description: Duration of the file in milliseconds.
           format: int64
           nullable: true
@@ -23599,14 +23627,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Height of the video, in pixels.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
@@ -23758,7 +23786,7 @@ components:
               format: base64url
               nullable: true
             size:
-              type: integer
+              type: number
               description: Indicates the size of the content stream for this version of the item.
               format: int64
               nullable: true
@@ -24306,14 +24334,14 @@ components:
         linesForEditing:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the text box.
           format: int32
           nullable: true
         maxLength:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum number of characters for the value.
           format: int32
           nullable: true
@@ -24435,7 +24463,7 @@ components:
         position:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
@@ -24626,7 +24654,7 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a channel.
           format: int32
           nullable: true
@@ -24637,14 +24665,14 @@ components:
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a channel.
           format: int32
           nullable: true
@@ -24837,9 +24865,13 @@ components:
           properties:
             draftOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            isStagedForDeletion:
+              type: boolean
+              description: 'The openShift is marked for deletion, a process that is finalized when the schedule is shared.'
+              nullable: true
             schedulingGroupId:
               type: string
-              description: ID for the scheduling group that the open shift belongs to.
+              description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
@@ -24876,6 +24908,10 @@ components:
           properties:
             draftShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            isStagedForDeletion:
+              type: boolean
+              description: 'The shift is marked for deletion, a process that is finalized when the schedule is shared.'
+              nullable: true
             schedulingGroupId:
               type: string
               description: ID of the scheduling group the shift is part of. Required.
@@ -24950,6 +24986,10 @@ components:
           properties:
             draftTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            isStagedForDeletion:
+              type: boolean
+              description: 'The timeOff is marked for deletion, a process that is finalized when the schedule is shared.'
+              nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
             userId:
@@ -25150,13 +25190,13 @@ components:
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: For internal use only.
               format: int32
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
+              description: 'The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             enrollmentProfileName:
               type: string
@@ -25351,7 +25391,7 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework''s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
           nullable: true
         contentUrl:
           type: string
@@ -25359,7 +25399,7 @@ components:
           nullable: true
         id:
           type: string
-          description: Read-only. The unique id of the attachment.
+          description: Read-only. The unique ID of the attachment.
           nullable: true
         name:
           type: string
@@ -25404,7 +25444,7 @@ components:
         id:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
@@ -25456,11 +25496,19 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        displayName:
+          type: string
+          description: The name of the reaction.
+          nullable: true
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -25556,6 +25604,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -25850,7 +25899,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -25916,7 +25965,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -26151,7 +26200,7 @@ components:
             detectionCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the malware is detected
               format: int32
               nullable: true
@@ -26258,6 +26307,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -26330,7 +26388,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -26566,25 +26624,25 @@ components:
           type: object
           properties:
             deleted:
-              type: integer
+              type: number
               format: int64
               nullable: true
             manageWebUrl:
               type: string
               nullable: true
             remaining:
-              type: integer
+              type: number
               format: int64
               nullable: true
             state:
               type: string
               nullable: true
             total:
-              type: integer
+              type: number
               format: int64
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
             services:
@@ -26940,7 +26998,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The height of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -26955,7 +27013,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The width of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -27134,7 +27192,7 @@ components:
             position:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The zero-based position of the worksheet within the workbook.
               format: int32
             visibility:
@@ -27311,14 +27369,14 @@ components:
         actionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times the action took place. Read-only.
           format: int32
           nullable: true
         actorCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of distinct actors that performed the action. Read-only.
           format: int32
           nullable: true
@@ -27511,6 +27569,10 @@ components:
       title: teamsAppAuthorization
       type: object
       properties:
+        clientAppId:
+          type: string
+          description: The registration ID of the Microsoft Entra app ID associated with the teamsApp.
+          nullable: true
         requiredPermissionSet:
           $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
       additionalProperties:
@@ -27577,7 +27639,7 @@ components:
             openSlotCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of the number of slots for the given open shift.
               format: int32
           additionalProperties:
@@ -27650,7 +27712,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported bottom margins(in microns) for the printer.
@@ -27676,7 +27738,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: The list of print resolutions in DPI that are supported by the printer.
@@ -27714,7 +27776,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported left margins(in microns) for the printer.
@@ -27757,7 +27819,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: Supported number of Input Pages to impose upon a single Impression.
@@ -27771,7 +27833,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported right margins(in microns) for the printer.
@@ -27789,7 +27851,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported top margins(in microns) for the printer.
@@ -27808,14 +27870,14 @@ components:
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of copies printed per job.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default resolution in DPI to use when printing the job.
           format: int32
           nullable: true
@@ -27857,7 +27919,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -27874,7 +27936,7 @@ components:
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The altitude, in meters, that the printer is located at.'
           format: int32
           nullable: true
@@ -28064,7 +28126,7 @@ components:
         type:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: For internal use only.
           format: int32
           nullable: true
@@ -28296,14 +28358,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -28741,7 +28803,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -28828,7 +28890,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -28984,7 +29046,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
@@ -29006,7 +29068,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
@@ -29042,10 +29104,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -29054,10 +29118,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
@@ -29206,7 +29272,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         isPaid:
@@ -29216,7 +29282,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         theme:
@@ -29237,12 +29303,12 @@ components:
       type: object
       properties:
         end:
-          type: integer
+          type: number
           description: The inclusive upper bound of the integer range.
           format: int64
           nullable: true
         start:
-          type: integer
+          type: number
           description: The inclusive lower bound of the integer range.
           format: int64
           nullable: true
@@ -30225,14 +30291,14 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of copies that should be printed. Read-only.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
           format: int32
           nullable: true
@@ -30279,7 +30345,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -30339,7 +30405,7 @@ components:
               description: The document's name. Read-only.
               nullable: true
             size:
-              type: integer
+              type: number
               description: The document's size in bytes. Read-only.
               format: int64
           additionalProperties:
@@ -30427,7 +30493,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -30458,7 +30524,7 @@ components:
               type: string
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
           additionalProperties:
@@ -30492,7 +30558,7 @@ components:
         key:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).'
           format: int32
         sortOn:
@@ -30693,28 +30759,28 @@ components:
         bottom:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the bottom edge.
           format: int32
           nullable: true
         left:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the left edge.
           format: int32
           nullable: true
         right:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the right edge.
           format: int32
           nullable: true
         top:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the top edge.
           format: int32
           nullable: true
@@ -30824,7 +30890,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The index of the icon in the given set.
           format: int32
         set:

@@ -1950,8 +1950,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get payloads from security
-      description: Represents an attack simulation training campaign payload in a tenant.
+      summary: Get payload
+      description: Get an attack simulation campaign payload for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/payload-get?view=graph-rest-1.0
       operationId: security.attackSimulation_GetPayload
       parameters:
         - name: payload-id
@@ -3844,7 +3847,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/microsoft.graph.security.activate':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action activate
       description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an eDiscovery (Premium) case.'
       externalDocs:
@@ -3877,9 +3880,9 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/microsoft.graph.security.applyHold':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action applyHold
-      description: 'Start the process of applying hold on eDiscovery custodians. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      description: 'Start the process of applying hold on eDiscovery custodians. After the operation is created, you can use Get ediscoveryCustodian to retrieve the status of an ediscoveryCustodian.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-1.0
@@ -3910,7 +3913,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/microsoft.graph.security.release':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action release
       description: 'Release a custodian from a case. For details, see Release a custodian from a case.'
       externalDocs:
@@ -3943,7 +3946,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/microsoft.graph.security.removeHold':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action removeHold
       description: 'Start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
       externalDocs:
@@ -3976,7 +3979,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/microsoft.graph.security.updateIndex':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action updateIndex
       description: Trigger an indexOperation to make a custodian and associated sources searchable.
       externalDocs:
@@ -4011,7 +4014,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List siteSources
-      description: Get a list of the siteSource objects associated with an ediscoveryCustodian.
+      description: Get a list of the siteSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-1.0
@@ -4838,7 +4841,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List userSources
-      description: Get a list of the userSource objects associated with an ediscoveryCustodian.
+      description: Get a list of the userSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-usersources?view=graph-rest-1.0
@@ -5153,7 +5156,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/microsoft.graph.security.applyHold':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action applyHold
       operationId: security.case.ediscoveryCase.custodian_applyHold
       parameters:
@@ -5189,7 +5192,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/microsoft.graph.security.removeHold':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action removeHold
       operationId: security.case.ediscoveryCase.custodian_removeHold
       parameters:
@@ -5225,7 +5228,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/microsoft.graph.security.close':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action close
       description: 'Close an eDiscovery case. For details, see Close a case.'
       externalDocs:
@@ -5250,7 +5253,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/microsoft.graph.security.reopen':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action reopen
       description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.'
       externalDocs:
@@ -5678,7 +5681,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/microsoft.graph.security.applyHold':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action applyHold
       description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object.'
       externalDocs:
@@ -5711,7 +5714,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/microsoft.graph.security.release':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action release
       description: Release the non-custodial data source from the case.
       externalDocs:
@@ -5744,7 +5747,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/microsoft.graph.security.removeHold':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action removeHold
       description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object.'
       externalDocs:
@@ -5777,7 +5780,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/microsoft.graph.security.updateIndex':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action updateIndex
       description: Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
       externalDocs:
@@ -5832,7 +5835,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/microsoft.graph.security.applyHold':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action applyHold
       operationId: security.case.ediscoveryCase.noncustodialDataSource_applyHold
       parameters:
@@ -5868,7 +5871,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/microsoft.graph.security.removeHold':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action removeHold
       operationId: security.case.ediscoveryCase.noncustodialDataSource_removeHold
       parameters:
@@ -6378,7 +6381,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/microsoft.graph.security.addToReviewSet':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action addToReviewSet
       description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers. The location provides a URL that will return a Add to review set operation.'
       externalDocs:
@@ -6425,7 +6428,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/microsoft.graph.security.export':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action export
       description: 'Initiate an export from a ediscoveryReviewSet. For details, see Export documents from a review set in eDiscovery (Premium).'
       externalDocs:
@@ -6754,7 +6757,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/queries/{ediscoveryReviewSetQuery-id}/microsoft.graph.security.applyTags':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action applyTags
       description: 'Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.'
       externalDocs:
@@ -6813,7 +6816,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/queries/{ediscoveryReviewSetQuery-id}/microsoft.graph.security.export':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action export
       description: 'Initiate an export from a ediscoveryReviewSetQuery. For details, see Export documents from a review set in eDiscovery (Premium).'
       externalDocs:
@@ -7731,7 +7734,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/microsoft.graph.security.estimateStatistics':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action estimateStatistics
       description: 'Run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).'
       externalDocs:
@@ -7761,12 +7764,128 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/microsoft.graph.security.exportReport':
+    post:
+      tags:
+        - security.casesRoot
+      summary: Invoke action exportReport
+      description: 'Export an item report from an estimated ediscoverySearch. For details, see Manage a collection estimate.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-exportreport?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_exportReport
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+                exportCriteria:
+                  $ref: '#/components/schemas/microsoft.graph.security.exportCriteria'
+                exportLocation:
+                  $ref: '#/components/schemas/microsoft.graph.security.exportLocation'
+                additionalOptions:
+                  $ref: '#/components/schemas/microsoft.graph.security.additionalOptions'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/microsoft.graph.security.exportResult':
+    post:
+      tags:
+        - security.casesRoot
+      summary: Invoke action exportResult
+      description: 'Export results from an estimated ediscoverySearch. For details, see Manage a collection estimate.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-exportresult?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_exportResult
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+                exportCriteria:
+                  $ref: '#/components/schemas/microsoft.graph.security.exportCriteria'
+                exportLocation:
+                  $ref: '#/components/schemas/microsoft.graph.security.exportLocation'
+                additionalOptions:
+                  $ref: '#/components/schemas/microsoft.graph.security.additionalOptions'
+                exportFormat:
+                  $ref: '#/components/schemas/microsoft.graph.security.exportFormat'
+                exportSingleItems:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/microsoft.graph.security.purgeData':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action purgeData
-      description: "Delete Microsoft Teams messages contained in an eDiscovery search. You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams "
+      description: "Delete Exchange mailbox items or Microsoft Teams messages contained in an eDiscovery search. You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams "
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-purgedata?view=graph-rest-1.0
@@ -8103,7 +8222,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/settings/microsoft.graph.security.resetToDefault':
     post:
       tags:
-        - security.Actions
+        - security.casesRoot
       summary: Invoke action resetToDefault
       description: Reset a caseSettings object to the default values.
       externalDocs:
@@ -8600,7 +8719,7 @@ paths:
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/microsoft.graph.security.asHierarchy()':
     get:
       tags:
-        - security.Functions
+        - security.casesRoot
       summary: Invoke function asHierarchy
       description: List eDiscovery review tags with the tag hierarchy shown.
       operationId: security.case.ediscoveryCase.tag_asHierarchy
@@ -8965,6 +9084,398 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/identities/sensors:
+    get:
+      tags:
+        - security.identityContainer
+      summary: List sensors
+      description: Get a list of sensor objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identitycontainer-list-sensors?view=graph-rest-1.0
+      operationId: security.identity_ListSensor
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.sensorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.identityContainer
+      summary: Create new navigation property to sensors for security
+      operationId: security.identity_CreateSensor
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.sensor'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensor'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/sensors/{sensor-id}':
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get sensor
+      description: Read the properties and relationships of a sensor object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-get?view=graph-rest-1.0
+      operationId: security.identity_GetSensor
+      parameters:
+        - name: sensor-id
+          in: path
+          description: The unique identifier of sensor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensor
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensor'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.identityContainer
+      summary: Update sensor
+      description: Update the properties of a sensor object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-update?view=graph-rest-1.0
+      operationId: security.identity_UpdateSensor
+      parameters:
+        - name: sensor-id
+          in: path
+          description: The unique identifier of sensor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensor
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.sensor'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensor'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.identityContainer
+      summary: Delete sensor
+      description: Delete a sensor object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-delete?view=graph-rest-1.0
+      operationId: security.identity_DeleteSensor
+      parameters:
+        - name: sensor-id
+          in: path
+          description: The unique identifier of sensor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensor
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/sensors/{sensor-id}/healthIssues':
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get healthIssues from security
+      description: Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
+      operationId: security.identity.sensor_ListHealthIssue
+      parameters:
+        - name: sensor-id
+          in: path
+          description: The unique identifier of sensor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensor
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.healthIssueCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/security/identities/sensors/{sensor-id}/healthIssues/{healthIssue-id}':
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get healthIssues from security
+      description: Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
+      operationId: security.identity.sensor_GetHealthIssue
+      parameters:
+        - name: sensor-id
+          in: path
+          description: The unique identifier of sensor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensor
+        - name: healthIssue-id
+          in: path
+          description: The unique identifier of healthIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: healthIssue
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/sensors/{sensor-id}/healthIssues/$count':
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get the number of the resource
+      operationId: security.identity.sensor.healthIssue_GetCount
+      parameters:
+        - name: sensor-id
+          in: path
+          description: The unique identifier of sensor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensor
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/identities/sensors/$count:
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get the number of the resource
+      operationId: security.identity.sensor_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/identities/sensors/microsoft.graph.security.getDeploymentAccessKey():
+    get:
+      tags:
+        - security.identityContainer
+      summary: Invoke function getDeploymentAccessKey
+      description: Get the deployment access key for Microsoft Defender for Identity that is required to install sensors associated with the workspace.
+      operationId: security.identity.sensor_getDeploymentAccessKey
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.deploymentAccessKeyType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /security/identities/sensors/microsoft.graph.security.getDeploymentPackageUri():
+    get:
+      tags:
+        - security.identityContainer
+      summary: Invoke function getDeploymentPackageUri
+      description: Get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
+      operationId: security.identity.sensor_getDeploymentPackageUri
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensorDeploymentPackage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /security/identities/sensors/microsoft.graph.security.regenerateDeploymentAccessKey:
+    post:
+      tags:
+        - security.identityContainer
+      summary: Invoke action regenerateDeploymentAccessKey
+      description: Generate a new deployment access key that can be used to install a sensor associated with the workspace.
+      operationId: security.identity.sensor_regenerateDeploymentAccessKey
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.deploymentAccessKeyType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/incidents:
     get:
       tags:
@@ -11561,7 +12072,7 @@ paths:
   /security/microsoft.graph.security.runHuntingQuery:
     post:
       tags:
-        - security.Actions
+        - security.security.Actions
       summary: Invoke action runHuntingQuery
       description: 'Queries a specified set of event, activity, or entity data supported by Microsoft 365 Defender to proactively look for specific threats in your environment. This method is for advanced hunting in Microsoft 365 Defender. This method includes a query in Kusto Query Language (KQL). It specifies a data table in the advanced hunting schema and a piped sequence of operators to filter or search that data, and format the query output in specific ways.  Find out more about hunting for threats across devices, emails, apps, and identities. Learn about KQL. For information on using advanced hunting in the Microsoft 365 Defender portal, see Proactively hunt for threats with advanced hunting in Microsoft 365 Defender.'
       operationId: security_runHuntingQuery
@@ -12466,6 +12977,60 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/security/subjectRightsRequests/{subjectRightsRequest-id}/approvers(userPrincipalName=''{userPrincipalName}'')':
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get approvers from security
+      description: Collection of users who can approve the request. Currently only supported for requests of type delete.
+      operationId: security.subjectRightsRequest.approver_GetGraphBPreUserPrincipalName
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: userPrincipalName
+          in: path
+          description: Alternate key of user
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.user'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/approvers/$count':
     get:
       tags:
@@ -12790,6 +13355,60 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators(userPrincipalName=''{userPrincipalName}'')':
+    get:
+      tags:
+        - security.subjectRightsRequest
+      summary: Get collaborators from security
+      description: Collection of users who can collaborate on the request.
+      operationId: security.subjectRightsRequest.collaborator_GetGraphBPreUserPrincipalName
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: userPrincipalName
+          in: path
+          description: Alternate key of user
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.user'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/$count':
     get:
       tags:
@@ -12815,7 +13434,7 @@ paths:
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/microsoft.graph.getFinalAttachment()':
     get:
       tags:
-        - security.Functions
+        - security.subjectRightsRequest
       summary: Invoke function getFinalAttachment
       description: Get the final attachment for a subject rights request. The attachment is a zip file that contains all the files that were included by the privacy administrator.
       externalDocs:
@@ -12851,7 +13470,7 @@ paths:
   '/security/subjectRightsRequests/{subjectRightsRequest-id}/microsoft.graph.getFinalReport()':
     get:
       tags:
-        - security.Functions
+        - security.subjectRightsRequest
       summary: Invoke function getFinalReport
       description: Get the final report for a subject rights request. The report is a text file that contains information about the files that were included by the privacy administrator.
       externalDocs:
@@ -20638,7 +21257,7 @@ components:
             confidence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Confidence of the detection logic (percentage between 1-100).
               format: int32
               nullable: true
@@ -21190,7 +21809,7 @@ components:
             percentageCompleted:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Percentage of completion of the respective operation.
               format: int32
             tenantId:
@@ -21201,6 +21820,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationOperationType'
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.payload:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21397,7 +22017,7 @@ components:
             durationInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Simulation duration in days.
               format: int32
               nullable: true
@@ -21470,7 +22090,7 @@ components:
             durationInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Training duration.
               format: int32
               nullable: true
@@ -21963,7 +22583,7 @@ components:
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
@@ -22106,6 +22726,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra group.
     microsoft.graph.security.userSource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.security.dataSource'
@@ -22182,7 +22803,7 @@ components:
             percentProgress:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The progress of the operation.
               format: int32
               nullable: true
@@ -22310,36 +22931,36 @@ components:
           type: object
           properties:
             indexedItemCount:
-              type: integer
+              type: number
               description: The estimated count of items for the search that matched the content query.
               format: int64
               nullable: true
             indexedItemsSize:
-              type: integer
+              type: number
               description: The estimated size of items for the search that matched the content query.
               format: int64
               nullable: true
             mailboxCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of mailboxes that had search hits.
               format: int32
               nullable: true
             siteCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of mailboxes that had search hits.
               format: int32
               nullable: true
             unindexedItemCount:
-              type: integer
+              type: number
               description: The estimated count of unindexed items for the collection.
               format: int64
               nullable: true
             unindexedItemsSize:
-              type: integer
+              type: number
               description: The estimated size of unindexed items for the collection.
               format: int64
               nullable: true
@@ -22347,12 +22968,51 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
           additionalProperties:
             type: object
+    microsoft.graph.security.exportCriteria:
+      title: exportCriteria
+      enum:
+        - searchHits
+        - partiallyIndexed
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.security.exportLocation:
+      title: exportLocation
+      enum:
+        - responsiveLocations
+        - nonresponsiveLocations
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.security.additionalOptions:
+      title: additionalOptions
+      enum:
+        - none
+        - teamsAndYammerConversations
+        - cloudAttachments
+        - allDocumentVersions
+        - subfolderContents
+        - listAttachments
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.security.exportFormat:
+      title: exportFormat
+      enum:
+        - pst
+        - msg
+        - eml
+        - unknownFutureValue
+      type: string
     microsoft.graph.security.purgeType:
       title: purgeType
       enum:
         - recoverable
-        - permanentlyDeleted
         - unknownFutureValue
+        - permanentlyDelete
       type: string
     microsoft.graph.security.purgeAreas:
       title: purgeAreas
@@ -22388,6 +23048,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
               description: Represents potential issues identified by Microsoft Defender for Identity within a customer's Microsoft Defender for Identity configuration.
+              x-ms-navigationProperty: true
+            sensors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.sensor'
+              description: Represents a customer's Microsoft Defender for Identity sensors.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -22453,6 +23119,67 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.healthIssueStatus'
           additionalProperties:
             type: object
+    microsoft.graph.security.sensor:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensor
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the sensor was generated. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            deploymentStatus:
+              $ref: '#/components/schemas/microsoft.graph.security.deploymentStatus'
+            displayName:
+              type: string
+              description: The display name of the sensor.
+            domainName:
+              type: string
+              description: The fully qualified domain name of the sensor.
+            healthStatus:
+              $ref: '#/components/schemas/microsoft.graph.security.sensorHealthStatus'
+            openHealthIssuesCount:
+              type: number
+              description: This field displays the count of health issues related to this sensor.
+              format: int64
+            sensorType:
+              $ref: '#/components/schemas/microsoft.graph.security.sensorType'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.security.sensorSettings'
+            version:
+              type: string
+              description: The version of the sensor.
+            healthIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
+              description: Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.deploymentAccessKeyType:
+      title: deploymentAccessKeyType
+      type: object
+      properties:
+        deploymentAccessKey:
+          type: string
+          description: The deployment access key.
+      additionalProperties:
+        type: object
+    microsoft.graph.security.sensorDeploymentPackage:
+      title: sensorDeploymentPackage
+      type: object
+      properties:
+        downloadUrl:
+          type: string
+          description: URL to download the sensor deployment package.
+        version:
+          type: string
+          description: Version of the sensor.
+      additionalProperties:
+        type: object
     microsoft.graph.security.incident:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22854,7 +23581,7 @@ components:
             rank:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Microsoft's stack ranking of control.
               format: int32
               nullable: true
@@ -22901,7 +23628,7 @@ components:
             activeUserCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Active user count of the given tenant.
               format: int32
               nullable: true
@@ -22938,7 +23665,7 @@ components:
             licensedUserCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Licensed user count of the given tenant.
               format: int32
               nullable: true
@@ -23142,7 +23869,7 @@ components:
             deviceEnrollmentLimit:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
             displayName:
@@ -23162,7 +23889,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -23230,7 +23957,7 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined,  MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
@@ -23643,6 +24370,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -23701,7 +24429,7 @@ components:
           properties:
             classification:
               type: string
-              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
+              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a preconfigured set in the tenant's directory.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -23711,7 +24439,7 @@ components:
               nullable: true
             description:
               type: string
-              description: 'An optional description for the team. Maximum length: 1024 characters.'
+              description: 'An optional description for the team. Maximum length: 1,024 characters.'
               nullable: true
             displayName:
               type: string
@@ -23723,7 +24451,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamGuestSettings'
             internalId:
               type: string
-              description: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+              description: A unique ID for the team that was used in a few places such as the audit log/Office 365 Management Activity API.
               nullable: true
             isArchived:
               type: boolean
@@ -23745,7 +24473,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              description: 'A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
             allChannels:
               type: array
@@ -24181,7 +24909,7 @@ components:
             port:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The numerical identifier of the port which is standardized across the internet.
               format: int32
             protocol:
@@ -24196,7 +24924,7 @@ components:
             timesObserved:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPort in all its scans.
               format: int32
               nullable: true
@@ -24306,7 +25034,7 @@ components:
             score:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
               format: int32
           additionalProperties:
@@ -24506,7 +25234,7 @@ components:
             priorityScore:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'A unique algorithm that reflects the priority of a vulnerability based on the CVSS score, exploits, chatter, and linkage to malware. This property also evaluates the recency of these components so users can understand which vulnerability should be remediated first.'
               format: int32
             publishedDateTime:
@@ -24973,7 +25701,7 @@ components:
         parentProcessId:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The Process ID (PID) of the parent process.
           format: int32
           nullable: true
@@ -24988,7 +25716,7 @@ components:
         processId:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The Process ID (PID) of the process.
           format: int32
           nullable: true
@@ -25021,7 +25749,7 @@ components:
         processId:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Process ID (PID) of the process that modified the registry key (process details will appear in the alert 'processes' collection).
           format: int32
           nullable: true
@@ -25427,6 +26155,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.attackSimulationOperationType:
       title: attackSimulationOperationType
       enum:
@@ -25526,6 +26255,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.simulationAttackType:
       title: simulationAttackType
       enum:
@@ -26096,7 +26827,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -26241,7 +26972,7 @@ components:
             percentageComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
@@ -26255,6 +26986,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -26475,7 +27207,7 @@ components:
               nullable: true
             principalDisplayName:
               type: string
-              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).'
+              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).'
               nullable: true
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -26489,7 +27221,7 @@ components:
               nullable: true
             resourceDisplayName:
               type: string
-              description: The display name of the resource app's service principal to which the assignment is made.
+              description: The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
               nullable: true
             resourceId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -26681,7 +27413,7 @@ components:
             reminderMinutesBeforeStart:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
@@ -26802,7 +27534,7 @@ components:
             groupLifetimeInDays:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
@@ -26849,14 +27581,14 @@ components:
             height:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
@@ -26964,6 +27696,8 @@ components:
         - holdUpdate
         - unknownFutureValue
         - purgeData
+        - exportReport
+        - exportResult
       type: string
     microsoft.graph.resultInfo:
       title: resultInfo
@@ -26972,7 +27706,7 @@ components:
         code:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The result code.
           format: int32
         message:
@@ -26982,7 +27716,7 @@ components:
         subcode:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The result subcode.
           format: int32
       additionalProperties:
@@ -27010,6 +27744,9 @@ components:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
+              nullable: true
+            description:
+              type: string
               nullable: true
             displayName:
               type: string
@@ -27098,7 +27835,7 @@ components:
         maxImageSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Maximum image size that will be processed in KB).
           format: int32
           nullable: true
@@ -27121,21 +27858,21 @@ components:
         maxWords:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.'
           format: int32
           nullable: true
         minWords:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.'
           format: int32
           nullable: true
         similarityThreshold:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.'
           format: int32
           nullable: true
@@ -27160,7 +27897,7 @@ components:
         topicCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.'
           format: int32
           nullable: true
@@ -27189,6 +27926,63 @@ components:
         - suppressed
         - unknownFutureValue
       type: string
+    microsoft.graph.security.deploymentStatus:
+      title: deploymentStatus
+      enum:
+        - upToDate
+        - outdated
+        - updating
+        - updateFailed
+        - notConfigured
+        - unreachable
+        - disconnected
+        - startFailure
+        - syncing
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.sensorHealthStatus:
+      title: sensorHealthStatus
+      enum:
+        - healthy
+        - notHealthyLow
+        - notHealthyMedium
+        - notHealthyHigh
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.sensorType:
+      title: sensorType
+      enum:
+        - adConnectIntegrated
+        - adcsIntegrated
+        - adfsIntegrated
+        - domainControllerIntegrated
+        - domainControllerStandalone
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.sensorSettings:
+      title: sensorSettings
+      type: object
+      properties:
+        description:
+          type: string
+          description: Description of the sensor.
+        domainControllerDnsNames:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: DNS names for the domain controller
+        isDelayedDeploymentEnabled:
+          type: boolean
+          description: Indicates whether to delay updates for the sensor.
+          nullable: true
+        networkAdapters:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.networkAdapter'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
     microsoft.graph.security.incidentStatus:
       title: incidentStatus
       enum:
@@ -27481,7 +28275,7 @@ components:
       type: object
       properties:
         excludedItemCount:
-          type: integer
+          type: number
           description: Count of items that are excluded from the request.
           format: int64
           nullable: true
@@ -27491,12 +28285,12 @@ components:
             $ref: '#/components/schemas/microsoft.graph.keyValuePair'
           description: Count of items per insight.
         itemCount:
-          type: integer
+          type: number
           description: Count of items found.
           format: int64
           nullable: true
         itemNeedReview:
-          type: integer
+          type: number
           description: Count of item that need review.
           format: int64
           nullable: true
@@ -27506,12 +28300,12 @@ components:
             $ref: '#/components/schemas/microsoft.graph.keyValuePair'
           description: 'Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.'
         signedOffItemCount:
-          type: integer
+          type: number
           description: Count of items signed off by the administrator.
           format: int64
           nullable: true
         totalItemSize:
-          type: integer
+          type: number
           description: Total item size in bytes.
           format: int64
           nullable: true
@@ -27762,15 +28556,15 @@ components:
       properties:
         capabilityStatus:
           type: string
-          description: 'For example, ''Enabled''.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
           nullable: true
         provisioningStatus:
           type: string
-          description: 'For example, ''Success''.'
+          description: 'The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn''t provisioned and is in an error state.PendingInput - The service isn''t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn''t activated in the tenant.'
           nullable: true
         service:
           type: string
-          description: 'The name of the service; for example, ''AccessControlS2S'''
+          description: 'The name of the service; for example, ''AccessControlS2S''.'
           nullable: true
       additionalProperties:
         type: object
@@ -28044,6 +28838,10 @@ components:
               type: string
               description: Date and time at which the chat was created. Read-only.
               format: date-time
+              nullable: true
+            isHiddenForAllMembers:
+              type: boolean
+              description: Indicates whether the chat is hidden for all its members. Read-only.
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -28410,7 +29208,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -28429,14 +29227,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -28653,7 +29451,7 @@ components:
               format: date-time
               readOnly: true
             freeStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
@@ -28737,7 +29535,7 @@ components:
               nullable: true
               readOnly: true
             physicalMemoryInBytes:
-              type: integer
+              type: number
               description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
@@ -28767,7 +29565,7 @@ components:
               nullable: true
               readOnly: true
             totalStorageSpaceInBytes:
-              type: integer
+              type: number
               description: Total Storage in Bytes. This property is read-only.
               format: int64
               readOnly: true
@@ -29016,6 +29814,10 @@ components:
             isBroadcast:
               type: boolean
               description: Indicates whether this meeting is a Teams live event.
+              nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
               nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
@@ -29470,21 +30272,21 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a team.
           format: int32
           nullable: true
@@ -29598,7 +30400,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
+              description: 'The roles for that user. This property contains more qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member shouldn''t have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -29616,7 +30418,7 @@ components:
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             createdDateTime:
@@ -29764,7 +30566,7 @@ components:
             memberCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of users assigned to the tag.
               format: int32
               nullable: true
@@ -29839,7 +30641,7 @@ components:
         timesObserved:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPortBanner in all its scans.
           format: int32
           nullable: true
@@ -29972,7 +30774,7 @@ components:
         port:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The port number.
           format: int32
           nullable: true
@@ -30078,6 +30880,7 @@ components:
           type: number
           description: The CVSS score about this vulnerability.
           format: double
+          nullable: true
         severity:
           $ref: '#/components/schemas/microsoft.graph.security.vulnerabilitySeverity'
         vectorString:
@@ -30520,6 +31323,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.sensorCollectionResponse:
+      title: Collection of sensor
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.sensor'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -31120,6 +31936,12 @@ components:
         - blocked
         - notFound
         - unknownFutureValue
+        - active
+        - pendingApproval
+        - declined
+        - unremediated
+        - running
+        - partiallyRemediated
       type: string
     microsoft.graph.security.evidenceRole:
       title: evidenceRole
@@ -31247,7 +32069,7 @@ components:
         resolvedTargetsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of valid users in the attack simulation and training campaign.
           format: int32
           nullable: true
@@ -31264,14 +32086,14 @@ components:
         assignedTrainingsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of trainings assigned to a user in an attack simulation and training campaign.
           format: int32
           nullable: true
         completedTrainingsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of trainings completed by a user in an attack simulation and training campaign.
           format: int32
           nullable: true
@@ -31284,7 +32106,7 @@ components:
         inProgressTrainingsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of trainings in progress by a user in an attack simulation and training campaign.
           format: int32
           nullable: true
@@ -31682,14 +32504,14 @@ components:
         linesForEditing:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the text box.
           format: int32
           nullable: true
         maxLength:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum number of characters for the value.
           format: int32
           nullable: true
@@ -31811,7 +32633,7 @@ components:
         position:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
@@ -31834,13 +32656,13 @@ components:
       type: object
       properties:
         deleted:
-          type: integer
+          type: number
           description: 'Total space consumed by files in the recycle bin, in bytes. Read-only.'
           format: int64
           nullable: true
         remaining:
-          type: integer
-          description: 'Total space remaining before reaching the quota limit, in bytes. Read-only.'
+          type: number
+          description: 'Total space remaining before reaching the capacity limit, in bytes. Read-only.'
           format: int64
           nullable: true
         state:
@@ -31850,12 +32672,12 @@ components:
         storagePlanInformation:
           $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
         total:
-          type: integer
+          type: number
           description: 'Total allowed storage space, in bytes. Read-only.'
           format: int64
           nullable: true
         used:
-          type: integer
+          type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
@@ -31918,7 +32740,7 @@ components:
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             size:
-              type: integer
+              type: number
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
@@ -32170,7 +32992,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -32179,7 +33001,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -32739,7 +33561,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -32856,6 +33678,22 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.networkAdapter:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: networkAdapter
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              description: Indicates whether the network adapter is selected for capturing and analyzing network traffic.
+              nullable: true
+            name:
+              type: string
+              description: The name of the network adapter.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.security.filePlanDescriptorBase:
@@ -32999,7 +33837,7 @@ components:
             activeDurationSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.'
               format: int32
               nullable: true
@@ -33199,7 +34037,7 @@ components:
             lifetimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
               format: int32
               nullable: true
@@ -33367,7 +34205,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
-              description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.'
+              description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, chat, and tag.'
             messageHistory:
               type: array
               items:
@@ -33512,7 +34350,7 @@ components:
             completionPercentage:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The percentage completion value of the course activity. Optional.
               format: int32
               nullable: true
@@ -33626,7 +34464,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -33955,11 +34793,11 @@ components:
           description: Informational attribute that identifies the HASH algorithm that was used by TPM
           nullable: true
         resetCount:
-          type: integer
+          type: number
           description: The number of times a PC device has hibernated or resumed
           format: int64
         restartCount:
-          type: integer
+          type: number
           description: The number of times a PC device has rebooted
           format: int64
         safeMode:
@@ -34294,7 +35132,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -34306,7 +35144,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -34327,7 +35165,7 @@ components:
             settingCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of how many setting a policy holds
               format: int32
             settingStates:
@@ -34339,7 +35177,7 @@ components:
             version:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The version of the policy
               format: int32
           additionalProperties:
@@ -34386,6 +35224,7 @@ components:
               type: number
               description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
           additionalProperties:
@@ -34544,14 +35383,24 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              description: Indicates whether recording is enabled for the meeting.
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.
@@ -34811,7 +35660,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -34830,7 +35679,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -34871,7 +35720,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Percentage of task completion. When set to 100, the task is considered completed.'
               format: int32
               nullable: true
@@ -34884,14 +35733,14 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2, 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Additionally, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -35107,7 +35956,7 @@ components:
         guestsCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of guests in a channel.
           format: int32
           nullable: true
@@ -35118,14 +35967,14 @@ components:
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of owners in a channel.
           format: int32
           nullable: true
@@ -35318,9 +36167,13 @@ components:
           properties:
             draftOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            isStagedForDeletion:
+              type: boolean
+              description: 'The openShift is marked for deletion, a process that is finalized when the schedule is shared.'
+              nullable: true
             schedulingGroupId:
               type: string
-              description: ID for the scheduling group that the open shift belongs to.
+              description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
@@ -35357,6 +36210,10 @@ components:
           properties:
             draftShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            isStagedForDeletion:
+              type: boolean
+              description: 'The shift is marked for deletion, a process that is finalized when the schedule is shared.'
+              nullable: true
             schedulingGroupId:
               type: string
               description: ID of the scheduling group the shift is part of. Required.
@@ -35431,6 +36288,10 @@ components:
           properties:
             draftTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            isStagedForDeletion:
+              type: boolean
+              description: 'The timeOff is marked for deletion, a process that is finalized when the schedule is shared.'
+              nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
             userId:
@@ -35604,14 +36465,14 @@ components:
         length:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Length of coachmark.
           format: int32
           nullable: true
         offset:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Offset of coachmark.
           format: int32
           nullable: true
@@ -35686,7 +36547,7 @@ components:
         trainingsAssignedUserCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of users who were assigned trainings in an attack simulation and training campaign.
           format: int32
           nullable: true
@@ -35773,14 +36634,14 @@ components:
         actionCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times the action took place. Read-only.
           format: int32
           nullable: true
         actorCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of distinct actors that performed the action. Read-only.
           format: int32
           nullable: true
@@ -35912,7 +36773,7 @@ components:
           description: The performing artist for the audio file.
           nullable: true
         bitrate:
-          type: integer
+          type: number
           description: Bitrate expressed in kbps.
           format: int64
           nullable: true
@@ -35927,19 +36788,19 @@ components:
         disc:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The number of the disc this audio file came from.
           format: int16
           nullable: true
         discCount:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The total number of discs in this album.
           format: int16
           nullable: true
         duration:
-          type: integer
+          type: number
           description: 'Duration of the audio file, expressed in milliseconds'
           format: int64
           nullable: true
@@ -35962,21 +36823,21 @@ components:
         track:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of the track on the original disc for this audio file.
           format: int32
           nullable: true
         trackCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The total number of tracks on the original disc for this audio file.
           format: int32
           nullable: true
         year:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The year the audio file was recorded.
           format: int32
           nullable: true
@@ -35991,7 +36852,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -36053,7 +36914,7 @@ components:
         childCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of children contained immediately within this container.
           format: int32
           nullable: true
@@ -36068,14 +36929,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Height of the image, in pixels. Read-only.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
           nullable: true
@@ -36165,14 +37026,14 @@ components:
         iso:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
         orientation:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
@@ -36229,7 +37090,7 @@ components:
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         size:
-          type: integer
+          type: number
           description: Size of the remote item. Read-only.
           format: int64
           nullable: true
@@ -36294,14 +37155,14 @@ components:
         audioBitsPerSample:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio bits per sample.
           format: int32
           nullable: true
         audioChannels:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio channels.
           format: int32
           nullable: true
@@ -36312,19 +37173,19 @@ components:
         audioSamplesPerSecond:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of audio samples per second.
           format: int32
           nullable: true
         bitrate:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Bit rate of the video in bits per second.
           format: int32
           nullable: true
         duration:
-          type: integer
+          type: number
           description: Duration of the file in milliseconds.
           format: int64
           nullable: true
@@ -36340,14 +37201,14 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Height of the video, in pixels.'
           format: int32
           nullable: true
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Width of the video, in pixels.'
           format: int32
           nullable: true
@@ -36407,7 +37268,7 @@ components:
               format: base64url
               nullable: true
             size:
-              type: integer
+              type: number
               description: Indicates the size of the content stream for this version of the item.
               format: int64
               nullable: true
@@ -36780,7 +37641,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -36795,13 +37656,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:
@@ -36821,7 +37682,7 @@ components:
         numberOfOccurrences:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
         recurrenceTimeZone:
@@ -37067,13 +37928,13 @@ components:
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: For internal use only.
               format: int32
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
+              description: 'The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             enrollmentProfileName:
               type: string
@@ -37259,7 +38120,7 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework''s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
           nullable: true
         contentUrl:
           type: string
@@ -37267,7 +38128,7 @@ components:
           nullable: true
         id:
           type: string
-          description: Read-only. The unique id of the attachment.
+          description: Read-only. The unique ID of the attachment.
           nullable: true
         name:
           type: string
@@ -37312,7 +38173,7 @@ components:
         id:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
@@ -37364,11 +38225,19 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        displayName:
+          type: string
+          description: The name of the reaction.
+          nullable: true
+        reactionContentUrl:
+          type: string
+          description: The hosted content URL for the custom reaction type.
+          nullable: true
         reactionType:
           type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+          description: 'The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.'
         user:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
@@ -37464,6 +38333,7 @@ components:
               type: number
               description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
+              nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -37758,7 +38628,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -37824,7 +38694,7 @@ components:
           description: Current value of setting on device
           nullable: true
         errorCode:
-          type: integer
+          type: number
           description: Error code for the setting
           format: int64
         errorDescription:
@@ -38059,7 +38929,7 @@ components:
             detectionCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of times the malware is detected
               format: int32
               nullable: true
@@ -38166,6 +39036,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -38238,7 +39117,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -38474,25 +39353,25 @@ components:
           type: object
           properties:
             deleted:
-              type: integer
+              type: number
               format: int64
               nullable: true
             manageWebUrl:
               type: string
               nullable: true
             remaining:
-              type: integer
+              type: number
               format: int64
               nullable: true
             state:
               type: string
               nullable: true
             total:
-              type: integer
+              type: number
               format: int64
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
             services:
@@ -38671,6 +39550,10 @@ components:
       title: teamsAppAuthorization
       type: object
       properties:
+        clientAppId:
+          type: string
+          description: The registration ID of the Microsoft Entra app ID associated with the teamsApp.
+          nullable: true
         requiredPermissionSet:
           $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
       additionalProperties:
@@ -38737,7 +39620,7 @@ components:
             openSlotCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Count of the number of slots for the given open shift.
               format: int32
           additionalProperties:
@@ -38839,7 +39722,7 @@ components:
         count:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Count of the simulation event occurrence in an attack simulation and training campaign.
           format: int32
           nullable: true
@@ -38856,14 +39739,14 @@ components:
         assignedUserCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of users who were assigned the training in an attack simulation and training campaign.
           format: int32
           nullable: true
         completedUserCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of users who completed the training in an attack simulation and training campaign.
           format: int32
           nullable: true
@@ -39059,7 +39942,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The height of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -39074,7 +39957,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The width of the thumbnail, in pixels.'
           format: int32
           nullable: true
@@ -39253,7 +40136,7 @@ components:
             position:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The zero-based position of the worksheet within the workbook.
               format: int32
             visibility:
@@ -39482,7 +40365,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported bottom margins(in microns) for the printer.
@@ -39508,7 +40391,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: The list of print resolutions in DPI that are supported by the printer.
@@ -39546,7 +40429,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported left margins(in microns) for the printer.
@@ -39589,7 +40472,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: Supported number of Input Pages to impose upon a single Impression.
@@ -39603,7 +40486,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported right margins(in microns) for the printer.
@@ -39621,7 +40504,7 @@ components:
           items:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
           description: A list of supported top margins(in microns) for the printer.
@@ -39640,14 +40523,14 @@ components:
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of copies printed per job.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default resolution in DPI to use when printing the job.
           format: int32
           nullable: true
@@ -39689,7 +40572,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The default number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -39706,7 +40589,7 @@ components:
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The altitude, in meters, that the printer is located at.'
           format: int32
           nullable: true
@@ -39896,7 +40779,7 @@ components:
         type:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: For internal use only.
           format: int32
           nullable: true
@@ -40128,14 +41011,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -40573,7 +41456,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -40660,7 +41543,7 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
@@ -40798,7 +41681,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         isPaid:
@@ -40808,7 +41691,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         theme:
@@ -40863,7 +41746,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the column within the columns collection of the table. Zero-indexed. Read-only.
               format: int32
             name:
@@ -40885,7 +41768,7 @@ components:
             index:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index of the row within the rows collection of the table. Zero-based. Read-only.
               format: int32
             values:
@@ -40921,10 +41804,12 @@ components:
               type: number
               description: 'Represents the height, in points, of the chart object.'
               format: double
+              nullable: true
             left:
               type: number
               description: 'The distance, in points, from the left side of the chart to the worksheet origin.'
               format: double
+              nullable: true
             name:
               type: string
               description: Represents the name of a chart object.
@@ -40933,10 +41818,12 @@ components:
               type: number
               description: 'Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).'
               format: double
+              nullable: true
             width:
               type: number
               description: 'Represents the width, in points, of the chart object.'
               format: double
+              nullable: true
             axes:
               $ref: '#/components/schemas/microsoft.graph.workbookChartAxes'
             dataLabels:
@@ -40998,12 +41885,12 @@ components:
       type: object
       properties:
         end:
-          type: integer
+          type: number
           description: The inclusive upper bound of the integer range.
           format: int64
           nullable: true
         start:
-          type: integer
+          type: number
           description: The inclusive lower bound of the integer range.
           format: int64
           nullable: true
@@ -41986,14 +42873,14 @@ components:
         copies:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of copies that should be printed. Read-only.
           format: int32
           nullable: true
         dpi:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
           format: int32
           nullable: true
@@ -42040,7 +42927,7 @@ components:
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of document pages to print on each sheet.
           format: int32
           nullable: true
@@ -42100,7 +42987,7 @@ components:
               description: The document's name. Read-only.
               nullable: true
             size:
-              type: integer
+              type: number
               description: The document's size in bytes. Read-only.
               format: int64
           additionalProperties:
@@ -42188,7 +43075,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -42219,7 +43106,7 @@ components:
               type: string
               nullable: true
             used:
-              type: integer
+              type: number
               format: int64
               nullable: true
           additionalProperties:
@@ -42270,7 +43157,7 @@ components:
         key:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).'
           format: int32
         sortOn:
@@ -42454,28 +43341,28 @@ components:
         bottom:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the bottom edge.
           format: int32
           nullable: true
         left:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the left edge.
           format: int32
           nullable: true
         right:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the right edge.
           format: int32
           nullable: true
         top:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The margin in microns from the top edge.
           format: int32
           nullable: true
@@ -42585,7 +43472,7 @@ components:
         index:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The index of the icon in the given set.
           format: int32
         set:
@@ -42991,6 +43878,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.healthIssueCollectionResponse'
+    microsoft.graph.security.sensorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.sensorCollectionResponse'
     microsoft.graph.security.incidentCollectionResponse:
       description: Retrieved collection
       content:
