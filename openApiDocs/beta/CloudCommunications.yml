@@ -1142,7 +1142,7 @@ paths:
   '/communications/callRecords/microsoft.graph.callRecords.getPstnBlockedUsersLog(fromDateTime={fromDateTime},toDateTime={toDateTime})':
     get:
       tags:
-        - communications.callRecord
+        - communications.Functions
       summary: Invoke function getPstnBlockedUsersLog
       description: Get the log of users who are blocked/unblocked from making public switched telephone network (PSTN) calls in Microsoft Teams as a collection of pstnBlockedUsersLogRow entries. The log includes information about each blocked user such as their assigned phone number and the reason they were blocked/unblocked from making calls.
       operationId: communication.callRecord_getPstnBlockedUsersLog
@@ -1198,7 +1198,7 @@ paths:
   '/communications/callRecords/microsoft.graph.callRecords.getPstnOnlineMeetingDialoutReport(fromDateTime={fromDateTime},toDateTime={toDateTime})':
     get:
       tags:
-        - communications.callRecord
+        - communications.Functions
       summary: Invoke function getPstnOnlineMeetingDialoutReport
       description: "Get aggregated report of usage and money spent for the audio conferencing dial-out service over a selected period as a collection of pstnOnlineMeetingDialoutReport entries.\nThe report is aggregated by user, user location, destination context (domestic/international), and currency. The report includes:"
       operationId: communication.callRecord_getPstnOnlineMeetingDialoutReport
@@ -1254,7 +1254,7 @@ paths:
   '/communications/callRecords/microsoft.graph.callRecords.getSmsLog(fromDateTime={fromDateTime},toDateTime={toDateTime})':
     get:
       tags:
-        - communications.callRecord
+        - communications.Functions
       summary: Invoke function getSmsLog
       description: Get the log of a sent/received SMS as a collection of smsLogRow entries.
       operationId: communication.callRecord_getSmsLog
@@ -1977,107 +1977,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/communications/calls/{call-id}/contentSharingSessions/{contentSharingSession-id}/pngOfCurrentSlide':
-    get:
-      tags:
-        - communications.call
-      summary: Get pngOfCurrentSlide for the navigation property contentSharingSessions from communications
-      operationId: communication.call_GetContentSharingSessionsPngGraphOPreCurrentSlide
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: contentSharingSession-id
-          in: path
-          description: The unique identifier of contentSharingSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contentSharingSession
-      responses:
-        2XX:
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-    put:
-      tags:
-        - communications.call
-      summary: Update pngOfCurrentSlide for the navigation property contentSharingSessions in communications
-      operationId: communication.call_SetContentSharingSessionsPngGraphOPreCurrentSlide
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: contentSharingSession-id
-          in: path
-          description: The unique identifier of contentSharingSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contentSharingSession
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-    delete:
-      tags:
-        - communications.call
-      summary: Delete pngOfCurrentSlide for the navigation property contentSharingSessions in communications
-      operationId: communication.call_DeleteContentSharingSessionsPngGraphOPreCurrentSlide
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: contentSharingSession-id
-          in: path
-          description: The unique identifier of contentSharingSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: contentSharingSession
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
   '/communications/calls/{call-id}/contentSharingSessions/$count':
     get:
       tags:
@@ -2103,7 +2002,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.addLargeGalleryView':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action addLargeGalleryView
       description: 'Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.'
       externalDocs:
@@ -2145,7 +2044,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.answer':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action answer
       description: 'Enable a bot to answer an incoming call. The incoming call request can be an invitation from a participant in a group call or a peer-to-peer call. If an invitation to a group call is received, the notification contains the chatInfo and meetingInfo parameters. The bot is expected to answer, reject or redirect the call before the call times out. The current timeout value is 15 seconds. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios. This API supports the following PSTN scenarios:'
       externalDocs:
@@ -2179,7 +2078,7 @@ paths:
                 participantCapacity:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: number
+                  type: integer
                   format: int32
                   nullable: true
                 callOptions:
@@ -2196,7 +2095,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.cancelMediaProcessing':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action cancelMediaProcessing
       description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a ubscribeToTone operation because it operates independent of any operation queue.'
       externalDocs:
@@ -2238,7 +2137,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.changeScreenSharingRole':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action changeScreenSharingRole
       description: Allow applications to share screen content with the participants of a group call.
       externalDocs:
@@ -2275,7 +2174,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.keepAlive':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action keepAlive
       description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that doesn''t receive this request within 45 minutes is considered inactive and ends. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that ended results in a 404 Not Found error. The resources related to the call should be cleaned up on the application side.'
       externalDocs:
@@ -2300,7 +2199,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.mute':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action mute
       description: 'Allows the application to mute itself. This is a server mute, meaning that the server drops all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
       externalDocs:
@@ -2342,7 +2241,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.playPrompt':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action playPrompt
       description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation'
       externalDocs:
@@ -2392,7 +2291,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.record':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action record
       operationId: communication.call_record
       parameters:
@@ -2422,19 +2321,19 @@ paths:
                 initialSilenceTimeoutInSeconds:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: number
+                  type: integer
                   format: int32
                   nullable: true
                 maxSilenceTimeoutInSeconds:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: number
+                  type: integer
                   format: int32
                   nullable: true
                 maxRecordDurationInSeconds:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: number
+                  type: integer
                   format: int32
                   nullable: true
                 playBeep:
@@ -2469,7 +2368,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.recordResponse':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action recordResponse
       description: 'Record a short audio response from the caller. A bot can use this API to capture a voice response from a caller after they''re prompted for a response. For more information about how to handle operations, see commsOperation. This action isn''t intended to record the entire call. The maximum length of recording is 2 minutes.The Cloud Communications Platform doesn''t save the recording permanently and discards it shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value provided in the completed notification.'
       externalDocs:
@@ -2503,19 +2402,19 @@ paths:
                 initialSilenceTimeoutInSeconds:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: number
+                  type: integer
                   format: int32
                   nullable: true
                 maxSilenceTimeoutInSeconds:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: number
+                  type: integer
                   format: int32
                   nullable: true
                 maxRecordDurationInSeconds:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: number
+                  type: integer
                   format: int32
                   nullable: true
                 playBeep:
@@ -2550,7 +2449,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.redirect':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action redirect
       description: Redirect an incoming call that wasn't answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
       externalDocs:
@@ -2582,7 +2481,7 @@ paths:
                 timeout:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: number
+                  type: integer
                   format: int32
                   nullable: true
                 maskCallee:
@@ -2608,7 +2507,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.reject':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action reject
       description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification contains the chatInfo and meetingInfo parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API doesn''t end existing calls that have already been answered. Use delete call to end a call.'
       externalDocs:
@@ -2648,7 +2547,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.sendDtmfTones':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action sendDtmfTones
       operationId: communication.call_sendDtmfTone
       parameters:
@@ -2674,7 +2573,7 @@ paths:
                 delayBetweenTonesMs:
                   maximum: 2147483647
                   minimum: -2147483648
-                  type: number
+                  type: integer
                   format: int32
                   nullable: true
                 clientContext:
@@ -2693,168 +2592,10 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/communications/calls/{call-id}/microsoft.graph.startRecording':
-    post:
-      tags:
-        - communications.call
-      summary: Invoke action startRecording
-      operationId: communication.call_startRecording
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                clientContext:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.startRecordingOperation'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/communications/calls/{call-id}/microsoft.graph.startTranscription':
-    post:
-      tags:
-        - communications.call
-      summary: Invoke action startTranscription
-      operationId: communication.call_startTranscription
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                clientContext:
-                  type: string
-                  nullable: true
-                language:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.startTranscriptionOperation'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/communications/calls/{call-id}/microsoft.graph.stopRecording':
-    post:
-      tags:
-        - communications.call
-      summary: Invoke action stopRecording
-      operationId: communication.call_stopRecording
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                clientContext:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.stopRecordingOperation'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/communications/calls/{call-id}/microsoft.graph.stopTranscription':
-    post:
-      tags:
-        - communications.call
-      summary: Invoke action stopTranscription
-      operationId: communication.call_stopTranscription
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                clientContext:
-                  type: string
-                  nullable: true
-                language:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.stopTranscriptionOperation'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/communications/calls/{call-id}/microsoft.graph.subscribeToTone':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action subscribeToTone
       description: Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a dialpad. This action is supported only for calls that are initiated with serviceHostedMediaConfig.
       externalDocs:
@@ -2896,7 +2637,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.transfer':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action transfer
       description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.'
       externalDocs:
@@ -2935,7 +2676,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.unmute':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action unmute
       description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.'
       externalDocs:
@@ -2977,7 +2718,7 @@ paths:
   '/communications/calls/{call-id}/microsoft.graph.updateRecordingStatus':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action updateRecordingStatus
       description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
       externalDocs:
@@ -3492,7 +3233,7 @@ paths:
   '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.mute':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action mute
       description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
       externalDocs:
@@ -3542,7 +3283,7 @@ paths:
   '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.startHoldMusic':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action startHoldMusic
       description: Put a participant on hold and play music in the background.
       externalDocs:
@@ -3594,7 +3335,7 @@ paths:
   '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.stopHoldMusic':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action stopHoldMusic
       description: Reincorporate a participant previously put on hold to the call.
       externalDocs:
@@ -3666,12 +3407,12 @@ paths:
   '/communications/calls/{call-id}/participants/microsoft.graph.invite':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-beta
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -3712,7 +3453,7 @@ paths:
   '/communications/calls/{call-id}/participants/microsoft.graph.muteAll':
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action muteAll
       description: Mute all participants in the call.
       externalDocs:
@@ -3773,7 +3514,7 @@ paths:
   /communications/calls/microsoft.graph.logTeleconferenceDeviceQuality:
     post:
       tags:
-        - communications.call
+        - communications.Actions
       summary: Invoke action logTeleconferenceDeviceQuality
       description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data.'
       externalDocs:
@@ -3801,7 +3542,7 @@ paths:
   /communications/microsoft.graph.getPresencesByUserId:
     post:
       tags:
-        - communications.cloudCommunications.Actions
+        - communications.Actions
       summary: Invoke action getPresencesByUserId
       description: Get the presence information for multiple users.
       externalDocs:
@@ -5374,7 +5115,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
     get:
       tags:
-        - communications.onlineMeeting
+        - communications.Functions
       summary: Invoke function getVirtualAppointmentJoinWebUrl
       description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
       externalDocs:
@@ -5409,7 +5150,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentReminderSms':
     post:
       tags:
-        - communications.onlineMeeting
+        - communications.Actions
       summary: Invoke action sendVirtualAppointmentReminderSms
       description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
       externalDocs:
@@ -5450,7 +5191,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentSms':
     post:
       tags:
-        - communications.onlineMeeting
+        - communications.Actions
       summary: Invoke action sendVirtualAppointmentSms
       description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
       externalDocs:
@@ -5919,7 +5660,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/recordings/microsoft.graph.delta()':
     get:
       tags:
-        - communications.onlineMeeting
+        - communications.Functions
       summary: Invoke function delta
       operationId: communication.onlineMeeting.recording_delta
       parameters:
@@ -6038,12 +5779,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6075,12 +5810,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6107,12 +5836,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/registration/customQuestions':
     get:
@@ -6170,12 +5893,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.meetingRegistrationQuestionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6210,12 +5927,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/registration/customQuestions/{meetingRegistrationQuestion-id}':
     get:
@@ -6270,12 +5981,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6315,12 +6020,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6355,12 +6054,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/registration/customQuestions/$count':
     get:
@@ -6384,12 +6077,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
   '/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants':
     get:
       tags:
@@ -6446,12 +6133,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.meetingRegistrantBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6486,12 +6167,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants/{meetingRegistrantBase-id}':
     get:
@@ -6546,12 +6221,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6591,12 +6260,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6631,12 +6294,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants/$count':
     get:
@@ -6660,12 +6317,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
   '/communications/onlineMeetings/{onlineMeeting-id}/transcripts':
     get:
       tags:
@@ -7121,7 +6772,7 @@ paths:
   '/communications/onlineMeetings/{onlineMeeting-id}/transcripts/microsoft.graph.delta()':
     get:
       tags:
-        - communications.onlineMeeting
+        - communications.Functions
       summary: Invoke function delta
       operationId: communication.onlineMeeting.transcript_delta
       parameters:
@@ -7300,7 +6951,7 @@ paths:
   '/communications/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
     get:
       tags:
-        - communications.onlineMeeting
+        - communications.Functions
       summary: Invoke function getVirtualAppointmentJoinWebUrl
       description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
       externalDocs:
@@ -7335,7 +6986,7 @@ paths:
   '/communications/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.sendVirtualAppointmentReminderSms':
     post:
       tags:
-        - communications.onlineMeeting
+        - communications.Actions
       summary: Invoke action sendVirtualAppointmentReminderSms
       description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
       externalDocs:
@@ -7376,7 +7027,7 @@ paths:
   '/communications/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.sendVirtualAppointmentSms':
     post:
       tags:
-        - communications.onlineMeeting
+        - communications.Actions
       summary: Invoke action sendVirtualAppointmentSms
       description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
       externalDocs:
@@ -7431,7 +7082,7 @@ paths:
   /communications/onlineMeetings/microsoft.graph.createOrGet:
     post:
       tags:
-        - communications.onlineMeeting
+        - communications.Actions
       summary: Invoke action createOrGet
       description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
       externalDocs:
@@ -7480,7 +7131,7 @@ paths:
   '/communications/onlineMeetings/microsoft.graph.getAllRecordings(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
     get:
       tags:
-        - communications.onlineMeeting
+        - communications.Functions
       summary: Invoke function getAllRecordings
       description: 'Get all recordings from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call recordings from channel meetings. You can apply the delta function on getAllRecordings to synchronize and get callRecording resources as they''re added for onlineMeeting instances organized by the specified user. The delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the recordings for online meetings organized by the user. Incremental synchronization gets recordings that are added since the last synchronization. Typically, you do an initial full synchronization, and then get incremental changes to that recording view periodically. Find more information in the delta query documentation. For more examples, see callRecording: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
       externalDocs:
@@ -7578,7 +7229,7 @@ paths:
   '/communications/onlineMeetings/microsoft.graph.getAllTranscripts(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
     get:
       tags:
-        - communications.onlineMeeting
+        - communications.Functions
       summary: Invoke function getAllTranscripts
       description: 'Get all transcripts from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call transcripts from channel meetings. You can apply the delta function on getAllTranscripts to synchronize and get callTranscript resources as they''re added for onlineMeeting instances organized by the specified user. Delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the transcripts for online meetings organized by the user. Incremental synchronization gets transcripts that are added since the last synchronization. Typically, you do an initial full synchronization, and then get incremental changes to that recording view periodically. For more information, see delta query. For more examples, see callTranscript: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
       externalDocs:
@@ -7856,7 +7507,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.clearPresence':
     post:
       tags:
-        - communications.presence
+        - communications.Actions
       summary: Invoke action clearPresence
       description: 'Clear a presence session of an application for a user. If it is the user''s only presence session, a successful clearPresence changes the user''s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. '
       externalDocs:
@@ -7894,7 +7545,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.clearUserPreferredPresence':
     post:
       tags:
-        - communications.presence
+        - communications.Actions
       summary: Invoke action clearUserPreferredPresence
       description: Clear the preferred availability and activity status for a user.
       externalDocs:
@@ -7919,7 +7570,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.setPresence':
     post:
       tags:
-        - communications.presence
+        - communications.Actions
       summary: Invoke action setPresence
       description: Set the availability and activity status in a presence session of an application for a user.
       externalDocs:
@@ -7966,7 +7617,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.setStatusMessage':
     post:
       tags:
-        - communications.presence
+        - communications.Actions
       summary: Invoke action setStatusMessage
       description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
@@ -8003,7 +7654,7 @@ paths:
   '/communications/presences/{presence-id}/microsoft.graph.setUserPreferredPresence':
     post:
       tags:
-        - communications.presence
+        - communications.Actions
       summary: Invoke action setUserPreferredPresence
       description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence is the preferred presence. Preferred presence takes effect only when there is at least one presence session of the user. Otherwise, the user''s presence stays as Offline. A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.  Read more about presence sessions and their time-out and expiration. '
       externalDocs:
@@ -8114,6 +7765,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onlineMeetingCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8148,6 +7804,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}':
     get:
@@ -8202,6 +7863,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8241,6 +7907,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8275,6 +7946,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/aiInsights':
     get:
@@ -8339,6 +8015,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.callAiInsightCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8381,6 +8062,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callAiInsight'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/aiInsights/{callAiInsight-id}':
     get:
@@ -8442,6 +8128,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callAiInsight'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8489,6 +8180,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callAiInsight'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8531,6 +8227,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/aiInsights/$count':
     get:
@@ -8562,6 +8263,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/alternativeRecording':
     get:
       tags:
@@ -8596,6 +8302,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.onlineMeeting
@@ -8632,6 +8343,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.onlineMeeting
@@ -8666,6 +8382,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports':
     get:
       tags:
@@ -8730,6 +8451,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8772,6 +8498,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}':
     get:
@@ -8834,6 +8565,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8881,6 +8617,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8923,6 +8664,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords':
     get:
@@ -8996,6 +8742,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9046,6 +8797,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}':
     get:
@@ -9116,6 +8872,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9171,6 +8932,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9221,6 +8987,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count':
     get:
@@ -9260,6 +9031,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/$count':
     get:
       tags:
@@ -9290,6 +9066,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendeeReport':
     get:
       tags:
@@ -9324,6 +9105,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.onlineMeeting
@@ -9360,6 +9146,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.onlineMeeting
@@ -9394,6 +9185,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/broadcastRecording':
     get:
       tags:
@@ -9427,6 +9223,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.onlineMeeting
@@ -9462,6 +9263,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.onlineMeeting
@@ -9495,6 +9301,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport':
     get:
       tags:
@@ -9548,6 +9359,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9587,6 +9403,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9621,6 +9442,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords':
     get:
@@ -9686,6 +9512,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9728,6 +9559,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}':
     get:
@@ -9790,6 +9626,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9837,6 +9678,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9879,6 +9725,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/$count':
     get:
@@ -9910,147 +9761,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
-    get:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke function getVirtualAppointmentJoinWebUrl
-      description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
-      operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: The unique identifier of onlineMeeting
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentReminderSms':
-    post:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke action sendVirtualAppointmentReminderSms
-      description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
-      operationId: user.onlineMeeting_sendVirtualAppointmentReminderSm
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: The unique identifier of onlineMeeting
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                remindBeforeTimeInMinutesType:
-                  $ref: '#/components/schemas/microsoft.graph.remindBeforeTimeInMinutesType'
-                attendees:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentSms':
-    post:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke action sendVirtualAppointmentSms
-      description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
-      operationId: user.onlineMeeting_sendVirtualAppointmentSm
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: The unique identifier of onlineMeeting
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                messageType:
-                  $ref: '#/components/schemas/microsoft.graph.virtualAppointmentMessageType'
-                attendees:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording':
     get:
       tags:
@@ -10085,6 +9800,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.onlineMeeting
@@ -10121,6 +9841,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.onlineMeeting
@@ -10155,12 +9880,17 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings':
     get:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       operationId: user.onlineMeeting_ListRecording
       parameters:
         - name: user-id
@@ -10219,6 +9949,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.callRecordingCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10261,13 +9996,18 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings/{callRecording-id}':
     get:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-beta
@@ -10326,6 +10066,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10373,6 +10118,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10415,13 +10165,18 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings/{callRecording-id}/content':
     get:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-beta
@@ -10461,6 +10216,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.onlineMeeting
@@ -10509,6 +10269,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.onlineMeeting
@@ -10551,6 +10316,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings/$count':
     get:
       tags:
@@ -10581,91 +10351,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings/microsoft.graph.delta()':
-    get:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke function delta
-      operationId: user.onlineMeeting.recording_delta
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: The unique identifier of onlineMeeting
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of callRecording
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callRecording'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                  '@odata.deltaLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration':
     get:
       tags:
@@ -10721,10 +10411,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10766,10 +10455,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10806,10 +10494,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/customQuestions':
     get:
@@ -10877,10 +10564,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10925,10 +10611,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/customQuestions/{meetingRegistrationQuestion-id}':
     get:
@@ -10993,10 +10678,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11046,10 +10730,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11094,10 +10777,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/customQuestions/$count':
     get:
@@ -11131,10 +10813,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants':
     get:
       tags:
@@ -11201,10 +10882,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11253,10 +10933,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants/{meetingRegistrantBase-id}':
     get:
@@ -11321,10 +11000,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11374,10 +11052,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11426,10 +11103,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants/$count':
     get:
@@ -11463,16 +11139,15 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-12-12'
-        date: '2024-04-01'
-        version: 2024-04/meetingRegistrationDeprecation
-        description: 'The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs.'
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts':
     get:
       tags:
         - users.onlineMeeting
       summary: List transcripts
-      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings.
+      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn''t support getting call transcripts from channel meetings. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-beta
@@ -11534,6 +11209,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.callTranscriptCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11576,13 +11256,18 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}':
     get:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
@@ -11641,6 +11326,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11688,6 +11378,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11730,13 +11425,18 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/content':
     get:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
@@ -11776,6 +11476,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.onlineMeeting
@@ -11824,6 +11529,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.onlineMeeting
@@ -11866,12 +11576,17 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/metadataContent':
     get:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
@@ -11911,6 +11626,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.onlineMeeting
@@ -11955,6 +11675,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.onlineMeeting
@@ -11997,6 +11722,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/$count':
     get:
       tags:
@@ -12027,91 +11757,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/microsoft.graph.delta()':
-    get:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke function delta
-      operationId: user.onlineMeeting.transcript_delta
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: The unique identifier of onlineMeeting
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of callTranscript
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                  '@odata.deltaLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/onlineMeetings(joinWebUrl=''{joinWebUrl}'')':
     get:
       tags:
@@ -12165,6 +11815,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12204,6 +11859,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12238,148 +11898,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
-    get:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke function getVirtualAppointmentJoinWebUrl
-      description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
-      operationId: user.onlineMeeting.joinWebUrl_getVirtualAppointmentJoinWebUrl
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: joinWebUrl
-          in: path
-          description: Alternate key of onlineMeeting
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/users/{user-id}/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.sendVirtualAppointmentReminderSms':
-    post:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke action sendVirtualAppointmentReminderSms
-      description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
-      operationId: user.onlineMeeting.joinWebUrl_sendVirtualAppointmentReminderSm
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: joinWebUrl
-          in: path
-          description: Alternate key of onlineMeeting
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                remindBeforeTimeInMinutesType:
-                  $ref: '#/components/schemas/microsoft.graph.remindBeforeTimeInMinutesType'
-                attendees:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.sendVirtualAppointmentSms':
-    post:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke action sendVirtualAppointmentSms
-      description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
-      operationId: user.onlineMeeting.joinWebUrl_sendVirtualAppointmentSm
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: joinWebUrl
-          in: path
-          description: Alternate key of onlineMeeting
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                messageType:
-                  $ref: '#/components/schemas/microsoft.graph.virtualAppointmentMessageType'
-                attendees:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/users/{user-id}/onlineMeetings/$count':
     get:
       tags:
@@ -12402,276 +11926,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/onlineMeetings/microsoft.graph.createOrGet':
-    post:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke action createOrGet
-      description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta
-      operationId: user.onlineMeeting_createOrGet
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                chatInfo:
-                  $ref: '#/components/schemas/microsoft.graph.chatInfo'
-                endDateTime:
-                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-                  type: string
-                  format: date-time
-                  nullable: true
-                externalId:
-                  type: string
-                participants:
-                  $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
-                startDateTime:
-                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-                  type: string
-                  format: date-time
-                  nullable: true
-                subject:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/onlineMeetings/microsoft.graph.getAllRecordings(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
-    get:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke function getAllRecordings
-      description: 'Get all recordings from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call recordings from channel meetings. You can apply the delta function on getAllRecordings to synchronize and get callRecording resources as they''re added for onlineMeeting instances organized by the specified user. The delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the recordings for online meetings organized by the user. Incremental synchronization gets recordings that are added since the last synchronization. Typically, you do an initial full synchronization, and then get incremental changes to that recording view periodically. Find more information in the delta query documentation. For more examples, see callRecording: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-beta
-      operationId: user.onlineMeeting_getAllRecording
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: meetingOrganizerUserId
-          in: query
-          description: 'Usage: meetingOrganizerUserId=''@meetingOrganizerUserId'''
-          style: form
-          explode: false
-          schema:
-            type: string
-            nullable: true
-        - name: startDateTime
-          in: query
-          description: 'Usage: startDateTime=@startDateTime'
-          style: form
-          explode: false
-          schema:
-            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-            type: string
-            format: date-time
-            nullable: true
-        - name: endDateTime
-          in: query
-          description: 'Usage: endDateTime=@endDateTime'
-          style: form
-          explode: false
-          schema:
-            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-            type: string
-            format: date-time
-            nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of callRecording
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callRecording'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/onlineMeetings/microsoft.graph.getAllTranscripts(meetingOrganizerUserId=''@meetingOrganizerUserId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
-    get:
-      tags:
-        - users.onlineMeeting
-      summary: Invoke function getAllTranscripts
-      description: 'Get all transcripts from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call transcripts from channel meetings. You can apply the delta function on getAllTranscripts to synchronize and get callTranscript resources as they''re added for onlineMeeting instances organized by the specified user. Delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the transcripts for online meetings organized by the user. Incremental synchronization gets transcripts that are added since the last synchronization. Typically, you do an initial full synchronization, and then get incremental changes to that recording view periodically. For more information, see delta query. For more examples, see callTranscript: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta
-      operationId: user.onlineMeeting_getAllTranscript
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: meetingOrganizerUserId
-          in: query
-          description: 'Usage: meetingOrganizerUserId=''@meetingOrganizerUserId'''
-          style: form
-          explode: false
-          schema:
-            type: string
-            nullable: true
-        - name: startDateTime
-          in: query
-          description: 'Usage: startDateTime=@startDateTime'
-          style: form
-          explode: false
-          schema:
-            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-            type: string
-            format: date-time
-            nullable: true
-        - name: endDateTime
-          in: query
-          description: 'Usage: endDateTime=@endDateTime'
-          style: form
-          explode: false
-          schema:
-            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-            type: string
-            format: date-time
-            nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of callTranscript
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/presence':
     get:
       tags:
@@ -12720,6 +11979,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.presence'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12751,6 +12015,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.presence'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12777,198 +12046,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/presence/microsoft.graph.clearPresence':
-    post:
-      tags:
-        - users.presence
-      summary: Invoke action clearPresence
-      description: 'Clear a presence session of an application for a user. If it is the user''s only presence session, a successful clearPresence changes the user''s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-beta
-      operationId: user.presence_clearPresence
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                sessionId:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/presence/microsoft.graph.clearUserPreferredPresence':
-    post:
-      tags:
-        - users.presence
-      summary: Invoke action clearUserPreferredPresence
-      description: Clear the preferred availability and activity status for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-beta
-      operationId: user.presence_clearUserPreferredPresence
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/presence/microsoft.graph.setPresence':
-    post:
-      tags:
-        - users.presence
-      summary: Invoke action setPresence
-      description: Set the availability and activity status in a presence session of an application for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-beta
-      operationId: user.presence_setPresence
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                sessionId:
-                  type: string
-                  nullable: true
-                availability:
-                  type: string
-                activity:
-                  type: string
-                expirationDuration:
-                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-                  type: string
-                  format: duration
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/presence/microsoft.graph.setStatusMessage':
-    post:
-      tags:
-        - users.presence
-      summary: Invoke action setStatusMessage
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
-      operationId: user.presence_setStatusMessage
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                statusMessage:
-                  $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/presence/microsoft.graph.setUserPreferredPresence':
-    post:
-      tags:
-        - users.presence
-      summary: Invoke action setUserPreferredPresence
-      description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence is the preferred presence. Preferred presence takes effect only when there is at least one presence session of the user. Otherwise, the user''s presence stays as Offline. A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.  Read more about presence sessions and their time-out and expiration. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-beta
-      operationId: user.presence_setUserPreferredPresence
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                availability:
-                  type: string
-                activity:
-                  type: string
-                expirationDuration:
-                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-                  type: string
-                  format: duration
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.cloudCommunications:
@@ -13037,7 +12120,7 @@ components:
             type:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callType'
             version:
-              type: number
+              type: integer
               description: Monotonically increasing version of the call record. Higher version call records with the same ID include additional data compared to the lower version.
               format: int64
             organizer_v2:
@@ -13196,14 +12279,14 @@ components:
         totalCalls:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Total number of dial-out calls within the selected time range.
           format: int32
           nullable: true
         totalCallSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Total duration of all the calls within the selected time range, in seconds.'
           format: int32
           nullable: true
@@ -13273,7 +12356,7 @@ components:
             smsUnits:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Number of SMS units sent/received.
               format: int32
               nullable: true
@@ -13345,7 +12428,7 @@ components:
             ringingTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Ringing timeout in seconds for outgoing peer to peer calls. The max value for this attribute is 115 seconds.
               format: int32
               nullable: true
@@ -13427,14 +12510,6 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: contentSharingSession
           type: object
-          properties:
-            pngOfCurrentSlide:
-              type: string
-              format: base64url
-              nullable: true
-            presenterParticipantId:
-              type: string
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.addLargeGalleryViewOperation:
@@ -13596,34 +12671,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sendDtmfCompletionReason'
           additionalProperties:
             type: object
-    microsoft.graph.startRecordingOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
-        - title: startRecordingOperation
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.startTranscriptionOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
-        - title: startTranscriptionOperation
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.stopRecordingOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
-        - title: stopRecordingOperation
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.stopTranscriptionOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
-        - title: stopTranscriptionOperation
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.subscribeToToneOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.commsOperation'
@@ -13739,7 +12786,7 @@ components:
             restrictedExperience:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingRestricted'
             rosterSequenceNumber:
-              type: number
+              type: integer
               description: Indicates the roster sequence number the participant was last updated in.
               format: int64
               nullable: true
@@ -13983,11 +13030,6 @@ components:
         - title: meetingAttendanceReport
           type: object
           properties:
-            externalEventInformation:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
-              description: The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
             meetingEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -14003,7 +13045,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -14030,17 +13072,11 @@ components:
               type: string
               description: Email address of the user associated with this attendance record.
               nullable: true
-            externalRegistrationInformation:
-              $ref: '#/components/schemas/microsoft.graph.virtualEventExternalRegistrationInformation'
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
             registrantId:
               type: string
               description: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
-              nullable: true
-            registrationId:
-              type: string
-              description: Unique identifier of a virtualEventRegistration. Presents for all participant who has registered for the virtualEventWebinar.
               nullable: true
             role:
               type: string
@@ -14049,7 +13085,7 @@ components:
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -14145,7 +13181,7 @@ components:
             registrationPageViewCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of times the registration page has been visited. Read-only.
               format: int32
               nullable: true
@@ -14538,7 +13574,7 @@ components:
         code:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The result code.
           format: int32
         message:
@@ -14548,7 +13584,7 @@ components:
         subcode:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The result sub-code.
           format: int32
       additionalProperties:
@@ -14583,7 +13619,7 @@ components:
       type: object
       properties:
         sequenceId:
-          type: number
+          type: integer
           description: An incremental identifier used for ordering DTMF events.
           format: int64
         tone:
@@ -14749,11 +13785,11 @@ components:
         channelIndex:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.'
           format: int32
         inboundPackets:
-          type: number
+          type: integer
           description: The total number of the inbound packets.
           format: int64
           nullable: true
@@ -14764,7 +13800,7 @@ components:
         localPort:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The local media port.
           format: int32
           nullable: true
@@ -14809,12 +13845,12 @@ components:
           format: duration
           nullable: true
         networkLinkSpeedInBytes:
-          type: number
+          type: integer
           description: The network link speed in bytes
           format: int64
           nullable: true
         outboundPackets:
-          type: number
+          type: integer
           description: The total number of the outbound packets.
           format: int64
           nullable: true
@@ -14825,7 +13861,7 @@ components:
         remotePort:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The remote media port.
           format: int32
           nullable: true
@@ -14863,8 +13899,6 @@ components:
               type: boolean
               description: Indicates whether breakout rooms are enabled for the meeting.
               nullable: true
-            allowedLobbyAdmitters:
-              $ref: '#/components/schemas/microsoft.graph.allowedLobbyAdmitterRoles'
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             allowLiveShare:
@@ -15020,20 +14054,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.mentionEvent'
       additionalProperties:
         type: object
-    microsoft.graph.virtualEventExternalInformation:
-      title: virtualEventExternalInformation
-      type: object
-      properties:
-        applicationId:
-          type: string
-          description: Identifier of the application that hosts the externalEventId. Read-only.
-          nullable: true
-        externalEventId:
-          type: string
-          description: 'The identifier for a virtualEventExternalInformation object that associates the virtual event with an event ID in an external application. This association bundles all the information (both supported and not supported in virtualEvent) into one virtual event object. Optional. If set, the maximum supported length is 256 characters.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.attendanceInterval:
       title: attendanceInterval
       type: object
@@ -15041,7 +14061,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -15056,20 +14076,6 @@ components:
           type: string
           description: The time the attendee left in UTC.
           format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualEventExternalRegistrationInformation:
-      title: virtualEventExternalRegistrationInformation
-      type: object
-      properties:
-        referrer:
-          type: string
-          description: A URL or string that represents the location from which the registrant registered. Optional.
-          nullable: true
-        registrationId:
-          type: string
-          description: 'The identifier for a virtualEventExternalRegistrationInformation object. Optional. If set, the maximum supported length is 256 characters.'
           nullable: true
       additionalProperties:
         type: object
@@ -15500,7 +14506,7 @@ components:
         howlingEventCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Number of times during the call that the media endpoint detected howling or screeching audio.
           format: int32
           nullable: true
@@ -15527,14 +14533,14 @@ components:
         receivedNoiseLevel:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
           format: int32
           nullable: true
         receivedSignalLevel:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Average energy level of received audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.'
           format: int32
           nullable: true
@@ -15564,14 +14570,14 @@ components:
         sentNoiseLevel:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Average energy level of sent audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
           format: int32
           nullable: true
         sentSignalLevel:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: 'Average energy level of sent audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.'
           format: int32
           nullable: true
@@ -15611,7 +14617,7 @@ components:
           description: IP address of the media endpoint.
           nullable: true
         linkSpeed:
-          type: number
+          type: integer
           description: Link speed in bits per second reported by the network adapter used by the media endpoint.
           format: int64
           nullable: true
@@ -15624,7 +14630,7 @@ components:
         port:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Network port number used by media endpoint.
           format: int32
           nullable: true
@@ -15644,7 +14650,7 @@ components:
         relayPort:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Network port number allocated on the media relay server by the media endpoint.
           format: int32
           nullable: true
@@ -15667,14 +14673,14 @@ components:
         wifiBatteryCharge:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: Estimated remaining battery charge in percentage reported by the media endpoint.
           format: int32
           nullable: true
         wifiChannel:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: WiFi channel used by the media endpoint.
           format: int32
           nullable: true
@@ -15691,7 +14697,7 @@ components:
         wifiSignalStrength:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: WiFi signal strength in percentage reported by the media endpoint.
           format: int32
           nullable: true
@@ -15723,7 +14729,7 @@ components:
           format: duration
           nullable: true
         averageBandwidthEstimate:
-          type: number
+          type: integer
           description: Average estimated bandwidth available between two endpoints in bits per second.
           format: int64
           nullable: true
@@ -15824,7 +14830,7 @@ components:
           format: duration
           nullable: true
         packetUtilization:
-          type: number
+          type: integer
           description: Packet count for the stream.
           format: int64
           nullable: true
@@ -15917,15 +14923,6 @@ components:
         - '-INF'
         - INF
         - NaN
-      type: string
-      nullable: true
-    microsoft.graph.allowedLobbyAdmitterRoles:
-      title: allowedLobbyAdmitterRoles
-      enum:
-        - organizerAndCoOrganizersAndPresenters
-        - organizerAndCoOrganizers
-        - unknownFutureValue
-      type: string
     microsoft.graph.onlineMeetingPresenters:
       title: onlineMeetingPresenters
       enum:
@@ -16170,7 +15167,7 @@ components:
         hopCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The network path count of this hop that was used to compute the round-trip time.
           format: int32
           nullable: true
