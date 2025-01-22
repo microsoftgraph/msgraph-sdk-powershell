@@ -51,6 +51,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -82,6 +87,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides':
     get:
@@ -139,6 +149,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.inferenceClassificationOverrideCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -173,6 +188,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides/{inferenceClassificationOverride-id}':
     get:
@@ -227,6 +247,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -266,6 +291,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -300,6 +330,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides/$count':
     get:
@@ -323,6 +358,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders':
     get:
       tags:
@@ -386,6 +426,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailFolderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -420,6 +465,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}':
     get:
@@ -481,6 +531,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -520,6 +575,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -554,6 +614,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders':
     get:
@@ -626,6 +691,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailFolderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -668,6 +738,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}':
     get:
@@ -737,6 +812,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -784,6 +864,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -826,6 +911,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messageRules':
     get:
@@ -899,6 +989,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.messageRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -949,6 +1044,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messageRules/{messageRule-id}':
     get:
@@ -1019,6 +1119,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1074,6 +1179,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1124,6 +1234,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messageRules/$count':
     get:
@@ -1163,6 +1278,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages':
     get:
       tags:
@@ -1235,6 +1355,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.messageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1285,6 +1410,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}':
     get:
@@ -1355,6 +1485,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1410,6 +1545,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1460,6 +1600,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/$value':
     get:
@@ -1511,6 +1656,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.mailFolder
@@ -1563,6 +1713,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.mailFolder
@@ -1613,6 +1768,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/attachments':
     get:
       tags:
@@ -1693,6 +1853,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1751,6 +1916,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/attachments/{attachment-id}':
     get:
@@ -1829,6 +1999,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1887,6 +2062,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/attachments/$count':
     get:
@@ -1934,71 +2114,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/attachments/microsoft.graph.createUploadSession':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message.attachment_createUploadSession
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                AttachmentItem:
-                  $ref: '#/components/schemas/microsoft.graph.attachmentItem'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.uploadSession'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/extensions':
     get:
       tags:
@@ -2079,6 +2199,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2137,6 +2262,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/extensions/{extension-id}':
     get:
@@ -2215,6 +2345,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2278,6 +2413,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2336,6 +2476,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/extensions/$count':
     get:
@@ -2383,6 +2528,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/mentions':
     get:
       tags:
@@ -2463,6 +2613,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mentionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2521,6 +2676,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mention'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/mentions/{mention-id}':
     get:
@@ -2599,6 +2759,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mention'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2657,6 +2822,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/mentions/$count':
     get:
@@ -2704,819 +2874,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.copy':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action copy
-      description: Copy a message to a folder within the user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-copy?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_copy
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.createForward':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_createForward
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ToRecipients:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.recipient'
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.createReply':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action createReply
-      description: "Create a draft to reply to the sender of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If replyTo is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in replyTo, and not the recipients in from.\n- You can update the draft later to add reply content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply to a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createreply?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_createReply
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.createReplyAll':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action createReplyAll
-      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft message later. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createreplyall?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_createReplyAll
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.forward':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action forward
-      description: "Forward a message using either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to forward a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-forward?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_forward
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ToRecipients:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.recipient'
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.markAsJunk':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action markAsJunk
-      description: 'Mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_markAsJunk
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                MoveToJunk:
-                  type: boolean
-                  default: false
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.markAsNotJunk':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action markAsNotJunk
-      description: 'Mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_markAsNotJunk
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                MoveToInbox:
-                  type: boolean
-                  default: false
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.move':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action move
-      description: Move a message to another folder within the specified user's mailbox. This creates a new copy of the message in the destination folder and removes the original message.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-move?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_move
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.permanentDelete':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action permanentDelete
-      description: 'Permanently delete a message and place it in the Purges folder in the dumpster in the user''s mailbox. Email clients such as Outlook or Outlook on the web can''t access permanently deleted items. Unless there''s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-permanentdelete?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_permanentDelete
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.reply':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action reply
-      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n* Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n* If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to reply to a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-reply?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_reply
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.replyAll':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action replyAll
-      description: "Reply to all recipients of a message using either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to reply-all to a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-replyall?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_replyAll
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.send':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action send
-      description: 'Send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_send
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/microsoft.graph.unsubscribe':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action unsubscribe
-      description: 'Submits an email request on behalf of the signed-in user to unsubscribe from an email distribution list. Uses the information in the List-Unsubscribe header. Message senders can use mailing lists in a user-friendly way by including an option for recipients to opt out. They can do so by specifying the List-Unsubscribe header in each message following RFC-2369. Note In particular, for the unsubscribe action to work, the sender must specify mailto: and not URL-based unsubscribe information. Setting that header would also set the unsubscribeEnabled property of the message instance to true, and the unsubscribeData property to the header data. If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender. A successful unsubscribe action moves the message to the Deleted Items folder. The actual exclusion of the user from future mail distribution is managed by the sender.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-unsubscribe?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_unsubscribe
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/$count':
     get:
       tags:
@@ -3555,522 +2917,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/microsoft.graph.delta()':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Invoke function delta
-      description: "Get a set of messages that were added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). Using deltas allows you toincrementally maintain and synchronize a local store of a user's messages."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder.message_delta
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: changeType
-          in: query
-          description: 'A custom query option to filter the delta response based on the type of change. Supported values are created, updated or deleted.'
-          style: form
-          explode: false
-          schema:
-            type: string
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of message
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.message'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                  '@odata.deltaLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/microsoft.graph.copy':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action copy
-      description: Copy a mail folder and its contents to another mail folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder_copy
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mailFolder'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/microsoft.graph.move':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action move
-      description: Move a mail folder and its contents to another mail folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-move?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder_move
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mailFolder'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/microsoft.graph.permanentDelete':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action permanentDelete
-      description: 'Permanently delete a mail folder and remove its items from the user''s mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-permanentdelete?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder_permanentDelete
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/microsoft.graph.updateAllMessagesReadState':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action updateAllMessagesReadState
-      operationId: user.mailFolder.childFolder_updateAllMessagesReadState
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                isRead:
-                  type: boolean
-                  default: false
-                  nullable: true
-                suppressReadReceipts:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-06-30'
-        date: '2024-04-29'
-        version: 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/operations':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Get operations from users
-      operationId: user.mailFolder.childFolder_ListOperation
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.mailFolderOperationCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-06-30'
-        date: '2024-04-29'
-        version: 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/operations/{mailFolderOperation-id}':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Get operations from users
-      operationId: user.mailFolder.childFolder_GetOperation
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolderOperation-id
-          in: path
-          description: The unique identifier of mailFolderOperation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolderOperation
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mailFolderOperation'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-06-30'
-        date: '2024-04-29'
-        version: 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/operations/$count':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Get the number of the resource
-      operationId: user.mailFolder.childFolder.operation_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-06-30'
-        date: '2024-04-29'
-        version: 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/userConfigurations':
     get:
       tags:
@@ -4142,6 +2993,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4214,6 +3070,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/userConfigurations/$count':
     get:
@@ -4253,6 +3114,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/$count':
     get:
       tags:
@@ -4283,95 +3149,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/microsoft.graph.delta()':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-beta
-      operationId: user.mailFolder.childFolder_delta
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of mailFolder
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.mailFolder'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                  '@odata.deltaLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules':
     get:
       tags:
@@ -4436,6 +3218,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.messageRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4478,6 +3265,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/{messageRule-id}':
     get:
@@ -4540,6 +3332,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4587,6 +3384,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4629,6 +3431,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/$count':
     get:
@@ -4660,6 +3467,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages':
     get:
       tags:
@@ -4724,6 +3536,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.messageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4766,6 +3583,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}':
     get:
@@ -4828,6 +3650,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4875,6 +3702,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4917,6 +3749,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/$value':
     get:
@@ -4960,6 +3797,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.mailFolder
@@ -5004,6 +3846,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.mailFolder
@@ -5046,6 +3893,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments':
     get:
       tags:
@@ -5118,6 +3970,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5168,6 +4025,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/{attachment-id}':
     get:
@@ -5238,6 +4100,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5288,6 +4155,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/$count':
     get:
@@ -5327,63 +4199,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/microsoft.graph.createUploadSession':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
-      operationId: user.mailFolder.message.attachment_createUploadSession
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                AttachmentItem:
-                  $ref: '#/components/schemas/microsoft.graph.attachmentItem'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.uploadSession'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions':
     get:
       tags:
@@ -5456,6 +4276,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5506,6 +4331,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/{extension-id}':
     get:
@@ -5576,6 +4406,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5631,6 +4466,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5681,6 +4521,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/$count':
     get:
@@ -5720,6 +4565,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/mentions':
     get:
       tags:
@@ -5792,6 +4642,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mentionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5842,6 +4697,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mention'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/mentions/{mention-id}':
     get:
@@ -5912,6 +4772,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mention'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5962,6 +4827,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/mentions/$count':
     get:
@@ -6001,715 +4871,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.copy':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action copy
-      description: Copy a message to a folder within the user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-copy?view=graph-rest-beta
-      operationId: user.mailFolder.message_copy
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createForward':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-beta
-      operationId: user.mailFolder.message_createForward
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ToRecipients:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.recipient'
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createReply':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action createReply
-      description: "Create a draft to reply to the sender of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If replyTo is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in replyTo, and not the recipients in from.\n- You can update the draft later to add reply content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply to a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createreply?view=graph-rest-beta
-      operationId: user.mailFolder.message_createReply
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createReplyAll':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action createReplyAll
-      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft message later. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createreplyall?view=graph-rest-beta
-      operationId: user.mailFolder.message_createReplyAll
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.forward':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action forward
-      description: "Forward a message using either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to forward a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-forward?view=graph-rest-beta
-      operationId: user.mailFolder.message_forward
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ToRecipients:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.recipient'
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.markAsJunk':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action markAsJunk
-      description: 'Mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta
-      operationId: user.mailFolder.message_markAsJunk
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                MoveToJunk:
-                  type: boolean
-                  default: false
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.markAsNotJunk':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action markAsNotJunk
-      description: 'Mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta
-      operationId: user.mailFolder.message_markAsNotJunk
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                MoveToInbox:
-                  type: boolean
-                  default: false
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.move':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action move
-      description: Move a message to another folder within the specified user's mailbox. This creates a new copy of the message in the destination folder and removes the original message.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-move?view=graph-rest-beta
-      operationId: user.mailFolder.message_move
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.permanentDelete':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action permanentDelete
-      description: 'Permanently delete a message and place it in the Purges folder in the dumpster in the user''s mailbox. Email clients such as Outlook or Outlook on the web can''t access permanently deleted items. Unless there''s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-permanentdelete?view=graph-rest-beta
-      operationId: user.mailFolder.message_permanentDelete
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.reply':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action reply
-      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n* Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n* If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to reply to a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-reply?view=graph-rest-beta
-      operationId: user.mailFolder.message_reply
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.replyAll':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action replyAll
-      description: "Reply to all recipients of a message using either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to reply-all to a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-replyall?view=graph-rest-beta
-      operationId: user.mailFolder.message_replyAll
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.send':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action send
-      description: 'Send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-beta
-      operationId: user.mailFolder.message_send
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.unsubscribe':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action unsubscribe
-      description: 'Submits an email request on behalf of the signed-in user to unsubscribe from an email distribution list. Uses the information in the List-Unsubscribe header. Message senders can use mailing lists in a user-friendly way by including an option for recipients to opt out. They can do so by specifying the List-Unsubscribe header in each message following RFC-2369. Note In particular, for the unsubscribe action to work, the sender must specify mailto: and not URL-based unsubscribe information. Setting that header would also set the unsubscribeEnabled property of the message instance to true, and the unsubscribeData property to the header data. If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender. A successful unsubscribe action moves the message to the Deleted Items folder. The actual exclusion of the user from future mail distribution is managed by the sender.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-unsubscribe?view=graph-rest-beta
-      operationId: user.mailFolder.message_unsubscribe
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/$count':
     get:
       tags:
@@ -6740,458 +4906,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/microsoft.graph.delta()':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Invoke function delta
-      description: "Get a set of messages that were added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). Using deltas allows you toincrementally maintain and synchronize a local store of a user's messages."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta
-      operationId: user.mailFolder.message_delta
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: changeType
-          in: query
-          description: 'A custom query option to filter the delta response based on the type of change. Supported values are created, updated or deleted.'
-          style: form
-          explode: false
-          schema:
-            type: string
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of message
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.message'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                  '@odata.deltaLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/users/{user-id}/mailFolders/{mailFolder-id}/microsoft.graph.copy':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action copy
-      description: Copy a mail folder and its contents to another mail folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-beta
-      operationId: user.mailFolder_copy
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mailFolder'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/microsoft.graph.move':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action move
-      description: Move a mail folder and its contents to another mail folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-move?view=graph-rest-beta
-      operationId: user.mailFolder_move
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mailFolder'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/microsoft.graph.permanentDelete':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action permanentDelete
-      description: 'Permanently delete a mail folder and remove its items from the user''s mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-permanentdelete?view=graph-rest-beta
-      operationId: user.mailFolder_permanentDelete
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/microsoft.graph.updateAllMessagesReadState':
-    post:
-      tags:
-        - users.mailFolder
-      summary: Invoke action updateAllMessagesReadState
-      operationId: user.mailFolder_updateAllMessagesReadState
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                isRead:
-                  type: boolean
-                  default: false
-                  nullable: true
-                suppressReadReceipts:
-                  type: boolean
-                  default: false
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2024-06-30'
-        date: '2024-04-29'
-        version: 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/mailFolders/{mailFolder-id}/operations':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Get operations from users
-      operationId: user.mailFolder_ListOperation
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.mailFolderOperationCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-06-30'
-        date: '2024-04-29'
-        version: 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/mailFolders/{mailFolder-id}/operations/{mailFolderOperation-id}':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Get operations from users
-      operationId: user.mailFolder_GetOperation
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolderOperation-id
-          in: path
-          description: The unique identifier of mailFolderOperation
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolderOperation
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mailFolderOperation'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-06-30'
-        date: '2024-04-29'
-        version: 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/mailFolders/{mailFolder-id}/operations/$count':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Get the number of the resource
-      operationId: user.mailFolder.operation_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: The unique identifier of mailFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2024-06-30'
-        date: '2024-04-29'
-        version: 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/{mailFolder-id}/userConfigurations':
     get:
       tags:
@@ -7255,6 +4974,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7319,6 +5043,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/userConfigurations/$count':
     get:
@@ -7350,6 +5079,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/mailFolders/$count':
     get:
       tags:
@@ -7372,87 +5106,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/mailFolders/microsoft.graph.delta()':
-    get:
-      tags:
-        - users.mailFolder
-      summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-beta
-      operationId: user.mailFolder_delta
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of mailFolder
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.mailFolder'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                  '@odata.deltaLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/messages':
     get:
       tags:
@@ -7516,6 +5174,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.messageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7550,6 +5213,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}':
     get:
@@ -7611,6 +5279,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7650,6 +5323,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7684,6 +5362,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/$value':
     get:
@@ -7719,6 +5402,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     put:
       tags:
         - users.message
@@ -7755,6 +5443,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
     delete:
       tags:
         - users.message
@@ -7789,6 +5482,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/messages/{message-id}/attachments':
     get:
       tags:
@@ -7853,6 +5551,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7895,6 +5598,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/attachments/{attachment-id}':
     get:
@@ -7957,6 +5665,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7999,6 +5712,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/attachments/$count':
     get:
@@ -8030,55 +5748,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/messages/{message-id}/attachments/microsoft.graph.createUploadSession':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
-      operationId: user.message.attachment_createUploadSession
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                AttachmentItem:
-                  $ref: '#/components/schemas/microsoft.graph.attachmentItem'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.uploadSession'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/messages/{message-id}/extensions':
     get:
       tags:
@@ -8143,6 +5817,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8185,6 +5864,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/extensions/{extension-id}':
     get:
@@ -8247,6 +5931,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8294,6 +5983,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8336,6 +6030,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/extensions/$count':
     get:
@@ -8367,6 +6066,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/messages/{message-id}/mentions':
     get:
       tags:
@@ -8431,6 +6135,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mentionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8473,6 +6182,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mention'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/mentions/{mention-id}':
     get:
@@ -8535,6 +6249,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mention'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8577,6 +6296,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/mentions/$count':
     get:
@@ -8608,611 +6332,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.copy':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action copy
-      description: Copy a message to a folder within the user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-copy?view=graph-rest-beta
-      operationId: user.message_copy
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.createForward':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-beta
-      operationId: user.message_createForward
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ToRecipients:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.recipient'
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.createReply':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action createReply
-      description: "Create a draft to reply to the sender of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If replyTo is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in replyTo, and not the recipients in from.\n- You can update the draft later to add reply content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply to a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createreply?view=graph-rest-beta
-      operationId: user.message_createReply
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.createReplyAll':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action createReplyAll
-      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft message later. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createreplyall?view=graph-rest-beta
-      operationId: user.message_createReplyAll
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.forward':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action forward
-      description: "Forward a message using either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to forward a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-forward?view=graph-rest-beta
-      operationId: user.message_forward
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                ToRecipients:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.recipient'
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.markAsJunk':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action markAsJunk
-      description: 'Mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta
-      operationId: user.message_markAsJunk
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                MoveToJunk:
-                  type: boolean
-                  default: false
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.markAsNotJunk':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action markAsNotJunk
-      description: 'Mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta
-      operationId: user.message_markAsNotJunk
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                MoveToInbox:
-                  type: boolean
-                  default: false
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.move':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action move
-      description: Move a message to another folder within the specified user's mailbox. This creates a new copy of the message in the destination folder and removes the original message.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-move?view=graph-rest-beta
-      operationId: user.message_move
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                DestinationId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.message'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.permanentDelete':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action permanentDelete
-      description: 'Permanently delete a message and place it in the Purges folder in the dumpster in the user''s mailbox. Email clients such as Outlook or Outlook on the web can''t access permanently deleted items. Unless there''s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-permanentdelete?view=graph-rest-beta
-      operationId: user.message_permanentDelete
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.reply':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action reply
-      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n* Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n* If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to reply to a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-reply?view=graph-rest-beta
-      operationId: user.message_reply
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.replyAll':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action replyAll
-      description: "Reply to all recipients of a message using either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to reply-all to a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-replyall?view=graph-rest-beta
-      operationId: user.message_replyAll
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                Message:
-                  $ref: '#/components/schemas/microsoft.graph.message'
-                Comment:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.send':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action send
-      description: 'Send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-beta
-      operationId: user.message_send
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/users/{user-id}/messages/{message-id}/microsoft.graph.unsubscribe':
-    post:
-      tags:
-        - users.message
-      summary: Invoke action unsubscribe
-      description: 'Submits an email request on behalf of the signed-in user to unsubscribe from an email distribution list. Uses the information in the List-Unsubscribe header. Message senders can use mailing lists in a user-friendly way by including an option for recipients to opt out. They can do so by specifying the List-Unsubscribe header in each message following RFC-2369. Note In particular, for the unsubscribe action to work, the sender must specify mailto: and not URL-based unsubscribe information. Setting that header would also set the unsubscribeEnabled property of the message instance to true, and the unsubscribeData property to the header data. If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender. A successful unsubscribe action moves the message to the Deleted Items folder. The actual exclusion of the user from future mail distribution is managed by the sender.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-unsubscribe?view=graph-rest-beta
-      operationId: user.message_unsubscribe
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: The unique identifier of message
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
   '/users/{user-id}/messages/$count':
     get:
       tags:
@@ -9235,94 +6359,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/users/{user-id}/messages/microsoft.graph.delta()':
-    get:
-      tags:
-        - users.message
-      summary: Invoke function delta
-      description: "Get a set of messages that were added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). Using deltas allows you toincrementally maintain and synchronize a local store of a user's messages."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta
-      operationId: user.message_delta
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: changeType
-          in: query
-          description: 'A custom query option to filter the delta response based on the type of change. Supported values are created, updated or deleted.'
-          style: form
-          explode: false
-          schema:
-            type: string
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of message
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.message'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                  '@odata.deltaLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-07-02'
+        date: '2024-07-02'
+        version: 2024-07/PrivatePreview:copilotExportAPI
 components:
   schemas:
     microsoft.graph.inferenceClassification:
@@ -9360,7 +6401,7 @@ components:
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
@@ -9379,14 +6420,14 @@ components:
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
@@ -9417,11 +6458,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-              x-ms-navigationProperty: true
-            operations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mailFolderOperation'
               x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
@@ -9467,7 +6503,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
@@ -9649,62 +6685,11 @@ components:
             size:
               maximum: 2147483647
               minimum: -2147483648
-              type: number
+              type: integer
               description: The length of the attachment in bytes.
               format: int32
           additionalProperties:
             type: object
-    microsoft.graph.attachmentItem:
-      title: attachmentItem
-      type: object
-      properties:
-        attachmentType:
-          $ref: '#/components/schemas/microsoft.graph.attachmentType'
-        contentId:
-          type: string
-          description: The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
-          nullable: true
-        contentType:
-          type: string
-          description: The nature of the data in the attachment. Optional.
-          nullable: true
-        isInline:
-          type: boolean
-          description: 'true if the attachment is an inline attachment; otherwise, false. Optional.'
-          nullable: true
-        name:
-          type: string
-          description: The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
-          nullable: true
-        size:
-          type: number
-          description: The length of the attachment in bytes. Required.
-          format: int64
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.uploadSession:
-      title: uploadSession
-      type: object
-      properties:
-        expirationDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date and time in UTC that the upload session expires. The complete file must be uploaded before this expiration time is reached.
-          format: date-time
-          nullable: true
-        nextExpectedRanges:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: 'When uploading files to document libraries, this property is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, ''{start}-{end}'' (for example ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
-        uploadUrl:
-          type: string
-          description: The URL endpoint that accepts PUT requests for byte ranges of the file.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9750,27 +6735,6 @@ components:
               description: The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
               format: date-time
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.recipient:
-      title: recipient
-      type: object
-      properties:
-        emailAddress:
-          $ref: '#/components/schemas/microsoft.graph.emailAddress'
-      additionalProperties:
-        type: object
-    microsoft.graph.mailFolderOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: mailFolderOperation
-          type: object
-          properties:
-            resourceLocation:
-              type: string
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.mailFolderOperationStatus'
           additionalProperties:
             type: object
     microsoft.graph.userConfiguration:
@@ -10057,6 +7021,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.recipient:
+      title: recipient
+      type: object
+      properties:
+        emailAddress:
+          $ref: '#/components/schemas/microsoft.graph.emailAddress'
+      additionalProperties:
+        type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -10114,22 +7086,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.attachmentType:
-      title: attachmentType
-      enum:
-        - file
-        - item
-        - reference
-      type: string
-    microsoft.graph.mailFolderOperationStatus:
-      title: mailFolderOperationStatus
-      enum:
-        - notStarted
-        - running
-        - succeeded
-        - failed
-        - unknownFutureValue
-      type: string
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -10233,19 +7189,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.mailFolderOperationCollectionResponse:
-      title: Collection of mailFolderOperation
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.mailFolderOperation'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.userConfigurationCollectionResponse:
       title: Collection of userConfiguration
       type: object
@@ -10289,14 +7232,14 @@ components:
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         minimumSize:
           maximum: 2147483647
           minimum: -2147483648
-          type: number
+          type: integer
           description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
@@ -10425,12 +7368,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.mentionCollectionResponse'
-    microsoft.graph.mailFolderOperationCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.mailFolderOperationCollectionResponse'
     microsoft.graph.userConfigurationCollectionResponse:
       description: Retrieved collection
       content:
