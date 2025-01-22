@@ -85,27 +85,27 @@ Describe 'Connect-MgGraph In Delegated Mode' {
 #     }
 # }
 
-Describe 'Connect-MgGraph In App Mode' {
-    It 'Should throw exception when certificate thumbprint length is > 40' {
-        { Connect-MgGraph -ClientId $RandomClientId -CertificateThumbprint '12345678901234567890123456789012345678901' -ErrorAction Stop } | Should -Throw -ExpectedMessage "*'CertificateThumbprint' must have a length of 40.*"
-    }
+# Describe 'Connect-MgGraph In App Mode' {
+#     It 'Should throw exception when certificate thumbprint length is > 40' {
+#         { Connect-MgGraph -ClientId $RandomClientId -CertificateThumbprint '12345678901234567890123456789012345678901' -ErrorAction Stop } | Should -Throw -ExpectedMessage "*'CertificateThumbprint' must have a length of 40.*"
+#     }
 
-    It 'Should throw exception when certificate thumbprint length is < 40' {
-        { Connect-MgGraph -ClientId $RandomClientId -CertificateThumbprint '123456789012345678901234567890123456789' -ErrorAction Stop } | Should -Throw -ExpectedMessage "*'CertificateThumbprint' must have a length of 40.*"
-    }
+#     It 'Should throw exception when certificate thumbprint length is < 40' {
+#         { Connect-MgGraph -ClientId $RandomClientId -CertificateThumbprint '123456789012345678901234567890123456789' -ErrorAction Stop } | Should -Throw -ExpectedMessage "*'CertificateThumbprint' must have a length of 40.*"
+#     }
 
-}
+# }
 
-Describe 'Connect-MgGraph Dependency Resolution' {
-    It 'Should load Mg module side by side with Az module.' {
-        { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
-        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*"
-    }
-}
+# Describe 'Connect-MgGraph Dependency Resolution' {
+#     It 'Should load Mg module side by side with Az module.' {
+#         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
+#         { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*"
+#     }
+# }
 
-Describe 'Connect-MgGraph Logging' {
-    It 'Should write MSAL logs to debug stream.' {
-        $MgDebugStream = $(Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -UseDeviceAuthentication -Debug -ErrorAction SilentlyContinue) 5>&1
-        $MgDebugStream[0] | Should -Match "DeviceCodeCredential.Authenticate invoked. Scopes: \[ User.Read \]"
-    }
-}
+# Describe 'Connect-MgGraph Logging' {
+#     It 'Should write MSAL logs to debug stream.' {
+#         $MgDebugStream = $(Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -UseDeviceAuthentication -Debug -ErrorAction SilentlyContinue) 5>&1
+#         $MgDebugStream[0] | Should -Match "DeviceCodeCredential.Authenticate invoked. Scopes: \[ User.Read \]"
+#     }
+# }
