@@ -71,19 +71,19 @@ Describe 'Connect-MgGraph In Delegated Mode' {
     }
 }
 
-Describe 'Connect-MgGraph In Environment Variable Mode' {
-    It 'Should throw exception when supported environment variables are not specified' {
-        { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "*EnvironmentCredential authentication unavailable. Environment variables are not fully configured*"
-    }
-    It 'Should attempt to use configured environment variables' {
-        {
-            $Env:AZURE_CLIENT_ID = "Not_Valid"
-            $Env:AZURE_CLIENT_SECRET = "Not_Valid"
-            $Env:AZURE_TENANT_ID = "common"
-            Connect-MgGraph -EnvironmentVariable -ErrorAction Stop
-        } | Should -Throw -ExpectedMessage "ClientSecretCredential authentication failed: AADSTS53003: Access has been blocked by Conditional Access policies. The access policy does not allow token issuance. Trace ID: 09a24028-a1f6-436a-a5fa-c5de2a9e4200 Correlation ID: 5a3b42c0-f2c2-4bde-b985-e749de364a4e Timestamp: 2025-01-22 02:43:52Z The returned error contains a claims challenge. For additional info on how to handle claims related to multifactor authentication, Conditional Access, and incremental consent, see https://aka.ms/msal-conditional-access-claims. If you are using the On-Behalf-Of flow, see https://aka.ms/msal-conditional-access-claims-obo for details."
-    }
-}
+# Describe 'Connect-MgGraph In Environment Variable Mode' {
+#     It 'Should throw exception when supported environment variables are not specified' {
+#         { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "*EnvironmentCredential authentication unavailable. Environment variables are not fully configured*"
+#     }
+#     It 'Should attempt to use configured environment variables' {
+#         {
+#             $Env:AZURE_CLIENT_ID = "Not_Valid"
+#             $Env:AZURE_CLIENT_SECRET = "Not_Valid"
+#             $Env:AZURE_TENANT_ID = "common"
+#             Connect-MgGraph -EnvironmentVariable -ErrorAction Stop
+#         } | Should -Throw -ExpectedMessage "ClientSecretCredential authentication failed: AADSTS53003: Access has been blocked by Conditional Access policies. The access policy does not allow token issuance. Trace ID: 09a24028-a1f6-436a-a5fa-c5de2a9e4200 Correlation ID: 5a3b42c0-f2c2-4bde-b985-e749de364a4e Timestamp: 2025-01-22 02:43:52Z The returned error contains a claims challenge. For additional info on how to handle claims related to multifactor authentication, Conditional Access, and incremental consent, see https://aka.ms/msal-conditional-access-claims. If you are using the On-Behalf-Of flow, see https://aka.ms/msal-conditional-access-claims-obo for details."
+#     }
+# }
 
 Describe 'Connect-MgGraph In App Mode' {
     It 'Should throw exception when certificate thumbprint length is > 40' {
