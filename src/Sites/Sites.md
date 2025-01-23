@@ -26,7 +26,7 @@ directive:
     remove: true
   - where:
       verb: Update
-      subject: ^GroupSiteOnenoteNotebookSectionGroupSectionPage$
+      subject: ^GroupSiteOnenoteNotebookSectionGroupSectionPage|^GroupSiteOnenoteNotebookSectionPage$
     remove: true
   - where:
       verb: Get
