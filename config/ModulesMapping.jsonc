@@ -26,7 +26,7 @@
   "Identity.SignIns": "^organization.certificateBasedAuthConfiguration$|^invitations\\.|^identityProviders\\.|^oauth2PermissionGrants\\.|^identityProtection\\.|^dataPolicyOperations\\.|^identity\\.|^trustFramework\\.|^informationProtection\\.|^policies\\.|^users.authentication$|^users.informationProtection$|^tenantRelationships.multiTenantOrganization$",
   "Identity.Partner": "^tenantRelationships.delegatedAdminRelationship$|^tenantRelationships.delegatedAdminCustomer$",
   "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
-  "ManagedTenants": "^tenantRelationships.managedTenant$",
+ // "ManagedTenants": "^tenantRelationships.managedTenant$",
   "NetworkAccess": "^networkAccess\\.",
   "Notes": "^users.onenote$|^groups.onenote$|^sites.onenote$",
   "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",
