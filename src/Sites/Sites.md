@@ -25,6 +25,10 @@ directive:
       subject: ^Site$
     remove: true
   - where:
+      verb: Update
+      subject: ^GroupSiteOnenoteNotebookSectionGroupSectionPage$
+    remove: true
+  - where:
       verb: Get
       subject: ^Site$
       variant: ^Get1$|^GetViaIdentity1$|^List2$
