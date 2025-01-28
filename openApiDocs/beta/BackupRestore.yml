@@ -282,11 +282,8 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: List driveProtectionUnits
-      description: Get a list of the driveProtectionUnit objects that are associated with a oneDriveForBusinessProtectionPolicy.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-driveprotectionunits?view=graph-rest-beta
+      summary: Get driveProtectionUnits from solutions
+      description: The list of drive protection units in the tenant.
       operationId: solution.backupRestore_ListDriveProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
@@ -464,6 +461,195 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
       operationId: solution.backupRestore.driveProtectionUnit_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /solutions/backupRestore/driveProtectionUnitsBulkAdditionJobs:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get driveProtectionUnitsBulkAdditionJobs from solutions
+      operationId: solution.backupRestore_ListDriveProtectionUnitsBulkAdditionJob
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.driveProtectionUnitsBulkAdditionJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Create new navigation property to driveProtectionUnitsBulkAdditionJobs for solutions
+      operationId: solution.backupRestore_CreateDriveProtectionUnitsBulkAdditionJob
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/driveProtectionUnitsBulkAdditionJobs/{driveProtectionUnitsBulkAdditionJob-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get driveProtectionUnitsBulkAdditionJobs from solutions
+      operationId: solution.backupRestore_GetDriveProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: driveProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of driveProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveProtectionUnitsBulkAdditionJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Update the navigation property driveProtectionUnitsBulkAdditionJobs in solutions
+      operationId: solution.backupRestore_UpdateDriveProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: driveProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of driveProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveProtectionUnitsBulkAdditionJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Delete navigation property driveProtectionUnitsBulkAdditionJobs for solutions
+      operationId: solution.backupRestore_DeleteDriveProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: driveProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of driveProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveProtectionUnitsBulkAdditionJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /solutions/backupRestore/driveProtectionUnitsBulkAdditionJobs/$count:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.driveProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -919,6 +1105,148 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
       operationId: solution.backupRestore.exchangeProtectionPolicy.mailboxProtectionUnit_GetCount
+      parameters:
+        - name: exchangeProtectionPolicy-id
+          in: path
+          description: The unique identifier of exchangeProtectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeProtectionPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxProtectionUnitsBulkAdditionJobs':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List mailboxProtectionUnitsBulkAdditionJobs
+      description: Get a list of mailboxProtectionUnitsBulkAdditionJobs objects associated with an exchangeProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-list-mailboxprotectionunitsbulkadditionjobs?view=graph-rest-beta
+      operationId: solution.backupRestore.exchangeProtectionPolicy_ListMailboxProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: exchangeProtectionPolicy-id
+          in: path
+          description: The unique identifier of exchangeProtectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeProtectionPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.mailboxProtectionUnitsBulkAdditionJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxProtectionUnitsBulkAdditionJobs/{mailboxProtectionUnitsBulkAdditionJob-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get mailboxProtectionUnitsBulkAdditionJob
+      description: Get a mailboxProtectionUnitsBulkAdditionJob object by the ID associated with an exchangeProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/mailboxprotectionunitsbulkadditionjobs-get?view=graph-rest-beta
+      operationId: solution.backupRestore.exchangeProtectionPolicy_GetMailboxProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: exchangeProtectionPolicy-id
+          in: path
+          description: The unique identifier of exchangeProtectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeProtectionPolicy
+        - name: mailboxProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of mailboxProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxProtectionUnitsBulkAdditionJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxProtectionUnitsBulkAdditionJobs/$count':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.exchangeProtectionPolicy.mailboxProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - name: exchangeProtectionPolicy-id
           in: path
@@ -1719,6 +2047,260 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifactsBulkAdditionRequests':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List mailboxRestoreArtifactsBulkAdditionRequests
+      description: Get a list of the maiboxRestoreArtifactsBulkAdditionRequest objects associated with an exchangeRestoreSession. The mailboxes property is deliberately omitted from the response body in order to limit the response size.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/exchangerestoresession-list-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-beta
+      operationId: solution.backupRestore.exchangeRestoreSession_ListMailboxRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequestCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Create mailboxRestoreArtifactsBulkAdditionRequest
+      description: 'Create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The initial status upon creation of the restore session is active. When all the mailboxes are added to the corresponding Exchange restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/exchangerestoresession-post-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-beta
+      operationId: solution.backupRestore.exchangeRestoreSession_CreateMailboxRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifactsBulkAdditionRequests/{mailboxRestoreArtifactsBulkAdditionRequest-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get mailboxRestoreArtifactsBulkAdditionRequest
+      description: 'Get a mailboxRestoreArtifactsBulkAdditionRequest object by its id, associated with an exchangeRestoreSession.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/mailboxrestoreartifactsbulkadditionrequest-get?view=graph-rest-beta
+      operationId: solution.backupRestore.exchangeRestoreSession_GetMailboxRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - name: mailboxRestoreArtifactsBulkAdditionRequest-id
+          in: path
+          description: The unique identifier of mailboxRestoreArtifactsBulkAdditionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxRestoreArtifactsBulkAdditionRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Update the navigation property mailboxRestoreArtifactsBulkAdditionRequests in solutions
+      operationId: solution.backupRestore.exchangeRestoreSession_UpdateMailboxRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - name: mailboxRestoreArtifactsBulkAdditionRequest-id
+          in: path
+          description: The unique identifier of mailboxRestoreArtifactsBulkAdditionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxRestoreArtifactsBulkAdditionRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Delete mailboxRestoreArtifactsBulkAdditionRequest
+      description: Delete a mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/mailboxrestoreartifactsbulkadditionrequest-delete?view=graph-rest-beta
+      operationId: solution.backupRestore.exchangeRestoreSession_DeleteMailboxRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - name: mailboxRestoreArtifactsBulkAdditionRequest-id
+          in: path
+          description: The unique identifier of mailboxRestoreArtifactsBulkAdditionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxRestoreArtifactsBulkAdditionRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifactsBulkAdditionRequests/$count':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.exchangeRestoreSession.mailboxRestoreArtifactsBulkAdditionRequest_GetCount
+      parameters:
+        - name: exchangeRestoreSession-id
+          in: path
+          description: The unique identifier of exchangeRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: exchangeRestoreSession
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /solutions/backupRestore/exchangeRestoreSessions/$count:
     get:
       tags:
@@ -1928,11 +2510,8 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: List mailboxProtectionUnits
-      description: Get a list of mailboxProtectionUnit objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-mailboxprotectionunits?view=graph-rest-beta
+      summary: Get mailboxProtectionUnits from solutions
+      description: The list of mailbox protection units in the tenant.
       operationId: solution.backupRestore_ListMailboxProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2118,6 +2697,227 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /solutions/backupRestore/mailboxProtectionUnitsBulkAdditionJobs:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get mailboxProtectionUnitsBulkAdditionJobs from solutions
+      operationId: solution.backupRestore_ListMailboxProtectionUnitsBulkAdditionJob
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.mailboxProtectionUnitsBulkAdditionJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Create new navigation property to mailboxProtectionUnitsBulkAdditionJobs for solutions
+      operationId: solution.backupRestore_CreateMailboxProtectionUnitsBulkAdditionJob
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/mailboxProtectionUnitsBulkAdditionJobs/{mailboxProtectionUnitsBulkAdditionJob-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get mailboxProtectionUnitsBulkAdditionJobs from solutions
+      operationId: solution.backupRestore_GetMailboxProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: mailboxProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of mailboxProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxProtectionUnitsBulkAdditionJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Update the navigation property mailboxProtectionUnitsBulkAdditionJobs in solutions
+      operationId: solution.backupRestore_UpdateMailboxProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: mailboxProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of mailboxProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxProtectionUnitsBulkAdditionJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Delete navigation property mailboxProtectionUnitsBulkAdditionJobs for solutions
+      operationId: solution.backupRestore_DeleteMailboxProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: mailboxProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of mailboxProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailboxProtectionUnitsBulkAdditionJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /solutions/backupRestore/mailboxProtectionUnitsBulkAdditionJobs/$count:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.mailboxProtectionUnitsBulkAdditionJob_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /solutions/backupRestore/microsoft.graph.enable:
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Invoke action enable
+      description: Enable the Microsoft 365 Backup Storage service for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-beta
+      operationId: solution.backupRestore_enable
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appOwnerTenantId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /solutions/backupRestore/oneDriveForBusinessProtectionPolicies:
     get:
       tags:
@@ -2513,7 +3313,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get driveProtectionUnits from solutions
-      description: Contains the protection units associated with a  OneDrive for Business protection policy.
+      description: Contains the protection units associated with a  OneDrive for Work or School protection policy.
       operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_GetDriveProtectionUnit
       parameters:
         - name: oneDriveForBusinessProtectionPolicy-id
@@ -2568,6 +3368,148 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
       operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy.driveProtectionUnit_GetCount
+      parameters:
+        - name: oneDriveForBusinessProtectionPolicy-id
+          in: path
+          description: The unique identifier of oneDriveForBusinessProtectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: oneDriveForBusinessProtectionPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveProtectionUnitsBulkAdditionJobs':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List driveProtectionUnitsBulkAdditionJobs
+      description: Get a list of driveProtectionUnitsBulkAdditionJobs objects associated with a oneDriveForBusinessProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-list-driveprotectionunitsbulkadditionjobs?view=graph-rest-beta
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_ListDriveProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: oneDriveForBusinessProtectionPolicy-id
+          in: path
+          description: The unique identifier of oneDriveForBusinessProtectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: oneDriveForBusinessProtectionPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.driveProtectionUnitsBulkAdditionJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveProtectionUnitsBulkAdditionJobs/{driveProtectionUnitsBulkAdditionJob-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get driveProtectionUnitsBulkAdditionJob
+      description: Get a driveProtectionUnitsBulkAdditionJob object by the ID associated with a oneDriveForBusinessProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveprotectionunitsbulkadditionjobs-get?view=graph-rest-beta
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_GetDriveProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: oneDriveForBusinessProtectionPolicy-id
+          in: path
+          description: The unique identifier of oneDriveForBusinessProtectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: oneDriveForBusinessProtectionPolicy
+        - name: driveProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of driveProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveProtectionUnitsBulkAdditionJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveProtectionUnitsBulkAdditionJobs/$count':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy.driveProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - name: oneDriveForBusinessProtectionPolicy-id
           in: path
@@ -2878,7 +3820,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get driveRestoreArtifacts from solutions
-      description: A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+      description: A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
       operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_GetDriveRestoreArtifact
       parameters:
         - name: oneDriveForBusinessRestoreSession-id
@@ -3060,6 +4002,260 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
       operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession.driveRestoreArtifact_GetCount
+      parameters:
+        - name: oneDriveForBusinessRestoreSession-id
+          in: path
+          description: The unique identifier of oneDriveForBusinessRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: oneDriveForBusinessRestoreSession
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifactsBulkAdditionRequests':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List driveRestoreArtifactsBulkAdditionRequests
+      description: Get a list of the driveRestoreArtifactsBulkAdditionRequest objects associated with a oneDriveForBusinessRestoreSession. The drives property is deliberately omitted from the response body in order to limit the response size.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-list-driverestoreartifactsbulkadditionrequests?view=graph-rest-beta
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_ListDriveRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: oneDriveForBusinessRestoreSession-id
+          in: path
+          description: The unique identifier of oneDriveForBusinessRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: oneDriveForBusinessRestoreSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.driveRestoreArtifactsBulkAdditionRequestCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Create driveRestoreArtifactsBulkAdditionRequest
+      description: 'Create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The initial status upon creation of the restore session is active. When all the drives are added to the corresponding OneDrive restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-post-driverestoreartifactsbulkadditionrequests?view=graph-rest-beta
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_CreateDriveRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: oneDriveForBusinessRestoreSession-id
+          in: path
+          description: The unique identifier of oneDriveForBusinessRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: oneDriveForBusinessRestoreSession
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifactsBulkAdditionRequests/{driveRestoreArtifactsBulkAdditionRequest-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get driveRestoreArtifactsBulkAdditionRequest
+      description: 'Get a driveRestoreArtifactsBulkAdditionRequest object by its id, associated with a oneDriveForBusinessRestoreSession.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driverestoreartifactsbulkadditionrequest-get?view=graph-rest-beta
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_GetDriveRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: oneDriveForBusinessRestoreSession-id
+          in: path
+          description: The unique identifier of oneDriveForBusinessRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: oneDriveForBusinessRestoreSession
+        - name: driveRestoreArtifactsBulkAdditionRequest-id
+          in: path
+          description: The unique identifier of driveRestoreArtifactsBulkAdditionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveRestoreArtifactsBulkAdditionRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Update the navigation property driveRestoreArtifactsBulkAdditionRequests in solutions
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_UpdateDriveRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: oneDriveForBusinessRestoreSession-id
+          in: path
+          description: The unique identifier of oneDriveForBusinessRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: oneDriveForBusinessRestoreSession
+        - name: driveRestoreArtifactsBulkAdditionRequest-id
+          in: path
+          description: The unique identifier of driveRestoreArtifactsBulkAdditionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveRestoreArtifactsBulkAdditionRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Delete driveRestoreArtifactsBulkAdditionRequest
+      description: Delete a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driverestoreartifactsbulkadditionrequest-delete?view=graph-rest-beta
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_DeleteDriveRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: oneDriveForBusinessRestoreSession-id
+          in: path
+          description: The unique identifier of oneDriveForBusinessRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: oneDriveForBusinessRestoreSession
+        - name: driveRestoreArtifactsBulkAdditionRequest-id
+          in: path
+          description: The unique identifier of driveRestoreArtifactsBulkAdditionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveRestoreArtifactsBulkAdditionRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifactsBulkAdditionRequests/$count':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession.driveRestoreArtifactsBulkAdditionRequest_GetCount
       parameters:
         - name: oneDriveForBusinessRestoreSession-id
           in: path
@@ -3271,6 +4467,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}/microsoft.graph.activate':
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Invoke action activate
+      description: 'Activate a protectionPolicyBase. Currently, only one active backup policy per underlying service is supported (that is, one for OneDrive accounts, one for SharePoint sites, and one for Exchange Online users). You can add or remove artifacts (sites or user accounts) to or from each active policy.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/protectionpolicybase-activate?view=graph-rest-beta
+      operationId: solution.backupRestore.protectionPolicy_activate
+      parameters:
+        - name: protectionPolicyBase-id
+          in: path
+          description: The unique identifier of protectionPolicyBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: protectionPolicyBase
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}/microsoft.graph.deactivate':
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Invoke action deactivate
+      description: Deactivate a protectionPolicyBase.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/protectionpolicybase-deactivate?view=graph-rest-beta
+      operationId: solution.backupRestore.protectionPolicy_deactivate
+      parameters:
+        - name: protectionPolicyBase-id
+          in: path
+          description: The unique identifier of protectionPolicyBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: protectionPolicyBase
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /solutions/backupRestore/protectionPolicies/$count:
     get:
       tags:
@@ -3637,6 +4891,49 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /solutions/backupRestore/restorePoints/microsoft.graph.search:
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Invoke action search
+      description: Search for the restorePoint objects associated with a protectionUnit.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-beta
+      operationId: solution.backupRestore.restorePoint_search
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                protectionUnitIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                protectionTimePeriod:
+                  $ref: '#/components/schemas/microsoft.graph.timePeriod'
+                restorePointPreference:
+                  $ref: '#/components/schemas/microsoft.graph.restorePointPreference'
+                tags:
+                  $ref: '#/components/schemas/microsoft.graph.restorePointTags'
+                artifactQuery:
+                  $ref: '#/components/schemas/microsoft.graph.artifactQuery'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.restorePointSearchResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /solutions/backupRestore/restoreSessions:
     get:
       tags:
@@ -3824,6 +5121,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/restoreSessions/{restoreSessionBase-id}/microsoft.graph.activate':
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Invoke action activate
+      description: 'Activate a draft restoreSessionBase object to restore a protection unit. The following points apply to restoring a protection unit:'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-beta
+      operationId: solution.backupRestore.restoreSession_activate
+      parameters:
+        - name: restoreSessionBase-id
+          in: path
+          description: The unique identifier of restoreSessionBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: restoreSessionBase
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /solutions/backupRestore/restoreSessions/$count:
     get:
       tags:
@@ -4029,6 +5355,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/serviceApps/{serviceApp-id}/microsoft.graph.activate':
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Invoke action activate
+      description: Activate a serviceApp.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceapp-activate?view=graph-rest-beta
+      operationId: solution.backupRestore.serviceApp_activate
+      parameters:
+        - name: serviceApp-id
+          in: path
+          description: The unique identifier of serviceApp
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceApp
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                effectiveDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceApp'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/backupRestore/serviceApps/{serviceApp-id}/microsoft.graph.deactivate':
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Invoke action deactivate
+      description: Deactivate a serviceApp.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceapp-deactivate?view=graph-rest-beta
+      operationId: solution.backupRestore.serviceApp_deactivate
+      parameters:
+        - name: serviceApp-id
+          in: path
+          description: The unique identifier of serviceApp
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceApp
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceApp'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /solutions/backupRestore/serviceApps/$count:
     get:
       tags:
@@ -4493,6 +5891,148 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
       operationId: solution.backupRestore.sharePointProtectionPolicy.siteProtectionUnit_GetCount
+      parameters:
+        - name: sharePointProtectionPolicy-id
+          in: path
+          description: The unique identifier of sharePointProtectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharePointProtectionPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteProtectionUnitsBulkAdditionJobs':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List siteProtectionUnitsBulkAdditionJobs
+      description: Get a list of siteProtectionUnitsBulkAdditionJobs objects associated with a sharePointProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-list-siteprotectionunitsbulkadditionjobs?view=graph-rest-beta
+      operationId: solution.backupRestore.sharePointProtectionPolicy_ListSiteProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: sharePointProtectionPolicy-id
+          in: path
+          description: The unique identifier of sharePointProtectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharePointProtectionPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.siteProtectionUnitsBulkAdditionJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteProtectionUnitsBulkAdditionJobs/{siteProtectionUnitsBulkAdditionJob-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get siteProtectionUnitsBulkAdditionJob
+      description: Get a siteProtectionUnitsBulkAdditionJob object by the ID associated with a sharePointProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/siteprotectionunitsbulkadditionjobs-get?view=graph-rest-beta
+      operationId: solution.backupRestore.sharePointProtectionPolicy_GetSiteProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: sharePointProtectionPolicy-id
+          in: path
+          description: The unique identifier of sharePointProtectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharePointProtectionPolicy
+        - name: siteProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of siteProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: siteProtectionUnitsBulkAdditionJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteProtectionUnitsBulkAdditionJobs/$count':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.sharePointProtectionPolicy.siteProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - name: sharePointProtectionPolicy-id
           in: path
@@ -5001,6 +6541,260 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifactsBulkAdditionRequests':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List siteRestoreArtifactsBulkAdditionRequests
+      description: Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointrestoresession-list-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta
+      operationId: solution.backupRestore.sharePointRestoreSession_ListSiteRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: sharePointRestoreSession-id
+          in: path
+          description: The unique identifier of sharePointRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharePointRestoreSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.siteRestoreArtifactsBulkAdditionRequestCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Create siteRestoreArtifactsBulkAdditionRequests
+      description: 'Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointrestoresession-post-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta
+      operationId: solution.backupRestore.sharePointRestoreSession_CreateSiteRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: sharePointRestoreSession-id
+          in: path
+          description: The unique identifier of sharePointRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharePointRestoreSession
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifactsBulkAdditionRequests/{siteRestoreArtifactsBulkAdditionRequest-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get siteRestoreArtifactsBulkAdditionRequest
+      description: 'Get a siteRestoreArtifactsBulkAdditionRequest object by its id, associated with a sharePointRestoreSession.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/siterestoreartifactsbulkadditionrequest-get?view=graph-rest-beta
+      operationId: solution.backupRestore.sharePointRestoreSession_GetSiteRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: sharePointRestoreSession-id
+          in: path
+          description: The unique identifier of sharePointRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharePointRestoreSession
+        - name: siteRestoreArtifactsBulkAdditionRequest-id
+          in: path
+          description: The unique identifier of siteRestoreArtifactsBulkAdditionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: siteRestoreArtifactsBulkAdditionRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Update the navigation property siteRestoreArtifactsBulkAdditionRequests in solutions
+      operationId: solution.backupRestore.sharePointRestoreSession_UpdateSiteRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: sharePointRestoreSession-id
+          in: path
+          description: The unique identifier of sharePointRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharePointRestoreSession
+        - name: siteRestoreArtifactsBulkAdditionRequest-id
+          in: path
+          description: The unique identifier of siteRestoreArtifactsBulkAdditionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: siteRestoreArtifactsBulkAdditionRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Delete siteRestoreArtifactsBulkAdditionRequest
+      description: Delete a siteRestoreArtifactsBulkAdditionRequest object associated with a sharepointRestoreSession.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/siterestoreartifactsbulkadditionrequest-delete?view=graph-rest-beta
+      operationId: solution.backupRestore.sharePointRestoreSession_DeleteSiteRestoreArtifactsBulkAdditionRequest
+      parameters:
+        - name: sharePointRestoreSession-id
+          in: path
+          description: The unique identifier of sharePointRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharePointRestoreSession
+        - name: siteRestoreArtifactsBulkAdditionRequest-id
+          in: path
+          description: The unique identifier of siteRestoreArtifactsBulkAdditionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: siteRestoreArtifactsBulkAdditionRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifactsBulkAdditionRequests/$count':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.sharePointRestoreSession.siteRestoreArtifactsBulkAdditionRequest_GetCount
+      parameters:
+        - name: sharePointRestoreSession-id
+          in: path
+          description: The unique identifier of sharePointRestoreSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharePointRestoreSession
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /solutions/backupRestore/sharePointRestoreSessions/$count:
     get:
       tags:
@@ -5210,11 +7004,8 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: List siteProtectionUnits
-      description: Get a list of the siteProtectionUnit objects that are associated with a sharePointProtectionPolicy.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-siteprotectionunits?view=graph-rest-beta
+      summary: Get siteProtectionUnits from solutions
+      description: The list of site protection units in the tenant.
       operationId: solution.backupRestore_ListSiteProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5400,6 +7191,195 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /solutions/backupRestore/siteProtectionUnitsBulkAdditionJobs:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get siteProtectionUnitsBulkAdditionJobs from solutions
+      operationId: solution.backupRestore_ListSiteProtectionUnitsBulkAdditionJob
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.siteProtectionUnitsBulkAdditionJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Create new navigation property to siteProtectionUnitsBulkAdditionJobs for solutions
+      operationId: solution.backupRestore_CreateSiteProtectionUnitsBulkAdditionJob
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/siteProtectionUnitsBulkAdditionJobs/{siteProtectionUnitsBulkAdditionJob-id}':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get siteProtectionUnitsBulkAdditionJobs from solutions
+      operationId: solution.backupRestore_GetSiteProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: siteProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of siteProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: siteProtectionUnitsBulkAdditionJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Update the navigation property siteProtectionUnitsBulkAdditionJobs in solutions
+      operationId: solution.backupRestore_UpdateSiteProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: siteProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of siteProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: siteProtectionUnitsBulkAdditionJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Delete navigation property siteProtectionUnitsBulkAdditionJobs for solutions
+      operationId: solution.backupRestore_DeleteSiteProtectionUnitsBulkAdditionJob
+      parameters:
+        - name: siteProtectionUnitsBulkAdditionJob-id
+          in: path
+          description: The unique identifier of siteProtectionUnitsBulkAdditionJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: siteProtectionUnitsBulkAdditionJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /solutions/backupRestore/siteProtectionUnitsBulkAdditionJobs/$count:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.siteProtectionUnitsBulkAdditionJob_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.backupRestoreRoot:
@@ -5421,6 +7401,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
               description: The list of drive protection units in the tenant.
+              x-ms-navigationProperty: true
+            driveProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
             exchangeProtectionPolicies:
               type: array
@@ -5445,6 +7430,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
               description: The list of mailbox protection units in the tenant.
+              x-ms-navigationProperty: true
+            mailboxProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
             oneDriveForBusinessProtectionPolicies:
               type: array
@@ -5512,6 +7502,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
               description: The list of site protection units in the tenant.
               x-ms-navigationProperty: true
+            siteProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.driveProtectionRule:
@@ -5548,6 +7543,26 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.driveProtectionUnitsBulkAdditionJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobBase'
+        - title: driveProtectionUnitsBulkAdditionJob
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of OneDrive directoryObjectIds to add to the OneDrive protection policy.
+            drives:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of email addresses to add to the OneDrive protection policy.
+          additionalProperties:
+            type: object
     microsoft.graph.exchangeProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
@@ -5565,6 +7580,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
               description: The protection units (mailboxes) that are  protected under the Exchange protection policy.
+              x-ms-navigationProperty: true
+            mailboxProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -5600,6 +7620,28 @@ components:
               description: Email address associated with the directory object.
               nullable: true
               readOnly: true
+            mailboxType:
+              $ref: '#/components/schemas/microsoft.graph.mailboxType'
+          additionalProperties:
+            type: object
+    microsoft.graph.mailboxProtectionUnitsBulkAdditionJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobBase'
+        - title: mailboxProtectionUnitsBulkAdditionJob
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of Exchange directoryObjectIds to add to the Exchange protection policy.
+            mailboxes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of Exchange email addresses to add to the Exchange protection policy.
           additionalProperties:
             type: object
     microsoft.graph.exchangeRestoreSession:
@@ -5619,6 +7661,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
               description: A collection of restore points and destination details that can be used to restore Exchange mailboxes.
               x-ms-navigationProperty: true
+            mailboxRestoreArtifactsBulkAdditionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
+              description: A collection of user mailboxes and destination details that can be used to restore Exchange mailboxes.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.granularMailboxRestoreArtifact:
@@ -5630,7 +7678,7 @@ components:
             artifactCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: .
               format: int32
               nullable: true
@@ -5671,15 +7719,74 @@ components:
           properties:
             restoredFolderId:
               type: string
-              description: The new restored folder identifier for the user.
+              description: The newly restored folder identifier for the user.
               nullable: true
             restoredFolderName:
               type: string
               description: The new restored folder name.
               nullable: true
               readOnly: true
+            restoredItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of items that are being restored in the folder.
+              format: int32
+              nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestBase'
+        - title: mailboxRestoreArtifactsBulkAdditionRequest
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+            mailboxes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of email addresses that are added to the corresponding Exchange restore session in a bulk operation.
+          additionalProperties:
+            type: object
+    microsoft.graph.serviceStatus:
+      title: serviceStatus
+      type: object
+      properties:
+        backupServiceConsumer:
+          $ref: '#/components/schemas/microsoft.graph.backupServiceConsumer'
+        disableReason:
+          $ref: '#/components/schemas/microsoft.graph.disableReason'
+        gracePeriodDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The expiration time of the grace period.
+          format: date-time
+          nullable: true
+        lastModifiedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Timestamp of the last modification of the entity.
+          format: date-time
+          nullable: true
+        restoreAllowedTillDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The expiration time of the restoration allowed period.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.backupServiceStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.oneDriveForBusinessProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
@@ -5690,13 +7797,18 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionRule'
-              description: Contains the details of the Onedrive for Business protection rule.
+              description: Contains the details of the OneDrive for Work or School protection rule.
               x-ms-navigationProperty: true
             driveProtectionUnits:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
-              description: Contains the protection units associated with a  OneDrive for Business protection policy.
+              description: Contains the protection units associated with a  OneDrive for Work or School protection policy.
+              x-ms-navigationProperty: true
+            driveProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -5710,7 +7822,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifact'
-              description: A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+              description: A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
+              x-ms-navigationProperty: true
+            driveRestoreArtifactsBulkAdditionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
+              description: A collection of user mailboxes and destination details that can be used to restore a OneDrive for work or school drive.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -5734,6 +7852,26 @@ components:
               description: The web URL of the restored site.
               nullable: true
               readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.driveRestoreArtifactsBulkAdditionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestBase'
+        - title: driveRestoreArtifactsBulkAdditionRequest
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+            drives:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of email addresses that are added to the corresponding OneDrive for work or school restore session in a bulk operation.
           additionalProperties:
             type: object
     microsoft.graph.protectionPolicyBase:
@@ -5803,6 +7941,73 @@ components:
               $ref: '#/components/schemas/microsoft.graph.protectionUnitStatus'
           additionalProperties:
             type: object
+    microsoft.graph.timePeriod:
+      title: timePeriod
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date time of the end of the time period.
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date time of the start of the time period.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.restorePointPreference:
+      title: restorePointPreference
+      enum:
+        - latest
+        - oldest
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restorePointTags:
+      title: restorePointTags
+      enum:
+        - none
+        - fastRestore
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.artifactQuery:
+      title: artifactQuery
+      type: object
+      properties:
+        artifactType:
+          $ref: '#/components/schemas/microsoft.graph.restorableArtifact'
+        queryExpression:
+          type: string
+          description: Specifies criteria to retrieve artifacts.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.restorePointSearchResponse:
+      title: restorePointSearchResponse
+      type: object
+      properties:
+        noResultProtectionUnitIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Contains  alist of protection units with no restore points.
+        searchResponseId:
+          type: string
+          description: The unique identifier of the search response.
+          nullable: true
+        searchResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.restorePointSearchResult'
+          description: Contains a collection of restore points.
+      additionalProperties:
+        type: object
     microsoft.graph.restoreSessionBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5833,6 +8038,10 @@ components:
               description: Timestamp of the last modification of the restore session.
               format: date-time
               nullable: true
+            restoreJobType:
+              $ref: '#/components/schemas/microsoft.graph.restoreJobType'
+            restoreSessionArtifactCount:
+              $ref: '#/components/schemas/microsoft.graph.restoreSessionArtifactCount'
             status:
               $ref: '#/components/schemas/microsoft.graph.restoreSessionStatus'
           additionalProperties:
@@ -5887,6 +8096,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
               description: The protection units (sites) that are protected under the site protection policy.
               x-ms-navigationProperty: true
+            siteProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.siteProtectionRule:
@@ -5923,6 +8137,26 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.siteProtectionUnitsBulkAdditionJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobBase'
+        - title: siteProtectionUnitsBulkAdditionJob
+          type: object
+          properties:
+            siteIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site IDs to add to the SharePoint protection policy.
+            siteWebUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site URLs to add to the SharePoint protection policy.
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointRestoreSession:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
@@ -5934,6 +8168,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifact'
               description: A collection of restore points and destination details that can be used to restore SharePoint sites.
+              x-ms-navigationProperty: true
+            siteRestoreArtifactsBulkAdditionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
+              description: A collection of SharePoint site URLs and destination details that can be used to restore SharePoint sites.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -5959,6 +8199,26 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.siteRestoreArtifactsBulkAdditionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestBase'
+        - title: siteRestoreArtifactsBulkAdditionRequest
+          type: object
+          properties:
+            siteIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+            siteWebUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site URLs that are added to the corresponding SharePoint restore session in a bulk operation.
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -5966,38 +8226,6 @@ components:
         id:
           type: string
           description: The unique identifier for an entity. Read-only.
-      additionalProperties:
-        type: object
-    microsoft.graph.serviceStatus:
-      title: serviceStatus
-      type: object
-      properties:
-        backupServiceConsumer:
-          $ref: '#/components/schemas/microsoft.graph.backupServiceConsumer'
-        disableReason:
-          $ref: '#/components/schemas/microsoft.graph.disableReason'
-        gracePeriodDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The expiration time of the grace period.
-          format: date-time
-          nullable: true
-        lastModifiedBy:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        lastModifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: Timestamp of the last modification of the entity.
-          format: date-time
-          nullable: true
-        restoreAllowedTillDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The expiration time of the restoration allowed period.
-          format: date-time
-          nullable: true
-        status:
-          $ref: '#/components/schemas/microsoft.graph.backupServiceStatus'
       additionalProperties:
         type: object
     microsoft.graph.protectionRuleBase:
@@ -6018,7 +8246,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicError'
             isAutoApplyEnabled:
               type: boolean
-              description: Indicates whether the protection rule is static or dynamic.
+              description: 'true indicates that the protection rule is dynamic; false that it''s static. Currently, only static rules are supported.'
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -6032,15 +8260,46 @@ components:
               $ref: '#/components/schemas/microsoft.graph.protectionRuleStatus'
           additionalProperties:
             type: object
-    microsoft.graph.restorePointTags:
-      title: restorePointTags
+    microsoft.graph.protectionUnitsBulkJobBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: protectionUnitsBulkJobBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of creation of the job.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the protection units bulk addition job.
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last modification made to the job.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.mailboxType:
+      title: mailboxType
       enum:
-        - none
-        - fastRestore
+        - unknown
+        - user
+        - shared
         - unknownFutureValue
       type: string
-      x-ms-enum-flags:
-        isFlags: true
     microsoft.graph.restoreArtifactBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6069,6 +8328,69 @@ components:
               $ref: '#/components/schemas/microsoft.graph.restorePoint'
           additionalProperties:
             type: object
+    microsoft.graph.restoreArtifactsBulkRequestBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: restoreArtifactsBulkRequestBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time when the bulk request was created.
+              format: date-time
+              nullable: true
+            destinationType:
+              $ref: '#/components/schemas/microsoft.graph.destinationType'
+            displayName:
+              type: string
+              description: Name of the addition request.
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when this entity was last modified.
+              format: date-time
+              nullable: true
+            protectionTimePeriod:
+              $ref: '#/components/schemas/microsoft.graph.timePeriod'
+            protectionUnitIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Indicates which protection units to restore. This property isn't implemented yet. Future value; don't use.
+            restorePointPreference:
+              $ref: '#/components/schemas/microsoft.graph.restorePointPreference'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestStatus'
+            tags:
+              $ref: '#/components/schemas/microsoft.graph.restorePointTags'
+          additionalProperties:
+            type: object
+    microsoft.graph.backupServiceConsumer:
+      title: backupServiceConsumer
+      enum:
+        - unknown
+        - firstparty
+        - thirdparty
+        - unknownFutureValue
+      type: string
+    microsoft.graph.disableReason:
+      title: disableReason
+      enum:
+        - none
+        - invalidBillingProfile
+        - userRequested
+        - unknownFutureValue
+        - controllerServiceAppDeleted
+      type: string
     microsoft.graph.identitySet:
       title: identitySet
       type: object
@@ -6081,6 +8403,15 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
       additionalProperties:
         type: object
+    microsoft.graph.backupServiceStatus:
+      title: backupServiceStatus
+      enum:
+        - disabled
+        - enabled
+        - protectionChangeLocked
+        - restoreLocked
+        - unknownFutureValue
+      type: string
     microsoft.graph.retentionSetting:
       title: retentionSetting
       type: object
@@ -6141,6 +8472,68 @@ components:
         - removeRequested
         - unknownFutureValue
       type: string
+    microsoft.graph.restorableArtifact:
+      title: restorableArtifact
+      enum:
+        - message
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restorePointSearchResult:
+      title: restorePointSearchResult
+      type: object
+      properties:
+        artifactHitCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Total number of artifacts restored.
+          format: int32
+          nullable: true
+        restorePoint:
+          $ref: '#/components/schemas/microsoft.graph.restorePoint'
+      additionalProperties:
+        type: object
+    microsoft.graph.restoreJobType:
+      title: restoreJobType
+      enum:
+        - standard
+        - bulk
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restoreSessionArtifactCount:
+      title: restoreSessionArtifactCount
+      type: object
+      properties:
+        completed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration completed.
+          format: int32
+          nullable: true
+        failed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration failed.
+          format: int32
+          nullable: true
+        inProgress:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration is in progress.
+          format: int32
+          nullable: true
+        total:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts present in the restore session.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.restoreSessionStatus:
       title: restoreSessionStatus
       enum:
@@ -6213,6 +8606,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.driveProtectionUnitsBulkAdditionJobCollectionResponse:
+      title: Collection of driveProtectionUnitsBulkAdditionJob
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.exchangeProtectionPolicyCollectionResponse:
       title: Collection of exchangeProtectionPolicy
       type: object
@@ -6247,6 +8653,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.mailboxProtectionUnitsBulkAdditionJobCollectionResponse:
+      title: Collection of mailboxProtectionUnitsBulkAdditionJob
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -6291,6 +8710,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequestCollectionResponse:
+      title: Collection of mailboxRestoreArtifactsBulkAdditionRequest
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.oneDriveForBusinessProtectionPolicyCollectionResponse:
       title: Collection of oneDriveForBusinessProtectionPolicy
       type: object
@@ -6325,6 +8757,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifact'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.driveRestoreArtifactsBulkAdditionRequestCollectionResponse:
+      title: Collection of driveRestoreArtifactsBulkAdditionRequest
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -6434,6 +8879,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteProtectionUnitsBulkAdditionJobCollectionResponse:
+      title: Collection of siteProtectionUnitsBulkAdditionJob
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sharePointRestoreSessionCollectionResponse:
       title: Collection of sharePointRestoreSession
       type: object
@@ -6460,36 +8918,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.backupServiceConsumer:
-      title: backupServiceConsumer
-      enum:
-        - unknown
-        - firstparty
-        - thirdparty
-        - unknownFutureValue
-      type: string
-    microsoft.graph.disableReason:
-      title: disableReason
-      enum:
-        - none
-        - invalidBillingProfile
-        - userRequested
-        - unknownFutureValue
-        - controllerServiceAppDeleted
-      type: string
-    microsoft.graph.backupServiceStatus:
-      title: backupServiceStatus
-      enum:
-        - disabled
-        - enabled
-        - protectionChangeLocked
-        - restoreLocked
-        - unknownFutureValue
-      type: string
+    microsoft.graph.siteRestoreArtifactsBulkAdditionRequestCollectionResponse:
+      title: Collection of siteRestoreArtifactsBulkAdditionRequest
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.protectionRuleStatus:
       title: protectionRuleStatus
       enum:
         - draft
+        - active
+        - completed
+        - completedWithErrors
+        - unknownFutureValue
+      type: string
+    microsoft.graph.protectionUnitsBulkJobStatus:
+      title: protectionUnitsBulkJobStatus
+      enum:
+        - unknown
         - active
         - completed
         - completedWithErrors
@@ -6511,6 +8965,15 @@ components:
         - inProgress
         - succeeded
         - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restoreArtifactsBulkRequestStatus:
+      title: restoreArtifactsBulkRequestStatus
+      enum:
+        - unknown
+        - active
+        - completed
+        - completedWithErrors
         - unknownFutureValue
       type: string
     microsoft.graph.publicErrorDetail:
@@ -6621,6 +9084,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitCollectionResponse'
+    microsoft.graph.driveProtectionUnitsBulkAdditionJobCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJobCollectionResponse'
     microsoft.graph.exchangeProtectionPolicyCollectionResponse:
       description: Retrieved collection
       content:
@@ -6639,6 +9108,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitCollectionResponse'
+    microsoft.graph.mailboxProtectionUnitsBulkAdditionJobCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJobCollectionResponse'
     microsoft.graph.exchangeRestoreSessionCollectionResponse:
       description: Retrieved collection
       content:
@@ -6657,6 +9132,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactCollectionResponse'
+    microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequestCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequestCollectionResponse'
     microsoft.graph.oneDriveForBusinessProtectionPolicyCollectionResponse:
       description: Retrieved collection
       content:
@@ -6675,6 +9156,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactCollectionResponse'
+    microsoft.graph.driveRestoreArtifactsBulkAdditionRequestCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequestCollectionResponse'
     microsoft.graph.protectionPolicyBaseCollectionResponse:
       description: Retrieved collection
       content:
@@ -6723,6 +9210,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitCollectionResponse'
+    microsoft.graph.siteProtectionUnitsBulkAdditionJobCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJobCollectionResponse'
     microsoft.graph.sharePointRestoreSessionCollectionResponse:
       description: Retrieved collection
       content:
@@ -6735,6 +9228,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactCollectionResponse'
+    microsoft.graph.siteRestoreArtifactsBulkAdditionRequestCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequestCollectionResponse'
   parameters:
     top:
       name: $top
