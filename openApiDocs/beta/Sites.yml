@@ -101162,11 +101162,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -104166,7 +104166,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: A collection of all the messages in the channel. A navigation property. Nullable.
+              description: A collection of all the messages in the channel. Nullable.
               x-ms-navigationProperty: true
             sharedWithTeams:
               type: array
@@ -104178,7 +104178,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
-              description: A collection of all the tabs in the channel. A navigation property.
+              description: A collection of all the tabs in the channel.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
