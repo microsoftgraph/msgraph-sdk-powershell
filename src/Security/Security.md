@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^security(.case.ediscoveryCase.noncustodialDataSource_.*DataSource)$
+  - remove-path-by-operation: ^security(.case.ediscoveryCase.noncustodialDataSource_.*DataSource)$|^security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail$
 # Remove cmdlets
   - where:
       verb: Get|Update
