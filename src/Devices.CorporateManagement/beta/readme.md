@@ -41,8 +41,4 @@ directive:
       verb: Update
       subject: ^DeviceAppManagementMobileAppRelationship$
     remove: true
-  - where:
-      verb: New
-      subject: ^UserManagedDeviceLogCollectionResponse$
-    remove: true
 ```

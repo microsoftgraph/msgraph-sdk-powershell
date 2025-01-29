@@ -27,6 +27,7 @@ directive:
   - where:
       verb: Update
       subject: ^GroupSiteOnenoteNotebookSectionGroupSectionPage$|^GroupSiteOnenoteNotebookSectionPage$|^GroupSiteOnenotePage$|^GroupSiteOnenoteSectionGroupSectionPage$|^GroupSiteOnenoteSectionPage$
+      variant: ^(Patch|PatchExpanded|PatchViaIdentity|PatchViaIdentityExpanded)$
     remove: true
   - where:
       verb: Get

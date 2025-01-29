@@ -5,7 +5,7 @@
   // "BackupRestore": "^solutions.backupRestoreRoot$|^solutions.backupRestore.*.Actions$|^solutions.backupRestore.*.Functions$",
   // "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
   // "ChangeNotifications": "^subscriptions\\.",
-  // "CloudCommunications": "^users.onlineMeeting$|^users.presence$|^communications\\.",
+   "CloudCommunications": "^users.onlineMeeting$|^users.presence$|^communications\\.",
   // "Compliance": "^compliance\\.|^privacy.subjectRightsRequest$",
   // "CrossDeviceExperiences": "^users.userActivity$|^users.device$",
   // "Devices.CloudPrint": "^print\\.",
