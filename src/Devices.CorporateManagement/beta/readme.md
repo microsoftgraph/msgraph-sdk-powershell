@@ -36,9 +36,13 @@ directive:
       subject: ^(DeviceAppManagementMobileAppAssignmentCount|DeviceAppManagementMobileAppCategoryCount|DeviceAppManagementMobileAppContentVersionFileCount|DeviceAppManagementMobileAppContentVersionCount|DeviceAppManagementMobileAppContentVersionContainedAppCount|DeviceAppManagementMobileAppRelationshipCount)$
       variant: ^(Get|GetExpanded|GetViaIdentity|GetViaIdentityExpanded)([1-9]{1,2})$
     remove: true
-  # This cmdlet is causing build pipeline errors due multiple parameter types in the body parameter
+  # These cmdlet is causing build pipeline errors due multiple parameter types in the body parameter
   - where:
       verb: Update
-      subject: ^(DeviceAppManagementMobileAppRelationship)$
+      subject: ^DeviceAppManagementMobileAppRelationship$
+    remove: true
+  - where:
+      verb: New
+      subject: ^UserManagedDeviceLogCollectionResponse$
     remove: true
 ```
