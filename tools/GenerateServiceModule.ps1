@@ -41,8 +41,8 @@ $ModuleConfig = Join-Path $ModulePath "\$Module.md"
 
 . (Join-Path $ScriptRoot "\Utilities\FileUtils.ps1")
 Copy-ModuleTemplate -Destination $ModuleConfig -TemplatePath (Join-Path $TemplatePath "module.md") -ModuleName $Module
-#Clear autorest temp folder
-$TempPath = "C:\Users\CLOUDT~1\AppData\Local\Temp\"
+
+$TempPath = [System.IO.Path]::GetTempPath()
 
 # Check if there is any folder with autorest in the name
 $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
@@ -51,17 +51,17 @@ $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-
 $AutoRestTempFolder | ForEach-Object {
     $AutoRestTempFolder = $_
     #Delete files and folders if they exist
-    if(Test-Path $AutoRestTempFolder.FullName){
+    if (Test-Path $AutoRestTempFolder.FullName) {
         #Check if each file in the folder exists
         Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
             $File = $_
-            if(Test-Path $File.FullName){
+            if (Test-Path $File.FullName) {
                 #Check if the file is open and close it
-                try{
+                try {
                     $FileStream = [System.IO.File]::Open($File.FullName, [System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
                     $FileStream.Close()
                 }
-                catch{
+                catch {
                     Write-Host "Failed to close file: $File"
                 }
             }

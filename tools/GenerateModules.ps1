@@ -69,6 +69,27 @@ if ($ModuleToGenerate.Count -eq 0) {
     $ModuleToGenerate = $ModuleMapping.Keys
 }
 
+#This is to ensure that the autorest temp folder is cleared before generating the modules
+$TempPath = [System.IO.Path]::GetTempPath()
+# Check if there is any folder with autorest in the name
+$AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+
+# Go through each folder and forcefully delete autorest related files
+$AutoRestTempFolder | ForEach-Object {
+    $AutoRestTempFolder = $_
+    #Delete files and folders if they exist
+    if (Test-Path $AutoRestTempFolder.FullName) {
+        #Check if each file in the folder exists
+        Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
+            $File = $_
+            if (Test-Path $File.FullName) {
+                #Remove the file
+                Remove-Item -Path $File.FullName -Force
+            }
+        }
+    }
+}
+
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $ModuleToGenerate | ForEach-Object -Parallel {
     $Module = $_
