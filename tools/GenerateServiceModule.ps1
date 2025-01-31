@@ -41,7 +41,9 @@ $ModuleConfig = Join-Path $ModulePath "\$Module.md"
 
 . (Join-Path $ScriptRoot "\Utilities\FileUtils.ps1")
 Copy-ModuleTemplate -Destination $ModuleConfig -TemplatePath (Join-Path $TemplatePath "module.md") -ModuleName $Module
-
+#Clear autorest temp folder
+$TempPath = "C:\Users\CLOUDT~1\AppData\Local\Temp\"
+Get-ChildItem -Path $TempPath -Recurse -Force | Remove-Item -Recurse -Force
 $ApiVersion | ForEach-Object {
     $CurrentApiVersion = $_
     $OpenApiFile = Join-Path $OpenApiPath $CurrentApiVersion "$Module.yml"
