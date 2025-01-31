@@ -43,10 +43,23 @@ $ModuleConfig = Join-Path $ModulePath "\$Module.md"
 Copy-ModuleTemplate -Destination $ModuleConfig -TemplatePath (Join-Path $TemplatePath "module.md") -ModuleName $Module
 #Clear autorest temp folder
 $TempPath = "C:\Users\CLOUDT~1\AppData\Local\Temp\"
-try {
-    Get-ChildItem -Path $TempPath -Recurse -Force | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
-} catch {
-    Write-Host $_.Exception.Message
+
+# Check if there is any folder with autorest in the name
+$AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+
+# Inside each AutoRest folder, delete all files and folders
+$AutoRestTempFolder | ForEach-Object {
+    $AutoRestTempFolder = $_
+    #Delete files and folders if they exist
+    if(Test-Path $AutoRestTempFolder.FullName){
+        #Check if each file in the folder exists
+        Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
+            $File = $_
+            if(Test-Path $File.FullName){
+                Remove-Item -Path $File.FullName -Recurse -Force
+            }
+        }
+    }
 }
 $ApiVersion | ForEach-Object {
     $CurrentApiVersion = $_
