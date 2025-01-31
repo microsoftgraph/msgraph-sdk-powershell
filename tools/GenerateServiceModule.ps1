@@ -47,7 +47,7 @@ $TempPath = "C:\Users\CLOUDT~1\AppData\Local\Temp\"
 # Check if there is any folder with autorest in the name
 $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
 
-# Inside each AutoRest folder, delete all files and folders
+# Go through each folder and forcefully close any open files
 $AutoRestTempFolder | ForEach-Object {
     $AutoRestTempFolder = $_
     #Delete files and folders if they exist
@@ -56,7 +56,14 @@ $AutoRestTempFolder | ForEach-Object {
         Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
             $File = $_
             if(Test-Path $File.FullName){
-                Remove-Item -Path $File.FullName -Recurse -Force
+                #Check if the file is open and close it
+                try{
+                    $FileStream = [System.IO.File]::Open($File.FullName, [System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+                    $FileStream.Close()
+                }
+                catch{
+                    Write-Host "Failed to close file: $File"
+                }
             }
         }
     }
