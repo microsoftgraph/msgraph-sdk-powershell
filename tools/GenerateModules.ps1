@@ -94,7 +94,7 @@ $AutoRestTempFolder | ForEach-Object {
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
 $Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
-$ModuleToGenerate | ForEach-Object -Parallel {
+$ModuleToGenerate | ForEach-Object {
     $Module = $_
     Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
     $ServiceModuleParams = @{
@@ -130,7 +130,9 @@ $ModuleToGenerate | ForEach-Object -Parallel {
                         $FileStream.Close()
                     }
                     catch {
-                        Write-Host "Failed to close file: $File"
+                        Write-Host $_
+                        Write-Host "Failed to close file: Deleting it  $File"
+                        Remove-Item -Path $File.FullName -Force
                     }
                 }
             }
@@ -139,6 +141,6 @@ $ModuleToGenerate | ForEach-Object -Parallel {
                 
 
 
-} -ThrottleLimit $Throttle
+}
 $stopwatch.Stop()
 Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
