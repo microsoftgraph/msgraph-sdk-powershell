@@ -112,7 +112,9 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         RequiredModules         = $using:RequiredGraphModules
     }
     & $using:GenerateServiceModulePS1 @ServiceModuleParams
-
+    $TempPath = [System.IO.Path]::GetTempPath()
+    # Check if there is any folder with autorest in the name
+    $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
     # Go through each folder and forcefully close any open files
     $AutoRestTempFolder | ForEach-Object {
         $AutoRestTempFolder = $_
