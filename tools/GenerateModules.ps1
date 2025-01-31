@@ -116,7 +116,7 @@ $ModuleToGenerate | ForEach-Object {
     # Check if there is any folder with autorest in the name
     $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
     # Go through each folder and forcefully close any open files
-    $AutoRestTempFolder | ForEach-Object {
+    $AutoRestTempFolder | ForEach-Object -Parallel {
         $AutoRestTempFolder = $_
         #Delete files and folders if they exist
         if (Test-Path $AutoRestTempFolder.FullName) {
