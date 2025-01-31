@@ -42,37 +42,11 @@ $ModuleConfig = Join-Path $ModulePath "\$Module.md"
 . (Join-Path $ScriptRoot "\Utilities\FileUtils.ps1")
 Copy-ModuleTemplate -Destination $ModuleConfig -TemplatePath (Join-Path $TemplatePath "module.md") -ModuleName $Module
 
-$TempPath = [System.IO.Path]::GetTempPath()
-
-# Check if there is any folder with autorest in the name
-$AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
-
 $ApiVersion | ForEach-Object {
     $CurrentApiVersion = $_
     $OpenApiFile = Join-Path $OpenApiPath $CurrentApiVersion "$Module.yml"
     if (Test-Path $OpenApiFile) {
 
-        # Go through each folder and forcefully close any open files
-        $AutoRestTempFolder | ForEach-Object {
-            $AutoRestTempFolder = $_
-            #Delete files and folders if they exist
-            if (Test-Path $AutoRestTempFolder.FullName) {
-                #Check if each file in the folder exists
-                Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
-                    $File = $_
-                    if (Test-Path $File.FullName) {
-                        #Check if the file is open and close it
-                        try {
-                            $FileStream = [System.IO.File]::Open($File.FullName, [System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
-                            $FileStream.Close()
-                        }
-                        catch {
-                            Write-Host "Failed to close file: $File"
-                        }
-                    }
-                }
-            }
-        }
         Write-Host -ForegroundColor Green "-------------[$CurrentApiVersion]-------------"
         $NamespacePrefix = ($CurrentApiVersion -eq "beta" ? "$ModulePrefix.Beta" : $ModulePrefix)
         $ModuleFullName = "$NamespacePrefix.$Module"

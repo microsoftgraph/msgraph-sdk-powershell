@@ -82,6 +82,7 @@ $AutoRestTempFolder | ForEach-Object {
         #Check if each file in the folder exists
         Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
             $File = $_
+            Write-Host "Removing cached file $File"
             if (Test-Path $File.FullName) {
                 #Remove the file
                 Remove-Item -Path $File.FullName -Force
@@ -109,6 +110,31 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         RequiredModules         = $using:RequiredGraphModules
     }
     & $using:GenerateServiceModulePS1 @ServiceModuleParams
-}
+
+    # Go through each folder and forcefully close any open files
+    $AutoRestTempFolder | ForEach-Object {
+        $AutoRestTempFolder = $_
+        #Delete files and folders if they exist
+        if (Test-Path $AutoRestTempFolder.FullName) {
+            #Check if each file in the folder exists
+            Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
+                $File = $_
+                if (Test-Path $File.FullName) {
+                    #Check if the file is open and close it
+                    try {
+                        $FileStream = [System.IO.File]::Open($File.FullName, [System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+                        $FileStream.Close()
+                    }
+                    catch {
+                        Write-Host "Failed to close file: $File"
+                    }
+                }
+            }
+        }
+    }
+                
+
+
+} -ThrottleLimit 1
 $stopwatch.Stop()
 Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
