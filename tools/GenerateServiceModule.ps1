@@ -43,7 +43,11 @@ $ModuleConfig = Join-Path $ModulePath "\$Module.md"
 Copy-ModuleTemplate -Destination $ModuleConfig -TemplatePath (Join-Path $TemplatePath "module.md") -ModuleName $Module
 #Clear autorest temp folder
 $TempPath = "C:\Users\CLOUDT~1\AppData\Local\Temp\"
-Get-ChildItem -Path $TempPath -Recurse -Force | Remove-Item -Recurse -Force
+try {
+    Get-ChildItem -Path $TempPath -Recurse -Force | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+} catch {
+    Write-Host $_.Exception.Message
+}
 $ApiVersion | ForEach-Object {
     $CurrentApiVersion = $_
     $OpenApiFile = Join-Path $OpenApiPath $CurrentApiVersion "$Module.yml"
