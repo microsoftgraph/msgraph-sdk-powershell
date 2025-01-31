@@ -94,7 +94,7 @@ $AutoRestTempFolder | ForEach-Object {
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
 $Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
-$ModuleToGenerate | ForEach-Object {
+$ModuleToGenerate | ForEach-Object -Parallel {
     $Module = $_
     Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
     $ServiceModuleParams = @{
@@ -116,7 +116,7 @@ $ModuleToGenerate | ForEach-Object {
     # Check if there is any folder with autorest in the name
     $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
     # Go through each folder and forcefully close any open files
-    $AutoRestTempFolder | ForEach-Object -Parallel {
+    $AutoRestTempFolder | ForEach-Object {
         $AutoRestTempFolder = $_
         #Delete files and folders if they exist
         if (Test-Path $AutoRestTempFolder.FullName) {
@@ -131,7 +131,7 @@ $ModuleToGenerate | ForEach-Object {
                     }
                     catch {
                         Write-Host $_
-                        Write-Host "Failed to close file: Deleting it  $File"
+                        Write-Host "Failed to close file: $File"
                         Remove-Item -Path $File.FullName -Force
                     }
                 }
@@ -141,6 +141,6 @@ $ModuleToGenerate | ForEach-Object {
                 
 
 
-}
+} -ThrottleLimit $Throttle
 $stopwatch.Stop()
 Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
