@@ -74,9 +74,13 @@ extends:
               publishLocation: 'Container'
         steps:
         - script: |
-            echo "Increasing open file limit on windows agent"
-            powershell -Command "& {[System.IO.Directory]::SetCurrentDirectory($env:TEMP); $key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems'; $value = (Get-ItemProperty -Path $key -Name 'Windows').Windows; $value = $value -replace 'SharedSection=1024,20480,768', 'SharedSection=1024,20480,1024'; Set-ItemProperty -Path $key -Name 'Windows' -Value $value}"
-          displayName: "Increase Open File Limit on Windows"      
+            echo "Cleaning up temp files and folders..."
+            powershell -Command "& { 
+              $TempPath = 'C:\Users\CLOUDT~1\AppData\Local\Temp\'
+              Write-Output 'Removing temp files from ' $TempPath
+              Get-ChildItem -Path $TempPath -Recurse -Force | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+              Write-Output 'Temp cleanup complete!'
+            }"     
         - script: |
             git submodule update --init --recursive
         - template: .azure-pipelines/common-templates/install-tools.yml@self
