@@ -146,7 +146,7 @@ $ModuleToGenerate | ForEach-Object -Parallel {
                 
 
 
-} -ThrottleLimit 1
+} -ThrottleLimit $Throttle
 $stopwatch.Stop()
 
 Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
