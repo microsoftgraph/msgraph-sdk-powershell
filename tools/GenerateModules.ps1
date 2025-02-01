@@ -112,7 +112,7 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         ArtifactsLocation       = $using:ArtifactsLocation
         RequiredModules         = $using:RequiredGraphModules
     }
-    & $GenerateServiceModulePS1 @ServiceModuleParams
+    & $using:GenerateServiceModulePS1 @ServiceModuleParams
     # try{
     #     & $GenerateServiceModulePS1 @ServiceModuleParams
     # }
