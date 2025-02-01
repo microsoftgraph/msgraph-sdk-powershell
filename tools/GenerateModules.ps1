@@ -112,7 +112,14 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         ArtifactsLocation       = $using:ArtifactsLocation
         RequiredModules         = $using:RequiredGraphModules
     }
-    & $using:GenerateServiceModulePS1 @ServiceModuleParams
+    & $GenerateServiceModulePS1 @ServiceModuleParams
+    # try{
+    #     & $GenerateServiceModulePS1 @ServiceModuleParams
+    # }
+    # catch {
+    #     Write-Host "Failed to generate module $Module - version $ApiVersion"
+    #     Write-Host $_.Exception.Message
+    # }
     function Get-OpenFiles {
         param (
             [string] $Path
