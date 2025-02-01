@@ -91,24 +91,6 @@ $AutoRestTempFolder | ForEach-Object {
     }
 }
 
-function Get-OpenFiles {
-    param (
-        [string] $Path
-    )
-    $OpenFiles = @()
-    $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
-    $Files | ForEach-Object {
-        $File = $_
-        try {
-            $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
-            $FileStream.Close()
-        }
-        catch {
-            $OpenFiles += $File.FullName
-        }
-    }
-    return $OpenFiles
-}
 
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
@@ -131,6 +113,24 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         RequiredModules         = $using:RequiredGraphModules
     }
     & $using:GenerateServiceModulePS1 @ServiceModuleParams
+    function Get-OpenFiles {
+        param (
+            [string] $Path
+        )
+        $OpenFiles = @()
+        $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+        $Files | ForEach-Object {
+            $File = $_
+            try {
+                $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+                $FileStream.Close()
+            }
+            catch {
+                $OpenFiles += $File.FullName
+            }
+        }
+        return $OpenFiles
+    }
     #Call a function to check if there are any open files in the temp folder. Recurse through the folder until all files are closed
     $OpenFiles = Get-OpenFiles -Path $TempPath
     if ($OpenFiles.Count -gt 0) {
