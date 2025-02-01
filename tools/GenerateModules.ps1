@@ -91,6 +91,25 @@ $AutoRestTempFolder | ForEach-Object {
     }
 }
 
+function Get-OpenFiles {
+    param (
+        [string] $Path
+    )
+    $OpenFiles = @()
+    $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+    $Files | ForEach-Object {
+        $File = $_
+        try {
+            $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+            $FileStream.Close()
+        }
+        catch {
+            $OpenFiles += $File.FullName
+        }
+    }
+    return $OpenFiles
+}
+
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
 $Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
@@ -119,24 +138,8 @@ $ModuleToGenerate | ForEach-Object -Parallel {
     }
                 
 
+
 } -ThrottleLimit $Throttle
 $stopwatch.Stop()
-function Get-OpenFiles {
-    param (
-        [string] $Path
-    )
-    $OpenFiles = @()
-    $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
-    $Files | ForEach-Object {
-        $File = $_
-        try {
-            $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
-            $FileStream.Close()
-        }
-        catch {
-            $OpenFiles += $File.FullName
-        }
-    }
-    return $OpenFiles
-}
+
 Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
