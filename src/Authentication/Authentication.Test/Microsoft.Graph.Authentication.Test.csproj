@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net472</TargetFrameworks>
+    <TargetFrameworks>net8.0;net472</TargetFrameworks>
     <IsPackable>false</IsPackable>
     <Version>2.25.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
     <!-- As described in this post https://devblogs.microsoft.com/powershell/depending-on-the-right-powershell-nuget-package-in-your-net-project, reference the SDK for dotnetcore-->
-    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.5.0" PrivateAssets="all" Condition="'$(TargetFramework)' == 'net6.0'" />
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.5.0" PrivateAssets="all" Condition="'$(TargetFramework)' == 'net8.0'" />
     <PackageReference Include="Moq" Version="4.20.70" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">

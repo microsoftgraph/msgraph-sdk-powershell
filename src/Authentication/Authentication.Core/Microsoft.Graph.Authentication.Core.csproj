@@ -2,7 +2,7 @@
   <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
   <PropertyGroup>
     <LangVersion>9.0</LangVersion>
-    <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net8.0;net472</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
     <Version>2.25.0</Version>
     <!-- Suppress .NET Target Framework Moniker (TFM) Support Build Warnings -->
@@ -15,7 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.13.2" />
     <PackageReference Include="Azure.Identity.Broker" Version="1.2.0" />
-    <PackageReference Include="Microsoft.Graph.Core" Version="3.2.3" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="3.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
