@@ -207,8 +207,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var tokenCrdential = await GetTokenCredentialAsync(authContext, default).ConfigureAwait(false);
-            return new AzureIdentityAccessTokenProvider(credential: tokenCrdential, scopes: GetScopes(authContext));
+            var tokenCredential = await GetTokenCredentialAsync(authContext, default).ConfigureAwait(false);
+            return new AzureIdentityAccessTokenProvider(credential:tokenCredential, observabilityOptions: null,isCaeEnabled: true,scopes: GetScopes(authContext));
         }
 
         public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken)

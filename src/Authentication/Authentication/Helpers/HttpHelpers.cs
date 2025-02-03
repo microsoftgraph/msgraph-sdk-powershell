@@ -54,7 +54,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 new NationalCloudHandler(),
                 new ODataQueryOptionsHandler(),
                 new HttpVersionHandler(),
-                new CompressionHandler(),
                 new RetryHandler(new RetryHandlerOption{
                     Delay = requestContext.RetryDelay,
                     MaxRetry = requestContext.MaxRetry,
