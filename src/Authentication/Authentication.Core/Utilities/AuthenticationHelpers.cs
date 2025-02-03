@@ -60,7 +60,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-
+            //There is need for explicitly adding TenantId to the TokenCredentialOptions for EnvironmentCredential due to stricter security requirements.
+            authContext.TenantId = EnvironmentVariables.TenantId;
             var tokenCredentialOptions = new TokenCredentialOptions
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext))
