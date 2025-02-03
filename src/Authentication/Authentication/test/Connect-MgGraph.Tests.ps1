@@ -9,7 +9,7 @@ BeforeAll {
     $RandomClientId = (New-Guid).Guid
     
     $AvailableAzModule = Get-Module Az.Accounts -ListAvailable
-    if ($AvailableAzModule.Count -lt 1) {
+    if (-not($AvailableAzModule[0].Version -eq '4.0.2')) {
         Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
     }
 }
