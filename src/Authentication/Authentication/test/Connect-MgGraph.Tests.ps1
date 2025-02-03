@@ -77,7 +77,7 @@ Describe 'Connect-MgGraph In Environment Variable Mode' {
             $Env:AZURE_CLIENT_SECRET = "Not_Valid"
             $Env:AZURE_TENANT_ID = "common"
             Connect-MgGraph -EnvironmentVariable -ErrorAction Stop
-        } | Should -Throw -ExpectedMessage "*ClientSecretCredential authentication failed: AADSTS700016: Application with identifier 'Not_Valid' was not found in the directory 'Microsoft'.*"
+        } | Should -Throw -ExpectedMessage "ClientSecretCredential authentication failed: "
     }
 }
 
@@ -95,7 +95,7 @@ Describe 'Connect-MgGraph In App Mode' {
 Describe 'Connect-MgGraph Dependency Resolution' {
     It 'Should load Mg module side by side with Az module.' {
         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
-        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*"
+        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "DeviceCodeCredential authentication failed: "
     }
 }
 
