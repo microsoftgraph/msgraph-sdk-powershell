@@ -8,8 +8,8 @@ BeforeAll {
     Import-Module $ModulePath -Force
     $RandomClientId = (New-Guid).Guid
     
-    $AvailableAzModule = Get-Module Az.Accounts -ListAvailable
-    if (-not($AvailableAzModule[0].Version -eq '4.0.2')) {
+    $AvailableAzModule = Get-InstalledModule Az.Accounts
+    if (-not($AvailableAzModule.Version -eq '4.0.2')) {
         Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
     }
 }
