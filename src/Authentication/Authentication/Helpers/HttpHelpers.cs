@@ -68,7 +68,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 : GraphClientFactory.Create(delegatingHandlers, finalHandler: new HttpClientHandler
                 {
                     AllowAutoRedirect = false,
-                    AutomaticDecompression = DecompressionMethods.None
+                    AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
                 });
             httpClient.Timeout = requestContext.ClientTimeout;
             return httpClient;
