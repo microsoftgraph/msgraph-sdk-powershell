@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: People
   version: v1.0
@@ -461,6 +461,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.selectionLikelihoodInfo:
       title: selectionLikelihoodInfo
       enum:
