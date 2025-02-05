@@ -34,3 +34,23 @@ New-MgBetaInvitation -BodyParameter $params
 ```
 This example will reset the redemption status of a guest user
 
+### Example 2: Send CC email for a new invited user.
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$InvitedUserMessageInfo = @{
+	CustomizedMessageBody = "Welcome!"
+	ccRecipients = @(
+		@{
+			emailAddress = @{
+				address = "user@ccaddress.com"
+			}
+		}
+	)
+}
+
+New-MgBetaInvitation -InvitedUserDisplayName "User" -InvitedUserEmailAddress "user@logonaddress.com" -InviteRedirectUrl "https://myapplications.microsoft.com" -InvitedUserMessageInfo $InvitedUserMessageInfo -SendInvitationMessage -Debug
+```
+This example will send cc email to a new invited user

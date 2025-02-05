@@ -5,9 +5,8 @@ steps:
   - task: UseDotNet@2
     displayName: Use .NET SDK
     inputs:
-      debugMode: false
-      version: 8.x
-
+      version: 8.x     
+      
   - task: NuGetToolInstaller@1
     displayName: Install Nuget
 
