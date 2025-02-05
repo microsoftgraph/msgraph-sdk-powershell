@@ -74,4 +74,9 @@ directive:
     set:
       subject: DeviceAppManagement$2
 # End alias
+  - where:
+      verb: New
+      subject: ^UserManagedDeviceLogCollectionResponse$
+      variant: ^(Create|CreateExpanded|CreateViaIdentity|CreateViaIdentityExpanded)([1-9]{1,2})$
+    remove: true
 ```

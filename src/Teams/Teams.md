@@ -35,17 +35,6 @@ directive:
   - where:
       subject: (.*)TeamworkTeamTemplateDefinitionTeamDefinition([A-Z]*)$
     remove: true
-# Alias for backward compatibility.
-  - where:
-      verb: Get
-      subject: ^(TeamMessage|TeamworkDeletedTeamMessage)$
-    set:
-      alias: ${verb}-Mg${subject-prefix}${subject}
-  - where:
-      verb: Get
-      subject: ^(Team|GroupTeam)All(ChannelCount)$
-    set:
-      alias: ${verb}-Mg${subject-prefix}${subject}
 # Rename AllChannel due to https://github.com/Azure/autorest.powershell/issues/1002.
   - where:
       verb: Get

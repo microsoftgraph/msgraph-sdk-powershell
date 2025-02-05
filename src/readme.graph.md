@@ -844,5 +844,25 @@ directive:
       subject: OnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupOnPremiseAgentGroupByRef
     set:
       alias: ${verb}-Mg${subject-prefix}OnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
+  - where:
+      verb: Remove
+      subject: ^(UserDeviceFromManagement)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      verb: Invoke
+      subject: ^(InvalidateUserRefreshToken)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      verb: Get
+      subject: ^(TeamMessage|TeamworkDeletedTeamMessage)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      verb: Get
+      subject: ^(Team|GroupTeam)All(ChannelCount)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
       
 ```
