@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Identity.SignIns
   version: v1.0-beta
@@ -9172,11 +9172,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get compliantNetworkNamedLocation
-      description: Read the properties and relationships of a compliantNetworkNamedLocation object.
+      summary: Get namedLocation
+      description: Retrieve the properties and relationships of a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/compliantnetworknamedlocation-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-beta
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9220,11 +9220,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-beta
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9255,11 +9255,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete namedLocation
+      description: Delete a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-beta
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -11005,11 +11005,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: Get riskDetection
-      description: Retrieve the properties of a riskDetection object.
+      summary: List riskDetection
+      description: Retrieve the properties of a collection of riskDetection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-beta
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -24931,11 +24931,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Create multiTenantOrganization
-      description: 'Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.'
+      summary: Update multiTenantOrganization
+      description: Update the properties of a multi-tenant organization.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-beta
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -35052,7 +35052,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -36066,6 +36066,9 @@ components:
         displayName:
           type: string
           description: Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
+          nullable: true
+        externalCloudAuthorizedApplicationId:
+          type: string
           nullable: true
         tenantId:
           type: string
@@ -39231,7 +39234,7 @@ components:
             type: object
     microsoft.graph.appRoleAssignment:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
         - title: appRoleAssignment
           type: object
           properties:
@@ -39771,6 +39774,8 @@ components:
               description: The results of every partner agent's installation status on Cloud PC.
             powerState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
+            productType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProductType'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -41705,7 +41710,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -42347,6 +42352,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             contactMergeSuggestions:
               $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
+            exchange:
+              $ref: '#/components/schemas/microsoft.graph.exchangeSettings'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             regionalAndLanguageSettings:
@@ -46235,6 +46242,8 @@ components:
       properties:
         capabilityType:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        licenseType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryLicenseType'
         primaryRegion:
           type: string
           description: The primary and mainly used region where the Cloud PC is located.
@@ -46344,6 +46353,16 @@ components:
       enum:
         - running
         - poweredOff
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcProductType:
+      title: cloudPcProductType
+      enum:
+        - enterprise
+        - frontline
+        - devBox
+        - powerAutomate
+        - business
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcProvisioningType:
@@ -47878,7 +47897,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: A collection of all the messages in the channel. A navigation property. Nullable.
+              description: A collection of all the messages in the channel. Nullable.
               x-ms-navigationProperty: true
             sharedWithTeams:
               type: array
@@ -47890,7 +47909,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
-              description: A collection of all the tabs in the channel. A navigation property.
+              description: A collection of all the tabs in the channel.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -47907,6 +47926,10 @@ components:
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
+              nullable: true
+            isActivitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts include activities from the original shift.
               nullable: true
             isCrossLocationShiftRequestApprovalRequired:
               type: boolean
@@ -51961,6 +51984,22 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.exchangeSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: exchangeSettings
+          type: object
+          properties:
+            inPlaceArchiveMailboxId:
+              type: string
+              description: The unique identifier for the user's in-place archive mailbox.
+              nullable: true
+            primaryMailboxId:
+              type: string
+              description: The unique identifier for the user's primary mailbox.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.userInsightsSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -52921,11 +52960,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -53374,7 +53413,7 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: Either a code snippet or place holder. application/vnd.microsoft.card.announcement: An announcement header. application/vnd.microsoft.card.fluidEmbedCard: A Microsoft Loop component.'
           nullable: true
         contentUrl:
           type: string
@@ -53611,6 +53650,13 @@ components:
         - none
         - failover
         - failback
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDisasterRecoveryLicenseType:
+      title: cloudPcDisasterRecoveryLicenseType
+      enum:
+        - none
+        - standard
         - unknownFutureValue
       type: string
     microsoft.graph.actionState:
@@ -58857,6 +58903,10 @@ components:
           type: boolean
           description: 'If true, the restriction isn''t enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.'
           nullable: true
+        isStateSetByMicrosoft:
+          type: boolean
+          description: 'If true, Microsoft sets the identifierUriRestriction state. If false, the tenant modifies the identifierUriRestriction state. Read-only.'
+          readOnly: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
@@ -61066,6 +61116,10 @@ components:
           type: string
           description: The time the entry is recorded.
           format: date-time
+        isAtApprovedLocation:
+          type: boolean
+          description: Indicates whether this action happens at an approved location.
+          nullable: true
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
       additionalProperties:
@@ -61718,6 +61772,7 @@ components:
         - project
         - driveItem
         - user
+        - teamsChannel
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
