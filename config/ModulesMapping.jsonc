@@ -1,4 +1,4 @@
-{
+ {
   "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
   "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.|^solutions.booking.*.Actions$|^solutions.bookingBusiness$|^solutions.bookingCurrency$|^solutions.virtualEventsRoot$|^solutions.booking.*.Functions$|^solutions.solutionsRoot$",
   "BusinessScenario": "^solutions.businessScenario$|^solutions.BusinessScenario.*.Actions$|^solutions.BusinessScenario.*.Functions$",
@@ -19,9 +19,9 @@
   "Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
   "Financials": "^financials\\.",
   "Groups": "^groups.group$|^groups.directoryObject$|^groups.conversation$|^groups.endpoint$|^groups.extension$|^groups.groupLifecyclePolicy$|^groups.resourceSpecificPermissionGrant$|^groups.profilePhoto$|^groups.conversationThread$|^groupLifecyclePolicies\\.|^users.group$|^groups.directorySetting$|^groups.*.Actions$|^groups.*.Functions$|^groupSettings\\.|^groups.groupSetting$|^groupSettingTemplates\\.",
-  "Identity.DirectoryManagement": "^administrativeUnits\\.|^contacts\\.|^devices\\.|^domains\\.|^directoryRoles\\.|^directoryRoleTemplates\\.|^directorySettingTemplates\\.|^settings\\.|^subscribedSkus\\.|^contracts\\.|^directory\\.|^users.scopedRoleMembership$|^organization.organization$|^organization.organizationalBranding$|^organization.organizationSettings$|^organization.*.Actions$|^organization.extension$|^tenantRelationships.*.Actions$|admin.peopleAdminSettings$|^organization\\.partnerInformation$",
+  "Identity.DirectoryManagement": "^administrativeUnits\\.|^contacts\\.|^devices\\.|^domains\\.|^directoryRoles\\.|^directoryRoleTemplates\\.|^directorySettingTemplates\\.|^settings\\.|^subscribedSkus\\.|^contracts\\.|^directory\\.|^users.scopedRoleMembership$|^organization.organization$|^organization.organizationalBranding$|^organization.organizationSettings$|^organization.*.Actions$|^organization.extension$|^tenantRelationships.*.Actions$|^tenantRelationships.*.Functions$|admin.peopleAdminSettings$|^organization\\.partnerInformation$",
   "Identity.Governance": "^accessReviews\\.|^businessFlowTemplates\\.|^programs\\.|^programControls\\.|^programControlTypes\\.|^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedRoleAssignmentRequests\\.|^privilegedApproval\\.|^privilegedOperationEvents\\.|^privilegedAccess\\.|^agreements\\.|^users.agreementAcceptance$|^identityGovernance\\.|^roleManagement.rbacApplication$|^roleManagement.*.Functions$|roleManagement.*.Actions$",
-  "Identity.SignIns": "^organization.certificateBasedAuthConfiguration$|^invitations\\.|^identityProviders\\.|^oauth2PermissionGrants\\.|^identityProtection\\.|^dataPolicyOperations\\.|^identity\\.|^trustFramework\\.|^informationProtection\\.|^policies\\.|^users.authentication$|^users.informationProtection$|^tenantRelationships.multiTenantOrganization$|^me.authentication$",
+  "Identity.SignIns": "^organization.certificateBasedAuthConfiguration$|^invitations\\.|^identityProviders\\.|^oauth2PermissionGrants\\.|^identityProtection\\.|^dataPolicyOperations\\.|^identity\\.|^trustFramework\\.|^informationProtection\\.|^policies\\.|^users.authentication$|^users.informationProtection$|^tenantRelationships.multiTenantOrganization$|^policies.deviceRegistrationPolicy$|^policies.deviceRegistrationPolicy$",
   "Identity.Partner": "^tenantRelationships.delegatedAdminRelationship$|^tenantRelationships.delegatedAdminCustomer$",
   "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
   "ManagedTenants": "^tenantRelationships.managedTenant$",
@@ -40,4 +40,4 @@
   "Users.Actions": "^users.*.Actions$",
   "Users.Functions": "^users.*.Functions$",
   "WindowsUpdates": "^admin.adminWindows$"
-}
+ }
