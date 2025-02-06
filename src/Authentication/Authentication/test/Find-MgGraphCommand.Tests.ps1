@@ -73,12 +73,12 @@ Describe "Find-MgGraphCommand Command" {
         }
         It 'Should find command using regex' {
             {
-                $Uri = "/users/{id}/calendars/.*"
+                $Uri = "/groups/{group-id}/events/.*"
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -Method POST -ApiVersion beta
                 $MgCommand.Count | Should -BeGreaterThan 1
                 $MgCommand.Method | Select-Object -Unique | Should -Be "POST"
                 $MgCommand.APIVersion | Select-Object -Unique | Should -Be "beta"
-                $MgCommand.Command | Select-Object -Unique | Should -BeLike "*-MgBetaUserCalendar*"
+                $MgCommand.Command | Select-Object -Unique | Should -BeLike "*-MgBetaGroupEvent*"
             } | Should -Not -Throw
         }
         It 'Should find command using action with FQNamespace.' {
