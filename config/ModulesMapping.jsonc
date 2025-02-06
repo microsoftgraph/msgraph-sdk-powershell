@@ -3,7 +3,7 @@
   "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.|^solutions.booking.*.Actions$|^solutions.bookingBusiness$|^solutions.bookingCurrency$|^solutions.virtualEventsRoot$|^solutions.booking.*.Functions$|^solutions.solutionsRoot$",
   "BusinessScenario": "^solutions.businessScenario$|^solutions.BusinessScenario.*.Actions$|^solutions.BusinessScenario.*.Functions$",
   "BackupRestore": "^solutions.backupRestoreRoot$|^solutions.backupRestore.*.Actions$|^solutions.backupRestore.*.Functions$",
-  "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$|^user.calendar_getSchedule$",
+  "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
   "ChangeNotifications": "^subscriptions\\.",
   "CloudCommunications": "^users.onlineMeeting$|^users.presence$|^communications\\.",
   "Compliance": "^compliance\\.|^privacy.subjectRightsRequest$",
