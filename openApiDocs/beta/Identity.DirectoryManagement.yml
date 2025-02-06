@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Identity.DirectoryManagement
   version: v1.0-beta
@@ -2304,7 +2304,7 @@ paths:
       tags:
         - administrativeUnits.administrativeUnit.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -4270,7 +4270,7 @@ paths:
       tags:
         - contacts.orgContact.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -5684,7 +5684,7 @@ paths:
       tags:
         - contracts.contract.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -7533,7 +7533,7 @@ paths:
       tags:
         - devices.device.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -7898,6 +7898,68 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/registeredOwners/{directoryObject-id}/microsoft.graph.appRoleAssignment':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
+      operationId: device_GetRegisteredOwnerAsAppRoleAssignment
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
   '/devices/{device-id}/registeredOwners/{directoryObject-id}/microsoft.graph.endpoint':
     get:
       tags:
@@ -8233,6 +8295,106 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/registeredOwners/microsoft.graph.appRoleAssignment':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
+      operationId: device_ListRegisteredOwnerAsAppRoleAssignment
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.appRoleAssignmentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/devices/{device-id}/registeredOwners/microsoft.graph.appRoleAssignment/$count':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the number of the resource
+      operationId: device.RegisteredOwner_GetCountAsAppRoleAssignment
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/devices/{device-id}/registeredOwners/microsoft.graph.endpoint':
     get:
       tags:
@@ -8645,6 +8807,68 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/registeredUsers/{directoryObject-id}/microsoft.graph.appRoleAssignment':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
+      operationId: device_GetRegisteredUserAsAppRoleAssignment
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
   '/devices/{device-id}/registeredUsers/{directoryObject-id}/microsoft.graph.endpoint':
     get:
       tags:
@@ -8980,6 +9204,106 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/registeredUsers/microsoft.graph.appRoleAssignment':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
+      operationId: device_ListRegisteredUserAsAppRoleAssignment
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.appRoleAssignmentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/devices/{device-id}/registeredUsers/microsoft.graph.appRoleAssignment/$count':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get the number of the resource
+      operationId: device.RegisteredUser_GetCountAsAppRoleAssignment
+      parameters:
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/devices/{device-id}/registeredUsers/microsoft.graph.endpoint':
     get:
       tags:
@@ -14663,7 +14987,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -22249,7 +22573,7 @@ paths:
       tags:
         - directoryRoles.directoryRole.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -23255,7 +23579,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -23912,7 +24236,7 @@ paths:
       tags:
         - directorySettingTemplates.directorySettingTemplate.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -28652,7 +28976,7 @@ paths:
       tags:
         - organization.organization.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -30123,6 +30447,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/microsoft.graph.findTenantInformationByDomainName(domainName=''{domainName}'')':
+    get:
+      tags:
+        - tenantRelationships.tenantRelationship.Functions
+      summary: Invoke function findTenantInformationByDomainName
+      description: 'Given a domain name, search for a tenant and read its tenantInformation. You can use this API to validate tenant information and use their tenantId to configure cross-tenant access settings between you and the tenant.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-findtenantinformationbydomainname?view=graph-rest-beta
+      operationId: tenantRelationship_findTenantInformationGraphBPreDomainName
+      parameters:
+        - name: domainName
+          in: path
+          description: 'Usage: domainName=''{domainName}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantInformation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/tenantRelationships/microsoft.graph.findTenantInformationByTenantId(tenantId=''{tenantId}'')':
+    get:
+      tags:
+        - tenantRelationships.tenantRelationship.Functions
+      summary: Invoke function findTenantInformationByTenantId
+      description: 'Given a tenant ID, search for a tenant and read its tenantInformation. You can use this API to validate tenant information and use their tenantId to configure cross-tenant cross-tenant access settings between you and the tenant.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-findtenantinformationbytenantid?view=graph-rest-beta
+      operationId: tenantRelationship_findTenantInformationGraphBPreTenantId
+      parameters:
+        - name: tenantId
+          in: path
+          description: 'Usage: tenantId=''{tenantId}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantInformation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/scopedRoleMemberOf':
     get:
       tags:
@@ -31916,7 +32298,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -32481,6 +32863,49 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn''t require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners. There can be a maximum of 100 owners on a device template.  Supports $expand.'
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.appRoleAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: appRoleAssignment
+          type: object
+          properties:
+            appRoleId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: 'The identifier (id) for the app role that is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application hasn''t declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
+              format: uuid
+            creationTimestamp:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            principalDisplayName:
+              type: string
+              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).'
+              nullable: true
+            principalId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: 'The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.'
+              format: uuid
+              nullable: true
+            principalType:
+              type: string
+              description: 'The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.'
+              nullable: true
+            resourceDisplayName:
+              type: string
+              description: The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
+              nullable: true
+            resourceId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
+              format: uuid
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.endpoint:
@@ -33835,6 +34260,27 @@ components:
               description: A list of all subscription IDs associated with this SKU.
           additionalProperties:
             type: object
+    microsoft.graph.tenantInformation:
+      title: tenantInformation
+      type: object
+      properties:
+        defaultDomainName:
+          type: string
+          description: Primary domain name of a Microsoft Entra tenant.
+          nullable: true
+        displayName:
+          type: string
+          description: Display name of a Microsoft Entra tenant.
+          nullable: true
+        federationBrandName:
+          type: string
+          description: Name shown to users that sign in to a Microsoft Entra tenant.
+          nullable: true
+        tenantId:
+          type: string
+          description: Unique identifier of a Microsoft Entra tenant.
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -33969,7 +34415,7 @@ components:
           readOnly: true
         isPublisherAttested:
           type: boolean
-          description: Indicates whether the application has been self-attested by the application developer or the publisher.
+          description: Indicates whether the application developer or publisher completed Publisher Attestation.
           nullable: true
         lastCertificationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -34696,49 +35142,6 @@ components:
             onPremisesGroupType:
               type: string
               description: 'Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Microsoft Entra security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn''t explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.appRoleAssignment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: appRoleAssignment
-          type: object
-          properties:
-            appRoleId:
-              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
-              type: string
-              description: 'The identifier (id) for the app role that is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application hasn''t declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
-              format: uuid
-            creationTimestamp:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            principalDisplayName:
-              type: string
-              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).'
-              nullable: true
-            principalId:
-              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
-              type: string
-              description: 'The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.'
-              format: uuid
-              nullable: true
-            principalType:
-              type: string
-              description: 'The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.'
-              nullable: true
-            resourceDisplayName:
-              type: string
-              description: The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
-              nullable: true
-            resourceId:
-              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
-              type: string
-              description: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-              format: uuid
               nullable: true
           additionalProperties:
             type: object
@@ -36528,6 +36931,8 @@ components:
               description: The results of every partner agent's installation status on Cloud PC.
             powerState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
+            productType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProductType'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -37784,7 +38189,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -38316,6 +38721,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             contactMergeSuggestions:
               $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
+            exchange:
+              $ref: '#/components/schemas/microsoft.graph.exchangeSettings'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             regionalAndLanguageSettings:
@@ -38692,11 +39099,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -39608,6 +40015,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.deviceTemplate'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.appRoleAssignmentCollectionResponse:
+      title: Collection of appRoleAssignment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -42026,7 +42446,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: A collection of all the messages in the channel. A navigation property. Nullable.
+              description: A collection of all the messages in the channel. Nullable.
               x-ms-navigationProperty: true
             sharedWithTeams:
               type: array
@@ -42038,7 +42458,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
-              description: A collection of all the tabs in the channel. A navigation property.
+              description: A collection of all the tabs in the channel.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -42133,6 +42553,10 @@ components:
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
+              nullable: true
+            isActivitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts include activities from the original shift.
               nullable: true
             isCrossLocationShiftRequestApprovalRequired:
               type: boolean
@@ -43284,6 +43708,8 @@ components:
       properties:
         capabilityType:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        licenseType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryLicenseType'
         primaryRegion:
           type: string
           description: The primary and mainly used region where the Cloud PC is located.
@@ -43393,6 +43819,16 @@ components:
       enum:
         - running
         - poweredOff
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcProductType:
+      title: cloudPcProductType
+      enum:
+        - enterprise
+        - frontline
+        - devBox
+        - powerAutomate
+        - business
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcProvisioningType:
@@ -47464,6 +47900,22 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.exchangeSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: exchangeSettings
+          type: object
+          properties:
+            inPlaceArchiveMailboxId:
+              type: string
+              description: The unique identifier for the user's in-place archive mailbox.
+              nullable: true
+            primaryMailboxId:
+              type: string
+              description: The unique identifier for the user's primary mailbox.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.userInsightsSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -51053,7 +51505,7 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: Either a code snippet or place holder. application/vnd.microsoft.card.announcement: An announcement header. application/vnd.microsoft.card.fluidEmbedCard: A Microsoft Loop component.'
           nullable: true
         contentUrl:
           type: string
@@ -51251,6 +51703,13 @@ components:
         - none
         - failover
         - failback
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDisasterRecoveryLicenseType:
+      title: cloudPcDisasterRecoveryLicenseType
+      enum:
+        - none
+        - standard
         - unknownFutureValue
       type: string
     microsoft.graph.actionState:
@@ -55326,6 +55785,7 @@ components:
         - project
         - driveItem
         - user
+        - teamsChannel
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -56026,6 +56486,10 @@ components:
           type: string
           description: The time the entry is recorded.
           format: date-time
+        isAtApprovedLocation:
+          type: boolean
+          description: Indicates whether this action happens at an approved location.
+          nullable: true
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
       additionalProperties:
@@ -58038,6 +58502,10 @@ components:
           type: boolean
           description: 'If true, the restriction isn''t enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.'
           nullable: true
+        isStateSetByMicrosoft:
+          type: boolean
+          description: 'If true, Microsoft sets the identifierUriRestriction state. If false, the tenant modifies the identifierUriRestriction state. Read-only.'
+          readOnly: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
@@ -61499,6 +61967,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.deviceTemplateCollectionResponse'
+    microsoft.graph.appRoleAssignmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.appRoleAssignmentCollectionResponse'
     microsoft.graph.endpointCollectionResponse:
       description: Retrieved collection
       content:
