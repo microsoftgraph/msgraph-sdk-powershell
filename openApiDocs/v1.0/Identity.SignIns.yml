@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Identity.SignIns
   version: v1.0
@@ -5826,11 +5826,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get namedLocation
-      description: Retrieve the properties and relationships of a namedLocation object.
+      summary: Get countryNamedLocation
+      description: Retrieve the properties and relationships of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -5874,11 +5874,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -16763,11 +16763,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Create multiTenantOrganization
-      description: 'Create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.'
+      summary: Update multiTenantOrganization
+      description: Update the properties of a multitenant organization.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -20782,7 +20782,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -25285,7 +25285,7 @@ components:
           properties:
             locale:
               type: string
-              description: 'Represents the location that a user selected in Microsoft Teams and doesn''t follow the Office''s locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.'
+              description: 'Represents the location that a user selected in Microsoft Teams and doesn''t follow the Office''s locale setting. A user''s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.'
               nullable: true
             region:
               type: string
@@ -29044,6 +29044,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The IDs for the workforce integrations associated with this schedule.
             offerShiftRequests:
               type: array
               items:
@@ -29405,7 +29406,7 @@ components:
             description: 'Apple bulk enrollment without user challenge. (DEP, Apple Configurator, Mobile Config)'
             name: appleBulkWithoutUser
           - value: windowsAzureADJoin
-            description: Windows 10 Azure AD Join.
+            description: Windows 10 Entra ID (Azure AD) Join.
             name: windowsAzureADJoin
           - value: windowsBulkUserless
             description: Windows 10 Bulk enrollment through ICD with certificate.
@@ -29414,19 +29415,19 @@ components:
             description: Windows 10 automatic enrollment. (Add work account)
             name: windowsAutoEnrollment
           - value: windowsBulkAzureDomainJoin
-            description: Windows 10 bulk Azure AD Join.
+            description: Windows 10 bulk Entra ID (Azure AD) Join.
             name: windowsBulkAzureDomainJoin
           - value: windowsCoManagement
             description: Windows 10 Co-Management triggered by AutoPilot or Group Policy.
             name: windowsCoManagement
           - value: windowsAzureADJoinUsingDeviceAuth
-            description: Windows 10 Azure AD Join using Device Auth.
+            description: Windows 10 Entra ID (Azure AD) Join using Device Auth.
             name: windowsAzureADJoinUsingDeviceAuth
           - value: appleUserEnrollment
-            description: Device managed by Apple user enrollment
+            description: Indicates the device is enrolled via Apple User Enrollment with Company Portal. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities
             name: appleUserEnrollment
           - value: appleUserEnrollmentWithServiceAccount
-            description: Device managed by Apple user enrollment with service account
+            description: Indicates the device is enrolled via Apple User Enrollment with Company Portal using a device enrollment manager user. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities
             name: appleUserEnrollmentWithServiceAccount
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
@@ -29712,6 +29713,7 @@ components:
         - unknown
         - company
         - personal
+        - unknownFutureValue
       type: string
       description: Owner type of device.
       x-ms-enum:
@@ -29719,14 +29721,17 @@ components:
         modelAsString: false
         values:
           - value: unknown
-            description: Unknown.
+            description: Unknown device owner type.
             name: unknown
           - value: company
-            description: Owned by company.
+            description: Corporate device owner type.
             name: company
           - value: personal
-            description: Owned by person.
+            description: Personal device owner type.
             name: personal
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managementAgentType:
       title: managementAgentType
       enum:
@@ -29915,7 +29920,7 @@ components:
               format: int32
           additionalProperties:
             type: object
-          description: Device Configuration State for a given device.
+          description: Support for this Entity is being deprecated starting May 2026 & will no longer be supported.
     microsoft.graph.deviceLogCollectionResponse:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -34391,6 +34396,7 @@ components:
       properties:
         allowTextOnly:
           type: boolean
+          description: Indicates whether only text is allowed in the meeting chat. Optional.
           nullable: true
       additionalProperties:
         type: object
