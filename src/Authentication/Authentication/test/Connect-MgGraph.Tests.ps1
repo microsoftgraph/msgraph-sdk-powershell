@@ -69,7 +69,7 @@ Describe 'Connect-MgGraph In Delegated Mode' {
 
 Describe 'Connect-MgGraph In Environment Variable Mode' {
     It 'Should throw exception when supported environment variables are not specified' {
-        { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "*EnvironmentCredential authentication unavailable*"
+        { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "*EnvironmentCredential authentication unavailable. Environment variables are not fully configured*"
     }
     It 'Should attempt to use configured environment variables' {
         {
@@ -77,7 +77,7 @@ Describe 'Connect-MgGraph In Environment Variable Mode' {
             $Env:AZURE_CLIENT_SECRET = "Not_Valid"
             $Env:AZURE_TENANT_ID = "common"
             Connect-MgGraph -EnvironmentVariable -ErrorAction Stop
-        } | Should -Throw -ExpectedMessage "*ClientSecretCredential authentication failed*"
+        } | Should -Throw -ExpectedMessage "ClientSecretCredential authentication failed: "
     }
 }
 
@@ -95,7 +95,7 @@ Describe 'Connect-MgGraph In App Mode' {
 Describe 'Connect-MgGraph Dependency Resolution' {
     It 'Should load Mg module side by side with Az module.' {
         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
-        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*DeviceCodeCredential authentication failed*"
+        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "DeviceCodeCredential authentication failed: "
     }
 }
 

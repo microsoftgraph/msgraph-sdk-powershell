@@ -16,40 +16,38 @@ Microsoft Graph PowerShell supports two types of authentication: delegated and a
 ```
 Connect-MgGraph [[-Scopes] <String[]>] [[-ClientId] <String>] [-TenantId <String>]
  [-ContextScope <ContextScope>] [-Environment <String>] [-UseDeviceCode] [-ClientTimeout <Double>] [-NoWelcome]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### AppCertificateParameterSet
 ```
 Connect-MgGraph [-ClientId] <String> [[-CertificateSubjectName] <String>] [[-CertificateThumbprint] <String>]
- [-SendCertificateChain <Boolean>] [-Certificate <X509Certificate2>] [-TenantId <String>]
- [-ContextScope <ContextScope>] [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [-Certificate <X509Certificate2>] [-TenantId <String>] [-ContextScope <ContextScope>] [-Environment <String>]
+ [-ClientTimeout <Double>] [-NoWelcome] [<CommonParameters>]
 ```
 
 ### IdentityParameterSet
 ```
 Connect-MgGraph [[-ClientId] <String>] [-ContextScope <ContextScope>] [-Environment <String>]
- [-ClientTimeout <Double>] [-Identity] [-NoWelcome] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [-ClientTimeout <Double>] [-Identity] [-NoWelcome] [<CommonParameters>]
 ```
 
 ### AppSecretCredentialParameterSet
 ```
 Connect-MgGraph [-ClientSecretCredential <PSCredential>] [-TenantId <String>] [-ContextScope <ContextScope>]
- [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+ [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome] [<CommonParameters>]
 ```
 
 ### AccessTokenParameterSet
 ```
 Connect-MgGraph [-AccessToken] <SecureString> [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### EnvironmentVariableParameterSet
 ```
 Connect-MgGraph [-ContextScope <ContextScope>] [-Environment <String>] [-ClientTimeout <Double>]
- [-EnvironmentVariable] [-NoWelcome] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [-EnvironmentVariable] [-NoWelcome] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
