@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Teams
   version: v1.0-beta
@@ -7810,7 +7810,7 @@ paths:
       tags:
         - groups.team
       summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: group.team.channel_ListMessage
       parameters:
         - name: group-id
@@ -7917,7 +7917,7 @@ paths:
       tags:
         - groups.team
       summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: group.team.channel_GetMessage
       parameters:
         - name: group-id
@@ -10847,7 +10847,7 @@ paths:
       tags:
         - groups.team
       summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: group.team.channel_ListTab
       parameters:
         - name: group-id
@@ -10954,7 +10954,7 @@ paths:
       tags:
         - groups.team
       summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: group.team.channel_GetTab
       parameters:
         - name: group-id
@@ -14697,7 +14697,7 @@ paths:
       tags:
         - groups.team
       summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: group.team.primaryChannel_ListMessage
       parameters:
         - name: group-id
@@ -14788,7 +14788,7 @@ paths:
       tags:
         - groups.team
       summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: group.team.primaryChannel_GetMessage
       parameters:
         - name: group-id
@@ -17286,7 +17286,7 @@ paths:
       tags:
         - groups.team
       summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: group.team.primaryChannel_ListTab
       parameters:
         - name: group-id
@@ -17377,7 +17377,7 @@ paths:
       tags:
         - groups.team
       summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: group.team.primaryChannel_GetTab
       parameters:
         - name: group-id
@@ -19903,6 +19903,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                isAtApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
                 notes:
                   $ref: '#/components/schemas/microsoft.graph.itemBody'
               additionalProperties:
@@ -19993,6 +19997,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                isAtApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
                 notes:
                   $ref: '#/components/schemas/microsoft.graph.itemBody'
               additionalProperties:
@@ -20043,6 +20051,10 @@ paths:
               type: object
               properties:
                 atApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                isAtApprovedLocation:
                   type: boolean
                   default: false
                   nullable: true
@@ -20110,6 +20122,10 @@ paths:
               type: object
               properties:
                 atApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                isAtApprovedLocation:
                   type: boolean
                   default: false
                   nullable: true
@@ -22042,7 +22058,7 @@ paths:
       tags:
         - teams.channel
       summary: List allMembers
-      description: 'Retrieve a list of conversationMember objects from a team channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.'
+      description: 'Get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-list-allmembers?view=graph-rest-beta
@@ -22914,11 +22930,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Update conversationMember
+      description: "Update the role of a conversationMember in a \nteam.\nor channel."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-beta
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -26367,7 +26383,7 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: team.channel_GetTab
       parameters:
         - name: team-id
@@ -30158,7 +30174,7 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: team.primaryChannel_ListMessage
       parameters:
         - name: team-id
@@ -30249,7 +30265,7 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: team.primaryChannel_GetMessage
       parameters:
         - name: team-id
@@ -32747,7 +32763,7 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: team.primaryChannel_ListTab
       parameters:
         - name: team-id
@@ -32838,7 +32854,7 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: team.primaryChannel_GetTab
       parameters:
         - name: team-id
@@ -35477,6 +35493,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                isAtApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
                 notes:
                   $ref: '#/components/schemas/microsoft.graph.itemBody'
               additionalProperties:
@@ -35567,6 +35587,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                isAtApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
                 notes:
                   $ref: '#/components/schemas/microsoft.graph.itemBody'
               additionalProperties:
@@ -35617,6 +35641,10 @@ paths:
               type: object
               properties:
                 atApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                isAtApprovedLocation:
                   type: boolean
                   default: false
                   nullable: true
@@ -35684,6 +35712,10 @@ paths:
               type: object
               properties:
                 atApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                isAtApprovedLocation:
                   type: boolean
                   default: false
                   nullable: true
@@ -39276,7 +39308,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get messages from teamwork
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: teamwork.deletedTeam.channel_ListMessage
       parameters:
         - name: deletedTeam-id
@@ -39383,7 +39415,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get messages from teamwork
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: teamwork.deletedTeam.channel_GetMessage
       parameters:
         - name: deletedTeam-id
@@ -42313,7 +42345,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get tabs from teamwork
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: teamwork.deletedTeam.channel_ListTab
       parameters:
         - name: deletedTeam-id
@@ -42420,7 +42452,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get tabs from teamwork
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: teamwork.deletedTeam.channel_GetTab
       parameters:
         - name: deletedTeam-id
@@ -46231,7 +46263,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get messages from teamwork
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_ListMessage
       parameters:
         - name: teamTemplate-id
@@ -46354,7 +46386,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get messages from teamwork
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_GetMessage
       parameters:
         - name: teamTemplate-id
@@ -49716,7 +49748,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get tabs from teamwork
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_ListTab
       parameters:
         - name: teamTemplate-id
@@ -49839,7 +49871,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get tabs from teamwork
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_GetTab
       parameters:
         - name: teamTemplate-id
@@ -54286,7 +54318,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get messages from teamwork
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_ListMessage
       parameters:
         - name: teamTemplate-id
@@ -54393,7 +54425,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get messages from teamwork
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      description: A collection of all the messages in the channel. Nullable.
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_GetMessage
       parameters:
         - name: teamTemplate-id
@@ -57323,7 +57355,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get tabs from teamwork
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_ListTab
       parameters:
         - name: teamTemplate-id
@@ -57430,7 +57462,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get tabs from teamwork
-      description: A collection of all the tabs in the channel. A navigation property.
+      description: A collection of all the tabs in the channel.
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_GetTab
       parameters:
         - name: teamTemplate-id
@@ -60460,6 +60492,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                isAtApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
                 notes:
                   $ref: '#/components/schemas/microsoft.graph.itemBody'
               additionalProperties:
@@ -60566,6 +60602,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                isAtApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
                 notes:
                   $ref: '#/components/schemas/microsoft.graph.itemBody'
               additionalProperties:
@@ -60624,6 +60664,10 @@ paths:
               type: object
               properties:
                 atApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                isAtApprovedLocation:
                   type: boolean
                   default: false
                   nullable: true
@@ -60707,6 +60751,10 @@ paths:
               type: object
               properties:
                 atApprovedLocation:
+                  type: boolean
+                  default: false
+                  nullable: true
+                isAtApprovedLocation:
                   type: boolean
                   default: false
                   nullable: true
@@ -69722,7 +69770,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: A collection of all the messages in the channel. A navigation property. Nullable.
+              description: A collection of all the messages in the channel. Nullable.
               x-ms-navigationProperty: true
             sharedWithTeams:
               type: array
@@ -69734,7 +69782,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
-              description: A collection of all the tabs in the channel. A navigation property.
+              description: A collection of all the tabs in the channel.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -70537,7 +70585,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -71047,6 +71095,10 @@ components:
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
+              nullable: true
+            isActivitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts include activities from the original shift.
               nullable: true
             isCrossLocationShiftRequestApprovalRequired:
               type: boolean
@@ -72151,7 +72203,7 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: Either a code snippet or place holder. application/vnd.microsoft.card.announcement: An announcement header. application/vnd.microsoft.card.fluidEmbedCard: A Microsoft Loop component.'
           nullable: true
         contentUrl:
           type: string
@@ -72278,11 +72330,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -73629,7 +73681,7 @@ components:
             type: object
     microsoft.graph.appRoleAssignment:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
         - title: appRoleAssignment
           type: object
           properties:
@@ -75067,7 +75119,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             permissionGrantPreApprovalPolicies:
               type: array
@@ -75316,6 +75368,8 @@ components:
               description: The results of every partner agent's installation status on Cloud PC.
             powerState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
+            productType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProductType'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -76819,7 +76873,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -77240,6 +77294,10 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            sequenceNumber:
+              type: string
+              nullable: true
+              readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
@@ -77405,6 +77463,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             contactMergeSuggestions:
               $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
+            exchange:
+              $ref: '#/components/schemas/microsoft.graph.exchangeSettings'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             regionalAndLanguageSettings:
@@ -77811,6 +77871,10 @@ components:
           type: string
           description: The time the entry is recorded.
           format: date-time
+        isAtApprovedLocation:
+          type: boolean
+          description: Indicates whether this action happens at an approved location.
+          nullable: true
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
       additionalProperties:
@@ -81331,7 +81395,7 @@ components:
               description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Alternate key. Required. Not nullable. Supports $filter (eq).'
             subject:
               type: string
-              description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
+              description: 'Nullable.  Defaults to null if not set. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. If subject is defined, claimsMatchingExpression must be null. Supports $filter (eq).'
               nullable: true
           additionalProperties:
             type: object
@@ -81787,6 +81851,8 @@ components:
       properties:
         capabilityType:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        licenseType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryLicenseType'
         primaryRegion:
           type: string
           description: The primary and mainly used region where the Cloud PC is located.
@@ -81896,6 +81962,16 @@ components:
       enum:
         - running
         - poweredOff
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcProductType:
+      title: cloudPcProductType
+      enum:
+        - enterprise
+        - frontline
+        - devBox
+        - powerAutomate
+        - business
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcProvisioningType:
@@ -86089,6 +86165,22 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.exchangeSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: exchangeSettings
+          type: object
+          properties:
+            inPlaceArchiveMailboxId:
+              type: string
+              description: The unique identifier for the user's in-place archive mailbox.
+              nullable: true
+            primaryMailboxId:
+              type: string
+              description: The unique identifier for the user's primary mailbox.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.userInsightsSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -88634,6 +88726,13 @@ components:
         - none
         - failover
         - failback
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDisasterRecoveryLicenseType:
+      title: cloudPcDisasterRecoveryLicenseType
+      enum:
+        - none
+        - standard
         - unknownFutureValue
       type: string
     microsoft.graph.actionState:
@@ -92228,6 +92327,7 @@ components:
         - project
         - driveItem
         - user
+        - teamsChannel
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -96939,6 +97039,10 @@ components:
           type: boolean
           description: 'If true, the restriction isn''t enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.'
           nullable: true
+        isStateSetByMicrosoft:
+          type: boolean
+          description: 'If true, Microsoft sets the identifierUriRestriction state. If false, the tenant modifies the identifierUriRestriction state. Read-only.'
+          readOnly: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string

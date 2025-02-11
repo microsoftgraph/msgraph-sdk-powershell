@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Reports
   version: v1.0-beta
@@ -6820,6 +6820,109 @@ paths:
                 filter:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.retrieveCloudPkiLeafCertificateReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action retrieveCloudPkiLeafCertificateReport
+      operationId: deviceManagement.report_retrieveCloudPkiLeafCertificateReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                certificationAuthorityId:
+                  type: string
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                filter:
+                  type: string
+                  nullable: true
+                search:
+                  type: string
+                  nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.retrieveCloudPkiLeafCertificateSummaryReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action retrieveCloudPkiLeafCertificateSummaryReport
+      operationId: deviceManagement.report_retrieveCloudPkiLeafCertificateSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                certificationAuthorityId:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -21307,6 +21410,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedAuthenticationEventListener'
               description: 'Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which the corresponding events in the sign-in event triggered.'
+            appOwnerTenantId:
+              type: string
+              description: The identifier of the tenant that owns the client application.  Supports $filter (eq).
+              nullable: true
             appTokenProtectionStatus:
               $ref: '#/components/schemas/microsoft.graph.tokenProtectionStatus'
             authenticationAppDeviceDetails:
@@ -21461,6 +21568,10 @@ components:
               type: string
               description: The identifier of the resource that the user signed in to.  Supports $filter (eq).
               nullable: true
+            resourceOwnerTenantId:
+              type: string
+              description: The identifier of the owner of the resource.  Supports $filter (eq).
+              nullable: true
             resourceServicePrincipalId:
               type: string
               description: The identifier of the service principal representing the target resource in the sign-in event.
@@ -21512,7 +21623,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).'
+              description: 'Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=signInEventTypes/any(t: t eq ''nonInteractiveUser'').'
             signInIdentifier:
               type: string
               description: 'The identification that the user provided to sign in. It can be the userPrincipalName, but is also populated when a user signs in using other identifiers.'
