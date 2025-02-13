@@ -337,8 +337,8 @@ directive:
 
         // Enables null valued properties
         $ = $.replace(/AddIf\(\s*null\s*!=\s*(this\._\w+)\s*\?\s*\(\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonNode\)\s*(.*)\s*:\s*null\s*,\s*"(.*?)"\s*,\s*container\.Add\s*\)/gm, 'container.Add("$3", $1 != null ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode) $2 :"defaultnull")')
-        
-        $ = $.replace(/AddIf\(\s*null\s*!=\s*\(\(\(\(object\)\s*(this\._\w+)\)\)?.ToString\(\)\)\s*\?\s*\(\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonNode\)\s*new\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonString\((this\._\w+).ToString\(\)\)\s*:\s*null\s*,\s*"(.*?)"\s*,\s*container\.Add\s*\)/gm, 'container.Add("$3", $1 != null ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode) new Microsoft.Graph.PowerShell.Runtime.Json.JsonString($2.ToString()) :"defaultnull)');
+
+        $ = $.replace(/AddIf\(\s*null\s*!=\s*\(\(\(\(object\)\s*(this\._\w+)\)\)?.ToString\(\)\)\s*\?\s*\(\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonNode\)\s*new\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonString\((this\._\w+).ToString\(\)\)\s*:\s*null\s*,\s*"(.*?)"\s*,\s*container\.Add\s*\)/gm, 'container.Add("$3", $1 != null ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode) new Microsoft.Graph.PowerShell.Runtime.Json.JsonString($2.ToString()) :"defaultnull")');
 
         return $;
       }
