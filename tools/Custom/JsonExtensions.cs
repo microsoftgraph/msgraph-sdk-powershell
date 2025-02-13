@@ -2,7 +2,6 @@ namespace Microsoft.Graph.PowerShell.JsonUtilities
 {
     using Newtonsoft.Json.Linq;
     using System.Linq;
-    using static Microsoft.Graph.PowerShell.Runtime.Extensions;
 
     public static class JsonExtensions
     {
