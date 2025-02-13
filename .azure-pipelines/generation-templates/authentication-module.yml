@@ -30,6 +30,15 @@ steps:
           script: |
             . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Test
 
+  - ${{ if eq(parameters.Test, true) }}:
+      - task: PowerShell@2
+        displayName: Test Json Utilities
+        inputs:
+          pwsh: true
+          targetType: inline
+          script: dotnet test
+          workingDirectory: "$(System.DefaultWorkingDirectory)/tools/Tests/JsonUtilitiesTests"
+
   - ${{ if eq(parameters.Sign, true) }}:
       - template: ../common-templates/esrp/strongname.yml
         parameters:
