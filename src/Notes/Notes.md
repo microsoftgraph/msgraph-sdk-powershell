@@ -25,4 +25,41 @@ directive:
       subject: ^GroupOnenoteNotebookSectionGroupSectionPage$|^GroupOnenoteNotebookSectionPage$|^GroupOnenotePage$|^GroupOnenoteSectionGroupSectionPage$|^GroupOnenoteSectionPage$|^SiteOnenoteNotebookSectionGroupSectionPage$|^SiteOnenoteNotebookSectionPage$|^SiteOnenotePage$|^SiteOnenoteSectionGroupSectionPage$|^SiteOnenoteSectionPage$|^UserOnenoteNotebookSectionGroupSectionPage$|^UserOnenoteNotebookSectionPage$|^UserOnenotePage$|^UserOnenoteSectionGroupSectionPage$|^UserOnenoteSectionPage$
       variant: ^Update$|UpdateExpanded$|UpdateViaIdentity$|UpdateViaIdentityExpanded$
     remove: true
+# Rename cmdlets that call onenotePatchContent action.
+  - where:
+      verb: Update
+      subject: (^SiteOnenote.*)
+    set:
+      subject: $1Content
+  - where:
+      verb: Get
+      subject: ^(GroupOnenote)Notebook(RecentNotebook)$
+    set:
+      subject: $1$2
+  - where:
+      verb: Update
+      subject: ^(GroupOnenotePage)$
+    set:
+      subject: $1Content
+  - where:
+      verb: Update
+      subject: ^(GroupOnenoteSectionPage)$
+    set:
+      subject: $1Content
+  - where:
+      verb: Update
+      subject: ^(GroupOnenoteNotebookSectionPage)$
+    set:
+      subject: $1Content
+  - where:
+      verb: Update
+      subject: ^(GroupOnenoteSectionGroupSectionPage)$
+    set:
+      subject: $1Content
+  - where:
+      verb: Update
+      subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
+    set:
+      subject: $1Content
+    
 ```
