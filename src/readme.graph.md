@@ -899,5 +899,12 @@ directive:
       subject: SiteOnenoteNotebookRecentNotebook
     set:
       alias: ${verb}-Mg${subject-prefix}SiteRecentNotebook
+# Setting the alias below as per the request on issue [#2560](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2560)
+
+  - where:
+      verb: Update
+      subject: ^User$
+    set:
+      alias: Set-Mg${subject-prefix}${subject}
       
 ```
