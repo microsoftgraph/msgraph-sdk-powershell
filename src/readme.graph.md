@@ -889,8 +889,6 @@ directive:
       subject: SolutionBackupRestoreProtectionPolicy
     set:
       alias: ${verb}-Mg${subject-prefix}BackupRestoreProtectionPolicy
-    set:
-      alias: ${verb}-Mg${subject-prefix}BackupRestoreServiceApp
   - where:
       verb: Get
       subject: UserOnenoteNotebookRecentNotebook
