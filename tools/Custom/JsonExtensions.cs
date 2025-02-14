@@ -6,11 +6,11 @@ namespace Microsoft.Graph.PowerShell.JsonUtilities
     public static class JsonExtensions
     {
         /// <summary>
-        /// Removes JSON properties that have a value of "defaultnull" and converts properties with values of "null" or empty strings ("") to actual JSON null values.
+        /// Removes JSON properties that have a value of "defaultnull" and converts properties with values of "null" to actual JSON null values.
         /// </summary>
         /// <param name="jsonObject">The JObject to process and clean.</param>
         /// <returns>
-        /// A JSON string representation of the cleaned JObject with "defaultnull" properties removed and "null" or empty string values converted to JSON null.
+        /// A JSON string representation of the cleaned JObject with "defaultnull" properties removed and "null" values converted to JSON null.
         /// </returns>
         /// <example>
         /// JObject json = JObject.Parse(@"{""name"": ""John"", ""email"": ""defaultnull"", ""address"": ""null""}");
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.PowerShell.JsonUtilities
                     {
                         property.Remove();
                     }
-                    else if (property.Value.Type == JTokenType.String && (property.Value.ToString() == "null" || property.Value.ToString() == ""))
+                    else if (property.Value.Type == JTokenType.String && (property.Value.ToString() == "null"))
                     {
                         property.Value = JValue.CreateNull();
                     }

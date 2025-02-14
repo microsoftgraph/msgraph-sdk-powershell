@@ -45,7 +45,7 @@ public class JsonExtensionsTests
 
         // Assert
         Assert.Null(result["position"]?.Value<string>());
-        Assert.Null(result["team"]?.Value<string>());
+        Assert.Equal("",result["team"]?.ToString());
         Assert.Equal("Tim", result["displayname"]?.ToString());
         Assert.Equal(2000000, result["salary"]?.ToObject<int>());
     }
