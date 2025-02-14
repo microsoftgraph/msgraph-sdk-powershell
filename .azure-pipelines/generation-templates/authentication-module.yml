@@ -37,7 +37,7 @@ steps:
           pwsh: true
           targetType: inline
           script: dotnet test
-          workingDirectory: "$(System.DefaultWorkingDirectory)/tools/Tests/JsonUtilitiesTests"
+          workingDirectory: "$(System.DefaultWorkingDirectory)/tools/Tests/JsonUtilitiesTest"
 
   - ${{ if eq(parameters.Sign, true) }}:
       - template: ../common-templates/esrp/strongname.yml
