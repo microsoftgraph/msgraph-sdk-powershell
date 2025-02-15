@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^(team_GetGroup|user\.joinedTeam.*|user_(Get|Update|Delete|Create)JoinedTeam|.*_UpdateInstalledApp)$|^team.channel.message_GetCount$
+  - remove-path-by-operation: ^(team_GetGroup|user\.joinedTeam.*|user_(Get|Update|Delete|Create)JoinedTeam|.*_UpdateInstalledApp)$
 # Remove cmdlets
   - where:
       verb: Remove
@@ -50,6 +50,11 @@ directive:
   - where:
       verb: Get
       subject: ^(Team|GroupTeam)All(ChannelCount)$
+    set:
+      subject: All$1$2
+  - where:
+      verb: Get
+      subject: ^(User)(ChatMessage|OnlineMeetingTranscript|OnlineMeetingRecording)$
     set:
       subject: All$1$2
 ```

@@ -335,6 +335,11 @@ directive:
         let dateTimeToJsonRegex = /(\.Json\.JsonString\()(.*)\?(\.ToString\(@"yyyy'-'MM'-'dd'T'HH':'mm':'ss\.fffffffK")/gm
         $ = $.replace(dateTimeToJsonRegex, '$1System.DateTime.SpecifyKind($2.Value.ToUniversalTime(), System.DateTimeKind.Utc)$3');
 
+        // Enables null valued properties
+        $ = $.replace(/AddIf\(\s*null\s*!=\s*(this\._\w+)\s*\?\s*\(\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonNode\)\s*(.*)\s*:\s*null\s*,\s*"(.*?)"\s*,\s*container\.Add\s*\)/gm, 'container.Add("$3", $1 != null ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode) $2 :"defaultnull")')
+
+        $ = $.replace(/AddIf\(\s*null\s*!=\s*\(\(\(\(object\)\s*(this\._\w+)\)\)?.ToString\(\)\)\s*\?\s*\(\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonNode\)\s*new\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonString\((this\._\w+).ToString\(\)\)\s*:\s*null\s*,\s*"(.*?)"\s*,\s*container\.Add\s*\)/gm, 'container.Add("$3", $1 != null ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode) new Microsoft.Graph.PowerShell.Runtime.Json.JsonString($2.ToString()) :"defaultnull")');
+
         return $;
       }
 # Modify generated .dictionary.cs model classes.
@@ -864,5 +869,47 @@ directive:
       subject: ^(Team|GroupTeam)All(ChannelCount)$
     set:
       alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      verb: Search
+      subject: SolutionBackupRestorePoint
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestorePoint
+  - where:
+      verb: Enable
+      subject: SolutionBackupRestore
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestore
+  - where:
+      verb: Initialize
+      subject: SolutionBackupRestoreSession
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestoreSession
+  - where:
+      verb: Initialize
+      subject: SolutionBackupRestoreServiceApp
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestoreServiceApp
+  - where:
+      verb: Initialize
+      subject: SolutionBackupRestoreProtectionPolicy
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestoreProtectionPolicy
+  - where:
+      verb: Get
+      subject: UserOnenoteNotebookRecentNotebook
+    set:
+      alias: ${verb}-Mg${subject-prefix}UserOnenoteRecentNotebook
+  - where:
+      verb: Get
+      subject: SiteOnenoteNotebookRecentNotebook
+    set:
+      alias: ${verb}-Mg${subject-prefix}SiteRecentNotebook
+# Setting the alias below as per the request on issue [#2560](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2560)
+
+  - where:
+      verb: Update
+      subject: ^User$
+    set:
+      alias: Set-Mg${subject-prefix}${subject}
       
 ```
