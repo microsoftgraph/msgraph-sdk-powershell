@@ -270,6 +270,10 @@ directive:
       subject: ^(.*)AgreementFile$
       variant: (.*\d)
     remove: true
+  - where:
+      verb: Remove
+      subject: ^EntitlementManagementAccessPackageAssignment$
+    remove: true
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(BusinessFlowTemplate)(\1)+
