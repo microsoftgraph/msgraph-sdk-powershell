@@ -66,4 +66,25 @@ directive:
       verb: Get
       subject: ^DirectoryPublicKeyInfrastructure$
     remove: true
+  - where:
+      verb: Get
+      subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthorityCount$
+    remove: true
+  - where:
+      verb: New
+      subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$
+    remove: true
+  - where:
+      verb: Remove
+      subject: ^DirectoryPublicKeyInfrastructure$
+    remove: true
+  - where:
+      verb: Remove
+      subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$
+    remove: true
+  - where:
+      verb: Update
+      subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$
+    remove: true
+    
 ```
