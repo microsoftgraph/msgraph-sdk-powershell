@@ -913,8 +913,8 @@ directive:
       alias: Set-Mg${subject-prefix}${subject}
   - where:
       verb: (Get|New|Update|Remove|Set|Invoke|Create)
-      subject: "*OnPremise*"
+      subject: ^(.*)(OnPremise)(.*)$
     set:
-      alias: "*OnPremises*"
+      alias: ^(.*)(OnPremises)(.*)$
       
 ```
