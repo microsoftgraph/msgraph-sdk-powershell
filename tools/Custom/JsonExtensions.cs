@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.JsonUtilities
                         {
                             jsonArray.RemoveAt(i); // Remove the "defaultnull" string from the array
                         }
-                        else if (item.Type == JTokenType.String && item.ToString().Equals("null",StringComparison.Ordinal)
+                        else if (item.Type == JTokenType.String && item.ToString().Equals("null",StringComparison.Ordinal))
                         {
                             jsonArray[i] = JValue.CreateNull(); // Convert "null" string to actual null
                         }
