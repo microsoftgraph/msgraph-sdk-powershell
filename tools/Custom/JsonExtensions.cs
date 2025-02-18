@@ -36,11 +36,11 @@ namespace Microsoft.Graph.PowerShell.JsonUtilities
                         {
                             RemoveDefaultNullProperties(property.Value);
                         }
-                        else if (property.Value.Type == JTokenType.String && property.Value.ToString() == "defaultnull")
+                        else if (property.Value.Type == JTokenType.String && property.Value.ToString().Equals("defaultnull",StringComparison.Ordinal))
                         {
                             property.Remove();
                         }
-                        else if (property.Value.Type == JTokenType.String && property.Value.ToString() == "null")
+                        else if (property.Value.Type == JTokenType.String && property.Value.ToString().Equals("null",StringComparison.Ordinal))
                         {
                             property.Value = JValue.CreateNull();
                         }
@@ -57,11 +57,11 @@ namespace Microsoft.Graph.PowerShell.JsonUtilities
                         {
                             RemoveDefaultNullProperties(item);
                         }
-                        else if (item.Type == JTokenType.String && item.ToString() == "defaultnull")
+                        else if (item.Type == JTokenType.String && item.ToString().Equals("defaultnull",StringComparison.Ordinal))
                         {
                             jsonArray.RemoveAt(i); // Remove the "defaultnull" string from the array
                         }
-                        else if (item.Type == JTokenType.String && item.ToString() == "null")
+                        else if (item.Type == JTokenType.String && item.ToString().Equals("null",StringComparison.Ordinal)
                         {
                             jsonArray[i] = JValue.CreateNull(); // Convert "null" string to actual null
                         }
