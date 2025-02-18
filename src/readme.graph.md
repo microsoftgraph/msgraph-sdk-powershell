@@ -655,6 +655,8 @@ directive:
         $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*body\.ToJson\(null\)\.ToString\(\)\s*:\s*@"{}",\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
 
         $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*new\s+Microsoft\.Graph\.PowerShell\.Runtime\.Json\.XNodeArray\(.*?\)\s*:\s*null,\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
+
+        $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*new\s+Microsoft\.Graph\.Beta\.PowerShell\.Runtime\.Json\.XNodeArray\(.*?\)\s*:\s*null,\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
         
         return $
       }
