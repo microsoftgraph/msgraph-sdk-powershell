@@ -2,7 +2,7 @@
 using System;
 using Newtonsoft.Json.Linq;
 using Xunit;
-using Microsoft.Graph.PowerShell.JsonUtilities;
+using NamespacePrefixPlaceholder.PowerShell.JsonUtilities;
 
 public class JsonExtensionsTests
 {

@@ -1,4 +1,4 @@
-namespace Microsoft.Graph.PowerShell.JsonUtilities
+namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
 {
     using Newtonsoft.Json.Linq;
     using System;
