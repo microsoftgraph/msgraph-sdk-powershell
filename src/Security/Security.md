@@ -18,16 +18,11 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^security(.case.ediscoveryCase.noncustodialDataSource_.*DataSource)$
+  - remove-path-by-operation: ^security(.case.ediscoveryCase.noncustodialDataSource_.*DataSource)$|^security_DeleteAttackSimulation$|^security_UpdateAttackSimulation$|^security_GetAttackSimulation$|^security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail$
 # Remove cmdlets
   - where:
       verb: Get|Update
       subject: ^Security$
-    remove: true
-# Removes overgenerated cmdlets. Related issue: https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2961
-  - where:
-      verb: Get
-      subject: ^(SecurityAuditLog|SecurityAuditLogQuery|SecurityAuditLogQueryCount|SecurityAuditLogQueryRecord|SecurityAuditLogQueryRecordCount)$
     remove: true
   - where:
       verb: Update

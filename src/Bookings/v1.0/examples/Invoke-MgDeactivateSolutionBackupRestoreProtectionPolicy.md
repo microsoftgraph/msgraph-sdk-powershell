@@ -18,5 +18,5 @@ Import-Module Microsoft.Graph.Bookings
 Invoke-MgDeactivateSolutionBackupRestoreProtectionPolicy -ProtectionPolicyBaseId $protectionPolicyBaseId
 
 ```
-This example will### example 2 : deactivate a protection policy in updating state
+This example will deactivate a protection policy in updating state
 

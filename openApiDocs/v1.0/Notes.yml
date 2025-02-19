@@ -326,6 +326,68 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/microsoft.graph.copyNotebook':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
+      operationId: group.onenote.notebook_copyNotebook
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                notebookFolder:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups':
     get:
       tags:
@@ -1190,6 +1252,162 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: group.onenote.notebook.sectionGroup.section_copyToNotebook
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: group.onenote.notebook.sectionGroup.section_copyToSectionGroup
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -1708,6 +1926,213 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: group.onenote.notebook.sectionGroup.section.page_copyToSection
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: group.onenote.notebook.sectionGroup.section.page_onenotePatchContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - groups.onenote
+      summary: Invoke function preview
+      operationId: group.onenote.notebook.sectionGroup.section.page_preview
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -2376,6 +2801,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: group.onenote.notebook.section_copyToNotebook
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: group.onenote.notebook.section_copyToSectionGroup
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -2830,6 +3395,189 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: group.onenote.notebook.section.page_copyToSection
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: group.onenote.notebook.section.page_onenotePatchContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - groups.onenote
+      summary: Invoke function preview
+      operationId: group.onenote.notebook.section.page_preview
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -3184,6 +3932,103 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/notebooks/microsoft.graph.getNotebookFromWebUrl':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action getNotebookFromWebUrl
+      description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
+      operationId: group.onenote.notebook_getNotebookFromWebUrl
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.CopyNotebookModel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/notebooks/microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})':
+    get:
+      tags:
+        - groups.onenote
+      summary: Invoke function getRecentNotebooks
+      description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0
+      operationId: group.onenote.notebook_getRecentNotebook
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: includePersonalNotebooks
+          in: path
+          description: 'Usage: includePersonalNotebooks={includePersonalNotebooks}'
+          required: true
+          style: simple
+          schema:
+            type: boolean
+            default: false
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.recentNotebook'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/groups/{group-id}/onenote/operations':
     get:
       tags:
@@ -3750,6 +4595,141 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: group.onenote.page_copyToSection
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: group.onenote.page_onenotePatchContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - groups.onenote
+      summary: Invoke function preview
+      operationId: group.onenote.page_preview
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -4972,6 +5952,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: group.onenote.sectionGroup.section_copyToNotebook
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: group.onenote.sectionGroup.section_copyToSectionGroup
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -5426,6 +6546,189 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: group.onenote.sectionGroup.section.page_copyToSection
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: group.onenote.sectionGroup.section.page_onenotePatchContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - groups.onenote
+      summary: Invoke function preview
+      operationId: group.onenote.sectionGroup.section.page_preview
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -5998,6 +7301,130 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: group.onenote.section_copyToNotebook
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: group.onenote.section_copyToSectionGroup
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -6388,6 +7815,165 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: group.onenote.section.page_copyToSection
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - groups.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: group.onenote.section.page_onenotePatchContent
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - groups.onenote
+      summary: Invoke function preview
+      operationId: group.onenote.section.page_preview
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -7120,6 +8706,68 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/microsoft.graph.copyNotebook':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
+      operationId: site.onenote.notebook_copyNotebook
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                notebookFolder:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups':
     get:
       tags:
@@ -7984,6 +9632,162 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: site.onenote.notebook.sectionGroup.section_copyToNotebook
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: site.onenote.notebook.sectionGroup.section_copyToSectionGroup
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -8444,6 +10248,213 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: site.onenote.notebook.sectionGroup.section.page_copyToSection
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: site.onenote.notebook.sectionGroup.section.page_onenotePatchContent
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - sites.onenote
+      summary: Invoke function preview
+      operationId: site.onenote.notebook.sectionGroup.section.page_preview
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -9112,6 +11123,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: site.onenote.notebook.section_copyToNotebook
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: site.onenote.notebook.section_copyToSectionGroup
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -9516,6 +11667,189 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: site.onenote.notebook.section.page_copyToSection
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: site.onenote.notebook.section.page_onenotePatchContent
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - sites.onenote
+      summary: Invoke function preview
+      operationId: site.onenote.notebook.section.page_preview
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -9870,6 +12204,103 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/notebooks/microsoft.graph.getNotebookFromWebUrl':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action getNotebookFromWebUrl
+      description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
+      operationId: site.onenote.notebook_getNotebookFromWebUrl
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.CopyNotebookModel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})':
+    get:
+      tags:
+        - sites.onenote
+      summary: Invoke function getRecentNotebooks
+      description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0
+      operationId: site.onenote.notebook_getRecentNotebook
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: includePersonalNotebooks
+          in: path
+          description: 'Usage: includePersonalNotebooks={includePersonalNotebooks}'
+          required: true
+          style: simple
+          schema:
+            type: boolean
+            default: false
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.recentNotebook'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/sites/{site-id}/onenote/operations':
     get:
       tags:
@@ -10402,6 +12833,141 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: site.onenote.page_copyToSection
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: site.onenote.page_onenotePatchContent
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - sites.onenote
+      summary: Invoke function preview
+      operationId: site.onenote.page_preview
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -11590,6 +14156,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: site.onenote.sectionGroup.section_copyToNotebook
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: site.onenote.sectionGroup.section_copyToSectionGroup
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -11994,6 +14700,189 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: site.onenote.sectionGroup.section.page_copyToSection
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: site.onenote.sectionGroup.section.page_onenotePatchContent
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - sites.onenote
+      summary: Invoke function preview
+      operationId: site.onenote.sectionGroup.section.page_preview
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -12566,6 +15455,130 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: site.onenote.section_copyToNotebook
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: site.onenote.section_copyToSectionGroup
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -12914,6 +15927,165 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: site.onenote.section.page_copyToSection
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - sites.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: site.onenote.section.page_onenotePatchContent
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - sites.onenote
+      summary: Invoke function preview
+      operationId: site.onenote.section.page_preview
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -13518,6 +16690,68 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/microsoft.graph.copyNotebook':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
+      operationId: user.onenote.notebook_copyNotebook
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                notebookFolder:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups':
     get:
       tags:
@@ -14382,6 +17616,162 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: user.onenote.notebook.sectionGroup.section_copyToNotebook
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: user.onenote.notebook.sectionGroup.section_copyToSectionGroup
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -14900,6 +18290,213 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: user.onenote.notebook.sectionGroup.section.page_copyToSection
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: user.onenote.notebook.sectionGroup.section.page_onenotePatchContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - users.onenote
+      summary: Invoke function preview
+      operationId: user.onenote.notebook.sectionGroup.section.page_preview
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -15568,6 +19165,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: user.onenote.notebook.section_copyToNotebook
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: user.onenote.notebook.section_copyToSectionGroup
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -16022,6 +19759,189 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: user.onenote.notebook.section.page_copyToSection
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: user.onenote.notebook.section.page_onenotePatchContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - users.onenote
+      summary: Invoke function preview
+      operationId: user.onenote.notebook.section.page_preview
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -16376,6 +20296,103 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onenote/notebooks/microsoft.graph.getNotebookFromWebUrl':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action getNotebookFromWebUrl
+      description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
+      operationId: user.onenote.notebook_getNotebookFromWebUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                webUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.CopyNotebookModel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/notebooks/microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})':
+    get:
+      tags:
+        - users.onenote
+      summary: Invoke function getRecentNotebooks
+      description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0
+      operationId: user.onenote.notebook_getRecentNotebook
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: includePersonalNotebooks
+          in: path
+          description: 'Usage: includePersonalNotebooks={includePersonalNotebooks}'
+          required: true
+          style: simple
+          schema:
+            type: boolean
+            default: false
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.recentNotebook'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/onenote/operations':
     get:
       tags:
@@ -16942,6 +20959,141 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onenote/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: user.onenote.page_copyToSection
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: user.onenote.page_onenotePatchContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - users.onenote
+      summary: Invoke function preview
+      operationId: user.onenote.page_preview
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -18164,6 +22316,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: user.onenote.sectionGroup.section_copyToNotebook
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: user.onenote.sectionGroup.section_copyToSectionGroup
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -18618,6 +22910,189 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: user.onenote.sectionGroup.section.page_copyToSection
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: user.onenote.sectionGroup.section.page_onenotePatchContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - users.onenote
+      summary: Invoke function preview
+      operationId: user.onenote.sectionGroup.section.page_preview
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -19190,6 +23665,130 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToNotebook
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+      operationId: user.onenote.section_copyToNotebook
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToSectionGroup
+      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
+      operationId: user.onenote.section_copyToSectionGroup
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                renameAs:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages':
     get:
       tags:
@@ -19580,6 +24179,165 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action copyToSection
+      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
+      operationId: user.onenote.section.page_copyToSection
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                groupId:
+                  type: string
+                  nullable: true
+                siteCollectionId:
+                  type: string
+                  nullable: true
+                siteId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent':
+    post:
+      tags:
+        - users.onenote
+      summary: Invoke action onenotePatchContent
+      operationId: user.onenote.section.page_onenotePatchContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commands:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.onenotePatchContentCommand'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()':
+    get:
+      tags:
+        - users.onenote
+      summary: Invoke function preview
+      operationId: user.onenote.section.page_preview
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: The unique identifier of onenotePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePagePreview'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
       tags:
@@ -19950,6 +24708,28 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.onenoteOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.operation'
+        - title: onenoteOperation
+          type: object
+          properties:
+            error:
+              $ref: '#/components/schemas/microsoft.graph.onenoteOperationError'
+            percentComplete:
+              type: string
+              description: The operation percent complete if the operation is still in running status.
+              nullable: true
+            resourceId:
+              type: string
+              description: The resource id.
+              nullable: true
+            resourceLocation:
+              type: string
+              description: 'The resource URI for the object. For example, the resource URI for a copied page or section.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.sectionGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.onenoteEntityHierarchyModel'
@@ -20038,7 +24818,7 @@ components:
             level:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
@@ -20047,7 +24827,7 @@ components:
             order:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
@@ -20066,28 +24846,105 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onenoteSection'
           additionalProperties:
             type: object
-    microsoft.graph.onenoteOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.operation'
-        - title: onenoteOperation
-          type: object
-          properties:
-            error:
-              $ref: '#/components/schemas/microsoft.graph.onenoteOperationError'
-            percentComplete:
-              type: string
-              description: The operation percent complete if the operation is still in running status.
-              nullable: true
-            resourceId:
-              type: string
-              description: The resource id.
-              nullable: true
-            resourceLocation:
-              type: string
-              description: 'The resource URI for the object. For example, the resource URI for a copied page or section.'
-              nullable: true
-          additionalProperties:
-            type: object
+    microsoft.graph.onenotePatchContentCommand:
+      title: onenotePatchContentCommand
+      type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/microsoft.graph.onenotePatchActionType'
+        content:
+          type: string
+          description: 'A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a ''Commands'' part.'
+          nullable: true
+        position:
+          $ref: '#/components/schemas/microsoft.graph.onenotePatchInsertPosition'
+        target:
+          type: string
+          description: 'The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.'
+      additionalProperties:
+        type: object
+    microsoft.graph.onenotePagePreview:
+      title: onenotePagePreview
+      type: object
+      properties:
+        links:
+          $ref: '#/components/schemas/microsoft.graph.onenotePagePreviewLinks'
+        previewText:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.CopyNotebookModel:
+      title: CopyNotebookModel
+      type: object
+      properties:
+        createdBy:
+          type: string
+          nullable: true
+        createdByIdentity:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        createdTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        isDefault:
+          type: boolean
+          nullable: true
+        isShared:
+          type: boolean
+          nullable: true
+        lastModifiedBy:
+          type: string
+          nullable: true
+        lastModifiedByIdentity:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        lastModifiedTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        links:
+          $ref: '#/components/schemas/microsoft.graph.notebookLinks'
+        name:
+          type: string
+          nullable: true
+        sectionGroupsUrl:
+          type: string
+          nullable: true
+        sectionsUrl:
+          type: string
+          nullable: true
+        self:
+          type: string
+          nullable: true
+        userRole:
+          $ref: '#/components/schemas/microsoft.graph.onenoteUserRole'
+      additionalProperties:
+        type: object
+    microsoft.graph.recentNotebook:
+      title: recentNotebook
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The name of the notebook.
+          nullable: true
+        lastAccessedTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+          nullable: true
+        links:
+          $ref: '#/components/schemas/microsoft.graph.recentNotebookLinks'
+        sourceService:
+          $ref: '#/components/schemas/microsoft.graph.onenoteSourceService'
+      additionalProperties:
+        type: object
     microsoft.graph.onenoteResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.onenoteEntityBaseModel'
@@ -20154,40 +25011,6 @@ components:
         - Contributor
         - Reader
       type: string
-    microsoft.graph.sectionLinks:
-      title: sectionLinks
-      type: object
-      properties:
-        oneNoteClientUrl:
-          $ref: '#/components/schemas/microsoft.graph.externalLink'
-        oneNoteWebUrl:
-          $ref: '#/components/schemas/microsoft.graph.externalLink'
-      additionalProperties:
-        type: object
-    microsoft.graph.onenoteEntitySchemaObjectModel:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.onenoteEntityBaseModel'
-        - title: onenoteEntitySchemaObjectModel
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.pageLinks:
-      title: pageLinks
-      type: object
-      properties:
-        oneNoteClientUrl:
-          $ref: '#/components/schemas/microsoft.graph.externalLink'
-        oneNoteWebUrl:
-          $ref: '#/components/schemas/microsoft.graph.externalLink'
-      additionalProperties:
-        type: object
     microsoft.graph.operation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20224,6 +25047,93 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.sectionLinks:
+      title: sectionLinks
+      type: object
+      properties:
+        oneNoteClientUrl:
+          $ref: '#/components/schemas/microsoft.graph.externalLink'
+        oneNoteWebUrl:
+          $ref: '#/components/schemas/microsoft.graph.externalLink'
+      additionalProperties:
+        type: object
+    microsoft.graph.onenoteEntitySchemaObjectModel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.onenoteEntityBaseModel'
+        - title: onenoteEntitySchemaObjectModel
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.pageLinks:
+      title: pageLinks
+      type: object
+      properties:
+        oneNoteClientUrl:
+          $ref: '#/components/schemas/microsoft.graph.externalLink'
+        oneNoteWebUrl:
+          $ref: '#/components/schemas/microsoft.graph.externalLink'
+      additionalProperties:
+        type: object
+    microsoft.graph.onenotePatchActionType:
+      title: onenotePatchActionType
+      enum:
+        - Replace
+        - Append
+        - Delete
+        - Insert
+        - Prepend
+      type: string
+    microsoft.graph.onenotePatchInsertPosition:
+      title: onenotePatchInsertPosition
+      enum:
+        - After
+        - Before
+      type: string
+    microsoft.graph.onenotePagePreviewLinks:
+      title: onenotePagePreviewLinks
+      type: object
+      properties:
+        previewImageUrl:
+          $ref: '#/components/schemas/microsoft.graph.externalLink'
+      additionalProperties:
+        type: object
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.recentNotebookLinks:
+      title: recentNotebookLinks
+      type: object
+      properties:
+        oneNoteClientUrl:
+          $ref: '#/components/schemas/microsoft.graph.externalLink'
+        oneNoteWebUrl:
+          $ref: '#/components/schemas/microsoft.graph.externalLink'
+      additionalProperties:
+        type: object
+    microsoft.graph.onenoteSourceService:
+      title: onenoteSourceService
+      enum:
+        - Unknown
+        - OneDrive
+        - OneDriveForBusiness
+        - OnPremOneDriveForBusiness
+      type: string
     microsoft.graph.onenoteEntityBaseModel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20326,18 +25236,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.identitySet:
-      title: identitySet
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        device:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-      additionalProperties:
-        type: object
     microsoft.graph.externalLink:
       title: externalLink
       type: object
@@ -20356,6 +25254,20 @@ components:
         - Completed
         - Failed
       type: string
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -20376,20 +25288,6 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
-      additionalProperties:
-        type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ErrorDetails:

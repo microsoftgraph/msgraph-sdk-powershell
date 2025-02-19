@@ -9,6 +9,16 @@ $params = @{
 	displayName = "Example"
 	selfServiceEnabled = $false
 	localAdminEnabled = $true
+	crossRegionDisasterRecoverySetting = @{
+		crossRegionDisasterRecoveryEnabled = $false
+		maintainCrossRegionRestorePointEnabled = $true
+		disasterRecoveryNetworkSetting = @{
+			regionName = "westus"
+			regionGroup = "usEast"
+		}
+		disasterRecoveryType = "premium"
+		userInitiatedDisasterRecoveryAllowed = $true
+	}
 	restorePointSetting = @{
 		frequencyInHours = 16
 		frequencyType = "sixteenHours"
