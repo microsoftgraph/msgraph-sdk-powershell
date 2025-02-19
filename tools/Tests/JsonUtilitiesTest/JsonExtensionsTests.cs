@@ -2,7 +2,7 @@
 using System;
 using Newtonsoft.Json.Linq;
 using Xunit;
-using Microsoft.Graph.PowerShell.JsonUtilities;
+using NamespacePrefixPlaceholder.PowerShell.JsonUtilities;
 
 public class JsonExtensionsTests
 {
@@ -45,7 +45,7 @@ public class JsonExtensionsTests
 
         // Assert
         Assert.Null(result["position"]?.Value<string>());
-        Assert.Equal("",result["team"]?.ToString());
+        Assert.Equal("", result["team"]?.ToString());
         Assert.Equal("Tim", result["displayname"]?.ToString());
         Assert.Equal(2000000, result["salary"]?.ToObject<int>());
     }
@@ -124,5 +124,27 @@ public class JsonExtensionsTests
         Assert.Equal("mayabi@example.com", result["email"]?.ToString());
         Assert.Equal(2000000, result["salary"]?.ToObject<int>());
     }
+
+    //Add tests for json arrays
+    [Fact]
+    public void RemoveDefaultNullProperties_ShouldRemoveDefaultNullValuesInJsonArray()
+    {
+        // Arrange
+        JArray json = JArray.Parse(@"[
+                { ""displayname"": ""Tim"", ""email"": ""defaultnull"" }
+
+        ]");
+
+        // Act
+        string cleanedJson = json.RemoveDefaultNullProperties();
+        JArray result = JArray.Parse(cleanedJson);
+
+        // Assert
+        Assert.Equal("Tim", result[0]?["displayname"]?.ToString());
+        Assert.False(result[0].ToObject<JObject>().ContainsKey("email"));
+
+    }
+
+
 }
 

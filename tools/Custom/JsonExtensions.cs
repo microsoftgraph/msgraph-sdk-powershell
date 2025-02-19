@@ -1,59 +1,82 @@
-namespace Microsoft.Graph.PowerShell.JsonUtilities
+namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
 {
     using Newtonsoft.Json.Linq;
+    using System;
     using System.Linq;
 
     public static class JsonExtensions
     {
         /// <summary>
-        /// Removes JSON properties that have a value of "defaultnull" and converts properties with values of "null" to actual JSON null values.
+        /// Recursively removes properties with the value "defaultnull" from a JSON structure
+        /// and replaces string values that are "null" with actual null values.
+        /// This method supports both JObject (JSON objects) and JArray (JSON arrays),
+        /// ensuring proper cleanup of nested structures.
         /// </summary>
-        /// <param name="jsonObject">The JObject to process and clean.</param>
-        /// <returns>
-        /// A JSON string representation of the cleaned JObject with "defaultnull" properties removed and "null" values converted to JSON null.
-        /// </returns>
+        /// <param name="token">The JToken (JObject or JArray) to process.</param>
+        /// <returns>The cleaned JSON string with "defaultnull" values removed and "null" strings converted to null.</returns>
         /// <example>
         /// JObject json = JObject.Parse(@"{""name"": ""John"", ""email"": ""defaultnull"", ""address"": ""null""}");
         /// string cleanedJson = json.RemoveDefaultNullProperties();
         /// Console.WriteLine(cleanedJson);
         /// // Output: { "name": "John", "address": null }
         /// </example>
-        public static string RemoveDefaultNullProperties(this JObject jsonObject)
+        public static string RemoveDefaultNullProperties(this JToken token)
         {
             try
             {
-                foreach (var property in jsonObject.Properties().ToList())
+                if (token is JObject jsonObject)
                 {
-                    if (property.Value.Type == JTokenType.Object)
+                    foreach (var property in jsonObject.Properties().ToList())
                     {
-                        RemoveDefaultNullProperties((JObject)property.Value);
-                    }
-                    else if (property.Value.Type == JTokenType.Array)
-                    {
-                        foreach (var item in property.Value)
+                        if (property.Value.Type == JTokenType.Object)
                         {
-                            if (item.Type == JTokenType.Object)
-                            {
-                                RemoveDefaultNullProperties((JObject)item);
-                            }
+                            RemoveDefaultNullProperties(property.Value);
+                        }
+                        else if (property.Value.Type == JTokenType.Array)
+                        {
+                            RemoveDefaultNullProperties(property.Value);
+                        }
+                        else if (property.Value.Type == JTokenType.String && property.Value.ToString().Equals("defaultnull",StringComparison.Ordinal))
+                        {
+                            property.Remove();
+                        }
+                        else if (property.Value.Type == JTokenType.String && property.Value.ToString().Equals("null",StringComparison.Ordinal))
+                        {
+                            property.Value = JValue.CreateNull();
                         }
                     }
-                    else if (property.Value.Type == JTokenType.String && property.Value.ToString() == "defaultnull")
+                }
+                else if (token is JArray jsonArray)
+                {
+                    // Process each item in the JArray
+                    for (int i = jsonArray.Count - 1; i >= 0; i--)
                     {
-                        property.Remove();
-                    }
-                    else if (property.Value.Type == JTokenType.String && (property.Value.ToString() == "null"))
-                    {
-                        property.Value = JValue.CreateNull();
+                        var item = jsonArray[i];
+
+                        if (item.Type == JTokenType.Object)
+                        {
+                            RemoveDefaultNullProperties(item);
+                        }
+                        else if (item.Type == JTokenType.String && item.ToString().Equals("defaultnull",StringComparison.Ordinal))
+                        {
+                            jsonArray.RemoveAt(i); // Remove the "defaultnull" string from the array
+                        }
+                        else if (item.Type == JTokenType.String && item.ToString().Equals("null",StringComparison.Ordinal))
+                        {
+                            jsonArray[i] = JValue.CreateNull(); // Convert "null" string to actual null
+                        }
                     }
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                return jsonObject.ToString(); // Return the original string if parsing fails
+                Console.WriteLine($"Error cleaning JSON: {ex.Message}");
+                return token.ToString(); // Return the original JSON if any error occurs
             }
-            return jsonObject.ToString();
+
+            return token.ToString();
         }
+
         public static string ReplaceAndRemoveSlashes(this string body)
         {
             return body.Replace("/", "").Replace("\\", "").Replace("rn", "").Replace("\"{", "{").Replace("}\"", "}");
