@@ -6,7 +6,6 @@
 azure: false
 powershell: true
 version: latest
-#use: "@autorest/powershell@3.0.509"
 use: "$(this-folder)../autorest.powershell"
 export-properties-for-dict: false
 metadata:
@@ -651,7 +650,15 @@ directive:
         // Fix double = in date parameter. Temp fix for https://github.com/Azure/autorest.powershell/issues/1025.
         let dateAssignmentRegex = /(date="\n.*)(\+.*"=")(.*\+.*date)/gmi
         $ = $.replace(dateAssignmentRegex, '$1 $3');
-        return $;
+
+        // Allow sending of serialized null properties located in cleanedBody
+        $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*body\.ToJson\(null\)\.ToString\(\)\s*:\s*@"{}",\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
+
+        $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*new\s+Microsoft\.Graph\.PowerShell\.Runtime\.Json\.XNodeArray\(.*?\)\s*:\s*null,\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
+
+        $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*new\s+Microsoft\.Graph\.Beta\.PowerShell\.Runtime\.Json\.XNodeArray\(.*?\)\s*:\s*null,\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
+        
+        return $
       }
 
 # Fix enums with underscore.
