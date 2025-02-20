@@ -33,4 +33,9 @@ directive:
     set:
       verb: Invoke
       subject: CreateOrGet$1
+  - where:
+      verb: New
+      subject: ^UserOnlineMeeting$
+      variant: ^(Create|CreateExpanded|CreateViaIdentity|CreateViaIdentityExpanded)([1-9]{1,2})$
+    remove: true
 ```

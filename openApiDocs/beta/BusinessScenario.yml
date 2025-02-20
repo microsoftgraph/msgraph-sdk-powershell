@@ -307,6 +307,47 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/microsoft.graph.getPlan':
+    post:
+      tags:
+        - solutions.businessScenario
+      summary: Invoke action getPlan
+      description: 'Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn''t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_getPlan
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                target:
+                  $ref: '#/components/schemas/microsoft.graph.businessScenarioTaskTargetBase'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration':
     get:
       tags:
@@ -1750,6 +1791,26 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.businessScenarioTaskTargetBase:
+      title: businessScenarioTaskTargetBase
+      type: object
+      properties:
+        taskTargetKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerTaskTargetKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.businessScenarioPlanReference:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: businessScenarioPlanReference
+          type: object
+          properties:
+            title:
+              type: string
+              description: The title property of the plannerPlan.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerPlanConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1915,6 +1976,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
       additionalProperties:
         type: object
+    microsoft.graph.plannerTaskTargetKind:
+      title: plannerTaskTargetKind
+      enum:
+        - group
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerPlanConfigurationBucketDefinition:
       title: plannerPlanConfigurationBucketDefinition
       type: object
@@ -1959,7 +2026,7 @@ components:
             activeChecklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The number of checklist items with value set to false, representing incomplete items.'
               format: int32
               nullable: true
@@ -1980,7 +2047,7 @@ components:
             checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The number of checklist items that are present on the task.
               format: int32
               nullable: true
@@ -2044,7 +2111,7 @@ components:
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The percentage of task completion. When set to 100, the task is completed.'
               format: int32
               nullable: true
@@ -2057,7 +2124,7 @@ components:
             priority:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''. Currently, planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
@@ -2066,7 +2133,7 @@ components:
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
@@ -2115,14 +2182,6 @@ components:
           type: string
           description: The URL to the application-specific experience for this task. Optional.
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.businessScenarioTaskTargetBase:
-      title: businessScenarioTaskTargetBase
-      type: object
-      properties:
-        taskTargetKind:
-          $ref: '#/components/schemas/microsoft.graph.plannerTaskTargetKind'
       additionalProperties:
         type: object
     microsoft.graph.plannerDelta:
@@ -2323,7 +2382,7 @@ components:
         occurrenceId:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
           format: int32
         previousInSeriesTaskId:
@@ -2354,12 +2413,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-    microsoft.graph.plannerTaskTargetKind:
-      title: plannerTaskTargetKind
-      enum:
-        - group
-        - unknownFutureValue
-      type: string
     microsoft.graph.plannerApprovalStatus:
       title: plannerApprovalStatus
       enum:
@@ -2646,7 +2699,7 @@ components:
         dayOfMonth:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
           format: int32
         daysOfWeek:
@@ -2661,13 +2714,13 @@ components:
         interval:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
           format: int32
         month:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The month in which the event occurs.  This is a number from 1 to 12.
           format: int32
         type:

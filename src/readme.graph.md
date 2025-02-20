@@ -6,7 +6,6 @@
 azure: false
 powershell: true
 version: latest
-#use: "@autorest/powershell@3.0.509"
 use: "$(this-folder)../autorest.powershell"
 export-properties-for-dict: false
 metadata:
@@ -335,6 +334,11 @@ directive:
         let dateTimeToJsonRegex = /(\.Json\.JsonString\()(.*)\?(\.ToString\(@"yyyy'-'MM'-'dd'T'HH':'mm':'ss\.fffffffK")/gm
         $ = $.replace(dateTimeToJsonRegex, '$1System.DateTime.SpecifyKind($2.Value.ToUniversalTime(), System.DateTimeKind.Utc)$3');
 
+        // Enables null valued properties
+        $ = $.replace(/AddIf\(\s*null\s*!=\s*(this\._\w+)\s*\?\s*\(\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonNode\)\s*(.*)\s*:\s*null\s*,\s*"(.*?)"\s*,\s*container\.Add\s*\)/gm, 'container.Add("$3", $1 != null ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode) $2 :"defaultnull")')
+
+        $ = $.replace(/AddIf\(\s*null\s*!=\s*\(\(\(\(object\)\s*(this\._\w+)\)\)?.ToString\(\)\)\s*\?\s*\(\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonNode\)\s*new\s*Microsoft\.Graph\.PowerShell\.Runtime\.Json\.JsonString\((this\._\w+).ToString\(\)\)\s*:\s*null\s*,\s*"(.*?)"\s*,\s*container\.Add\s*\)/gm, 'container.Add("$3", $1 != null ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode) new Microsoft.Graph.PowerShell.Runtime.Json.JsonString($2.ToString()) :"defaultnull")');
+
         return $;
       }
 # Modify generated .dictionary.cs model classes.
@@ -646,7 +650,15 @@ directive:
         // Fix double = in date parameter. Temp fix for https://github.com/Azure/autorest.powershell/issues/1025.
         let dateAssignmentRegex = /(date="\n.*)(\+.*"=")(.*\+.*date)/gmi
         $ = $.replace(dateAssignmentRegex, '$1 $3');
-        return $;
+
+        // Allow sending of serialized null properties located in cleanedBody
+        $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*body\.ToJson\(null\)\.ToString\(\)\s*:\s*@"{}",\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
+
+        $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*new\s+Microsoft\.Graph\.PowerShell\.Runtime\.Json\.XNodeArray\(.*?\)\s*:\s*null,\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
+
+        $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*new\s+Microsoft\.Graph\.Beta\.PowerShell\.Runtime\.Json\.XNodeArray\(.*?\)\s*:\s*null,\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
+        
+        return $
       }
 
 # Fix enums with underscore.
@@ -844,5 +856,72 @@ directive:
       subject: OnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupOnPremiseAgentGroupByRef
     set:
       alias: ${verb}-Mg${subject-prefix}OnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
+  - where:
+      verb: Remove
+      subject: ^(UserDeviceFromManagement)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      verb: Invoke
+      subject: ^(InvalidateUserRefreshToken)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      verb: Get
+      subject: ^(TeamMessage|TeamworkDeletedTeamMessage)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      verb: Get
+      subject: ^(Team|GroupTeam)All(ChannelCount)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      verb: Search
+      subject: SolutionBackupRestorePoint
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestorePoint
+  - where:
+      verb: Enable
+      subject: SolutionBackupRestore
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestore
+  - where:
+      verb: Initialize
+      subject: SolutionBackupRestoreSession
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestoreSession
+  - where:
+      verb: Initialize
+      subject: SolutionBackupRestoreServiceApp
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestoreServiceApp
+  - where:
+      verb: Initialize
+      subject: SolutionBackupRestoreProtectionPolicy
+    set:
+      alias: ${verb}-Mg${subject-prefix}BackupRestoreProtectionPolicy
+  - where:
+      verb: Get
+      subject: UserOnenoteNotebookRecentNotebook
+    set:
+      alias: ${verb}-Mg${subject-prefix}UserOnenoteRecentNotebook
+  - where:
+      verb: Get
+      subject: SiteOnenoteNotebookRecentNotebook
+    set:
+      alias: ${verb}-Mg${subject-prefix}SiteRecentNotebook
+# Setting the alias below as per the request on issue [#2560](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2560)
+
+  - where:
+      verb: Update
+      subject: ^User$
+    set:
+      alias: Set-Mg${subject-prefix}${subject}
+  - where:
+      verb: (Get|New|Update|Remove|Set|Invoke|Create)
+      subject: ^(.*)(OnPremise)(.*)$
+    set:
+      alias: ^(.*)(OnPremises)(.*)$
       
 ```

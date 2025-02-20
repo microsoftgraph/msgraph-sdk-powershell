@@ -8,7 +8,7 @@ $ErrorActionPreference = 'Stop'
 $ModuleName = "Authentication"
 $ModulePrefix = "Microsoft.Graph"
 $netStandard = "netstandard2.0"
-$netApp = "net6.0"
+$netApp = "net8.0"
 $netFx = "net472"
 $copyExtensions = @('.dll', '.pdb')
 
