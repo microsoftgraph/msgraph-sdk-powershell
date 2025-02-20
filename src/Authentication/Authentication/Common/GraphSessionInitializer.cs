@@ -5,10 +5,10 @@
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
-using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Management.Automation;
+using System.Text.Json;
 using RequestContext = Microsoft.Graph.PowerShell.Authentication.Models.RequestContext;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Common
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
             if (File.Exists(Constants.GraphOptionsFilePath))
             {
                 // Deserialize the JSON into the GraphOption instance
-                graphOptions = JsonConvert.DeserializeObject<GraphOption>(File.ReadAllText(Constants.GraphOptionsFilePath));
+                graphOptions = JsonSerializer.Deserialize<GraphOption>(File.ReadAllText(Constants.GraphOptionsFilePath));
             }
 
             return new GraphSession
