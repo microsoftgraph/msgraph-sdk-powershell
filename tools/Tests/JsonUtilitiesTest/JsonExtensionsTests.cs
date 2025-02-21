@@ -59,10 +59,10 @@ public class JsonExtensionsTests
             ""displayname"": ""Tim"",
             ""professions"": {
             },
-            ""passwordProfile"": {
-                ""password"": ""pass123"",
-                ""forceChangePasswordNextSignIn"": false,
-                ""forcePassWitMfa"" : ""defaultnull""
+            ""jobProfile"": {
+                ""dept"": ""ICT"",
+                ""manager"": false,
+                ""supervisor"" : ""defaultnull""
             },
             ""metadata"": {
                 ""phone"": ""defaultnull"",
@@ -82,7 +82,7 @@ public class JsonExtensionsTests
 
         // Assert
         Assert.False(result["metadata"]?.ToObject<JObject>()?.ContainsKey("phone"));
-        Assert.Equal("pass123", result["passwordProfile"]?["password"]?.ToString());
+        Assert.Equal("ICT", result["jobProfile"]?["dept"]?.ToString());
         Assert.Equal("Nairobi", result["metadata"]?["address"]?["city"]?.ToString());
         Assert.Null(result["metadata"]?["location"]?.Value<string>());
         // Check if emptynested object is removed
