@@ -1,5 +1,6 @@
 ﻿namespace JsonUtilitiesTest;
 using System;
+using System.Text.Json;
 using Newtonsoft.Json.Linq;
 using Xunit;
 using NamespacePrefixPlaceholder.PowerShell.JsonUtilities;
@@ -161,6 +162,66 @@ public class JsonExtensionsTests
         Assert.Equal("Tim", result[0]?["displayname"]?.ToString());
         Assert.False(result[0].ToObject<JObject>().ContainsKey("email"));
 
+    }
+        [Fact]
+    public void ReplaceAndRemoveSlashes_Should_Preserve_Json_Property_Values()
+    {
+        // Arrange
+        string inputJson = @"{
+            ""RedirectUris"": [""http://localhost/.auth/login/aad/callback""],
+            ""DirectoryPath"": ""/this/is/a/directory/and/should/not/be/removed""
+        }";
+
+        string expectedJson = @"{
+            ""RedirectUris"": [""http://localhost/.auth/login/aad/callback""],
+            ""DirectoryPath"": ""/this/is/a/directory/and/should/not/be/removed""
+        }";
+
+        // Act
+        string result = inputJson.ReplaceAndRemoveSlashes();
+
+        // Assert
+        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(result));
+    }
+
+    [Fact]
+    public void ReplaceAndRemoveSlashes_Should_Remove_Backslashes()
+    {
+        // Arrange
+        string input = @"Some \random \slashes that \should be removed.";
+        string expected = "Some random slashes that should be removed.";
+
+        // Act
+        string result = input.ReplaceAndRemoveSlashes();
+
+        // Assert
+        Assert.Equal(expected, result);
+    }
+
+    [Fact]
+    public void ReplaceAndRemoveSlashes_Should_Handle_Invalid_Json_Gracefully()
+    {
+        // Arrange
+        string invalidJson = "{Invalid Json \\with /slashes}";
+
+        // Act
+        string result = invalidJson.ReplaceAndRemoveSlashes();
+
+        // Assert
+        Assert.DoesNotContain("\\", result);
+    }
+
+    /// <summary>
+    /// Normalizes JSON for comparison (removes formatting differences).
+    /// </summary>
+    private string NormalizeJson(string json)
+    {
+        using var doc = JsonDocument.Parse(json);
+        return JsonSerializer.Serialize(doc.RootElement, new JsonSerializerOptions
+        {
+            WriteIndented = false,
+            Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        });
     }
 
     [Fact]
