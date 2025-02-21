@@ -79,7 +79,7 @@ namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
 
         public static string ReplaceAndRemoveSlashes(this string body)
         {
-            return body.Replace("/", "").Replace("\\", "").Replace("rn", "").Replace("\"{", "{").Replace("}\"", "}");
+             return body.Replace("\\", "").Replace("rn", "").Replace("\"{", "{").Replace("}\"", "}");
         }
     }
 }
