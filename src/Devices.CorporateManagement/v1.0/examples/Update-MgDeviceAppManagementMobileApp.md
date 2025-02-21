@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.Devices.CorporateManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.managedAndroidStoreApp"
+	"@odata.type" = "#microsoft.graph.androidLobApp"
 	displayName = "Display Name value"
 	description = "Description value"
 	publisher = "Publisher value"
@@ -21,10 +21,10 @@ $params = @{
 	developer = "Developer value"
 	notes = "Notes value"
 	publishingState = "processing"
-	appAvailability = "lineOfBusiness"
-	version = "Version value"
+	committedContentVersion = "Committed Content Version value"
+	fileName = "File Name value"
+	size = 
 	packageId = "Package Id value"
-	appStoreUrl = "https://example.com/appStoreUrl/"
 	minimumSupportedOperatingSystem = @{
 		"@odata.type" = "microsoft.graph.androidMinimumOperatingSystem"
 		v4_0 = $true
@@ -44,6 +44,8 @@ $params = @{
 		v10_0 = $true
 		v11_0 = $true
 	}
+	versionName = "Version Name value"
+	versionCode = "Version Code value"
 }
 
 Update-MgDeviceAppManagementMobileApp -MobileAppId $mobileAppId -BodyParameter $params

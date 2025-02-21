@@ -41,7 +41,6 @@ $params = @{
 			identifierUris = @{
 				nonDefaultUriAddition = @{
 					state = "disabled"
-					restrictForAppsCreatedAfterDateTime = $null
 					excludeAppsReceivingV2Tokens = $true
 					excludeSaml = $true
 				}
