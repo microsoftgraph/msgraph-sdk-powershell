@@ -45,6 +45,13 @@
     },
     {
       "file": [
+        "src\\Identity.SignIns\\beta\\examples\\Reset-MgBetaUserAuthenticationMethodPassword.md",
+        "src\\Identity.SignIns\\v1.0\\examples\\Reset-MgBetaUserAuthenticationMethodPassword.md"
+      ],
+      "_justification": "[Identity.SignIns] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
         "src\\DeviceManagement.Actions\\beta\\examples\\Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionAdDomainPassword.md"
       ],
       "_justification": "[DeviceManagement.Actions] Examples contain random values recognized as secret"
