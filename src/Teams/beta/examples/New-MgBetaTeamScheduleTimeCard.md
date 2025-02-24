@@ -8,7 +8,7 @@ $params = @{
 	onBehalfOfUserId = "a3601044-a1b5-438e-b742-f78d01d68a67"
 	clockInEvent = @{
 		dateTime = [System.DateTime]::Parse("2019-03-18T00:00:00.000Z")
-		atApprovedLocation = $true
+		isAtApprovedLocation = $true
 		notes = @{
 			content = "Started late due to traffic in CA 237"
 			contentType = "text"
@@ -27,7 +27,7 @@ $params = @{
 			}
 			start = @{
 				dateTime = [System.DateTime]::Parse("2019-03-18T02:00:00.000Z")
-				atApprovedLocation = $true
+				isAtApprovedLocation = $true
 				notes = @{
 					content = "Reduced break to make up for lost time"
 					contentType = "text"

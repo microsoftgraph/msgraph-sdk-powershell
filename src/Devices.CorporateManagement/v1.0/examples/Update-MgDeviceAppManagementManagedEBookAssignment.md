@@ -5,9 +5,9 @@
 Import-Module Microsoft.Graph.Devices.CorporateManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.managedEBookAssignment"
+	"@odata.type" = "#microsoft.graph.iosVppEBookAssignment"
 	target = @{
-		"@odata.type" = "microsoft.graph.allLicensedUsersAssignmentTarget"
+		"@odata.type" = "microsoft.graph.deviceAndAppManagementAssignmentTarget"
 	}
 	installIntent = "required"
 }

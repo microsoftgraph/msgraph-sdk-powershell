@@ -5,28 +5,99 @@
 Import-Module Microsoft.Graph.DeviceManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.sharedPCConfiguration"
+	"@odata.type" = "#microsoft.graph.windows10EndpointProtectionConfiguration"
 	description = "Description value"
 	displayName = "Display Name value"
 	version = 7
-	accountManagerPolicy = @{
-		"@odata.type" = "microsoft.graph.sharedPCAccountManagerPolicy"
-		accountDeletionPolicy = "diskSpaceThreshold"
-		cacheAccountsAboveDiskFreePercentage = 
-		inactiveThresholdDays = 
-		removeAccountsBelowDiskFreePercentage = 
+	firewallBlockStatefulFTP = $true
+	firewallIdleTimeoutForSecurityAssociationInSeconds = 
+	firewallPreSharedKeyEncodingMethod = "none"
+	firewallIPSecExemptionsAllowNeighborDiscovery = $true
+	firewallIPSecExemptionsAllowICMP = $true
+	firewallIPSecExemptionsAllowRouterDiscovery = $true
+	firewallIPSecExemptionsAllowDHCP = $true
+	firewallCertificateRevocationListCheckMethod = "none"
+	firewallMergeKeyingModuleSettings = $true
+	firewallPacketQueueingMethod = "disabled"
+	firewallProfileDomain = @{
+		"@odata.type" = "microsoft.graph.windowsFirewallNetworkProfile"
+		firewallEnabled = "blocked"
+		stealthModeBlocked = $true
+		incomingTrafficBlocked = $true
+		unicastResponsesToMulticastBroadcastsBlocked = $true
+		inboundNotificationsBlocked = $true
+		authorizedApplicationRulesFromGroupPolicyMerged = $true
+		globalPortRulesFromGroupPolicyMerged = $true
+		connectionSecurityRulesFromGroupPolicyMerged = $true
+		outboundConnectionsBlocked = $true
+		inboundConnectionsBlocked = $true
+		securedPacketExemptionAllowed = $true
+		policyRulesFromGroupPolicyMerged = $true
 	}
-	allowedAccounts = "domain"
-	allowLocalStorage = $true
-	disableAccountManager = $true
-	disableEduPolicies = $true
-	disablePowerPolicies = $true
-	disableSignInOnResume = $true
-	enabled = $true
-	idleTimeBeforeSleepInSeconds = 
-	kioskAppDisplayName = "Kiosk App Display Name value"
-	kioskAppUserModelId = "Kiosk App User Model Id value"
-	maintenanceStartTime = "11:59:24.7240000"
+	firewallProfilePublic = @{
+		"@odata.type" = "microsoft.graph.windowsFirewallNetworkProfile"
+		firewallEnabled = "blocked"
+		stealthModeBlocked = $true
+		incomingTrafficBlocked = $true
+		unicastResponsesToMulticastBroadcastsBlocked = $true
+		inboundNotificationsBlocked = $true
+		authorizedApplicationRulesFromGroupPolicyMerged = $true
+		globalPortRulesFromGroupPolicyMerged = $true
+		connectionSecurityRulesFromGroupPolicyMerged = $true
+		outboundConnectionsBlocked = $true
+		inboundConnectionsBlocked = $true
+		securedPacketExemptionAllowed = $true
+		policyRulesFromGroupPolicyMerged = $true
+	}
+	firewallProfilePrivate = @{
+		"@odata.type" = "microsoft.graph.windowsFirewallNetworkProfile"
+		firewallEnabled = "blocked"
+		stealthModeBlocked = $true
+		incomingTrafficBlocked = $true
+		unicastResponsesToMulticastBroadcastsBlocked = $true
+		inboundNotificationsBlocked = $true
+		authorizedApplicationRulesFromGroupPolicyMerged = $true
+		globalPortRulesFromGroupPolicyMerged = $true
+		connectionSecurityRulesFromGroupPolicyMerged = $true
+		outboundConnectionsBlocked = $true
+		inboundConnectionsBlocked = $true
+		securedPacketExemptionAllowed = $true
+		policyRulesFromGroupPolicyMerged = $true
+	}
+	defenderAttackSurfaceReductionExcludedPaths = @(
+	"Defender Attack Surface Reduction Excluded Paths value"
+)
+defenderGuardedFoldersAllowedAppPaths = @(
+"Defender Guarded Folders Allowed App Paths value"
+)
+defenderAdditionalGuardedFolders = @(
+"Defender Additional Guarded Folders value"
+)
+defenderExploitProtectionXml = "ZGVmZW5kZXJFeHBsb2l0UHJvdGVjdGlvblhtbA=="
+defenderExploitProtectionXmlFileName = "Defender Exploit Protection Xml File Name value"
+defenderSecurityCenterBlockExploitProtectionOverride = $true
+appLockerApplicationControl = "enforceComponentsAndStoreApps"
+smartScreenEnableInShell = $true
+smartScreenBlockOverrideForFiles = $true
+applicationGuardEnabled = $true
+applicationGuardBlockFileTransfer = "blockImageAndTextFile"
+applicationGuardBlockNonEnterpriseContent = $true
+applicationGuardAllowPersistence = $true
+applicationGuardForceAuditing = $true
+applicationGuardBlockClipboardSharing = "blockBoth"
+applicationGuardAllowPrintToPDF = $true
+applicationGuardAllowPrintToXPS = $true
+applicationGuardAllowPrintToLocalPrinters = $true
+applicationGuardAllowPrintToNetworkPrinters = $true
+bitLockerDisableWarningForOtherDiskEncryption = $true
+bitLockerEnableStorageCardEncryptionOnMobile = $true
+bitLockerEncryptDevice = $true
+bitLockerRemovableDrivePolicy = @{
+"@odata.type" = "microsoft.graph.bitLockerRemovableDrivePolicy"
+encryptionMethod = "aesCbc256"
+requireEncryptionForWriteAccess = $true
+blockCrossOrganizationWriteAccess = $true
+}
 }
 
 Update-MgDeviceManagementDeviceConfiguration -DeviceConfigurationId $deviceConfigurationId -BodyParameter $params
