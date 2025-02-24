@@ -1,5 +1,6 @@
 ﻿namespace JsonUtilitiesTest;
 using System;
+using System.Text.Json;
 using Newtonsoft.Json.Linq;
 using Xunit;
 using NamespacePrefixPlaceholder.PowerShell.JsonUtilities;
@@ -56,9 +57,22 @@ public class JsonExtensionsTests
         // Arrange
         JObject json = JObject.Parse(@"{
             ""displayname"": ""Tim"",
+            ""professions"": {
+            },
+            ""jobProfile"": {
+                ""dept"": ""ICT"",
+                ""manager"": false,
+                ""supervisor"" : ""defaultnull""
+            },
             ""metadata"": {
                 ""phone"": ""defaultnull"",
-                ""location"": ""Nairobi""
+                ""location"": ""null"",
+                ""address"": {
+                    ""city"": ""Nairobi"",
+                    ""street"": ""defaultnull""
+                },
+                ""station"": {
+                }
             }
         }");
 
@@ -68,7 +82,12 @@ public class JsonExtensionsTests
 
         // Assert
         Assert.False(result["metadata"]?.ToObject<JObject>()?.ContainsKey("phone"));
-        Assert.Equal("Nairobi", result["metadata"]?["location"]?.ToString());
+        Assert.Equal("ICT", result["jobProfile"]?["dept"]?.ToString());
+        Assert.Equal("Nairobi", result["metadata"]?["address"]?["city"]?.ToString());
+        Assert.Null(result["metadata"]?["location"]?.Value<string>());
+        // Check if emptynested object is removed
+        Assert.False(result["metadata"]?.ToObject<JObject>()?.ContainsKey("station "));
+        Assert.False(result?.ToObject<JObject>()?.ContainsKey("professions"));
     }
 
     [Fact]
@@ -144,7 +163,88 @@ public class JsonExtensionsTests
         Assert.False(result[0].ToObject<JObject>().ContainsKey("email"));
 
     }
+        [Fact]
+    public void ReplaceAndRemoveSlashes_Should_Preserve_Json_Property_Values()
+    {
+        // Arrange
+        string inputJson = @"{
+            ""RedirectUris"": [""http://localhost/.auth/login/aad/callback""],
+            ""DirectoryPath"": ""/this/is/a/directory/and/should/not/be/removed""
+        }";
 
+        string expectedJson = @"{
+            ""RedirectUris"": [""http://localhost/.auth/login/aad/callback""],
+            ""DirectoryPath"": ""/this/is/a/directory/and/should/not/be/removed""
+        }";
 
+        // Act
+        string result = inputJson.ReplaceAndRemoveSlashes();
+
+        // Assert
+        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(result));
+    }
+
+    [Fact]
+    public void ReplaceAndRemoveSlashes_Should_Remove_Backslashes()
+    {
+        // Arrange
+        string input = @"Some \random \slashes that \should be removed.";
+        string expected = "Some random slashes that should be removed.";
+
+        // Act
+        string result = input.ReplaceAndRemoveSlashes();
+
+        // Assert
+        Assert.Equal(expected, result);
+    }
+
+    [Fact]
+    public void ReplaceAndRemoveSlashes_Should_Handle_Invalid_Json_Gracefully()
+    {
+        // Arrange
+        string invalidJson = "{Invalid Json \\with /slashes}";
+
+        // Act
+        string result = invalidJson.ReplaceAndRemoveSlashes();
+
+        // Assert
+        Assert.DoesNotContain("\\", result);
+    }
+
+    /// <summary>
+    /// Normalizes JSON for comparison (removes formatting differences).
+    /// </summary>
+    private string NormalizeJson(string json)
+    {
+        using var doc = JsonDocument.Parse(json);
+        return JsonSerializer.Serialize(doc.RootElement, new JsonSerializerOptions
+        {
+            WriteIndented = false,
+            Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        });
+    }
+
+    [Fact]
+    public void RemoveDefaultNullProperties_ShouldRemoveDefaultNullValuesInJsonObjectWithBothDeeplyNestedObjectsAndArrays(){
+        // Arrange
+        JObject json = JObject.Parse(@"{
+            ""body"":{
+                ""users"": [
+                    { ""displayname"": ""Tim"", ""email"": ""defaultnull"", ""metadata"": { ""phone"": ""254714390915"" } }
+                ]
+            },
+            ""users"": [
+                { ""displayname"": ""Tim"", ""email"": ""defaultnull"", ""metadata"": { ""phone"": ""254714390915"" } }]}");
+
+        // Act
+        string cleanedJson = json.RemoveDefaultNullProperties();
+        JObject result = JObject.Parse(cleanedJson);
+
+        // Assert
+        Assert.False(result["users"][0]?.ToObject<JObject>().ContainsKey("email"));
+        Assert.True(result["users"][0]?["metadata"]?.ToObject<JObject>().ContainsKey("phone"));
+        Assert.False(result["body"]?["users"][0]?.ToObject<JObject>().ContainsKey("email"));
+        Assert.True(result["body"]?["users"][0]?["metadata"]?.ToObject<JObject>().ContainsKey("phone"));
+    }
 }
 
