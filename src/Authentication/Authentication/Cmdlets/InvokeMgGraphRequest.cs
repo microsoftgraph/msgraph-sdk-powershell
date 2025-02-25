@@ -8,7 +8,6 @@ using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Properties;
 using Microsoft.PowerShell.Commands;
-using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Globalization;
@@ -18,6 +17,7 @@ using System.Management.Automation;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
@@ -580,7 +580,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
 
             // Covert all dictionaries to Json
-            var body = JsonConvert.SerializeObject(content);
+            var body = JsonSerializer.Serialize(content);
             return SetRequestContent(request, body);
         }
 

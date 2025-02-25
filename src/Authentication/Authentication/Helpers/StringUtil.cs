@@ -13,7 +13,8 @@ using System.Linq;
 using System.Management.Automation;
 using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
@@ -66,6 +67,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return bodyBuilder.ToString();
         }
 
+
+        private static readonly JsonSerializerOptions _jsonSerializerOptions = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+        };
         /// <summary>
         ///     Convert a JSON string back to an object of type <see cref="PSObject"/> or
         ///     <see cref="Hashtable"/> depending on parameter <paramref name="returnHashtable"/>.
@@ -87,48 +95,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             error = null;
             try
             {
-                // JsonConvert.DeserializeObject does not throw an exception when an invalid Json array is passed.
-                // This issue is being tracked by https://github.com/JamesNK/Newtonsoft.Json/issues/1930.
-                // To work around this, we need to identify when jsonString is a Json array, and then try to parse it via JArray.Parse().
-
-                // If jsonString starts with '[' (ignoring white spaces).
-                if (Regex.Match(jsonString, @"^\s*\[").Success)
+                if (maxDepth != null)
                 {
-                    // JArray.Parse() will throw a JsonException if the array is invalid.
-                    // This will be caught by the catch block below, and then throw an
-                    // ArgumentException - this is done to have same behavior as the JavaScriptSerializer.
-                    JArray.Parse(jsonString);
-
-                    // Please note that if the Json array is valid, we don't do anything,
-                    // we just continue the deserialization.
+                    _jsonSerializerOptions.MaxDepth = maxDepth.Value;
                 }
-
-                var obj = JsonConvert.DeserializeObject(
-                    jsonString,
-                    new JsonSerializerSettings
-                    {
-                        // This TypeNameHandling setting is required to be secure.
-                        TypeNameHandling = TypeNameHandling.None,
-                        MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                        MaxDepth = maxDepth
-                    });
-
-                switch (obj)
+                if (returnHashtable)
                 {
-                    case JObject dictionary:
-                        // JObject is a IDictionary
-                        /* Note: Do not use Ternary operator as HashTable is implicitly convertible to PsObject, thus the ternary operation below, always returns a PSObject.
-                         * return returnHashtable ? PopulateHashTableFromJDictionary(dictionary, out error) : PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
-                         * https://github.com/PowerShell/PowerShell/blob/73f852da4252eabe4097ab48a7b67c5d147a01f3/src/System.Management.Automation/engine/MshObject.cs#L965
-                         */
-                        return returnHashtable
-                            ? PopulateHashTableFromJDictionary(dictionary, out error)
-                            : (object)PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
-                    case JArray list:
-                        return returnHashtable ? PopulateHashTableFromJArray(list, out error) : (object)PopulateFromJArray(list, out error);
-                    default:
-                        return obj;
+                    return JsonSerializer.Deserialize<Hashtable>(jsonString, _jsonSerializerOptions);
                 }
+                var obj = JsonSerializer.Deserialize<PSObject>(jsonString, _jsonSerializerOptions);
             }
             catch (JsonException je)
             {
