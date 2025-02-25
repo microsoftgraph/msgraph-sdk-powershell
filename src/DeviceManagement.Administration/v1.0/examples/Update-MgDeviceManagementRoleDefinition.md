@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.DeviceManagement.Administration
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.deviceAndAppManagementRoleDefinition"
+	"@odata.type" = "#microsoft.graph.roleDefinition"
 	displayName = "Display Name value"
 	description = "Description value"
 	rolePermissions = @(

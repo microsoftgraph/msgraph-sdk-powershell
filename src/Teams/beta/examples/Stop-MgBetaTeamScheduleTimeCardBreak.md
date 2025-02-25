@@ -5,10 +5,10 @@
 Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	atAprovedLocation = $true
+	isAtApprovedLocation = $true
 	notes = @{
 		contentType = "text"
-		content = "end break smaple notes"
+		content = "ending break"
 	}
 }
 
