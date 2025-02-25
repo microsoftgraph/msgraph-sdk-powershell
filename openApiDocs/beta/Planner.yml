@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Planner
   version: v1.0-beta
@@ -14350,6 +14350,7 @@ components:
         - project
         - driveItem
         - user
+        - teamsChannel
       type: string
     microsoft.graph.sensitivityLabelAssignment:
       title: sensitivityLabelAssignment
