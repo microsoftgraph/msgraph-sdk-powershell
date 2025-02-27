@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             //There is need for explicitly adding TenantId to the TokenCredentialOptions for EnvironmentCredential due to stricter security requirements.
-            authContext.TenantId = EnvironmentVariables.TenantId;
+            //authContext.TenantId = EnvironmentVariables.TenantId;
             var tokenCredentialOptions = new TokenCredentialOptions
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext))
@@ -209,7 +209,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             var tokenCredential = await GetTokenCredentialAsync(authContext, default).ConfigureAwait(false);
-            return new AzureIdentityAccessTokenProvider(credential:tokenCredential, observabilityOptions: null,isCaeEnabled: true,scopes: GetScopes(authContext));
+            return new AzureIdentityAccessTokenProvider(credential:tokenCredential,scopes: GetScopes(authContext));
         }
 
         public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken)
