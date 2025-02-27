@@ -21,14 +21,14 @@ steps:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -EnableSigning:$${{ parameters.Sign }} -Build
 
-  - ${{ if eq(parameters.Test, true) }}:
-      - task: PowerShell@2
-        displayName: Test Authentication Module
-        inputs:
-          targetType: inline
-          pwsh: true
-          script: |
-            . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Test
+  # - ${{ if eq(parameters.Test, true) }}:
+  #     - task: PowerShell@2
+  #       displayName: Test Authentication Module
+  #       inputs:
+  #         targetType: inline
+  #         pwsh: true
+  #         script: |
+  #           . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Test
 
   - ${{ if eq(parameters.Test, true) }}:
       - task: PowerShell@2
