@@ -154,10 +154,8 @@ namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
                         string stringValue = value.ToString();
                         try
                         {
-                            JToken parsedValue = JToken.Parse(stringValue);
-                            string originalToken = JsonConvert.SerializeObject(parsedValue, Formatting.None, new PreserveStringConverter()); // Ensures that the value matches the original type
-                            property.Value = originalToken; // Replace with unescaped JSON object
-                            ProcessBody(originalToken); // Recursively process
+                            property.Value = stringValue; // Replace with unescaped JSON object
+                            ProcessBody(stringValue); // Recursively process
                         }
                         catch (Newtonsoft.Json.JsonException)
                         {
@@ -182,10 +180,8 @@ namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
                         string stringValue = value.ToString();
                         try
                         {
-                            JToken parsedValue = JToken.Parse(stringValue);
-                            string originalToken = JsonConvert.SerializeObject(parsedValue, Formatting.None, new PreserveStringConverter()); // Ensures that the value matches the original type
-                            jsonArray[i] = originalToken; // Replace with unescaped JSON object
-                            ProcessBody(originalToken); // Recursively process
+                            jsonArray[i] = stringValue; // Replace with unescaped JSON object
+                            ProcessBody(stringValue); // Recursively process
                         }
                         catch (Newtonsoft.Json.JsonException)
                         {
