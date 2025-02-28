@@ -246,5 +246,61 @@ public class JsonExtensionsTests
         Assert.False(result["body"]?["users"][0]?.ToObject<JObject>().ContainsKey("email"));
         Assert.True(result["body"]?["users"][0]?["metadata"]?.ToObject<JObject>().ContainsKey("phone"));
     }
+
+    [Fact]
+    public void NumericString_RemainsString()
+    {
+        // Arrange
+        JObject json = JObject.Parse(@"{
+            ""displayname"": ""Tim"",
+            ""position"": ""123"",
+            ""salary"": 2000000
+        }");
+
+        // Act
+        string cleanedJson = json.ToString()?.ReplaceAndRemoveSlashes();
+        JObject result = JObject.Parse(cleanedJson);
+
+        // Assert
+        Assert.Equal("123", result["position"]?.ToString());
+        Assert.Equal(2000000, result["salary"]?.ToObject<int>());
+    }
+    [Fact]
+    public void NumericString_RemainsStringInJsonArray()
+    {
+        // Arrange
+        JArray json = JArray.Parse(@"[
+                { ""displayname"": ""Tim"", ""position"": ""123"" }
+
+        ]");
+
+        // Act
+        string cleanedJson = json.ToString()?.ReplaceAndRemoveSlashes();
+        JArray result = JArray.Parse(cleanedJson);
+
+        // Assert
+        Assert.Equal("123", result[0]?["position"]?.ToString());
+    }
+
+    [Fact]
+    public void NumericString_RemainsStringInNestedJsonObject()
+    {
+        // Arrange
+        JObject json = JObject.Parse(@"{
+            ""body"":{
+                ""users"": [
+                    { ""displayname"": ""Tim"", ""position"": ""123"" }
+                ]
+            }
+        }");
+
+        // Act
+        string cleanedJson = json.ToString()?.ReplaceAndRemoveSlashes();
+        JObject result = JObject.Parse(cleanedJson);
+
+        // Assert
+        Assert.Equal("123", result["body"]?["users"][0]?["position"]?.ToString());
+        Assert.Equal("Tim", result["body"]?["users"][0]?["displayname"]?.ToString());
+    }
 }
 
