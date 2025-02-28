@@ -120,6 +120,25 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         ArtifactsLocation       = $using:ArtifactsLocation
         RequiredModules         = $using:RequiredGraphModules
     }
+    #Call a function to check if there are any open files in the temp folder. Recurse through the folder until all files are closed
+    $OpenFiles = Get-OpenFiles -Path $TempPath
+    if ($OpenFiles.Count -gt 0) {
+        $OpenFiles = Get-OpenFiles -Path $TempPath
+    }
+    #Delete any file in temp folder with the extension .tmp or .log or .db
+    Get-ChildItem -Path $TempPath -Recurse | ForEach-Object {
+        $File = $_
+        Write-Debug "Removing cached file $File"
+        if (Test-Path $File.FullName) {
+            #Remove the file
+            try{
+                Remove-Item -Path $File.FullName -Force
+            }
+            catch {
+                Write-Warning "Failed to remove file $File"
+            }
+        }
+    }
     & $using:GenerateServiceModulePS1 @ServiceModuleParams
     function Get-OpenFiles {
         param (
@@ -138,26 +157,6 @@ $ModuleToGenerate | ForEach-Object -Parallel {
             }
         }
         return $OpenFiles
-    }
-    #Call a function to check if there are any open files in the temp folder. Recurse through the folder until all files are closed
-    $OpenFiles = Get-OpenFiles -Path $TempPath
-    if ($OpenFiles.Count -gt 0) {
-        $OpenFiles = Get-OpenFiles -Path $TempPath
-    }
-    
-    #Delete any file in temp folder with the extension .tmp or .log or .db
-    Get-ChildItem -Path $TempPath -Recurse | ForEach-Object {
-        $File = $_
-        Write-Debug "Removing cached file $File"
-        if (Test-Path $File.FullName) {
-            #Remove the file
-            try{
-                Remove-Item -Path $File.FullName -Force
-            }
-            catch {
-                Write-Warning "Failed to remove file $File"
-            }
-        }
     }
 
 
