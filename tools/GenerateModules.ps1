@@ -69,10 +69,10 @@ if ($ModuleToGenerate.Count -eq 0) {
     $ModuleToGenerate = $ModuleMapping.Keys
 }
 
-#This is to ensure that the autorest temp folder is cleared before generating the modules
-$TempPath = [System.IO.Path]::GetTempPath()
-# Check if there is any folder with autorest in the name
-$AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+# #This is to ensure that the autorest temp folder is cleared before generating the modules
+# $TempPath = [System.IO.Path]::GetTempPath()
+# # Check if there is any folder with autorest in the name
+# $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
 
 # # Go through each folder and forcefully delete autorest related files
 # $AutoRestTempFolder | ForEach-Object {
@@ -121,6 +121,10 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         RequiredModules         = $using:RequiredGraphModules
         
     }
+    #This is to ensure that the autorest temp folder is cleared before generating the modules
+    $TempPath = [System.IO.Path]::GetTempPath()
+    # Check if there is any folder with autorest in the name
+    $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
     $AutoRestTempFolder | ForEach-Object {
         $AutoRestTempFolder = $_
         #Delete files and folders if they exist
