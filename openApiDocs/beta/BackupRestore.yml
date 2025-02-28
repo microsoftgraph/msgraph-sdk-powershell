@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: BackupRestore
   version: v1.0-beta
@@ -2114,7 +2114,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create mailboxRestoreArtifactsBulkAdditionRequest
-      description: 'Create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The initial status upon creation of the restore session is active. When all the mailboxes are added to the corresponding Exchange restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.'
+      description: 'Create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The following steps describe how to create and manage an exchangeRestoreSession with bulk artifact additions:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/exchangerestoresession-post-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-beta
@@ -4085,7 +4085,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create driveRestoreArtifactsBulkAdditionRequest
-      description: 'Create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The initial status upon creation of the restore session is active. When all the drives are added to the corresponding OneDrive restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.'
+      description: Create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The following steps describe how to create and manage a oneDriveForBusinessRestoreSession with bulk artifact additions.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-post-driverestoreartifactsbulkadditionrequests?view=graph-rest-beta
@@ -6608,7 +6608,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create siteRestoreArtifactsBulkAdditionRequests
-      description: 'Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.'
+      description: 'Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The following steps describe how to create and manage a sharePointRestoreSession with bulk artifact additions:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointrestoresession-post-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta
@@ -7937,6 +7937,8 @@ components:
               type: string
               description: The unique identifier of the protection policy based on which protection unit was created.
               nullable: true
+            protectionSources:
+              $ref: '#/components/schemas/microsoft.graph.protectionSource'
             status:
               $ref: '#/components/schemas/microsoft.graph.protectionUnitStatus'
           additionalProperties:
@@ -8246,7 +8248,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicError'
             isAutoApplyEnabled:
               type: boolean
-              description: 'true indicates that the protection rule is dynamic; false that it''s static. Currently, only static rules are supported.'
+              description: true indicates that the protection rule is dynamic; false that it's static.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -8462,6 +8464,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.protectionSource:
+      title: protectionSource
+      enum:
+        - none
+        - manual
+        - dynamicRule
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.protectionUnitStatus:
       title: protectionUnitStatus
       enum:
@@ -8939,6 +8951,8 @@ components:
         - completed
         - completedWithErrors
         - unknownFutureValue
+        - updateRequested
+        - deleteRequested
       type: string
     microsoft.graph.protectionUnitsBulkJobStatus:
       title: protectionUnitsBulkJobStatus

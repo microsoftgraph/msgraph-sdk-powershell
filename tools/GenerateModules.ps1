@@ -146,7 +146,7 @@ $ModuleToGenerate | ForEach-Object -Parallel {
     }
     
     #Delete any file in temp folder with the extension .tmp or .log or .db
-    Get-ChildItem -Path $TempPath -Recurse | Where-Object { $_.Extension -match ".tmp|.log|.db|.db-shm|.db-wal" } | ForEach-Object {
+    Get-ChildItem -Path $TempPath -Recurse | ForEach-Object {
         $File = $_
         Write-Debug "Removing cached file $File"
         if (Test-Path $File.FullName) {
