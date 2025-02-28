@@ -50465,7 +50465,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from users
-      description: Indicates collection of App Log Upload Request.
+      description: The collection property of AppLogUploadRequest.
       operationId: user.mobileAppTroubleshootingEvent_ListAppLogCollectionRequest
       parameters:
         - name: user-id
@@ -50572,7 +50572,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from users
-      description: Indicates collection of App Log Upload Request.
+      description: The collection property of AppLogUploadRequest.
       operationId: user.mobileAppTroubleshootingEvent_GetAppLogCollectionRequest
       parameters:
         - name: user-id
@@ -51787,7 +51787,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: 'This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.'
+          description: 'This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS LOB App Provisioning Configuration resource.'
     microsoft.graph.iosLobAppProvisioningConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -51906,7 +51906,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppDataEncryptionType'
             customBrowserProtocol:
               type: string
-              description: A custom browser protocol to open weblink on iOS.
+              description: 'A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             customDialerAppProtocol:
               type: string
@@ -53087,7 +53087,7 @@ components:
           nullable: true
       additionalProperties:
         type: object
-      description: Contains properties for file encryption information for the content version of a line of business app.
+      description: Contains properties for file encryption information for the content version of a line-of-business app.
     microsoft.graph.androidManagedStoreApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mobileApp'
@@ -53494,7 +53494,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: An abstract base class containing properties for all managed mobile line of business apps.
+          description: An abstract base class containing properties for all managed mobile line-of-business apps.
     microsoft.graph.microsoftStoreForBusinessApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mobileApp'
@@ -56117,7 +56117,7 @@ components:
             description: Name of action to initiate On Demand Proactive Remediation
             name: initiateOnDemandProactiveRemediation
           - value: unknownFutureValue
-            description: Evolvable enum member
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
           - value: initiateDeviceAttestation
             description: Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it
@@ -56248,7 +56248,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -57085,7 +57085,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: An abstract base class containing properties for all mobile line of business apps.
+          description: An abstract base class containing properties for all mobile line-of-business apps.
     microsoft.graph.androidMinimumOperatingSystem:
       title: androidMinimumOperatingSystem
       type: object
@@ -57790,7 +57790,7 @@ components:
             description: Android Open Source Project (AOSP) userless devices
             name: androidOpenSourceProjectUserless
           - value: unknownFutureValue
-            description: Place holder for evolvable enum
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceManagementConfigurationSettingInstance:
       title: deviceManagementConfigurationSettingInstance
@@ -58288,7 +58288,7 @@ components:
             description: Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.
             name: singlePlatformRestriction
           - value: unknownFutureValue
-            description: Unknown future value
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
           - value: enrollmentNotificationsConfiguration
             description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
@@ -58606,7 +58606,7 @@ components:
             description: 'Indicates the device is enrolled via Apple Account Driven User Enrollment, a form of enrollment where the user enrolls via iOS Settings without using the iOS Company Portal. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities.'
             name: appleAccountDrivenUserEnrollment
           - value: unknownFutureValue
-            description: Evolvable enum member
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
@@ -60551,7 +60551,7 @@ components:
             description: Indicates that the application or configuration already under removal through previous actions and is now intended to be restored on the managed device
             name: restore
           - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceAssignmentItemStatus:
       title: deviceAssignmentItemStatus
@@ -60584,7 +60584,7 @@ components:
             description: Indicates that the application or configuration has been successfully restored on the managed device
             name: succeeded
           - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceAssignmentItemType:
       title: deviceAssignmentItemType
@@ -60613,7 +60613,7 @@ components:
             description: Indicates that the device assignment item type for the action is `graph.managedDeviceMobileAppConfiguration`. MobileAppConfiguration associated settings are removed on removal and added back on restoration
             name: mobileAppConfiguration
           - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceLogCollectionTemplateType:
       title: deviceLogCollectionTemplateType
@@ -63002,7 +63002,7 @@ components:
             description: A globally available app to all tenants.
             name: global
           - value: lineOfBusiness
-            description: A line of business apps private to an organization.
+            description: A line-of-business apps private to an organization.
             name: lineOfBusiness
     microsoft.graph.win32LobAppRestartBehavior:
       title: win32LobAppRestartBehavior
@@ -63623,7 +63623,7 @@ components:
             description: This status is set when the device license removing fails.
             name: deviceLicenseRemoveFailed
           - value: unknownFutureValue
-            description: This is put here as a place holder for future extension.
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.sharedAppleDeviceUser:
       title: sharedAppleDeviceUser
@@ -73722,11 +73722,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -75518,6 +75518,13 @@ components:
       title: siteArchivalDetails
       type: object
       properties:
+        archivedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        archivedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
         archiveStatus:
           $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
       additionalProperties:
@@ -79423,10 +79430,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
+          x-ms-navigationProperty: true
         passwordCredentials:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.customAppManagementApplicationConfiguration:

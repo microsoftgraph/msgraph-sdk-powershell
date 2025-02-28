@@ -69,37 +69,37 @@ if ($ModuleToGenerate.Count -eq 0) {
     $ModuleToGenerate = $ModuleMapping.Keys
 }
 
-#This is to ensure that the autorest temp folder is cleared before generating the modules
-$TempPath = [System.IO.Path]::GetTempPath()
-# Check if there is any folder with autorest in the name
-$AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+# #This is to ensure that the autorest temp folder is cleared before generating the modules
+# $TempPath = [System.IO.Path]::GetTempPath()
+# # Check if there is any folder with autorest in the name
+# $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
 
-# Go through each folder and forcefully delete autorest related files
-$AutoRestTempFolder | ForEach-Object {
-    $AutoRestTempFolder = $_
-    #Delete files and folders if they exist
-    if (Test-Path $AutoRestTempFolder.FullName) {
-        #Check if each file in the folder exists
-        Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
-            $File = $_
-            Write-Debug "Removing cached file $File"
-            if (Test-Path $File.FullName) {
-                #Remove the file
-                Remove-Item -Path $File.FullName -Force
-            }
-        }
-    }
-}
+# # Go through each folder and forcefully delete autorest related files
+# $AutoRestTempFolder | ForEach-Object {
+#     $AutoRestTempFolder = $_
+#     #Delete files and folders if they exist
+#     if (Test-Path $AutoRestTempFolder.FullName) {
+#         #Check if each file in the folder exists
+#         Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
+#             $File = $_
+#             Write-Debug "Removing cached file $File"
+#             if (Test-Path $File.FullName) {
+#                 #Remove the file
+#                 Remove-Item -Path $File.FullName -Force
+#             }
+#         }
+#     }
+# }
 
-#Delete any file in temp folder with the extension .tmp or .log or .db
-Get-ChildItem -Path $TempPath -Recurse | Where-Object { $_.Extension -match ".tmp|.log|.db" } | ForEach-Object {
-    $File = $_
-    Write-Debug "Removing cached file $File"
-    if (Test-Path $File.FullName) {
-        #Remove the file
-        Remove-Item -Path $File.FullName -Force
-    }
-}
+# #Delete any file in temp folder with the extension .tmp or .log or .db
+# Get-ChildItem -Path $TempPath -Recurse | Where-Object { $_.Extension -match ".tmp|.log|.db" } | ForEach-Object {
+#     $File = $_
+#     Write-Debug "Removing cached file $File"
+#     if (Test-Path $File.FullName) {
+#         #Remove the file
+#         Remove-Item -Path $File.FullName -Force
+#     }
+# }
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
 $Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
@@ -119,6 +119,26 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         ExcludeNotesSection     = $using:ExcludeNotesSection
         ArtifactsLocation       = $using:ArtifactsLocation
         RequiredModules         = $using:RequiredGraphModules
+        
+    }
+    #This is to ensure that the autorest temp folder is cleared before generating the modules
+    $TempPath = [System.IO.Path]::GetTempPath()
+    # Check if there is any folder with autorest in the name
+    $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+    $AutoRestTempFolder | ForEach-Object {
+        $AutoRestTempFolder = $_
+        #Delete files and folders if they exist
+        if (Test-Path $AutoRestTempFolder.FullName) {
+            #Check if each file in the folder exists
+            Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
+                $File = $_
+                Write-Debug "Removing cached file $File"
+                if (Test-Path $File.FullName) {
+                    #Remove the file
+                    Remove-Item -Path $File.FullName -Force
+                }
+            }
+        }
     }
     & $using:GenerateServiceModulePS1 @ServiceModuleParams
     function Get-OpenFiles {
@@ -145,20 +165,20 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         $OpenFiles = Get-OpenFiles -Path $TempPath
     }
     
-    #Delete any file in temp folder with the extension .tmp or .log or .db
-    Get-ChildItem -Path $TempPath -Recurse | Where-Object { $_.Extension -match ".tmp|.log|.db|.db-shm|.db-wal" } | ForEach-Object {
-        $File = $_
-        Write-Debug "Removing cached file $File"
-        if (Test-Path $File.FullName) {
-            #Remove the file
-            try{
-                Remove-Item -Path $File.FullName -Force
-            }
-            catch {
-                Write-Warning "Failed to remove file $File"
-            }
-        }
-    }
+    # #Delete any file in temp folder with the extension .tmp or .log or .db
+    # Get-ChildItem -Path $TempPath -Recurse | ForEach-Object {
+    #     $File = $_
+    #     Write-Debug "Removing cached file $File"
+    #     if (Test-Path $File.FullName) {
+    #         #Remove the file
+    #         try{
+    #             Remove-Item -Path $File.FullName -Force
+    #         }
+    #         catch {
+    #             Write-Warning "Failed to remove file $File"
+    #         }
+    #     }
+    # }
 
 
 } -ThrottleLimit $Throttle

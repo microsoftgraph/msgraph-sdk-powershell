@@ -16,7 +16,7 @@ $prepositionReplacements = @{
     At   = "GraphAPre"
     For  = "GraphFPre"
     Of   = "GraphOPre"
-    #Or   = "GraphRPre" Handling of this preposition needs to be reviewed
+    createOrGet   = "GraphRPre"
 }
 
 $wordReplacements = @{

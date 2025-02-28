@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Groups
   version: v1.0-beta
@@ -407,11 +407,11 @@ paths:
     post:
       tags:
         - groups.group
-      summary: Upsert group
-      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
+      summary: Create group
+      description: 'Create a new group as specified in the request body. You can create one of the following groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-beta
       operationId: group_CreateGroup
       requestBody:
         description: New entity
@@ -7999,7 +7999,7 @@ paths:
       tags:
         - groups.group.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -17261,7 +17261,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
+              description: 'Directory objects that are owners of this application. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             synchronization:
               $ref: '#/components/schemas/microsoft.graph.synchronization'
@@ -17450,7 +17450,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID. Supports $filter (eq, ne, not, in).'
               nullable: true
             commands:
               type: array
@@ -17847,7 +17847,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             permissionGrantPreApprovalPolicies:
               type: array
@@ -18132,7 +18132,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -18979,7 +18979,7 @@ components:
             type: object
     microsoft.graph.appRoleAssignment:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
         - title: appRoleAssignment
           type: object
           properties:
@@ -19882,7 +19882,7 @@ components:
           readOnly: true
         isPublisherAttested:
           type: boolean
-          description: Indicates whether the application has been self-attested by the application developer or the publisher.
+          description: Indicates whether the application developer or publisher completed Publisher Attestation.
           nullable: true
         lastCertificationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -20102,7 +20102,7 @@ components:
           description: Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.
         legalAgeGroupRule:
           type: string
-          description: 'Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.'
+          description: 'Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country/region minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country/region minor rules.BlockMinorsBlocks minors from using the app.'
           nullable: true
       additionalProperties:
         type: object
@@ -20385,7 +20385,7 @@ components:
               description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Alternate key. Required. Not nullable. Supports $filter (eq).'
             subject:
               type: string
-              description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
+              description: 'Nullable.  Defaults to null if not set. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. If subject is defined, claimsMatchingExpression must be null. Supports $filter (eq).'
               nullable: true
           additionalProperties:
             type: object
@@ -21645,6 +21645,8 @@ components:
               description: The results of every partner agent's installation status on Cloud PC.
             powerState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
+            productType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProductType'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -22901,7 +22903,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23284,6 +23286,10 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            sequenceNumber:
+              type: string
+              nullable: true
+              readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
@@ -23433,6 +23439,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             contactMergeSuggestions:
               $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
+            exchange:
+              $ref: '#/components/schemas/microsoft.graph.exchangeSettings'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             regionalAndLanguageSettings:
@@ -25435,8 +25443,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: A collection of all the messages in the channel. A navigation property. Nullable.
+              description: A collection of all the messages in the channel. Nullable.
               x-ms-navigationProperty: true
+            planner:
+              $ref: '#/components/schemas/microsoft.graph.teamsChannelPlanner'
             sharedWithTeams:
               type: array
               items:
@@ -25447,7 +25457,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
-              description: A collection of all the tabs in the channel. A navigation property.
+              description: A collection of all the tabs in the channel.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -25542,6 +25552,10 @@ components:
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
+              nullable: true
+            isActivitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts include activities from the original shift.
               nullable: true
             isCrossLocationShiftRequestApprovalRequired:
               type: boolean
@@ -27145,6 +27159,8 @@ components:
       properties:
         capabilityType:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        licenseType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryLicenseType'
         primaryRegion:
           type: string
           description: The primary and mainly used region where the Cloud PC is located.
@@ -27254,6 +27270,16 @@ components:
       enum:
         - running
         - poweredOff
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcProductType:
+      title: cloudPcProductType
+      enum:
+        - enterprise
+        - frontline
+        - devBox
+        - powerAutomate
+        - business
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcProvisioningType:
@@ -27469,7 +27495,7 @@ components:
             description: Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.
             name: singlePlatformRestriction
           - value: unknownFutureValue
-            description: Unknown future value
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
           - value: enrollmentNotificationsConfiguration
             description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
@@ -28232,7 +28258,7 @@ components:
             description: 'Indicates the device is enrolled via Apple Account Driven User Enrollment, a form of enrollment where the user enrolls via iOS Settings without using the iOS Company Portal. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities.'
             name: appleAccountDrivenUserEnrollment
           - value: unknownFutureValue
-            description: Evolvable enum member
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
@@ -31285,6 +31311,22 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.exchangeSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: exchangeSettings
+          type: object
+          properties:
+            inPlaceArchiveMailboxId:
+              type: string
+              description: The unique identifier for the user's in-place archive mailbox.
+              nullable: true
+            primaryMailboxId:
+              type: string
+              description: The unique identifier for the user's primary mailbox.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.userInsightsSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32957,6 +32999,13 @@ components:
       title: siteArchivalDetails
       type: object
       properties:
+        archivedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        archivedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
         archiveStatus:
           $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
       additionalProperties:
@@ -33338,6 +33387,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsChannelPlanner:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsChannelPlanner
+          type: object
+          properties:
+            plans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: 'A collection of plannerPlan objects owned by the Teams channel. Currently, only shared channels are supported. Read-only. Nullable.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.sharedWithChannelTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -33893,12 +33956,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
-          description: Collection of certificate restrictions settings to be applied to an application or service principal.
+          x-ms-navigationProperty: true
         passwordCredentials:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
-          description: Collection of password restrictions settings to be applied to an application or service principal.
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.customAppManagementApplicationConfiguration:
@@ -34470,7 +34533,7 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: Either a code snippet or place holder. application/vnd.microsoft.card.announcement: An announcement header. application/vnd.microsoft.card.fluidEmbedCard: A Microsoft Loop component.'
           nullable: true
         contentUrl:
           type: string
@@ -34668,6 +34731,13 @@ components:
         - none
         - failover
         - failback
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDisasterRecoveryLicenseType:
+      title: cloudPcDisasterRecoveryLicenseType
+      enum:
+        - none
+        - standard
         - unknownFutureValue
       type: string
     microsoft.graph.actionState:
@@ -35531,7 +35601,7 @@ components:
             description: This status is set when the device license removing fails.
             name: deviceLicenseRemoveFailed
           - value: unknownFutureValue
-            description: This is put here as a place holder for future extension.
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.sharedAppleDeviceUser:
       title: sharedAppleDeviceUser
@@ -38486,6 +38556,7 @@ components:
         - project
         - driveItem
         - user
+        - teamsChannel
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -39082,6 +39153,10 @@ components:
           type: string
           description: The time the entry is recorded.
           format: date-time
+        isAtApprovedLocation:
+          type: boolean
+          description: Indicates whether this action happens at an approved location.
+          nullable: true
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
       additionalProperties:
@@ -41939,6 +42014,10 @@ components:
           type: boolean
           description: 'If true, the restriction isn''t enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.'
           nullable: true
+        isStateSetByMicrosoft:
+          type: boolean
+          description: 'If true, Microsoft sets the identifierUriRestriction state. If false, the tenant modifies the identifierUriRestriction state. Read-only.'
+          readOnly: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
