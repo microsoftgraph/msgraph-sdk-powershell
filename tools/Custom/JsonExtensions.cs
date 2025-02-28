@@ -131,7 +131,7 @@ namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
                 ProcessBody(jsonToken);
 
                 // Return cleaned JSON string
-                return JsonConvert.SerializeObject(jsonToken, Formatting.None);
+                return JsonConvert.SerializeObject(jsonToken, Formatting.None, new PreserveStringConverter());
             }
             catch (Newtonsoft.Json.JsonException)
             {
@@ -155,8 +155,9 @@ namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
                         try
                         {
                             JToken parsedValue = JToken.Parse(stringValue);
-                            property.Value = parsedValue; // Replace with unescaped JSON object
-                            ProcessBody(parsedValue); // Recursively process
+                            string originalToken = JsonConvert.SerializeObject(parsedValue, Formatting.None, new PreserveStringConverter()); // Ensures that the value matches the original type
+                            property.Value = originalToken; // Replace with unescaped JSON object
+                            ProcessBody(originalToken); // Recursively process
                         }
                         catch (Newtonsoft.Json.JsonException)
                         {
@@ -182,8 +183,9 @@ namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
                         try
                         {
                             JToken parsedValue = JToken.Parse(stringValue);
-                            jsonArray[i] = parsedValue; // Replace with unescaped JSON object
-                            ProcessBody(parsedValue); // Recursively process
+                            string originalToken = JsonConvert.SerializeObject(parsedValue, Formatting.None, new PreserveStringConverter()); // Ensures that the value matches the original type
+                            jsonArray[i] = originalToken; // Replace with unescaped JSON object
+                            ProcessBody(originalToken); // Recursively process
                         }
                         catch (Newtonsoft.Json.JsonException)
                         {
