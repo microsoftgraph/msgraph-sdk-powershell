@@ -54,7 +54,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 new NationalCloudHandler(),
                 new ODataQueryOptionsHandler(),
                 new HttpVersionHandler(),
-                new CompressionHandler(),
                 new RetryHandler(new RetryHandlerOption{
                     Delay = requestContext.RetryDelay,
                     MaxRetry = requestContext.MaxRetry,
@@ -69,7 +68,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 : GraphClientFactory.Create(delegatingHandlers, finalHandler: new HttpClientHandler
                 {
                     AllowAutoRedirect = false,
-                    AutomaticDecompression = DecompressionMethods.None
+                    AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
                 });
             httpClient.Timeout = requestContext.ClientTimeout;
             return httpClient;

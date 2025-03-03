@@ -138,7 +138,6 @@ $ApiVersion | ForEach-Object {
                                 IsLeastPrivilege = $_.isLeastPrivilege
                             }
                         }
-                        $Permissions = $Permissions | Sort-Object -Property Name -Unique
                         $Permissions = $Permissions | Sort-Object -Property PermissionType
                         $Permissions = $Permissions | Sort-Object -Property IsLeastPrivilege
                         [array]::Reverse($Permissions)

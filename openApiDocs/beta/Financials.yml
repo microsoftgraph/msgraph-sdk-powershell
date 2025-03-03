@@ -9576,7 +9576,7 @@ paths:
   '/financials/companies/{company-id}/journals/{journal-id}/microsoft.graph.post':
     post:
       tags:
-        - financials.Actions
+        - financials.company
       summary: Invoke action post
       operationId: financial.company.journal_post
       parameters:
@@ -11762,7 +11762,7 @@ paths:
   '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/microsoft.graph.post':
     post:
       tags:
-        - financials.Actions
+        - financials.company
       summary: Invoke action post
       operationId: financial.company.purchaseInvoice_post
       parameters:
@@ -20080,7 +20080,7 @@ paths:
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.cancel':
     post:
       tags:
-        - financials.Actions
+        - financials.company
       summary: Invoke action cancel
       operationId: financial.company.salesInvoice_cancel
       parameters:
@@ -20113,7 +20113,7 @@ paths:
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.cancelAndSend':
     post:
       tags:
-        - financials.Actions
+        - financials.company
       summary: Invoke action cancelAndSend
       operationId: financial.company.salesInvoice_cancelAndSend
       parameters:
@@ -20146,7 +20146,7 @@ paths:
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.post':
     post:
       tags:
-        - financials.Actions
+        - financials.company
       summary: Invoke action post
       operationId: financial.company.salesInvoice_post
       parameters:
@@ -20179,7 +20179,7 @@ paths:
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.postAndSend':
     post:
       tags:
-        - financials.Actions
+        - financials.company
       summary: Invoke action postAndSend
       operationId: financial.company.salesInvoice_postAndSend
       parameters:
@@ -20212,7 +20212,7 @@ paths:
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.send':
     post:
       tags:
-        - financials.Actions
+        - financials.company
       summary: Invoke action send
       operationId: financial.company.salesInvoice_send
       parameters:
@@ -27791,7 +27791,7 @@ paths:
   '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/microsoft.graph.makeInvoice':
     post:
       tags:
-        - financials.Actions
+        - financials.company
       summary: Invoke action makeInvoice
       operationId: financial.company.salesQuote_makeInvoice
       parameters:
@@ -27824,7 +27824,7 @@ paths:
   '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/microsoft.graph.send':
     post:
       tags:
-        - financials.Actions
+        - financials.company
       summary: Invoke action send
       operationId: financial.company.salesQuote_send
       parameters:
@@ -32001,7 +32001,7 @@ components:
         lineNumber:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         postingDate:
@@ -32170,7 +32170,7 @@ components:
         height:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         id:
@@ -32180,7 +32180,7 @@ components:
         width:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
       additionalProperties:
@@ -32510,7 +32510,7 @@ components:
         lineNumber:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         postingDate:
@@ -32632,7 +32632,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
               nullable: true
             taxCode:
@@ -32909,7 +32909,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
               nullable: true
             shipmentDate:
@@ -33135,7 +33135,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
               nullable: true
             shipmentDate:
@@ -33387,7 +33387,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
               nullable: true
             shipmentDate:
@@ -33623,7 +33623,7 @@ components:
             sequence:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               format: int32
               nullable: true
             taxCode:

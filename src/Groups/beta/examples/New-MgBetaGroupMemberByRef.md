@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Add a member to a group
 
 ```powershell
 
@@ -11,5 +11,5 @@ $params = @{
 New-MgBetaGroupMemberByRef -GroupId $groupId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgBetaGroupMemberByRef Cmdlet.
+This example will add a member to a group
 
