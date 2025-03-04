@@ -27,7 +27,7 @@ variables:
   BuildAgent: ${{ parameters.BuildAgent }}
   GitUserEmail: "GraphTooling@service.microsoft.com"
   GitUserName: "Microsoft Graph DevX Tooling"
-  REGISTRY: 'msgraphpperegistry.azurecr.io'
+  REGISTRY: 'msgraphprodregistry.azurecr.io'
   IMAGE_NAME: 'public/microsoftgraph/powershell'
   PREVIEW_BRANCH: 'refs/heads/task/migrate-acr-push-pipeline'  # Updated to target your branch
 
