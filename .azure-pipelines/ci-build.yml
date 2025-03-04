@@ -76,7 +76,7 @@ stages:
           docker build \
             -t $(REGISTRY)/$(IMAGE_NAME):latest \
             -t $(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER \
-            "$(Build.SourceDirectory)"
+            .
  
           echo "Pushing docker images"
           docker push $(REGISTRY)/$(IMAGE_NAME):latest
