@@ -4,10 +4,7 @@ trigger:
     include:
       - task/migrate-acr-push-pipeline
       - main
-  paths:
-    include:
-      - src/**
-      - ./azure-pipelines/**
+
   tags:
     include:
       - v*
@@ -29,6 +26,12 @@ stages:
         vmImage: 'ubuntu-latest'
       steps:
       - checkout: self
+
+      # Display the contents of the Build.SourceDirectory
+      - bash: |
+          echo "Build.SourceDirectory: $(Build.SourceDirectory)"
+          ls -la $(Build.SourceDirectory)
+        displayName: 'List contents of Build.SourceDirectory'
  
       - task: AzureCLI@2
         displayName: "Log in to Azure Container Registry"
@@ -50,8 +53,8 @@ stages:
       # Version information is not available in .csproj projects
       # - bash: |
       #     echo "##vso[task.setvariable variable=version]$(version)"
-      #   displayName: 'Set version variable'
-
+      #   displayName: 'Set version variable
+          
       - bash: |
           echo "Build Number: $(Build.BuildNumber)"
           # Extract the last 3 characters for the run number
@@ -76,7 +79,7 @@ stages:
           docker build \
             -t $(REGISTRY)/$(IMAGE_NAME):latest \
             -t $(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER \
-            .
+            $(Build.SourceDirectory)
  
           echo "Pushing docker images"
           docker push $(REGISTRY)/$(IMAGE_NAME):latest
