@@ -38,24 +38,47 @@ stages:
           scriptLocation: 'inlineScript'
           'inlineScript': |
             az acr login --name $(REGISTRY)
- 
+      - powershell: |
+          $date = Get-Date -Format "yyyyMMdd"
+          Write-Host "##vso[task.setvariable variable=currentDate]$date"
+
       - powershell: |
           $version = $Env:BUILD_SOURCEBRANCH.replace("refs/tags/", "")
           Write-Output "##vso[task.setvariable variable=version]$version"
         displayName: 'Get truncated run number'
  
+      # Version information is not available in .csproj projects
+      # - bash: |
+      #     echo "##vso[task.setvariable variable=version]$(version)"
+      #   displayName: 'Set version variable'
+
       - bash: |
-          echo "##vso[task.setvariable variable=version]$(version)"
-        displayName: 'Set version variable'
+          echo "Build Number: $(Build.BuildNumber)"
+          # Extract the last 3 characters for the run number
+          runnumber=$(echo "$(Build.BuildNumber)" | grep -o '[0-9]\+$')
+          echo "Extracted Run Number: $runnumber"
+          
+          # If extraction fails, set a default
+          if [ -z "$runnumber" ]; then
+            echo "Extraction failed, using default value"
+            runnumber=$(date +"%S%N" | cut -c1-3)
+            echo "Generated fallback run number: $runnumber"
+          fi
+          
+          # Set the variable for later steps
+          echo "##vso[task.setvariable variable=RUNNUMBER]$runnumber"
+          echo "##vso[task.setvariable variable=RUNNUMBER;isOutput=true]$runnumber"
+        displayName: 'Get truncated run number'
+        name: getrunnumber
  
       - bash: |
           echo "Building docker images"
           docker build \
             -t $(REGISTRY)/$(IMAGE_NAME):latest \
-            -t $(REGISTRY)/$(IMAGE_NAME):$(version) \
+            -t $(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER \
             "$(Build.SourceDirectory)"
  
           echo "Pushing docker images"
           docker push $(REGISTRY)/$(IMAGE_NAME):latest
-          docker push $(REGISTRY)/$(IMAGE_NAME):$(version)
+          docker push $(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER
         displayName: 'Build and push docker images'
