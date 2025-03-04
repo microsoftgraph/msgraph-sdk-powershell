@@ -164,7 +164,7 @@ extends:
                   publishFeedCredentials: 'microsoftgraph PowerShell Gallery connection'
 
     - stage: PushDockerImageToRegistry
-      condition: and(succeeded(), or(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['Build.SourceBranch'], variables['PREVIEW_BRANCH'])), not(contains(variables['Build.SourceBranch'], '-preview')))
+      condition: and(or(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['Build.SourceBranch'], variables['PREVIEW_BRANCH'])), not(contains(variables['Build.SourceBranch'], '-preview')))
       dependsOn: []
       displayName: 'Push docker image'
       jobs:
