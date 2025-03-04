@@ -76,12 +76,14 @@ stages:
  
       - bash: |
           echo "Building docker images"
+          # Format the date to be compatible with Docker tags
+          formatted_date=$(date +"%Y%m%d%H%M%S")
           docker build \
             -t "$(REGISTRY)/$(IMAGE_NAME):latest" \
-            -t "$(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER" \
+            -t "$(REGISTRY)/$(IMAGE_NAME):$formatted_date.$RUNNUMBER" \
             "$(Build.SourcesDirectory)"
- 
+
           echo "Pushing docker images"
           docker push "$(REGISTRY)/$(IMAGE_NAME):latest"
-          docker push "$(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER"
+          docker push "$(REGISTRY)/$(IMAGE_NAME):$formatted_date.$RUNNUMBER"
         displayName: 'Build and push docker images'
