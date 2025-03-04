@@ -45,6 +45,18 @@ stages:
           $date = Get-Date -Format "yyyyMMdd"
           Write-Host "##vso[task.setvariable variable=currentDate]$date"
 
+      - script: |
+          docker run --privileged --rm tonistiigi/binfmt --install all
+        displayName: 'Enable multi-platform builds'
+      
+      - script: |
+          docker buildx create --use --name mybuilder
+        displayName: 'Set up Docker BuildX'
+      
+      - script: |
+          docker buildx inspect --bootstrap
+        displayName: 'Ensure BuildX is working'
+
       - powershell: |
           $version = $Env:BUILD_SOURCEBRANCH.replace("refs/tags/", "")
           Write-Output "##vso[task.setvariable variable=version]$version"
