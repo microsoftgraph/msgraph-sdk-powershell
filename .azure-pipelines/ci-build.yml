@@ -203,10 +203,6 @@ extends:
           - script: |
               docker buildx create --use --name mybuilder
             displayName: 'Set up Docker BuildX'
-          
-          - script: |
-              docker buildx inspect --bootstrap
-            displayName: 'Ensure BuildX is working'
     
           - powershell: |
               $version = $Env:BUILD_SOURCEBRANCH.replace("refs/tags/", "")
