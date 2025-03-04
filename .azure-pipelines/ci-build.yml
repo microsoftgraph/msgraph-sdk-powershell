@@ -91,7 +91,7 @@ stages:
           # Format the date to be compatible with Docker tags
           formatted_date=$(date +"%Y%m%d%H%M%S")
           docker buildx build \
-            --platform linux/amd64,linux/arm64/v8,linux/arm/v7 \
+            --platform linux/amd64 \
             --push \
             -t "$(REGISTRY)/$(IMAGE_NAME):latest" \
             -t "$(REGISTRY)/$(IMAGE_NAME):$formatted_date.$RUNNUMBER" \
