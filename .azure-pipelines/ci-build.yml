@@ -77,11 +77,11 @@ stages:
       - bash: |
           echo "Building docker images"
           docker build \
-            -t $(REGISTRY)/$(IMAGE_NAME):latest \
-            -t $(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER \
-            $(Build.SourceDirectory)
+            -t "$(REGISTRY)/$(IMAGE_NAME):latest" \
+            -t "$(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER" \
+            "$(Build.SourceDirectory)"
  
           echo "Pushing docker images"
-          docker push $(REGISTRY)/$(IMAGE_NAME):latest
-          docker push $(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER
+          docker push "$(REGISTRY)/$(IMAGE_NAME):latest"
+          docker push "$(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER"
         displayName: 'Build and push docker images'
