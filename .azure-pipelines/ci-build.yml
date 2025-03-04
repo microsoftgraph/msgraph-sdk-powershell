@@ -27,11 +27,11 @@ stages:
       steps:
       - checkout: self
 
-      # Display the contents of the Build.SourceDirectory
+      # Display the contents of the Build.SourcesDirectory
       - bash: |
-          echo "Build.SourceDirectory: $(Build.SourceDirectory)"
-          ls -la $(Build.SourceDirectory)
-        displayName: 'List contents of Build.SourceDirectory'
+          echo "Build.SourcesDirectory: $(Build.SourcesDirectory)"
+          ls -la $(Build.SourcesDirectory)
+        displayName: 'List contents of Build.SourcesDirectory'
  
       - task: AzureCLI@2
         displayName: "Log in to Azure Container Registry"
@@ -79,7 +79,7 @@ stages:
           docker build \
             -t "$(REGISTRY)/$(IMAGE_NAME):latest" \
             -t "$(REGISTRY)/$(IMAGE_NAME):$(date).$RUNNUMBER" \
-            "$(Build.SourceDirectory)"
+            "$(Build.SourcesDirectory)"
  
           echo "Pushing docker images"
           docker push "$(REGISTRY)/$(IMAGE_NAME):latest"
