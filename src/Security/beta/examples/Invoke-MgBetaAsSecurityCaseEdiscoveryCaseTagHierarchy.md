@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Retrieve child tags of a specific eDiscovery review tag
 
 ```powershell
 
@@ -7,5 +7,5 @@ Import-Module Microsoft.Graph.Beta.Security
 Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy -EdiscoveryCaseId $ediscoveryCaseId
 
 ```
-This example shows how to use the Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy Cmdlet.
+This example will retrieve child tags of a specific ediscovery review tag
 
