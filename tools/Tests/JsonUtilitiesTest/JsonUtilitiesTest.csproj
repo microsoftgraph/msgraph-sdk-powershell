@@ -23,9 +23,6 @@
         <Link>../../Custom/JsonExtensions.cs</Link>
         <Link>../../Custom/PreserveStringConverter.cs</Link>
     </Compile>
-      <Compile Include="../../Custom/PreserveStringConverter.cs">
-        <Link>../../Custom/PreserveStringConverter.cs</Link>
-    </Compile>
   </ItemGroup>
 
 </Project>

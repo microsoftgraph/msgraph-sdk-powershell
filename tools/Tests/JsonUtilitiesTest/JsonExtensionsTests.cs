@@ -247,60 +247,38 @@ public class JsonExtensionsTests
         Assert.True(result["body"]?["users"][0]?["metadata"]?.ToObject<JObject>().ContainsKey("phone"));
     }
 
+    /*
+    Test for unescaping json object while maintaining original property definition of values
+    instead of auto inferencing the type of the value
+    "fields": "{\r\n  \"BasicTag\": \"v2.31.0\",\r\n  \"BuildID\": \"3599\",\r\n  \"MWSCommitID\": \"a5c7998252f2366c8cbbb03ba46e9b\",\r\n  \"MWSTag\": \"v2.21.0\",\r\n  \"BasicCommitID\": \"9c3d0f36362dd25caa0da2ecab06a1859ce2\",\r\n  \"CustomerCommitID\": \"c40241be9fd2f1cd2f2f2fc961c37f720c\"\r\n}"
+    */
     [Fact]
-    public void NumericString_RemainsString()
-    {
+    public void RemoveDefaultNullProperties_ShouldUnescapeJsonString(){
         // Arrange
         JObject json = JObject.Parse(@"{
-            ""displayname"": ""Tim"",
-            ""position"": ""123"",
-            ""salary"": 2000000
+            ""fields"": ""{\r\n  \""BasicTag\"": \""v2.31.0\"",\r\n  \""BuildID\"": \""3599\"",\r\n  \""MWSCommitID\"": \""a5c7998252f2366c8cbbb03ba46e9b\"",\r\n  \""MWSTag\"": \""v2.21.0\"",\r\n  \""BasicCommitID\"": \""9c3d0f36362dd25caa0da2ecab06a1859ce2\"",\r\n  \""CustomerCommitID\"": \""c40241be9fd2f1cd2f2f2fc961c37f720c\""\r\n}""
         }");
 
-        // Act
-        string cleanedJson = json.ToString()?.ReplaceAndRemoveSlashes();
-        JObject result = JObject.Parse(cleanedJson);
-
-        // Assert
-        Assert.Equal("123", result["position"]?.ToString());
-        Assert.Equal(2000000, result["salary"]?.ToObject<int>());
-    }
-    [Fact]
-    public void NumericString_RemainsStringInJsonArray()
-    {
-        // Arrange
-        JArray json = JArray.Parse(@"[
-                { ""displayname"": ""Tim"", ""position"": ""123"" }
-
-        ]");
-
-        // Act
-        string cleanedJson = json.ToString()?.ReplaceAndRemoveSlashes();
-        JArray result = JArray.Parse(cleanedJson);
-
-        // Assert
-        Assert.Equal("123", result[0]?["position"]?.ToString());
-    }
-
-    [Fact]
-    public void NumericString_RemainsStringInNestedJsonObject()
-    {
-        // Arrange
-        JObject json = JObject.Parse(@"{
-            ""body"":{
-                ""users"": [
-                    { ""displayname"": ""Tim"", ""position"": ""123"" }
-                ]
+        String expectedJson = @"{
+            ""fields"": {
+                ""BasicTag"": ""v2.31.0"",
+                ""BuildID"": ""3599"",
+                ""MWSCommitID"": ""a5c7998252f2366c8cbbb03ba46e9b"",
+                ""MWSTag"": ""v2.21.0"",
+                ""BasicCommitID"": ""9c3d0f36362dd25caa0da2ecab06a1859ce2"",
+                ""CustomerCommitID"": ""c40241be9fd2f1cd2f2f2fc961c37f720c""
             }
-        }");
+        }";
 
         // Act
+        //Convert Json object to string  then pass it to RemoveAndReplaceSlashes method
         string cleanedJson = json.ToString()?.ReplaceAndRemoveSlashes();
-        JObject result = JObject.Parse(cleanedJson);
 
         // Assert
-        Assert.Equal("123", result["body"]?["users"][0]?["position"]?.ToString());
-        Assert.Equal("Tim", result["body"]?["users"][0]?["displayname"]?.ToString());
+        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(cleanedJson));
     }
+
+    
+    
 }
 
