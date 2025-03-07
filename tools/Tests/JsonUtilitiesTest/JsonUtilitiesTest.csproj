@@ -21,7 +21,6 @@
   <ItemGroup>
     <Compile Include="../../Custom/JsonExtensions.cs">
         <Link>../../Custom/JsonExtensions.cs</Link>
-        <Link>../../Custom/PreserveStringConverter.cs</Link>
     </Compile>
   </ItemGroup>
 
