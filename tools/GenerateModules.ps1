@@ -85,7 +85,7 @@ $AutoRestTempFolder | ForEach-Object {
             Write-Debug "Removing cached file $File"
             if (Test-Path $File.FullName) {
                 #Remove the file
-                Remove-Item -Path $File.FullName -Force
+                #Remove-Item -Path $File.FullName -Force -confirm:$false
             }
         }
     }
@@ -97,7 +97,7 @@ Get-ChildItem -Path $TempPath -Recurse | Where-Object { $_.Extension -match ".tm
     Write-Debug "Removing cached file $File"
     if (Test-Path $File.FullName) {
         #Remove the file
-        Remove-Item -Path $File.FullName -Force
+        #Remove-Item -Path $File.FullName -Force -confirm:$false
     }
 }
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
@@ -152,7 +152,7 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         if (Test-Path $File.FullName) {
             #Remove the file
             try{
-                Remove-Item -Path $File.FullName -Force
+                #Remove-Item -Path $File.FullName -Force -confirm:$false
             }
             catch {
                 Write-Warning "Failed to remove file $File"
