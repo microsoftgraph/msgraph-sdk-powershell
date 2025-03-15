@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Update a user's system-preferred MFA method
 
 ```powershell
 
@@ -11,5 +11,5 @@ $params = @{
 Update-MgBetaUserAuthenticationSignInPreference -UserId $userId -BodyParameter $params
 
 ```
-This example shows how to use the Update-MgBetaUserAuthenticationSignInPreference Cmdlet.
+This example will update a user's system-preferred mfa method
 
