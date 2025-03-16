@@ -187,7 +187,7 @@ extends:
           - task: AzureCLI@2
             displayName: "Log in to Azure Container Registry"
             inputs:
-              azureSubscription: 'ACR Push Test' # service connection
+              azureSubscription: 'ACR Images Push Service Connection' # service connection
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
               'inlineScript': |
