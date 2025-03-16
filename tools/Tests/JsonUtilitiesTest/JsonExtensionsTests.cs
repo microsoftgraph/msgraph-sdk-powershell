@@ -246,5 +246,39 @@ public class JsonExtensionsTests
         Assert.False(result["body"]?["users"][0]?.ToObject<JObject>().ContainsKey("email"));
         Assert.True(result["body"]?["users"][0]?["metadata"]?.ToObject<JObject>().ContainsKey("phone"));
     }
+
+    /*
+    Test for unescaping json object while maintaining original property definition of values
+    instead of auto inferencing the type of the value
+    "fields": "{\r\n  \"BasicTag\": \"v2.31.0\",\r\n  \"BuildID\": \"3599\",\r\n  \"MWSCommitID\": \"a5c7998252f2366c8cbbb03ba46e9b\",\r\n  \"MWSTag\": \"v2.21.0\",\r\n  \"BasicCommitID\": \"9c3d0f36362dd25caa0da2ecab06a1859ce2\",\r\n  \"CustomerCommitID\": \"c40241be9fd2f1cd2f2f2fc961c37f720c\"\r\n}"
+    */
+    [Fact]
+    public void RemoveDefaultNullProperties_ShouldUnescapeJsonString(){
+        // Arrange
+        JObject json = JObject.Parse(@"{
+            ""fields"": ""{\r\n  \""BasicTag\"": \""v2.31.0\"",\r\n  \""BuildID\"": \""3599\"",\r\n  \""MWSCommitID\"": \""a5c7998252f2366c8cbbb03ba46e9b\"",\r\n  \""MWSTag\"": \""v2.21.0\"",\r\n  \""BasicCommitID\"": \""9c3d0f36362dd25caa0da2ecab06a1859ce2\"",\r\n  \""CustomerCommitID\"": \""c40241be9fd2f1cd2f2f2fc961c37f720c\""\r\n}""
+        }");
+
+        String expectedJson = @"{
+            ""fields"": {
+                ""BasicTag"": ""v2.31.0"",
+                ""BuildID"": ""3599"",
+                ""MWSCommitID"": ""a5c7998252f2366c8cbbb03ba46e9b"",
+                ""MWSTag"": ""v2.21.0"",
+                ""BasicCommitID"": ""9c3d0f36362dd25caa0da2ecab06a1859ce2"",
+                ""CustomerCommitID"": ""c40241be9fd2f1cd2f2f2fc961c37f720c""
+            }
+        }";
+
+        // Act
+        //Convert Json object to string  then pass it to RemoveAndReplaceSlashes method
+        string cleanedJson = json.ToString()?.ReplaceAndRemoveSlashes();
+
+        // Assert
+        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(cleanedJson));
+    }
+
+    
+    
 }
 

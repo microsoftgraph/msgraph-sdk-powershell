@@ -156,7 +156,7 @@ namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
                         {
                             JToken parsedValue = JToken.Parse(stringValue);
                             property.Value = parsedValue; // Replace with unescaped JSON object
-                            ProcessBody(parsedValue); // Recursively process
+                            ProcessBody(stringValue); // Recursively process
                         }
                         catch (Newtonsoft.Json.JsonException)
                         {
@@ -183,7 +183,7 @@ namespace NamespacePrefixPlaceholder.PowerShell.JsonUtilities
                         {
                             JToken parsedValue = JToken.Parse(stringValue);
                             jsonArray[i] = parsedValue; // Replace with unescaped JSON object
-                            ProcessBody(parsedValue); // Recursively process
+                            ProcessBody(stringValue); // Recursively process
                         }
                         catch (Newtonsoft.Json.JsonException)
                         {
