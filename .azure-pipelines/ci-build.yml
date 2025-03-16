@@ -29,14 +29,13 @@ variables:
   GitUserName: "Microsoft Graph DevX Tooling"
   REGISTRY: 'msgraphprodregistry.azurecr.io'
   IMAGE_NAME: 'public/microsoftgraph/powershell'
-  PREVIEW_BRANCH: 'refs/heads/task/migrate-acr-push-pipeline'  # Updated to target your branch
+  PREVIEW_BRANCH: 'refs/heads/main'  # Updated to target your branch
 
 trigger:
   branches:
     include:
     - main
     - dev
-    - task/migrate-acr-push-pipeline
   tags:
     include:
       - v*
