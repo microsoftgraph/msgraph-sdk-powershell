@@ -85,21 +85,12 @@ $AutoRestTempFolder | ForEach-Object {
             Write-Debug "Removing cached file $File"
             if (Test-Path $File.FullName) {
                 #Remove the file
-                Remove-Item -Path $File.FullName -Force
+                Remove-Item -Path $File.FullName -Force -confirm:$false
             }
         }
     }
 }
 
-#Delete any file in temp folder with the extension .tmp or .log or .db
-Get-ChildItem -Path $TempPath -Recurse | Where-Object { $_.Extension -match ".tmp|.log|.db" } | ForEach-Object {
-    $File = $_
-    Write-Debug "Removing cached file $File"
-    if (Test-Path $File.FullName) {
-        #Remove the file
-        Remove-Item -Path $File.FullName -Force
-    }
-}
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
 $Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
@@ -144,22 +135,6 @@ $ModuleToGenerate | ForEach-Object -Parallel {
     if ($OpenFiles.Count -gt 0) {
         $OpenFiles = Get-OpenFiles -Path $TempPath
     }
-    
-    #Delete any file in temp folder with the extension .tmp or .log or .db
-    Get-ChildItem -Path $TempPath -Recurse | Where-Object { $_.Extension -match ".tmp|.log|.db|.db-shm|.db-wal" } | ForEach-Object {
-        $File = $_
-        Write-Debug "Removing cached file $File"
-        if (Test-Path $File.FullName) {
-            #Remove the file
-            try{
-                Remove-Item -Path $File.FullName -Force
-            }
-            catch {
-                Write-Warning "Failed to remove file $File"
-            }
-        }
-    }
-
 
 } -ThrottleLimit $Throttle
 $stopwatch.Stop()
