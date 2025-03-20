@@ -92,34 +92,35 @@ $AutoRestTempFolder | ForEach-Object {
 }
 
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
-$CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
-$Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
-$ModuleToGenerate | ForEach-Object -Parallel {
-    $Module = $_
+#$CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
+#$Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max
+foreach ($Module in $ModuleToGenerate) {
     Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
+
     $ServiceModuleParams = @{
         Module                  = $Module
-        ModulesSrc              = $using:ModulesSrc
-        ApiVersion              = $using:ApiVersion
-        SkipGeneration          = $using:SkipGeneration
-        Build                   = $using:Build
-        Test                    = $using:Test
-        Pack                    = $using:Pack
-        EnableSigning           = $using:EnableSigning
-        ExcludeExampleTemplates = $using:ExcludeExampleTemplates
-        ExcludeNotesSection     = $using:ExcludeNotesSection
-        ArtifactsLocation       = $using:ArtifactsLocation
-        RequiredModules         = $using:RequiredGraphModules
+        ModulesSrc              = $ModulesSrc
+        ApiVersion              = $ApiVersion
+        SkipGeneration          = $SkipGeneration
+        Build                   = $Build
+        Test                    = $Test
+        Pack                    = $Pack
+        EnableSigning           = $EnableSigning
+        ExcludeExampleTemplates = $ExcludeExampleTemplates
+        ExcludeNotesSection     = $ExcludeNotesSection
+        ArtifactsLocation       = $ArtifactsLocation
+        RequiredModules         = $RequiredGraphModules
     }
-    & $using:GenerateServiceModulePS1 @ServiceModuleParams
+
+    & $GenerateServiceModulePS1 @ServiceModuleParams
+
     function Get-OpenFiles {
         param (
             [string] $Path
         )
         $OpenFiles = @()
         $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
-        $Files | ForEach-Object {
-            $File = $_
+        foreach ($File in $Files) {
             try {
                 $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
                 $FileStream.Close()
@@ -130,13 +131,15 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         }
         return $OpenFiles
     }
-    #Call a function to check if there are any open files in the temp folder. Recurse through the folder until all files are closed
-    $OpenFiles = Get-OpenFiles -Path $TempPath
-    if ($OpenFiles.Count -gt 0) {
-        $OpenFiles = Get-OpenFiles -Path $TempPath
-    }
 
-} -ThrottleLimit $Throttle
+    # Check for open files in the temp folder and wait until all are closed
+    do {
+        $OpenFiles = Get-OpenFiles -Path $TempPath
+        if ($OpenFiles.Count -gt 0) {
+            Start-Sleep -Seconds 2  # Wait before retrying
+        }
+    } while ($OpenFiles.Count -gt 0)
+}
 $stopwatch.Stop()
 
 Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
