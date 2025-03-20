@@ -74,7 +74,7 @@ $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 #$CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
 #$Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max
 foreach ($Module in $ModuleToGenerate) {
-    Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
+    Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------'Version $ApiVersion'-------------"
      if($Module -eq "Devices.CorporateManagement" -and $ApiVersion -ieq "beta"){
     #skip for further troubleshooting
      }else{
@@ -109,7 +109,7 @@ $AutoRestTempFolder | ForEach-Object {
         #Check if each file in the folder exists
         Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
             $File = $_
-            Write-Debug "Removing cached file $File"
+            Write-Host "Removing cached file $File"
             if (Test-Path $File.FullName) {
                 #Remove the file
                 Remove-Item -Path $File.FullName -Force -confirm:$false
