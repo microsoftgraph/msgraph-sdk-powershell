@@ -96,6 +96,9 @@ $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 #$Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max
 foreach ($Module in $ModuleToGenerate) {
     Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
+     if($Module -eq "Devices.CorporateManagement" -and $ApiVersion -ieq "beta"){
+    #skip for further troubleshooting
+     }else{
 
     $ServiceModuleParams = @{
         Module                  = $Module
@@ -111,6 +114,7 @@ foreach ($Module in $ModuleToGenerate) {
         ArtifactsLocation       = $ArtifactsLocation
         RequiredModules         = $RequiredGraphModules
     }
+}
 
     & $GenerateServiceModulePS1 @ServiceModuleParams
 
