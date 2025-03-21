@@ -47,7 +47,11 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
 
         try {
             # Download OpenAPI document for module.
-            & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds
+            if($ModuleMapping[$ModuleName] -eq "Devices.CorporateManagement"){
+                Write-Host "Skipping Devices.CorporateManagement for further troubleshooting"
+            }else{
+                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds
+            }
         }
         catch {
             Write-Error $_.Exception

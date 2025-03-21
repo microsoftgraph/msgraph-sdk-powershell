@@ -69,34 +69,7 @@ if ($ModuleToGenerate.Count -eq 0) {
     $ModuleToGenerate = $ModuleMapping.Keys
 }
 
-
-$Stopwatch = [system.diagnostics.stopwatch]::StartNew()
-#$CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
-#$Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max
-foreach ($Module in $ModuleToGenerate) {
-    Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------'Version $ApiVersion'-------------"
-     if($Module -eq "Devices.CorporateManagement" -and $ApiVersion -ieq "beta"){
-    #skip for further troubleshooting
-     }else{
-
-    $ServiceModuleParams = @{
-        Module                  = $Module
-        ModulesSrc              = $ModulesSrc
-        ApiVersion              = $ApiVersion
-        SkipGeneration          = $SkipGeneration
-        Build                   = $Build
-        Test                    = $Test
-        Pack                    = $Pack
-        EnableSigning           = $EnableSigning
-        ExcludeExampleTemplates = $ExcludeExampleTemplates
-        ExcludeNotesSection     = $ExcludeNotesSection
-        ArtifactsLocation       = $ArtifactsLocation
-        RequiredModules         = $RequiredGraphModules
-    }
-}
-
-    & $GenerateServiceModulePS1 @ServiceModuleParams
-#This is to ensure that the autorest temp folder is cleared before generatingany module
+#This is to ensure that the autorest temp folder is cleared before generating the modules
 $TempPath = [System.IO.Path]::GetTempPath()
 # Check if there is any folder with autorest in the name
 $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
@@ -109,7 +82,7 @@ $AutoRestTempFolder | ForEach-Object {
         #Check if each file in the folder exists
         Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
             $File = $_
-            Write-Host "Removing cached file $File"
+            Write-Debug "Removing cached file $File"
             if (Test-Path $File.FullName) {
                 #Remove the file
                 Remove-Item -Path $File.FullName -Force -confirm:$false
@@ -117,7 +90,53 @@ $AutoRestTempFolder | ForEach-Object {
         }
     }
 }
-}
+
+$Stopwatch = [system.diagnostics.stopwatch]::StartNew()
+$CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
+$Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
+$ModuleToGenerate | ForEach-Object -Parallel {
+    $Module = $_
+    Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
+    $ServiceModuleParams = @{
+        Module                  = $Module
+        ModulesSrc              = $using:ModulesSrc
+        ApiVersion              = $using:ApiVersion
+        SkipGeneration          = $using:SkipGeneration
+        Build                   = $using:Build
+        Test                    = $using:Test
+        Pack                    = $using:Pack
+        EnableSigning           = $using:EnableSigning
+        ExcludeExampleTemplates = $using:ExcludeExampleTemplates
+        ExcludeNotesSection     = $using:ExcludeNotesSection
+        ArtifactsLocation       = $using:ArtifactsLocation
+        RequiredModules         = $using:RequiredGraphModules
+    }
+    & $using:GenerateServiceModulePS1 @ServiceModuleParams
+    function Get-OpenFiles {
+        param (
+            [string] $Path
+        )
+        $OpenFiles = @()
+        $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+        $Files | ForEach-Object {
+            $File = $_
+            try {
+                $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+                $FileStream.Close()
+            }
+            catch {
+                $OpenFiles += $File.FullName
+            }
+        }
+        return $OpenFiles
+    }
+    #Call a function to check if there are any open files in the temp folder. Recurse through the folder until all files are closed
+    $OpenFiles = Get-OpenFiles -Path $TempPath
+    if ($OpenFiles.Count -gt 0) {
+        $OpenFiles = Get-OpenFiles -Path $TempPath
+    }
+
+} -ThrottleLimit $Throttle
 $stopwatch.Stop()
 
 Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
