@@ -34,7 +34,7 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
 $v1Excludes = @("WindowsUpdates")
-$betaExcludes = @("Devices.CorporateManagement")
+$Excludes = @("Devices.CorporateManagement")
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Debug "Requests: $RequestCount" } -Process {
@@ -47,10 +47,12 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
         }
 
         try {
-            #Exclude beta version of Devices.CorporateManagement module because of autorest build errors
-            if (-not($betaExcludes -contains $ModuleName -and $GraphVersion -eq "beta")) {
+            #Exclude Devices.CorporateManagement module because of autorest build errors
+            if ($ModuleName -eq "Devices.CorporateManagement") {
+                Write-Host -ForegroundColor Yellow "Skipping $ModuleName module."
+            }else{
                 # Download OpenAPI document for module.
-                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds
+                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds              
             }
         }
         catch {
