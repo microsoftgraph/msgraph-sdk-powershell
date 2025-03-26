@@ -69,7 +69,27 @@ if ($ModuleToGenerate.Count -eq 0) {
     $ModuleToGenerate = $ModuleMapping.Keys
 }
 
+#This is to ensure that the autorest temp folder is cleared before generating the modules
+$TempPath = [System.IO.Path]::GetTempPath()
+# Check if there is any folder with autorest in the name
+$AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
 
+# Go through each folder and forcefully delete autorest related files
+$AutoRestTempFolder | ForEach-Object {
+    $AutoRestTempFolder = $_
+    #Delete files and folders if they exist
+    if (Test-Path $AutoRestTempFolder.FullName) {
+        #Check if each file in the folder exists
+        Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
+            $File = $_
+            Write-Debug "Removing cached file $File"
+            if (Test-Path $File.FullName) {
+                #Remove the file
+                Remove-Item -Path $File.FullName -Force -confirm:$false
+            }
+        }
+    }
+}
 
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
@@ -92,27 +112,29 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         RequiredModules         = $using:RequiredGraphModules
     }
     & $using:GenerateServiceModulePS1 @ServiceModuleParams
-    #This is to ensure that the autorest temp folder is cleared before generating the modules
-    $TempPath = [System.IO.Path]::GetTempPath()
-    # Check if there is any folder with autorest in the name
-    $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
-
-    # Go through each folder and forcefully delete autorest related files
-    $AutoRestTempFolder | ForEach-Object {
-        $AutoRestTempFolder = $_
-        #Delete files and folders if they exist
-        if (Test-Path $AutoRestTempFolder.FullName) {
-            #Check if each file in the folder exists
-            Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
-                $File = $_
-                Write-Debug "Removing cached file $File"
-                if (Test-Path $File.FullName) {
-                    #Remove the file
-                    Remove-Item -Path $File.FullName -Force -confirm:$false
-                }
+    function Get-OpenFiles {
+        param (
+            [string] $Path
+        )
+        $OpenFiles = @()
+        $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+        $Files | ForEach-Object {
+            $File = $_
+            try {
+                $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+                $FileStream.Close()
+            }
+            catch {
+                $OpenFiles += $File.FullName
             }
         }
-}
+        return $OpenFiles
+    }
+    #Call a function to check if there are any open files in the temp folder. Recurse through the folder until all files are closed
+    $OpenFiles = Get-OpenFiles -Path $TempPath
+    if ($OpenFiles.Count -gt 0) {
+        $OpenFiles = Get-OpenFiles -Path $TempPath
+    }
 
 } -ThrottleLimit $Throttle
 $stopwatch.Stop()
