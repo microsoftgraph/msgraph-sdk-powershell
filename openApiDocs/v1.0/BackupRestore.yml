@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: BackupRestore
   version: v1.0
@@ -3470,12 +3470,360 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.driveProtectionUnit':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List driveProtectionUnits
+      description: Get a list of the driveProtectionUnit objects that are associated with a oneDriveForBusinessProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-driveprotectionunits?view=graph-rest-1.0
+      operationId: solution.backupRestore_GetProtectionUnitAsDriveProtectionUnit
+      parameters:
+        - name: protectionUnitBase-id
+          in: path
+          description: The unique identifier of protectionUnitBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: protectionUnitBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.mailboxProtectionUnit':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List mailboxProtectionUnits
+      description: Get a list of mailboxProtectionUnit objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-mailboxprotectionunits?view=graph-rest-1.0
+      operationId: solution.backupRestore_GetProtectionUnitAsMailboxProtectionUnit
+      parameters:
+        - name: protectionUnitBase-id
+          in: path
+          description: The unique identifier of protectionUnitBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: protectionUnitBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.siteProtectionUnit':
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List siteProtectionUnits
+      description: Get a list of the siteProtectionUnit objects that are associated with a sharePointProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-siteprotectionunits?view=graph-rest-1.0
+      operationId: solution.backupRestore_GetProtectionUnitAsSiteProtectionUnit
+      parameters:
+        - name: protectionUnitBase-id
+          in: path
+          description: The unique identifier of protectionUnitBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: protectionUnitBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
+        default:
+          $ref: '#/components/responses/error'
   /solutions/backupRestore/protectionUnits/$count:
     get:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
       operationId: solution.backupRestore.protectionUnit_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /solutions/backupRestore/protectionUnits/microsoft.graph.driveProtectionUnit:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List driveProtectionUnits
+      description: Get a list of the driveProtectionUnit objects that are associated with a oneDriveForBusinessProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-driveprotectionunits?view=graph-rest-1.0
+      operationId: solution.backupRestore_ListProtectionUnitAsDriveProtectionUnit
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.driveProtectionUnitCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /solutions/backupRestore/protectionUnits/microsoft.graph.driveProtectionUnit/$count:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.ProtectionUnit_GetCountAsDriveProtectionUnit
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /solutions/backupRestore/protectionUnits/microsoft.graph.mailboxProtectionUnit:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List mailboxProtectionUnits
+      description: Get a list of mailboxProtectionUnit objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-mailboxprotectionunits?view=graph-rest-1.0
+      operationId: solution.backupRestore_ListProtectionUnitAsMailboxProtectionUnit
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.mailboxProtectionUnitCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /solutions/backupRestore/protectionUnits/microsoft.graph.mailboxProtectionUnit/$count:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.ProtectionUnit_GetCountAsMailboxProtectionUnit
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /solutions/backupRestore/protectionUnits/microsoft.graph.siteProtectionUnit:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: List siteProtectionUnits
+      description: Get a list of the siteProtectionUnit objects that are associated with a sharePointProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-siteprotectionunits?view=graph-rest-1.0
+      operationId: solution.backupRestore_ListProtectionUnitAsSiteProtectionUnit
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.siteProtectionUnitCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /solutions/backupRestore/protectionUnits/microsoft.graph.siteProtectionUnit/$count:
+    get:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Get the number of the resource
+      operationId: solution.backupRestore.ProtectionUnit_GetCountAsSiteProtectionUnit
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6060,6 +6408,28 @@ components:
               $ref: '#/components/schemas/microsoft.graph.protectionUnitStatus'
           additionalProperties:
             type: object
+    microsoft.graph.siteProtectionUnit:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
+        - title: siteProtectionUnit
+          type: object
+          properties:
+            siteId:
+              type: string
+              description: Unique identifier of the SharePoint site.
+              nullable: true
+            siteName:
+              type: string
+              description: Name of the SharePoint site.
+              nullable: true
+              readOnly: true
+            siteWebUrl:
+              type: string
+              description: The web URL of the SharePoint site.
+              nullable: true
+              readOnly: true
+          additionalProperties:
+            type: object
     microsoft.graph.timePeriod:
       title: timePeriod
       type: object
@@ -6223,28 +6593,6 @@ components:
               type: string
               description: 'Contains a site expression. For examples, see siteExpression example.'
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.siteProtectionUnit:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
-        - title: siteProtectionUnit
-          type: object
-          properties:
-            siteId:
-              type: string
-              description: Unique identifier of the SharePoint site.
-              nullable: true
-            siteName:
-              type: string
-              description: Name of the SharePoint site.
-              nullable: true
-              readOnly: true
-            siteWebUrl:
-              type: string
-              description: The web URL of the SharePoint site.
-              nullable: true
-              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.sharePointRestoreSession:
@@ -6685,6 +7033,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteProtectionUnitCollectionResponse:
+      title: Collection of siteProtectionUnit
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.restorePointCollectionResponse:
       title: Collection of restorePoint
       type: object
@@ -6745,19 +7106,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.siteProtectionRule'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.siteProtectionUnitCollectionResponse:
-      title: Collection of siteProtectionUnit
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -6990,6 +7338,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.protectionUnitBaseCollectionResponse'
+    microsoft.graph.siteProtectionUnitCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitCollectionResponse'
     microsoft.graph.restorePointCollectionResponse:
       description: Retrieved collection
       content:
@@ -7020,12 +7374,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.siteProtectionRuleCollectionResponse'
-    microsoft.graph.siteProtectionUnitCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitCollectionResponse'
     microsoft.graph.sharePointRestoreSessionCollectionResponse:
       description: Retrieved collection
       content:
