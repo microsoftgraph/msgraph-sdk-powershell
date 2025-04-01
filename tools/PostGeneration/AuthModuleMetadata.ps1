@@ -1,10 +1,10 @@
 #Load MgCommandMetadata.json file
-$CommandMetadataFile = (Join-Path $PSScriptRoot "../src\Authentication/Authentication/custom/common/MgCommandMetadata.json")
+$CommandMetadataFile = (Join-Path $PSScriptRoot "..\..\src\Authentication\Authentication\custom\common\MgCommandMetadata.json")
 #Convert JSON to HashTable
 $CommandMetadata = Get-Content $CommandMetadataFile | ConvertFrom-Json -AsHashTable
 
 #Check if Connect-MgGraph is in the list of commands
-$ConnectCommand = $CommandMetadata | Where-Object { $_.Name -eq "Connect-MgGraph" }
+$ConnectCommand = $CommandMetadata | Where-Object { $_.Command -eq "Connect-MgGraph" }
 if ($null -eq $ConnectCommand) {
     #Add Connect-MgGraph to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -27,7 +27,7 @@ if ($null -eq $ConnectCommand) {
 }
 
 #Check if Add-MgEnvironment is in the list of commands
-$AddEnvironmentCommand = $CommandMetadata | Where-Object { $_.Name -eq "Add-MgEnvironment" }
+$AddEnvironmentCommand = $CommandMetadata | Where-Object { $_.Command -eq "Add-MgEnvironment" }
 if ($null -eq $AddEnvironmentCommand) {
     #Add Add-MgEnvironment to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -49,7 +49,7 @@ if ($null -eq $AddEnvironmentCommand) {
     Write-Host "Add-MgEnvironment command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Get-MgEnvironment is in the list of commands
-$GetEnvironmentCommand = $CommandMetadata | Where-Object { $_.Name -eq "Get-MgEnvironment" }
+$GetEnvironmentCommand = $CommandMetadata | Where-Object { $_.Command -eq "Get-MgEnvironment" }
 if ($null -eq $GetEnvironmentCommand) {
     #Add Get-MgEnvironment to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -71,7 +71,7 @@ if ($null -eq $GetEnvironmentCommand) {
     Write-Host "Get-MgEnvironment command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Remove-MgEnvironment is in the list of commands
-$RemoveEnvironmentCommand = $CommandMetadata | Where-Object { $_.Name -eq "Remove-MgEnvironment" }
+$RemoveEnvironmentCommand = $CommandMetadata | Where-Object { $_.Command -eq "Remove-MgEnvironment" }
 if ($null -eq $RemoveEnvironmentCommand) {
     #Add Remove-MgEnvironment to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -93,7 +93,7 @@ if ($null -eq $RemoveEnvironmentCommand) {
     Write-Host "Remove-MgEnvironment command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Set-MgEnvironment is in the list of commands
-$SetEnvironmentCommand = $CommandMetadata | Where-Object { $_.Name -eq "Set-MgEnvironment" }
+$SetEnvironmentCommand = $CommandMetadata | Where-Object { $_.Command -eq "Set-MgEnvironment" }
 if ($null -eq $SetEnvironmentCommand) {
     #Add Set-MgEnvironment to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -115,7 +115,7 @@ if ($null -eq $SetEnvironmentCommand) {
     Write-Host "Set-MgEnvironment command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Disconnect-MgGraph is in the list of commands
-$DisconnectCommand = $CommandMetadata | Where-Object { $_.Name -eq "Disconnect-MgGraph" }
+$DisconnectCommand = $CommandMetadata | Where-Object { $_.Command -eq "Disconnect-MgGraph" }
 if ($null -eq $DisconnectCommand) {
     #Add Disconnect-MgGraph to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -137,7 +137,7 @@ if ($null -eq $DisconnectCommand) {
     Write-Host "Disconnect-MgGraph command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Find-MgGraphCommand is in the list of commands
-$FindCommand = $CommandMetadata | Where-Object { $_.Name -eq "Find-MgGraphCommand" }
+$FindCommand = $CommandMetadata | Where-Object { $_.Command -eq "Find-MgGraphCommand" }
 if ($null -eq $FindCommand) {
     #Add Find-MgGraphCommand to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -159,7 +159,7 @@ if ($null -eq $FindCommand) {
     Write-Host "Find-MgGraphCommand command added to the list of commands in MgCommandMetadata.json"
 }
 # Check if Find-MgGraphPermission is in the list of commands
-$FindPermissionCommand = $CommandMetadata | Where-Object { $_.Name -eq "Find-MgGraphPermission" }
+$FindPermissionCommand = $CommandMetadata | Where-Object { $_.Command -eq "Find-MgGraphPermission" }
 if ($null -eq $FindPermissionCommand) {
     #Add Find-MgGraphPermission to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -181,7 +181,7 @@ if ($null -eq $FindPermissionCommand) {
     Write-Host "Find-MgGraphPermission command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Get-MgContext is in the list of commands
-$GetContextCommand = $CommandMetadata | Where-Object { $_.Name -eq "Get-MgContext" }
+$GetContextCommand = $CommandMetadata | Where-Object { $_.Command -eq "Get-MgContext" }
 if ($null -eq $GetContextCommand) {
     #Add Get-MgContext to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -203,7 +203,7 @@ if ($null -eq $GetContextCommand) {
     Write-Host "Get-MgContext command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Get-MgGraphOption is in the list of commands
-$GetGraphOptionCommand = $CommandMetadata | Where-Object { $_.Name -eq "Get-MgGraphOption" }
+$GetGraphOptionCommand = $CommandMetadata | Where-Object { $_.Command -eq "Get-MgGraphOption" }
 if ($null -eq $GetGraphOptionCommand) {
     #Add Get-MgGraphOption to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -225,7 +225,7 @@ if ($null -eq $GetGraphOptionCommand) {
     Write-Host "Get-MgGraphOption command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Get-MgRequestContext is in the list of commands
-$GetRequestContextCommand = $CommandMetadata | Where-Object { $_.Name -eq "Get-MgRequestContext" }
+$GetRequestContextCommand = $CommandMetadata | Where-Object { $_.Command -eq "Get-MgRequestContext" }
 if ($null -eq $GetRequestContextCommand) {
     #Add Get-MgRequestContext to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -247,7 +247,7 @@ if ($null -eq $GetRequestContextCommand) {
     Write-Host "Get-MgRequestContext command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Invoke-MgGraphRequest is in the list of commands
-$InvokeRequestCommand = $CommandMetadata | Where-Object { $_.Name -eq "Invoke-MgGraphRequest" }
+$InvokeRequestCommand = $CommandMetadata | Where-Object { $_.Command -eq "Invoke-MgGraphRequest" }
 if ($null -eq $InvokeRequestCommand) {
     #Add Invoke-MgGraphRequest to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -269,7 +269,7 @@ if ($null -eq $InvokeRequestCommand) {
     Write-Host "Invoke-MgGraphRequest command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Set-MgGraphOption is in the list of commands
-$SetGraphOptionCommand = $CommandMetadata | Where-Object { $_.Name -eq "Set-MgGraphOption" }
+$SetGraphOptionCommand = $CommandMetadata | Where-Object { $_.Command -eq "Set-MgGraphOption" }
 if ($null -eq $SetGraphOptionCommand) {
     #Add Set-MgGraphOption to the list of commands
     $CommandMetadata += [pscustomobject]@{
@@ -291,7 +291,7 @@ if ($null -eq $SetGraphOptionCommand) {
     Write-Host "Set-MgGraphOption command added to the list of commands in MgCommandMetadata.json"
 }
 #Check if Set-MgRequestContext is in the list of commands
-$SetRequestContextCommand = $CommandMetadata | Where-Object { $_.Name -eq "Set-MgRequestContext" }
+$SetRequestContextCommand = $CommandMetadata | Where-Object { $_.Command -eq "Set-MgRequestContext" }
 if ($null -eq $SetRequestContextCommand) {
     #Add Set-MgRequestContext to the list of commands
     $CommandMetadata += [pscustomobject]@{
