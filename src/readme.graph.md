@@ -339,7 +339,15 @@ directive:
         const regexP = /AddIf\(\s*null\s*!=\s*\(\(\(object\)this\._(\w+).*?(\(Microsoft.*.PowerShell\.Runtime\.Json\.JsonNode\)).*?"(\w+)".*?container\.Add\s*\);/gm
         $ = $.replace(regexP, (match, p1, p2, p3) => {
           let capitalizedP1 = p1.charAt(0).toUpperCase() + p1.slice(1); // Capitalize first letter
-          return `if(this.IsPropertySet("${p1}"))\n\t\t{\n\t\t\tvar propertyInfo = this.GetType().GetProperty("${capitalizedP1}");\n\t\t\tif (propertyInfo != null)\n\t\t\t{\n\t\t\tSystem.Type propertyType = propertyInfo.PropertyType;\n\t\t\t\t\tAddIf(${p2}PropertyTracker.ConvertToJsonNode(propertyType, this._${p1}),"${p1}",container.Add);\n\t\t\t}\n\t\t}`;
+              // Check if `capitalizedP1` contains "PasswordSecure" and remove "Secure"
+          let adjustedP1 = capitalizedP1.includes("PasswordSecure")
+              ? capitalizedP1.replace("Secure", "")
+              : capitalizedP1;
+          let lowerCasedP1 = adjustedP1.charAt(0).toLowerCase() + adjustedP1.slice(1);
+          let jsonNodeFunction = capitalizedP1.includes("PasswordSecure")
+              ? `${p2}PropertyTracker.ConvertToJsonNode(propertyType, SecureStringExtension.ConvertToSecureStringToPlainText(this._${p1}))`
+              : `${p2}PropertyTracker.ConvertToJsonNode(propertyType, this._${p1})`;
+          return `if(this.IsPropertySet("${p1}"))\n\t\t{\n\t\t\tvar propertyInfo = this.GetType().GetProperty("${capitalizedP1}");\n\t\t\tif (propertyInfo != null)\n\t\t\t{\n\t\t\tSystem.Type propertyType = propertyInfo.PropertyType;\n\t\t\t\t\tAddIf(${jsonNodeFunction}, "${lowerCasedP1}",container.Add);\n\t\t\t}\n\t\t}`;
       });
         
         $ = $.replace(/if\s*\(\s*null\s*!=\s*this\._(\w+)\s*\)/gm, 'if(this.IsPropertySet("$1"))')
@@ -426,6 +434,9 @@ directive:
         
         $ = $.replace(/\bpublic\s+(Microsoft\.Graph\.[\w.]+\[\])\s+(\w+)\s*{\s*get\s*=>\s*this\.(\w+);\s*set\s*=>\s*this\.\3\s*=\s*value;\s*}/gm,'public $1 $2\n\t{\n\t\tget=>this.$3;\n\t\tset\n\t\t{\n\t\t\tthis.$3=value;\n\t\t\tTrackProperty(nameof($2));\n\t\t}\n\t}')
 
+        //Tracker for SecureString properties
+        $ = $.replace(/\bpublic\s+(System\.Security\.SecureString+)\s+(\w+)\s*{\s*get\s*=>\s*this\.(\w+);\s*set\s*=>\s*this\.\3\s*=\s*value;\s*}/gm,'public $1 $2\n\t{\n\t\tget=>this.$3;\n\t\tset\n\t\t{\n\t\t\tthis.$3=value;\n\t\t\tTrackProperty(nameof($2));\n\t\t}\n\t}')
+
         const match = $documentPath.match(/generated%2Fapi%2FModels%2F([\w]*[\w\d]*)\.cs/gm);
         if (match) {
         let fileName = match[0];
@@ -495,6 +506,7 @@ directive:
             }
            });
         }
+         $ = $.replace('// work', '// work\n\t\t\t\tConsole.WriteLine("*****************Warning: If you are passing any password related parameters please note that plain text passwords will be disabled soon.*****************");\n\t\t\t\tConsole.WriteLine("*****************Please convert your password to secure string *****************");\n\t\t\t\tConsole.WriteLine("*****************Example: $securePassword = ConvertTo-SecureString -String <Your password> -AsPlainText -Force *****************");')
         
         return $;
       }
@@ -962,5 +974,26 @@ directive:
       subject: ^(.*)(OnPremise)(.*)$
     set:
       alias: ^(.*)(OnPremises)(.*)$
+
+  - from: openapi-document
+    where: $.components..properties.currentPassword
+    transform: >
+      $["x-ms-client-name"] = "currentPasswordSecure";
+      $["format"] = "password";
+  - from: openapi-document
+    where: $.components..properties.newPassword
+    transform: >
+      $["x-ms-client-name"] = "newPasswordSecure";
+      $["format"] = "password";
+  - from: openapi-document
+    where: $.components..properties.password
+    transform: >
+      $["x-ms-client-name"] = "passwordSecure";
+      $["format"] = "password";
+  - from: openapi-document
+    where: $.paths..requestBody..properties.password
+    transform: >
+      $["x-ms-client-name"] = "passwordSecure";
+      $["format"] = "password";
       
 ```

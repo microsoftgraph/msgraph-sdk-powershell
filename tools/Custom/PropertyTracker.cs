@@ -1,4 +1,5 @@
 using System;
+using System.Security;
 using System.Collections.Generic;
 
 
@@ -41,7 +42,7 @@ namespace NamespacePrefixPlaceholder.PowerShell.Models
 
 
             // Handle different types based on the declared type
-            if (propertyType == typeof(string))
+            if (propertyType == typeof(string) || (propertyType == typeof(SecureString)))
             {
                 return new NamespacePrefixPlaceholder.PowerShell.Runtime.Json.JsonString(value.ToString());
             }
