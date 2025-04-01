@@ -962,5 +962,23 @@ directive:
       subject: ^(.*)(OnPremise)(.*)$
     set:
       alias: ^(.*)(OnPremises)(.*)$
+
+# Setting the alias below as per the request on issue [#3241](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3241)
+
+  - where:
+      verb: Get
+      subject: UserOnlineMeetingTranscript
+    set:
+      alias: Get-Mg${subject-prefix}AllUserOnlineMeetingTranscript
+  - where:
+      verb: Get
+      subject: UserEventDelta
+    set:
+      alias: Get-Mg${subject-prefix}UserCalendarEventDelta
+  - where:
+      verb: Get
+      subject: UserOnlineMeetingRecording
+    set:
+      alias: Get-Mg${subject-prefix}AllUserOnlineMeetingRecording
       
 ```
