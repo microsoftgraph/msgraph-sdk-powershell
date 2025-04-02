@@ -42,4 +42,9 @@ directive:
       verb: Get
       subject: ^(UserCalendarSchedule)$
     remove: true
+#Remove cmdlet to avoid conflicts where alias has been set:[#3241](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3241)
+  - where:
+      verb: Get
+      subject: ^UserCalendarEventDelta$
+    remove: true
 ```
