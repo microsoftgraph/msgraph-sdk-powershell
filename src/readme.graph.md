@@ -506,7 +506,9 @@ directive:
             }
            });
         }
-         $ = $.replace('// work', '// work\n\t\t\t\tConsole.WriteLine("*****************Warning: If you are passing any password related parameters please note that plain text passwords will be disabled soon.*****************");\n\t\t\t\tConsole.WriteLine("*****************Please convert your password to secure string *****************");\n\t\t\t\tConsole.WriteLine("*****************Example: $securePassword = ConvertTo-SecureString -String <Your password> -AsPlainText -Force *****************");')
+        if($.includes('password') || $.includes('Password')){
+          $ = $.replace('// work', '// work\n\t\t\t\tConsole.WriteLine("*****************Warning: Plain text passwords will soon be disabled.*****************");\n\t\t\t\tConsole.WriteLine("*****************Please convert your password to a secure string *****************");\n\t\t\t\tConsole.WriteLine("*****************Example: $securePassword = ConvertTo-SecureString -String <Your password> -AsPlainText -Force *****************");')
+         }
         
         return $;
       }
