@@ -46,8 +46,13 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
         }
 
         try {
-            # Download OpenAPI document for module.
-            & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds
+            #Exclude Devices.CorporateManagement module because of autorest build errors
+            if ($ModuleName -eq "Devices.CorporateManagement") {
+                Write-Host -ForegroundColor Yellow "Skipping $ModuleName module."
+            }else{
+                # Download OpenAPI document for module.
+                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds              
+            }
         }
         catch {
             Write-Error $_.Exception
