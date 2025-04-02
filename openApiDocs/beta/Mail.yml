@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Mail
   version: v1.0-beta
@@ -3819,6 +3819,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action updateAllMessagesReadState
+      description: Update the read state of all messages in a mailFolder object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/mailfolder-updateallmessagesreadstate?view=graph-rest-beta
       operationId: user.mailFolder.childFolder_updateAllMessagesReadState
       parameters:
         - name: user-id
@@ -3879,6 +3883,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get operations from users
+      description: The collection of long-running operations in the mailFolder.
       operationId: user.mailFolder.childFolder_ListOperation
       parameters:
         - name: user-id
@@ -3959,6 +3964,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get operations from users
+      description: The collection of long-running operations in the mailFolder.
       operationId: user.mailFolder.childFolder_GetOperation
       parameters:
         - name: user-id
@@ -6972,6 +6978,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action updateAllMessagesReadState
+      description: Update the read state of all messages in a mailFolder object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/mailfolder-updateallmessagesreadstate?view=graph-rest-beta
       operationId: user.mailFolder_updateAllMessagesReadState
       parameters:
         - name: user-id
@@ -7024,6 +7034,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get operations from users
+      description: The collection of long-running operations in the mailFolder.
       operationId: user.mailFolder_ListOperation
       parameters:
         - name: user-id
@@ -7096,6 +7107,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get operations from users
+      description: The collection of long-running operations in the mailFolder.
       operationId: user.mailFolder_GetOperation
       parameters:
         - name: user-id
@@ -9422,6 +9434,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolderOperation'
+              description: The collection of long-running operations in the mailFolder.
               x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
@@ -9768,6 +9781,7 @@ components:
           properties:
             resourceLocation:
               type: string
+              description: The location of the long-running operation.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.mailFolderOperationStatus'

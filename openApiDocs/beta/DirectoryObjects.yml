@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: DirectoryObjects
   version: v1.0-beta
@@ -788,7 +788,7 @@ paths:
       tags:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -1004,7 +1004,7 @@ paths:
       tags:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- [certificateAuthorityDetail](../resources/certificateauthoritydetail.md\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
@@ -1291,7 +1291,7 @@ components:
           properties:
             displayName:
               type: string
-              description: The name of the object.
+              description: The name of the object. Maximum length is 256 characters.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'

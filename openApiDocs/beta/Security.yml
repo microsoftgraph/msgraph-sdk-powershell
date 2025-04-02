@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Security
   version: v1.0-beta
@@ -4344,6 +4344,257 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/caseMembers':
+    get:
+      tags:
+        - security.casesRoot
+      summary: List ediscoveryCaseMember
+      description: Get a list of ediscoveryCaseMember objects for an ediscoveryCase.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverycasemember-list?view=graph-rest-beta
+      operationId: security.case.ediscoveryCase_ListCaseMember
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.ediscoveryCaseMemberCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.casesRoot
+      summary: Add ediscoveryCaseMember
+      description: 'Add an ediscoveryCaseMember to an ediscoveryCase. The ediscoveryCaseMember can be one of two types: a user or a role group.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverycasemember-post?view=graph-rest-beta
+      operationId: security.case.ediscoveryCase_CreateCaseMember
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseMember'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/caseMembers/{ediscoveryCaseMember-id}':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get caseMembers from security
+      description: Returns a list of ediscoveryCaseMember objects associated to this case.
+      operationId: security.case.ediscoveryCase_GetCaseMember
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCaseMember-id
+          in: path
+          description: The unique identifier of ediscoveryCaseMember
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCaseMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.casesRoot
+      summary: Update the navigation property caseMembers in security
+      operationId: security.case.ediscoveryCase_UpdateCaseMember
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCaseMember-id
+          in: path
+          description: The unique identifier of ediscoveryCaseMember
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCaseMember
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseMember'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.casesRoot
+      summary: Remove ediscoveryCaseMember
+      description: Remove an ediscoveryCaseMember from an ediscoveryCase.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverycasemember-delete?view=graph-rest-beta
+      operationId: security.case.ediscoveryCase_DeleteCaseMember
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCaseMember-id
+          in: path
+          description: The unique identifier of ediscoveryCaseMember
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCaseMember
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/caseMembers/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.caseMember_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians':
     get:
       tags:
@@ -4798,7 +5049,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List siteSources
-      description: Get a list of the siteSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
+      description: Get a list of the siteSource objects associated with an ediscoveryCustodian.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-beta
@@ -5019,7 +5270,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property siteSources for security
+      summary: Delete siteSource
+      description: Delete a siteSource object associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-delete-sitesources?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_DeleteSiteSource
       parameters:
         - name: ediscoveryCase-id
@@ -5376,7 +5631,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property unifiedGroupSources for security
+      summary: Delete unifiedGroupSource
+      description: Delete a unifiedGroupSource object associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-unifiedgroupsource-delete?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_DeleteUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
@@ -5846,7 +6105,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property userSources for security
+      summary: Delete userSource
+      description: Delete a userSource object associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-delete-usersources?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_DeleteUserSource
       parameters:
         - name: ediscoveryCase-id
@@ -6503,7 +6766,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property siteSources for security
+      summary: Delete siteSource
+      description: Delete a siteSource object associated with an ediscoveryHoldPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-delete-sitesources?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.legalHold_DeleteSiteSource
       parameters:
         - name: ediscoveryCase-id
@@ -6857,7 +7124,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property userSources for security
+      summary: Delete userSource
+      description: Delete a userSource object associated with an ediscoveryHoldPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-delete-usersources?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.legalHold_DeleteUserSource
       parameters:
         - name: ediscoveryCase-id
@@ -8942,7 +9213,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action addToReviewSet
-      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers. The location provides a URL that will return a Add to review set operation.'
+      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers. The location provides a URL that returns an Add to review set operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-addtoreviewset?view=graph-rest-beta
@@ -8975,6 +9246,12 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
                 additionalDataOptions:
                   $ref: '#/components/schemas/microsoft.graph.security.additionalDataOptions'
+                itemsToInclude:
+                  $ref: '#/components/schemas/microsoft.graph.security.itemsToInclude'
+                cloudAttachmentVersion:
+                  $ref: '#/components/schemas/microsoft.graph.security.cloudAttachmentVersion'
+                documentVersion:
+                  $ref: '#/components/schemas/microsoft.graph.security.documentVersion'
               additionalProperties:
                 type: object
         required: true
@@ -8989,7 +9266,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action export
-      description: 'Initiate an export from a reviewSet.  For details, see Export documents from a review set in eDiscovery (Premium).'
+      description: 'Initiate an export from a reviewSet. For more information, see Export documents from a review set in eDiscovery (Premium).'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-export?view=graph-rest-beta
@@ -10423,6 +10700,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: ediscoverySearch
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                statisticsOptions:
+                  $ref: '#/components/schemas/microsoft.graph.security.statisticsOptions'
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -10475,6 +10764,10 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.security.exportLocation'
                 additionalOptions:
                   $ref: '#/components/schemas/microsoft.graph.security.additionalOptions'
+                cloudAttachmentVersion:
+                  $ref: '#/components/schemas/microsoft.graph.security.cloudAttachmentVersion'
+                documentVersion:
+                  $ref: '#/components/schemas/microsoft.graph.security.documentVersion'
               additionalProperties:
                 type: object
         required: true
@@ -10536,6 +10829,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                cloudAttachmentVersion:
+                  $ref: '#/components/schemas/microsoft.graph.security.cloudAttachmentVersion'
+                documentVersion:
+                  $ref: '#/components/schemas/microsoft.graph.security.documentVersion'
               additionalProperties:
                 type: object
         required: true
@@ -11149,8 +11446,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get childTags from security
-      description: Returns the tags that are a child of a tag.
+      summary: 'ediscoveryReviewTag: asHierarchy'
+      description: List eDiscovery review tags with the tag hierarchy shown.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-ashierarchy?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.tag_ListChildTag
       parameters:
         - name: ediscoveryCase-id
@@ -31775,6 +32075,12 @@ components:
               type: string
               description: The external case number for customer reference.
               nullable: true
+            caseMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseMember'
+              description: Returns a list of ediscoveryCaseMember objects associated to this case.
+              x-ms-navigationProperty: true
             custodians:
               type: array
               items:
@@ -31819,6 +32125,24 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
               description: Returns a list of ediscoveryReviewTag objects associated to this case.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.ediscoveryCaseMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: ediscoveryCaseMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the eDiscovery case member. Allowed only for case members of type roleGroup.
+              nullable: true
+            recipientType:
+              $ref: '#/components/schemas/microsoft.graph.security.recipientType'
+            smtpAddress:
+              type: string
+              description: The smtp address of the eDiscovery case member. Allowed only for case members of type user.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.security.ediscoveryCustodian:
@@ -32591,9 +32915,42 @@ components:
         - allVersions
         - linkedFiles
         - unknownFutureValue
+        - advancedIndexing
+        - listAttachments
+        - htmlTranscripts
+        - messageConversationExpansion
+        - locationsWithoutHits
+        - allItemsInFolder
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.security.itemsToInclude:
+      title: itemsToInclude
+      enum:
+        - searchHits
+        - partiallyIndexed
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.security.cloudAttachmentVersion:
+      title: cloudAttachmentVersion
+      enum:
+        - latest
+        - recent10
+        - recent100
+        - all
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.documentVersion:
+      title: documentVersion
+      enum:
+        - latest
+        - recent10
+        - recent100
+        - all
+        - unknownFutureValue
+      type: string
     microsoft.graph.security.exportOptions:
       title: exportOptions
       enum:
@@ -32603,6 +32960,11 @@ components:
         - fileInfo
         - tags
         - unknownFutureValue
+        - splitSource
+        - includeFolderAndPath
+        - friendlyName
+        - condensePaths
+        - optimizedPartitionSize
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -32613,6 +32975,7 @@ components:
         - directory
         - pst
         - unknownFutureValue
+        - msg
       type: string
     microsoft.graph.security.ediscoveryReviewSetQuery:
       allOf:
@@ -32627,6 +32990,14 @@ components:
         - title: ediscoveryAddToReviewSetOperation
           type: object
           properties:
+            additionalDataOptions:
+              $ref: '#/components/schemas/microsoft.graph.security.additionalDataOptions'
+            cloudAttachmentVersion:
+              $ref: '#/components/schemas/microsoft.graph.security.cloudAttachmentVersion'
+            documentVersion:
+              $ref: '#/components/schemas/microsoft.graph.security.documentVersion'
+            itemsToInclude:
+              $ref: '#/components/schemas/microsoft.graph.security.itemsToInclude'
             reviewSet:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
             search:
@@ -32663,6 +33034,8 @@ components:
               description: The number of mailboxes that had search hits.
               format: int32
               nullable: true
+            statisticsOptions:
+              $ref: '#/components/schemas/microsoft.graph.security.statisticsOptions'
             unindexedItemCount:
               type: number
               description: The estimated count of unindexed items for the collection.
@@ -32677,6 +33050,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
           additionalProperties:
             type: object
+    microsoft.graph.security.statisticsOptions:
+      title: statisticsOptions
+      enum:
+        - includeRefiners
+        - includeQueryStats
+        - includeUnindexedStats
+        - advancedIndexing
+        - locationsWithoutHits
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.security.exportCriteria:
       title: exportCriteria
       enum:
@@ -32705,6 +33090,15 @@ components:
         - subfolderContents
         - listAttachments
         - unknownFutureValue
+        - htmlTranscripts
+        - advancedIndexing
+        - allItemsInFolder
+        - includeFolderAndPath
+        - condensePaths
+        - friendlyName
+        - splitSource
+        - optimizedPartitionSize
+        - includeReport
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -34957,7 +35351,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -35478,7 +35872,7 @@ components:
               nullable: true
             firstChannelName:
               type: string
-              description: The name of the first channel in the team. This property is only used during team creation and isn't returned in methods to get and list teams.
+              description: 'The name of the first channel in the team. This is an optional property, only used during team creation and isn''t returned in methods to get and list teams.'
               nullable: true
             funSettings:
               $ref: '#/components/schemas/microsoft.graph.teamFunSettings'
@@ -38315,6 +38709,15 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
       additionalProperties:
         type: object
+    microsoft.graph.security.recipientType:
+      title: recipientType
+      enum:
+        - user
+        - roleGroup
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.security.dataSourceContainer:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -39225,7 +39628,7 @@ components:
             type: object
     microsoft.graph.appRoleAssignment:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
         - title: appRoleAssignment
           type: object
           properties:
@@ -40449,7 +40852,10 @@ components:
             dataRetentionPolicy:
               $ref: '#/components/schemas/microsoft.graph.security.appInfoDataRetentionPolicy'
             dataTypes:
-              $ref: '#/components/schemas/microsoft.graph.security.appInfoUploadedDataTypes'
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.appInfoUploadedDataTypes'
+              description: 'Indicates the data types that an end user can upload to the app. The possible values are: documents, mediaFiles, codingFiles, creditCards, databaseFiles, none, unknown, unknownFutureValue.'
             domainRegistrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -40616,7 +41022,9 @@ components:
               format: date-time
               nullable: true
             logonUrls:
-              type: string
+              type: array
+              items:
+                type: string
               description: Indicates the URL that users can use to sign into the app.
             pciDssVersion:
               $ref: '#/components/schemas/microsoft.graph.security.appInfoPciDssVersion'
@@ -41388,11 +41796,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -41841,7 +42249,7 @@ components:
         lastSuccessfulSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time of the user''s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'The date and time of the user''s most recent successful interactive or non-interactive sign-in. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         lastSuccessfulSignInRequestId:
@@ -42266,7 +42674,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             permissionGrantPreApprovalPolicies:
               type: array
@@ -42603,6 +43011,8 @@ components:
               description: The results of every partner agent's installation status on Cloud PC.
             powerState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
+            productType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProductType'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -43109,7 +43519,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID. Supports $filter (eq, ne, not, in).'
               nullable: true
             commands:
               type: array
@@ -43290,6 +43700,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolderOperation'
+              description: The collection of long-running operations in the mailFolder.
               x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
@@ -44498,6 +44909,10 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            sequenceNumber:
+              type: string
+              nullable: true
+              readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
@@ -44653,6 +45068,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             contactMergeSuggestions:
               $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
+            exchange:
+              $ref: '#/components/schemas/microsoft.graph.exchangeSettings'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             regionalAndLanguageSettings:
@@ -45101,6 +45518,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the channel. Nullable.
               x-ms-navigationProperty: true
+            planner:
+              $ref: '#/components/schemas/microsoft.graph.teamsChannelPlanner'
             sharedWithTeams:
               type: array
               items:
@@ -45206,6 +45625,10 @@ components:
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
+              nullable: true
+            isActivitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts include activities from the original shift.
               nullable: true
             isCrossLocationShiftRequestApprovalRequired:
               type: boolean
@@ -46188,6 +46611,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.ediscoveryCaseMemberCollectionResponse:
+      title: Collection of ediscoveryCaseMember
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseMember'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -47552,6 +47988,13 @@ components:
       title: siteArchivalDetails
       type: object
       properties:
+        archivedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        archivedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
         archiveStatus:
           $ref: '#/components/schemas/microsoft.graph.siteArchiveStatus'
       additionalProperties:
@@ -48130,6 +48573,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
               description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
               x-ms-navigationProperty: true
             listItem:
               $ref: '#/components/schemas/microsoft.graph.listItem'
@@ -50312,7 +50760,7 @@ components:
               description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Alternate key. Required. Not nullable. Supports $filter (eq).'
             subject:
               type: string
-              description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
+              description: 'Nullable.  Defaults to null if not set. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. If subject is defined, claimsMatchingExpression must be null. Supports $filter (eq).'
               nullable: true
           additionalProperties:
             type: object
@@ -50951,6 +51399,8 @@ components:
       properties:
         capabilityType:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        licenseType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryLicenseType'
         primaryRegion:
           type: string
           description: The primary and mainly used region where the Cloud PC is located.
@@ -51060,6 +51510,16 @@ components:
       enum:
         - running
         - poweredOff
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcProductType:
+      title: cloudPcProductType
+      enum:
+        - enterprise
+        - frontline
+        - devBox
+        - powerAutomate
+        - business
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcProvisioningType:
@@ -51287,7 +51747,7 @@ components:
             description: Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.
             name: singlePlatformRestriction
           - value: unknownFutureValue
-            description: Unknown future value
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
           - value: enrollmentNotificationsConfiguration
             description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
@@ -51577,6 +52037,7 @@ components:
           properties:
             resourceLocation:
               type: string
+              description: The location of the long-running operation.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.mailFolderOperationStatus'
@@ -52020,7 +52481,7 @@ components:
             description: 'Indicates the device is enrolled via Apple Account Driven User Enrollment, a form of enrollment where the user enrolls via iOS Settings without using the iOS Company Portal. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities.'
             name: appleAccountDrivenUserEnrollment
           - value: unknownFutureValue
-            description: Evolvable enum member
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
@@ -53571,6 +54032,10 @@ components:
               type: boolean
               description: Indicates whether breakout rooms are enabled for the meeting.
               nullable: true
+            allowCopyingAndSharingMeetingContent:
+              type: boolean
+              description: Indicates whether copying and sharing meeting content is enabled for the meeting.
+              nullable: true
             allowedLobbyAdmitters:
               $ref: '#/components/schemas/microsoft.graph.allowedLobbyAdmitterRoles'
             allowedPresenters:
@@ -53616,6 +54081,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEndToEndEncryptionEnabled:
               type: boolean
+              description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -55097,6 +55563,22 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.exchangeSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: exchangeSettings
+          type: object
+          properties:
+            inPlaceArchiveMailboxId:
+              type: string
+              description: The unique identifier for the user's in-place archive mailbox.
+              nullable: true
+            primaryMailboxId:
+              type: string
+              description: The unique identifier for the user's primary mailbox.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.userInsightsSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -55380,6 +55862,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsChannelPlanner:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsChannelPlanner
+          type: object
+          properties:
+            plans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: 'A collection of plannerPlan objects owned by the Teams channel. Currently, only shared channels are supported. Read-only. Nullable.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.sharedWithChannelTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -57589,11 +58085,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -58511,7 +59007,7 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. The possible values are: reference: The attachment is a link to another file. Populate the contentURL with the link to the object.forwardedMessageReference: The attachment is a reference to a forwarded message. Populate the content with the original message context.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: Either a code snippet or place holder. application/vnd.microsoft.card.announcement: An announcement header. application/vnd.microsoft.card.fluidEmbedCard: A Microsoft Loop component.'
           nullable: true
         contentUrl:
           type: string
@@ -58709,6 +59205,13 @@ components:
         - none
         - failover
         - failback
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDisasterRecoveryLicenseType:
+      title: cloudPcDisasterRecoveryLicenseType
+      enum:
+        - none
+        - standard
         - unknownFutureValue
       type: string
     microsoft.graph.actionState:
@@ -59427,7 +59930,7 @@ components:
             description: This status is set when the device license removing fails.
             name: deviceLicenseRemoveFailed
           - value: unknownFutureValue
-            description: This is put here as a place holder for future extension.
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.sharedAppleDeviceUser:
       title: sharedAppleDeviceUser
@@ -61587,6 +62090,9 @@ components:
               type: string
               description: The registrant's time zone details.
               nullable: true
+            registrantVideoOnDemandWebUrl:
+              type: string
+              nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -61882,6 +62388,10 @@ components:
           type: string
           description: The time the entry is recorded.
           format: date-time
+        isAtApprovedLocation:
+          type: boolean
+          description: Indicates whether this action happens at an approved location.
+          nullable: true
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
       additionalProperties:
@@ -62986,6 +63496,7 @@ components:
         - project
         - driveItem
         - user
+        - teamsChannel
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -63672,18 +64183,20 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
-          description: Collection of certificate restrictions settings to be applied to an application or service principal.
+          x-ms-navigationProperty: true
         passwordCredentials:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
-          description: Collection of password restrictions settings to be applied to an application or service principal.
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.customAppManagementApplicationConfiguration:
       title: customAppManagementApplicationConfiguration
       type: object
       properties:
+        audiences:
+          $ref: '#/components/schemas/microsoft.graph.audiencesConfiguration'
         identifierUris:
           $ref: '#/components/schemas/microsoft.graph.identifierUriConfiguration'
       additionalProperties:
@@ -64756,6 +65269,10 @@ components:
               type: string
               description: The identifier of the publication. Read-only.
               nullable: true
+            publicationName:
+              type: string
+              description: The name of the published task list. Read-only.
+              nullable: true
             publishedToPlanId:
               type: string
               description: The identifier of the plannerPlan this task was originally placed in. Read-only.
@@ -65130,6 +65647,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             startDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            videoOnDemandWebUrl:
+              type: string
+              nullable: true
             presenters:
               type: array
               items:
@@ -66907,6 +67427,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
       additionalProperties:
         type: object
+    microsoft.graph.audiencesConfiguration:
+      title: audiencesConfiguration
+      type: object
+      properties:
+        azureAdMultipleOrgs:
+          $ref: '#/components/schemas/microsoft.graph.audienceRestriction'
+        personalMicrosoftAccount:
+          $ref: '#/components/schemas/microsoft.graph.audienceRestriction'
+      additionalProperties:
+        type: object
     microsoft.graph.identifierUriConfiguration:
       title: identifierUriConfiguration
       type: object
@@ -67926,6 +68456,25 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.audienceRestriction:
+      title: audienceRestriction
+      type: object
+      properties:
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.'
+          format: date-time
+          nullable: true
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+      additionalProperties:
+        type: object
     microsoft.graph.identifierUriRestriction:
       title: identifierUriRestriction
       type: object
@@ -67940,6 +68489,10 @@ components:
           type: boolean
           description: 'If true, the restriction isn''t enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.'
           nullable: true
+        isStateSetByMicrosoft:
+          type: boolean
+          description: 'If true, Microsoft sets the identifierUriRestriction state. If false, the tenant modifies the identifierUriRestriction state. Read-only.'
+          readOnly: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
@@ -68908,6 +69461,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseCollectionResponse'
+    microsoft.graph.security.ediscoveryCaseMemberCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseMemberCollectionResponse'
     microsoft.graph.security.ediscoveryCustodianCollectionResponse:
       description: Retrieved collection
       content:
