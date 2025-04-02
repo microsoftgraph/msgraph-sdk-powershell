@@ -154,7 +154,7 @@ See our [troubleshooting guide](https://learn.microsoft.com/powershell/microsoft
 
 ## Feedback
 
-If you find any bugs when using the Microsoft Graph PowerShell modules, please file an issue on our GitHub issues page.
+Please file an issue on our GitHub issues page if you find any bugs when using the Microsoft Graph PowerShell modules.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
