@@ -69,7 +69,27 @@ $ApiVersion | ForEach-Object {
             else {
                 $FullModuleVersion = $ModuleMetadata.versions[$CurrentApiVersion].version
             }
-            npx autorest --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2
+            #Reset the autorest temp folder
+            $TempPath = [System.IO.Path]::GetTempPath()
+            # Check if there is any folder with autorest in the name
+            $AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+            # Go through each folder and forcefully delete autorest related files
+            $AutoRestTempFolder | ForEach-Object {
+                $AutoRestTempFolder = $_
+                #Delete files and folders if they exist
+                if (Test-Path $AutoRestTempFolder.FullName) {
+                    #Check if each file in the folder exists
+                    Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
+                        $File = $_
+                        Write-Debug "Removing cached file $File"
+                        if (Test-Path $File.FullName) {
+                            #Remove the file
+                            Remove-Item -Path $File.FullName -Force -confirm:$false
+                        }
+                    }
+                }
+            }
+            npx autorest --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 --reset
             if ($LastExitCode -ne 0) {
                 Write-Host -ForegroundColor Red "AutoREST failed to generate '$ModuleFullName' module."
                 exit $LastExitCode
