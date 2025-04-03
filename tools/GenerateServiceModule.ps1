@@ -69,7 +69,7 @@ $ApiVersion | ForEach-Object {
             else {
                 $FullModuleVersion = $ModuleMetadata.versions[$CurrentApiVersion].version
             }
-            npx autorest --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 --reset
+            npx autorest --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2
             if ($LastExitCode -ne 0) {
                 Write-Host -ForegroundColor Red "AutoREST failed to generate '$ModuleFullName' module."
                 exit $LastExitCode
