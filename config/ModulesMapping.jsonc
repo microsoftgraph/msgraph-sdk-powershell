@@ -7,7 +7,7 @@
   "ChangeNotifications": "^subscriptions\\.",
   "CloudCommunications": "^users.onlineMeeting$|^users.presence$|^communications\\.",
   "Compliance": "^compliance\\.|^privacy.subjectRightsRequest$",
-  "CrossDeviceExperiences": "^users.userActivity$|^users.device$",
+  //"CrossDeviceExperiences": "^users.userActivity$|^users.device$",
   "Devices.CloudPrint": "^print\\.",
   "Devices.CorporateManagement": "^deviceAppManagement\\.|^officeConfiguration\\.|^users.mobileAppIntentAndState$|^users.mobileAppTroubleshootingEvent$|^users.windowsInformationProtectionDeviceRegistration$|^users.managedAppRegistration$|^users.managedDevice$|^users.deviceManagementTroubleshootingEvent$|^users.deviceEnrollmentConfiguration$",
   "Devices.ServiceAnnouncement": "^admin.serviceAnnouncement$|^admin.*.Actions$|^admin.*.Functions$",
