@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Search
   version: v1.0-beta
@@ -2578,11 +2578,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFileFlow
-      description: Create a new inboundFileFlow object.
+      summary: Create inboundApiFlow
+      description: Create a new inboundApiFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-post?view=graph-rest-beta
       operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
@@ -4238,6 +4238,19 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /external/industryData/runs/microsoft.graph.industryData.start:
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Invoke action start
+      description: 'Start a new industryDataRun. Industry data automates a run every 12 hours; however, users can use the start action to perform an on-demand run. The industry data service throttles the start of runs, allowing up to five successful runs every 12 hours. An on-demand run causes the next system-scheduled run to be skipped if it is set to run within the next 10 hours.'
+      operationId: external.industryData.run_start
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /external/industryData/sourceSystems:
     get:
       tags:
@@ -6092,7 +6105,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
+              description: 'Variations of a bookmark for different countries/regions or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.searchRequest:
@@ -6245,7 +6258,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
+              description: 'Variations of a QnA for different countries/regions or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -6733,7 +6746,7 @@ components:
             description: Indicates Mobile Application Management (MAM) for iOS devices
             name: iOSMobileApplicationManagement
           - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
           - value: windowsMobileApplicationManagement
             description: Indicates Mobile Application Management (MAM) for Windows devices.
