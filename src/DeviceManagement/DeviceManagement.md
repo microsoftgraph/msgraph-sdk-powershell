@@ -29,4 +29,8 @@ directive:
       verb: Update
       subject: ^DeviceManagementComanagedDevice$
     remove: true
+  - where:
+      verb: Start
+      subject: ^DeviceManagementUserExperienceAnalyticDeviceScopeAction$
+    remove: true
 ```
