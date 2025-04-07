@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^deviceManagement.(deviceManagementScript.userRunState.deviceRunState_.*|groupPolicyConfiguration.definitionValue.presentationValue_.*|deviceShellScript.userRunState.deviceRunState_.*|deviceConfiguration_assignedAccessMultiModeProfile)$
+  - remove-path-by-operation: ^deviceManagement.(deviceManagementScript.userRunState.deviceRunState_.*|groupPolicyConfiguration.definitionValue.presentationValue_.*|deviceShellScript.userRunState.deviceRunState_.*|deviceConfiguration_assignedAccessMultiModeProfile|microsoftTunnelSite.microsoftTunnelServer_createServerLogCollectionRequest)$
 
 # Remove cmdlets.
   - where:
