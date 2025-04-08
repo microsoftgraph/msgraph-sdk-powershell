@@ -46,8 +46,11 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
         }
 
         try {
-            # Download OpenAPI document for module.
-            & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds
+            # Omit beta version of DeviceManagement.Administration module for further troubleshooting
+            if (-not($ModuleName -eq "DeviceManagement.Administration" -and $GraphVersion -eq "beta")) {
+                # Download OpenAPI document for module.
+                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds
+            }
         }
         catch {
             Write-Error $_.Exception
