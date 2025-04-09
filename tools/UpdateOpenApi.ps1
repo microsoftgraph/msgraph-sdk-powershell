@@ -34,7 +34,7 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
 $v1Excludes = @("WindowsUpdates")
-$betaExcludes = @("DeviceManagement.Administration", "Mail")
+$betaExcludes = @("DeviceManagement.Administration", "Mail", "ManagedTenants")
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Debug "Requests: $RequestCount" } -Process {
