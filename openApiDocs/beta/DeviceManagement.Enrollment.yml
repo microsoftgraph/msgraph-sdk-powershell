@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: DeviceManagement.Enrollment
   version: v1.0-beta
@@ -1504,6 +1504,98 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.depMacOSEnrollmentProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/defaultTvOSEnrollmentProfile':
+    get:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Get defaultTvOSEnrollmentProfile from deviceManagement
+      description: Default TvOS Enrollment Profile
+      operationId: deviceManagement.depOnboardingSetting_GetDefaultTvOSEnrollmentProfile
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.depTvOSEnrollmentProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/defaultVisionOSEnrollmentProfile':
+    get:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Get defaultVisionOSEnrollmentProfile from deviceManagement
+      description: Default VisionOS Enrollment Profile
+      operationId: deviceManagement.depOnboardingSetting_GetDefaultVisionOSEnrollmentProfile
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.depVisionOSEnrollmentProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10842,11 +10934,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      summary: List unifiedRoleAssignmentMultiple
+      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14727,6 +14819,10 @@ components:
               type: string
               description: Description for the enrollment profile.
               nullable: true
+            deviceNameTemplate:
+              type: string
+              description: 'Indicates the device name template used for the enrolled Android devices. The maximum length allowed for this property is 63 characters. The template expression contains normal text and tokens, including the serial number of the device, user name, device type, upn prefix, or a randomly generated number. Supported Tokens for device name templates are: (for device naming template expression): {{SERIAL}}, {{SERIALLAST4DIGITS}}, {{ENROLLMENTDATETIME}}, {{USERNAME}}, {{DEVICETYPE}}, {{UPNPREFIX}}, {{rand:x}}. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
+              nullable: true
             displayName:
               type: string
               description: Display name for the enrollment profile.
@@ -15105,6 +15201,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.depIOSEnrollmentProfile'
             defaultMacOsEnrollmentProfile:
               $ref: '#/components/schemas/microsoft.graph.depMacOSEnrollmentProfile'
+            defaultTvOSEnrollmentProfile:
+              $ref: '#/components/schemas/microsoft.graph.depTvOSEnrollmentProfile'
+            defaultVisionOSEnrollmentProfile:
+              $ref: '#/components/schemas/microsoft.graph.depVisionOSEnrollmentProfile'
             enrollmentProfiles:
               type: array
               items:
@@ -15309,6 +15409,22 @@ components:
           additionalProperties:
             type: object
           description: The DepMacOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to macOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
+    microsoft.graph.depTvOSEnrollmentProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.enrollmentProfile'
+        - title: depTvOSEnrollmentProfile
+          type: object
+          additionalProperties:
+            type: object
+          description: 'The depTvOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to Apple TV device configuration. This type of profile must be assigned to Apple TV devices before the devices can enroll via DEP. However, This entity type will only be used as a navigation property to fetch the display name of the profile while getting the exitsing depOnboardingSetting entity, it won''t support any operations, as the new entity is supported in device configuration(DCV2) graph calls'
+    microsoft.graph.depVisionOSEnrollmentProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.enrollmentProfile'
+        - title: depVisionOSEnrollmentProfile
+          type: object
+          additionalProperties:
+            type: object
+          description: The enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile's configurations at enrollment of the corresponding device.
     microsoft.graph.enrollmentProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16485,7 +16601,7 @@ components:
             description: Indicates Mobile Application Management (MAM) for iOS devices
             name: iOSMobileApplicationManagement
           - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
           - value: windowsMobileApplicationManagement
             description: Indicates Mobile Application Management (MAM) for Windows devices.
@@ -16757,29 +16873,42 @@ components:
         - windows
         - windowsMobile
         - macOS
+        - visionOS
+        - tvOS
+        - unknownFutureValue
       type: string
+      description: Supported platform types for policies.
       x-ms-enum:
         name: platform
         modelAsString: false
         values:
           - value: unknown
-            description: Unknown device platform
+            description: Default.Indicates the managed device is not known and is associated with 'Unknown' device platform.
             name: unknown
           - value: ios
-            description: IOS device platform
+            description: Indicates the managed device is Apple device that runs on iOS operation system.
             name: ios
           - value: android
-            description: Android device platform
+            description: 'Indicates the managed device is a Android device that runs on Android operation system. '
             name: android
           - value: windows
-            description: Windows device platform
+            description: Indicates the managed device is a Windows device that runs on Windows operation system.
             name: windows
           - value: windowsMobile
-            description: WindowsMobile device platform
+            description: Indicates the managed device is a Windows-based mobile device that runs on Windows Mobile operation system.
             name: windowsMobile
           - value: macOS
-            description: Mac device platform
+            description: Indicates the managed device is Apple device that runs on MacOS operation system.
             name: macOS
+          - value: visionOS
+            description: Indicates the managed device is Apple device that runs on VisionOS operation system.
+            name: visionOS
+          - value: tvOS
+            description: Indicates the managed device is Apple device that runs on tvOS operation system.
+            name: tvOS
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceEnrollmentConfigurationType:
       title: deviceEnrollmentConfigurationType
       enum:
@@ -16836,7 +16965,7 @@ components:
             description: Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.
             name: singlePlatformRestriction
           - value: unknownFutureValue
-            description: Unknown future value
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
           - value: enrollmentNotificationsConfiguration
             description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
@@ -17049,7 +17178,7 @@ components:
             description: Indicates that a surface Hub 2S  AutoPilot Profile is assigned to a device that is not surface Hub 2S.
             name: surfaceHub2SProfileNotSupported
           - value: unknownFutureValue
-            description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn''t be necessary.'
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.windowsAutopilotProfileAssignmentStatus:
       title: windowsAutopilotProfileAssignmentStatus
@@ -17114,7 +17243,7 @@ components:
             description: Hardware change detected on client that could not resolved automatically. Additional remediation is required.
             name: manualRemediationRequired
           - value: unknownFutureValue
-            description: 'Marks the end of known enum values, and allows for additional values in the future.'
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.windowsAutopilotUserlessEnrollmentStatus:
       title: windowsAutopilotUserlessEnrollmentStatus
@@ -18223,11 +18352,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
