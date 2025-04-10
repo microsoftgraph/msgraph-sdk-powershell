@@ -9,7 +9,6 @@ steps:
       pwsh: true
       script: |
         . $(System.DefaultWorkingDirectory)/tools/PostGeneration/NewCommandMetadata.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/" -IncludePermissions -Debug
-        - task: PowerShell@2
   - task: PowerShell@2
     displayName: Generate authentication module metadata
     inputs:
