@@ -141,7 +141,8 @@ namespace NamespacePrefixPlaceholder.PowerShell
             {
                 body = matcher.Replace(body, "$1\"<redacted>\"");
             }
-
+            // Remove password:*  instances in body.
+            body = AbstractPasswords(body);
             return body;
         }
 
@@ -187,6 +188,30 @@ namespace NamespacePrefixPlaceholder.PowerShell
                 return content.Substring(0, Microsoft.Graph.PowerShell.Authentication.Constants.MaxContentLength) + "\r\nDATA TRUNCATED DUE TO SIZE\r\n";
             }
 
+            return content;
+        }
+        private static string AbstractPasswords(string content)
+        {
+
+            // Check if the JSON string contains "password" (case-insensitive)
+            if (content.IndexOf("password", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                // Deserialize JSON into Dictionary
+                var obj = JsonConvert.DeserializeObject<Dictionary<string, object>>(content);
+
+                // Replace values for properties containing "password" (case-insensitive)
+                foreach (var key in obj.Keys)
+                {
+                    if (key.IndexOf("password", StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        obj[key] = "***";
+                    }
+                }
+
+                // Serialize the updated dictionary back to JSON
+                content = JsonConvert.SerializeObject(obj, Formatting.Indented);
+
+            }
             return content;
         }
     }
