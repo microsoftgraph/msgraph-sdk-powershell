@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Planner
   version: v1.0-beta
@@ -14350,6 +14350,7 @@ components:
         - project
         - driveItem
         - user
+        - teamsChannel
       type: string
     microsoft.graph.sensitivityLabelAssignment:
       title: sensitivityLabelAssignment
@@ -14471,11 +14472,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -14510,6 +14511,10 @@ components:
             publicationId:
               type: string
               description: The identifier of the publication. Read-only.
+              nullable: true
+            publicationName:
+              type: string
+              description: The name of the published task list. Read-only.
               nullable: true
             publishedToPlanId:
               type: string

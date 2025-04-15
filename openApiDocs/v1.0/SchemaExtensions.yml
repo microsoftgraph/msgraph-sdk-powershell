@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: SchemaExtensions
   version: v1.0
@@ -224,7 +224,7 @@ components:
           properties:
             description:
               type: string
-              description: Description for the schema extension. Supports $filter (eq).
+              description: Description for the schema extension.
               nullable: true
             owner:
               type: string
