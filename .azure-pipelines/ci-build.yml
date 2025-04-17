@@ -139,7 +139,7 @@ extends:
                   allowPackageConflicts: true
     - stage: 'Deploy_to_PsGallery'
       dependsOn: stage
-      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main')) # Only deploy to PSGallery on main branch
+      # condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main')) # Only deploy to PSGallery on main branch
       jobs:
       - deployment: 'DeployToPowerShellGallery'
         displayName: 'Deploy to PowerShell Gallery'
@@ -162,6 +162,7 @@ extends:
                   packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
                   nuGetFeedType: external
                   publishFeedCredentials: 'microsoftgraph PowerShell Gallery connection'
+                  arguments: '-SkipDuplicate'
 
     - stage: PushDockerImageToRegistry
       condition: and(or(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['Build.SourceBranch'], variables['PREVIEW_BRANCH'])), not(contains(variables['Build.SourceBranch'], '-preview')))
