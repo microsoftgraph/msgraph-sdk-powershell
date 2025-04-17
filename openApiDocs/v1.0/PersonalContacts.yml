@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: PersonalContacts
   version: v1.0
@@ -1164,6 +1164,51 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - users.contactFolder
+      summary: Invoke action permanentDelete
+      operationId: user.contactFolder.childFolder.contact_permanentDelete
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/photo':
     get:
       tags:
@@ -1576,6 +1621,43 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - users.contactFolder
+      summary: Invoke action permanentDelete
+      operationId: user.contactFolder.childFolder_permanentDelete
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/$count':
     get:
       tags:
@@ -2289,6 +2371,43 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - users.contactFolder
+      summary: Invoke action permanentDelete
+      operationId: user.contactFolder.contact_permanentDelete
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo':
     get:
       tags:
@@ -2645,6 +2764,35 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/contactFolders/{contactFolder-id}/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - users.contactFolder
+      summary: Invoke action permanentDelete
+      operationId: user.contactFolder_permanentDelete
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/contactFolders/$count':
     get:
       tags:
@@ -3254,6 +3402,35 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/contacts/{contact-id}/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - users.contact
+      summary: Invoke action permanentDelete
+      operationId: user.contact_permanentDelete
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/contacts/{contact-id}/photo':
     get:
       tags:

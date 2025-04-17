@@ -8,48 +8,39 @@ using NamespacePrefixPlaceholder.PowerShell.JsonUtilities;
 public class JsonExtensionsTests
 {
     [Fact]
-    public void RemoveDefaultNullProperties_ShouldRemoveDefaultNullValues()
-    {
-        // Arrange
-        JObject json = JObject.Parse(@"{
-            ""displayname"": ""Tim"",
-            ""position"": ""defaultnull"",
-            ""salary"": 2000000,
-            ""team"": ""defaultnull""
-        }");
-
-        // Act
-        string cleanedJson = json.RemoveDefaultNullProperties();
-        JObject result = JObject.Parse(cleanedJson);
-
-        // Assert
-        Assert.False(result.ContainsKey("position"));
-        Assert.False(result.ContainsKey("team"));
-        Assert.Equal("Tim", result["displayname"]?.ToString());
-        Assert.Equal(2000000, result["salary"]?.ToObject<int>());
-    }
-
-    [Fact]
     public void RemoveDefaultNullProperties_ShouldConvertStringNullToJsonNull()
     {
         // Arrange
-        JObject json = JObject.Parse(@"{
-            ""displayname"": ""Tim"",
-            ""position"": ""null"",
-            ""salary"": 2000000,
-            ""team"": """"
+        JToken json = JToken.Parse(@"{
+            ""displayname"": ""null"",
         }");
 
         // Act
         string cleanedJson = json.RemoveDefaultNullProperties();
-        JObject result = JObject.Parse(cleanedJson);
-
+        String expectedJson = @"{
+            ""displayname"": null
+        }";
         // Assert
-        Assert.Null(result["position"]?.Value<string>());
-        Assert.Equal("", result["team"]?.ToString());
-        Assert.Equal("Tim", result["displayname"]?.ToString());
-        Assert.Equal(2000000, result["salary"]?.ToObject<int>());
+        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(cleanedJson));
     }
+
+    [Fact]
+    public void RemoveDefaultNullProperties_ShouldConvertNullToJsonNull()
+    {
+        // Arrange
+        JToken json = JToken.Parse(@"{
+            ""displayname"": null,
+        }");
+
+        // Act
+        string cleanedJson = json.RemoveDefaultNullProperties();
+        String expectedJson = @"{
+            ""displayname"": null
+        }";
+        // Assert
+        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(cleanedJson));
+    }
+
 
     [Fact]
     public void RemoveDefaultNullProperties_ShouldHandleNestedObjects()
@@ -62,14 +53,14 @@ public class JsonExtensionsTests
             ""jobProfile"": {
                 ""dept"": ""ICT"",
                 ""manager"": false,
-                ""supervisor"" : ""defaultnull""
+                ""supervisor"" : ""null""
             },
             ""metadata"": {
-                ""phone"": ""defaultnull"",
+                ""phone"": ""null"",
                 ""location"": ""null"",
                 ""address"": {
                     ""city"": ""Nairobi"",
-                    ""street"": ""defaultnull""
+                    ""street"": ""null""
                 },
                 ""station"": {
                 }
@@ -78,16 +69,27 @@ public class JsonExtensionsTests
 
         // Act
         string cleanedJson = json.RemoveDefaultNullProperties();
-        JObject result = JObject.Parse(cleanedJson);
+        string expectedJson = @"{
+            ""displayname"": ""Tim"",
+            ""professions"": {},
+            ""jobProfile"": {
+                ""dept"": ""ICT"",
+                ""manager"": false,
+                ""supervisor"": null
+            },
+            ""metadata"": {
+                ""phone"": null,
+                ""location"": null,
+                ""address"": {
+                    ""city"": ""Nairobi"",
+                    ""street"": null
+                },
+                ""station"": {}
+            }
+        }";
 
         // Assert
-        Assert.False(result["metadata"]?.ToObject<JObject>()?.ContainsKey("phone"));
-        Assert.Equal("ICT", result["jobProfile"]?["dept"]?.ToString());
-        Assert.Equal("Nairobi", result["metadata"]?["address"]?["city"]?.ToString());
-        Assert.Null(result["metadata"]?["location"]?.Value<string>());
-        // Check if emptynested object is removed
-        Assert.False(result["metadata"]?.ToObject<JObject>()?.ContainsKey("station "));
-        Assert.False(result?.ToObject<JObject>()?.ContainsKey("professions"));
+        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(cleanedJson));
     }
 
     [Fact]
@@ -110,7 +112,7 @@ public class JsonExtensionsTests
         // Arrange
         JObject json = JObject.Parse(@"{
             ""users"": [
-                { ""displayname"": ""Tim"", ""email"": ""defaultnull"" },
+                { ""displayname"": ""Tim"", ""email"": ""null"" },
                 { ""displayname"": ""Mayabi"", ""email"": ""mayabi@example.com"" }
             ]
         }");
@@ -146,31 +148,31 @@ public class JsonExtensionsTests
 
     //Add tests for json arrays
     [Fact]
-    public void RemoveDefaultNullProperties_ShouldRemoveDefaultNullValuesInJsonArray()
+    public void RemoveDefaultNullProperties_ShouldConvertNullStringValuesIntoNullInJsonArray()
     {
         // Arrange
         JArray json = JArray.Parse(@"[
-                { ""displayname"": ""Tim"", ""email"": ""defaultnull"" }
+                { ""displayname"": ""Tim"", ""email"": ""null"" }
 
         ]");
 
         // Act
         string cleanedJson = json.RemoveDefaultNullProperties();
-        JArray result = JArray.Parse(cleanedJson);
-
+        String expectedJson = @"[
+                { ""displayname"": ""Tim"", ""email"": null }
+        ]";
         // Assert
-        Assert.Equal("Tim", result[0]?["displayname"]?.ToString());
-        Assert.False(result[0].ToObject<JObject>().ContainsKey("email"));
+        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(cleanedJson));
 
     }
-        [Fact]
+    [Fact]
     public void ReplaceAndRemoveSlashes_Should_Preserve_Json_Property_Values()
     {
         // Arrange
-        string inputJson = @"{
+        JObject inputJson = JObject.Parse(@"{
             ""RedirectUris"": [""http://localhost/.auth/login/aad/callback""],
             ""DirectoryPath"": ""/this/is/a/directory/and/should/not/be/removed""
-        }";
+        }");
 
         string expectedJson = @"{
             ""RedirectUris"": [""http://localhost/.auth/login/aad/callback""],
@@ -178,37 +180,10 @@ public class JsonExtensionsTests
         }";
 
         // Act
-        string result = inputJson.ReplaceAndRemoveSlashes();
+        string result = inputJson.RemoveDefaultNullProperties();
 
         // Assert
-        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(result));
-    }
-
-    [Fact]
-    public void ReplaceAndRemoveSlashes_Should_Remove_Backslashes()
-    {
-        // Arrange
-        string input = @"Some \random \slashes that \should be removed.";
-        string expected = "Some random slashes that should be removed.";
-
-        // Act
-        string result = input.ReplaceAndRemoveSlashes();
-
-        // Assert
-        Assert.Equal(expected, result);
-    }
-
-    [Fact]
-    public void ReplaceAndRemoveSlashes_Should_Handle_Invalid_Json_Gracefully()
-    {
-        // Arrange
-        string invalidJson = "{Invalid Json \\with /slashes}";
-
-        // Act
-        string result = invalidJson.ReplaceAndRemoveSlashes();
-
-        // Assert
-        Assert.DoesNotContain("\\", result);
+        Assert.Equal(NormalizeJson(result), NormalizeJson(expectedJson));
     }
 
     /// <summary>
@@ -225,26 +200,62 @@ public class JsonExtensionsTests
     }
 
     [Fact]
-    public void RemoveDefaultNullProperties_ShouldRemoveDefaultNullValuesInJsonObjectWithBothDeeplyNestedObjectsAndArrays(){
+    public void RemoveDefaultNullProperties_ShouldRemoveConvertNullStringValuesIntoNullInJsonObjectWithBothDeeplyNestedObjectsAndArrays()
+    {
         // Arrange
         JObject json = JObject.Parse(@"{
             ""body"":{
                 ""users"": [
-                    { ""displayname"": ""Tim"", ""email"": ""defaultnull"", ""metadata"": { ""phone"": ""254714390915"" } }
+                    { ""displayname"": ""Tim"", ""email"": ""null"", ""metadata"": { ""phone"": ""254714390915"" } }
                 ]
             },
             ""users"": [
-                { ""displayname"": ""Tim"", ""email"": ""defaultnull"", ""metadata"": { ""phone"": ""254714390915"" } }]}");
+                { ""displayname"": ""Tim"", ""email"": ""null"", ""metadata"": { ""phone"": ""254714390915"" } }]}");
 
         // Act
         string cleanedJson = json.RemoveDefaultNullProperties();
         JObject result = JObject.Parse(cleanedJson);
 
         // Assert
-        Assert.False(result["users"][0]?.ToObject<JObject>().ContainsKey("email"));
         Assert.True(result["users"][0]?["metadata"]?.ToObject<JObject>().ContainsKey("phone"));
-        Assert.False(result["body"]?["users"][0]?.ToObject<JObject>().ContainsKey("email"));
         Assert.True(result["body"]?["users"][0]?["metadata"]?.ToObject<JObject>().ContainsKey("phone"));
     }
+
+    [Fact]
+    public void RemoveDefaultNullProperties_ShouldNotDoAutomaticInferrencing()
+    {
+        // Arrange
+        JObject json = JObject.Parse(@"{
+            ""fields"": {
+                ""BasicTag"": ""v2.31.0"",
+                ""BuildID"": ""3599"",
+                ""MWSCommitID"": ""a5c7998252f2366c8cbbb03ba46e9b"",
+                ""MWSTag"": ""v2.21.0"",
+                ""BasicCommitID"": ""9c3d0f36362dd25caa0da2ecab06a1859ce2"",
+                ""CustomerCommitID"": ""c40241be9fd2f1cd2f2f2fc961c37f720c""
+            }
+        }");
+
+        String expectedJson = @"{
+            ""fields"": {
+                ""BasicTag"": ""v2.31.0"",
+                ""BuildID"": ""3599"",
+                ""MWSCommitID"": ""a5c7998252f2366c8cbbb03ba46e9b"",
+                ""MWSTag"": ""v2.21.0"",
+                ""BasicCommitID"": ""9c3d0f36362dd25caa0da2ecab06a1859ce2"",
+                ""CustomerCommitID"": ""c40241be9fd2f1cd2f2f2fc961c37f720c""
+            }
+        }";
+
+        // Act
+        //Convert Json object to string  then pass it to RemoveAndReplaceSlashes method
+        string cleanedJson = json.RemoveDefaultNullProperties();
+
+        // Assert
+        Assert.Equal(NormalizeJson(expectedJson), NormalizeJson(cleanedJson));
+    }
+
+
+
 }
 

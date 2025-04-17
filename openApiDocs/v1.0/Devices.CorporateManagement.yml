@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Devices.CorporateManagement
   version: v1.0
@@ -14,7 +14,7 @@ paths:
       description: Read properties and relationships of the deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-unlock-deviceappmanagement-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetDeviceAppManagement
       parameters:
         - name: $select
@@ -2252,11 +2252,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: List windowsInformationProtections
-      description: List properties and relationships of the windowsInformationProtection objects.
+      summary: List targetedManagedAppProtections
+      description: List properties and relationships of the targetedManagedAppProtection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2329,11 +2329,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: Get managedAppProtection
-      description: Read properties and relationships of the managedAppProtection object.
+      summary: Get managedAppConfiguration
+      description: Read properties and relationships of the managedAppConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappconfiguration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppPolicy
       parameters:
         - name: managedAppPolicy-id
@@ -2439,7 +2439,7 @@ paths:
       description: Not yet documented
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppPolicy_targetApp
       parameters:
         - name: managedAppPolicy-id
@@ -2488,11 +2488,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: List managedAppRegistrations
-      description: List properties and relationships of the managedAppRegistration objects.
+      summary: List androidManagedAppRegistrations
+      description: List properties and relationships of the androidManagedAppRegistration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppRegistration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2569,11 +2569,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Get androidManagedAppRegistration
-      description: Read properties and relationships of the androidManagedAppRegistration object.
+      summary: Get iosManagedAppRegistration
+      description: Read properties and relationships of the iosManagedAppRegistration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppRegistration
       parameters:
         - name: managedAppRegistration-id
@@ -2897,7 +2897,7 @@ paths:
       description: Not yet documented
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.appliedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -3184,7 +3184,7 @@ paths:
       description: Not yet documented
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.intendedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -3561,11 +3561,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppStatus
-      summary: List managedAppStatuses
-      description: List properties and relationships of the managedAppStatus objects.
+      summary: List managedAppStatusRaws
+      description: List properties and relationships of the managedAppStatusRaw objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatus-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppStatus
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3638,11 +3638,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppStatus
-      summary: Get managedAppStatusRaw
-      description: Read properties and relationships of the managedAppStatusRaw object.
+      summary: Get managedAppStatus
+      description: Read properties and relationships of the managedAppStatus object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatus-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppStatus
       parameters:
         - name: managedAppStatus-id
@@ -3758,11 +3758,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: List iosVppEBooks
-      description: List properties and relationships of the iosVppEBook objects.
+      summary: List managedEBooks
+      description: List properties and relationships of the managedEBook objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebook-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedEBook
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3953,11 +3953,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: List managedEBookAssignments
-      description: List properties and relationships of the managedEBookAssignment objects.
+      summary: List iosVppEBookAssignments
+      description: List properties and relationships of the iosVppEBookAssignment objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-list?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_ListAssignment
       parameters:
         - name: managedEBook-id
@@ -4150,11 +4150,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Delete managedEBookAssignment
-      description: Deletes a managedEBookAssignment.
+      summary: Delete iosVppEBookAssignment
+      description: Deletes a iosVppEBookAssignment.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_DeleteAssignment
       parameters:
         - name: managedEBook-id
@@ -6332,11 +6332,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: List iosMobileAppConfigurations
-      description: List properties and relationships of the iosMobileAppConfiguration objects.
+      summary: List managedDeviceMobileAppConfigurations
+      description: List properties and relationships of the managedDeviceMobileAppConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileAppConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6413,11 +6413,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get managedDeviceMobileAppConfiguration
-      description: Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+      summary: Get iosMobileAppConfiguration
+      description: Read properties and relationships of the iosMobileAppConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileAppConfiguration
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7574,11 +7574,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: List macOSLobApps
-      description: List properties and relationships of the macOSLobApp objects.
+      summary: List mobileLobApps
+      description: List properties and relationships of the mobileLobApp objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-macoslobapp-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-mobilelobapp-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileApp
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7628,11 +7628,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Create windowsMobileMSI
-      description: Create a new windowsMobileMSI object.
+      summary: Create windowsAppX
+      description: Create a new windowsAppX object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-windowsmobilemsi-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-windowsappx-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateMobileApp
       requestBody:
         description: New navigation property
@@ -7655,11 +7655,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get windowsAppX
-      description: Read properties and relationships of the windowsAppX object.
+      summary: Get macOSMicrosoftEdgeApp
+      description: Read properties and relationships of the macOSMicrosoftEdgeApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-windowsappx-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-macosmicrosoftedgeapp-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileApp
       parameters:
         - name: mobileApp-id
@@ -7703,11 +7703,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Update androidLobApp
-      description: Update the properties of a androidLobApp object.
+      summary: Update win32LobApp
+      description: Update the properties of a win32LobApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-androidlobapp-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-win32lobapp-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateMobileApp
       parameters:
         - name: mobileApp-id
@@ -7738,11 +7738,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Delete managedAndroidStoreApp
-      description: Deletes a managedAndroidStoreApp.
+      summary: Delete macOSOfficeSuiteApp
+      description: Deletes a macOSOfficeSuiteApp.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-macosofficesuiteapp-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMobileApp
       parameters:
         - name: mobileApp-id
@@ -35088,7 +35088,7 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -35271,7 +35271,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -35286,7 +35286,7 @@ components:
               description: A list for the user to enumerate their past projects. Returned only on $select.
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country or region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             preferredDataLocation:
               type: string
@@ -35365,7 +35365,7 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries/regions. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
@@ -37754,7 +37754,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. This property records the last time a user attempted an interactive sign-in to the directory—whether the attempt was successful or not. Note: Since unsuccessful attempts are also logged, this value might not accurately reflect actual system usage. For tracking actual account access, please use the lastSuccessfulSignInDateTime property. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -37764,7 +37764,7 @@ components:
         lastSuccessfulSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time of the user''s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'The date and time of the user''s most recent successful interactive or non-interactive sign-in. Use this property if you need to determine when the account was truly accessed. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSuccessfulSignInRequestId:
@@ -38022,15 +38022,15 @@ components:
               description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             canEdit:
               type: boolean
-              description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.'
+              description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.'
               nullable: true
             canShare:
               type: boolean
-              description: 'true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.'
+              description: 'true if the user has permission to share the calendar, false otherwise. Only the user who created the calendar can share it.'
               nullable: true
             canViewPrivateItems:
               type: boolean
-              description: 'true if the user can read calendar items that have been marked private, false otherwise.'
+              description: 'If true, the user can read calendar items that have been marked private, false otherwise.'
               nullable: true
             changeKey:
               type: string
@@ -38130,7 +38130,7 @@ components:
           properties:
             allowNewTimeProposals:
               type: boolean
-              description: 'true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.'
+              description: 'true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. The default is true.'
               nullable: true
             attendees:
               type: array
@@ -38141,7 +38141,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
-              description: The preview of the message associated with the event. It is in text format.
+              description: The preview of the message associated with the event. It's in text format.
               nullable: true
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -38151,7 +38151,7 @@ components:
               nullable: true
             hideAttendees:
               type: boolean
-              description: 'When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.'
+              description: 'When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. The default is false.'
               nullable: true
             iCalUId:
               type: string
@@ -38161,7 +38161,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isAllDay:
               type: boolean
-              description: 'Set to true if the event lasts all day. If true, regardless of whether it''s a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.'
+              description: 'Set to true if the event lasts all day. If true, regardless of whether it''s a single-day or multi-day event, start, and endtime must be set to midnight and be in the same time zone.'
               nullable: true
             isCancelled:
               type: boolean
@@ -38169,15 +38169,15 @@ components:
               nullable: true
             isDraft:
               type: boolean
-              description: 'Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.'
+              description: 'Set to true if the user has updated the meeting in Outlook but hasn''t sent the updates to attendees. Set to false if all changes are sent, or if the event is an appointment without any attendees.'
               nullable: true
             isOnlineMeeting:
               type: boolean
-              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
+              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently, Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
               nullable: true
             isOrganizer:
               type: boolean
-              description: Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
+              description: Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). It also applies if a delegate organized the event on behalf of the owner.
               nullable: true
             isReminderOn:
               type: boolean
@@ -38189,7 +38189,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.location'
-              description: 'The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.'
+              description: 'The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection are removed and replaced by the new location value.'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             onlineMeetingProvider:
@@ -38207,7 +38207,7 @@ components:
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Represents the start time of an event when it''s initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
@@ -38245,13 +38245,13 @@ components:
               nullable: true
             transactionId:
               type: string
-              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. It''s useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you can''t change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can''t be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -38271,7 +38271,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn''t include occurrences cancelled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -38795,6 +38795,10 @@ components:
             displayName:
               type: string
               description: The name of the team.
+              nullable: true
+            firstChannelName:
+              type: string
+              description: 'The name of the first channel in the team. This is an optional property, only used during team creation and isn''t returned in methods to get and list teams.'
               nullable: true
             funSettings:
               $ref: '#/components/schemas/microsoft.graph.teamFunSettings'
@@ -39487,7 +39491,7 @@ components:
           properties:
             locale:
               type: string
-              description: 'Represents the location that a user selected in Microsoft Teams and doesn''t follow the Office''s locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.'
+              description: 'Represents the location that a user selected in Microsoft Teams and doesn''t follow the Office''s locale setting. A user''s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.'
               nullable: true
             region:
               type: string
@@ -41514,6 +41518,12 @@ components:
               type: string
               description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
+            allMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: 'A collection of membership records associated with the channel, including both direct and indirect members of shared channels.'
+              x-ms-navigationProperty: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
             members:
@@ -41910,6 +41920,10 @@ components:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
               nullable: true
+            isActivitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts include activities from the original shift.
+              nullable: true
             offerShiftRequestsEnabled:
               type: boolean
               description: Indicates whether offer shift requests are enabled for the schedule.
@@ -41925,6 +41939,8 @@ components:
               description: Additional information about why schedule provisioning failed.
               nullable: true
               readOnly: true
+            startDayOfWeek:
+              $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
             swapShiftsRequestsEnabled:
               type: boolean
               description: Indicates whether swap shifts requests are enabled for the schedule.
@@ -41933,6 +41949,8 @@ components:
               type: boolean
               description: Indicates whether time clock is enabled for the schedule.
               nullable: true
+            timeClockSettings:
+              $ref: '#/components/schemas/microsoft.graph.timeClockSettings'
             timeOffRequestsEnabled:
               type: boolean
               description: Indicates whether time off requests are enabled for the schedule.
@@ -41946,6 +41964,13 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The IDs for the workforce integrations associated with this schedule.
+            dayNotes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.dayNote'
+              description: The day notes in the schedule.
+              x-ms-navigationProperty: true
             offerShiftRequests:
               type: array
               items:
@@ -41981,6 +42006,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
               description: The swap requests for shifts in the schedule.
+              x-ms-navigationProperty: true
+            timeCards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeCard'
+              description: The time cards in the schedule.
               x-ms-navigationProperty: true
             timeOffReasons:
               type: array
@@ -42348,13 +42379,25 @@ components:
               type: boolean
               description: Indicates whether attendees can turn on their microphone.
               nullable: true
+            allowBreakoutRooms:
+              type: boolean
+              description: Indicates whether breakout rooms are enabled for the meeting.
+              nullable: true
+            allowedLobbyAdmitters:
+              $ref: '#/components/schemas/microsoft.graph.allowedLobbyAdmitterRoles'
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowLiveShare:
+              $ref: '#/components/schemas/microsoft.graph.meetingLiveShareOptions'
             allowMeetingChat:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
+              nullable: true
+            allowPowerPointSharing:
+              type: boolean
+              description: Indicates whether PowerPoint live is enabled for the meeting.
               nullable: true
             allowRecording:
               type: boolean
@@ -42367,6 +42410,10 @@ components:
             allowTranscription:
               type: boolean
               description: Indicates whether transcription is enabled for the meeting.
+              nullable: true
+            allowWhiteboard:
+              type: boolean
+              description: Indicates whether whiteboard is enabled for the meeting.
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
@@ -43237,7 +43284,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud-only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.'
+              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud-only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID. Supports $filter (eq, ne, not, in).'
               nullable: true
             extensions:
               type: array
@@ -45430,6 +45477,32 @@ components:
         - Completed
         - Failed
       type: string
+    microsoft.graph.timeClockSettings:
+      title: timeClockSettings
+      type: object
+      properties:
+        approvedLocation:
+          $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
+      additionalProperties:
+        type: object
+    microsoft.graph.dayNote:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: dayNote
+          type: object
+          properties:
+            dayNoteDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: The date of the day note.
+              format: date
+              nullable: true
+            draftDayNote:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            sharedDayNote:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+          additionalProperties:
+            type: object
     microsoft.graph.offerShiftRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
@@ -45495,6 +45568,10 @@ components:
         - title: schedulingGroup
           type: object
           properties:
+            code:
+              type: string
+              description: 'The code for the schedulingGroup to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
+              nullable: true
             displayName:
               type: string
               description: The display name for the schedulingGroup. Required.
@@ -45548,12 +45625,45 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.timeCard:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeCard
+          type: object
+          properties:
+            breaks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+              description: The list of breaks associated with the timeCard.
+            clockInEvent:
+              $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+            clockOutEvent:
+              $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+            confirmedBy:
+              $ref: '#/components/schemas/microsoft.graph.confirmedBy'
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            originalEntry:
+              $ref: '#/components/schemas/microsoft.graph.timeCardEntry'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.timeCardState'
+            userId:
+              type: string
+              description: User ID to which the timeCard belongs.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.timeOffReason:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
         - title: timeOffReason
           type: object
           properties:
+            code:
+              type: string
+              description: 'The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
+              nullable: true
             displayName:
               type: string
               description: The name of the timeOffReason. Required.
@@ -45952,6 +46062,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalLink'
       additionalProperties:
         type: object
+    microsoft.graph.allowedLobbyAdmitterRoles:
+      title: allowedLobbyAdmitterRoles
+      enum:
+        - organizerAndCoOrganizersAndPresenters
+        - organizerAndCoOrganizers
+        - unknownFutureValue
+      type: string
     microsoft.graph.onlineMeetingPresenters:
       title: onlineMeetingPresenters
       enum:
@@ -45959,6 +46076,13 @@ components:
         - organization
         - roleIsPresenter
         - organizer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingLiveShareOptions:
+      title: meetingLiveShareOptions
+      enum:
+        - enabled
+        - disabled
         - unknownFutureValue
       type: string
     microsoft.graph.meetingChatMode:
@@ -46350,6 +46474,8 @@ components:
         - title: changeTrackedEntity
           type: object
           properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -46898,6 +47024,12 @@ components:
         - title: printJob
           type: object
           properties:
+            acknowledgedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The dateTimeOffset when the job was acknowledged. Read-only.
+              format: date-time
+              nullable: true
             configuration:
               $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
             createdBy:
@@ -46907,6 +47039,13 @@ components:
               type: string
               description: The DateTimeOffset when the job was created. Read-only.
               format: date-time
+            errorCode:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The error code of the print job. Read-only.
+              format: int32
+              nullable: true
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'
@@ -47196,11 +47335,11 @@ components:
       properties:
         crc32Hash:
           type: string
-          description: The CRC32 value of the file in little endian (if available). Read-only.
+          description: The CRC32 value of the file (if available). Read-only.
           nullable: true
         quickXorHash:
           type: string
-          description: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
+          description: A proprietary hash of the file that can be used to determine if the contents of the file change (if available). Read-only.
           nullable: true
         sha1Hash:
           type: string
@@ -47208,7 +47347,7 @@ components:
           nullable: true
         sha256Hash:
           type: string
-          description: SHA256 hash for the contents of the file (if available). Read-only.
+          description: This property isn't supported. Don't use.
           nullable: true
       additionalProperties:
         type: object
@@ -47993,6 +48132,72 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.timeCardBreak:
+      title: timeCardBreak
+      type: object
+      properties:
+        breakId:
+          type: string
+          description: ID of the timeCardBreak.
+          nullable: true
+        end:
+          $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+        notes:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        start:
+          $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+      additionalProperties:
+        type: object
+    microsoft.graph.timeCardEvent:
+      title: timeCardEvent
+      type: object
+      properties:
+        dateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time the entry is recorded.
+          format: date-time
+        isAtApprovedLocation:
+          type: boolean
+          description: Indicates whether this action happens at an approved location.
+          nullable: true
+        notes:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+      additionalProperties:
+        type: object
+    microsoft.graph.confirmedBy:
+      title: confirmedBy
+      enum:
+        - none
+        - user
+        - manager
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.timeCardEntry:
+      title: timeCardEntry
+      type: object
+      properties:
+        breaks:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+          description: The clock-in event of the timeCard.
+        clockInEvent:
+          $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+        clockOutEvent:
+          $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+      additionalProperties:
+        type: object
+    microsoft.graph.timeCardState:
+      title: timeCardState
+      enum:
+        - clockedIn
+        - onBreak
+        - clockedOut
+        - unknownFutureValue
+      type: string
     microsoft.graph.timeOffReasonIconType:
       title: timeOffReasonIconType
       enum:
@@ -49512,10 +49717,22 @@ components:
               type: string
               description: The document's name. Read-only.
               nullable: true
+            downloadedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time the document was downloaded. Read-only
+              format: date-time
+              nullable: true
             size:
               type: number
               description: The document's size in bytes. Read-only.
               format: int64
+            uploadedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time the document was uploaded. Read-only
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.printTask:
@@ -50222,37 +50439,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

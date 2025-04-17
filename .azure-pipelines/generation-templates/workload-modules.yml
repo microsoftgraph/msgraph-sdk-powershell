@@ -39,6 +39,13 @@ steps:
       pwsh: true
       script: |
         . $(System.DefaultWorkingDirectory)/tools/PostGeneration/FindDuplicateCommand.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/"
+  - task: PowerShell@2
+    displayName: Generate authentication module metadata
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/PostGeneration/AuthModuleMetadata.ps1
 
   - ${{ if eq(parameters.Sign, true) }}:
       - template: ../common-templates/esrp/strongname.yml

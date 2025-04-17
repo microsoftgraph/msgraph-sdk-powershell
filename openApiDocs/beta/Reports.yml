@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Reports
   version: v1.0-beta
@@ -1377,7 +1377,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get reports from deviceManagement
-      description: Reports singleton
       operationId: deviceManagement_GetReport
       parameters:
         - name: $select
@@ -3704,78 +3703,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceConfigurationPolicyStatusSummary
       operationId: deviceManagement.report_getDeviceConfigurationPolicyStatusSummary
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  nullable: true
-                select:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
-                search:
-                  type: string
-                  nullable: true
-                groupBy:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
-                orderBy:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
-                skip:
-                  maximum: 2147483647
-                  minimum: -2147483648
-                  type: number
-                  format: int32
-                  nullable: true
-                top:
-                  maximum: 2147483647
-                  minimum: -2147483648
-                  type: number
-                  format: int32
-                  nullable: true
-                sessionId:
-                  type: string
-                  nullable: true
-                filter:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/octet-stream:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  /deviceManagement/reports/microsoft.graph.getDeviceInstallStatusReport:
-    post:
-      tags:
-        - deviceManagement.deviceManagementReports
-      summary: Invoke action getDeviceInstallStatusReport
-      operationId: deviceManagement.report_getDeviceInstallStatusReport
       requestBody:
         description: Action parameters
         content:
@@ -6820,6 +6747,109 @@ paths:
                 filter:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.retrieveCloudPkiLeafCertificateReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action retrieveCloudPkiLeafCertificateReport
+      operationId: deviceManagement.report_retrieveCloudPkiLeafCertificateReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                certificationAuthorityId:
+                  type: string
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                filter:
+                  type: string
+                  nullable: true
+                search:
+                  type: string
+                  nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.retrieveCloudPkiLeafCertificateSummaryReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action retrieveCloudPkiLeafCertificateSummaryReport
+      operationId: deviceManagement.report_retrieveCloudPkiLeafCertificateSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                certificationAuthorityId:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -21307,6 +21337,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedAuthenticationEventListener'
               description: 'Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which the corresponding events in the sign-in event triggered.'
+            appOwnerTenantId:
+              type: string
+              description: The identifier of the tenant that owns the client application.  Supports $filter (eq).
+              nullable: true
             appTokenProtectionStatus:
               $ref: '#/components/schemas/microsoft.graph.tokenProtectionStatus'
             authenticationAppDeviceDetails:
@@ -21368,7 +21402,8 @@ components:
             conditionalAccessAudiences:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessAudience'
+                type: string
+                nullable: true
               description: A list that indicates the audience that Conditional Access evaluated during a sign-in event.  Supports $filter (eq).
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
@@ -21461,6 +21496,10 @@ components:
               type: string
               description: The identifier of the resource that the user signed in to.  Supports $filter (eq).
               nullable: true
+            resourceOwnerTenantId:
+              type: string
+              description: The identifier of the owner of the resource.  Supports $filter (eq).
+              nullable: true
             resourceServicePrincipalId:
               type: string
               description: The identifier of the service principal representing the target resource in the sign-in event.
@@ -21512,7 +21551,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).'
+              description: 'Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=signInEventTypes/any(t: t eq ''nonInteractiveUser'').'
             signInIdentifier:
               type: string
               description: 'The identification that the user provided to sign in. It can be the userPrincipalName, but is also populated when a user signs in using other identifiers.'
@@ -21608,7 +21647,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Singleton entity that acts as a container for all reports functionality.
     microsoft.graph.deviceManagementCachedReportConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22182,7 +22220,7 @@ components:
       properties:
         content:
           type: string
-          description: The http content that has the data
+          description: Report content; details vary by report type.
           format: base64url
           nullable: true
       additionalProperties:
@@ -23786,6 +23824,8 @@ components:
       properties:
         app:
           $ref: '#/components/schemas/microsoft.graph.appIdentity'
+        linkableIdentifiers:
+          $ref: '#/components/schemas/microsoft.graph.linkableIdentifiers'
         user:
           $ref: '#/components/schemas/microsoft.graph.auditUserIdentity'
       additionalProperties:
@@ -24101,6 +24141,23 @@ components:
         - unknownFutureValue
         - authenticationTransfer
         - nativeAuth
+        - implicitAccessTokenAndGetResponseMode
+        - implicitIdTokenAndGetResponseMode
+        - implicitAccessTokenAndPostResponseMode
+        - implicitIdTokenAndPostResponseMode
+        - authorizationCodeWithoutPkce
+        - authorizationCodeWithPkce
+        - clientCredentials
+        - refreshTokenGrant
+        - encryptedAuthorizeResponse
+        - directUserGrant
+        - kerberos
+        - prtGrant
+        - seamlessSso
+        - prtBrokerBased
+        - prtNonBrokerBased
+        - onBehalfOf
+        - samlOnBehalfOf
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -24127,18 +24184,6 @@ components:
         - certificate
         - unknownFutureValue
       type: string
-    microsoft.graph.conditionalAccessAudience:
-      title: conditionalAccessAudience
-      type: object
-      properties:
-        applicationId:
-          type: string
-          description: The ID of the application.
-          nullable: true
-        audienceReasons:
-          $ref: '#/components/schemas/microsoft.graph.conditionalAccessAudienceReason'
-      additionalProperties:
-        type: object
     microsoft.graph.conditionalAccessStatus:
       title: conditionalAccessStatus
       enum:
@@ -24592,7 +24637,7 @@ components:
         lastSuccessfulSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time of the user''s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'The date and time of the user''s most recent successful interactive or non-interactive sign-in. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         lastSuccessfulSignInRequestId:
@@ -25483,6 +25528,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.linkableIdentifiers:
+      title: linkableIdentifiers
+      type: object
+      properties:
+        deviceId:
+          type: string
+          description: Represents a unique identifier for the device from which a user is interacting with an application.
+          nullable: true
+        sessionId:
+          type: string
+          description: Represents a unique identifier for an entire session and is generated when a user does interactive authentication. This ID helps link all authentication artifacts issued from a single root authentication.
+          nullable: true
+        tokenDetails:
+          $ref: '#/components/schemas/microsoft.graph.tokenDetails'
+      additionalProperties:
+        type: object
     microsoft.graph.auditUserIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.userIdentity'
@@ -25728,24 +25789,6 @@ components:
         - scopeBasedAuthRequirementPolicy
         - authenticationStrengths
       type: string
-    microsoft.graph.conditionalAccessAudienceReason:
-      title: conditionalAccessAudienceReason
-      enum:
-        - none
-        - resourcelessRequest
-        - confidentialClientIdToken
-        - confidentialClientNonIdToken
-        - resourceMapping
-        - resourceMappingDefault
-        - scopeMapping
-        - scopeMappingDefault
-        - delegatedScope
-        - firstPartyResourceDefault
-        - thirdPartyResourceDefault
-        - unknownFutureValue
-      type: string
-      x-ms-enum-flags:
-        isFlags: true
     microsoft.graph.geoCoordinates:
       title: geoCoordinates
       type: object
@@ -25910,6 +25953,22 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.tokenDetails:
+      title: tokenDetails
+      type: object
+      properties:
+        issuedAtDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Represents when the authentication for this token occurred.
+          format: date-time
+          nullable: true
+        uniqueTokenIdentifier:
+          type: string
+          description: Represents the token identifier claim. This ID is a unique per-token identifier that is case-sensitive.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.provisioningStatusErrorCategory:

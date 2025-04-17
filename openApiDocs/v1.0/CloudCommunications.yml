@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: CloudCommunications
   version: v1.0
@@ -3282,7 +3282,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get onlineMeeting
-      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact. For details, see Online meeting artifacts and permissions.'
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) and Teams live event recordings (deprecated) are online meeting artifacts. For more information, see Online meeting artifacts and permissions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -9962,13 +9962,25 @@ components:
               type: boolean
               description: Indicates whether attendees can turn on their microphone.
               nullable: true
+            allowBreakoutRooms:
+              type: boolean
+              description: Indicates whether breakout rooms are enabled for the meeting.
+              nullable: true
+            allowedLobbyAdmitters:
+              $ref: '#/components/schemas/microsoft.graph.allowedLobbyAdmitterRoles'
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowLiveShare:
+              $ref: '#/components/schemas/microsoft.graph.meetingLiveShareOptions'
             allowMeetingChat:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
+              nullable: true
+            allowPowerPointSharing:
+              type: boolean
+              description: Indicates whether PowerPoint live is enabled for the meeting.
               nullable: true
             allowRecording:
               type: boolean
@@ -9981,6 +9993,10 @@ components:
             allowTranscription:
               type: boolean
               description: Indicates whether transcription is enabled for the meeting.
+              nullable: true
+            allowWhiteboard:
+              type: boolean
+              description: Indicates whether whiteboard is enabled for the meeting.
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
@@ -10841,6 +10857,13 @@ components:
         - NaN
       type: string
       nullable: true
+    microsoft.graph.allowedLobbyAdmitterRoles:
+      title: allowedLobbyAdmitterRoles
+      enum:
+        - organizerAndCoOrganizersAndPresenters
+        - organizerAndCoOrganizers
+        - unknownFutureValue
+      type: string
     microsoft.graph.onlineMeetingPresenters:
       title: onlineMeetingPresenters
       enum:
@@ -10848,6 +10871,13 @@ components:
         - organization
         - roleIsPresenter
         - organizer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingLiveShareOptions:
+      title: meetingLiveShareOptions
+      enum:
+        - enabled
+        - disabled
         - unknownFutureValue
       type: string
     microsoft.graph.meetingChatMode:
