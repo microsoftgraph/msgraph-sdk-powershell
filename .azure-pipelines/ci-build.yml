@@ -154,7 +154,7 @@ extends:
                 inputs:
                   buildType: 'current'
                   targetPath: '$(System.DefaultWorkingDirectory)'
-              - task: NuGetCommand@2
+              - task: 1ES.PublishNuget@1
                 displayName: 'Publish NuGet to feed'
                 inputs:
                   useDotNetTask: false
