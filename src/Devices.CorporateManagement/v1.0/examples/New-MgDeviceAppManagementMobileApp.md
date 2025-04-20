@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.Devices.CorporateManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.windowsMobileMSI"
+	"@odata.type" = "#microsoft.graph.windowsAppX"
 	displayName = "Display Name value"
 	description = "Description value"
 	publisher = "Publisher value"
@@ -24,10 +24,18 @@ $params = @{
 	committedContentVersion = "Committed Content Version value"
 	fileName = "File Name value"
 	size = 
-	commandLine = "Command Line value"
-	productCode = "Product Code value"
-	productVersion = "Product Version value"
-	ignoreVersionDetection = $true
+	applicableArchitectures = "x86"
+	identityName = "Identity Name value"
+	identityPublisherHash = "Identity Publisher Hash value"
+	identityResourceIdentifier = "Identity Resource Identifier value"
+	isBundle = $true
+	minimumSupportedOperatingSystem = @{
+		"@odata.type" = "microsoft.graph.windowsMinimumOperatingSystem"
+		v8_0 = $true
+		v8_1 = $true
+		v10_0 = $true
+	}
+	identityVersion = "Identity Version value"
 }
 
 New-MgDeviceAppManagementMobileApp -BodyParameter $params

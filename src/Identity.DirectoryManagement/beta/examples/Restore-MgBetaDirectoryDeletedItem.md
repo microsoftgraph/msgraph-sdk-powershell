@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Restore a deleted directory object
 
 ```powershell
 
@@ -7,9 +7,9 @@ Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
 
 ```
-This example shows how to use the Restore-MgBetaDirectoryDeletedItem Cmdlet.
+This example will restore a deleted directory object
 
-### Example 2: Code snippet
+### Example 2: Restore a deleted user and remove conflicting proxy addresses
 
 ```powershell
 
@@ -22,9 +22,9 @@ $params = @{
 Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId $directoryObjectId -BodyParameter $params
 
 ```
-This example shows how to use the Restore-MgBetaDirectoryDeletedItem Cmdlet.
+This example will restore a deleted user and remove conflicting proxy addresses
 
-### Example 3: Code snippet
+### Example 3: Restore a deleted user and assign them a new userPrincipalName
 
 ```powershell
 
@@ -37,5 +37,5 @@ $params = @{
 Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId $directoryObjectId -BodyParameter $params
 
 ```
-This example shows how to use the Restore-MgBetaDirectoryDeletedItem Cmdlet.
+This example will restore a deleted user and assign them a new userprincipalname
 
