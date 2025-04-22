@@ -5817,8 +5817,11 @@ paths:
     get:
       tags:
         - networkAccess.logs
-      summary: Get remoteNetworks from networkAccess
-      description: A collection of remote network health events.
+      summary: List remoteNetworkHealthEvent objects
+      description: Get a list of the remoteNetworkHealthEvent objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-logs-list-remotenetworks?view=graph-rest-beta
       operationId: networkAccess.log_ListRemoteNetwork
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6189,6 +6192,7 @@ paths:
       tags:
         - networkAccess.logs
       summary: Get device from networkAccess
+      description: 'Represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.'
       operationId: networkAccess.log.traffic_GetDevice
       parameters:
         - name: networkAccessTraffic-transactionId
@@ -6234,6 +6238,7 @@ paths:
       tags:
         - networkAccess.logs
       summary: Get user from networkAccess
+      description: 'Represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.'
       operationId: networkAccess.log.traffic_GetUser
       parameters:
         - name: networkAccessTraffic-transactionId
@@ -6906,6 +6911,10 @@ paths:
       tags:
         - networkAccess.reports
       summary: Invoke function getDiscoveredApplicationSegmentReport
+      description: Returns a collection of discoveredApplicationSegmentReport based on aggregated traffic logs for a given period.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-reports-getdiscoveredapplicationsegmentreport?view=graph-rest-beta
       operationId: networkAccess.report_getDiscoveredApplicationSegmentReport
       parameters:
         - name: startDateTime
@@ -7024,6 +7033,10 @@ paths:
       tags:
         - networkAccess.reports
       summary: Invoke function usageProfiling
+      description: 'Returns an object containing count tables for the traffic types in Global Secure Access, aggregated by the time period specified.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-reports-usageprofiling?view=graph-rest-beta
       operationId: networkAccess.report_usageProfiling
       parameters:
         - name: startDateTime
@@ -8543,7 +8556,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.filteringPolicyAction'
         agentVersion:
           type: string
-          description: Represents the version of the Global Secure Access client agent software. Supports $filter (eq) and $orderby.
+          description: Represents the version of the Global Secure Access (GSA) client agent software. Supports $filter (eq) and $orderby.
           nullable: true
         applicationSnapshot:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.applicationSnapshot'
@@ -8558,6 +8571,7 @@ components:
           format: date-time
         description:
           type: string
+          description: 'Informational error message. For example: ''Threat intelligence detected a transaction and triggered an alert.'' or ''The Global Secure Access (GSA) policy blocked the destination and triggered an alert.'' Supports $filter (eq) and $orderby.'
           nullable: true
         destinationFQDN:
           type: string
@@ -8576,6 +8590,7 @@ components:
           nullable: true
         destinationUrl:
           type: string
+          description: Represents the URL of the destination in a network communication. Supports $filter (eq) and $orderby.
           nullable: true
         destinationWebCategory:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.webCategory'
@@ -8595,9 +8610,11 @@ components:
           nullable: true
         filteringProfileId:
           type: string
+          description: The ID of the Filtering Profile associated with the action performed on traffic. Supports $filter (eq) and $orderby.
           nullable: true
         filteringProfileName:
           type: string
+          description: The name of the Filtering Profile associated with the action performed on traffic. Supports $filter (eq) and $orderby.
           nullable: true
         headers:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.headers'
@@ -8605,6 +8622,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.httpMethod'
         initiatingProcessName:
           type: string
+          description: The process initiating the traffic transaction. Supports $filter (eq) and $orderby.
           nullable: true
         networkProtocol:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.networkingProtocol'
@@ -8616,6 +8634,7 @@ components:
           nullable: true
         policyName:
           type: string
+          description: The name of the filtering policy associated with the action performed on traffic. Supports $filter (eq) and $orderby.
           nullable: true
         policyRuleId:
           type: string
@@ -8623,9 +8642,11 @@ components:
           nullable: true
         policyRuleName:
           type: string
+          description: The name of the rule associated with the action performed on traffic. Supports $filter (eq) and $orderby.
           nullable: true
         popProcessingRegion:
           type: string
+          description: The Point-of-Presence processing region of the traffic. Supports $filter (eq) and $orderby.
           nullable: true
         privateAccessDetails:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.privateAccessDetails'
@@ -8636,14 +8657,17 @@ components:
           nullable: true
         remoteNetworkId:
           type: string
+          description: 'The ID from which traffic was sent or received, providing visibility into the origin of the traffic. Supports $filter (eq) and $orderby.'
           nullable: true
         resourceTenantId:
           type: string
+          description: Tenant ID that owns the resource. Supports $filter (eq) and $orderby.
           nullable: true
         responseCode:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The HTTP response code inspected in the intercepted HTTP traffic. Supports $filter (eq) and $orderby.
           format: int32
           nullable: true
         sentBytes:
@@ -8671,6 +8695,7 @@ components:
           description: Represents a unique identifier assigned to a tenant within a network infrastructure. Supports $filter (eq) and $orderby.
         threatType:
           type: string
+          description: The type of threat detected in the traffic. Supports $filter (eq) and $orderby.
           nullable: true
         trafficType:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.trafficType'
@@ -8692,6 +8717,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The name of the vendors who detected the threat. Supports $filter (eq) and $orderby.
         device:
           $ref: '#/components/schemas/microsoft.graph.device'
         user:
@@ -9356,6 +9382,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
               x-ms-navigationProperty: true
+            communications:
+              $ref: '#/components/schemas/microsoft.graph.userCloudCommunication'
             contactFolders:
               type: array
               items:
@@ -9898,38 +9926,48 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The number of unique devices that have accessed this application segment.
           format: int32
         discoveredApplicationSegmentId:
           type: string
+          description: The unique identifier for this discovered application segment.
         firstAccessDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when this application segment was first accessed.
           format: date-time
         fqdn:
           type: string
+          description: The fully qualified domain name associated with this application segment.
           nullable: true
         ip:
           type: string
+          description: The IP address associated with this application segment.
           nullable: true
         lastAccessDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when this application segment was last accessed.
           format: date-time
         port:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The port number used to access this application segment.
           format: int32
         totalBytesReceived:
           type: number
+          description: The total number of bytes received from this application segment.
           format: int64
         totalBytesSent:
           type: number
+          description: The total number of bytes sent to this application segment.
           format: int64
         transactionCount:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The number of transactions recorded for this application segment.
           format: int32
         transportProtocol:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.networkingProtocol'
@@ -9937,6 +9975,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The number of unique users who have accessed this application segment.
           format: int32
       additionalProperties:
         type: object
@@ -9966,19 +10005,24 @@ components:
       properties:
         internetAccessTrafficCount:
           type: number
+          description: The count of traffic requests directed to general internet destinations.
           format: int64
         microsoft365AccessTrafficCount:
           type: number
+          description: The count of traffic requests directed to Microsoft 365 services.
           format: int64
         privateAccessTrafficCount:
           type: number
+          description: The count of traffic requests directed to internal private network destinations.
           format: int64
         timeStampDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time of this data point.
           format: date-time
         totalTrafficCount:
           type: number
+          description: The total count of all traffic requests across all access types.
           format: int64
       additionalProperties:
         type: object
@@ -11006,6 +11050,7 @@ components:
       properties:
         appId:
           type: string
+          description: The unique identifier of the application accessed during the transaction.
       additionalProperties:
         type: object
     microsoft.graph.networkaccess.deviceCategory:
@@ -11090,20 +11135,25 @@ components:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.accessType'
         appSegmentId:
           type: string
+          description: The unique identifier for Application segment ID from Azure AD.
           nullable: true
         connectionStatus:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.connectionStatus'
         connectorId:
           type: string
+          description: Private access connector ID.
           nullable: true
         connectorIp:
           type: string
+          description: Private access connector IP address.
           nullable: true
         connectorName:
           type: string
+          description: Private access connector name.
           nullable: true
         processingRegion:
           type: string
+          description: Region where the request was processed by the backend service.
           nullable: true
         thirdPartyTokenDetails:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.thirdPartyTokenDetails'
@@ -11869,7 +11919,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
+              description: Represents a platform credential instance registered to a user on Mac OS.
               x-ms-navigationProperty: true
+            qrCodePinMethod:
+              $ref: '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
             softwareOathMethods:
               type: array
               items:
@@ -12414,6 +12467,16 @@ components:
               type: string
               description: The user principal name (UPN) of the user assigned to the Cloud PC.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userCloudCommunication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userCloudCommunication
+          type: object
+          properties:
+            callSettings:
+              $ref: '#/components/schemas/microsoft.graph.callSettings'
           additionalProperties:
             type: object
     microsoft.graph.contactFolder:
@@ -15675,17 +15738,21 @@ components:
         expirationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time the token will expire.
           format: date-time
         issuedAtDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time the token was issued at.
           format: date-time
           nullable: true
         uniqueTokenIdentifier:
           type: string
+          description: Unique token identifier.
         validFromDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time the token is valid from.
           format: date-time
       additionalProperties:
         type: object
@@ -16168,6 +16235,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodPlatform'
             device:
               $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
+    microsoft.graph.qrCodePinAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: qrCodePinAuthenticationMethod
+          type: object
+          properties:
+            pin:
+              $ref: '#/components/schemas/microsoft.graph.qrPin'
+            standardQRCode:
+              $ref: '#/components/schemas/microsoft.graph.qrCode'
+            temporaryQRCode:
+              $ref: '#/components/schemas/microsoft.graph.qrCode'
           additionalProperties:
             type: object
     microsoft.graph.softwareOathAuthenticationMethod:
@@ -17125,6 +17206,26 @@ components:
         - administrator
         - unknownFutureValue
       type: string
+    microsoft.graph.callSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callSettings
+          type: object
+          properties:
+            delegates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegationSettings'
+              description: Represents the delegate settings.
+              x-ms-navigationProperty: true
+            delegators:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegationSettings'
+              description: Represents the delegator settings.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.typedEmailAddress:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.emailAddress'
@@ -17297,10 +17398,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -23608,6 +23709,59 @@ components:
         - linux
         - unknownFutureValue
       type: string
+    microsoft.graph.qrPin:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: qrPin
+          type: object
+          properties:
+            code:
+              type: string
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            forceChangePinNextSignIn:
+              type: boolean
+              nullable: true
+            updatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.qrCode:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: qrCode
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            expireDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            image:
+              $ref: '#/components/schemas/microsoft.graph.qrCodeImageDetails'
+            lastUsedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.calendarRoleType:
       title: calendarRoleType
       enum:
@@ -24159,6 +24313,7 @@ components:
         - none
         - standard
         - unknownFutureValue
+        - plus
       type: string
     microsoft.graph.actionState:
       title: actionState
@@ -24190,6 +24345,26 @@ components:
         - vMware
         - hp
       type: string
+    microsoft.graph.delegationSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: delegationSettings
+          type: object
+          properties:
+            allowedActions:
+              $ref: '#/components/schemas/microsoft.graph.delegateAllowedActions'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the delegator or delegate entry was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            isActive:
+              type: boolean
+              description: Indicates whether the delegator or delegate relationship is currently active.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.emailType:
       title: emailType
       enum:
@@ -30527,6 +30702,28 @@ components:
         - failedActivation
         - unknownFutureValue
       type: string
+    microsoft.graph.qrCodeImageDetails:
+      title: qrCodeImageDetails
+      type: object
+      properties:
+        binaryValue:
+          type: string
+          format: base64url
+          nullable: true
+        errorCorrectionLevel:
+          $ref: '#/components/schemas/microsoft.graph.errorCorrectionLevel'
+        rawContent:
+          type: string
+          format: base64url
+          nullable: true
+        version:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attendeeType:
       title: attendeeType
       enum:
@@ -30774,6 +30971,32 @@ components:
         - failure
         - unknownFutureValue
       type: string
+    microsoft.graph.delegateAllowedActions:
+      title: delegateAllowedActions
+      type: object
+      properties:
+        joinActiveCalls:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows participation in active calls.
+          nullable: true
+        makeCalls:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows calls to be made on their behalf.
+          nullable: true
+        manageCallAndDelegateSettings:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows the management of call and delegation settings.
+          nullable: true
+        pickUpHeldCalls:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows held calls to be picked up.
+          nullable: true
+        receiveCalls:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows calls to be received on their behalf.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.deviceAndAppManagementAssignmentFilterType:
       title: deviceAndAppManagementAssignmentFilterType
       enum:
@@ -32642,6 +32865,7 @@ components:
         - driveItem
         - user
         - teamsChannel
+        - plannerTask
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -34757,6 +34981,15 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.errorCorrectionLevel:
+      title: errorCorrectionLevel
+      enum:
+        - l
+        - m
+        - q
+        - h
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppResourceSpecificPermissionType:
       title: teamsAppResourceSpecificPermissionType
       enum:

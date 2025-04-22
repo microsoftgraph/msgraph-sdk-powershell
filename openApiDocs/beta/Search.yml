@@ -1250,11 +1250,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Create externalItem
-      description: Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
+      summary: Update externalItem
+      description: Update the properties of an externalitem.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-beta
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -2157,11 +2157,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update schema
-      description: Update the properties of a schema for an externalConnection.
+      summary: Create or update schema
+      description: Create a new or update an existing schema for a Microsoft Search connection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2298,11 +2298,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create azureDataLakeConnector
-      description: Create a new azureDataLakeConnector object.
+      summary: Create oneRosterApiDataConnector
+      description: Create a new oneRosterApiDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-onerosterapidataconnector-post?view=graph-rest-beta
       operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
@@ -2653,11 +2653,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundApiFlow
-      description: Update the properties of an inboundApiFlow object.
+      summary: Update inboundFileFlow
+      description: Update the properties of an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id

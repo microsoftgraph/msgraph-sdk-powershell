@@ -10537,7 +10537,7 @@ components:
           nullable: true
         basicServiceSetIdentifier:
           type: string
-          description: The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
+          description: The wireless LAN basic service set identifier of the media endpoint used to connect to the network. This property isn't available if the user disables precise location sharing in their operating system or Microsoft Teams app settings.
           nullable: true
         connectionType:
           $ref: '#/components/schemas/microsoft.graph.callRecords.networkConnectionType'
