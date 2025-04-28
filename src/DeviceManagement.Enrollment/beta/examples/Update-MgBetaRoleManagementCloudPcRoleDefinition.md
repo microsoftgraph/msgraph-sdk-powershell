@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 2: Code snippet
 
 ```powershell
 
@@ -6,7 +6,7 @@ Import-Module Microsoft.Graph.Beta.DeviceManagement.Enrollment
 
 $params = @{
 	description = "Update basic properties and permission of application registrations"
-### Example 2
+	displayName = "ExampleCustomRole"
 	rolePermissions = @(
 		@{
 			allowedResourceActions = @(
