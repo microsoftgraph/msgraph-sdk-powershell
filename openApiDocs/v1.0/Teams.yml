@@ -1392,11 +1392,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get conversationMember in a chat
-      description: Retrieve a conversationMember from a chat.
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -20364,11 +20364,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: team.channel_CreateMember
       parameters:
         - name: team-id
@@ -20472,11 +20472,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -20523,11 +20523,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: team.channel_DeleteMember
       parameters:
         - name: team-id
@@ -74323,37 +74323,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.attendeeType:

@@ -14351,6 +14351,7 @@ components:
         - driveItem
         - user
         - teamsChannel
+        - plannerTask
       type: string
     microsoft.graph.sensitivityLabelAssignment:
       title: sensitivityLabelAssignment

@@ -19773,6 +19773,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
               x-ms-navigationProperty: true
+            communications:
+              $ref: '#/components/schemas/microsoft.graph.userCloudCommunication'
             contactFolders:
               type: array
               items:
@@ -22543,7 +22545,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
+              description: Represents a platform credential instance registered to a user on Mac OS.
               x-ms-navigationProperty: true
+            qrCodePinMethod:
+              $ref: '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
             softwareOathMethods:
               type: array
               items:
@@ -22807,6 +22812,16 @@ components:
               type: string
               description: The user principal name (UPN) of the user assigned to the Cloud PC.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userCloudCommunication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userCloudCommunication
+          type: object
+          properties:
+            callSettings:
+              $ref: '#/components/schemas/microsoft.graph.callSettings'
           additionalProperties:
             type: object
     microsoft.graph.contactFolder:
@@ -28365,6 +28380,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
+    microsoft.graph.qrCodePinAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: qrCodePinAuthenticationMethod
+          type: object
+          properties:
+            pin:
+              $ref: '#/components/schemas/microsoft.graph.qrPin'
+            standardQRCode:
+              $ref: '#/components/schemas/microsoft.graph.qrCode'
+            temporaryQRCode:
+              $ref: '#/components/schemas/microsoft.graph.qrCode'
+          additionalProperties:
+            type: object
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -28916,6 +28945,26 @@ components:
         - administrator
         - unknownFutureValue
       type: string
+    microsoft.graph.callSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callSettings
+          type: object
+          properties:
+            delegates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegationSettings'
+              description: Represents the delegate settings.
+              x-ms-navigationProperty: true
+            delegators:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegationSettings'
+              description: Represents the delegator settings.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.typedEmailAddress:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.emailAddress'
@@ -29056,10 +29105,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -36264,6 +36313,59 @@ components:
         - linux
         - unknownFutureValue
       type: string
+    microsoft.graph.qrPin:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: qrPin
+          type: object
+          properties:
+            code:
+              type: string
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            forceChangePinNextSignIn:
+              type: boolean
+              nullable: true
+            updatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.qrCode:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: qrCode
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            expireDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            image:
+              $ref: '#/components/schemas/microsoft.graph.qrCodeImageDetails'
+            lastUsedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.teamworkUserIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -36511,6 +36613,7 @@ components:
         - none
         - standard
         - unknownFutureValue
+        - plus
       type: string
     microsoft.graph.actionState:
       title: actionState
@@ -36542,6 +36645,26 @@ components:
         - vMware
         - hp
       type: string
+    microsoft.graph.delegationSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: delegationSettings
+          type: object
+          properties:
+            allowedActions:
+              $ref: '#/components/schemas/microsoft.graph.delegateAllowedActions'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the delegator or delegate entry was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            isActive:
+              type: boolean
+              description: Indicates whether the delegator or delegate relationship is currently active.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.emailType:
       title: emailType
       enum:
@@ -40280,6 +40403,7 @@ components:
         - driveItem
         - user
         - teamsChannel
+        - plannerTask
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -41873,6 +41997,28 @@ components:
         - failedActivation
         - unknownFutureValue
       type: string
+    microsoft.graph.qrCodeImageDetails:
+      title: qrCodeImageDetails
+      type: object
+      properties:
+        binaryValue:
+          type: string
+          format: base64url
+          nullable: true
+        errorCorrectionLevel:
+          $ref: '#/components/schemas/microsoft.graph.errorCorrectionLevel'
+        rawContent:
+          type: string
+          format: base64url
+          nullable: true
+        version:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamworkUserIdentityType:
       title: teamworkUserIdentityType
       enum:
@@ -41990,6 +42136,32 @@ components:
         - failure
         - unknownFutureValue
       type: string
+    microsoft.graph.delegateAllowedActions:
+      title: delegateAllowedActions
+      type: object
+      properties:
+        joinActiveCalls:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows participation in active calls.
+          nullable: true
+        makeCalls:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows calls to be made on their behalf.
+          nullable: true
+        manageCallAndDelegateSettings:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows the management of call and delegation settings.
+          nullable: true
+        pickUpHeldCalls:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows held calls to be picked up.
+          nullable: true
+        receiveCalls:
+          type: boolean
+          description: Indicates whether the delegator or delegate allows calls to be received on their behalf.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.deviceAndAppManagementAssignmentFilterType:
       title: deviceAndAppManagementAssignmentFilterType
       enum:
@@ -45327,6 +45499,15 @@ components:
         - oAuthSettings
         - synchronizationLearnMoreIbizaFwLink
         - configurationFields
+      type: string
+    microsoft.graph.errorCorrectionLevel:
+      title: errorCorrectionLevel
+      enum:
+        - l
+        - m
+        - q
+        - h
+        - unknownFutureValue
       type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
