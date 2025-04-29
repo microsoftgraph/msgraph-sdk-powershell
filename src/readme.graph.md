@@ -496,7 +496,14 @@ directive:
            });
         }
 
-        $ = $.replace(/await this\.Client\.(\w+)\(\s*Headers\s*,\s*([^,\s]+)[^;]+;/g,'await Microsoft.Graph.PowerShell.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady($2,failOnExplicitNulls: false);\nawait this.Client.$1(Headers, $2, on2Xx, onDefault, this, Pipeline);')
+        let nameSpacePrefixRegex = /(Microsoft(?:\.\w+)*?\.PowerShell)/gm
+        let nameSpacePrefix = 'Microsoft.Graph.PowerShell';
+        if($.match(nameSpacePrefixRegex)){
+        let prefixMatch = nameSpacePrefixRegex.exec($);
+         nameSpacePrefix = prefixMatch[1];
+        }
+
+        $ = $.replace(/await this\.Client\.(\w+)\(\s*Headers\s*,\s*([^,\s]+)[^;]+;/g,'await '+nameSpacePrefix+'.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady($2,failOnExplicitNulls: false);\nawait this.Client.$1(Headers, $2, on2Xx, onDefault, this, Pipeline);')
     
         
         return $;
