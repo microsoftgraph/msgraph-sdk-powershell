@@ -6428,12 +6428,6 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
                 additionalDataOptions:
                   $ref: '#/components/schemas/microsoft.graph.security.additionalDataOptions'
-                itemsToInclude:
-                  $ref: '#/components/schemas/microsoft.graph.security.itemsToInclude'
-                cloudAttachmentVersion:
-                  $ref: '#/components/schemas/microsoft.graph.security.cloudAttachmentVersion'
-                documentVersion:
-                  $ref: '#/components/schemas/microsoft.graph.security.documentVersion'
               additionalProperties:
                 type: object
         required: true
@@ -7828,10 +7822,6 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.security.exportLocation'
                 additionalOptions:
                   $ref: '#/components/schemas/microsoft.graph.security.additionalOptions'
-                cloudAttachmentVersion:
-                  $ref: '#/components/schemas/microsoft.graph.security.cloudAttachmentVersion'
-                documentVersion:
-                  $ref: '#/components/schemas/microsoft.graph.security.documentVersion'
               additionalProperties:
                 type: object
         required: true
@@ -7893,10 +7883,6 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
-                cloudAttachmentVersion:
-                  $ref: '#/components/schemas/microsoft.graph.security.cloudAttachmentVersion'
-                documentVersion:
-                  $ref: '#/components/schemas/microsoft.graph.security.documentVersion'
               additionalProperties:
                 type: object
         required: true
@@ -22896,42 +22882,9 @@ components:
         - allVersions
         - linkedFiles
         - unknownFutureValue
-        - advancedIndexing
-        - listAttachments
-        - htmlTranscripts
-        - messageConversationExpansion
-        - locationsWithoutHits
-        - allItemsInFolder
       type: string
       x-ms-enum-flags:
         isFlags: true
-    microsoft.graph.security.itemsToInclude:
-      title: itemsToInclude
-      enum:
-        - searchHits
-        - partiallyIndexed
-        - unknownFutureValue
-      type: string
-      x-ms-enum-flags:
-        isFlags: true
-    microsoft.graph.security.cloudAttachmentVersion:
-      title: cloudAttachmentVersion
-      enum:
-        - latest
-        - recent10
-        - recent100
-        - all
-        - unknownFutureValue
-      type: string
-    microsoft.graph.security.documentVersion:
-      title: documentVersion
-      enum:
-        - latest
-        - recent10
-        - recent100
-        - all
-        - unknownFutureValue
-      type: string
     microsoft.graph.security.exportOptions:
       title: exportOptions
       enum:
@@ -22940,11 +22893,6 @@ components:
         - pdfReplacement
         - tags
         - unknownFutureValue
-        - splitSource
-        - includeFolderAndPath
-        - friendlyName
-        - condensePaths
-        - optimizedPartitionSize
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -22955,7 +22903,6 @@ components:
         - directory
         - pst
         - unknownFutureValue
-        - msg
       type: string
     microsoft.graph.security.ediscoveryReviewSetQuery:
       allOf:
@@ -22988,14 +22935,6 @@ components:
         - title: ediscoveryAddToReviewSetOperation
           type: object
           properties:
-            additionalDataOptions:
-              $ref: '#/components/schemas/microsoft.graph.security.additionalDataOptions'
-            cloudAttachmentVersion:
-              $ref: '#/components/schemas/microsoft.graph.security.cloudAttachmentVersion'
-            documentVersion:
-              $ref: '#/components/schemas/microsoft.graph.security.documentVersion'
-            itemsToInclude:
-              $ref: '#/components/schemas/microsoft.graph.security.itemsToInclude'
             reviewSet:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
             search:
@@ -23032,8 +22971,6 @@ components:
               description: The number of mailboxes that had search hits.
               format: int32
               nullable: true
-            statisticsOptions:
-              $ref: '#/components/schemas/microsoft.graph.security.statisticsOptions'
             unindexedItemCount:
               type: number
               description: The estimated count of unindexed items for the collection.
@@ -23076,15 +23013,6 @@ components:
         - subfolderContents
         - listAttachments
         - unknownFutureValue
-        - htmlTranscripts
-        - advancedIndexing
-        - allItemsInFolder
-        - includeFolderAndPath
-        - condensePaths
-        - friendlyName
-        - splitSource
-        - optimizedPartitionSize
-        - includeReport
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -27917,18 +27845,6 @@ components:
         - Many
         - unknownFutureValue
       type: string
-    microsoft.graph.security.statisticsOptions:
-      title: statisticsOptions
-      enum:
-        - includeRefiners
-        - includeQueryStats
-        - includeUnindexedStats
-        - advancedIndexing
-        - locationsWithoutHits
-        - unknownFutureValue
-      type: string
-      x-ms-enum-flags:
-        isFlags: true
     microsoft.graph.security.ocrSettings:
       title: ocrSettings
       type: object
@@ -43624,37 +43540,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.printMargin:
