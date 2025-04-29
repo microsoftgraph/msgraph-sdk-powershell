@@ -957,11 +957,6 @@ directive:
       subject: ^User$
     set:
       alias: Set-Mg${subject-prefix}${subject}
-  - where:
-      verb: (Get|New|Update|Remove|Set|Invoke|Create)
-      subject: ^(.*)(OnPremise)(.*)$
-    set:
-      alias: ^(.*)(OnPremises)(.*)$
 
 # Setting the alias below as per the request on issue [#3241](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3241)
 
