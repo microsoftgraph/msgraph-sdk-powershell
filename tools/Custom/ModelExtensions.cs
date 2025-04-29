@@ -19,7 +19,7 @@ namespace NamespacePrefixPlaceholder.PowerShell.ModelExtensions
             this object model,
             bool failOnExplicitNulls = false,
             int retries = 3,
-            int delayMs = 100)
+            int delayMs = 1000)
         {
             if (model == null)
                 throw new ArgumentNullException(nameof(model));
