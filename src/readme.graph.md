@@ -495,6 +495,9 @@ directive:
             }
            });
         }
+
+        $ = $.replace(/await this\.Client\.(\w+)\(\s*Headers\s*,\s*([^,\s]+)[^;]+;/g,'await Microsoft.Graph.PowerShell.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady($2,failOnExplicitNulls: false);\nawait this.Client.$1(Headers, $2, on2Xx, onDefault, this, Pipeline);')
+    
         
         return $;
       }
