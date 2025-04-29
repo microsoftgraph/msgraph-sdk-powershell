@@ -503,7 +503,7 @@ directive:
          nameSpacePrefix = prefixMatch[1];
         }
 
-        $ = $.replace(/await this\.Client\.(\w+)\(\s*Headers\s*,\s*([^,\s]+)[^;]+;/g,'await '+nameSpacePrefix+'.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady($2,failOnExplicitNulls: false);\nawait this.Client.$1(Headers, $2, on2Xx, onDefault, this, Pipeline);')
+        $ = $.replace(/await this\.Client\.(\w+)\(\s*Headers\s*,\s*(BodyParameter|_body)\b([^;]+);/g, 'await '+nameSpacePrefix+'.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady($2,failOnExplicitNulls: false);\nawait this.Client.$1(Headers, $2$3;')
     
         
         return $;
