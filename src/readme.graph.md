@@ -508,14 +508,20 @@ directive:
             ensureCall = `
             if (BodyParameter != null)
             {
-                var _ = BodyParameter?.ToJsonString(); // force evaluation
+                foreach (var prop in BodyParameter.GetType().GetProperties())
+                {
+                  var val = prop.GetValue(BodyParameter); // force materialization
+                }
                 ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(BodyParameter, failOnExplicitNulls: false).GetAwaiter().GetResult();
             }`;
         } else if ($.includes('_body')) {
             ensureCall = `
             if (_body != null)
             {
-                var _ = _body?.ToJsonString(); // force evaluation
+                foreach (var prop in _body.GetType().GetProperties())
+                {
+                    var val = prop.GetValue(_body); // force materialization
+                }
                 ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(_body, failOnExplicitNulls: false).GetAwaiter().GetResult();
             }`;
         }
