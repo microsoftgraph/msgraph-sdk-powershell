@@ -60,16 +60,34 @@ namespace NamespacePrefixPlaceholder.PowerShell.ModelExtensions
 
         private static bool IsUnready(object model, PropertyInfo prop, MethodInfo isPropertySetMethod, bool failOnExplicitNulls)
         {
-            bool isSet = (bool)isPropertySetMethod.Invoke(model, new object[] { prop.Name });
-            if (!isSet) return false; // not marked as set, skip
+            try
+            {
+                // Ensure method matches expected signature
+                var parameters = isPropertySetMethod.GetParameters();
+                if (parameters.Length != 1 || parameters[0].ParameterType != typeof(string))
+                {
+                    Console.WriteLine($"WARNING: IsPropertySet signature mismatch for type {model.GetType().Name}");
+                    return false;
+                }
 
-            object value = prop.GetValue(model);
+                bool isSet = (bool)isPropertySetMethod.Invoke(model, new object[] { prop.Name });
+                if (!isSet) return false;
 
-            if (value == null)
-                return failOnExplicitNulls; // null is OK in relaxed mode, fail in strict
+                object value = prop.GetValue(model);
+                Console.WriteLine($"DEBUG: {prop.Name} = {value}, IsSet: {isSet}");
 
-            return IsDefault(value);
+                if (value == null)
+                    return failOnExplicitNulls;
+
+                return IsDefault(value);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"ERROR: Failed to check IsPropertySet for {prop.Name} — {ex.Message}");
+                return false;
+            }
         }
+
 
         private static bool IsDefault(object value)
         {

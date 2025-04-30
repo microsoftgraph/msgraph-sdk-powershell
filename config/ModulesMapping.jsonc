@@ -1,5 +1,5 @@
  {
-//  "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
+  "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
 //   "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.|^solutions.booking.*.Actions$|^solutions.bookingBusiness$|^solutions.bookingCurrency$|^solutions.virtualEventsRoot$|^solutions.booking.*.Functions$|^solutions.solutionsRoot$",
 //   "BusinessScenario": "^solutions.businessScenario$|^solutions.BusinessScenario.*.Actions$|^solutions.BusinessScenario.*.Functions$",
 //   "BackupRestore": "^solutions.backupRestoreRoot$|^solutions.backupRestore.*.Actions$|^solutions.backupRestore.*.Functions$",
@@ -16,7 +16,7 @@
 //   "DeviceManagement.Enrollment": "^deviceManagement.(.*Enrollment.*|.*Autopilot.*|.*depOnboarding.*|importedDeviceIdentity|onPremisesConditionalAccessSettings|windowsFeatureUpdateProfile)$|^roleManagement.roleManagement$|^roleManagement.rbacApplicationMultiple$|^roleManagement.unifiedRbacApplication$",
 //   "DeviceManagement.Functions": "^deviceManagement.*.Functions$",
 //   "DirectoryObjects": "^directoryObjects\\.|^directory.publicKeyInfrastructureRoot$",
-   "Education": "^education\\.",
+ //  "Education": "^education\\.",
 //   "Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
 //   "Financials": "^financials\\.",
 //   "Groups": "^groups.group$|^groups.directoryObject$|^groups.conversation$|^groups.endpoint$|^groups.extension$|^groups.groupLifecyclePolicy$|^groups.resourceSpecificPermissionGrant$|^groups.profilePhoto$|^groups.conversationThread$|^groupLifecyclePolicies\\.|^users.group$|^groups.directorySetting$|^groups.*.Actions$|^groups.*.Functions$|^groupSettings\\.|^groups.groupSetting$|^groupSettingTemplates\\.",
@@ -28,7 +28,7 @@
 //   "ManagedTenants": "^tenantRelationships.managedTenant$",
 //   "NetworkAccess": "^networkAccess\\.",
 //   "Notes": "^users.onenote$|^groups.onenote$|^sites.onenote$",
-   "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",
+ //  "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",
 //   "PersonalContacts": "^users.contactFolder$|^users.contact$",
 //   "Planner": "^planner\\.|^users.plannerUser$|^groups.plannerGroup$",
 //   "Reports": "^reports\\.|^auditLogs\\.|^deviceManagement.deviceManagementReports$|^admin.adminReportSetting",
@@ -37,7 +37,7 @@
 //   "Security": "^security\\.|^users.security$",
 //   "Sites": "^sites.baseSitePage$|^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$|^sites.drive$|^sites.list$|^sites.sitePage$|^sites.permission$|^sites.store$|^users.site$|^groups.site$|^sites.*.Functions$|^sites.*.Actions$|^sites.richLongRunningOperation$|^termStore.sets.ListChildren$|^admin.sharepoint$",
 //    "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs.teamsApp$|^users.userTeamwork$|^teamwork\\.|^users.team$|^groups.team$",
-//   "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.mailboxSettings|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$|^users.itemInsights$|^users.servicePrincipal$",
+   "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.mailboxSettings|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$|^users.itemInsights$|^users.servicePrincipal$",
 //   "Users.Actions": "^users.*.Actions$",
 //   "Users.Functions": "^users.*.Functions$",
 //   "WindowsUpdates": "^admin.adminWindows$"
