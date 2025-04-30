@@ -508,12 +508,14 @@ directive:
             ensureCall = `
             if (BodyParameter != null)
             {
+                var _ = BodyParameter?.ToJsonString(); // force evaluation
                 ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(BodyParameter, failOnExplicitNulls: false).GetAwaiter().GetResult();
             }`;
         } else if ($.includes('_body')) {
             ensureCall = `
             if (_body != null)
             {
+                var _ = _body?.ToJsonString(); // force evaluation
                 ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(_body, failOnExplicitNulls: false).GetAwaiter().GetResult();
             }`;
         }
