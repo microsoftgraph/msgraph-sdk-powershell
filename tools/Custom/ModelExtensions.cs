@@ -64,7 +64,7 @@ namespace NamespacePrefixPlaceholder.PowerShell.ModelExtensions
             if (!isSet) return false; // not marked as set, skip
 
             object value = prop.GetValue(model);
-            
+
             if (value == null)
                 return failOnExplicitNulls; // null is OK in relaxed mode, fail in strict
 
