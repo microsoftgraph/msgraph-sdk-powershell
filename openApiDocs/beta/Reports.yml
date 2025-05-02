@@ -9693,6 +9693,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getApiUsage(serviceArea=''@serviceArea'',period=''@period'',appId=''@appId'')':
+    get:
+      tags:
+        - reports.reportRoot.Functions
+      summary: Invoke function getApiUsage
+      description: Get the tenant and app API usage for Microsoft Graph services.
+      operationId: report_getApiUsage
+      parameters:
+        - name: serviceArea
+          in: query
+          description: 'Usage: serviceArea=''@serviceArea'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: period
+          in: query
+          description: 'Usage: period=''@period'''
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: appId
+          in: query
+          description: 'Usage: appId=''@appId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /reports/microsoft.graph.getAttackSimulationRepeatOffenders():
     get:
       tags:
@@ -17610,6 +17655,74 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/reports/serviceActivity/microsoft.graph.getMetricsForConditionalAccessBlockedSignIn(inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime},exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime},aggregationIntervalInMinutes=@aggregationIntervalInMinutes)':
+    get:
+      tags:
+        - reports.serviceActivity
+      summary: Invoke function getMetricsForConditionalAccessBlockedSignIn
+      description: Retrieve the number of user sign-in attempts that were blocked by a Conditional Access policy during a specific period.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceactivity-getmetricsforconditionalaccessblockedsignin?view=graph-rest-beta
+      operationId: report.serviceActivity_getMetricsGraphFPreConditionalAccessBlockedSignIn
+      parameters:
+        - name: inclusiveIntervalStartDateTime
+          in: path
+          description: 'Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+        - name: exclusiveIntervalEndDateTime
+          in: path
+          description: 'Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+        - name: aggregationIntervalInMinutes
+          in: query
+          description: 'Usage: aggregationIntervalInMinutes=@aggregationIntervalInMinutes'
+          style: form
+          explode: false
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.serviceActivityValueMetric'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/reports/serviceActivity/microsoft.graph.getMetricsForConditionalAccessCompliantDevicesSignInSuccess(inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime},exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime},aggregationIntervalInMinutes=@aggregationIntervalInMinutes)':
     get:
       tags:
@@ -24913,10 +25026,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
