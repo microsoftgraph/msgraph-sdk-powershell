@@ -3668,10 +3668,10 @@ paths:
       tags:
         - communications.call
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-beta
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -10160,7 +10160,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       operationId: user.onlineMeeting_ListRecording
       parameters:
         - name: user-id
@@ -10267,7 +10267,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-beta
@@ -10421,7 +10421,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-beta
@@ -11472,7 +11472,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List transcripts
-      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings.
+      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-beta
@@ -11582,7 +11582,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
@@ -11736,7 +11736,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
@@ -11871,7 +11871,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
@@ -12676,11 +12676,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence
-      description: Get a user's presence information.
+      summary: 'presence: setStatusMessage'
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -15602,7 +15602,7 @@ components:
           nullable: true
         basicServiceSetIdentifier:
           type: string
-          description: The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
+          description: The wireless LAN basic service set identifier of the media endpoint used to connect to the network. This property isn't available if the user disables precise location sharing in their operating system or Microsoft Teams app settings.
           nullable: true
         connectionType:
           $ref: '#/components/schemas/microsoft.graph.callRecords.networkConnectionType'
