@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Reflection;
+using System.Collections;
 using System.Threading.Tasks;
 using NamespacePrefixPlaceholder.PowerShell.Runtime;
 
@@ -8,75 +9,98 @@ namespace NamespacePrefixPlaceholder.PowerShell.ModelExtensions
 {
     public static class ModelExtensions
     {
-        /// <summary>
-        /// Ensures that all properties marked as set on the model have meaningful values.
-        /// </summary>
-        /// <param name="model">The model object (must implement IsPropertySet(string)).</param>
-        /// <param name="failOnExplicitNulls">If true, properties explicitly set to null will be considered invalid (strict mode).</param>
-        /// <param name="retries">Number of retries for late-bound properties.</param>
-        /// <param name="delayMs">Delay (ms) between retries.</param>
         public static async Task EnsurePropertiesAreReady(
             this object model,
             bool failOnExplicitNulls = false,
             int retries = 3,
-            int delayMs = 1000)
+            int delayMs = 1000,
+            bool debug = false)
         {
             if (model == null)
                 throw new ArgumentNullException(nameof(model));
 
-            // Ensure the model supports IsPropertySet(string)
-            var isPropertySetMethod = model.GetType().GetMethod("IsPropertySet", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            if (isPropertySetMethod == null)
-                throw new InvalidOperationException($"{model.GetType().Name} does not implement IsPropertySet(string)");
+            var modelType = model.GetType();
+            var isSetMethod = modelType.GetMethod("IsPropertySet", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
-            var props = model.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public);
+            if (isSetMethod == null)
+                return; // Skip if model doesn't support property tracking
 
-            for (int attempt = 0; attempt <= retries; attempt++)
+            for (int attempt = 0; attempt < retries; attempt++)
             {
-                var unready = props
-                    .Where(p => IsUnready(model, p, isPropertySetMethod, failOnExplicitNulls))
-                    .ToList();
+                bool allReady = true;
+                foreach (var prop in modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+                {
+                    if (!prop.CanRead) continue;
 
-                if (!unready.Any())
-                    return; // Ready!
+                    bool isSet = (bool)isSetMethod.Invoke(model, new object[] { prop.Name });
+                    object value = null;
 
-                if (attempt < retries)
+                    try
+                    {
+                        value = prop.GetValue(model);
+                    }
+                    catch { /* Handle properties that might throw on get */ }
+
+                    if (debug)
+                        Console.WriteLine($"DEBUG: Property={prop.Name}, IsSet={isSet}, Value={(value == null ? "null" : value.ToString())}");
+
+                    if (!isSet)
+                        continue; // skip unset properties
+
+                    if (value == null && failOnExplicitNulls)
+                    {
+                        allReady = false;
+                        break;
+                    }
+
+                    if (value != null && IsDefault(value) && failOnExplicitNulls)
+                    {
+                        allReady = false;
+                        break;
+                    }
+
+                    // Recursively check nested models
+                    if (value != null && !IsSimple(value))
+                    {
+                        if (value is IEnumerable enumerable && !(value is string))
+                        {
+                            foreach (var item in enumerable)
+                                await EnsurePropertiesAreReady(item, failOnExplicitNulls, 1, 0, debug);
+                        }
+                        else
+                        {
+                            await EnsurePropertiesAreReady(value, failOnExplicitNulls, 1, 0, debug);
+                        }
+                    }
+                }
+
+                if (allReady)
+                    return;
+
+                if (attempt < retries - 1)
                     await Task.Delay(delayMs);
             }
 
-            // Final check before throwing
-            var stillUnready = props
-                .Where(p => IsUnready(model, p, isPropertySetMethod, failOnExplicitNulls))
-                .Select(p => p.Name)
-                .ToList();
-
-            if (stillUnready.Any())
-            {
-                throw new InvalidOperationException(
-                    $"Model '{model.GetType().Name}' has properties marked as set but not initialized properly: {string.Join(", ", stillUnready)}"
-                );
-            }
+            throw new InvalidOperationException("One or more required properties were not ready after retries.");
         }
 
-        private static bool IsUnready(object model, PropertyInfo prop, MethodInfo isPropertySetMethod, bool failOnExplicitNulls)
+        private static bool IsSimple(object obj)
         {
-            bool isSet = (bool)isPropertySetMethod.Invoke(model, new object[] { prop.Name });
-            if (!isSet) return false; // not marked as set, skip
-
-            object value = prop.GetValue(model);
-
-            if (value == null)
-                return failOnExplicitNulls; // null is OK in relaxed mode, fail in strict
-
-            return IsDefault(value);
+            var type = obj.GetType();
+            return type.IsPrimitive
+                || type.IsEnum
+                || type == typeof(string)
+                || type == typeof(DateTime)
+                || type == typeof(decimal)
+                || type == typeof(Guid)
+                || type == typeof(TimeSpan);
         }
 
-        private static bool IsDefault(object value)
+        private static bool IsDefault(object obj)
         {
-            Type type = value.GetType();
-            if (!type.IsValueType) return false;
-            object defaultValue = Activator.CreateInstance(type);
-            return value.Equals(defaultValue);
+            var type = obj.GetType();
+            object defaultValue = type.IsValueType ? Activator.CreateInstance(type) : null;
+            return Equals(obj, defaultValue);
         }
     }
 }

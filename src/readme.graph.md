@@ -503,38 +503,55 @@ directive:
          nameSpacePrefix = prefixMatch[1];
         }
 
-        let ensureCall = '';
-        if ($.includes('BodyParameter')) {
-            ensureCall = `
-            if (BodyParameter != null)
-            {
-                foreach (var prop in BodyParameter.GetType().GetProperties())
-                {
-                  var val = prop.GetValue(BodyParameter); // force materialization
-                }
-                ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(BodyParameter, failOnExplicitNulls: false).GetAwaiter().GetResult();
-            }`;
-        } else if ($.includes('_body')) {
-            ensureCall = `
-            if (_body != null)
-            {
-                foreach (var prop in _body.GetType().GetProperties())
-                {
-                    var val = prop.GetValue(_body); // force materialization
-                }
-                ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(_body, failOnExplicitNulls: false).GetAwaiter().GetResult();
-            }`;
-        }
-
         $ = $.replace(
-          /protected override void BeginProcessing\(\)\s*\{\s*([\s\S]*?)(if\s*\(Break\))/g,
-          `protected override void BeginProcessing() {
-            Module.Instance.SetProxyConfiguration(Proxy, ProxyCredential, ProxyUseDefaultCredentials);
-            ${ensureCall}
-        $1$2`
+          /await this\.Client\.(\w+)\(\s*Headers\s*,\s*(BodyParameter|_body)\b([^;]+);/g,
+          (match, methodName, bodyParam, rest) => {
+            let ensureCall = '';
+
+            if (bodyParam === 'BodyParameter') {
+              ensureCall = `
+                if (BodyParameter != null)
+                {
+                    foreach (var prop in BodyParameter.GetType().GetProperties())
+                    {
+                        // Skip indexer properties
+                        if (prop.GetIndexParameters().Length == 0)
+                        {
+                          try
+                          {
+                            var val = prop.GetValue(BodyParameter); // force materialization
+                          }
+                          catch
+                          {}
+                        }
+                    }
+                    await ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(BodyParameter, failOnExplicitNulls: false);
+                }`;
+            } else if (bodyParam === '_body') {
+              ensureCall = `
+                if (_body != null)
+                {
+                    foreach (var prop in _body.GetType().GetProperties())
+                    {
+                        // Skip indexer properties
+                        if (prop.GetIndexParameters().Length == 0)
+                        {
+                          try
+                          {
+                            var val = prop.GetValue(_body); // force materialization
+                          }
+                          catch
+                          {}
+                        }
+                    }
+                    await ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(_body, failOnExplicitNulls: false);
+                }`;
+            }
+
+            return `${ensureCall}\nawait this.Client.${methodName}(Headers, ${bodyParam}${rest};`;
+          }
         );
     
-        
         return $;
       }
 
