@@ -334,25 +334,6 @@ directive:
         let dateTimeToJsonRegex = /(\.Json\.JsonString\()(.*)\?(\.ToString\(@"yyyy'-'MM'-'dd'T'HH':'mm':'ss\.fffffffK")/gm
         $ = $.replace(dateTimeToJsonRegex, '$1System.DateTime.SpecifyKind($2.Value.ToUniversalTime(), System.DateTimeKind.Utc)$3');
         
-        //The following regex below adds a property tracker to ensure that users can also pass $Null as an alternative to the current "null" string which gets inferred to null.
-
-        const regexP = /AddIf\(\s*null\s*!=\s*\(\(\(object\)this\._(\w+).*?(\(Microsoft.*.PowerShell\.Runtime\.Json\.JsonNode\)).*?"(\w+)".*?container\.Add\s*\);/gm
-        $ = $.replace(regexP, (match, p1, p2, p3) => {
-          let capitalizedP1 = p1.charAt(0).toUpperCase() + p1.slice(1); // Capitalize first letter
-          return `if(this.IsPropertySet("${p1}"))\n\t\t{\n\t\t\tvar propertyInfo = this.GetType().GetProperty("${capitalizedP1}");\n\t\t\tif (propertyInfo != null)\n\t\t\t{\n\t\t\tSystem.Type propertyType = propertyInfo.PropertyType;\n\t\t\t\t\tAddIf(${p2}PropertyTracker.ConvertToJsonNode(propertyType, this._${p1}),"${p1}",container.Add);\n\t\t\t}\n\t\t}`;
-      });
-        
-        $ = $.replace(/if\s*\(\s*null\s*!=\s*this\._(\w+)\s*\)/gm, 'if(this.IsPropertySet("$1"))')
-        
-        let nameSpacePrefixRegex = /(Microsoft(?:\.\w+)*?\.PowerShell)/gm
-        let nameSpacePrefix = 'Microsoft.Graph.PowerShell';
-        if($.match(nameSpacePrefixRegex)){
-        let prefixMatch = nameSpacePrefixRegex.exec($);
-         nameSpacePrefix = prefixMatch[1];
-        }
-        $ = $.replace(/container\.Add\("(\w+)",\s*(__\w+)\);/gm, 'var nullFlag = ('+nameSpacePrefix+'.Runtime.Json.JsonNode)new '+nameSpacePrefix+'.Runtime.Json.JsonString("nullarray");\n\t\tif($2.Count == 0)\n\t\t{\n\t\t\t$2.Add(nullFlag);\n\t\t}\n\t\tcontainer.Add("$1", $2);');
-
-        $ =$.replace(/AddIf\(\s+null\s+!=\s+(this\._\w+)\s+\?\s+\((Microsoft\.Graph\..*?)\)\s+this\._(\w+)\.ToJson\(null,serializationMode\)\s+:\s+null,\s+"\w+"\s+,container.Add\s+\);/gm, 'if (this.IsPropertySet("$3")) \n{\n    if ($1 != null)\n{\n   container.Add("$3", ($2)$1.ToJson(null, serializationMode)); \n}\nelse\n{\n  container.Add("$3", "null"); \n}\n}');
 
         return $;
       }
@@ -419,28 +400,6 @@ directive:
         if($.match(additionalPropertiesRegex)) {
           $ = $.replace(additionalPropertiesRegex, '$1$2 new $3');
         }
-        //The following regex below adds a property tracker to ensure that users can also pass $Null as an alternative to the current "null" string which gets inferred to null.
-        $ = $.replace(/\bpublic\s+(\w+\??)\s+(\w+)\s*{\s*get\s*=>\s*this\.(\w+);\s*set\s*=>\s*this\.\3\s*=\s*value;\s*}/gmi,'public $1 $2\n\t{\n\t\tget=>this.$3;\n\t\tset\n\t\t{\n\t\t\tthis.$3=SanitizeValue<$1>(value);\n\t\t\tTrackProperty(nameof($2));\n\t\t}\n\t}')
-
-        $ = $.replace(/\bpublic\s+(\w+\[\])\s+(\w+)\s*{\s*get\s*=>\s*this\.(\w+);\s*set\s*=>\s*this\.\3\s*=\s*value;\s*}/gm,'public $1 $2\n\t{\n\t\tget=>this.$3;\n\t\tset\n\t\t{\n\t\t\tthis.$3=value;\n\t\t\tTrackProperty(nameof($2));\n\t\t}\n\t}') 
-        
-        $ = $.replace(/\bpublic\s+(Microsoft\.Graph\.[\w.]+\[\])\s+(\w+)\s*{\s*get\s*=>\s*this\.(\w+);\s*set\s*=>\s*this\.\3\s*=\s*value;\s*}/gm,'public $1 $2\n\t{\n\t\tget=>this.$3;\n\t\tset\n\t\t{\n\t\t\tthis.$3=value;\n\t\t\tTrackProperty(nameof($2));\n\t\t}\n\t}')
-
-        const match = $documentPath.match(/generated%2Fapi%2FModels%2F([\w]*[\w\d]*)\.cs/gm);
-        if (match) {
-        let fileName = match[0];
-        fileName = fileName.replace('generated%2Fapi%2FModels%2F','')
-        fileName = fileName.replace('.cs','')
-        const interfaceName = 'I'+fileName
-        $ = $.replace('interface '+interfaceName+' :', 'interface '+interfaceName+' : IPropertyTracker,')
-        const className = fileName
-        const regexP = new RegExp(`public\\s+partial\\s+class\\s+${className}\\s*:\\s*[\\s\\S]*?{`, "gm");
-        var matches = regexP.exec($);
-        let originalMatch = matches[0];
-        $ = $.replace(regexP, originalMatch+'\n\t\tprivate readonly PropertyTracker _propertyTracker = new PropertyTracker();\n\t\tpublic void TrackProperty(string propertyName) => _propertyTracker.TrackProperty(propertyName);\n\t\tpublic bool IsPropertySet(string propertyName) =>_propertyTracker.IsPropertySet(propertyName);\n\t\tpublic T SanitizeValue<T>(object value) => PropertyTracker.SanitizeValue<T>(value);');
-        }
-
-        $ = $.replace(/public\s+(Microsoft\.Graph\..*?)\s+(\w+)\s+{\s+get\s+=>\s+\(\s*this\.(\w+)\s+=\s*this\.\3\s+\?\?\s+new\s+(Microsoft\.Graph\..*?)\s+set\s+=>\s+this._\w+\s+=\s+value;\s+}/gm, 'public $1 $2 { \n    get => (this.$3 = this.$3 ?? new $4\n    set\n    {\n        this.$3 = value;\n        TrackProperty(nameof($2));\n    }\n}')
 
         return $;
 
@@ -495,62 +454,6 @@ directive:
             }
            });
         }
-
-        let nameSpacePrefixRegex = /(Microsoft(?:\.\w+)*?\.PowerShell)/gm
-        let nameSpacePrefix = 'Microsoft.Graph.PowerShell';
-        if($.match(nameSpacePrefixRegex)){
-        let prefixMatch = nameSpacePrefixRegex.exec($);
-         nameSpacePrefix = prefixMatch[1];
-        }
-
-        $ = $.replace(
-          /await this\.Client\.(\w+)\(\s*Headers\s*,\s*(BodyParameter|_body)\b([^;]+);/g,
-          (match, methodName, bodyParam, rest) => {
-            let ensureCall = '';
-
-            if (bodyParam === 'BodyParameter') {
-              ensureCall = `
-                if (BodyParameter != null)
-                {
-                    foreach (var prop in BodyParameter.GetType().GetProperties())
-                    {
-                        // Skip indexer properties
-                        if (prop.GetIndexParameters().Length == 0)
-                        {
-                          try
-                          {
-                            var val = prop.GetValue(BodyParameter); // force materialization
-                          }
-                          catch
-                          {}
-                        }
-                    }
-                    await ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(BodyParameter, failOnExplicitNulls: false);
-                }`;
-            } else if (bodyParam === '_body') {
-              ensureCall = `
-                if (_body != null)
-                {
-                    foreach (var prop in _body.GetType().GetProperties())
-                    {
-                        // Skip indexer properties
-                        if (prop.GetIndexParameters().Length == 0)
-                        {
-                          try
-                          {
-                            var val = prop.GetValue(_body); // force materialization
-                          }
-                          catch
-                          {}
-                        }
-                    }
-                    await ${nameSpacePrefix}.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(_body, failOnExplicitNulls: false);
-                }`;
-            }
-
-            return `${ensureCall}\nawait this.Client.${methodName}(Headers, ${bodyParam}${rest};`;
-          }
-        );
     
         return $;
       }
@@ -754,16 +657,6 @@ directive:
         
         $ = $.replace(/cleanedBody = Microsoft.*.ReplaceAndRemoveSlashes\(cleanedBody\);/gm,'')
 
-        let nameSpacePrefixRegex = /(Microsoft(?:\.\w+)*?\.PowerShell)/gm
-        let nameSpacePrefix = 'Microsoft.Graph.PowerShell';
-        if($.match(nameSpacePrefixRegex)){
-        let prefixMatch = nameSpacePrefixRegex.exec($);
-         nameSpacePrefix = prefixMatch[1];
-        }
-        $ = $.replace(/cleanedBody\s*=\s*body\.ToJson\(null\)\.ToString\(\);/g,'await '+nameSpacePrefix+'.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(body, failOnExplicitNulls: false);\n    cleanedBody = body.ToJson(null).ToString();'
-      );
-      $ = $.replace(/(^\s*)cleanedBody\s*=\s*Microsoft\.Graph\.(?:Beta\.)?PowerShell\.JsonUtilities\.JsonExtensions\.RemoveDefaultNullProperties\s*\(\s*jsonObject\s*\)\s*;/gm,'$1// cleanedBody = Microsoft.Graph.$2PowerShell.JsonUtilities.JsonExtensions.RemoveDefaultNullProperties(jsonObject);'
-      );
         return $
       }
 
