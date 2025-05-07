@@ -762,6 +762,8 @@ directive:
         }
         $ = $.replace(/cleanedBody\s*=\s*body\.ToJson\(null\)\.ToString\(\);/g,'await '+nameSpacePrefix+'.ModelExtensions.ModelExtensions.EnsurePropertiesAreReady(body, failOnExplicitNulls: false);\n    cleanedBody = body.ToJson(null).ToString();'
       );
+      $ = $.replace(/(^\s*)cleanedBody\s*=\s*Microsoft\.Graph\.(?:Beta\.)?PowerShell\.JsonUtilities\.JsonExtensions\.RemoveDefaultNullProperties\s*\(\s*jsonObject\s*\)\s*;/gm,'$1// cleanedBody = Microsoft.Graph.$2PowerShell.JsonUtilities.JsonExtensions.RemoveDefaultNullProperties(jsonObject);'
+      );
         return $
       }
 
