@@ -753,6 +753,15 @@ directive:
         $ = $.replace(/request\.Content\s*=\s*new\s+global::System\.Net\.Http\.StringContent\(\s*null\s*!=\s*body\s*\?\s*new\s+Microsoft\.Graph\.Beta\.PowerShell\.Runtime\.Json\.XNodeArray\(.*?\)\s*:\s*null,\s*global::System\.Text\.Encoding\.UTF8\);/g,'request.Content = new global::System.Net.Http.StringContent(cleanedBody, global::System.Text.Encoding.UTF8);');
         
         $ = $.replace(/cleanedBody = Microsoft.*.ReplaceAndRemoveSlashes\(cleanedBody\);/gm,'')
+
+        let nameSpacePrefixRegex = /(Microsoft(?:\.\w+)*?\.PowerShell)/gm
+        let nameSpacePrefix = 'Microsoft.Graph.PowerShell';
+        if($.match(nameSpacePrefixRegex)){
+        let prefixMatch = nameSpacePrefixRegex.exec($);
+         nameSpacePrefix = prefixMatch[1];
+        }
+        $ = $.replace(/cleanedBody\s*=\s*body\.ToJson\(null\)\.ToString\(\);/g,await ${nameSpacePrefix}.ModelExtensions.EnsurePropertiesAreReady(body, failOnExplicitNulls: false);\n    cleanedBody = body.ToJson(null).ToString();`
+      );
         return $
       }
 
