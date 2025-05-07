@@ -10,7 +10,11 @@ namespace NamespacePrefixPlaceholder.PowerShell.Models
 
         public void TrackProperty(string propertyName)
         {
-            _trackedProperties.Add(propertyName);  // ✅ Track properties that are set
+            if (!string.IsNullOrWhiteSpace(propertyName))
+            {
+                propertyName = char.ToLower(propertyName[0]) + propertyName.Substring(1);  // ✅ force camelCase
+                _trackedProperties.Add(propertyName);  // ✅ Track properties that are set
+            }
         }
 
         public bool IsPropertySet(string propertyName)
@@ -18,7 +22,7 @@ namespace NamespacePrefixPlaceholder.PowerShell.Models
             // Ensure that the first character of the property name is UpperCase
             if (propertyName.Length > 0)
             {
-                propertyName = char.ToUpper(propertyName[0]) + propertyName.Substring(1);
+                propertyName = char.ToLower(propertyName[0]) + propertyName.Substring(1); // ✅ match camelCase
             }
             return _trackedProperties.Contains(propertyName);
         }
