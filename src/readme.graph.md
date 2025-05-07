@@ -760,7 +760,7 @@ directive:
         let prefixMatch = nameSpacePrefixRegex.exec($);
          nameSpacePrefix = prefixMatch[1];
         }
-        $ = $.replace(/cleanedBody\s*=\s*body\.ToJson\(null\)\.ToString\(\);/g,await ${nameSpacePrefix}.ModelExtensions.EnsurePropertiesAreReady(body, failOnExplicitNulls: false);\n    cleanedBody = body.ToJson(null).ToString();`
+        $ = $.replace(/cleanedBody\s*=\s*body\.ToJson\(null\)\.ToString\(\);/g,'await '+nameSpacePrefix+'.ModelExtensions.EnsurePropertiesAreReady(body, failOnExplicitNulls: false);\n    cleanedBody = body.ToJson(null).ToString();'
       );
         return $
       }
