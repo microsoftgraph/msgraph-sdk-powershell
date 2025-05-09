@@ -15,10 +15,6 @@ namespace Microsoft.Graph.Beta.PowerShell.Models
         IMicrosoftGraphRscConfigurationInternal,
         Runtime.IValidates
     {
-        private readonly PropertyTracker _propertyTracker = new PropertyTracker();
-		public void TrackProperty(string propertyName) => _propertyTracker.TrackProperty(propertyName);
-		public bool IsPropertySet(string propertyName) =>_propertyTracker.IsPropertySet(propertyName);
-		public T SanitizeValue<T>(object value) => PropertyTracker.SanitizeValue<T>(value);
         /// <summary>
         /// Backing field for Inherited model <see cref= "Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEntity" />
         /// </summary>
