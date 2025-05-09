@@ -165,7 +165,7 @@ extends:
 
     - stage: PushDockerImageToRegistry
       condition: and(or(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['Build.SourceBranch'], variables['PREVIEW_BRANCH'])), not(contains(variables['Build.SourceBranch'], '-preview')))
-      dependsOn: []
+      dependsOn: stage
       displayName: 'Push docker image'
       jobs:
         - job: PushDockerImage

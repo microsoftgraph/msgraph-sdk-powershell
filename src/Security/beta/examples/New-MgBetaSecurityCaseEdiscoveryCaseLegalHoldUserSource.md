@@ -6,7 +6,7 @@ Import-Module Microsoft.Graph.Beta.Security
 
 $params = @{
 	email = "admin@contoso.com"
-	includedSources = "mailbox"
+	includedSources = "mailbox, site"
 }
 
 New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryHoldPolicyId $ediscoveryHoldPolicyId -BodyParameter $params
