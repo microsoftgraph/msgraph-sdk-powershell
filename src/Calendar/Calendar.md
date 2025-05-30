@@ -44,7 +44,7 @@ directive:
     remove: true
   - where:
       verb: Invoke
-      subject: ^(AcceptUserCalendarEventInstance)$
+      subject: ^(AcceptUserCalendarEventInstance|AcceptUserCalendarView)$
     remove: true
 #Remove cmdlet to avoid conflicts where alias has been set:[#3241](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3241)
   - where:
