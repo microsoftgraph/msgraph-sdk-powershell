@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^(deviceManagement_.*UserExperienceAnalytic.*|roleManagement\..*\.roleDefinition\.inheritsPermissionsFrom.*)$
+  - remove-path-by-operation: ^(deviceManagement_.*UserExperienceAnalytic.*|roleManagement\..*\.roleDefinition\.inheritsPermissionsFrom.*)$|
 # Remove cmdlets.
   - where:
       verb: Update

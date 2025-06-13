@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from  group_DeleteAcceptedSenderGraphBPreRef
-  - remove-path-by-operation: group\.groupLifecyclePolicy_.*$|group_(Get|Create|Update|Delete)GroupLifecyclePolicies$|group\.team.*$|user\.joinedGroup.*$|group\.site\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|.*\.calendar\.event\..*$|.*\.event\..*$|^group_DeleteAcceptedSenderGraphBPreRef$|^group_DeleteMemberGraphBPreRef$|^group_DeleteOwnerGraphBPreRef$|^group_DeleteOwnerGraphBPreRef$|^group_DeleteRejectedSenderGraphBPreRef$
+  - remove-path-by-operation: group\.groupLifecyclePolicy_.*$|group_(Get|Create|Update|Delete)GroupLifecyclePolicies$|group\.team.*$|user\.joinedGroup.*$|group\.site\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|.*\.calendar\.event\..*$|.*\.event\..*$|^group_DeleteAcceptedSenderGraphBPreRef$|^group_DeleteMemberGraphBPreRef$|^group_DeleteOwnerGraphBPreRef$|^group_DeleteOwnerGraphBPreRef$|^group_DeleteRejectedSenderGraphBPreRef$|
   - where:
       verb: Get
       subject: ^(GroupLifecyclePolicy)$

@@ -17,7 +17,7 @@ require:
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^print(_.*Report|\.report.*)
+  - remove-path-by-operation: ^print(_.*Report|\.report.*)|
   - where:
       verb: New
       subject: PrintPrinter
