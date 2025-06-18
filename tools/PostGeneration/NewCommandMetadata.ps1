@@ -161,7 +161,7 @@ if ($CommandPathMapping.Count -eq 0) {
 }
 else {
     Write-Debug "Writing metadata to $MgCommandMetadataFile."
-    $CommandPathMapping.GetEnumerator() | Sort-Object Name | Select-Object -ExpandProperty Value | ConvertTo-Json -Depth 4 | Out-File -FilePath $MgCommandMetadataFile
+    $CommandPathMapping.GetEnumerator() | Sort-Object Name | Select-Object -ExpandProperty Value | ConvertTo-Json -Depth 4 -Compress | Out-File -FilePath $MgCommandMetadataFile
 }
 $stopwatch.Stop()
 Write-Debug "Generated command metadata file in '$($Stopwatch.Elapsed.TotalSeconds)`s."
