@@ -99,9 +99,4 @@ directive:
       verb: Update
       subject: ^GroupPhoto$
     remove: true
-  # - where:
-  #     verb: Invoke
-  #     subject: ^(RenewGroup)(LifecyclePolicy)Group$
-  #     variant: ^Renew1$|^RenewExpanded1$|^RenewViaIdentity$|^RenewViaIdentityExpanded$
-  #   remove: true
 ```
