@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from identity.b2xUserFlow_DeleteUserFlowIdentityProviderGraphBPreRef
-  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAcces$|^policy\.policyRoot_.*PolicyRoot|^policy_(Get|Create|Delete|Update|List)ConditionalAccessPolicy$|^invitation\.invitation_(List|Get|Update|Delete)Invitation$|^invitation_(.*)InvitedUser$|^identityProtection\.identityProtectionRoot_(.*)$|^identity\.identityContainer_(.*)$|^identityProvider(\.identityProvider.*|_.*)$|^identity.b2xUserFlow_DeleteUserFlowIdentityProviderGraphBPreRef$|^policy.featureRolloutPolicy_DeleteAppliesToGraphBPreRef$|^user.authentication.qrCodePinMethod.pin_updatePin$|
+  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAcces$|^policy\.policyRoot_.*PolicyRoot|^policy_(Get|Create|Delete|Update|List)ConditionalAccessPolicy$|^invitation\.invitation_(List|Get|Update|Delete)Invitation$|^invitation_(.*)InvitedUser$|^identityProtection\.identityProtectionRoot_(.*)$|^identity\.identityContainer_(.*)$|^identityProvider(\.identityProvider.*|_.*)$|^identity.b2xUserFlow_DeleteUserFlowIdentityProviderGraphBPreRef$|^policy.featureRolloutPolicy_DeleteAppliesToGraphBPreRef$|^user.authentication.qrCodePinMethod.pin_updatePin$
 # Remove cmdlets
   - where:
       subject: ^(Oauth2PermissionGrant)(\1)+
