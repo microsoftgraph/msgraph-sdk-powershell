@@ -8094,7 +8094,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+              description: The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation.
             mailboxes:
               type: array
               items:
@@ -8213,7 +8213,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+              description: The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation.
             drives:
               type: array
               items:
@@ -8560,7 +8560,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+              description: The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation.
             siteWebUrls:
               type: array
               items:

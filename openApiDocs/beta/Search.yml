@@ -1250,11 +1250,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Update externalItem
-      description: Update the properties of an externalitem.
+      summary: Create externalItem
+      description: Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -2157,11 +2157,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Create or update schema
-      description: Create a new or update an existing schema for a Microsoft Search connection.
+      summary: Update schema
+      description: Update the properties of a schema for an externalConnection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2653,11 +2653,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundFileFlow
-      description: Update the properties of an inboundFileFlow object.
+      summary: Update inboundApiFlow
+      description: Update the properties of an inboundApiFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-update?view=graph-rest-beta
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2902,11 +2902,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get fileValidateOperations
-      description: Read the properties and relationships of a fileValidateOperation object.
+      summary: Get longRunningOperation
+      description: 'Read the properties and relationships of a longRunningOperation object. This API allows you to retrieve the details and status of the following long-running Microsoft Graph API operations. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/longrunningoperation-get?view=graph-rest-beta
       operationId: external.industryData_GetOperation
       parameters:
         - name: longRunningOperation-id
@@ -6133,7 +6133,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.'
+          description: 'Contains the connection to be targeted. Respects the following format: /external/connections/connectionid where connectionid is the ConnectionId defined in the connectors administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.'
         enableTopResults:
           type: boolean
           description: 'This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.'
@@ -6148,7 +6148,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.'
+          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft 365 Copilot connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax : label_title.Optional.'
         from:
           maximum: 2147483647
           minimum: -2147483648
@@ -6186,7 +6186,7 @@ components:
           description: This is now replaced by the fields property.
         trimDuplicates:
           type: boolean
-          description: Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
+          description: Indicates whether to trim away the duplicate SharePoint files from search results. The default value is false. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -7581,6 +7581,7 @@ components:
       type: object
       additionalProperties:
         type: object
+      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.externalConnectors.propertyRule:
       title: propertyRule
       type: object

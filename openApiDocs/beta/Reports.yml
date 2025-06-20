@@ -6767,6 +6767,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.retrieveAndroidWorkProfileDeviceMigrationStatuses:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action retrieveAndroidWorkProfileDeviceMigrationStatuses
+      operationId: deviceManagement.report_retrieveAndroidWorkProfileDeviceMigrationStatus
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.retrieveCloudPkiLeafCertificateReport:
     post:
       tags:
@@ -15920,6 +15992,121 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /reports/partners/billing/reconciliation/unbilled:
+    get:
+      tags:
+        - reports.partners
+      summary: Get unbilled from reports
+      description: Represents details for unbilled invoice reconciliation data.
+      operationId: report.partner.billing.reconciliation_GetUnbilled
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.partners
+      summary: Update the navigation property unbilled in reports
+      operationId: report.partner.billing.reconciliation_UpdateUnbilled
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.partners
+      summary: Delete navigation property unbilled for reports
+      operationId: report.partner.billing.reconciliation_DeleteUnbilled
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/partners/billing/reconciliation/unbilled/microsoft.graph.partners.billing.export:
+    post:
+      tags:
+        - reports.partners
+      summary: Invoke action export
+      description: Export the unbilled invoice reconciliation data for a specific billing period and a given currency.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/partners-billing-unbilledreconciliation-export?view=graph-rest-beta
+      operationId: report.partner.billing.reconciliation.unbilled_export
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                currencyCode:
+                  type: string
+                  nullable: true
+                billingPeriod:
+                  $ref: '#/components/schemas/microsoft.graph.partners.billing.billingPeriod'
+                attributeSet:
+                  $ref: '#/components/schemas/microsoft.graph.partners.billing.attributeSet'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.operation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /reports/partners/billing/usage:
     get:
       tags:
@@ -21103,8 +21290,11 @@ paths:
     get:
       tags:
         - reports.userInsightsRoot
-      summary: Get summary from reports
-      description: Summary of all usage insights on apps registered in the tenant for a specified period.
+      summary: List monthly summary
+      description: Get a list of monthly  insightSummary objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-summary?view=graph-rest-beta
       operationId: report.userInsight.monthly_ListSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21432,6 +21622,8 @@ components:
         - title: signIn
           type: object
           properties:
+            agent:
+              $ref: '#/components/schemas/microsoft.graph.agentic.agentSignIn'
             appDisplayName:
               type: string
               description: 'The application name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).'
@@ -21685,7 +21877,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.tokenProtectionStatusDetails'
             uniqueTokenIdentifier:
               type: string
-              description: A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
+              description: A unique base64-encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
               nullable: true
             userAgent:
               type: string
@@ -22333,7 +22525,7 @@ components:
       properties:
         content:
           type: string
-          description: Report content; details vary by report type.
+          description: The http content that has the data
           format: base64url
           nullable: true
       additionalProperties:
@@ -23245,6 +23437,8 @@ components:
           properties:
             billed:
               $ref: '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
+            unbilled:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
           additionalProperties:
             type: object
     microsoft.graph.partners.billing.billedReconciliation:
@@ -23259,6 +23453,20 @@ components:
       enum:
         - full
         - basic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.partners.billing.unbilledReconciliation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unbilledReconciliation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.partners.billing.billingPeriod:
+      title: billingPeriod
+      enum:
+        - current
+        - last
         - unknownFutureValue
       type: string
     microsoft.graph.partners.billing.azureUsage:
@@ -23287,13 +23495,6 @@ components:
           type: object
           additionalProperties:
             type: object
-    microsoft.graph.partners.billing.billingPeriod:
-      title: billingPeriod
-      enum:
-        - current
-        - last
-        - unknownFutureValue
-      type: string
     microsoft.graph.securityReportsRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24088,6 +24289,18 @@ components:
           $ref: '#/components/schemas/microsoft.graph.provisioningResult'
       additionalProperties:
         type: object
+    microsoft.graph.agentic.agentSignIn:
+      title: agentSignIn
+      type: object
+      properties:
+        agentType:
+          $ref: '#/components/schemas/microsoft.graph.agentic.agentType'
+        parentAppId:
+          type: string
+          description: The ID of the parent application for agentic instances.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.appliedConditionalAccessPolicy:
       title: appliedConditionalAccessPolicy
       type: object
@@ -24841,6 +25054,7 @@ components:
         - managedDeviceSignInFailure
         - compliantDeviceSignInFailure
         - unknownFutureValue
+        - conditionalAccessBlockedSignIn
       type: string
     microsoft.graph.healthMonitoring.category:
       title: category
@@ -24878,6 +25092,7 @@ components:
         - mfa
         - devices
         - unknownFutureValue
+        - conditionalAccess
       type: string
     microsoft.graph.healthMonitoring.signals:
       allOf:
@@ -25026,10 +25241,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -25749,6 +25964,15 @@ components:
         - processing
         - referenceResolution
         - export
+        - unknownFutureValue
+      type: string
+    microsoft.graph.agentic.agentType:
+      title: agentType
+      enum:
+        - notAgentic
+        - agenticAppBuilder
+        - agenticApp
+        - agenticAppInstance
         - unknownFutureValue
       type: string
     microsoft.graph.authenticationStrength:

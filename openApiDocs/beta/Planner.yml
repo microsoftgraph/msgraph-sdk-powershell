@@ -14351,6 +14351,7 @@ components:
         - driveItem
         - user
         - teamsChannel
+        - onlineMeeting
         - plannerTask
       type: string
     microsoft.graph.sensitivityLabelAssignment:

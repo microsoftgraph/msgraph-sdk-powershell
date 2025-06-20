@@ -183,6 +183,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile-id}/microsoft.graph.clearEnrollmentTimeDeviceMembershipTarget':
+    post:
+      tags:
+        - deviceManagement.androidDeviceOwnerEnrollmentProfile
+      summary: Invoke action clearEnrollmentTimeDeviceMembershipTarget
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_clearEnrollmentTimeDeviceMembershipTarget
+      parameters:
+        - name: androidDeviceOwnerEnrollmentProfile-id
+          in: path
+          description: The unique identifier of androidDeviceOwnerEnrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile-id}/microsoft.graph.createToken':
     post:
       tags:
@@ -219,6 +240,31 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile-id}/microsoft.graph.retrieveEnrollmentTimeDeviceMembershipTarget':
+    post:
+      tags:
+        - deviceManagement.androidDeviceOwnerEnrollmentProfile
+      summary: Invoke action retrieveEnrollmentTimeDeviceMembershipTarget
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_retrieveEnrollmentTimeDeviceMembershipTarget
+      parameters:
+        - name: androidDeviceOwnerEnrollmentProfile-id
+          in: path
+          description: The unique identifier of androidDeviceOwnerEnrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.enrollmentTimeDeviceMembershipTargetResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile-id}/microsoft.graph.revokeToken':
     post:
       tags:
@@ -237,6 +283,45 @@ paths:
       responses:
         2XX:
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile-id}/microsoft.graph.setEnrollmentTimeDeviceMembershipTarget':
+    post:
+      tags:
+        - deviceManagement.androidDeviceOwnerEnrollmentProfile
+      summary: Invoke action setEnrollmentTimeDeviceMembershipTarget
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_setEnrollmentTimeDeviceMembershipTarget
+      parameters:
+        - name: androidDeviceOwnerEnrollmentProfile-id
+          in: path
+          description: The unique identifier of androidDeviceOwnerEnrollmentProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: androidDeviceOwnerEnrollmentProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                enrollmentTimeDeviceMembershipTargets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.enrollmentTimeDeviceMembershipTarget'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.enrollmentTimeDeviceMembershipTargetResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -5920,6 +6005,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.roleManagement'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5942,6 +6033,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.roleManagement'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/cloudPC:
     get:
@@ -5979,6 +6076,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6001,6 +6104,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6019,6 +6128,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/cloudPC/resourceNamespaces:
     get:
@@ -6067,6 +6182,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6092,6 +6213,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}':
     get:
@@ -6137,6 +6264,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6168,6 +6301,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6194,6 +6333,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions':
     post:
@@ -6236,6 +6381,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: action
   '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
     get:
@@ -6293,6 +6444,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceActionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6327,6 +6484,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}':
     get:
@@ -6381,6 +6544,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6420,6 +6589,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6454,6 +6629,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/authenticationContext':
     get:
@@ -6507,6 +6688,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/resourceScope':
     get:
@@ -6560,6 +6747,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6599,6 +6792,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6633,6 +6832,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/$count':
     get:
@@ -6656,6 +6861,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/cloudPC/resourceNamespaces/$count:
     get:
       tags:
@@ -6670,6 +6881,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/cloudPC/roleAssignments:
     get:
       tags:
@@ -6718,6 +6935,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleAssignmentMultipleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6747,6 +6970,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}':
     get:
@@ -6796,6 +7025,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6831,6 +7066,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6861,6 +7102,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes':
     get:
@@ -6918,6 +7165,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.appScopeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6952,6 +7205,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/{appScope-id}':
     get:
@@ -7006,6 +7265,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7045,6 +7310,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7079,6 +7350,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/$count':
     get:
@@ -7102,6 +7379,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes':
     get:
       tags:
@@ -7158,6 +7441,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7215,6 +7504,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$count':
     get:
@@ -7238,6 +7533,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals':
     get:
       tags:
@@ -7294,6 +7595,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7351,6 +7658,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$count':
     get:
@@ -7374,6 +7687,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition':
     get:
       tags:
@@ -7419,6 +7738,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/cloudPC/roleAssignments/$count:
     get:
@@ -7434,6 +7759,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/cloudPC/roleDefinitions:
     get:
       tags:
@@ -7485,6 +7816,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7514,13 +7851,19 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}':
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online (Except China operated by 21Vianet)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta
@@ -7563,6 +7906,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7598,6 +7947,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7628,6 +7983,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom':
     get:
@@ -7685,6 +8046,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7719,6 +8086,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}':
     get:
@@ -7773,6 +8146,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7812,6 +8191,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7846,6 +8231,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
@@ -7951,6 +8342,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -7977,6 +8374,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
@@ -8073,6 +8476,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -8091,6 +8500,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/defender:
     get:
       tags:
@@ -8127,6 +8542,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8149,6 +8570,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8167,6 +8594,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/defender/resourceNamespaces:
     get:
@@ -8215,6 +8648,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8240,6 +8679,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}':
     get:
@@ -8285,6 +8730,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8316,6 +8767,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8342,6 +8799,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions':
     post:
@@ -8384,6 +8847,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: action
   '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
     get:
@@ -8441,6 +8910,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceActionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8475,6 +8950,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}':
     get:
@@ -8529,6 +9010,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8568,6 +9055,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8602,6 +9095,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/authenticationContext':
     get:
@@ -8655,6 +9154,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/resourceScope':
     get:
@@ -8708,6 +9213,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8747,6 +9258,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8781,6 +9298,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/$count':
     get:
@@ -8804,6 +9327,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/defender/resourceNamespaces/$count:
     get:
       tags:
@@ -8818,6 +9347,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/defender/roleAssignments:
     get:
       tags:
@@ -8865,6 +9400,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleAssignmentMultipleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8890,6 +9431,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}':
     get:
@@ -8935,6 +9482,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8966,6 +9519,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8992,6 +9551,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes':
     get:
@@ -9049,6 +9614,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.appScopeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9083,6 +9654,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/{appScope-id}':
     get:
@@ -9137,6 +9714,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9176,6 +9759,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9210,6 +9799,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/$count':
     get:
@@ -9233,6 +9828,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes':
     get:
       tags:
@@ -9289,6 +9890,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9346,6 +9953,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$count':
     get:
@@ -9369,6 +9982,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals':
     get:
       tags:
@@ -9425,6 +10044,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9482,6 +10107,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$count':
     get:
@@ -9505,6 +10136,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition':
     get:
       tags:
@@ -9550,6 +10187,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/defender/roleAssignments/$count:
     get:
@@ -9565,6 +10208,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/defender/roleDefinitions:
     get:
       tags:
@@ -9612,6 +10261,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9637,6 +10292,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}':
     get:
@@ -9682,6 +10343,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9713,6 +10380,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9739,6 +10412,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom':
     get:
@@ -9796,6 +10475,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9830,6 +10515,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}':
     get:
@@ -9884,6 +10575,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9923,6 +10620,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9957,6 +10660,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
@@ -10062,6 +10771,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -10088,6 +10803,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/defender/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
@@ -10184,6 +10905,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -10202,6 +10929,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/deviceManagement:
     get:
       tags:
@@ -10239,6 +10972,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10261,6 +11000,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10279,6 +11024,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/deviceManagement/resourceNamespaces:
     get:
@@ -10327,6 +11078,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10352,6 +11109,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}':
     get:
@@ -10397,6 +11160,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10428,6 +11197,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10454,6 +11229,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions':
     post:
@@ -10496,6 +11277,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: action
   '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
     get:
@@ -10553,6 +11340,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceActionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10587,6 +11380,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}':
     get:
@@ -10641,6 +11440,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10680,6 +11485,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10714,6 +11525,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/authenticationContext':
     get:
@@ -10767,6 +11584,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/resourceScope':
     get:
@@ -10820,6 +11643,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10859,6 +11688,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10893,6 +11728,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/$count':
     get:
@@ -10916,6 +11757,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/deviceManagement/resourceNamespaces/$count:
     get:
       tags:
@@ -10930,6 +11777,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/deviceManagement/roleAssignments:
     get:
       tags:
@@ -10981,6 +11834,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleAssignmentMultipleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11010,6 +11869,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}':
     get:
@@ -11059,6 +11924,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11094,6 +11965,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11124,6 +12001,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes':
     get:
@@ -11181,6 +12064,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.appScopeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11215,6 +12104,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/{appScope-id}':
     get:
@@ -11269,6 +12164,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11308,6 +12209,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11342,6 +12249,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/$count':
     get:
@@ -11365,6 +12278,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes':
     get:
       tags:
@@ -11421,6 +12340,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11478,6 +12403,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$count':
     get:
@@ -11501,6 +12432,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals':
     get:
       tags:
@@ -11557,6 +12494,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11614,6 +12557,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$count':
     get:
@@ -11637,6 +12586,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition':
     get:
       tags:
@@ -11682,6 +12637,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/deviceManagement/roleAssignments/$count:
     get:
@@ -11697,6 +12658,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/deviceManagement/roleDefinitions:
     get:
       tags:
@@ -11744,6 +12711,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11769,6 +12742,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}':
     get:
@@ -11814,6 +12793,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11845,6 +12830,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11871,6 +12862,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom':
     get:
@@ -11928,6 +12925,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11962,6 +12965,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}':
     get:
@@ -12016,6 +13025,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12055,6 +13070,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12089,6 +13110,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
@@ -12194,6 +13221,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -12220,6 +13253,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
@@ -12316,6 +13355,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -12334,6 +13379,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/exchange:
     get:
       tags:
@@ -12370,6 +13421,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacApplication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12392,6 +13449,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacApplication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12410,6 +13473,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/exchange/customAppScopes:
     get:
@@ -12462,6 +13531,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.customAppScopeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12491,6 +13566,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.customAppScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/customAppScopes/{customAppScope-id}':
     get:
@@ -12540,6 +13621,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.customAppScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12575,6 +13662,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.customAppScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12605,6 +13698,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/exchange/customAppScopes/$count:
     get:
@@ -12620,6 +13719,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/exchange/resourceNamespaces:
     get:
       tags:
@@ -12668,6 +13773,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12693,6 +13804,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/resourceNamespaces/{unifiedRbacResourceNamespace-id}':
     get:
@@ -12739,6 +13856,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12770,6 +13893,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12796,6 +13925,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions':
     post:
@@ -12838,6 +13973,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: action
   '/roleManagement/exchange/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
     get:
@@ -12895,6 +14036,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRbacResourceActionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12929,6 +14076,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}':
     get:
@@ -12983,6 +14136,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13022,6 +14181,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13056,6 +14221,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/authenticationContext':
     get:
@@ -13109,6 +14280,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/resourceScope':
     get:
@@ -13162,6 +14339,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13201,6 +14384,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13235,6 +14424,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/$count':
     get:
@@ -13258,6 +14453,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/exchange/resourceNamespaces/$count:
     get:
       tags:
@@ -13272,6 +14473,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/exchange/roleAssignments:
     get:
       tags:
@@ -13323,6 +14530,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13352,6 +14565,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/roleAssignments/{unifiedRoleAssignment-id}':
     get:
@@ -13401,6 +14620,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13432,6 +14657,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13462,6 +14693,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/roleAssignments/{unifiedRoleAssignment-id}/appScope':
     get:
@@ -13508,6 +14745,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13539,6 +14782,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13565,6 +14814,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/roleAssignments/{unifiedRoleAssignment-id}/directoryScope':
     get:
@@ -13611,6 +14866,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/roleAssignments/{unifiedRoleAssignment-id}/principal':
     get:
@@ -13657,6 +14918,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition':
     get:
@@ -13703,6 +14970,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/exchange/roleAssignments/$count:
     get:
@@ -13718,6 +14991,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/exchange/roleDefinitions:
     get:
       tags:
@@ -13769,6 +15048,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13794,13 +15079,19 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}':
     get:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online (Except China operated by 21Vianet)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta
@@ -13843,6 +15134,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13874,6 +15171,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13900,6 +15203,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom':
     get:
@@ -13957,6 +15266,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13991,6 +15306,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}':
     get:
@@ -14045,6 +15366,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -14084,6 +15411,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -14118,6 +15451,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
@@ -14223,6 +15562,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -14249,6 +15594,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType=''@directoryScopeType'',directoryScopeId=''@directoryScopeId'')':
     get:
       tags:
@@ -14345,6 +15696,12 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -14363,6 +15720,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
   /roleManagement/exchange/transitiveRoleAssignments:
     get:
       tags:
@@ -14411,6 +15774,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.unifiedRoleAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -14436,6 +15805,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/transitiveRoleAssignments/{unifiedRoleAssignment-id}':
     get:
@@ -14482,6 +15857,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -14513,6 +15894,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -14539,6 +15926,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/transitiveRoleAssignments/{unifiedRoleAssignment-id}/appScope':
     get:
@@ -14585,6 +15978,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -14616,6 +16015,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appScope'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -14642,6 +16047,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/transitiveRoleAssignments/{unifiedRoleAssignment-id}/directoryScope':
     get:
@@ -14688,6 +16099,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/transitiveRoleAssignments/{unifiedRoleAssignment-id}/principal':
     get:
@@ -14734,6 +16151,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   '/roleManagement/exchange/transitiveRoleAssignments/{unifiedRoleAssignment-id}/roleDefinition':
     get:
@@ -14780,6 +16203,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
       x-ms-docs-operation-type: operation
   /roleManagement/exchange/transitiveRoleAssignments/$count:
     get:
@@ -14795,6 +16224,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-01'
+        date: '2025-01-01'
+        version: 2025-01/PrivatePreview:microsoft.applicationAuthorization
+        description: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date.
 components:
   schemas:
     microsoft.graph.androidDeviceOwnerEnrollmentProfile:
@@ -14893,6 +16328,34 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Profile used to enroll Android Enterprise devices using Google's Cloud Management.
+    microsoft.graph.enrollmentTimeDeviceMembershipTargetResult:
+      title: enrollmentTimeDeviceMembershipTargetResult
+      type: object
+      properties:
+        enrollmentTimeDeviceMembershipTargetValidationStatuses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.enrollmentTimeDeviceMembershipTargetStatus'
+          description: A list of validation status of the memberships targetted to profile. This collection can contain a maximum of 1 elements.
+        validationSucceeded:
+          type: boolean
+          description: 'Indicates if validations succeeded for the device membership target. When ''true'', the device membership target validation found no issues. When ''false'', the device membership target validation found issues. default - false'
+      additionalProperties:
+        type: object
+      description: 'The EnrollmentTimeDeviceMembershipTargetResult entity represents the results of the set/get EnrollmentTimeDeviceMembershipTarget request. The set/get EnrollmentTimeDeviceMembershipTarget API validates the device membership targets specified by the admin to ensure that they exist, that they are of the proper type, and any other target requirements are met such as that the Intune Device Provisioning First Party App is an owner of the target. Failures other than validation will result in 500 else validationSucceeded will be true or false if any of the validation fails for EnrollmentTimeDeviceMembershipTarget.'
+    microsoft.graph.enrollmentTimeDeviceMembershipTarget:
+      title: enrollmentTimeDeviceMembershipTarget
+      type: object
+      properties:
+        targetId:
+          type: string
+          description: The unique identifiers of the targets that devices will become members of when enrolled with the asociated profile.
+          nullable: true
+        targetType:
+          $ref: '#/components/schemas/microsoft.graph.enrollmentTimeDeviceMembershipTargetType'
+      additionalProperties:
+        type: object
+      description: The EnrollmentTimeDeviceMembershipTarget entity represents the targets that devices will become members of when enrolled with the associated profile. The only device membership targets supported at this time is static security groups.
     microsoft.graph.androidForWorkEnrollmentProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16245,11 +17708,11 @@ components:
           properties:
             displayName:
               type: string
-              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable ID. Read only.'
+              description: Provides the display name of the app-specific resource represented by the app scope. Read only.
               nullable: true
             type:
               type: string
-              description: 'Describes the type of app-specific resource represented by the app scope. For display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read only.'
+              description: Describes the type of app-specific resource represented by the app scope. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -16499,6 +17962,36 @@ components:
           - value: wep
             description: WEP-Pre-shared-key
             name: wep
+    microsoft.graph.enrollmentTimeDeviceMembershipTargetStatus:
+      title: enrollmentTimeDeviceMembershipTargetStatus
+      type: object
+      properties:
+        targetId:
+          type: string
+          description: The unique identifiers of the targets that devices will become members of when enrolled with the asociated profile.
+          nullable: true
+        targetValidationErrorCode:
+          $ref: '#/components/schemas/microsoft.graph.enrollmentTimeDeviceMembershipTargetValidationErrorCode'
+      additionalProperties:
+        type: object
+      description: 'Represents the Validation status of the device membership targets. The set/get EnrollmentTimeDeviceMembershipTarget API validates the device membership targets specified by the admin to ensure that they exist, that they are of the proper type, and any other target requirements are met such as that the Intune Device Provisioning First Party App is an owner of the target.'
+    microsoft.graph.enrollmentTimeDeviceMembershipTargetType:
+      title: enrollmentTimeDeviceMembershipTargetType
+      enum:
+        - staticSecurityGroup
+        - unknownFutureValue
+      type: string
+      description: Represents the type of the targets that devices will become members of when enrolled with the associated profile. Possible values are staticSecurityGroup.
+      x-ms-enum:
+        name: enrollmentTimeDeviceMembershipTargetType
+        modelAsString: false
+        values:
+          - value: staticSecurityGroup
+            description: Indicates the device membership target specified refer to static Entra Security Groups.
+            name: staticSecurityGroup
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.appleOwnerTypeEnrollmentType:
       title: appleOwnerTypeEnrollmentType
       type: object
@@ -16925,6 +18418,7 @@ components:
         - singlePlatformRestriction
         - unknownFutureValue
         - enrollmentNotificationsConfiguration
+        - windowsRestore
       type: string
       description: Describes the TemplateFamily for the Template entity
       x-ms-enum:
@@ -16970,6 +18464,9 @@ components:
           - value: enrollmentNotificationsConfiguration
             description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
             name: enrollmentNotificationsConfiguration
+          - value: windowsRestore
+            description: Indicates the configuration is of type Windows Restore which refers to the tenant level Windows Backup and Restore settings a user receives during out-of-box experience (OOBE) Windows enrollment
+            name: windowsRestore
     microsoft.graph.deviceAndAppManagementAssignmentSource:
       title: deviceAndAppManagementAssignmentSource
       enum:
@@ -17770,6 +19267,39 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.enrollmentTimeDeviceMembershipTargetValidationErrorCode:
+      title: enrollmentTimeDeviceMembershipTargetValidationErrorCode
+      enum:
+        - securityGroupNotFound
+        - notSecurityGroup
+        - notStaticSecurityGroup
+        - firstPartyAppNotAnOwner
+        - securityGroupNotInCallerScope
+        - unknownFutureValue
+      type: string
+      description: 'Represents the Validation error of the device membership target.The API will validate the device membership targets specified by the admin to ensure that they exist, that they are of the proper type, and any other target requirements are met such as that the Intune Device Provisioning First Party App is an owner of the target.'
+      x-ms-enum:
+        name: enrollmentTimeDeviceMembershipTargetValidationErrorCode
+        modelAsString: false
+        values:
+          - value: securityGroupNotFound
+            description: Indicates device membership target cannot be found.
+            name: securityGroupNotFound
+          - value: notSecurityGroup
+            description: Indicates device membership target is not a security group.
+            name: notSecurityGroup
+          - value: notStaticSecurityGroup
+            description: Indicates device membership target which is security group but not a static one.
+            name: notStaticSecurityGroup
+          - value: firstPartyAppNotAnOwner
+            description: Indicates required first party app not the owner of that device membership target.
+            name: firstPartyAppNotAnOwner
+          - value: securityGroupNotInCallerScope
+            description: Indicates that device membership target of type security group is not in the RBAC scope of the caller.
+            name: securityGroupNotInCallerScope
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDeviceOwnerType:
       title: managedDeviceOwnerType
       enum:

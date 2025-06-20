@@ -3668,10 +3668,10 @@ paths:
       tags:
         - communications.call
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-beta
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -4030,6 +4030,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get aiInsights from communications
+      description: The AI insights generated for an online meeting. Read-only.
       operationId: communication.onlineMeeting_ListAiInsight
       parameters:
         - name: onlineMeeting-id
@@ -4120,6 +4121,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get aiInsights from communications
+      description: The AI insights generated for an online meeting. Read-only.
       operationId: communication.onlineMeeting_GetAiInsight
       parameters:
         - name: onlineMeeting-id
@@ -8281,6 +8283,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get aiInsights from users
+      description: The AI insights generated for an online meeting. Read-only.
       operationId: user.onlineMeeting_ListAiInsight
       parameters:
         - name: user-id
@@ -8387,6 +8390,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get aiInsights from users
+      description: The AI insights generated for an online meeting. Read-only.
       operationId: user.onlineMeeting_GetAiInsight
       parameters:
         - name: user-id
@@ -12676,11 +12680,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      summary: Get presence
+      description: Get a user's presence information.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -13851,6 +13855,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
             sequenceNumber:
               type: string
+              description: The lexicographically sortable String stamp that represents the version of a presence object.
               nullable: true
               readOnly: true
             statusMessage:
@@ -13928,6 +13933,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callAiInsight'
+              description: The AI insights generated for an online meeting. Read-only.
               x-ms-navigationProperty: true
             meetingAttendanceReport:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
@@ -13957,26 +13963,32 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.actionItem'
+              description: The collection of AI-generated action items. Read-only.
             callId:
               type: string
+              description: The ID for the online meeting call for which the callAiInsight was generated. Read-only.
               nullable: true
             contentCorrelationId:
               type: string
+              description: The unique ID that correlates the transcript from which the insights were generated. Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the corresponding transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the corresponding transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingNotes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingNote'
+              description: The collection of AI-generated meeting notes. Read-only.
             viewpoint:
               $ref: '#/components/schemas/microsoft.graph.callAiInsightViewPoint'
           additionalProperties:
@@ -14465,6 +14477,10 @@ components:
         isDeltaRosterEnabled:
           type: boolean
           description: Indicates whether delta roster is enabled for the call.
+          nullable: true
+        isInteractiveRosterEnabled:
+          type: boolean
+          description: Indicates whether delta roster filtering by participant interactivity is enabled.
           nullable: true
       additionalProperties:
         type: object
@@ -14994,12 +15010,15 @@ components:
       properties:
         ownerDisplayName:
           type: string
+          description: The display name of the owner of the action item.
           nullable: true
         text:
           type: string
+          description: The text content of the action item.
           nullable: true
         title:
           type: string
+          description: The title of the action item.
           nullable: true
       additionalProperties:
         type: object
@@ -15011,11 +15030,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingNoteSubpoint'
+          description: A collection of subpoints of the meeting note.
         text:
           type: string
+          description: The text of the meeting note.
           nullable: true
         title:
           type: string
+          description: The title of the meeting note.
           nullable: true
       additionalProperties:
         type: object
@@ -15027,6 +15049,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.mentionEvent'
+          description: The collection of AI-generated mention events.
       additionalProperties:
         type: object
     microsoft.graph.virtualEventExternalInformation:
@@ -16097,9 +16120,11 @@ components:
       properties:
         text:
           type: string
+          description: The text of the meeting note subpoint.
           nullable: true
         title:
           type: string
+          description: The title of the meeting note subpoint.
           nullable: true
       additionalProperties:
         type: object
@@ -16110,12 +16135,14 @@ components:
         eventDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time of the mention event. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         speaker:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         transcriptUtterance:
           type: string
+          description: The utterance in the online meeting transcript that contains the mention event.
           nullable: true
       additionalProperties:
         type: object
