@@ -46,6 +46,10 @@ directive:
       verb: Invoke
       subject: ^(AcceptUserCalendarEventInstance|AcceptUserCalendarView|DeclineUserCalendarEvent|DeclineUserCalendarViewInstance|ForwardUserCalendarEventInstance|ForwardUserCalendarView|SnoozeUserCalendarEventReminder|SnoozeUserCalendarViewInstanceReminder)$
     remove: true
+  - where:
+      verb: New
+      subject: ^(UserCalendarEventInstanceAttachmentUploadSession)$
+    remove: true
 #Remove cmdlet to avoid conflicts where alias has been set:[#3241](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3241)
   - where:
       verb: Get
