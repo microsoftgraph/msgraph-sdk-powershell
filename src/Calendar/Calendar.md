@@ -48,7 +48,7 @@ directive:
     remove: true
   - where:
       verb: New
-      subject: ^(UserCalendarEventInstanceAttachmentUploadSession)$
+      subject: ^(UserCalendarEventInstanceAttachmentUploadSession|UserCalendarViewExceptionOccurrenceAttachmentUploadSession)$
     remove: true
 #Remove cmdlet to avoid conflicts where alias has been set:[#3241](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3241)
   - where:
