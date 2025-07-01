@@ -7309,8 +7309,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceReports from solutions
-      description: The attendance reports of an online meeting. Read-only.
+      summary: List meetingAttendanceReports
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-beta
       operationId: solution.virtualEvent.townhall.session_ListAttendanceReport
       parameters:
         - name: virtualEventTownhall-id
@@ -7416,8 +7419,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceReports from solutions
-      description: The attendance reports of an online meeting. Read-only.
+      summary: Get meetingAttendanceReport
+      description: 'Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-beta
       operationId: solution.virtualEvent.townhall.session_GetAttendanceReport
       parameters:
         - name: virtualEventTownhall-id
@@ -12804,6 +12810,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             videoOnDemandWebUrl:
               type: string
+              description: The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
               nullable: true
             presenters:
               type: array
@@ -12935,7 +12942,7 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
@@ -13412,6 +13419,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
+            emailNotificationsSetting:
+              $ref: '#/components/schemas/microsoft.graph.emailNotificationsSetting'
             exchangeProtectionPolicies:
               type: array
               items:
@@ -13626,11 +13635,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -14470,6 +14479,21 @@ components:
                 type: string
                 nullable: true
               description: The list of email addresses to add to the OneDrive protection policy.
+          additionalProperties:
+            type: object
+    microsoft.graph.emailNotificationsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: emailNotificationsSetting
+          type: object
+          properties:
+            additionalEvents:
+              $ref: '#/components/schemas/microsoft.graph.notificationEventsType'
+            isEnabled:
+              type: boolean
+              description: Indicates whether notifications are enabled.
+            recipients:
+              $ref: '#/components/schemas/microsoft.graph.notificationRecipients'
           additionalProperties:
             type: object
     microsoft.graph.exchangeProtectionPolicy:
@@ -15332,6 +15356,28 @@ components:
               $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobStatus'
           additionalProperties:
             type: object
+    microsoft.graph.notificationEventsType:
+      title: notificationEventsType
+      enum:
+        - none
+        - restoreAndPolicyUpdates
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.notificationRecipients:
+      title: notificationRecipients
+      type: object
+      properties:
+        customRecipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.emailIdentity'
+          description: A list of users or groups that receive notifications.
+        role:
+          $ref: '#/components/schemas/microsoft.graph.notificationRecipientsType'
+      additionalProperties:
+        type: object
     microsoft.graph.granularMailboxRestoreArtifact:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
@@ -15385,7 +15431,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+              description: The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation.
             mailboxes:
               type: array
               items:
@@ -15435,7 +15481,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+              description: The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation.
             drives:
               type: array
               items:
@@ -15592,7 +15638,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+              description: The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation.
             siteWebUrls:
               type: array
               items:
@@ -15761,6 +15807,30 @@ components:
         - completedWithErrors
         - unknownFutureValue
       type: string
+    microsoft.graph.emailIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: emailIdentity
+          type: object
+          properties:
+            email:
+              type: string
+              description: Email address of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.notificationRecipientsType:
+      title: notificationRecipientsType
+      enum:
+        - none
+        - globalAdmins
+        - backupAdmins
+        - custom
+        - allAdmins
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.restoreArtifactBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

@@ -6662,11 +6662,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatableAssetGroup
-      description: Read the properties and relationships of an updatableAssetGroup object.
+      summary: Get azureADDevice
+      description: Read the properties of an azureADDevice object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-beta
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6741,11 +6741,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete azureADDevice
-      description: 'Delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered and automatically unenrolled from management for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.'
+      summary: Delete updatableAssetGroup
+      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -9345,11 +9345,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get complianceChange
-      description: Read the properties and relationships of a complianceChange object.
+      summary: Get contentApproval
+      description: Read the properties and relationships of a contentApproval object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -9401,11 +9401,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update complianceChange
-      description: Update the properties of a complianceChange object.
+      summary: Update contentApproval
+      description: Update the properties of a contentApproval object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_UpdateComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -9444,11 +9444,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete contentApproval
-      description: Delete a contentApproval object.
+      summary: Delete complianceChange
+      description: Delete a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_DeleteComplianceChange
       parameters:
         - name: updatePolicy-id

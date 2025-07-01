@@ -12735,6 +12735,1064 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/dataSecurityAndGovernance:
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get dataSecurityAndGovernance from security
+      operationId: security_GetDataSecurityAndGovernance
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantDataSecurityAndGovernance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Update the navigation property dataSecurityAndGovernance in security
+      operationId: security_UpdateDataSecurityAndGovernance
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantDataSecurityAndGovernance'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantDataSecurityAndGovernance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Delete navigation property dataSecurityAndGovernance for security
+      operationId: security_DeleteDataSecurityAndGovernance
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/dataSecurityAndGovernance/microsoft.graph.processContentAsync:
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke action processContentAsync
+      operationId: security.dataSecurityAndGovernance_processContentAsync
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                processContentRequests:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.processContentBatchRequest'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.processContentResponses'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /security/dataSecurityAndGovernance/protectionScopes:
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get protectionScopes from security
+      description: Container for actions related to computing tenant-wide data protection scopes.
+      operationId: security.dataSecurityAndGovernance_GetProtectionScope
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Update the navigation property protectionScopes in security
+      operationId: security.dataSecurityAndGovernance_UpdateProtectionScope
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Delete navigation property protectionScopes for security
+      operationId: security.dataSecurityAndGovernance_DeleteProtectionScope
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/dataSecurityAndGovernance/protectionScopes/microsoft.graph.compute:
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke action compute
+      operationId: security.dataSecurityAndGovernance.protectionScope_compute
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                activities:
+                  $ref: '#/components/schemas/microsoft.graph.userActivityTypes'
+                locations:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.policyLocation'
+                pivotOn:
+                  $ref: '#/components/schemas/microsoft.graph.policyPivotProperty'
+                deviceMetadata:
+                  $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+                integratedAppMetadata:
+                  $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.policyTenantScope'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /security/dataSecurityAndGovernance/sensitivityLabels:
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: List sensitivityLabels
+      description: List the sensitivity labels available to a specific user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta
+      operationId: security.dataSecurityAndGovernance_ListSensitivityLabel
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.sensitivityLabelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Create new navigation property to sensitivityLabels for security
+      operationId: security.dataSecurityAndGovernance_CreateSensitivityLabel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel-id}':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get sensitivityLabel
+      description: Get a sensitivity label available for the entire tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sensitivitylabel-get?view=graph-rest-beta
+      operationId: security.dataSecurityAndGovernance_GetSensitivityLabel
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Update the navigation property sensitivityLabels in security
+      operationId: security.dataSecurityAndGovernance_UpdateSensitivityLabel
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Delete navigation property sensitivityLabels for security
+      operationId: security.dataSecurityAndGovernance_DeleteSensitivityLabel
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel-id}/rights':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get usageRightsIncluded
+      description: Get the usage rights granted to the calling user for a specific sensitivity label that has admin-defined permissions.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/usagerightsincluded-get?view=graph-rest-beta
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_GetRight
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel-id}/sublabels':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get sublabels from security
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_ListSublabel
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.sensitivityLabelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Create new navigation property to sublabels for security
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_CreateSublabel
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get sublabels from security
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_GetSublabel
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: sensitivityLabel-id1
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Update the navigation property sublabels in security
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_UpdateSublabel
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: sensitivityLabel-id1
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Delete navigation property sublabels for security
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_DeleteSublabel
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: sensitivityLabel-id1
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}/rights':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get rights from security
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel.sublabel_GetRight
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: sensitivityLabel-id1
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel-id}/sublabels/$count':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get the number of the resource
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel.sublabel_GetCount
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel-id}/sublabels/microsoft.graph.computeInheritance(labelIds={labelIds},locale=''{locale}'',contentFormats={contentFormats})':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke function computeInheritance
+      description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel.sublabel_computeInheritance
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: labelIds
+          in: path
+          description: 'Usage: labelIds={labelIds}'
+          required: true
+          style: simple
+          schema:
+            type: array
+            items:
+              type: string
+        - name: locale
+          in: path
+          description: 'Usage: locale=''{locale}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: contentFormats
+          in: path
+          description: 'Usage: contentFormats={contentFormats}'
+          required: true
+          style: simple
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/security/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel-id}/sublabels/microsoft.graph.computeRightsAndInheritance':
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke action computeRightsAndInheritance
+      description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel.sublabel_computeRightsAndInheritance
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                delegatedUserEmail:
+                  type: string
+                  nullable: true
+                locale:
+                  type: string
+                  nullable: true
+                protectedContents:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.protectedContent'
+                supportedContentFormats:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.computeRightsAndInheritanceResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/security/dataSecurityAndGovernance/sensitivityLabels/{sensitivityLabel-id}/sublabels/microsoft.graph.evaluate':
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke action evaluate
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel.sublabel_evaluate
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: The unique identifier of sensitivityLabel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                discoveredSensitiveTypes:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.discoveredSensitiveType'
+                currentLabel:
+                  $ref: '#/components/schemas/microsoft.graph.currentLabel'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /security/dataSecurityAndGovernance/sensitivityLabels/$count:
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get the number of the resource
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/dataSecurityAndGovernance/sensitivityLabels/microsoft.graph.computeInheritance(labelIds={labelIds},locale=''{locale}'',contentFormats={contentFormats})':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke function computeInheritance
+      description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_computeInheritance
+      parameters:
+        - name: labelIds
+          in: path
+          description: 'Usage: labelIds={labelIds}'
+          required: true
+          style: simple
+          schema:
+            type: array
+            items:
+              type: string
+        - name: locale
+          in: path
+          description: 'Usage: locale=''{locale}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: contentFormats
+          in: path
+          description: 'Usage: contentFormats={contentFormats}'
+          required: true
+          style: simple
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /security/dataSecurityAndGovernance/sensitivityLabels/microsoft.graph.computeRightsAndInheritance:
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke action computeRightsAndInheritance
+      description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_computeRightsAndInheritance
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                delegatedUserEmail:
+                  type: string
+                  nullable: true
+                locale:
+                  type: string
+                  nullable: true
+                protectedContents:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.protectedContent'
+                supportedContentFormats:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.computeRightsAndInheritanceResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /security/dataSecurityAndGovernance/sensitivityLabels/microsoft.graph.evaluate:
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke action evaluate
+      operationId: security.dataSecurityAndGovernance.sensitivityLabel_evaluate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                discoveredSensitiveTypes:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.discoveredSensitiveType'
+                currentLabel:
+                  $ref: '#/components/schemas/microsoft.graph.currentLabel'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/domainSecurityProfiles:
     get:
       tags:
@@ -14843,7 +15901,6 @@ paths:
       tags:
         - security.informationProtection
       summary: Get parent from security
-      description: The parent label associated with a child label. Null if the label has no parent.
       operationId: security.informationProtection.sensitivityLabel_GetParent
       parameters:
         - name: sensitivityLabel-id
@@ -30393,7 +31450,6 @@ paths:
       tags:
         - users.security
       summary: Get parent from users
-      description: The parent label associated with a child label. Null if the label has no parent.
       operationId: user.security.informationProtection.sensitivityLabel_GetParent
       parameters:
         - name: user-id
@@ -30781,6 +31837,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.security.collaborationRoot'
         dataDiscovery:
           $ref: '#/components/schemas/microsoft.graph.security.dataDiscoveryRoot'
+        dataSecurityAndGovernance:
+          $ref: '#/components/schemas/microsoft.graph.tenantDataSecurityAndGovernance'
         domainSecurityProfiles:
           type: array
           items:
@@ -33220,6 +34278,7 @@ components:
               nullable: true
             clientType:
               type: string
+              description: 'Shows the type of client that sent the message (for example, REST).'
               nullable: true
             contexts:
               type: array
@@ -33243,6 +34302,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailDlpRuleInfo'
+              description: Data loss prevention rules configured in purview.
             emailClusterId:
               type: string
               description: The identifier for the group of similar emails clustered based on heuristic analysis of their content.
@@ -33254,9 +34314,11 @@ components:
               description: The name of the Exchange transport rules (ETRs) associated with the email.
             forwardingDetail:
               type: string
+              description: Email smtp forwarding details.
               nullable: true
             inboundConnectorFormattedName:
               type: string
+              description: Custom instructions name that defines organizational mail flow and how the email was routed.
               nullable: true
             internetMessageId:
               type: string
@@ -33300,9 +34362,11 @@ components:
               nullable: true
             policyType:
               type: string
+              description: Type of policy configured that defines the delivery action on email.
               nullable: true
             primaryOverrideSource:
               type: string
+              description: 'Shows the organization or user setting that altered the intended delivery location of the message (allowed instead of blocked, or blocked instead of allowed).'
               nullable: true
             recipientDetail:
               $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailRecipientDetail'
@@ -33335,6 +34399,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.threatDetectionDetail'
+              description: Information about threats detected in the email.
             threatTypes:
               type: array
               items:
@@ -33344,6 +34409,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.timelineEvent'
+              description: Delivery and post-delivery events that happened to the email.
             urls:
               type: array
               items:
@@ -33527,6 +34593,288 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.security.discoveredCloudAppUser'
               description: The list of users who access the app.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.tenantDataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
+        - title: tenantDataSecurityAndGovernance
+          type: object
+          properties:
+            protectionScopes:
+              $ref: '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
+          additionalProperties:
+            type: object
+    microsoft.graph.processContentBatchRequest:
+      title: processContentBatchRequest
+      type: object
+      properties:
+        contentToProcess:
+          $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+        requestId:
+          type: string
+          description: A unique identifier provided by the client to correlate this specific request item within the batch.
+          nullable: true
+        userId:
+          type: string
+          description: The unique identifier (Object ID or UPN) of the user in whose context the content should be processed.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentResponses:
+      title: processContentResponses
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: The unique identifier that matches the requestId provided in the corresponding processContentBatchRequest.
+          nullable: true
+        results:
+          $ref: '#/components/schemas/microsoft.graph.processContentResponse'
+      additionalProperties:
+        type: object
+    microsoft.graph.tenantProtectionScopeContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tenantProtectionScopeContainer
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.userActivityTypes:
+      title: userActivityTypes
+      enum:
+        - none
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.policyLocation:
+      title: policyLocation
+      type: object
+      properties:
+        value:
+          type: string
+          description: 'The actual value representing the location (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
+      additionalProperties:
+        type: object
+    microsoft.graph.policyPivotProperty:
+      title: policyPivotProperty
+      enum:
+        - none
+        - activity
+        - location
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceMetadata:
+      title: deviceMetadata
+      type: object
+      properties:
+        deviceType:
+          type: string
+          description: 'Optional. The general type of the device (for example, ''Managed'', ''Unmanaged'').'
+          nullable: true
+        ipAddress:
+          type: string
+          description: The Internet Protocol (IP) address of the device.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.integratedApplicationMetadata:
+      title: integratedApplicationMetadata
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the integrated application.
+          nullable: true
+        version:
+          type: string
+          description: The version number of the integrated application.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.policyTenantScope:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyScopeBase'
+        - title: policyTenantScope
+          type: object
+          properties:
+            policyScope:
+              $ref: '#/components/schemas/microsoft.graph.policyBinding'
+          additionalProperties:
+            type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            applicableTo:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
+            applicationMode:
+              $ref: '#/components/schemas/microsoft.graph.applicationMode'
+            assignedPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
+            autoLabeling:
+              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
+            autoTooltip:
+              type: string
+              nullable: true
+            color:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEnabled:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            labelActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
+    microsoft.graph.protectedContent:
+      title: protectedContent
+      type: object
+      properties:
+        cid:
+          type: string
+          description: The content id
+          nullable: true
+        format:
+          type: string
+          description: The content format.
+          nullable: true
+        labelId:
+          type: string
+          description: The unique identifier for the sensitivity label applied to the content.
+      additionalProperties:
+        type: object
+    microsoft.graph.computeRightsAndInheritanceResult:
+      title: computeRightsAndInheritanceResult
+      type: object
+      properties:
+        contentRights:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.labelContentRight'
+          x-ms-navigationProperty: true
+        inheritedLabel:
+          $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        sensitivityLabels:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
+    microsoft.graph.discoveredSensitiveType:
+      title: discoveredSensitiveType
+      type: object
+      properties:
+        classificationAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.classificationAttribute'
+        confidence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        count:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        id:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          format: uuid
+      additionalProperties:
+        type: object
+    microsoft.graph.currentLabel:
+      title: currentLabel
+      type: object
+      properties:
+        applicationMode:
+          $ref: '#/components/schemas/microsoft.graph.applicationMode'
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.evaluateLabelJobResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.jobResponseBase'
+        - title: evaluateLabelJobResponse
+          type: object
+          properties:
+            result:
+              $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResultGroup'
           additionalProperties:
             type: object
     microsoft.graph.domainSecurityProfile:
@@ -34765,7 +36113,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.complianceInformation'
-              description: The collection of compliance information associated with secure score control
+              description: The collection of compliance information associated with secure score control. Not implemented. Currently returns null.
             controlCategory:
               type: string
               description: 'Control action category (Account, Data, Device, Apps, Infrastructure).'
@@ -35528,6 +36876,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
+            dataSecurityAndGovernance:
+              $ref: '#/components/schemas/microsoft.graph.userDataSecurityAndGovernance'
             deviceEnrollmentConfigurations:
               type: array
               items:
@@ -37862,6 +39212,7 @@ components:
         - microsoftDefenderThreatIntelligenceAnalytics
         - builtInMl
         - microsoftInsiderRiskManagement
+        - microsoftThreatIntelligence
         - microsoftSentinel
       type: string
     microsoft.graph.security.alertDetermination:
@@ -37936,6 +39287,7 @@ components:
         - microsoftDefenderForCloud
         - microsoftSentinel
         - microsoftInsiderRiskManagement
+        - microsoftThreatIntelligence
       type: string
     microsoft.graph.security.alertSeverity:
       title: alertSeverity
@@ -40226,13 +41578,16 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the review set was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: The description of the data set.
               nullable: true
             displayName:
               type: string
+              description: The name of the data set. The name is unique with a maximum limit of 64 characters.
               nullable: true
           additionalProperties:
             type: object
@@ -40465,6 +41820,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.security.detonationDetails'
         fileExtension:
           type: string
+          description: Extension of the file.
           nullable: true
         fileName:
           type: string
@@ -40474,6 +41830,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: Size of the file.
           format: int32
           nullable: true
         fileType:
@@ -40482,6 +41839,7 @@ components:
           nullable: true
         malwareFamily:
           type: string
+          description: The threat name associated with the threat type.
           nullable: true
         sha256:
           type: string
@@ -40489,6 +41847,7 @@ components:
           nullable: true
         tenantAllowBlockListDetailInfo:
           type: string
+          description: Details of entries in tenant allow/block list configured by tenant.
           nullable: true
         threatType:
           $ref: '#/components/schemas/microsoft.graph.security.threatType'
@@ -40531,9 +41890,11 @@ components:
       properties:
         name:
           type: string
+          description: Name of the the data loss prevention rule.
           nullable: true
         ruleId:
           type: string
+          description: Unique identifier of the data loss prevention rule.
           nullable: true
       additionalProperties:
         type: object
@@ -40559,11 +41920,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.security.deliveryAction'
         latestThreats:
           type: string
+          description: Latest known threat on the email.
           nullable: true
         location:
           $ref: '#/components/schemas/microsoft.graph.security.deliveryLocation'
         originalThreats:
           type: string
+          description: Threats identified at the time of delivery.
           nullable: true
       additionalProperties:
         type: object
@@ -40576,8 +41939,10 @@ components:
           items:
             type: string
             nullable: true
+          description: Recipient address in the cc field.
         domainName:
           type: string
+          description: Domain name of the recipient.
           nullable: true
       additionalProperties:
         type: object
@@ -40587,17 +41952,21 @@ components:
       properties:
         displayName:
           type: string
+          description: Display name of sender from address.
           nullable: true
         domainCreationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Date and time of creation of the sender domain.
           format: date-time
           nullable: true
         domainName:
           type: string
+          description: Registered name of the domain.
           nullable: true
         domainOwner:
           type: string
+          description: Owner of the domain.
           nullable: true
         fromAddress:
           type: string
@@ -40609,6 +41978,7 @@ components:
           nullable: true
         location:
           type: string
+          description: Location of the domain.
           nullable: true
         mailFromAddress:
           type: string
@@ -40616,6 +41986,7 @@ components:
           nullable: true
         mailFromDomainName:
           type: string
+          description: Domain name of sender mail from address.
           nullable: true
       additionalProperties:
         type: object
@@ -40625,12 +41996,15 @@ components:
       properties:
         confidenceLevel:
           type: string
+          description: Indicates the confidence level in the threat detection.
           nullable: true
         priorityAccountProtection:
           type: string
+          description: Indicates if the account has priority protection enabled.
           nullable: true
         threats:
           type: string
+          description: Lists the detected threats.
           nullable: true
       additionalProperties:
         type: object
@@ -40651,13 +42025,16 @@ components:
         eventDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the event occurred.
           format: date-time
           nullable: true
         eventDetails:
           type: string
+          description: Additional details or context about the event.
           nullable: true
         eventResult:
           type: string
+          description: 'The outcome or result of the event, such as delivery location or action taken.'
           nullable: true
         eventSource:
           $ref: '#/components/schemas/microsoft.graph.security.eventSource'
@@ -40666,6 +42043,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Collection of threats identified or associated with this event.
         eventType:
           $ref: '#/components/schemas/microsoft.graph.security.timelineEventType'
       additionalProperties:
@@ -40682,6 +42060,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.security.detonationDetails'
         tenantAllowBlockListDetailInfo:
           type: string
+          description: Details of entries in tenant allow/block list configured by tenant.
           nullable: true
         threatType:
           $ref: '#/components/schemas/microsoft.graph.security.threatType'
@@ -40827,6 +42206,9 @@ components:
         - generativeAi
         - unknown
         - unknownFutureValue
+        - aiModelProvider
+        - mcpServer
+        - clientAiApp
       type: string
     microsoft.graph.security.discoveredCloudAppInfo:
       allOf:
@@ -41042,6 +42424,268 @@ components:
         userIdentifier:
           type: string
           description: The identifier of a user who accessed the discovered cloud app.
+      additionalProperties:
+        type: object
+    microsoft.graph.dataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataSecurityAndGovernance
+          type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.processContentRequest:
+      title: processContentRequest
+      type: object
+      properties:
+        activityMetadata:
+          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
+        contentEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
+          description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        integratedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        protectedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentResponse:
+      title: processContentResponse
+      type: object
+      properties:
+        policyActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dlpActionInfo'
+          description: 'A collection of policy actions (like DLP actions) triggered by the processed content. NOTE: Currently, the only policyAction supported in processContentResponse is ''_restrictAccess'''
+        processingErrors:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processingError'
+          description: A collection of errors encountered during the content processing.
+        protectionScopeState:
+          $ref: '#/components/schemas/microsoft.graph.protectionScopeState'
+      additionalProperties:
+        type: object
+    microsoft.graph.policyScopeBase:
+      title: policyScopeBase
+      type: object
+      properties:
+        activities:
+          $ref: '#/components/schemas/microsoft.graph.userActivityTypes'
+        executionMode:
+          $ref: '#/components/schemas/microsoft.graph.executionMode'
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          description: The locations (like domains or URLs) to be protected. Required.
+        policyActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dlpActionInfo'
+          description: The enforcement actions to take if the policy conditions are met within this scope. Required.
+      additionalProperties:
+        type: object
+    microsoft.graph.policyBinding:
+      title: policyBinding
+      type: object
+      properties:
+        exclusions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.scopeBase'
+          description: Specifies the users or groups to be explicitly excluded from this policy scope. Can be null or empty.
+        inclusions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.scopeBase'
+          description: Specifies the users or groups to be included in this policy scope. Often set to tenantScope for 'All users'.
+      additionalProperties:
+        type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sensitivityLabelTarget:
+      title: sensitivityLabelTarget
+      enum:
+        - email
+        - site
+        - unifiedGroup
+        - teamwork
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.applicationMode:
+      title: applicationMode
+      enum:
+        - manual
+        - automatic
+        - recommended
+      type: string
+    microsoft.graph.labelPolicy:
+      title: labelPolicy
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the label policy.
+        name:
+          type: string
+          description: The display name of the label policy.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.autoLabeling:
+      title: autoLabeling
+      type: object
+      properties:
+        message:
+          type: string
+          description: The message displayed to the user when the label is applied automatically.
+          nullable: true
+        sensitiveTypeIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
+      additionalProperties:
+        type: object
+    microsoft.graph.labelActionBase:
+      title: labelActionBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.labelContentRight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: labelContentRight
+          type: object
+          properties:
+            cid:
+              type: string
+              description: The content identifier.
+              nullable: true
+            format:
+              type: string
+              description: The content format.
+              nullable: true
+            label:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+          additionalProperties:
+            type: object
+    microsoft.graph.classificationAttribute:
+      title: classificationAttribute
+      type: object
+      properties:
+        confidence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        count:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.jobResponseBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: jobResponseBase
+          type: object
+          properties:
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.classificationError'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+            type:
+              type: string
+              nullable: true
+            userId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.evaluateLabelJobResultGroup:
+      title: evaluateLabelJobResultGroup
+      type: object
+      properties:
+        automatic:
+          $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResult'
+        recommended:
+          $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResult'
       additionalProperties:
         type: object
     microsoft.graph.reputationCategory:
@@ -41788,11 +43432,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -43270,6 +44914,18 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userDataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
+        - title: userDataSecurityAndGovernance
+          type: object
+          properties:
+            activities:
+              $ref: '#/components/schemas/microsoft.graph.activitiesContainer'
+            protectionScopes:
+              $ref: '#/components/schemas/microsoft.graph.userProtectionScopeContainer'
+          additionalProperties:
+            type: object
     microsoft.graph.deviceEnrollmentConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43582,6 +45238,12 @@ components:
         - title: employeeExperienceUser
           type: object
           properties:
+            assignedRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRole'
+              description: Represents the collection of Viva Engage roles assigned to a user.
+              x-ms-navigationProperty: true
             learningCourseActivities:
               type: array
               items:
@@ -44493,7 +46155,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -44641,6 +46303,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callAiInsight'
+              description: The AI insights generated for an online meeting. Read-only.
               x-ms-navigationProperty: true
             meetingAttendanceReport:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
@@ -44916,6 +46579,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
             sequenceNumber:
               type: string
+              description: The lexicographically sortable String stamp that represents the version of a presence object.
               nullable: true
               readOnly: true
             statusMessage:
@@ -46855,6 +48519,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabelCollectionResponse:
+      title: Collection of sensitivityLabel
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.domainSecurityProfileCollectionResponse:
       title: Collection of domainSecurityProfile
       type: object
@@ -48655,57 +50332,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.sensitivityLabel:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: sensitivityLabel
-          type: object
-          properties:
-            applicableTo:
-              $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
-            applicationMode:
-              $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
-            description:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            isDefault:
-              type: boolean
-              nullable: true
-            isEndpointProtectionEnabled:
-              type: boolean
-              nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
-            name:
-              type: string
-              nullable: true
-            priority:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: number
-              format: int32
-              nullable: true
-            toolTip:
-              type: string
-              nullable: true
-            sublabels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.sensitivityPolicySettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -48851,7 +50477,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. Any value under 45 minutes after the time of the request is automatically set to 45 minutes after the request time. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -49906,6 +51532,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.compromiseIndicator'
+          description: Represents indicators and its associated verdict that suggests whether an email is compromised.
         detonationBehaviourDetails:
           $ref: '#/components/schemas/microsoft.graph.security.detonationBehaviourDetails'
         detonationChain:
@@ -49914,6 +51541,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.security.detonationObservables'
         detonationScreenshotUri:
           type: string
+          description: 'Show any screenshots that were captured during detonation. No screenshots are captured if the URL opens into a link that directly downloads a file. However, you see the downloaded file in the detonation chain.'
           nullable: true
         detonationVerdict:
           type: string
@@ -50074,6 +51702,131 @@ components:
         - unknownFutureValue
         - v4
       type: string
+    microsoft.graph.activityMetadata:
+      title: activityMetadata
+      type: object
+      properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.userActivityType'
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentMetadataBase:
+      title: processContentMetadataBase
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/microsoft.graph.contentBase'
+        correlationId:
+          type: string
+          description: 'An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
+          format: date-time
+        identifier:
+          type: string
+          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
+        isTruncated:
+          type: boolean
+          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
+        length:
+          type: number
+          description: The length of the original content in bytes.
+          format: int64
+          nullable: true
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
+          format: date-time
+        name:
+          type: string
+          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
+        sequenceNumber:
+          type: number
+          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectedApplicationMetadata:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        - title: protectedApplicationMetadata
+          type: object
+          properties:
+            applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          additionalProperties:
+            type: object
+    microsoft.graph.dlpActionInfo:
+      title: dlpActionInfo
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.processingError:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.classificationError'
+        - title: processingError
+          type: object
+          properties:
+            errorType:
+              $ref: '#/components/schemas/microsoft.graph.contentProcessingErrorType'
+          additionalProperties:
+            type: object
+    microsoft.graph.protectionScopeState:
+      title: protectionScopeState
+      enum:
+        - notModified
+        - modified
+        - unknownFutureValue
+      type: string
+    microsoft.graph.executionMode:
+      title: executionMode
+      enum:
+        - evaluateInline
+        - evaluateOffline
+        - unknownFutureValue
+      type: string
+    microsoft.graph.scopeBase:
+      title: scopeBase
+      type: object
+      properties:
+        identity:
+          type: string
+          description: 'The identifier for the scope. This could be a user ID, group ID, or a keyword like ''All'' for tenant scope.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.classificationError:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
+        - title: classificationError
+          type: object
+          properties:
+            details:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
+              description: A collection of more specific errors contributing to the overall error.
+          additionalProperties:
+            type: object
+    microsoft.graph.evaluateLabelJobResult:
+      title: evaluateLabelJobResult
+      type: object
+      properties:
+        responsiblePolicy:
+          $ref: '#/components/schemas/microsoft.graph.responsiblePolicy'
+        responsibleSensitiveTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.responsibleSensitiveType'
+        sensitivityLabel:
+          $ref: '#/components/schemas/microsoft.graph.matchingLabel'
+      additionalProperties:
+        type: object
     microsoft.graph.security.networkAdapter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -50265,6 +52018,7 @@ components:
       type: object
       additionalProperties:
         type: object
+      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.status:
       title: status
       enum:
@@ -50799,6 +52553,11 @@ components:
             isRemoteDesktopProtocolEnabled:
               type: boolean
               description: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+            approvedClientApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvedClientApp'
+              x-ms-navigationProperty: true
             targetDeviceGroups:
               type: array
               items:
@@ -51731,6 +53490,27 @@ components:
           $ref: '#/components/schemas/microsoft.graph.websiteType'
       additionalProperties:
         type: object
+    microsoft.graph.activitiesContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: activitiesContainer
+          type: object
+          properties:
+            contentActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentActivity'
+              description: Collection of activity logs related to content processing.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userProtectionScopeContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userProtectionScopeContainer
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.deviceEnrollmentConfigurationType:
       title: deviceEnrollmentConfigurationType
       enum:
@@ -51747,6 +53527,7 @@ components:
         - singlePlatformRestriction
         - unknownFutureValue
         - enrollmentNotificationsConfiguration
+        - windowsRestore
       type: string
       description: Describes the TemplateFamily for the Template entity
       x-ms-enum:
@@ -51792,6 +53573,9 @@ components:
           - value: enrollmentNotificationsConfiguration
             description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
             name: enrollmentNotificationsConfiguration
+          - value: windowsRestore
+            description: Indicates the configuration is of type Windows Restore which refers to the tenant level Windows Backup and Restore settings a user receives during out-of-box experience (OOBE) Windows enrollment
+            name: windowsRestore
     microsoft.graph.enrollmentConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -51934,6 +53718,24 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.engagementRole:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRole
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the role.
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
+              description: Users who have been assigned this role.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Represents a Viva Engage role and its members
     microsoft.graph.learningCourseActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -52737,6 +54539,8 @@ components:
         - androidnGMS
         - chromeOS
         - linux
+        - visionOS
+        - tvOS
         - blackberry
         - palm
         - unknown
@@ -52816,6 +54620,12 @@ components:
           - value: linux
             description: Linux device.
             name: linux
+          - value: visionOS
+            description: Indicates managed device is running on visionOS operating system.
+            name: visionOS
+          - value: tvOS
+            description: Indicates managed device is running on tvOS operating system.
+            name: tvOS
           - value: blackberry
             description: Blackberry.
             name: blackberry
@@ -54226,26 +56036,32 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.actionItem'
+              description: The collection of AI-generated action items. Read-only.
             callId:
               type: string
+              description: The ID for the online meeting call for which the callAiInsight was generated. Read-only.
               nullable: true
             contentCorrelationId:
               type: string
+              description: The unique ID that correlates the transcript from which the insights were generated. Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the corresponding transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the corresponding transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingNotes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingNote'
+              description: The collection of AI-generated meeting notes. Read-only.
             viewpoint:
               $ref: '#/components/schemas/microsoft.graph.callAiInsightViewPoint'
           additionalProperties:
@@ -56106,21 +57922,21 @@ components:
             recipientActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time when the recipient approved or declined the request.
               format: date-time
               nullable: true
               readOnly: true
             recipientActionMessage:
               type: string
-              description: Custom message sent by recipient of the offer shift request.
+              description: The message sent by the recipient regarding the request.
               nullable: true
             recipientUserId:
               type: string
-              description: User id of the recipient of the offer shift request.
+              description: The recipient's user ID.
               nullable: true
             senderShiftId:
               type: string
-              description: User id of the sender of the offer shift request.
+              description: The sender's shift ID.
               nullable: true
           additionalProperties:
             type: object
@@ -56244,7 +58060,7 @@ components:
           properties:
             recipientShiftId:
               type: string
-              description: Shift ID for the recipient user with whom the request is to swap.
+              description: The recipient's Shift ID
               nullable: true
           additionalProperties:
             type: object
@@ -56308,13 +58124,13 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off ends in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off starts in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             timeOffReasonId:
@@ -57688,58 +59504,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.sensitivityLabelTarget:
-      title: sensitivityLabelTarget
-      enum:
-        - email
-        - site
-        - unifiedGroup
-        - teamwork
-        - unknownFutureValue
-      type: string
-      x-ms-enum-flags:
-        isFlags: true
-    microsoft.graph.applicationMode:
-      title: applicationMode
-      enum:
-        - manual
-        - automatic
-        - recommended
-      type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.threatCategory:
       title: threatCategory
       enum:
@@ -58125,11 +59889,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -58437,6 +60201,7 @@ components:
       properties:
         value:
           type: string
+          description: Indicator.
           nullable: true
         verdict:
           $ref: '#/components/schemas/microsoft.graph.security.verdictCategory'
@@ -58448,32 +60213,41 @@ components:
       properties:
         actionStatus:
           type: string
+          description: 'The status of the action performed during detonation (e.g., ''Successful'', ''Failed'', ''Blocked'').'
           nullable: true
         behaviourCapability:
           type: string
+          description: Categorizes the capability or type of behavior observed.
           nullable: true
         behaviourGroup:
           type: string
+          description: Groups related behaviors together for classification purposes.
           nullable: true
         details:
           type: string
+          description: More contextual information about the observed behavior or action.
           nullable: true
         eventDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the behavior or action was observed during detonation.
           format: date-time
           nullable: true
         operation:
           type: string
+          description: The specific operation or action that was performed.
           nullable: true
         processId:
           type: string
+          description: The unique identifier of the process involved in the behavior.
           nullable: true
         processName:
           type: string
+          description: The name of the process that performed or was involved in the behavior.
           nullable: true
         target:
           type: string
+          description: The target of the operation.
           nullable: true
       additionalProperties:
         type: object
@@ -58514,6 +60288,122 @@ components:
             type: string
             nullable: true
           description: The list of all dropped files in the detonation.
+      additionalProperties:
+        type: object
+    microsoft.graph.userActivityType:
+      title: userActivityType
+      enum:
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+    microsoft.graph.contentBase:
+      title: contentBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.contentProcessingErrorType:
+      title: contentProcessingErrorType
+      enum:
+        - transient
+        - permanent
+        - unknownFutureValue
+      type: string
+    microsoft.graph.classifcationErrorBase:
+      title: classifcationErrorBase
+      type: object
+      properties:
+        code:
+          type: string
+          description: A service-defined error code string.
+          nullable: true
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.classificationInnerError'
+        message:
+          type: string
+          description: A human-readable representation of the error.
+          nullable: true
+        target:
+          type: string
+          description: 'The target of the error (for example, the specific property or item causing the issue).'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.responsiblePolicy:
+      title: responsiblePolicy
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.responsibleSensitiveType:
+      title: responsibleSensitiveType
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        publisherName:
+          type: string
+          nullable: true
+        rulePackageId:
+          type: string
+          nullable: true
+        rulePackageType:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.matchingLabel:
+      title: matchingLabel
+      type: object
+      properties:
+        applicationMode:
+          $ref: '#/components/schemas/microsoft.graph.applicationMode'
+        description:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        isEndpointProtectionEnabled:
+          type: boolean
+          nullable: true
+        labelActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.labelActionBase'
+        name:
+          type: string
+          nullable: true
+        policyTip:
+          type: string
+          nullable: true
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        toolTip:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.security.impactedAsset:
@@ -58804,6 +60694,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.scopeSensitivityLabels'
       additionalProperties:
         type: object
+    microsoft.graph.approvedClientApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvedClientApp
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.targetDeviceGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -59014,17 +60915,21 @@ components:
           properties:
             code:
               type: string
+              description: PIN of the user. It is between 8-20 digits as configured in the QR code authentication method policy. The code is temporary when issued by admin but permanent after the user changes it at the first login attempt. This PIN can be reset by the admin but not the user.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the PIN was created.
               format: date-time
               nullable: true
             forceChangePinNextSignIn:
               type: boolean
+              description: Defaults to true for a temporary PIN.
               nullable: true
             updatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the PIN was updated.
               format: date-time
               nullable: true
           additionalProperties:
@@ -59038,11 +60943,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the QR code was created.
               format: date-time
               nullable: true
             expireDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Temporary QR code lifetime is between 1-12 hours. Standard QR code lifetime is in days and max. is 395 days (13 months) and default value is 365 days (12 months).
               format: date-time
               nullable: true
             image:
@@ -59050,11 +60957,13 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the QR code was last used for a successful sign-in.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the QR code becomes active and available to use.
               format: date-time
               nullable: true
           additionalProperties:
@@ -59067,6 +60976,10 @@ components:
           properties:
             userIdentityType:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
+            userPrincipalName:
+              type: string
+              description: User principal name (UPN) of the user.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.eventMessageDetail:
@@ -59405,6 +61318,24 @@ components:
         - blog
         - profile
       type: string
+    microsoft.graph.contentActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentActivity
+          type: object
+          properties:
+            contentMetadata:
+              $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+            scopeIdentifier:
+              type: string
+              description: The scope identified from computed protection scopes.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.deviceAndAppManagementAssignmentSource:
       title: deviceAndAppManagementAssignmentSource
       enum:
@@ -59461,6 +61392,28 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.engagementRoleMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRoleMember
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp when the role was assigned to the user.
+              format: date-time
+              readOnly: true
+            userId:
+              type: string
+              description: The Microsoft Entra ID of the user who has the role assigned.
+              nullable: true
+              readOnly: true
+            user:
+              $ref: '#/components/schemas/microsoft.graph.user'
+          additionalProperties:
+            type: object
+          description: Entity to represent the assignment of a role to a user.
     microsoft.graph.courseStatus:
       title: courseStatus
       enum:
@@ -61030,12 +62983,15 @@ components:
       properties:
         ownerDisplayName:
           type: string
+          description: The display name of the owner of the action item.
           nullable: true
         text:
           type: string
+          description: The text content of the action item.
           nullable: true
         title:
           type: string
+          description: The title of the action item.
           nullable: true
       additionalProperties:
         type: object
@@ -61047,11 +63003,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingNoteSubpoint'
+          description: A collection of subpoints of the meeting note.
         text:
           type: string
+          description: The text of the meeting note.
           nullable: true
         title:
           type: string
+          description: The title of the meeting note.
           nullable: true
       additionalProperties:
         type: object
@@ -61063,6 +63022,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.mentionEvent'
+          description: The collection of AI-generated mention events.
       additionalProperties:
         type: object
     microsoft.graph.virtualEventExternalInformation:
@@ -62210,7 +64170,7 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
@@ -62354,27 +64314,33 @@ components:
             managerActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             managerActionMessage:
               type: string
+              description: The message sent by the manager regarding the scheduleChangeRequest. Optional.
               nullable: true
             managerUserId:
               type: string
+              description: The user ID of the manager who approved or declined the scheduleChangeRequest.
               nullable: true
               readOnly: true
             senderDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             senderMessage:
               type: string
+              description: The message sent by the sender of the scheduleChangeRequest. Optional.
               nullable: true
             senderUserId:
               type: string
+              description: The user ID of the sender of the scheduleChangeRequest.
               nullable: true
               readOnly: true
             state:
@@ -63611,6 +65577,7 @@ components:
         - driveItem
         - user
         - teamsChannel
+        - onlineMeeting
         - plannerTask
       type: string
     microsoft.graph.plannerCreationSourceKind:
@@ -63767,6 +65734,30 @@ components:
         - undefined
         - unknownFutureValue
       type: string
+    microsoft.graph.classificationInnerError:
+      title: classificationInnerError
+      type: object
+      properties:
+        activityId:
+          type: string
+          description: The activity ID associated with the request that generated the error.
+          nullable: true
+        clientRequestId:
+          type: string
+          description: 'The client request ID, if provided by the caller.'
+          nullable: true
+        code:
+          type: string
+          description: 'A more specific, potentially internal, error code string.'
+          nullable: true
+        errorDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time the inner error occurred.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.printerCapabilities:
       title: printerCapabilities
       type: object
@@ -64573,18 +66564,21 @@ components:
       properties:
         binaryValue:
           type: string
+          description: The binary representation of the QR code.
           format: base64url
           nullable: true
         errorCorrectionLevel:
           $ref: '#/components/schemas/microsoft.graph.errorCorrectionLevel'
         rawContent:
           type: string
+          description: Base64-encoded raw content of the QR code.
           format: base64url
           nullable: true
         version:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: Version to create QR code image.
           format: int32
           nullable: true
       additionalProperties:
@@ -65312,9 +67306,11 @@ components:
       properties:
         text:
           type: string
+          description: The text of the meeting note subpoint.
           nullable: true
         title:
           type: string
+          description: The title of the meeting note subpoint.
           nullable: true
       additionalProperties:
         type: object
@@ -65325,12 +67321,14 @@ components:
         eventDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time of the mention event. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         speaker:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         transcriptUtterance:
           type: string
+          description: The utterance in the online meeting transcript that contains the mention event.
           nullable: true
       additionalProperties:
         type: object
@@ -65812,6 +67810,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             videoOnDemandWebUrl:
               type: string
+              description: The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
               nullable: true
             presenters:
               type: array
@@ -67550,6 +69549,8 @@ components:
             type: string
             nullable: true
           description: Collection of GUIDs that represent certificateBasedApplicationConfiguration that is allowed as root and intermediate certificate authorities.
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -67572,6 +69573,8 @@ components:
       title: passwordCredentialConfiguration
       type: object
       properties:
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -67605,6 +69608,8 @@ components:
       type: object
       properties:
         nonDefaultUriAddition:
+          $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
+        uriAdditionWithoutUniqueTenantIdentifier:
           $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
       additionalProperties:
         type: object
@@ -68604,6 +70609,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.appManagementPolicyActorExemptions:
+      title: appManagementPolicyActorExemptions
+      type: object
+      properties:
+        customSecurityAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeExemption'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
     microsoft.graph.appKeyCredentialRestrictionType:
       title: appKeyCredentialRestrictionType
       enum:
@@ -69058,17 +71074,16 @@ components:
         - aborted
         - unknownFutureValue
       type: string
-    microsoft.graph.appManagementPolicyActorExemptions:
-      title: appManagementPolicyActorExemptions
-      type: object
-      properties:
-        customSecurityAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeExemption'
-          x-ms-navigationProperty: true
-      additionalProperties:
-        type: object
+    microsoft.graph.customSecurityAttributeExemption:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customSecurityAttributeExemption
+          type: object
+          properties:
+            operator:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeComparisonOperator'
+          additionalProperties:
+            type: object
     microsoft.graph.attributeMapping:
       title: attributeMapping
       type: object
@@ -69299,16 +71314,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFill'
           additionalProperties:
             type: object
-    microsoft.graph.customSecurityAttributeExemption:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: customSecurityAttributeExemption
-          type: object
-          properties:
-            operator:
-              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeComparisonOperator'
-          additionalProperties:
-            type: object
+    microsoft.graph.customSecurityAttributeComparisonOperator:
+      title: customSecurityAttributeComparisonOperator
+      enum:
+        - equals
+        - unknownFutureValue
+      type: string
     microsoft.graph.attributeFlowBehavior:
       title: attributeFlowBehavior
       enum:
@@ -69446,12 +71457,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFont'
           additionalProperties:
             type: object
-    microsoft.graph.customSecurityAttributeComparisonOperator:
-      title: customSecurityAttributeComparisonOperator
-      enum:
-        - equals
-        - unknownFutureValue
-      type: string
     microsoft.graph.stringKeyAttributeMappingSourceValuePair:
       title: stringKeyAttributeMappingSourceValuePair
       type: object
@@ -69741,6 +71746,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.cloudAppDiscoveryReportCollectionResponse'
+    microsoft.graph.sensitivityLabelCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.sensitivityLabelCollectionResponse'
     microsoft.graph.domainSecurityProfileCollectionResponse:
       description: Retrieved collection
       content:

@@ -466,6 +466,532 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /admin/people/profilePropertySettings:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: List profilePropertySettings
+      description: Get a collection of profilePropertySetting objects that define the configuration for user profile properties in an organization. The id property identifies each resource object uniquely.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilepropertysettings?view=graph-rest-beta
+      operationId: admin.person_ListProfilePropertySetting
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.profilePropertySettingCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Create profilePropertySetting
+      description: Create a new profilePropertySetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilepropertysettings?view=graph-rest-beta
+      operationId: admin.person_CreateProfilePropertySetting
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/people/profilePropertySettings/{profilePropertySetting-id}':
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get profilePropertySetting
+      description: Read the properties and relationships of a profilePropertySetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilepropertysetting-get?view=graph-rest-beta
+      operationId: admin.person_GetProfilePropertySetting
+      parameters:
+        - name: profilePropertySetting-id
+          in: path
+          description: The unique identifier of profilePropertySetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePropertySetting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Update profilePropertySetting
+      description: Update the properties of a profilePropertySetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilepropertysetting-update?view=graph-rest-beta
+      operationId: admin.person_UpdateProfilePropertySetting
+      parameters:
+        - name: profilePropertySetting-id
+          in: path
+          description: The unique identifier of profilePropertySetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePropertySetting
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Delete profilePropertySetting
+      description: Delete a profilePropertySetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilepropertysetting-delete?view=graph-rest-beta
+      operationId: admin.person_DeleteProfilePropertySetting
+      parameters:
+        - name: profilePropertySetting-id
+          in: path
+          description: The unique identifier of profilePropertySetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePropertySetting
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/people/profilePropertySettings/$count:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get the number of the resource
+      operationId: admin.person.profilePropertySetting_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/people/profileSources:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: List profileSources
+      description: 'Get a list of the profileSource objects and their properties, which represent both external data sources and out-of-the-box Microsoft data sources configured for user profiles in an organization.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilesources?view=graph-rest-beta
+      operationId: admin.person_ListProfileSource
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.profileSourceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Create profileSource
+      description: Create a new profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilesources?view=graph-rest-beta
+      operationId: admin.person_CreateProfileSource
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileSource'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/people/profileSources/{profileSource-id}':
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get profileSources from admin
+      description: A collection of profile source settings configured by an administrator in an organization.
+      operationId: admin.person_GetProfileSource
+      parameters:
+        - name: profileSource-id
+          in: path
+          description: The unique identifier of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profileSource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Update profileSource
+      description: Update the properties of a profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilesource-update?view=graph-rest-beta
+      operationId: admin.person_UpdateProfileSource
+      parameters:
+        - name: profileSource-id
+          in: path
+          description: The unique identifier of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profileSource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileSource'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Delete profileSource
+      description: Delete a profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilesource-delete?view=graph-rest-beta
+      operationId: admin.person_DeleteProfileSource
+      parameters:
+        - name: profileSource-id
+          in: path
+          description: The unique identifier of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profileSource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/people/profileSources(sourceId=''{sourceId}'')':
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get profileSources from admin
+      description: A collection of profile source settings configured by an administrator in an organization.
+      operationId: admin.person.profileSource_GetGraphBPreSourceId
+      parameters:
+        - name: sourceId
+          in: path
+          description: Alternate key of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Update profileSource
+      description: Update the properties of a profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilesource-update?view=graph-rest-beta
+      operationId: admin.person.profileSource_UpdateGraphBPreSourceId
+      parameters:
+        - name: sourceId
+          in: path
+          description: Alternate key of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileSource'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Delete profileSource
+      description: Delete a profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilesource-delete?view=graph-rest-beta
+      operationId: admin.person.profileSource_DeleteGraphBPreSourceId
+      parameters:
+        - name: sourceId
+          in: path
+          description: Alternate key of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/people/profileSources/$count:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get the number of the resource
+      operationId: admin.person.profileSource_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/people/pronouns:
     get:
       tags:
@@ -13245,11 +13771,11 @@ paths:
     post:
       tags:
         - directory.authenticationMethodDevice
-      summary: Create hardwareOathTokenAuthenticationMethodDevice
-      description: Create a new hardwareOathTokenAuthenticationMethodDevice object. You can optionally create and assign to a user in the same request; Or assign to a user via the assign API.
+      summary: Create one or multiple hardwareOathTokenAuthenticationMethodDevice
+      description: Create a new hardwareOathTokenAuthenticationMethodDevice object. Supports bulk creation.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationmethoddevice-post-hardwareoathdevices?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/authenticationmethoddevice-update?view=graph-rest-beta
       operationId: directory.authenticationMethodDevice_CreateHardwareOathDevice
       requestBody:
         description: New navigation property
@@ -15280,7 +15806,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: List deletedItems (directory objects)
-      description: "Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- [certificateAuthorityDetail](../resources/certificateauthoritydetail.md\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user"
+      description: "Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-beta
@@ -15704,7 +16230,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: List deletedItems (directory objects)
-      description: "Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- [certificateAuthorityDetail](../resources/certificateauthoritydetail.md\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user"
+      description: "Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-beta
@@ -19139,6 +19665,91 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /directory/recommendationConfiguration:
+    get:
+      tags:
+        - directory.recommendationConfiguration
+      summary: Get recommendationConfiguration
+      description: Read the properties and relationships of a recommendationConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/recommendationconfiguration-get?view=graph-rest-beta
+      operationId: directory_GetRecommendationConfiguration
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.recommendationConfiguration
+      summary: Update recommendationConfiguration
+      description: Update the properties of a recommendationConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/recommendationconfiguration-update?view=graph-rest-beta
+      operationId: directory_UpdateRecommendationConfiguration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationConfiguration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.recommendationConfiguration
+      summary: Delete navigation property recommendationConfiguration for directory
+      operationId: directory_DeleteRecommendationConfiguration
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /directory/recommendations:
     get:
       tags:
@@ -30731,6 +31342,18 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
               description: A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
               x-ms-navigationProperty: true
+            profilePropertySettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+              description: A collection of profile property configuration settings defined by an administrator for an organization.
+              x-ms-navigationProperty: true
+            profileSources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+              description: A collection of profile source settings configured by an administrator in an organization.
+              x-ms-navigationProperty: true
             pronouns:
               $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
           additionalProperties:
@@ -30776,6 +31399,59 @@ components:
             directoryPropertyName:
               type: string
               description: 'Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Microsoft Entra ID properties on the Microsoft 365 profile card within their tenant. When present, the Microsoft Entra ID field referenced in this property is visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.profilePropertySetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profilePropertySetting
+          type: object
+          properties:
+            allowedAudiences:
+              $ref: '#/components/schemas/microsoft.graph.organizationAllowedAudiences'
+            isUserOverrideForAudienceEnabled:
+              type: boolean
+              description: Defines whether a user is allowed to override the tenant admin privacy setting.
+              nullable: true
+            name:
+              type: string
+              description: Name of the property-level setting.
+              nullable: true
+            prioritizedSourceUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: A collection of prioritized profile source URLs ordered by data precedence within an organization.
+          additionalProperties:
+            type: object
+    microsoft.graph.profileSource:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profileSource
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Name of the profile source intended to inform users about the profile source name.
+              nullable: true
+            kind:
+              type: string
+              description: Type of the profile source.
+              nullable: true
+            localizations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileSourceLocalization'
+              description: Alternative localized labels specified by an administrator.
+            sourceId:
+              type: string
+              description: Profile source identifier used as an alternate key.
+              nullable: true
+            webUrl:
+              type: string
+              description: Web URL of the profile source that directs users to the page view of profile data.
               nullable: true
           additionalProperties:
             type: object
@@ -30914,7 +31590,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique. You can use the default value provided, which is in the form api://<appId>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
+              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique across Microsoft Entra ID. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
@@ -32478,6 +33154,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
+            dataSecurityAndGovernance:
+              $ref: '#/components/schemas/microsoft.graph.userDataSecurityAndGovernance'
             deviceEnrollmentConfigurations:
               type: array
               items:
@@ -33020,6 +33698,8 @@ components:
               x-ms-navigationProperty: true
             publicKeyInfrastructure:
               $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
+            recommendationConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.recommendationConfiguration'
             recommendations:
               type: array
               items:
@@ -33563,6 +34243,17 @@ components:
             thumbprint:
               type: string
               description: 'The thumbprint of certificate authority certificate. Supports $filter (eq, startswith).'
+          additionalProperties:
+            type: object
+    microsoft.graph.recommendationConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: recommendationConfiguration
+          type: object
+          properties:
+            isNotificationEnabled:
+              type: boolean
+              description: Indicates whether notifications for recommendations are enabled.
           additionalProperties:
             type: object
     microsoft.graph.recommendation:
@@ -34295,6 +34986,33 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.displayNameLocalization'
           description: 'Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a nb-NO client gets ''Kostnadssenter'' as the attribute label, rather than ''Cost Center.'''
+      additionalProperties:
+        type: object
+    microsoft.graph.organizationAllowedAudiences:
+      title: organizationAllowedAudiences
+      enum:
+        - me
+        - organization
+        - federatedOrganizations
+        - everyone
+        - unknownFutureValue
+      type: string
+    microsoft.graph.profileSourceLocalization:
+      title: profileSourceLocalization
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Localized display name.
+          nullable: true
+        languageTag:
+          type: string
+          description: Language locale.
+          nullable: true
+        webUrl:
+          type: string
+          description: Localized profile source URL.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.apiApplication:
@@ -36190,6 +36908,11 @@ components:
             isRemoteDesktopProtocolEnabled:
               type: boolean
               description: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+            approvedClientApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvedClientApp'
+              x-ms-navigationProperty: true
             targetDeviceGroups:
               type: array
               items:
@@ -37190,6 +37913,18 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userDataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
+        - title: userDataSecurityAndGovernance
+          type: object
+          properties:
+            activities:
+              $ref: '#/components/schemas/microsoft.graph.activitiesContainer'
+            protectionScopes:
+              $ref: '#/components/schemas/microsoft.graph.userProtectionScopeContainer'
+          additionalProperties:
+            type: object
     microsoft.graph.deviceEnrollmentConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -37278,6 +38013,12 @@ components:
         - title: employeeExperienceUser
           type: object
           properties:
+            assignedRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRole'
+              description: Represents the collection of Viva Engage roles assigned to a user.
+              x-ms-navigationProperty: true
             learningCourseActivities:
               type: array
               items:
@@ -38195,7 +38936,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -38305,6 +39046,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callAiInsight'
+              description: The AI insights generated for an online meeting. Read-only.
               x-ms-navigationProperty: true
             meetingAttendanceReport:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
@@ -38580,6 +39322,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
             sequenceNumber:
               type: string
+              description: The lexicographically sortable String stamp that represents the version of a presence object.
               nullable: true
               readOnly: true
             statusMessage:
@@ -38854,11 +39597,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -39109,11 +39852,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -39835,6 +40578,32 @@ components:
     ODataCountResponse:
       type: integer
       format: int32
+    microsoft.graph.profilePropertySettingCollectionResponse:
+      title: Collection of profilePropertySetting
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.profileSourceCollectionResponse:
+      title: Collection of profileSource
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.profileSource'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.administrativeUnitCollectionResponse:
       title: Collection of administrativeUnit
       type: object
@@ -42930,6 +43699,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.scopeSensitivityLabels'
       additionalProperties:
         type: object
+    microsoft.graph.approvedClientApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvedClientApp
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.targetDeviceGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -42979,6 +43759,7 @@ components:
       type: object
       additionalProperties:
         type: object
+      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.status:
       title: status
       enum:
@@ -44040,6 +44821,40 @@ components:
           $ref: '#/components/schemas/microsoft.graph.websiteType'
       additionalProperties:
         type: object
+    microsoft.graph.dataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataSecurityAndGovernance
+          type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.activitiesContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: activitiesContainer
+          type: object
+          properties:
+            contentActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentActivity'
+              description: Collection of activity logs related to content processing.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userProtectionScopeContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userProtectionScopeContainer
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.deviceEnrollmentConfigurationType:
       title: deviceEnrollmentConfigurationType
       enum:
@@ -44056,6 +44871,7 @@ components:
         - singlePlatformRestriction
         - unknownFutureValue
         - enrollmentNotificationsConfiguration
+        - windowsRestore
       type: string
       description: Describes the TemplateFamily for the Template entity
       x-ms-enum:
@@ -44101,6 +44917,9 @@ components:
           - value: enrollmentNotificationsConfiguration
             description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
             name: enrollmentNotificationsConfiguration
+          - value: windowsRestore
+            description: Indicates the configuration is of type Windows Restore which refers to the tenant level Windows Backup and Restore settings a user receives during out-of-box experience (OOBE) Windows enrollment
+            name: windowsRestore
     microsoft.graph.enrollmentConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -44157,6 +44976,24 @@ components:
       additionalProperties:
         type: object
       description: Object containing detailed information about the error and its remediation.
+    microsoft.graph.engagementRole:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRole
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the role.
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
+              description: Users who have been assigned this role.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Represents a Viva Engage role and its members
     microsoft.graph.learningCourseActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -44249,6 +45086,8 @@ components:
         - title: sensitivityLabel
           type: object
           properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
             applicableTo:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
@@ -44259,6 +45098,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.labelPolicy'
             autoLabeling:
               $ref: '#/components/schemas/microsoft.graph.autoLabeling'
+            autoTooltip:
+              type: string
+              nullable: true
+            color:
+              type: string
+              nullable: true
             description:
               type: string
               nullable: true
@@ -44268,13 +45113,22 @@ components:
             isDefault:
               type: boolean
               nullable: true
+            isEnabled:
+              type: boolean
+              nullable: true
             isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
               type: boolean
               nullable: true
             labelActions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.labelActionBase'
+            locale:
+              type: string
+              nullable: true
             name:
               type: string
               nullable: true
@@ -44287,6 +45141,8 @@ components:
             toolTip:
               type: string
               nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
             sublabels:
               type: array
               items:
@@ -45076,6 +45932,8 @@ components:
         - androidnGMS
         - chromeOS
         - linux
+        - visionOS
+        - tvOS
         - blackberry
         - palm
         - unknown
@@ -45155,6 +46013,12 @@ components:
           - value: linux
             description: Linux device.
             name: linux
+          - value: visionOS
+            description: Indicates managed device is running on visionOS operating system.
+            name: visionOS
+          - value: tvOS
+            description: Indicates managed device is running on tvOS operating system.
+            name: tvOS
           - value: blackberry
             description: Blackberry.
             name: blackberry
@@ -46565,26 +47429,32 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.actionItem'
+              description: The collection of AI-generated action items. Read-only.
             callId:
               type: string
+              description: The ID for the online meeting call for which the callAiInsight was generated. Read-only.
               nullable: true
             contentCorrelationId:
               type: string
+              description: The unique ID that correlates the transcript from which the insights were generated. Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the corresponding transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the corresponding transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingNotes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingNote'
+              description: The collection of AI-generated meeting notes. Read-only.
             viewpoint:
               $ref: '#/components/schemas/microsoft.graph.callAiInsightViewPoint'
           additionalProperties:
@@ -49614,7 +50484,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. Any value under 45 minutes after the time of the request is automatically set to 45 minutes after the request time. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -50972,21 +51842,21 @@ components:
             recipientActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time when the recipient approved or declined the request.
               format: date-time
               nullable: true
               readOnly: true
             recipientActionMessage:
               type: string
-              description: Custom message sent by recipient of the offer shift request.
+              description: The message sent by the recipient regarding the request.
               nullable: true
             recipientUserId:
               type: string
-              description: User id of the recipient of the offer shift request.
+              description: The recipient's user ID.
               nullable: true
             senderShiftId:
               type: string
-              description: User id of the sender of the offer shift request.
+              description: The sender's shift ID.
               nullable: true
           additionalProperties:
             type: object
@@ -51110,7 +51980,7 @@ components:
           properties:
             recipientShiftId:
               type: string
-              description: Shift ID for the recipient user with whom the request is to swap.
+              description: The recipient's Shift ID
               nullable: true
           additionalProperties:
             type: object
@@ -51174,13 +52044,13 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off ends in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off starts in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             timeOffReasonId:
@@ -51553,17 +52423,21 @@ components:
           properties:
             code:
               type: string
+              description: PIN of the user. It is between 8-20 digits as configured in the QR code authentication method policy. The code is temporary when issued by admin but permanent after the user changes it at the first login attempt. This PIN can be reset by the admin but not the user.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the PIN was created.
               format: date-time
               nullable: true
             forceChangePinNextSignIn:
               type: boolean
+              description: Defaults to true for a temporary PIN.
               nullable: true
             updatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the PIN was updated.
               format: date-time
               nullable: true
           additionalProperties:
@@ -51577,11 +52451,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the QR code was created.
               format: date-time
               nullable: true
             expireDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Temporary QR code lifetime is between 1-12 hours. Standard QR code lifetime is in days and max. is 395 days (13 months) and default value is 365 days (12 months).
               format: date-time
               nullable: true
             image:
@@ -51589,11 +52465,13 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the QR code was last used for a successful sign-in.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the QR code becomes active and available to use.
               format: date-time
               nullable: true
           additionalProperties:
@@ -51606,6 +52484,10 @@ components:
           properties:
             userIdentityType:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
+            userPrincipalName:
+              type: string
+              description: User principal name (UPN) of the user.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.eventMessageDetail:
@@ -51930,6 +52812,24 @@ components:
         - blog
         - profile
       type: string
+    microsoft.graph.contentActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentActivity
+          type: object
+          properties:
+            contentMetadata:
+              $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+            scopeIdentifier:
+              type: string
+              description: The scope identified from computed protection scopes.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.deviceAndAppManagementAssignmentSource:
       title: deviceAndAppManagementAssignmentSource
       enum:
@@ -51974,6 +52874,28 @@ components:
       additionalProperties:
         type: object
       description: 'Object representing a link to troubleshooting information, the link could be to the Azure Portal or a Microsoft doc.'
+    microsoft.graph.engagementRoleMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRoleMember
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp when the role was assigned to the user.
+              format: date-time
+              readOnly: true
+            userId:
+              type: string
+              description: The Microsoft Entra ID of the user who has the role assigned.
+              nullable: true
+              readOnly: true
+            user:
+              $ref: '#/components/schemas/microsoft.graph.user'
+          additionalProperties:
+            type: object
+          description: Entity to represent the assignment of a role to a user.
     microsoft.graph.courseStatus:
       title: courseStatus
       enum:
@@ -52039,6 +52961,15 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
     microsoft.graph.sensitivityLabelTarget:
       title: sensitivityLabelTarget
       enum:
@@ -52063,8 +52994,10 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier of the label policy.
         name:
           type: string
+          description: The display name of the label policy.
           nullable: true
       additionalProperties:
         type: object
@@ -52074,12 +53007,14 @@ components:
       properties:
         message:
           type: string
+          description: The message displayed to the user when the label is applied automatically.
           nullable: true
         sensitiveTypeIds:
           type: array
           items:
             type: string
             nullable: true
+          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
       additionalProperties:
         type: object
     microsoft.graph.labelActionBase:
@@ -52088,9 +53023,28 @@ components:
       properties:
         name:
           type: string
+          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.threatCategory:
       title: threatCategory
       enum:
@@ -53707,12 +54661,15 @@ components:
       properties:
         ownerDisplayName:
           type: string
+          description: The display name of the owner of the action item.
           nullable: true
         text:
           type: string
+          description: The text content of the action item.
           nullable: true
         title:
           type: string
+          description: The title of the action item.
           nullable: true
       additionalProperties:
         type: object
@@ -53724,11 +54681,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingNoteSubpoint'
+          description: A collection of subpoints of the meeting note.
         text:
           type: string
+          description: The text of the meeting note.
           nullable: true
         title:
           type: string
+          description: The title of the meeting note.
           nullable: true
       additionalProperties:
         type: object
@@ -53740,6 +54700,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.mentionEvent'
+          description: The collection of AI-generated mention events.
       additionalProperties:
         type: object
     microsoft.graph.virtualEventExternalInformation:
@@ -54955,7 +55916,7 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
@@ -55043,6 +56004,8 @@ components:
             type: string
             nullable: true
           description: Collection of GUIDs that represent certificateBasedApplicationConfiguration that is allowed as root and intermediate certificate authorities.
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -55065,6 +56028,8 @@ components:
       title: passwordCredentialConfiguration
       type: object
       properties:
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -55098,6 +56063,8 @@ components:
       type: object
       properties:
         nonDefaultUriAddition:
+          $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
+        uriAdditionWithoutUniqueTenantIdentifier:
           $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
       additionalProperties:
         type: object
@@ -55954,6 +56921,7 @@ components:
         - driveItem
         - user
         - teamsChannel
+        - onlineMeeting
         - plannerTask
       type: string
     microsoft.graph.plannerCreationSourceKind:
@@ -56507,27 +57475,33 @@ components:
             managerActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             managerActionMessage:
               type: string
+              description: The message sent by the manager regarding the scheduleChangeRequest. Optional.
               nullable: true
             managerUserId:
               type: string
+              description: The user ID of the manager who approved or declined the scheduleChangeRequest.
               nullable: true
               readOnly: true
             senderDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             senderMessage:
               type: string
+              description: The message sent by the sender of the scheduleChangeRequest. Optional.
               nullable: true
             senderUserId:
               type: string
+              description: The user ID of the sender of the scheduleChangeRequest.
               nullable: true
               readOnly: true
             state:
@@ -57321,18 +58295,21 @@ components:
       properties:
         binaryValue:
           type: string
+          description: The binary representation of the QR code.
           format: base64url
           nullable: true
         errorCorrectionLevel:
           $ref: '#/components/schemas/microsoft.graph.errorCorrectionLevel'
         rawContent:
           type: string
+          description: Base64-encoded raw content of the QR code.
           format: base64url
           nullable: true
         version:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: Version to create QR code image.
           format: int32
           nullable: true
       additionalProperties:
@@ -57480,6 +58457,25 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.processContentRequest:
+      title: processContentRequest
+      type: object
+      properties:
+        activityMetadata:
+          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
+        contentEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
+          description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        integratedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        protectedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
+      additionalProperties:
+        type: object
     microsoft.graph.deviceAndAppManagementAssignmentFilterType:
       title: deviceAndAppManagementAssignmentFilterType
       enum:
@@ -57546,6 +58542,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.threatAssessmentResultType:
       title: threatAssessmentResultType
       enum:
@@ -58112,9 +59135,11 @@ components:
       properties:
         text:
           type: string
+          description: The text of the meeting note subpoint.
           nullable: true
         title:
           type: string
+          description: The title of the meeting note subpoint.
           nullable: true
       additionalProperties:
         type: object
@@ -58125,12 +59150,14 @@ components:
         eventDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time of the mention event. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         speaker:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         transcriptUtterance:
           type: string
+          description: The utterance in the online meeting transcript that contains the mention event.
           nullable: true
       additionalProperties:
         type: object
@@ -58612,6 +59639,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             videoOnDemandWebUrl:
               type: string
+              description: The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
               nullable: true
             presenters:
               type: array
@@ -58688,6 +59716,17 @@ components:
         - rejectedByOrganizer
         - unknownFutureValue
       type: string
+    microsoft.graph.appManagementPolicyActorExemptions:
+      title: appManagementPolicyActorExemptions
+      type: object
+      properties:
+        customSecurityAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeExemption'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
     microsoft.graph.appKeyCredentialRestrictionType:
       title: appKeyCredentialRestrictionType
       enum:
@@ -60733,6 +61772,93 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.activityMetadata:
+      title: activityMetadata
+      type: object
+      properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.userActivityType'
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentMetadataBase:
+      title: processContentMetadataBase
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/microsoft.graph.contentBase'
+        correlationId:
+          type: string
+          description: 'An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
+          format: date-time
+        identifier:
+          type: string
+          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
+        isTruncated:
+          type: boolean
+          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
+        length:
+          type: number
+          description: The length of the original content in bytes.
+          format: int64
+          nullable: true
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
+          format: date-time
+        name:
+          type: string
+          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
+        sequenceNumber:
+          type: number
+          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceMetadata:
+      title: deviceMetadata
+      type: object
+      properties:
+        deviceType:
+          type: string
+          description: 'Optional. The general type of the device (for example, ''Managed'', ''Unmanaged'').'
+          nullable: true
+        ipAddress:
+          type: string
+          description: The Internet Protocol (IP) address of the device.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.integratedApplicationMetadata:
+      title: integratedApplicationMetadata
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the integrated application.
+          nullable: true
+        version:
+          type: string
+          description: The version number of the integrated application.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectedApplicationMetadata:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        - title: protectedApplicationMetadata
+          type: object
+          properties:
+            applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          additionalProperties:
+            type: object
     microsoft.graph.insightIdentity:
       title: insightIdentity
       type: object
@@ -60883,17 +62009,16 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.appManagementPolicyActorExemptions:
-      title: appManagementPolicyActorExemptions
-      type: object
-      properties:
-        customSecurityAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeExemption'
-          x-ms-navigationProperty: true
-      additionalProperties:
-        type: object
+    microsoft.graph.customSecurityAttributeExemption:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customSecurityAttributeExemption
+          type: object
+          properties:
+            operator:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeComparisonOperator'
+          additionalProperties:
+            type: object
     microsoft.graph.attributeMapping:
       title: attributeMapping
       type: object
@@ -61581,16 +62706,35 @@ components:
         - chat
         - unknownFutureValue
       type: string
-    microsoft.graph.customSecurityAttributeExemption:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: customSecurityAttributeExemption
-          type: object
-          properties:
-            operator:
-              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeComparisonOperator'
-          additionalProperties:
-            type: object
+    microsoft.graph.userActivityType:
+      title: userActivityType
+      enum:
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+    microsoft.graph.contentBase:
+      title: contentBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.policyLocation:
+      title: policyLocation
+      type: object
+      properties:
+        value:
+          type: string
+          description: 'The actual value representing the location (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
+      additionalProperties:
+        type: object
+    microsoft.graph.customSecurityAttributeComparisonOperator:
+      title: customSecurityAttributeComparisonOperator
+      enum:
+        - equals
+        - unknownFutureValue
+      type: string
     microsoft.graph.attributeFlowBehavior:
       title: attributeFlowBehavior
       enum:
@@ -61925,12 +63069,6 @@ components:
         - aborted
         - unknownFutureValue
       type: string
-    microsoft.graph.customSecurityAttributeComparisonOperator:
-      title: customSecurityAttributeComparisonOperator
-      enum:
-        - equals
-        - unknownFutureValue
-      type: string
     microsoft.graph.stringKeyAttributeMappingSourceValuePair:
       title: stringKeyAttributeMappingSourceValuePair
       type: object
@@ -62129,6 +63267,18 @@ components:
         text/plain:
           schema:
             $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.profilePropertySettingCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.profilePropertySettingCollectionResponse'
+    microsoft.graph.profileSourceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.profileSourceCollectionResponse'
     microsoft.graph.administrativeUnitCollectionResponse:
       description: Retrieved collection
       content:

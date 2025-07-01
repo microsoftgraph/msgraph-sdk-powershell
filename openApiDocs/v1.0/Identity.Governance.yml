@@ -6511,7 +6511,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approval
-      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
+      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for Groups, providing the identifier of the assignment schedule request."
       operationId: identityGovernance.entitlementManagement_ListAccessPackageAssignmentApproval
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6585,7 +6585,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approval
-      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
+      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for Groups, providing the identifier of the assignment schedule request."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-get?view=graph-rest-1.0
@@ -6691,7 +6691,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List approval stages
-      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
+      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for Groups, providing the identifier of the assignment schedule request."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
@@ -6955,7 +6955,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
-      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
+      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
@@ -7112,11 +7112,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List resourceRoleScopes
-      description: Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+      summary: Get accessPackage
+      description: Retrieve the properties and relationships of an accessPackage object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement_GetAccessPackage
       parameters:
         - name: accessPackage-id
@@ -9526,6 +9526,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/resourceRoleScopes/{accessPackageResourceRoleScope-id}/role/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.accessPackage.resourceRoleScope.role.resource_refresh
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: The unique identifier of accessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: accessPackageResourceRoleScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceRoleScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRoleScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/resourceRoleScopes/{accessPackageResourceRoleScope-id}/role/resource/roles':
     get:
       tags:
@@ -10284,6 +10313,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/resourceRoleScopes/{accessPackageResourceRoleScope-id}/role/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.accessPackage.resourceRoleScope.role.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: The unique identifier of accessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: accessPackageResourceRoleScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceRoleScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRoleScope
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/resourceRoleScopes/{accessPackageResourceRoleScope-id}/role/resource/scopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -10956,6 +11022,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/resourceRoleScopes/{accessPackageResourceRoleScope-id}/scope/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.accessPackage.resourceRoleScope.scope.resource_refresh
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: The unique identifier of accessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: accessPackageResourceRoleScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceRoleScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRoleScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/resourceRoleScopes/{accessPackageResourceRoleScope-id}/scope/resource/roles':
     get:
       tags:
@@ -11426,6 +11521,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/resourceRoleScopes/{accessPackageResourceRoleScope-id}/scope/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.accessPackage.resourceRoleScope.scope.resource.role.resource_refresh
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: The unique identifier of accessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: accessPackageResourceRoleScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceRoleScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRoleScope
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/resourceRoleScopes/{accessPackageResourceRoleScope-id}/scope/resource/roles/{accessPackageResourceRole-id}/resource/scopes':
     get:
       tags:
@@ -14563,11 +14695,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentRequestWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+      summary: Get accessPackageAssignmentWorkflowExtension
+      description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -15119,6 +15251,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resourceRoles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.catalog.resourceRole.resource_refresh
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: The unique identifier of accessPackageCatalog
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resourceRoles/{accessPackageResourceRole-id}/resource/roles':
     get:
       tags:
@@ -15877,6 +16038,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resourceRoles/{accessPackageResourceRole-id}/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.catalog.resourceRole.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: The unique identifier of accessPackageCatalog
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resourceRoles/{accessPackageResourceRole-id}/resource/scopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -16540,6 +16738,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.catalog.resource_refresh
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: The unique identifier of accessPackageCatalog
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/roles':
     get:
       tags:
@@ -17010,6 +17237,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.catalog.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: The unique identifier of accessPackageCatalog
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes':
     get:
       tags:
@@ -17552,6 +17816,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.catalog.resource.role.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: The unique identifier of accessPackageCatalog
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes/$count':
     get:
       tags:
@@ -18090,6 +18399,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.catalog.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: The unique identifier of accessPackageCatalog
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -18632,6 +18978,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.catalog.resource.scope.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: The unique identifier of accessPackageCatalog
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles/$count':
     get:
       tags:
@@ -19118,6 +19509,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resourceScopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.catalog.resourceScope.resource_refresh
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: The unique identifier of accessPackageCatalog
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resourceScopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -19588,6 +20008,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resourceScopes/{accessPackageResourceScope-id}/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.catalog.resourceScope.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: The unique identifier of accessPackageCatalog
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resourceScopes/{accessPackageResourceScope-id}/resource/roles/{accessPackageResourceRole-id}/resource/scopes':
     get:
       tags:
@@ -21385,6 +21842,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceEnvironment.resource_refresh
+      parameters:
+        - name: accessPackageResourceEnvironment-id
+          in: path
+          description: The unique identifier of accessPackageResourceEnvironment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceEnvironment
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/roles':
     get:
       tags:
@@ -21855,6 +22341,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceEnvironment.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResourceEnvironment-id
+          in: path
+          description: The unique identifier of accessPackageResourceEnvironment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceEnvironment
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes':
     get:
       tags:
@@ -22397,6 +22920,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceEnvironment.resource.role.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResourceEnvironment-id
+          in: path
+          description: The unique identifier of accessPackageResourceEnvironment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceEnvironment
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes/$count':
     get:
       tags:
@@ -22935,6 +23503,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceEnvironment.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResourceEnvironment-id
+          in: path
+          description: The unique identifier of accessPackageResourceEnvironment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceEnvironment
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -23477,6 +24082,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceEnvironment.resource.scope.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResourceEnvironment-id
+          in: path
+          description: The unique identifier of accessPackageResourceEnvironment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceEnvironment
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceEnvironments/{accessPackageResourceEnvironment-id}/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles/$count':
     get:
       tags:
@@ -24637,6 +25287,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resourceRoles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.catalog.resourceRole.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resourceRoles/{accessPackageResourceRole-id}/resource/roles':
     get:
       tags:
@@ -25395,6 +26074,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resourceRoles/{accessPackageResourceRole-id}/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.catalog.resourceRole.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resourceRoles/{accessPackageResourceRole-id}/resource/scopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -26055,6 +26771,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.catalog.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/roles':
     get:
       tags:
@@ -26525,6 +27270,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.catalog.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes':
     get:
       tags:
@@ -27067,6 +27849,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.catalog.resource.role.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes/$count':
     get:
       tags:
@@ -27605,6 +28432,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.catalog.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -28147,6 +29011,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.catalog.resource.scope.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles/$count':
     get:
       tags:
@@ -28633,6 +29542,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resourceScopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.catalog.resourceScope.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resourceScopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -29103,6 +30041,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resourceScopes/{accessPackageResourceScope-id}/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.catalog.resourceScope.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/catalog/resourceScopes/{accessPackageResourceScope-id}/resource/roles/{accessPackageResourceRole-id}/resource/scopes':
     get:
       tags:
@@ -29927,6 +30902,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/roles':
     get:
       tags:
@@ -30325,6 +31321,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/roles/{accessPackageResourceRole-id}/resource/scopes':
     get:
       tags:
@@ -30795,6 +31820,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/roles/{accessPackageResourceRole-id}/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.resource.role.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/roles/{accessPackageResourceRole-id}/resource/scopes/$count':
     get:
       tags:
@@ -31245,6 +32307,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/scopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -31715,6 +32806,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/scopes/{accessPackageResourceScope-id}/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRequest.resource.scope.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResourceRequest-id
+          in: path
+          description: The unique identifier of accessPackageResourceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRequest
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest-id}/resource/scopes/{accessPackageResourceScope-id}/resource/roles/$count':
     get:
       tags:
@@ -32206,6 +33334,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope-id}/role/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRoleScope.role.resource_refresh
+      parameters:
+        - name: accessPackageResourceRoleScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceRoleScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRoleScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope-id}/role/resource/roles':
     get:
       tags:
@@ -32844,6 +33993,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope-id}/role/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRoleScope.role.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResourceRoleScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceRoleScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRoleScope
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope-id}/role/resource/scopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -33404,6 +34582,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope-id}/scope/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRoleScope.scope.resource_refresh
+      parameters:
+        - name: accessPackageResourceRoleScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceRoleScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRoleScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope-id}/scope/resource/roles':
     get:
       tags:
@@ -33802,6 +35001,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope-id}/scope/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resourceRoleScope.scope.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResourceRoleScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceRoleScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRoleScope
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope-id}/scope/resource/roles/{accessPackageResourceRole-id}/resource/scopes':
     get:
       tags:
@@ -34589,6 +35817,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resource_refresh
+      parameters:
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/roles':
     get:
       tags:
@@ -34987,6 +36236,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes':
     get:
       tags:
@@ -35457,6 +36735,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resource.role.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/roles/{accessPackageResourceRole-id}/resource/scopes/$count':
     get:
       tags:
@@ -35907,6 +37222,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resource.scope.resource_refresh
+      parameters:
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles':
     get:
       tags:
@@ -36377,6 +37721,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles/{accessPackageResourceRole-id}/resource/microsoft.graph.refresh':
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke action refresh
+      operationId: identityGovernance.entitlementManagement.resource.scope.resource.role.resource_refresh
+      parameters:
+        - name: accessPackageResource-id
+          in: path
+          description: The unique identifier of accessPackageResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResource
+        - name: accessPackageResourceScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceScope
+        - name: accessPackageResourceRole-id
+          in: path
+          description: The unique identifier of accessPackageResourceRole
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRole
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/entitlementManagement/resources/{accessPackageResource-id}/scopes/{accessPackageResourceScope-id}/resource/roles/$count':
     get:
       tags:
@@ -53134,7 +54515,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
+      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
@@ -53394,7 +54775,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get activatedUsing from identityGovernance
-      description: 'When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.'
+      description: 'When the request activates a membership or ownership in PIM for Groups, this object represents the eligibility request for the group. Otherwise, it is null.'
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleInstance_GetActivatedUsing
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleInstance-id
@@ -53440,7 +54821,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.
+      description: References the group that is the scope of the membership or ownership assignment through PIM for Groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleInstance_GetGroup
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleInstance-id
@@ -53627,7 +55008,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
+      description: 'In PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
@@ -53891,7 +55272,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get activatedUsing from identityGovernance
-      description: 'When the request activates a membership or ownership assignment in PIM for groups, this object represents the eligibility policy for the group. Otherwise, it is null. Supports $expand.'
+      description: 'When the request activates a membership or ownership assignment in PIM for Groups, this object represents the eligibility policy for the group. Otherwise, it is null. Supports $expand.'
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_GetActivatedUsing
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -53937,7 +55318,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: 'References the group that is the scope of the membership or ownership assignment request through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
+      description: 'References the group that is the scope of the membership or ownership assignment request through PIM for Groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_GetGroup
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -54195,7 +55576,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In PIM for groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
+      description: 'In PIM for Groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0
@@ -54455,7 +55836,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get activatedUsing from identityGovernance
-      description: 'When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it''s null. Supports $expand.'
+      description: 'When the request activates an ownership or membership assignment in PIM for Groups, this object represents the eligibility relationship. Otherwise, it''s null. Supports $expand.'
       operationId: identityGovernance.privilegedAccess.group.assignmentSchedule_GetActivatedUsing
       parameters:
         - name: privilegedAccessGroupAssignmentSchedule-id
@@ -54501,7 +55882,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: 'References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
+      description: 'References the group that is the scope of the membership or ownership assignment through PIM for Groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
       operationId: identityGovernance.privilegedAccess.group.assignmentSchedule_GetGroup
       parameters:
         - name: privilegedAccessGroupAssignmentSchedule-id
@@ -54688,7 +56069,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In PIM for groups, retrieve the schedules for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
+      description: 'In PIM for Groups, retrieve the schedules for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
@@ -54948,7 +56329,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+      description: References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleInstance_GetGroup
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleInstance-id
@@ -55399,7 +56780,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: 'References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
+      description: 'References the group that is the scope of the membership or ownership eligibility request through PIM for Groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleRequest_GetGroup
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleRequest-id
@@ -55657,7 +57038,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.'
+      description: 'In PIM for Groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
@@ -55917,7 +57298,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+      description: References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilitySchedule_GetGroup
       parameters:
         - name: privilegedAccessGroupEligibilitySchedule-id
@@ -68024,6 +69405,7 @@ components:
           nullable: true
         isRequestorJustificationRequired:
           type: boolean
+          description: Indicates whether requestors must justify requesting access to an access package.
           nullable: true
         policyDescription:
           type: string
@@ -68259,6 +69641,7 @@ components:
               description: Information about all the custom extension calls that were made during the access package assignment workflow.
             justification:
               type: string
+              description: The requestor's supplied justification.
               nullable: true
             requestType:
               $ref: '#/components/schemas/microsoft.graph.accessPackageRequestType'
@@ -69989,13 +71372,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupAssignmentType'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional. Supports $filter (eq).
+              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for Groups. Optional. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             activatedUsing:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance'
@@ -70019,13 +71402,13 @@ components:
               nullable: true
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
@@ -70052,7 +71435,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
+              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
             autoSubscribeNewMembers:
               type: boolean
               description: 'Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
@@ -70383,11 +71766,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required.
+              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for Groups. Required.
               nullable: true
             principalId:
               type: string
-              description: 'The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Supports $filter (eq, ne).'
+              description: 'The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for Groups. Supports $filter (eq, ne).'
               nullable: true
             targetScheduleId:
               type: string
@@ -70413,13 +71796,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the principal whose membership or ownership eligibility is granted through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
@@ -70447,13 +71830,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupAssignmentType'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership assignment is granted through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the principal whose membership or ownership assignment is granted through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             activatedUsing:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilitySchedule'
@@ -70485,11 +71868,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership and ownership eligibility through PIM for groups. Required.
+              description: The identifier of the group representing the scope of the membership and ownership eligibility through PIM for Groups. Required.
               nullable: true
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required.
+              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for Groups. Required.
               nullable: true
             targetScheduleId:
               type: string
@@ -70681,11 +72064,11 @@ components:
           properties:
             displayName:
               type: string
-              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.'
+              description: Provides the display name of the app-specific resource represented by the app scope. Read only.
               nullable: true
             type:
               type: string
-              description: 'Describes the type of app-specific resource represented by the app scope and is provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.'
+              description: Describes the type of app-specific resource represented by the app scope. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -71368,6 +72751,7 @@ components:
       properties:
         isAssignmentNotificationDisabled:
           type: boolean
+          description: Indicates if notification emails for an access package are disabled within an access package assignment policy.
       additionalProperties:
         type: object
     microsoft.graph.accessPackageAssignmentApprovalSettings:
@@ -71384,6 +72768,7 @@ components:
           nullable: true
         isRequestorJustificationRequired:
           type: boolean
+          description: 'If false, then requestor justification isn''t required for updates to requests in this policy.'
           nullable: true
         stages:
           type: array
@@ -72175,6 +73560,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               description: The phone numbers registered to a user for authentication.
               x-ms-navigationProperty: true
+            platformCredentialMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
+              description: Represents a platform credential instance registered to a user on Mac OS.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -72329,6 +73720,11 @@ components:
               type: string
               description: The preview of the message associated with the event. It's in text format.
               nullable: true
+            cancelledOccurrences:
+              type: array
+              items:
+                type: string
+              description: 'Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Returned only on $select in a Get operation which specifies the ID (seriesMasterId property value) of a series master event.'
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
@@ -72447,6 +73843,12 @@ components:
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
+            exceptionOccurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.event'
+              description: 'Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don''t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.'
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
@@ -72457,7 +73859,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn''t include occurrences cancelled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn''t include occurrences canceled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -75904,6 +77306,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
             smsSignInState:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+          additionalProperties:
+            type: object
+    microsoft.graph.platformCredentialAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: platformCredentialAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this Platform Credential Key was registered.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which Platform Credential is registered.
+              nullable: true
+            keyStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodPlatform'
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
     microsoft.graph.softwareOathAuthenticationMethod:
@@ -79990,6 +81416,17 @@ components:
         - weak
         - unknown
       type: string
+    microsoft.graph.authenticationMethodPlatform:
+      title: authenticationMethodPlatform
+      enum:
+        - unknown
+        - windows
+        - macOS
+        - iOS
+        - android
+        - linux
+        - unknownFutureValue
+      type: string
     microsoft.graph.calendarRoleType:
       title: calendarRoleType
       enum:
@@ -80980,7 +82417,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. Any value under 45 minutes after the time of the request is automatically set to 45 minutes after the request time. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -81925,21 +83362,21 @@ components:
             recipientActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time when the recipient approved or declined the request.
               format: date-time
               nullable: true
               readOnly: true
             recipientActionMessage:
               type: string
-              description: Custom message sent by recipient of the offer shift request.
+              description: The message sent by the recipient regarding the request.
               nullable: true
             recipientUserId:
               type: string
-              description: User ID of the recipient of the offer shift request.
+              description: The recipient's user ID.
               nullable: true
             senderShiftId:
               type: string
-              description: User ID of the sender of the offer shift request.
+              description: The sender's shift ID.
               nullable: true
           additionalProperties:
             type: object
@@ -82034,7 +83471,7 @@ components:
           properties:
             recipientShiftId:
               type: string
-              description: ShiftId for the recipient user with whom the request is to swap.
+              description: The recipient's Shift ID
               nullable: true
           additionalProperties:
             type: object
@@ -82098,13 +83535,13 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off ends in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off starts in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             timeOffReasonId:
@@ -83051,6 +84488,11 @@ components:
         - title: meetingAttendanceReport
           type: object
           properties:
+            externalEventInformation:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
+              description: The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
             meetingEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -84854,27 +86296,33 @@ components:
             managerActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             managerActionMessage:
               type: string
+              description: The message sent by the manager regarding the scheduleChangeRequest. Optional.
               nullable: true
             managerUserId:
               type: string
+              description: The user ID of the manager who approved or declined the scheduleChangeRequest.
               nullable: true
               readOnly: true
             senderDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             senderMessage:
               type: string
+              description: The message sent by the sender of the scheduleChangeRequest. Optional.
               nullable: true
             senderUserId:
               type: string
+              description: The user ID of the sender of the scheduleChangeRequest.
               nullable: true
               readOnly: true
             state:
@@ -85473,6 +86921,20 @@ components:
         - invited
         - organizationExcludingGuests
       type: string
+    microsoft.graph.virtualEventExternalInformation:
+      title: virtualEventExternalInformation
+      type: object
+      properties:
+        applicationId:
+          type: string
+          description: Identifier of the application that hosts the externalEventId. Read-only.
+          nullable: true
+        externalEventId:
+          type: string
+          description: 'The identifier for a virtualEventExternalInformation object that associates the virtual event with an event ID in an external application. This association bundles all the information (both supported and not supported in virtualEvent) into one virtual event object. Optional. If set, the maximum supported length is 256 characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attendanceRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -85488,8 +86950,14 @@ components:
               type: string
               description: Email address of the user associated with this attendance record.
               nullable: true
+            externalRegistrationInformation:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventExternalRegistrationInformation'
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrationId:
+              type: string
+              description: Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
+              nullable: true
             role:
               type: string
               description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
@@ -87319,6 +88787,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventExternalRegistrationInformation:
+      title: virtualEventExternalRegistrationInformation
+      type: object
+      properties:
+        referrer:
+          type: string
+          description: A URL or string that represents the location from which the registrant registered. Optional.
+          nullable: true
+        registrationId:
+          type: string
+          description: 'The identifier for a virtualEventExternalRegistrationInformation object. Optional. If set, the maximum supported length is 256 characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.storageQuotaBreakdown:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -87610,37 +89092,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:
