@@ -44,7 +44,7 @@ directive:
     remove: true
   - where:
       verb: Invoke
-      subject: ^(AcceptUserCalendarEventInstance|AcceptUserCalendarView|DeclineUserCalendarEvent|DeclineUserCalendarViewInstance|ForwardUserCalendarEventInstance|ForwardUserCalendarView|SnoozeUserCalendarEventReminder|SnoozeUserCalendarViewInstanceReminder|AcceptUserCalendarEventExceptionOccurrenceInstanceTentatively|AcceptUserCalendarEventTentatively|AcceptUserCalendarViewExceptionOccurrenceTentatively|AcceptUserCalendarViewInstanceExceptionOccurrenceTentatively)$
+      subject: ^(AcceptUserCalendarEventInstance|AcceptUserCalendarView|DeclineUserCalendarEvent|DeclineUserCalendarViewInstance|ForwardUserCalendarEventInstance|ForwardUserCalendarView|SnoozeUserCalendarEventReminder|SnoozeUserCalendarViewInstanceReminder|AcceptUserCalendarEventExceptionOccurrenceInstanceTentatively|AcceptUserCalendarEventTentatively|AcceptUserCalendarViewExceptionOccurrenceTentatively|AcceptUserCalendarViewInstanceExceptionOccurrenceTentatively|AcceptUserCalendarViewInstanceTentatively)$
     remove: true
   - where:
       verb: New
