@@ -52,7 +52,7 @@ directive:
     remove: true
   - where:
       verb: Stop
-      subject: ^(UserCalendarEventExceptionOccurrence|UserCalendarEventInstanceExceptionOccurrence|UserCalendarEventInstance|UserCalendarViewInstanceTentatively|UserCalendarViewExceptionOccurrenceInstance)$
+      subject: ^(UserCalendarEventExceptionOccurrence|UserCalendarEventInstanceExceptionOccurrence|UserCalendarEventInstance|UserCalendarViewInstanceTentatively|UserCalendarViewExceptionOccurrenceInstance|UserCalendarView)$
     remove: true
 #Remove cmdlet to avoid conflicts where alias has been set:[#3241](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3241)
   - where:
