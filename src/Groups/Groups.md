@@ -94,4 +94,8 @@ directive:
       verb: Update
       subject: ^GroupPhoto$
     remove: true
+  - where:
+      verb: Invoke
+      subject: ^RenewGroupLifecyclePolicy$
+    remove: true
 ```
