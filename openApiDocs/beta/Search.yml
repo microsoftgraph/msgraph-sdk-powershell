@@ -2157,11 +2157,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update schema
-      description: Update the properties of a schema for an externalConnection.
+      summary: Create or update schema
+      description: Create a new or update an existing schema for a Microsoft Search connection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2373,11 +2373,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update azureDataLakeConnector
-      description: Update the properties of an azureDataLakeConnector object.
+      summary: Update oneRosterApiDataConnector
+      description: Update the properties of a oneRosterApiDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-onerosterapidataconnector-update?view=graph-rest-beta
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2578,11 +2578,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFileFlow
-      description: Create a new inboundFileFlow object.
+      summary: Create inboundApiFlow
+      description: Create a new inboundApiFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-post?view=graph-rest-beta
       operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
@@ -2653,11 +2653,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundApiFlow
-      description: Update the properties of an inboundApiFlow object.
+      summary: Update inboundFileFlow
+      description: Update the properties of an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id

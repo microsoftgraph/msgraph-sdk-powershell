@@ -3668,10 +3668,10 @@ paths:
       tags:
         - communications.call
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-beta
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -15111,11 +15111,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object

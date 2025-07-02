@@ -1861,7 +1861,7 @@ paths:
       tags:
         - contacts.orgContact.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -3136,7 +3136,7 @@ paths:
       tags:
         - contracts.contract.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -4559,7 +4559,7 @@ paths:
       tags:
         - devices.device.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -7399,7 +7399,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get administrativeUnit
-      description: Retrieve the properties and relationships of an administrativeUnit object.
+      description: 'Retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0
@@ -10022,7 +10022,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deleted item (directory object)
-      description: 'Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.'
+      description: "Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. Retrieve the properties of a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal\n- user"
       operationId: directory_ListDeletedItem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10074,7 +10074,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deleted item (directory object)
-      description: 'Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.'
+      description: "Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. Retrieve the properties of a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-get?view=graph-rest-1.0
@@ -10122,7 +10122,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Permanently delete an item (directory object)
-      description: 'Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.'
+      description: "Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Permanently delete a recently deleted directory object from deleted items. The following types are supported:\n- certificateBasedAuthPki\n- certificateAuthorityDetail After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-delete?view=graph-rest-1.0
@@ -10505,7 +10505,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: List deletedItems (directory objects)
-      description: 'Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.'
+      description: "Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources. Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
@@ -10553,7 +10553,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -10977,7 +10977,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: List deletedItems (directory objects)
-      description: 'Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.'
+      description: "Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources. Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
@@ -11843,6 +11843,7 @@ paths:
       tags:
         - directory.publicKeyInfrastructureRoot
       summary: Get publicKeyInfrastructure from directory
+      description: The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
       operationId: directory_GetPublicKeyInfrastructure
       parameters:
         - name: $select
@@ -11919,7 +11920,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateBasedAuthConfigurations from directory
+      summary: List certificateBasedAuthPki objects
+      description: Get a list of the certificateBasedAuthPki objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-list-certificatebasedauthconfigurations?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_ListCertificateBasedAuthConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11969,7 +11974,11 @@ paths:
     post:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Create new navigation property to certificateBasedAuthConfigurations for directory
+      summary: Create certificateBasedAuthPki
+      description: Create a new certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-post-certificatebasedauthconfigurations?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_CreateCertificateBasedAuthConfiguration
       requestBody:
         description: New navigation property
@@ -11992,7 +12001,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateBasedAuthConfigurations from directory
+      summary: Get certificateBasedAuthPki
+      description: Read the properties and relationships of a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-get?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_GetCertificateBasedAuthConfiguration
       parameters:
         - name: certificateBasedAuthPki-id
@@ -12036,7 +12049,11 @@ paths:
     patch:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Update the navigation property certificateBasedAuthConfigurations in directory
+      summary: Update certificateBasedAuthPki
+      description: Update the properties of a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-update?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_UpdateCertificateBasedAuthConfiguration
       parameters:
         - name: certificateBasedAuthPki-id
@@ -12067,7 +12084,11 @@ paths:
     delete:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Delete navigation property certificateBasedAuthConfigurations for directory
+      summary: Delete certificateBasedAuthPki
+      description: Delete a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-delete-certificatebasedauthconfigurations?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_DeleteCertificateBasedAuthConfiguration
       parameters:
         - name: certificateBasedAuthPki-id
@@ -12094,7 +12115,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateAuthorities from directory
+      summary: List certificateAuthorityDetail objects
+      description: Get a list of the certificateAuthorityDetail objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-list-certificateauthorities?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_ListCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -12152,7 +12177,11 @@ paths:
     post:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Create new navigation property to certificateAuthorities for directory
+      summary: Create certificateAuthorityDetail
+      description: Create a new certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-post-certificateauthorities?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_CreateCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -12185,6 +12214,7 @@ paths:
       tags:
         - directory.publicKeyInfrastructureRoot
       summary: Get certificateAuthorities from directory
+      description: The collection of certificate authorities contained in this public key infrastructure resource.
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_GetCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -12236,7 +12266,10 @@ paths:
     patch:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Update the navigation property certificateAuthorities in directory
+      summary: Update certificateAuthorityDetail
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificateauthoritydetail-update?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_UpdateCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -12275,7 +12308,11 @@ paths:
     delete:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Delete navigation property certificateAuthorities for directory
+      summary: Delete certificateAuthorityDetail
+      description: Delete a certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-delete-certificateauthorities?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_DeleteCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -12333,6 +12370,10 @@ paths:
       tags:
         - directory.publicKeyInfrastructureRoot
       summary: Invoke action upload
+      description: 'Append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-upload?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_upload
       parameters:
         - name: certificateBasedAuthPki-id
@@ -14325,7 +14366,7 @@ paths:
       tags:
         - directoryRoles.directoryRole.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -15334,7 +15375,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -16836,10 +16877,10 @@ paths:
       tags:
         - organization.organization
       summary: List organizations
-      description: Retrieve a list of organization objects. There's only one organization object in the collection.
+      description: List properties and relationships of the organization objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16961,10 +17002,10 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
-      description: Update the properties of a organization object.
+      description: 'Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
       operationId: organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -19821,7 +19862,7 @@ paths:
       tags:
         - organization.organization.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -20825,6 +20866,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -21272,6 +21314,7 @@ components:
               nullable: true
             isMemberManagementRestricted:
               type: boolean
+              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. If not set, the default value is null and the default behavior is false. Use this property to define administrative units with roles that don''t inherit from tenant-level administrators, and where the management of individual member objects is limited to administrators scoped to a restricted management administrative unit. This property is immutable and can''t be changed later.  For more information on how to work with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.'
               nullable: true
             membershipRule:
               type: string
@@ -21384,6 +21427,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -21757,6 +21801,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean
@@ -22569,6 +22614,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+              description: The collection of public key infrastructure instances for the certificate-based authentication feature for users.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -22580,21 +22626,26 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the object. Maximum length is 256 characters.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the object was created or last modified.
               format: date-time
             status:
               type: string
+              description: The status of any asynchronous jobs runs on the object which can be upload or delete.
               nullable: true
             statusDetails:
               type: string
+              description: The status details of the upload/deleted operation of PKI (Public Key Infrastructure).
               nullable: true
             certificateAuthorities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+              description: The collection of certificate authorities contained in this public key infrastructure resource.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -22606,15 +22657,18 @@ components:
           properties:
             certificate:
               type: string
+              description: The public key of the certificate authority.
               format: base64url
             certificateAuthorityType:
               $ref: '#/components/schemas/microsoft.graph.certificateAuthorityType'
             certificateRevocationListUrl:
               type: string
+              description: The URL to check if the certificate is revoked.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the certificate authority was created.
               format: date-time
               nullable: true
             deltaCertificateRevocationListUrl:
@@ -22622,22 +22676,28 @@ components:
               nullable: true
             displayName:
               type: string
+              description: The display name of the certificate authority.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the certificate authority expires. Supports $filter (eq) and $orderby.
               format: date-time
             isIssuerHintEnabled:
               type: boolean
+              description: Indicates whether the certificate picker presents the certificate authority to the user to use for authentication. Default value is false. Optional.
               nullable: true
             issuer:
               type: string
+              description: The issuer of the certificate authority.
               nullable: true
             issuerSubjectKeyIdentifier:
               type: string
+              description: The subject key identifier of certificate authority.
               nullable: true
             thumbprint:
               type: string
+              description: 'The thumbprint of certificate authority certificate. Supports $filter (eq, startswith).'
           additionalProperties:
             type: object
     microsoft.graph.companySubscription:
@@ -40262,37 +40322,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

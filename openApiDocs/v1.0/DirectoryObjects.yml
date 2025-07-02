@@ -11,6 +11,7 @@ paths:
       tags:
         - directory.publicKeyInfrastructureRoot
       summary: Get publicKeyInfrastructure from directory
+      description: The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
       operationId: directory_GetPublicKeyInfrastructure
       parameters:
         - name: $select
@@ -87,7 +88,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateBasedAuthConfigurations from directory
+      summary: List certificateBasedAuthPki objects
+      description: Get a list of the certificateBasedAuthPki objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-list-certificatebasedauthconfigurations?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_ListCertificateBasedAuthConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -137,7 +142,11 @@ paths:
     post:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Create new navigation property to certificateBasedAuthConfigurations for directory
+      summary: Create certificateBasedAuthPki
+      description: Create a new certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-post-certificatebasedauthconfigurations?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_CreateCertificateBasedAuthConfiguration
       requestBody:
         description: New navigation property
@@ -160,7 +169,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateBasedAuthConfigurations from directory
+      summary: Get certificateBasedAuthPki
+      description: Read the properties and relationships of a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-get?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_GetCertificateBasedAuthConfiguration
       parameters:
         - name: certificateBasedAuthPki-id
@@ -204,7 +217,11 @@ paths:
     patch:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Update the navigation property certificateBasedAuthConfigurations in directory
+      summary: Update certificateBasedAuthPki
+      description: Update the properties of a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-update?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_UpdateCertificateBasedAuthConfiguration
       parameters:
         - name: certificateBasedAuthPki-id
@@ -235,7 +252,11 @@ paths:
     delete:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Delete navigation property certificateBasedAuthConfigurations for directory
+      summary: Delete certificateBasedAuthPki
+      description: Delete a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-delete-certificatebasedauthconfigurations?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure_DeleteCertificateBasedAuthConfiguration
       parameters:
         - name: certificateBasedAuthPki-id
@@ -262,7 +283,11 @@ paths:
     get:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Get certificateAuthorities from directory
+      summary: List certificateAuthorityDetail objects
+      description: Get a list of the certificateAuthorityDetail objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-list-certificateauthorities?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_ListCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -320,7 +345,11 @@ paths:
     post:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Create new navigation property to certificateAuthorities for directory
+      summary: Create certificateAuthorityDetail
+      description: Create a new certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-post-certificateauthorities?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_CreateCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -353,6 +382,7 @@ paths:
       tags:
         - directory.publicKeyInfrastructureRoot
       summary: Get certificateAuthorities from directory
+      description: The collection of certificate authorities contained in this public key infrastructure resource.
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_GetCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -404,7 +434,10 @@ paths:
     patch:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Update the navigation property certificateAuthorities in directory
+      summary: Update certificateAuthorityDetail
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificateauthoritydetail-update?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_UpdateCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -443,7 +476,11 @@ paths:
     delete:
       tags:
         - directory.publicKeyInfrastructureRoot
-      summary: Delete navigation property certificateAuthorities for directory
+      summary: Delete certificateAuthorityDetail
+      description: Delete a certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-delete-certificateauthorities?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_DeleteCertificateAuthority
       parameters:
         - name: certificateBasedAuthPki-id
@@ -501,6 +538,10 @@ paths:
       tags:
         - directory.publicKeyInfrastructureRoot
       summary: Invoke action upload
+      description: 'Append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-upload?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_upload
       parameters:
         - name: certificateBasedAuthPki-id
@@ -963,7 +1004,7 @@ paths:
       tags:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -1237,6 +1278,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+              description: The collection of public key infrastructure instances for the certificate-based authentication feature for users.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -1248,21 +1290,26 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the object. Maximum length is 256 characters.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the object was created or last modified.
               format: date-time
             status:
               type: string
+              description: The status of any asynchronous jobs runs on the object which can be upload or delete.
               nullable: true
             statusDetails:
               type: string
+              description: The status details of the upload/deleted operation of PKI (Public Key Infrastructure).
               nullable: true
             certificateAuthorities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+              description: The collection of certificate authorities contained in this public key infrastructure resource.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -1274,15 +1321,18 @@ components:
           properties:
             certificate:
               type: string
+              description: The public key of the certificate authority.
               format: base64url
             certificateAuthorityType:
               $ref: '#/components/schemas/microsoft.graph.certificateAuthorityType'
             certificateRevocationListUrl:
               type: string
+              description: The URL to check if the certificate is revoked.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the certificate authority was created.
               format: date-time
               nullable: true
             deltaCertificateRevocationListUrl:
@@ -1290,22 +1340,28 @@ components:
               nullable: true
             displayName:
               type: string
+              description: The display name of the certificate authority.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the certificate authority expires. Supports $filter (eq) and $orderby.
               format: date-time
             isIssuerHintEnabled:
               type: boolean
+              description: Indicates whether the certificate picker presents the certificate authority to the user to use for authentication. Default value is false. Optional.
               nullable: true
             issuer:
               type: string
+              description: The issuer of the certificate authority.
               nullable: true
             issuerSubjectKeyIdentifier:
               type: string
+              description: The subject key identifier of certificate authority.
               nullable: true
             thumbprint:
               type: string
+              description: 'The thumbprint of certificate authority certificate. Supports $filter (eq, startswith).'
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:

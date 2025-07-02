@@ -14,7 +14,7 @@ paths:
       description: Read properties and relationships of the deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetDeviceAppManagement
       parameters:
         - name: $select
@@ -54,7 +54,7 @@ paths:
       description: Update the properties of a deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-unlock-deviceappmanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateDeviceAppManagement
       requestBody:
         description: New property values
@@ -2252,11 +2252,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: List targetedManagedAppProtections
-      description: List properties and relationships of the targetedManagedAppProtection objects.
+      summary: List windowsInformationProtections
+      description: List properties and relationships of the windowsInformationProtection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2329,11 +2329,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: Get managedAppProtection
-      description: Read properties and relationships of the managedAppProtection object.
+      summary: Get windowsInformationProtection
+      description: Read properties and relationships of the windowsInformationProtection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppPolicy
       parameters:
         - name: managedAppPolicy-id
@@ -2488,11 +2488,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: List managedAppRegistrations
-      description: List properties and relationships of the managedAppRegistration objects.
+      summary: List iosManagedAppRegistrations
+      description: List properties and relationships of the iosManagedAppRegistration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppRegistration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3638,11 +3638,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppStatus
-      summary: Get managedAppStatusRaw
-      description: Read properties and relationships of the managedAppStatusRaw object.
+      summary: Get managedAppStatus
+      description: Read properties and relationships of the managedAppStatus object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatus-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppStatus
       parameters:
         - name: managedAppStatus-id
@@ -3758,11 +3758,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: List iosVppEBooks
-      description: List properties and relationships of the iosVppEBook objects.
+      summary: List managedEBooks
+      description: List properties and relationships of the managedEBook objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebook-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedEBook
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3839,11 +3839,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get iosVppEBook
-      description: Read properties and relationships of the iosVppEBook object.
+      summary: Get managedEBook
+      description: Read properties and relationships of the managedEBook object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebook-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebook-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedEBook
       parameters:
         - name: managedEBook-id
@@ -3953,11 +3953,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: List iosVppEBookAssignments
-      description: List properties and relationships of the iosVppEBookAssignment objects.
+      summary: List managedEBookAssignments
+      description: List properties and relationships of the managedEBookAssignment objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-list?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_ListAssignment
       parameters:
         - name: managedEBook-id
@@ -4015,11 +4015,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Create iosVppEBookAssignment
-      description: Create a new iosVppEBookAssignment object.
+      summary: Create managedEBookAssignment
+      description: Create a new managedEBookAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-create?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_CreateAssignment
       parameters:
         - name: managedEBook-id
@@ -4051,11 +4051,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get managedEBookAssignment
-      description: Read properties and relationships of the managedEBookAssignment object.
+      summary: Get iosVppEBookAssignment
+      description: Read properties and relationships of the iosVppEBookAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-get?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_GetAssignment
       parameters:
         - name: managedEBook-id
@@ -6413,11 +6413,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get iosMobileAppConfiguration
-      description: Read properties and relationships of the iosMobileAppConfiguration object.
+      summary: Get managedDeviceMobileAppConfiguration
+      description: Read properties and relationships of the managedDeviceMobileAppConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileAppConfiguration
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7574,11 +7574,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: List webApps
-      description: List properties and relationships of the webApp objects.
+      summary: List managedAndroidStoreApps
+      description: List properties and relationships of the managedAndroidStoreApp objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-webapp-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileApp
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7628,11 +7628,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Create iosVppApp
-      description: Create a new iosVppApp object.
+      summary: Create managedAndroidLobApp
+      description: Create a new managedAndroidLobApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-iosvppapp-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidlobapp-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateMobileApp
       requestBody:
         description: New navigation property
@@ -7655,11 +7655,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get managedAndroidStoreApp
-      description: Read properties and relationships of the managedAndroidStoreApp object.
+      summary: Get windowsMobileMSI
+      description: Read properties and relationships of the windowsMobileMSI object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-windowsmobilemsi-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileApp
       parameters:
         - name: mobileApp-id
@@ -7703,11 +7703,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Update managedAndroidLobApp
-      description: Update the properties of a managedAndroidLobApp object.
+      summary: Update windowsWebApp
+      description: Update the properties of a windowsWebApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidlobapp-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-windowswebapp-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateMobileApp
       parameters:
         - name: mobileApp-id
@@ -7738,11 +7738,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Delete iosiPadOSWebClip
-      description: Deletes a iosiPadOSWebClip.
+      summary: Delete managedIOSStoreApp
+      description: Deletes a managedIOSStoreApp.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-iosipadoswebclip-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-managediosstoreapp-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMobileApp
       parameters:
         - name: mobileApp-id
@@ -35180,6 +35180,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -41668,6 +41669,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -43260,6 +43262,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean
@@ -50536,37 +50539,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

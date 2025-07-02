@@ -1206,10 +1206,10 @@ paths:
       tags:
         - groups.conversation
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -7276,7 +7276,7 @@ paths:
       tags:
         - groups.group.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -10193,11 +10193,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversationThread
-      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
+      summary: Get conversation thread
+      description: Get a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -10291,11 +10291,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversation thread
+      summary: Delete conversationThread
       description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -10331,10 +10331,10 @@ paths:
       tags:
         - groups.conversationThread
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -10375,11 +10375,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,\nyou can specify the thread without referencing the parent conversation."
+      summary: Get post
+      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
@@ -14808,7 +14808,7 @@ paths:
       tags:
         - groupSettingTemplates.groupSettingTemplate.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -15160,6 +15160,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -15671,6 +15672,7 @@ components:
               nullable: true
             isMemberManagementRestricted:
               type: boolean
+              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. If not set, the default value is null and the default behavior is false. Use this property to define administrative units with roles that don''t inherit from tenant-level administrators, and where the management of individual member objects is limited to administrators scoped to a restricted management administrative unit. This property is immutable and can''t be changed later.  For more information on how to work with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.'
               nullable: true
             membershipRule:
               type: string
@@ -15969,6 +15971,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean
@@ -16556,6 +16559,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -33207,37 +33211,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

@@ -11,10 +11,10 @@ paths:
       tags:
         - users.user
       summary: List users
-      description: List properties and relationships of the user objects.
+      description: Retrieve a list of user objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -100,11 +100,11 @@ paths:
     get:
       tags:
         - users.user
-      summary: Get user
-      description: Read properties and relationships of the user object.
+      summary: Get a user
+      description: 'Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
       operationId: user_GetUser
       parameters:
         - name: user-id
@@ -11442,11 +11442,11 @@ paths:
     get:
       tags:
         - users.user
-      summary: Get user
-      description: Read properties and relationships of the user object.
+      summary: Get a user
+      description: 'Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
       operationId: user_GetUserGraphBPreUserPrincipalName
       parameters:
         - name: userPrincipalName
@@ -11724,6 +11724,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -12680,6 +12681,7 @@ components:
               nullable: true
             isMemberManagementRestricted:
               type: boolean
+              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. If not set, the default value is null and the default behavior is false. Use this property to define administrative units with roles that don''t inherit from tenant-level administrators, and where the management of individual member objects is limited to administrators scoped to a restricted management administrative unit. This property is immutable and can''t be changed later.  For more information on how to work with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.'
               nullable: true
             membershipRule:
               type: string
@@ -12824,6 +12826,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -13272,6 +13275,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean
@@ -29956,37 +29960,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

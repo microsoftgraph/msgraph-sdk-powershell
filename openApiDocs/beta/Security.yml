@@ -12933,6 +12933,57 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/dataSecurityAndGovernance/protectionScopes/microsoft.graph.compute:
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke action compute
+      operationId: security.dataSecurityAndGovernance.protectionScope_compute
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                activities:
+                  $ref: '#/components/schemas/microsoft.graph.userActivityTypes'
+                locations:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.policyLocation'
+                pivotOn:
+                  $ref: '#/components/schemas/microsoft.graph.policyPivotProperty'
+                deviceMetadata:
+                  $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+                integratedAppMetadata:
+                  $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.policyTenantScope'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /security/dataSecurityAndGovernance/sensitivityLabels:
     get:
       tags:
@@ -33416,7 +33467,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the group is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -34587,6 +34638,75 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: tenantProtectionScopeContainer
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.userActivityTypes:
+      title: userActivityTypes
+      enum:
+        - none
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.policyLocation:
+      title: policyLocation
+      type: object
+      properties:
+        value:
+          type: string
+          description: 'The actual value representing the location (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
+      additionalProperties:
+        type: object
+    microsoft.graph.policyPivotProperty:
+      title: policyPivotProperty
+      enum:
+        - none
+        - activity
+        - location
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceMetadata:
+      title: deviceMetadata
+      type: object
+      properties:
+        deviceType:
+          type: string
+          description: 'Optional. The general type of the device (for example, ''Managed'', ''Unmanaged'').'
+          nullable: true
+        ipAddress:
+          type: string
+          description: The Internet Protocol (IP) address of the device.
+          nullable: true
+        operatingSystemSpecifications:
+          $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
+      additionalProperties:
+        type: object
+    microsoft.graph.integratedApplicationMetadata:
+      title: integratedApplicationMetadata
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the integrated application.
+          nullable: true
+        version:
+          type: string
+          description: The version number of the integrated application.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.policyTenantScope:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyScopeBase'
+        - title: policyTenantScope
+          type: object
+          properties:
+            policyScope:
+              $ref: '#/components/schemas/microsoft.graph.policyBinding'
           additionalProperties:
             type: object
     microsoft.graph.sensitivityLabel:
@@ -36465,7 +36585,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the user is a member of a restricted management administrative unit. Default value is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -42332,6 +42452,8 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
           description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
         integratedAppMetadata:
           $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
         protectedAppMetadata:
@@ -42346,7 +42468,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.dlpActionInfo'
-          description: 'A collection of policy actions (like DLP actions) triggered by the processed content. NOTE: Currently, the only policyAction supported in processContentResponse is ''_restrictAccess'''
+          description: 'A collection of policy actions (like DLP actions) triggered by the processed content. NOTE: Currently, the only policy action supported in for this resource type is restrictAccess.'
         processingErrors:
           type: array
           items:
@@ -42354,6 +42476,54 @@ components:
           description: A collection of errors encountered during the content processing.
         protectionScopeState:
           $ref: '#/components/schemas/microsoft.graph.protectionScopeState'
+      additionalProperties:
+        type: object
+    microsoft.graph.operatingSystemSpecifications:
+      title: operatingSystemSpecifications
+      type: object
+      properties:
+        operatingSystemPlatform:
+          type: string
+          description: 'The platform of the operating system (for example, ''Windows'').'
+        operatingSystemVersion:
+          type: string
+          description: The version string of the operating system.
+      additionalProperties:
+        type: object
+    microsoft.graph.policyScopeBase:
+      title: policyScopeBase
+      type: object
+      properties:
+        activities:
+          $ref: '#/components/schemas/microsoft.graph.userActivityTypes'
+        executionMode:
+          $ref: '#/components/schemas/microsoft.graph.executionMode'
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          description: The locations (like domains or URLs) to be protected. Required.
+        policyActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dlpActionInfo'
+          description: The enforcement actions to take if the policy conditions are met within this scope. Required.
+      additionalProperties:
+        type: object
+    microsoft.graph.policyBinding:
+      title: policyBinding
+      type: object
+      properties:
+        exclusions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.scopeBase'
+          description: Specifies the users or groups to be explicitly excluded from this policy scope. Can be null or empty.
+        inclusions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.scopeBase'
+          description: Specifies the users or groups to be included in this policy scope. Often set to tenantScope for 'All users'.
       additionalProperties:
         type: object
     microsoft.graph.labelActionSource:
@@ -43276,11 +43446,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -44942,7 +45112,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the device is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isRooted:
               type: boolean
@@ -45999,7 +46169,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -51562,7 +51732,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.contentBase'
         correlationId:
           type: string
-          description: 'An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
           nullable: true
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -51595,20 +51765,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.integratedApplicationMetadata:
-      title: integratedApplicationMetadata
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the integrated application.
-          nullable: true
-        version:
-          type: string
-          description: The version number of the integrated application.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.protectedApplicationMetadata:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
@@ -51622,6 +51778,9 @@ components:
     microsoft.graph.dlpActionInfo:
       title: dlpActionInfo
       type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/microsoft.graph.dlpAction'
       additionalProperties:
         type: object
     microsoft.graph.processingError:
@@ -51641,6 +51800,23 @@ components:
         - modified
         - unknownFutureValue
       type: string
+    microsoft.graph.executionMode:
+      title: executionMode
+      enum:
+        - evaluateInline
+        - evaluateOffline
+        - unknownFutureValue
+      type: string
+    microsoft.graph.scopeBase:
+      title: scopeBase
+      type: object
+      properties:
+        identity:
+          type: string
+          description: 'The identifier for the scope. This could be a user ID, group ID, or a keyword like ''All'' for tenant scope.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.classificationError:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
@@ -57268,7 +57444,6 @@ components:
           properties:
             inPlaceArchiveMailboxId:
               type: string
-              description: The unique identifier for the user's in-place archive mailbox.
               nullable: true
             primaryMailboxId:
               type: string
@@ -60145,15 +60320,22 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.policyLocation:
-      title: policyLocation
-      type: object
-      properties:
-        value:
-          type: string
-          description: 'The actual value representing the location (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
-      additionalProperties:
-        type: object
+    microsoft.graph.dlpAction:
+      title: dlpAction
+      enum:
+        - notifyUser
+        - blockAccess
+        - deviceRestriction
+        - browserRestriction
+        - unknownFutureValue
+        - restrictAccess
+        - generateAlert
+        - generateIncidentReportAction
+        - sPBlockAnonymousAccess
+        - sPRuntimeAccessControl
+        - sPSharingNotifyUser
+        - sPSharingGenerateIncidentReport
+      type: string
     microsoft.graph.contentProcessingErrorType:
       title: contentProcessingErrorType
       enum:

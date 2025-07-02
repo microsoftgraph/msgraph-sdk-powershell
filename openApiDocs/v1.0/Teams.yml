@@ -1392,11 +1392,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get conversationMember in a chat
-      description: Retrieve a conversationMember from a chat.
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -20475,11 +20475,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -20801,11 +20801,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -21757,11 +21757,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: team.channel.message_CreateReply
       parameters:
         - name: team-id
@@ -31660,7 +31660,7 @@ paths:
       tags:
         - teams.schedule
       summary: Replace shift
-      description: 'Replace an existing shift. If the specified shift doesn''t exist, this method returns 404 Not found. The duration of a shift can''t be less than 1 minute or longer than 24 hours.'
+      description: 'Replace an existing shift. If the specified shift doesn''t exist, this method returns 404 Not found. The duration of a shift can''t be less than one minute or longer than 24 hours.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/shift-put?view=graph-rest-1.0
@@ -63293,6 +63293,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -67356,6 +67357,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -74383,37 +74385,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.attendeeType:
@@ -75014,6 +75016,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean

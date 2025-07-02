@@ -6511,7 +6511,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approval
-      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
+      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for Groups, providing the identifier of the assignment schedule request."
       operationId: identityGovernance.entitlementManagement_ListAccessPackageAssignmentApproval
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6585,7 +6585,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approval
-      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
+      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for Groups, providing the identifier of the assignment schedule request."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-get?view=graph-rest-1.0
@@ -6691,7 +6691,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List approval stages
-      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
+      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for Groups, providing the identifier of the assignment schedule request."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
@@ -6955,7 +6955,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
-      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
+      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
@@ -14695,11 +14695,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentRequestWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+      summary: Get accessPackageAssignmentWorkflowExtension
+      description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14751,11 +14751,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentRequestWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+      summary: Update accessPackageAssignmentWorkflowExtension
+      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -54515,7 +54515,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
+      description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
@@ -54775,7 +54775,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get activatedUsing from identityGovernance
-      description: 'When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.'
+      description: 'When the request activates a membership or ownership in PIM for Groups, this object represents the eligibility request for the group. Otherwise, it is null.'
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleInstance_GetActivatedUsing
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleInstance-id
@@ -54821,7 +54821,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.
+      description: References the group that is the scope of the membership or ownership assignment through PIM for Groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleInstance_GetGroup
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleInstance-id
@@ -55008,7 +55008,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
+      description: 'In PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
@@ -55272,7 +55272,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get activatedUsing from identityGovernance
-      description: 'When the request activates a membership or ownership assignment in PIM for groups, this object represents the eligibility policy for the group. Otherwise, it is null. Supports $expand.'
+      description: 'When the request activates a membership or ownership assignment in PIM for Groups, this object represents the eligibility policy for the group. Otherwise, it is null. Supports $expand.'
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_GetActivatedUsing
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -55318,7 +55318,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: 'References the group that is the scope of the membership or ownership assignment request through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
+      description: 'References the group that is the scope of the membership or ownership assignment request through PIM for Groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_GetGroup
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -55576,7 +55576,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In PIM for groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
+      description: 'In PIM for Groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0
@@ -55836,7 +55836,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get activatedUsing from identityGovernance
-      description: 'When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it''s null. Supports $expand.'
+      description: 'When the request activates an ownership or membership assignment in PIM for Groups, this object represents the eligibility relationship. Otherwise, it''s null. Supports $expand.'
       operationId: identityGovernance.privilegedAccess.group.assignmentSchedule_GetActivatedUsing
       parameters:
         - name: privilegedAccessGroupAssignmentSchedule-id
@@ -55882,7 +55882,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: 'References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
+      description: 'References the group that is the scope of the membership or ownership assignment through PIM for Groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
       operationId: identityGovernance.privilegedAccess.group.assignmentSchedule_GetGroup
       parameters:
         - name: privilegedAccessGroupAssignmentSchedule-id
@@ -56069,7 +56069,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In PIM for groups, retrieve the schedules for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
+      description: 'In PIM for Groups, retrieve the schedules for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
@@ -56329,7 +56329,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+      description: References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleInstance_GetGroup
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleInstance-id
@@ -56780,7 +56780,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: 'References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
+      description: 'References the group that is the scope of the membership or ownership eligibility request through PIM for Groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.'
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleRequest_GetGroup
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleRequest-id
@@ -57038,7 +57038,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
-      description: 'In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.'
+      description: 'In PIM for Groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
@@ -57298,7 +57298,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
-      description: References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+      description: References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilitySchedule_GetGroup
       parameters:
         - name: privilegedAccessGroupEligibilitySchedule-id
@@ -70039,6 +70039,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -71372,13 +71373,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupAssignmentType'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional. Supports $filter (eq).
+              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for Groups. Optional. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             activatedUsing:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance'
@@ -71402,13 +71403,13 @@ components:
               nullable: true
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
@@ -71491,6 +71492,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -71766,11 +71768,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required.
+              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for Groups. Required.
               nullable: true
             principalId:
               type: string
-              description: 'The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Supports $filter (eq, ne).'
+              description: 'The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for Groups. Supports $filter (eq, ne).'
               nullable: true
             targetScheduleId:
               type: string
@@ -71796,13 +71798,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the principal whose membership or ownership eligibility is granted through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
@@ -71830,13 +71832,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupAssignmentType'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership assignment is granted through PIM for groups. Required. Supports $filter (eq).
+              description: The identifier of the principal whose membership or ownership assignment is granted through PIM for Groups. Required. Supports $filter (eq).
               nullable: true
             activatedUsing:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilitySchedule'
@@ -71868,11 +71870,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             groupId:
               type: string
-              description: The identifier of the group representing the scope of the membership and ownership eligibility through PIM for groups. Required.
+              description: The identifier of the group representing the scope of the membership and ownership eligibility through PIM for Groups. Required.
               nullable: true
             principalId:
               type: string
-              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required.
+              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for Groups. Required.
               nullable: true
             targetScheduleId:
               type: string
@@ -81282,6 +81284,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean
@@ -89092,37 +89095,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:
