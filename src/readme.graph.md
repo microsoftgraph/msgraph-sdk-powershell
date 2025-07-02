@@ -5,7 +5,7 @@
 ``` yaml
 azure: false
 powershell: true
-version: "3.7.1"
+version: "autorest/core@3.10.4"
 use: "$(this-folder)../autorest.powershell"
 export-properties-for-dict: false
 metadata:

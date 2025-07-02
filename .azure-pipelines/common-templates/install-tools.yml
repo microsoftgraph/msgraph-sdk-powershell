@@ -37,6 +37,12 @@ steps:
       customCommand: install -g autorest@3.7.1
 
   - task: Npm@1
+    displayName: Install AutoRestCore
+    inputs:
+      command: custom
+      customCommand: install -g @autorest/core@3.10.4     
+
+  - task: Npm@1
     displayName: Install Rush
     inputs:
       command: custom
