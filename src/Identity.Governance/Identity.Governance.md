@@ -22,7 +22,8 @@ directive:
 # Remove models
   - where:
       model-name: /.*ResumePostRequestbodyContentApplicationJsonSchema.*/i
-    remove: true
+    set:
+      hidden: true
 # Remove cmdlets
   - where:
       verb: Get|Remove|Set
