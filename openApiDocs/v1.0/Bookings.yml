@@ -4364,8 +4364,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceReports from solutions
-      description: The attendance reports of an online meeting. Read-only.
+      summary: List meetingAttendanceReports
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.townhall.session_ListAttendanceReport
       parameters:
         - name: virtualEventTownhall-id
@@ -4471,8 +4474,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceReports from solutions
-      description: The attendance reports of an online meeting. Read-only.
+      summary: Get meetingAttendanceReport
+      description: 'Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.townhall.session_GetAttendanceReport
       parameters:
         - name: virtualEventTownhall-id
@@ -4622,8 +4628,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceRecords from solutions
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.townhall.session.attendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEventTownhall-id
@@ -7232,8 +7241,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceRecords from solutions
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session.attendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEventWebinar-id
@@ -8356,6 +8368,11 @@ components:
         - title: meetingAttendanceReport
           type: object
           properties:
+            externalEventInformation:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
+              description: The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
             meetingEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -8398,8 +8415,14 @@ components:
               type: string
               description: Email address of the user associated with this attendance record.
               nullable: true
+            externalRegistrationInformation:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventExternalRegistrationInformation'
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrationId:
+              type: string
+              description: Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
+              nullable: true
             role:
               type: string
               description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
@@ -8527,7 +8550,7 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
@@ -8569,6 +8592,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
               description: The list of drive protection units in the tenant.
               x-ms-navigationProperty: true
+            driveProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
             exchangeProtectionPolicies:
               type: array
               items:
@@ -8592,6 +8620,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
               description: The list of mailbox protection units in the tenant.
+              x-ms-navigationProperty: true
+            mailboxProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
             oneDriveForBusinessProtectionPolicies:
               type: array
@@ -8658,6 +8691,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
               description: The list of site protection units in the tenant.
+              x-ms-navigationProperty: true
+            siteProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9157,6 +9195,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventExternalRegistrationInformation:
+      title: virtualEventExternalRegistrationInformation
+      type: object
+      properties:
+        referrer:
+          type: string
+          description: A URL or string that represents the location from which the registrant registered. Optional.
+          nullable: true
+        registrationId:
+          type: string
+          description: 'The identifier for a virtualEventExternalRegistrationInformation object. Optional. If set, the maximum supported length is 256 characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingAudience:
       title: meetingAudience
       enum:
@@ -9201,20 +9253,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.virtualEventExternalRegistrationInformation:
-      title: virtualEventExternalRegistrationInformation
-      type: object
-      properties:
-        referrer:
-          type: string
-          description: A URL or string that represents the location from which the registrant registered. Optional.
-          nullable: true
-        registrationId:
-          type: string
-          description: 'The identifier for a virtualEventExternalRegistrationInformation object. Optional. If set, the maximum supported length is 256 characters.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.virtualEventRegistrationQuestionAnswer:
       title: virtualEventRegistrationQuestionAnswer
       type: object
@@ -9539,6 +9577,26 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.driveProtectionUnitsBulkAdditionJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobBase'
+        - title: driveProtectionUnitsBulkAdditionJob
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of OneDrive directoryObjectIds to add to the OneDrive protection policy.
+            drives:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of email addresses to add to the OneDrive protection policy.
+          additionalProperties:
+            type: object
     microsoft.graph.exchangeProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
@@ -9556,6 +9614,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
               description: The protection units (mailboxes) that are  protected under the Exchange protection policy.
+              x-ms-navigationProperty: true
+            mailboxProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9575,6 +9638,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
               description: A collection of restore points and destination details that can be used to restore Exchange mailboxes.
+              x-ms-navigationProperty: true
+            mailboxRestoreArtifactsBulkAdditionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
+              description: A collection of user mailboxes and destination details that can be used to restore Exchange mailboxes.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9612,6 +9681,26 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.mailboxProtectionUnitsBulkAdditionJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobBase'
+        - title: mailboxProtectionUnitsBulkAdditionJob
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of Exchange directoryObjectIds to add to the Exchange protection policy.
+            mailboxes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of Exchange email addresses to add to the Exchange protection policy.
+          additionalProperties:
+            type: object
     microsoft.graph.oneDriveForBusinessProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
@@ -9630,6 +9719,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
               description: Contains the protection units associated with a  OneDrive for Business protection policy.
               x-ms-navigationProperty: true
+            driveProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.oneDriveForBusinessRestoreSession:
@@ -9642,7 +9736,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifact'
-              description: A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+              description: A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
+              x-ms-navigationProperty: true
+            driveRestoreArtifactsBulkAdditionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
+              description: A collection of user mailboxes and destination details that can be used to restore a OneDrive for work or school drive.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9821,6 +9921,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
               description: The protection units (sites) that are protected under the site protection policy.
               x-ms-navigationProperty: true
+            siteProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.sharePointRestoreSession:
@@ -9834,6 +9939,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifact'
               description: A collection of restore points and destination details that can be used to restore SharePoint sites.
+              x-ms-navigationProperty: true
+            siteRestoreArtifactsBulkAdditionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
+              description: A collection of SharePoint site URLs and destination details that can be used to restore SharePoint sites.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9869,6 +9980,26 @@ components:
               description: The web URL of the SharePoint site.
               nullable: true
               readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.siteProtectionUnitsBulkAdditionJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobBase'
+        - title: siteProtectionUnitsBulkAdditionJob
+          type: object
+          properties:
+            siteIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site IDs to add to the SharePoint protection policy.
+            siteWebUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site URLs to add to the SharePoint protection policy.
           additionalProperties:
             type: object
     microsoft.graph.bookingPageAccessControl:
@@ -10245,7 +10376,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicError'
             isAutoApplyEnabled:
               type: boolean
-              description: 'true indicates that the protection rule is dynamic; false that it''s static. Currently, only static rules are supported.'
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -10257,6 +10387,38 @@ components:
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.protectionRuleStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.protectionUnitsBulkJobBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: protectionUnitsBulkJobBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of creation of the job.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the protection units bulk addition job.
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last modification made to the job.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobStatus'
           additionalProperties:
             type: object
     microsoft.graph.granularMailboxRestoreArtifact:
@@ -10294,6 +10456,26 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestBase'
+        - title: mailboxRestoreArtifactsBulkAdditionRequest
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation.
+            mailboxes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of email addresses that are added to the corresponding Exchange restore session in a bulk operation.
+          additionalProperties:
+            type: object
     microsoft.graph.driveRestoreArtifact:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.restoreArtifactBase'
@@ -10314,6 +10496,26 @@ components:
               description: The web URL of the restored site.
               nullable: true
               readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.driveRestoreArtifactsBulkAdditionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestBase'
+        - title: driveRestoreArtifactsBulkAdditionRequest
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation.
+            drives:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of email addresses that are added to the corresponding OneDrive for work or school restore session in a bulk operation.
           additionalProperties:
             type: object
     microsoft.graph.retentionSetting:
@@ -10427,6 +10629,26 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.siteRestoreArtifactsBulkAdditionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestBase'
+        - title: siteRestoreArtifactsBulkAdditionRequest
+          type: object
+          properties:
+            siteIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation.
+            siteWebUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site URLs that are added to the corresponding SharePoint restore session in a bulk operation.
+          additionalProperties:
+            type: object
     microsoft.graph.bookingsServiceAvailabilityType:
       title: bookingsServiceAvailabilityType
       enum:
@@ -10475,6 +10697,15 @@ components:
         - completedWithErrors
         - unknownFutureValue
       type: string
+    microsoft.graph.protectionUnitsBulkJobStatus:
+      title: protectionUnitsBulkJobStatus
+      enum:
+        - unknown
+        - active
+        - completed
+        - completedWithErrors
+        - unknownFutureValue
+      type: string
     microsoft.graph.restoreArtifactBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10501,6 +10732,52 @@ components:
               $ref: '#/components/schemas/microsoft.graph.artifactRestoreStatus'
             restorePoint:
               $ref: '#/components/schemas/microsoft.graph.restorePoint'
+          additionalProperties:
+            type: object
+    microsoft.graph.restoreArtifactsBulkRequestBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: restoreArtifactsBulkRequestBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time when the bulk request was created.
+              format: date-time
+              nullable: true
+            destinationType:
+              $ref: '#/components/schemas/microsoft.graph.destinationType'
+            displayName:
+              type: string
+              description: Name of the addition request.
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when this entity was last modified.
+              format: date-time
+              nullable: true
+            protectionTimePeriod:
+              $ref: '#/components/schemas/microsoft.graph.timePeriod'
+            protectionUnitIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Indicates which protection units to restore. This property isn't implemented yet. Future value; don't use.
+            restorePointPreference:
+              $ref: '#/components/schemas/microsoft.graph.restorePointPreference'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestStatus'
+            tags:
+              $ref: '#/components/schemas/microsoft.graph.restorePointTags'
           additionalProperties:
             type: object
     microsoft.graph.publicErrorDetail:
@@ -10560,6 +10837,40 @@ components:
         - inProgress
         - succeeded
         - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.timePeriod:
+      title: timePeriod
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date time of the end of the time period.
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date time of the start of the time period.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.restorePointPreference:
+      title: restorePointPreference
+      enum:
+        - latest
+        - oldest
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restoreArtifactsBulkRequestStatus:
+      title: restoreArtifactsBulkRequestStatus
+      enum:
+        - unknown
+        - active
+        - completed
+        - completedWithErrors
         - unknownFutureValue
       type: string
   responses:

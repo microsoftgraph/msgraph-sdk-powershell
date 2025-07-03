@@ -941,7 +941,7 @@ paths:
       description: Read properties and relationships of the deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-raimportcerts-devicemanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagement-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -981,7 +981,7 @@ paths:
       description: Update the properties of a deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicemanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-tem-devicemanagement-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
@@ -1558,11 +1558,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: List windows81CompliancePolicies
-      description: List properties and relationships of the windows81CompliancePolicy objects.
+      summary: List androidWorkProfileCompliancePolicies
+      description: List properties and relationships of the androidWorkProfileCompliancePolicy objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceCompliancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1612,11 +1612,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create windows10MobileCompliancePolicy
-      description: Create a new windows10MobileCompliancePolicy object.
+      summary: Create windows81CompliancePolicy
+      description: Create a new windows81CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceCompliancePolicy
       requestBody:
         description: New navigation property
@@ -1639,11 +1639,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get windowsPhone81CompliancePolicy
-      description: Read properties and relationships of the windowsPhone81CompliancePolicy object.
+      summary: Get deviceCompliancePolicy
+      description: Read properties and relationships of the deviceCompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1687,11 +1687,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update androidWorkProfileCompliancePolicy
-      description: Update the properties of a androidWorkProfileCompliancePolicy object.
+      summary: Update windows81CompliancePolicy
+      description: Update the properties of a windows81CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1722,11 +1722,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete windows10CompliancePolicy
-      description: Deletes a windows10CompliancePolicy.
+      summary: Delete iosCompliancePolicy
+      description: Deletes a iosCompliancePolicy.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -4298,11 +4298,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: List windows10CustomConfigurations
-      description: List properties and relationships of the windows10CustomConfiguration objects.
+      summary: List windows10GeneralConfigurations
+      description: List properties and relationships of the windows10GeneralConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10customconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4352,11 +4352,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create windowsDefenderAdvancedThreatProtectionConfiguration
-      description: Create a new windowsDefenderAdvancedThreatProtectionConfiguration object.
+      summary: Create windowsPhone81CustomConfiguration
+      description: Create a new windowsPhone81CustomConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsdefenderadvancedthreatprotectionconfiguration-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81customconfiguration-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceConfiguration
       requestBody:
         description: New navigation property
@@ -4379,11 +4379,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get macOSDeviceFeaturesConfiguration
-      description: Read properties and relationships of the macOSDeviceFeaturesConfiguration object.
+      summary: Get iosCustomConfiguration
+      description: Read properties and relationships of the iosCustomConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macosdevicefeaturesconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscustomconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4427,11 +4427,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update macOSCustomConfiguration
-      description: Update the properties of a macOSCustomConfiguration object.
+      summary: Update windows10GeneralConfiguration
+      description: Update the properties of a windows10GeneralConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscustomconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4462,11 +4462,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete androidWorkProfileGeneralDeviceConfiguration
-      description: Deletes a androidWorkProfileGeneralDeviceConfiguration.
+      summary: Delete windows10GeneralConfiguration
+      description: Deletes a windows10GeneralConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilegeneraldeviceconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -15373,6 +15373,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -19157,6 +19158,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               description: The phone numbers registered to a user for authentication.
               x-ms-navigationProperty: true
+            platformCredentialMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
+              description: Represents a platform credential instance registered to a user on Mac OS.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -19311,6 +19318,11 @@ components:
               type: string
               description: The preview of the message associated with the event. It's in text format.
               nullable: true
+            cancelledOccurrences:
+              type: array
+              items:
+                type: string
+              description: 'Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Returned only on $select in a Get operation which specifies the ID (seriesMasterId property value) of a series master event.'
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
@@ -19429,6 +19441,12 @@ components:
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
+            exceptionOccurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.event'
+              description: 'Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don''t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.'
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
@@ -19439,7 +19457,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn''t include occurrences cancelled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn''t include occurrences canceled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -21633,6 +21651,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
           additionalProperties:
             type: object
+    microsoft.graph.platformCredentialAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: platformCredentialAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this Platform Credential Key was registered.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which Platform Credential is registered.
+              nullable: true
+            keyStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodPlatform'
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -23259,7 +23301,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
+              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
             autoSubscribeNewMembers:
               type: boolean
               description: 'Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
@@ -23315,6 +23357,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -25093,6 +25136,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean
@@ -25226,6 +25270,17 @@ components:
         - normal
         - weak
         - unknown
+      type: string
+    microsoft.graph.authenticationMethodPlatform:
+      title: authenticationMethodPlatform
+      enum:
+        - unknown
+        - windows
+        - macOS
+        - iOS
+        - android
+        - linux
+        - unknownFutureValue
       type: string
     microsoft.graph.calendarRoleType:
       title: calendarRoleType
@@ -26282,7 +26337,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. Any value under 45 minutes after the time of the request is automatically set to 45 minutes after the request time. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -27386,21 +27441,21 @@ components:
             recipientActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time when the recipient approved or declined the request.
               format: date-time
               nullable: true
               readOnly: true
             recipientActionMessage:
               type: string
-              description: Custom message sent by recipient of the offer shift request.
+              description: The message sent by the recipient regarding the request.
               nullable: true
             recipientUserId:
               type: string
-              description: User ID of the recipient of the offer shift request.
+              description: The recipient's user ID.
               nullable: true
             senderShiftId:
               type: string
-              description: User ID of the sender of the offer shift request.
+              description: The sender's shift ID.
               nullable: true
           additionalProperties:
             type: object
@@ -27495,7 +27550,7 @@ components:
           properties:
             recipientShiftId:
               type: string
-              description: ShiftId for the recipient user with whom the request is to swap.
+              description: The recipient's Shift ID
               nullable: true
           additionalProperties:
             type: object
@@ -27559,13 +27614,13 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off ends in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off starts in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             timeOffReasonId:
@@ -28086,6 +28141,11 @@ components:
         - title: meetingAttendanceReport
           type: object
           properties:
+            externalEventInformation:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
+              description: The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
             meetingEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -30016,27 +30076,33 @@ components:
             managerActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             managerActionMessage:
               type: string
+              description: The message sent by the manager regarding the scheduleChangeRequest. Optional.
               nullable: true
             managerUserId:
               type: string
+              description: The user ID of the manager who approved or declined the scheduleChangeRequest.
               nullable: true
               readOnly: true
             senderDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             senderMessage:
               type: string
+              description: The message sent by the sender of the scheduleChangeRequest. Optional.
               nullable: true
             senderUserId:
               type: string
+              description: The user ID of the sender of the scheduleChangeRequest.
               nullable: true
               readOnly: true
             state:
@@ -30238,6 +30304,20 @@ components:
         - invited
         - organizationExcludingGuests
       type: string
+    microsoft.graph.virtualEventExternalInformation:
+      title: virtualEventExternalInformation
+      type: object
+      properties:
+        applicationId:
+          type: string
+          description: Identifier of the application that hosts the externalEventId. Read-only.
+          nullable: true
+        externalEventId:
+          type: string
+          description: 'The identifier for a virtualEventExternalInformation object that associates the virtual event with an event ID in an external application. This association bundles all the information (both supported and not supported in virtualEvent) into one virtual event object. Optional. If set, the maximum supported length is 256 characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attendanceRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30253,8 +30333,14 @@ components:
               type: string
               description: Email address of the user associated with this attendance record.
               nullable: true
+            externalRegistrationInformation:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventExternalRegistrationInformation'
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrationId:
+              type: string
+              description: Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
+              nullable: true
             role:
               type: string
               description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
@@ -32091,6 +32177,20 @@ components:
           type: string
           description: The time the attendee left in UTC.
           format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualEventExternalRegistrationInformation:
+      title: virtualEventExternalRegistrationInformation
+      type: object
+      properties:
+        referrer:
+          type: string
+          description: A URL or string that represents the location from which the registrant registered. Optional.
+          nullable: true
+        registrationId:
+          type: string
+          description: 'The identifier for a virtualEventExternalRegistrationInformation object. Optional. If set, the maximum supported length is 256 characters.'
           nullable: true
       additionalProperties:
         type: object

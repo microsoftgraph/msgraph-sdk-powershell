@@ -10441,7 +10441,7 @@ paths:
       tags:
         - users.userSettings
       summary: List Exchange settings
-      description: 'Get a list of Exchange settings, including mailboxes that belong to a user. Currently, the mailbox types supported are the user''s primary and in-place archive. To learn how to get a list of users in a tenant, see List users.'
+      description: 'Get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user''s primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/usersettings-list-exchange?view=graph-rest-beta
@@ -16077,7 +16077,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the user is a member of a restricted management administrative unit. Default value is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -16370,6 +16370,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
+            dataSecurityAndGovernance:
+              $ref: '#/components/schemas/microsoft.graph.userDataSecurityAndGovernance'
             deviceEnrollmentConfigurations:
               type: array
               items:
@@ -17334,7 +17336,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the group is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -18129,7 +18131,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the device is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isRooted:
               type: boolean
@@ -18340,7 +18342,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique. You can use the default value provided, which is in the form api://<appId>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
+              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique across Microsoft Entra ID. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
@@ -18549,7 +18551,6 @@ components:
           properties:
             inPlaceArchiveMailboxId:
               type: string
-              description: The unique identifier for the user's in-place archive mailbox.
               nullable: true
             primaryMailboxId:
               type: string
@@ -20378,6 +20379,18 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userDataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
+        - title: userDataSecurityAndGovernance
+          type: object
+          properties:
+            activities:
+              $ref: '#/components/schemas/microsoft.graph.activitiesContainer'
+            protectionScopes:
+              $ref: '#/components/schemas/microsoft.graph.userProtectionScopeContainer'
+          additionalProperties:
+            type: object
     microsoft.graph.deviceEnrollmentConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20520,6 +20533,12 @@ components:
         - title: employeeExperienceUser
           type: object
           properties:
+            assignedRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRole'
+              description: Represents the collection of Viva Engage roles assigned to a user.
+              x-ms-navigationProperty: true
             learningCourseActivities:
               type: array
               items:
@@ -21677,7 +21696,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -21797,6 +21816,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callAiInsight'
+              description: The AI insights generated for an online meeting. Read-only.
               x-ms-navigationProperty: true
             meetingAttendanceReport:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
@@ -22068,6 +22088,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
             sequenceNumber:
               type: string
+              description: The lexicographically sortable String stamp that represents the version of a presence object.
               nullable: true
               readOnly: true
             statusMessage:
@@ -22699,6 +22720,11 @@ components:
             isRemoteDesktopProtocolEnabled:
               type: boolean
               description: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+            approvedClientApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvedClientApp'
+              x-ms-navigationProperty: true
             targetDeviceGroups:
               type: array
               items:
@@ -24548,6 +24574,7 @@ components:
       type: object
       additionalProperties:
         type: object
+      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.status:
       title: status
       enum:
@@ -25876,6 +25903,40 @@ components:
           $ref: '#/components/schemas/microsoft.graph.websiteType'
       additionalProperties:
         type: object
+    microsoft.graph.dataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataSecurityAndGovernance
+          type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.activitiesContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: activitiesContainer
+          type: object
+          properties:
+            contentActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentActivity'
+              description: Collection of activity logs related to content processing.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userProtectionScopeContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userProtectionScopeContainer
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.deviceEnrollmentConfigurationType:
       title: deviceEnrollmentConfigurationType
       enum:
@@ -25892,6 +25953,7 @@ components:
         - singlePlatformRestriction
         - unknownFutureValue
         - enrollmentNotificationsConfiguration
+        - windowsRestore
       type: string
       description: Describes the TemplateFamily for the Template entity
       x-ms-enum:
@@ -25937,6 +25999,9 @@ components:
           - value: enrollmentNotificationsConfiguration
             description: Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
             name: enrollmentNotificationsConfiguration
+          - value: windowsRestore
+            description: Indicates the configuration is of type Windows Restore which refers to the tenant level Windows Backup and Restore settings a user receives during out-of-box experience (OOBE) Windows enrollment
+            name: windowsRestore
     microsoft.graph.enrollmentConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25960,10 +26025,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -26315,6 +26380,24 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.engagementRole:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRole
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the role.
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
+              description: Users who have been assigned this role.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Represents a Viva Engage role and its members
     microsoft.graph.learningCourseActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -26856,6 +26939,8 @@ components:
         - title: sensitivityLabel
           type: object
           properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
             applicableTo:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
@@ -26866,6 +26951,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.labelPolicy'
             autoLabeling:
               $ref: '#/components/schemas/microsoft.graph.autoLabeling'
+            autoTooltip:
+              type: string
+              nullable: true
+            color:
+              type: string
+              nullable: true
             description:
               type: string
               nullable: true
@@ -26875,13 +26966,22 @@ components:
             isDefault:
               type: boolean
               nullable: true
+            isEnabled:
+              type: boolean
+              nullable: true
             isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
               type: boolean
               nullable: true
             labelActions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.labelActionBase'
+            locale:
+              type: string
+              nullable: true
             name:
               type: string
               nullable: true
@@ -26894,6 +26994,8 @@ components:
             toolTip:
               type: string
               nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
             sublabels:
               type: array
               items:
@@ -28124,6 +28226,8 @@ components:
         - androidnGMS
         - chromeOS
         - linux
+        - visionOS
+        - tvOS
         - blackberry
         - palm
         - unknown
@@ -28203,6 +28307,12 @@ components:
           - value: linux
             description: Linux device.
             name: linux
+          - value: visionOS
+            description: Indicates managed device is running on visionOS operating system.
+            name: visionOS
+          - value: tvOS
+            description: Indicates managed device is running on tvOS operating system.
+            name: tvOS
           - value: blackberry
             description: Blackberry.
             name: blackberry
@@ -29777,26 +29887,32 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.actionItem'
+              description: The collection of AI-generated action items. Read-only.
             callId:
               type: string
+              description: The ID for the online meeting call for which the callAiInsight was generated. Read-only.
               nullable: true
             contentCorrelationId:
               type: string
+              description: The unique ID that correlates the transcript from which the insights were generated. Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the corresponding transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the corresponding transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingNotes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingNote'
+              description: The collection of AI-generated meeting notes. Read-only.
             viewpoint:
               $ref: '#/components/schemas/microsoft.graph.callAiInsightViewPoint'
           additionalProperties:
@@ -31044,11 +31160,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -31252,6 +31368,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.scopeSensitivityLabels'
       additionalProperties:
         type: object
+    microsoft.graph.approvedClientApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvedClientApp
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.targetDeviceGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32192,17 +32319,21 @@ components:
           properties:
             code:
               type: string
+              description: PIN of the user. It is between 8-20 digits as configured in the QR code authentication method policy. The code is temporary when issued by admin but permanent after the user changes it at the first login attempt. This PIN can be reset by the admin but not the user.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the PIN was created.
               format: date-time
               nullable: true
             forceChangePinNextSignIn:
               type: boolean
+              description: Defaults to true for a temporary PIN.
               nullable: true
             updatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the PIN was updated.
               format: date-time
               nullable: true
           additionalProperties:
@@ -32216,11 +32347,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the QR code was created.
               format: date-time
               nullable: true
             expireDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Temporary QR code lifetime is between 1-12 hours. Standard QR code lifetime is in days and max. is 395 days (13 months) and default value is 365 days (12 months).
               format: date-time
               nullable: true
             image:
@@ -32228,11 +32361,13 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the QR code was last used for a successful sign-in.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the QR code becomes active and available to use.
               format: date-time
               nullable: true
           additionalProperties:
@@ -32341,6 +32476,10 @@ components:
           properties:
             userIdentityType:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
+            userPrincipalName:
+              type: string
+              description: User principal name (UPN) of the user.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamsAppPermissionSet:
@@ -32802,6 +32941,24 @@ components:
         - blog
         - profile
       type: string
+    microsoft.graph.contentActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentActivity
+          type: object
+          properties:
+            contentMetadata:
+              $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+            scopeIdentifier:
+              type: string
+              description: The scope identified from computed protection scopes.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.deviceAndAppManagementAssignmentSource:
       title: deviceAndAppManagementAssignmentSource
       enum:
@@ -33540,7 +33697,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. Any value under 45 minutes after the time of the request is automatically set to 45 minutes after the request time. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -33667,6 +33824,28 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.engagementRoleMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRoleMember
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp when the role was assigned to the user.
+              format: date-time
+              readOnly: true
+            userId:
+              type: string
+              description: The Microsoft Entra ID of the user who has the role assigned.
+              nullable: true
+              readOnly: true
+            user:
+              $ref: '#/components/schemas/microsoft.graph.user'
+          additionalProperties:
+            type: object
+          description: Entity to represent the assignment of a role to a user.
     microsoft.graph.courseStatus:
       title: courseStatus
       enum:
@@ -34458,6 +34637,15 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
     microsoft.graph.sensitivityLabelTarget:
       title: sensitivityLabelTarget
       enum:
@@ -34482,8 +34670,10 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier of the label policy.
         name:
           type: string
+          description: The display name of the label policy.
           nullable: true
       additionalProperties:
         type: object
@@ -34493,12 +34683,14 @@ components:
       properties:
         message:
           type: string
+          description: The message displayed to the user when the label is applied automatically.
           nullable: true
         sensitiveTypeIds:
           type: array
           items:
             type: string
             nullable: true
+          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
       additionalProperties:
         type: object
     microsoft.graph.labelActionBase:
@@ -34507,9 +34699,28 @@ components:
       properties:
         name:
           type: string
+          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.threatCategory:
       title: threatCategory
       enum:
@@ -34711,21 +34922,21 @@ components:
             recipientActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time when the recipient approved or declined the request.
               format: date-time
               nullable: true
               readOnly: true
             recipientActionMessage:
               type: string
-              description: Custom message sent by recipient of the offer shift request.
+              description: The message sent by the recipient regarding the request.
               nullable: true
             recipientUserId:
               type: string
-              description: User id of the recipient of the offer shift request.
+              description: The recipient's user ID.
               nullable: true
             senderShiftId:
               type: string
-              description: User id of the sender of the offer shift request.
+              description: The sender's shift ID.
               nullable: true
           additionalProperties:
             type: object
@@ -34849,7 +35060,7 @@ components:
           properties:
             recipientShiftId:
               type: string
-              description: Shift ID for the recipient user with whom the request is to swap.
+              description: The recipient's Shift ID
               nullable: true
           additionalProperties:
             type: object
@@ -34913,13 +35124,13 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off ends in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off starts in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             timeOffReasonId:
@@ -36588,12 +36799,15 @@ components:
       properties:
         ownerDisplayName:
           type: string
+          description: The display name of the owner of the action item.
           nullable: true
         text:
           type: string
+          description: The text content of the action item.
           nullable: true
         title:
           type: string
+          description: The title of the action item.
           nullable: true
       additionalProperties:
         type: object
@@ -36605,11 +36819,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingNoteSubpoint'
+          description: A collection of subpoints of the meeting note.
         text:
           type: string
+          description: The text of the meeting note.
           nullable: true
         title:
           type: string
+          description: The title of the meeting note.
           nullable: true
       additionalProperties:
         type: object
@@ -36621,6 +36838,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.mentionEvent'
+          description: The collection of AI-generated mention events.
       additionalProperties:
         type: object
     microsoft.graph.virtualEventExternalInformation:
@@ -37637,7 +37855,7 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
@@ -38590,18 +38808,21 @@ components:
       properties:
         binaryValue:
           type: string
+          description: The binary representation of the QR code.
           format: base64url
           nullable: true
         errorCorrectionLevel:
           $ref: '#/components/schemas/microsoft.graph.errorCorrectionLevel'
         rawContent:
           type: string
+          description: Base64-encoded raw content of the QR code.
           format: base64url
           nullable: true
         version:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: Version to create QR code image.
           format: int32
           nullable: true
       additionalProperties:
@@ -38851,6 +39072,25 @@ components:
           type: boolean
           description: Indicates whether the delegator or delegate allows calls to be received on their behalf.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentRequest:
+      title: processContentRequest
+      type: object
+      properties:
+        activityMetadata:
+          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
+        contentEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
+          description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        integratedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        protectedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentFilterType:
@@ -39778,6 +40018,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.threatAssessmentResultType:
       title: threatAssessmentResultType
       enum:
@@ -39811,27 +40078,33 @@ components:
             managerActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             managerActionMessage:
               type: string
+              description: The message sent by the manager regarding the scheduleChangeRequest. Optional.
               nullable: true
             managerUserId:
               type: string
+              description: The user ID of the manager who approved or declined the scheduleChangeRequest.
               nullable: true
               readOnly: true
             senderDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             senderMessage:
               type: string
+              description: The message sent by the sender of the scheduleChangeRequest. Optional.
               nullable: true
             senderUserId:
               type: string
+              description: The user ID of the sender of the scheduleChangeRequest.
               nullable: true
               readOnly: true
             state:
@@ -40512,9 +40785,11 @@ components:
       properties:
         text:
           type: string
+          description: The text of the meeting note subpoint.
           nullable: true
         title:
           type: string
+          description: The title of the meeting note subpoint.
           nullable: true
       additionalProperties:
         type: object
@@ -40525,12 +40800,14 @@ components:
         eventDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time of the mention event. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         speaker:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         transcriptUtterance:
           type: string
+          description: The utterance in the online meeting transcript that contains the mention event.
           nullable: true
       additionalProperties:
         type: object
@@ -40626,6 +40903,7 @@ components:
         - driveItem
         - user
         - teamsChannel
+        - onlineMeeting
         - plannerTask
       type: string
     microsoft.graph.plannerCreationSourceKind:
@@ -41017,6 +41295,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             videoOnDemandWebUrl:
               type: string
+              description: The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
               nullable: true
             presenters:
               type: array
@@ -41103,6 +41382,8 @@ components:
             type: string
             nullable: true
           description: Collection of GUIDs that represent certificateBasedApplicationConfiguration that is allowed as root and intermediate certificate authorities.
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -41125,6 +41406,8 @@ components:
       title: passwordCredentialConfiguration
       type: object
       properties:
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -41158,6 +41441,8 @@ components:
       type: object
       properties:
         nonDefaultUriAddition:
+          $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
+        uriAdditionWithoutUniqueTenantIdentifier:
           $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
       additionalProperties:
         type: object
@@ -42779,6 +43064,95 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.activityMetadata:
+      title: activityMetadata
+      type: object
+      properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.userActivityType'
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentMetadataBase:
+      title: processContentMetadataBase
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/microsoft.graph.contentBase'
+        correlationId:
+          type: string
+          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
+          format: date-time
+        identifier:
+          type: string
+          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
+        isTruncated:
+          type: boolean
+          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
+        length:
+          type: number
+          description: The length of the original content in bytes.
+          format: int64
+          nullable: true
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
+          format: date-time
+        name:
+          type: string
+          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
+        sequenceNumber:
+          type: number
+          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceMetadata:
+      title: deviceMetadata
+      type: object
+      properties:
+        deviceType:
+          type: string
+          description: 'Optional. The general type of the device (for example, ''Managed'', ''Unmanaged'').'
+          nullable: true
+        ipAddress:
+          type: string
+          description: The Internet Protocol (IP) address of the device.
+          nullable: true
+        operatingSystemSpecifications:
+          $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
+      additionalProperties:
+        type: object
+    microsoft.graph.integratedApplicationMetadata:
+      title: integratedApplicationMetadata
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the integrated application.
+          nullable: true
+        version:
+          type: string
+          description: The version number of the integrated application.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectedApplicationMetadata:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        - title: protectedApplicationMetadata
+          type: object
+          properties:
+            applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          additionalProperties:
+            type: object
     microsoft.graph.documentSetVersionItem:
       title: documentSetVersionItem
       type: object
@@ -43372,6 +43746,17 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.appManagementPolicyActorExemptions:
+      title: appManagementPolicyActorExemptions
+      type: object
+      properties:
+        customSecurityAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeExemption'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
     microsoft.graph.appKeyCredentialRestrictionType:
       title: appKeyCredentialRestrictionType
       enum:
@@ -43785,6 +44170,41 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.userActivityType:
+      title: userActivityType
+      enum:
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+    microsoft.graph.contentBase:
+      title: contentBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.operatingSystemSpecifications:
+      title: operatingSystemSpecifications
+      type: object
+      properties:
+        operatingSystemPlatform:
+          type: string
+          description: 'The platform of the operating system (for example, ''Windows'').'
+        operatingSystemVersion:
+          type: string
+          description: The version string of the operating system.
+      additionalProperties:
+        type: object
+    microsoft.graph.policyLocation:
+      title: policyLocation
+      type: object
+      properties:
+        value:
+          type: string
+          description: 'The actual value representing the location (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
+      additionalProperties:
+        type: object
     microsoft.graph.sharingRole:
       title: sharingRole
       enum:
@@ -44157,17 +44577,16 @@ components:
         - darkYellow
         - unknownFutureValue
       type: string
-    microsoft.graph.appManagementPolicyActorExemptions:
-      title: appManagementPolicyActorExemptions
-      type: object
-      properties:
-        customSecurityAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeExemption'
-          x-ms-navigationProperty: true
-      additionalProperties:
-        type: object
+    microsoft.graph.customSecurityAttributeExemption:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customSecurityAttributeExemption
+          type: object
+          properties:
+            operator:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeComparisonOperator'
+          additionalProperties:
+            type: object
     microsoft.graph.attributeMapping:
       title: attributeMapping
       type: object
@@ -44516,16 +44935,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFont'
           additionalProperties:
             type: object
-    microsoft.graph.customSecurityAttributeExemption:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: customSecurityAttributeExemption
-          type: object
-          properties:
-            operator:
-              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeComparisonOperator'
-          additionalProperties:
-            type: object
+    microsoft.graph.customSecurityAttributeComparisonOperator:
+      title: customSecurityAttributeComparisonOperator
+      enum:
+        - equals
+        - unknownFutureValue
+      type: string
     microsoft.graph.attributeFlowBehavior:
       title: attributeFlowBehavior
       enum:
@@ -44742,12 +45157,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFill'
           additionalProperties:
             type: object
-    microsoft.graph.customSecurityAttributeComparisonOperator:
-      title: customSecurityAttributeComparisonOperator
-      enum:
-        - equals
-        - unknownFutureValue
-      type: string
     microsoft.graph.stringKeyAttributeMappingSourceValuePair:
       title: stringKeyAttributeMappingSourceValuePair
       type: object

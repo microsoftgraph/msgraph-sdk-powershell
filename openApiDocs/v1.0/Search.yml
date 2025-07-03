@@ -962,11 +962,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Create externalItem
-      description: Create a new externalItem object.
+      summary: Update externalItem
+      description: Update the properties of an externalItem object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-1.0
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -2857,7 +2857,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from the content that Microsoft Graph connectors bring in. The fields property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: label_title. Optional.'
+          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from the content that Microsoft 365 Copilot connectors bring in. The fields property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: label_title. Optional.'
         from:
           maximum: 2147483647
           minimum: -2147483648
