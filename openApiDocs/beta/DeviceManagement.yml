@@ -12932,7 +12932,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+      description: The list of scheduled action for this rule
       operationId: deviceManagement.deviceCompliancePolicy_ListScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -13023,7 +13023,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+      description: The list of scheduled action for this rule
       operationId: deviceManagement.deviceCompliancePolicy_GetScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -43371,26 +43371,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              description: Specify category in which the setting is under. Support $filters.
               nullable: true
             description:
               type: string
-              description: Description of the item
+              description: Description of the setting.
               nullable: true
             displayName:
               type: string
-              description: Display name of the item
+              description: 'Name of the setting. For example: Allow Toast.'
               nullable: true
             helpText:
               type: string
-              description: Help text of the item
+              description: Help text of the setting. Give more details of the setting.
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at
+              description: List of links more info for the setting can be found at.
             keywords:
               type: array
               items:
@@ -43416,7 +43416,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingRiskLevel'
             rootDefinitionId:
               type: string
-              description: Root setting definition if the setting is a child setting.
+              description: Root setting definition id if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -43716,7 +43716,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-              description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+              description: The list of scheduled action for this rule
               x-ms-navigationProperty: true
             userStatuses:
               type: array
@@ -55533,7 +55533,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the user is a member of a restricted management administrative unit. Default value is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -58858,10 +58858,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -68042,7 +68042,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the device is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isRooted:
               type: boolean
@@ -68514,7 +68514,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the group is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -78755,7 +78755,6 @@ components:
           properties:
             inPlaceArchiveMailboxId:
               type: string
-              description: The unique identifier for the user's in-place archive mailbox.
               nullable: true
             primaryMailboxId:
               type: string
@@ -89811,11 +89810,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.contentBase'
         correlationId:
           type: string
-          description: 'An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
-          nullable: true
-        createdDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
+          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
           description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
           format: date-time
         identifier:
@@ -89856,13 +89851,12 @@ components:
           type: string
           description: The Internet Protocol (IP) address of the device.
           nullable: true
+        operatingSystemSpecifications:
+          $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
       additionalProperties:
         type: object
-    microsoft.graph.integratedApplicationMetadata:
-      title: integratedApplicationMetadata
-      type: object
-      properties:
-        name:
+        operatingSystemSpecifications:
+          $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
           type: string
           description: The name of the integrated application.
           nullable: true
@@ -90941,16 +90935,25 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.policyLocation:
-      title: policyLocation
+    microsoft.graph.operatingSystemSpecifications:
+      title: operatingSystemSpecifications
       type: object
       properties:
-        value:
+        operatingSystemPlatform:
           type: string
-          description: 'The actual value representing the location (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
+          description: 'The platform of the operating system (for example, ''Windows'').'
+    microsoft.graph.operatingSystemSpecifications:
+      title: operatingSystemSpecifications
+      type: object
+      properties:
+        operatingSystemPlatform:
+          type: string
+          description: 'The platform of the operating system (for example, ''Windows'').'
+        operatingSystemVersion:
+          type: string
+          description: The version string of the operating system.
       additionalProperties:
         type: object
-    microsoft.graph.sharingRole:
       title: sharingRole
       enum:
         - none

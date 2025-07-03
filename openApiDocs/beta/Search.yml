@@ -1250,11 +1250,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Update externalItem
-      description: Update the properties of an externalitem.
+      summary: Create externalItem
+      description: Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -2902,11 +2902,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get fileValidateOperations
-      description: Read the properties and relationships of a fileValidateOperation object.
+      summary: Get longRunningOperation
+      description: 'Read the properties and relationships of a longRunningOperation object. This API allows you to retrieve the details and status of the following long-running Microsoft Graph API operations. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/longrunningoperation-get?view=graph-rest-beta
       operationId: external.industryData_GetOperation
       parameters:
         - name: longRunningOperation-id

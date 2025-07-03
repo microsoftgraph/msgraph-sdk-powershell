@@ -33,7 +33,7 @@ directive:
       subject: $1Default$2
   - where:
       subject: ^(User)(CalendarEvent)$
-      variant: ^List$|^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+      variant: ^List$|^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^Cancel$|^CancelExpanded$|^CancelViaIdentity$|^CancelViaIdentityExpanded$
     set:
       subject: $1Default$2
 

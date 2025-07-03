@@ -50,7 +50,7 @@ directive:
   - where:
       verb: Update
       subject: ^IdentityProvider$
-      variant: Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1
+      variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
     remove: true
 # Removes the response content since the Patch operation returns http status code 204
   - where-operation-id: "policy_UpdateClaimsMappingPolicy"

@@ -14751,11 +14751,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentRequestWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+      summary: Update accessPackageAssignmentWorkflowExtension
+      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14794,11 +14794,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentRequestWorkflowExtension
-      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
+      summary: Delete accessPackageAssignmentWorkflowExtension
+      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -70039,6 +70039,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -71491,6 +71492,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -81282,6 +81284,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean

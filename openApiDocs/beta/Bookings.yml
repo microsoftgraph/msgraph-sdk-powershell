@@ -14706,6 +14706,12 @@ components:
               description: Timestamp of the last modification of this protection unit.
               format: date-time
               nullable: true
+            offboardRequestedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time when protection unit offboard was requested.
+              format: date-time
+              nullable: true
             policyId:
               type: string
               description: The unique identifier of the protection policy based on which protection unit was created.
@@ -15373,11 +15379,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.emailIdentity'
-          description: A list of users or groups that receive notifications.
-        role:
-          $ref: '#/components/schemas/microsoft.graph.notificationRecipientsType'
-      additionalProperties:
-        type: object
+          description: A list of users or groups that receive notifications. Only specify this property when role is set to custom.
     microsoft.graph.granularMailboxRestoreArtifact:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
@@ -15534,6 +15536,9 @@ components:
         - unprotected
         - removeRequested
         - unknownFutureValue
+        - offboardRequested
+        - offboarded
+        - cancelOffboardRequested
       type: string
     microsoft.graph.restorePointTags:
       title: restorePointTags

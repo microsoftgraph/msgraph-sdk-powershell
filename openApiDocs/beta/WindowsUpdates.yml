@@ -6536,11 +6536,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete operationalInsightsConnection
-      description: Delete an operationalInsightsConnection object.
+      summary: Delete resourceConnection
+      description: Delete a resourceConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6662,19 +6662,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get azureADDevice
-      description: Read the properties of an azureADDevice object.
+      summary: Get updatableAsset
+      description: Read the properties and relationships of an updatableAsset object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-beta
-      operationId: admin.window.update_GetUpdatableAsset
-      parameters:
-        - name: updatableAsset-id
-          in: path
-          description: The unique identifier of updatableAsset
-          required: true
-          style: simple
-          schema:
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-beta
             type: string
           x-ms-docs-key-type: updatableAsset
         - name: $select
@@ -6741,27 +6733,19 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete updatableAssetGroup
-      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
+      summary: Delete updatableAsset
+      description: Delete an updatableAsset object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
-          in: path
-          description: The unique identifier of updatableAsset
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: updatableAsset
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
+      summary: Delete updatableAsset
+      description: Delete an updatableAsset object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-beta
       responses:
         2XX:
           description: Success

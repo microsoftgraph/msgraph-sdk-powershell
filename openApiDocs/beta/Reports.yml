@@ -21944,8 +21944,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signUpStage'
             status:
               $ref: '#/components/schemas/microsoft.graph.signUpStatus'
-            userSnapshot:
-              $ref: '#/components/schemas/microsoft.graph.ciamUserSnapshot'
+            userId:
+              type: string
+              description: The identifier of the user object created during the sign-up.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.deviceManagementReports:
@@ -22541,7 +22543,7 @@ components:
       properties:
         content:
           type: string
-          description: Report content; details vary by report type.
+          description: The http content that has the data
           format: base64url
           nullable: true
       additionalProperties:
@@ -24856,14 +24858,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.ciamUserSnapshot:
-      title: ciamUserSnapshot
-      type: object
-      properties:
-        userId:
-          type: string
-      additionalProperties:
-        type: object
     microsoft.graph.deviceManagementReportStatus:
       title: deviceManagementReportStatus
       enum:
@@ -25053,6 +25047,7 @@ components:
         - fido
         - appPassword
         - unknownFutureValue
+        - externalAuthMethod
       type: string
     microsoft.graph.healthMonitoring.emailNotificationConfiguration:
       title: emailNotificationConfiguration
@@ -25075,9 +25070,7 @@ components:
         - compliantDeviceSignInFailure
         - unknownFutureValue
         - conditionalAccessBlockedSignIn
-      type: string
-    microsoft.graph.healthMonitoring.category:
-      title: category
+        - samlSignInFailure
       enum:
         - unknown
         - authentication
@@ -25113,12 +25106,10 @@ components:
         - devices
         - unknownFutureValue
         - conditionalAccess
+        - saml
       type: string
     microsoft.graph.healthMonitoring.signals:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringDictionary'
-        - title: signals
-          type: object
+        - saml
           additionalProperties:
             type: object
     microsoft.graph.healthMonitoring.alertState:
@@ -25198,6 +25189,7 @@ components:
         - fido
         - appPassword
         - unknownFutureValue
+        - externalAuthMethod
       type: string
     microsoft.graph.featureType:
       title: featureType
@@ -25261,10 +25253,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object

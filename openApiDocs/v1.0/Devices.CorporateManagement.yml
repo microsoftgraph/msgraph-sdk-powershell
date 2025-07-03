@@ -14,11 +14,7 @@ paths:
       description: Read properties and relationships of the deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-deviceappmanagement-get?view=graph-rest-1.0
-      operationId: deviceAppManagement_GetDeviceAppManagement
-      parameters:
-        - name: $select
-          in: query
+        url: https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-get?view=graph-rest-1.0
           description: Select properties to be returned
           style: form
           explode: false
@@ -54,15 +50,11 @@ paths:
       description: Update the properties of a deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateDeviceAppManagement
       requestBody:
         description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.deviceAppManagement'
-        required: true
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-update?view=graph-rest-1.0
       responses:
         2XX:
           description: Success
@@ -2329,27 +2321,19 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: Get targetedManagedAppProtection
-      description: Read properties and relationships of the targetedManagedAppProtection object.
+      summary: Get windowsInformationProtection
+      description: Read properties and relationships of the windowsInformationProtection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppPolicy
       parameters:
         - name: managedAppPolicy-id
-          in: path
-          description: The unique identifier of managedAppPolicy
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedAppPolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
+      summary: Get windowsInformationProtection
+      description: Read properties and relationships of the windowsInformationProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-get?view=graph-rest-1.0
             uniqueItems: true
             type: array
             items:
@@ -2439,7 +2423,7 @@ paths:
       description: Not yet documented
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppPolicy_targetApp
       parameters:
         - name: managedAppPolicy-id
@@ -2455,11 +2439,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                apps:
-                  type: array
-                  items:
+        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
                     $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
               additionalProperties:
                 type: object
@@ -2569,11 +2549,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Get iosManagedAppRegistration
-      description: Read properties and relationships of the iosManagedAppRegistration object.
+      summary: Get managedAppRegistration
+      description: Read properties and relationships of the managedAppRegistration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppRegistration
       parameters:
         - name: managedAppRegistration-id
@@ -2589,19 +2569,11 @@ paths:
           description: Select properties to be returned
           style: form
           explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
+      summary: Get managedAppRegistration
+      description: Read properties and relationships of the managedAppRegistration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-get?view=graph-rest-1.0
             items:
               type: string
       responses:
@@ -2897,7 +2869,7 @@ paths:
       description: Not yet documented
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.appliedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -2925,11 +2897,7 @@ paths:
               properties:
                 apps:
                   type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
-              additionalProperties:
-                type: object
-        required: true
+        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
       responses:
         2XX:
           description: Success
@@ -3184,7 +3152,7 @@ paths:
       description: Not yet documented
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.intendedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -3216,11 +3184,7 @@ paths:
                     $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
               additionalProperties:
                 type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-        default:
+        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/$count':
@@ -3839,11 +3803,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get iosVppEBook
-      description: Read properties and relationships of the iosVppEBook object.
+      summary: Get managedEBook
+      description: Read properties and relationships of the managedEBook object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebook-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebook-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedEBook
       parameters:
         - name: managedEBook-id
@@ -4015,11 +3979,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Create iosVppEBookAssignment
-      description: Create a new iosVppEBookAssignment object.
+      summary: Create managedEBookAssignment
+      description: Create a new managedEBookAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-create?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_CreateAssignment
       parameters:
         - name: managedEBook-id
@@ -7574,11 +7538,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: List windowsMicrosoftEdgeApps
-      description: List properties and relationships of the windowsMicrosoftEdgeApp objects.
+      summary: List managedAndroidStoreApps
+      description: List properties and relationships of the managedAndroidStoreApp objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-windowsmicrosoftedgeapp-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileApp
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7610,19 +7574,11 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.mobileAppCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
+      summary: List managedAndroidStoreApps
+      description: List properties and relationships of the managedAndroidStoreApp objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-list?view=graph-rest-1.0
         operationName: listMore
       x-ms-docs-operation-type: operation
     post:
@@ -7655,11 +7611,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get windowsAppX
-      description: Read properties and relationships of the windowsAppX object.
+      summary: Get windowsMobileMSI
+      description: Read properties and relationships of the windowsMobileMSI object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-windowsappx-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-windowsmobilemsi-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileApp
       parameters:
         - name: mobileApp-id
@@ -7699,19 +7655,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Update managedIOSLobApp
-      description: Update the properties of a managedIOSLobApp object.
+      summary: Get windowsMobileMSI
+      description: Read properties and relationships of the windowsMobileMSI object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managedioslobapp-update?view=graph-rest-1.0
-      operationId: deviceAppManagement_UpdateMobileApp
-      parameters:
-        - name: mobileApp-id
-          in: path
+        url: https://learn.microsoft.com/graph/api/intune-apps-windowsmobilemsi-get?view=graph-rest-1.0
           description: The unique identifier of mobileApp
           required: true
           style: simple
@@ -7738,11 +7686,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Delete windowsMicrosoftEdgeApp
-      description: Deletes a windowsMicrosoftEdgeApp.
+      summary: Delete managedIOSStoreApp
+      description: Deletes a managedIOSStoreApp.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-windowsmicrosoftedgeapp-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-managediosstoreapp-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMobileApp
       parameters:
         - name: mobileApp-id
@@ -7755,19 +7703,11 @@ paths:
           x-ms-docs-key-type: mobileApp
         - name: If-Match
           in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/assignments':
-    get:
-      tags:
+      summary: Update windowsWebApp
+      description: Update the properties of a windowsWebApp object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-apps-windowswebapp-update?view=graph-rest-1.0
         - deviceAppManagement.mobileApp
       summary: List mobileAppAssignments
       description: List properties and relationships of the mobileAppAssignment objects.
@@ -7798,19 +7738,11 @@ paths:
             uniqueItems: true
             type: array
             items:
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
+      summary: Delete managedIOSStoreApp
+      description: Deletes a managedIOSStoreApp.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-apps-managediosstoreapp-delete?view=graph-rest-1.0
           description: Expand related entities
           style: form
           explode: false
@@ -35180,6 +35112,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -41668,6 +41601,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -43260,6 +43194,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean
