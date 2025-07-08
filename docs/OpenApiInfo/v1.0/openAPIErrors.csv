@@ -1,0 +1,2 @@
+Module,ApiPath,Method,From,To
+Identity.DirectoryManagement,/contacts, Get,Parameter Count: 9,Parameter Count: 8

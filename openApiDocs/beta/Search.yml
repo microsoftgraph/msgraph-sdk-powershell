@@ -2157,11 +2157,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Create or update schema
-      description: Create a new or update an existing schema for a Microsoft Search connection.
+      summary: Update schema
+      description: Update the properties of a schema for an externalConnection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id

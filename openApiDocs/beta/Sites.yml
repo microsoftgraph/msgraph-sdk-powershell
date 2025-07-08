@@ -61712,11 +61712,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: List operations
-      description: Get the list of richLongRunningOperations associated with a list.
+      summary: Get metadata for a list
+      description: Return the metadata for a list.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-beta
       operationId: site_GetList
       parameters:
         - name: site-id
@@ -71771,11 +71771,11 @@ paths:
     post:
       tags:
         - sites.baseSitePage
-      summary: Create a page in the site pages list of a site
-      description: Create a new sitePage in the site pages list in a site.
+      summary: Create newsLinkPage
+      description: Create a new newsLinkPage in the site pages list of a site.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/newslinkpage-create?view=graph-rest-beta
       operationId: site_CreatePage
       parameters:
         - name: site-id
@@ -99621,6 +99621,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -101227,11 +101228,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -101852,11 +101853,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

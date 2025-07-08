@@ -941,7 +941,7 @@ paths:
       description: Read properties and relationships of the deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-androidforwork-devicemanagement-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -981,7 +981,7 @@ paths:
       description: Update the properties of a deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-tem-devicemanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-androidforwork-devicemanagement-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
@@ -1558,11 +1558,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: List androidWorkProfileCompliancePolicies
-      description: List properties and relationships of the androidWorkProfileCompliancePolicy objects.
+      summary: List macOSCompliancePolicies
+      description: List properties and relationships of the macOSCompliancePolicy objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceCompliancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1612,11 +1612,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create windows81CompliancePolicy
-      description: Create a new windows81CompliancePolicy object.
+      summary: Create androidCompliancePolicy
+      description: Create a new androidCompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceCompliancePolicy
       requestBody:
         description: New navigation property
@@ -1639,11 +1639,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get deviceCompliancePolicy
-      description: Read properties and relationships of the deviceCompliancePolicy object.
+      summary: Get windows81CompliancePolicy
+      description: Read properties and relationships of the windows81CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1722,11 +1722,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete iosCompliancePolicy
-      description: Deletes a iosCompliancePolicy.
+      summary: Delete androidWorkProfileCompliancePolicy
+      description: Deletes a androidWorkProfileCompliancePolicy.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -4298,11 +4298,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: List windows10GeneralConfigurations
-      description: List properties and relationships of the windows10GeneralConfiguration objects.
+      summary: List windowsDefenderAdvancedThreatProtectionConfigurations
+      description: List properties and relationships of the windowsDefenderAdvancedThreatProtectionConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsdefenderadvancedthreatprotectionconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4352,11 +4352,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create windowsPhone81CustomConfiguration
-      description: Create a new windowsPhone81CustomConfiguration object.
+      summary: Create macOSGeneralDeviceConfiguration
+      description: Create a new macOSGeneralDeviceConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81customconfiguration-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macosgeneraldeviceconfiguration-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceConfiguration
       requestBody:
         description: New navigation property
@@ -4379,11 +4379,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get iosCustomConfiguration
-      description: Read properties and relationships of the iosCustomConfiguration object.
+      summary: Get windows10EnterpriseModernAppManagementConfiguration
+      description: Read properties and relationships of the windows10EnterpriseModernAppManagementConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscustomconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10enterprisemodernappmanagementconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4427,11 +4427,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update windows10GeneralConfiguration
-      description: Update the properties of a windows10GeneralConfiguration object.
+      summary: Update macOSCustomConfiguration
+      description: Update the properties of a macOSCustomConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscustomconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4462,11 +4462,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete windows10GeneralConfiguration
-      description: Deletes a windows10GeneralConfiguration.
+      summary: Delete windows10CustomConfiguration
+      description: Deletes a windows10CustomConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10generalconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10customconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -15634,6 +15634,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
+            dataSecurityAndGovernance:
+              $ref: '#/components/schemas/microsoft.graph.userDataSecurityAndGovernance'
             deviceManagementTroubleshootingEvents:
               type: array
               items:
@@ -19772,6 +19774,18 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userDataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
+        - title: userDataSecurityAndGovernance
+          type: object
+          properties:
+            activities:
+              $ref: '#/components/schemas/microsoft.graph.activitiesContainer'
+            protectionScopes:
+              $ref: '#/components/schemas/microsoft.graph.userProtectionScopeContainer'
+          additionalProperties:
+            type: object
     microsoft.graph.drive:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -22360,6 +22374,34 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.dataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataSecurityAndGovernance
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.activitiesContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: activitiesContainer
+          type: object
+          properties:
+            contentActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentActivity'
+              description: Collection of activity logs related to content processing.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userProtectionScopeContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userProtectionScopeContainer
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.baseItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25729,6 +25771,24 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.contentActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentActivity
+          type: object
+          properties:
+            contentMetadata:
+              $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+            scopeIdentifier:
+              type: string
+              description: The scope identified from computed protection scopes.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.itemReference:
       title: itemReference
       type: object
@@ -29325,6 +29385,25 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.processContentRequest:
+      title: processContentRequest
+      type: object
+      properties:
+        activityMetadata:
+          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
+        contentEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
+          description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        integratedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        protectedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
+      additionalProperties:
+        type: object
     microsoft.graph.album:
       title: album
       type: object
@@ -31826,6 +31905,95 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.activityMetadata:
+      title: activityMetadata
+      type: object
+      properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.userActivityType'
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentMetadataBase:
+      title: processContentMetadataBase
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/microsoft.graph.contentBase'
+        correlationId:
+          type: string
+          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
+          format: date-time
+        identifier:
+          type: string
+          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
+        isTruncated:
+          type: boolean
+          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
+        length:
+          type: number
+          description: The length of the original content in bytes.
+          format: int64
+          nullable: true
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
+          format: date-time
+        name:
+          type: string
+          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
+        sequenceNumber:
+          type: number
+          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceMetadata:
+      title: deviceMetadata
+      type: object
+      properties:
+        deviceType:
+          type: string
+          description: 'Optional. The general type of the device (for example, ''Managed'', ''Unmanaged'').'
+          nullable: true
+        ipAddress:
+          type: string
+          description: The Internet Protocol (IP) address of the device.
+          nullable: true
+        operatingSystemSpecifications:
+          $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
+      additionalProperties:
+        type: object
+    microsoft.graph.integratedApplicationMetadata:
+      title: integratedApplicationMetadata
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the integrated application.
+          nullable: true
+        version:
+          type: string
+          description: The version number of the integrated application.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectedApplicationMetadata:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        - title: protectedApplicationMetadata
+          type: object
+          properties:
+            applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          additionalProperties:
+            type: object
     microsoft.graph.documentSetVersionItem:
       title: documentSetVersionItem
       type: object
@@ -32312,6 +32480,41 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.userActivityType:
+      title: userActivityType
+      enum:
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+    microsoft.graph.contentBase:
+      title: contentBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.operatingSystemSpecifications:
+      title: operatingSystemSpecifications
+      type: object
+      properties:
+        operatingSystemPlatform:
+          type: string
+          description: 'The platform of the operating system (for example, ''Windows'').'
+        operatingSystemVersion:
+          type: string
+          description: The version string of the operating system.
+      additionalProperties:
+        type: object
+    microsoft.graph.policyLocation:
+      title: policyLocation
+      type: object
+      properties:
+        value:
+          type: string
+          description: 'The actual value representing the location. Location value is specific for concretetype of the  policyLocation - policyLocationDomain, policyLocationUrl, or policyLocationApplication (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32485,37 +32688,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

@@ -737,6 +737,99 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /auditLogs/signIns/microsoft.graph.confirmCompromised:
+    post:
+      tags:
+        - auditLogs.signIn
+      summary: Invoke action confirmCompromised
+      description: 'Mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-1.0
+      operationId: auditLog.signIn_confirmCompromised
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /auditLogs/signIns/microsoft.graph.confirmSafe:
+    post:
+      tags:
+        - auditLogs.signIn
+      summary: Invoke action confirmSafe
+      description: 'Mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-1.0
+      operationId: auditLog.signIn_confirmSafe
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /auditLogs/signIns/microsoft.graph.dismiss:
+    post:
+      tags:
+        - auditLogs.signIn
+      summary: Invoke action dismiss
+      description: 'Mark an event in Microsoft Entra sign-in logs as dismissed. For details about investigating Identity Protection risks, see How to investigate risk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/signin-dismiss?view=graph-rest-1.0
+      operationId: auditLog.signIn_dismiss
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports:
     get:
       tags:

@@ -12932,7 +12932,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicy_ListScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -13023,7 +13023,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicy_GetScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -43716,7 +43716,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-              description: The list of scheduled action for this rule
+              description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
               x-ms-navigationProperty: true
             userStatuses:
               type: array
@@ -60828,11 +60828,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -64703,6 +64703,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
+              description: 'The size of the image in GB. For example, 64. Read-only.'
               format: int32
               nullable: true
             sourceImageResourceId:
@@ -69563,6 +69564,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -79413,11 +79415,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object

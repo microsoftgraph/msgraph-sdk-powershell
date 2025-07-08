@@ -3657,7 +3657,6 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
@@ -3699,28 +3698,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - contacts.orgContact
-      summary: Add new entity to contacts
-      operationId: contact.orgContact_CreateOrgContact
-      requestBody:
-        description: New entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.orgContact'
-        required: true
-      responses:
-        2XX:
-          description: Created entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.orgContact'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}':
     get:
@@ -3768,63 +3745,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.orgContact'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - contacts.orgContact
-      summary: Update entity in contacts
-      operationId: contact.orgContact_UpdateOrgContact
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: The unique identifier of orgContact
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.orgContact'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.orgContact'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - contacts.orgContact
-      summary: Delete entity from contacts
-      operationId: contact.orgContact_DeleteOrgContact
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: The unique identifier of orgContact
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13772,7 +13692,7 @@ paths:
       tags:
         - directory.authenticationMethodDevice
       summary: Create hardwareOathTokenAuthenticationMethodDevice
-      description: Create a new hardwareOathTokenAuthenticationMethodDevice object. You can optionally create and assign to a user in the same request; Or assign to a user via the assign API.
+      description: "Create a new hardwareOathTokenAuthenticationMethodDevice object. This API supports two scenarios:\n- Create the new hardware token without assigning to a user. You can then assign to a user.\n- Create and assign a hardware token to a user in the same request. "
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethoddevice-post-hardwareoathdevices?view=graph-rest-beta
@@ -25990,7 +25910,7 @@ paths:
       tags:
         - domains.domain.Actions
       summary: Invoke action verify
-      description: Validate the ownership of a domain.
+      description: 'Validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-beta
@@ -30649,7 +30569,7 @@ paths:
       tags:
         - settings.directorySetting
       summary: List settings
-      description: Retrieve a list of tenant-level or group-specific group settings objects.
+      description: Retrieve a list of tenant-level or group-specific directory settings objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-beta
@@ -30703,7 +30623,7 @@ paths:
       tags:
         - settings.directorySetting
       summary: Create settings
-      description: 'Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.'
+      description: 'Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-beta
@@ -39066,6 +38986,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -39597,11 +39518,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -39852,11 +39773,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -39869,6 +39790,10 @@ components:
         - dismissed
         - postponed
         - unknownFutureValue
+        - riskAccepted
+        - thirdParty
+        - planned
+        - alternateMitigation
       type: string
     microsoft.graph.onPremisesDirectorySynchronizationConfiguration:
       title: onPremisesDirectorySynchronizationConfiguration
@@ -49172,6 +49097,7 @@ components:
         - identityBestPractice
         - identitySecureScore
         - unknownFutureValue
+        - mdiSecureScore
       type: string
     ReferenceNumeric:
       enum:
@@ -49253,6 +49179,7 @@ components:
         - microsoftEntraIdGovernance
         - microsoftEntraWorkloadId
         - unknownFutureValue
+        - aatp
       type: string
     microsoft.graph.authenticationProtocol:
       title: authenticationProtocol
