@@ -5909,11 +5909,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete namedLocation
-      description: Delete a namedLocation object.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -8211,6 +8211,37 @@ paths:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyuser-confirmcompromised?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_confirmCompromised
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /identityProtection/riskyUsers/microsoft.graph.confirmSafe:
+    post:
+      tags:
+        - identityProtection.riskyUser
+      summary: Invoke action confirmSafe
+      description: Confirm one or more riskyUser objects as safe. This action sets the targeted user's risk level to none.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskyuser-confirmsafe?view=graph-rest-1.0
+      operationId: identityProtection.riskyUser_confirmSafe
       requestBody:
         description: Action parameters
         content:
@@ -13040,11 +13071,11 @@ paths:
     put:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create identitySynchronization
-      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
+      summary: Update crossTenantIdentitySyncPolicyPartner
+      description: Update the user synchronization policy of a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_SetIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -15790,7 +15821,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: List roleManagementPolicyAssignments
-      description: Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for groups.
+      description: Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for Groups.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-1.0
@@ -16763,11 +16794,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Create multiTenantOrganization
-      description: 'Create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.'
+      summary: Update multiTenantOrganization
+      description: Update the properties of a multitenant organization.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -18801,6 +18832,234 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/authentication/platformCredentialMethods':
+    get:
+      tags:
+        - users.authentication
+      summary: Get platformCredentialMethods from users
+      description: Represents a platform credential instance registered to a user on Mac OS.
+      operationId: user.authentication_ListPlatformCredentialMethod
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.platformCredentialAuthenticationMethodCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/platformCredentialMethods/{platformCredentialAuthenticationMethod-id}':
+    get:
+      tags:
+        - users.authentication
+      summary: Get platformCredentialMethods from users
+      description: Represents a platform credential instance registered to a user on Mac OS.
+      operationId: user.authentication_GetPlatformCredentialMethod
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: platformCredentialAuthenticationMethod-id
+          in: path
+          description: The unique identifier of platformCredentialAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: platformCredentialAuthenticationMethod
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.authentication
+      summary: Delete platformCredentialAuthenticationMethod
+      description: Delete a platformCredentialAuthenticationMethod object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-delete?view=graph-rest-1.0
+      operationId: user.authentication_DeletePlatformCredentialMethod
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: platformCredentialAuthenticationMethod-id
+          in: path
+          description: The unique identifier of platformCredentialAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: platformCredentialAuthenticationMethod
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/platformCredentialMethods/{platformCredentialAuthenticationMethod-id}/device':
+    get:
+      tags:
+        - users.authentication
+      summary: Get device from users
+      description: 'The registered device on which this Platform Credential resides. Supports $expand. When you get a user''s Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.'
+      operationId: user.authentication.platformCredentialMethod_GetDevice
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: platformCredentialAuthenticationMethod-id
+          in: path
+          description: The unique identifier of platformCredentialAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: platformCredentialAuthenticationMethod
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/platformCredentialMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: user.authentication.platformCredentialMethod_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/authentication/softwareOathMethods':
     get:
       tags:
@@ -19584,6 +19843,10 @@ components:
           properties:
             onAttributeCollection:
               $ref: '#/components/schemas/microsoft.graph.onAttributeCollectionHandler'
+            onAttributeCollectionStart:
+              $ref: '#/components/schemas/microsoft.graph.onAttributeCollectionStartHandler'
+            onAttributeCollectionSubmit:
+              $ref: '#/components/schemas/microsoft.graph.onAttributeCollectionSubmitHandler'
             onAuthenticationMethodLoadStart:
               $ref: '#/components/schemas/microsoft.graph.onAuthenticationMethodLoadStartHandler'
             onInteractiveAuthFlowStart:
@@ -20691,6 +20954,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -20951,6 +21215,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
+            dataSecurityAndGovernance:
+              $ref: '#/components/schemas/microsoft.graph.userDataSecurityAndGovernance'
             deviceManagementTroubleshootingEvents:
               type: array
               items:
@@ -21845,11 +22111,11 @@ components:
               description: The id of the policy. Inherited from entity.
             roleDefinitionId:
               type: string
-              description: 'For Microsoft Entra roles policy, it''s the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it''s either member or owner. Supports $filter (eq).'
+              description: 'For Microsoft Entra roles policy, it''s the identifier of the role definition object where the policy applies. For PIM for Groups membership and ownership, it''s either member or owner. Supports $filter (eq).'
               nullable: true
             scopeId:
               type: string
-              description: The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
+              description: The identifier of the scope where the policy is assigned. Can be / for the tenant or a group ID. Required.
             scopeType:
               type: string
               description: 'The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group. Required.'
@@ -22007,6 +22273,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               description: The phone numbers registered to a user for authentication.
+              x-ms-navigationProperty: true
+            platformCredentialMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
+              description: Represents a platform credential instance registered to a user on Mac OS.
               x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
@@ -22191,6 +22463,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean
@@ -22355,6 +22628,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
           additionalProperties:
             type: object
+    microsoft.graph.platformCredentialAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: platformCredentialAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this Platform Credential Key was registered.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which Platform Credential is registered.
+              nullable: true
+            keyStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodPlatform'
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -22505,6 +22802,16 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.authenticationConditionApplication'
           x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
+    microsoft.graph.onAttributeCollectionStartHandler:
+      title: onAttributeCollectionStartHandler
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.onAttributeCollectionSubmitHandler:
+      title: onAttributeCollectionSubmitHandler
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.onInteractiveAuthFlowStartHandler:
@@ -23594,6 +23901,11 @@ components:
               type: string
               description: The preview of the message associated with the event. It's in text format.
               nullable: true
+            cancelledOccurrences:
+              type: array
+              items:
+                type: string
+              description: 'Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Returned only on $select in a Get operation which specifies the ID (seriesMasterId property value) of a series master event.'
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
@@ -23712,6 +24024,12 @@ components:
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
+            exceptionOccurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.event'
+              description: 'Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don''t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.'
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
@@ -23722,7 +24040,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn''t include occurrences cancelled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn''t include occurrences canceled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -24035,6 +24353,18 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userDataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
+        - title: userDataSecurityAndGovernance
+          type: object
+          properties:
+            activities:
+              $ref: '#/components/schemas/microsoft.graph.activitiesContainer'
+            protectionScopes:
+              $ref: '#/components/schemas/microsoft.graph.userProtectionScopeContainer'
           additionalProperties:
             type: object
     microsoft.graph.deviceManagementTroubleshootingEvent:
@@ -25887,6 +26217,17 @@ components:
         - weak
         - unknown
       type: string
+    microsoft.graph.authenticationMethodPlatform:
+      title: authenticationMethodPlatform
+      enum:
+        - unknown
+        - windows
+        - macOS
+        - iOS
+        - android
+        - linux
+        - unknownFutureValue
+      type: string
     ReferenceCreate:
       type: object
       properties:
@@ -26665,6 +27006,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.platformCredentialAuthenticationMethodCollectionResponse:
+      title: Collection of platformCredentialAuthenticationMethod
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -27728,6 +28082,34 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.dataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataSecurityAndGovernance
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.activitiesContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: activitiesContainer
+          type: object
+          properties:
+            contentActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentActivity'
+              description: Collection of activity logs related to content processing.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userProtectionScopeContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userProtectionScopeContainer
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.baseItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28669,7 +29051,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
+              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
             autoSubscribeNewMembers:
               type: boolean
               description: 'Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
@@ -28725,6 +29107,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -31770,6 +32153,24 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.contentActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentActivity
+          type: object
+          properties:
+            contentMetadata:
+              $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+            scopeIdentifier:
+              type: string
+              description: The scope identified from computed protection scopes.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.itemReference:
       title: itemReference
       type: object
@@ -32357,7 +32758,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. Any value under 45 minutes after the time of the request is automatically set to 45 minutes after the request time. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -33461,21 +33862,21 @@ components:
             recipientActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time when the recipient approved or declined the request.
               format: date-time
               nullable: true
               readOnly: true
             recipientActionMessage:
               type: string
-              description: Custom message sent by recipient of the offer shift request.
+              description: The message sent by the recipient regarding the request.
               nullable: true
             recipientUserId:
               type: string
-              description: User ID of the recipient of the offer shift request.
+              description: The recipient's user ID.
               nullable: true
             senderShiftId:
               type: string
-              description: User ID of the sender of the offer shift request.
+              description: The sender's shift ID.
               nullable: true
           additionalProperties:
             type: object
@@ -33570,7 +33971,7 @@ components:
           properties:
             recipientShiftId:
               type: string
-              description: ShiftId for the recipient user with whom the request is to swap.
+              description: The recipient's Shift ID
               nullable: true
           additionalProperties:
             type: object
@@ -33634,13 +34035,13 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off ends in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off starts in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             timeOffReasonId:
@@ -34580,6 +34981,11 @@ components:
         - title: meetingAttendanceReport
           type: object
           properties:
+            externalEventInformation:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
+              description: The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
             meetingEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -35831,6 +36237,25 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.processContentRequest:
+      title: processContentRequest
+      type: object
+      properties:
+        activityMetadata:
+          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
+        contentEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
+          description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        integratedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        protectedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
+      additionalProperties:
+        type: object
     microsoft.graph.album:
       title: album
       type: object
@@ -36582,27 +37007,33 @@ components:
             managerActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             managerActionMessage:
               type: string
+              description: The message sent by the manager regarding the scheduleChangeRequest. Optional.
               nullable: true
             managerUserId:
               type: string
+              description: The user ID of the manager who approved or declined the scheduleChangeRequest.
               nullable: true
               readOnly: true
             senderDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             senderMessage:
               type: string
+              description: The message sent by the sender of the scheduleChangeRequest. Optional.
               nullable: true
             senderUserId:
               type: string
+              description: The user ID of the sender of the scheduleChangeRequest.
               nullable: true
               readOnly: true
             state:
@@ -37201,6 +37632,20 @@ components:
         - invited
         - organizationExcludingGuests
       type: string
+    microsoft.graph.virtualEventExternalInformation:
+      title: virtualEventExternalInformation
+      type: object
+      properties:
+        applicationId:
+          type: string
+          description: Identifier of the application that hosts the externalEventId. Read-only.
+          nullable: true
+        externalEventId:
+          type: string
+          description: 'The identifier for a virtualEventExternalInformation object that associates the virtual event with an event ID in an external application. This association bundles all the information (both supported and not supported in virtualEvent) into one virtual event object. Optional. If set, the maximum supported length is 256 characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attendanceRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -37216,8 +37661,14 @@ components:
               type: string
               description: Email address of the user associated with this attendance record.
               nullable: true
+            externalRegistrationInformation:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventExternalRegistrationInformation'
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrationId:
+              type: string
+              description: Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
+              nullable: true
             role:
               type: string
               description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
@@ -38741,6 +39192,95 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.activityMetadata:
+      title: activityMetadata
+      type: object
+      properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.userActivityType'
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentMetadataBase:
+      title: processContentMetadataBase
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/microsoft.graph.contentBase'
+        correlationId:
+          type: string
+          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
+          format: date-time
+        identifier:
+          type: string
+          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
+        isTruncated:
+          type: boolean
+          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
+        length:
+          type: number
+          description: The length of the original content in bytes.
+          format: int64
+          nullable: true
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
+          format: date-time
+        name:
+          type: string
+          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
+        sequenceNumber:
+          type: number
+          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceMetadata:
+      title: deviceMetadata
+      type: object
+      properties:
+        deviceType:
+          type: string
+          description: 'Optional. The general type of the device (for example, ''Managed'', ''Unmanaged'').'
+          nullable: true
+        ipAddress:
+          type: string
+          description: The Internet Protocol (IP) address of the device.
+          nullable: true
+        operatingSystemSpecifications:
+          $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
+      additionalProperties:
+        type: object
+    microsoft.graph.integratedApplicationMetadata:
+      title: integratedApplicationMetadata
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the integrated application.
+          nullable: true
+        version:
+          type: string
+          description: The version number of the integrated application.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectedApplicationMetadata:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        - title: protectedApplicationMetadata
+          type: object
+          properties:
+            applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          additionalProperties:
+            type: object
     microsoft.graph.documentSetVersionItem:
       title: documentSetVersionItem
       type: object
@@ -39101,6 +39641,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventExternalRegistrationInformation:
+      title: virtualEventExternalRegistrationInformation
+      type: object
+      properties:
+        referrer:
+          type: string
+          description: A URL or string that represents the location from which the registrant registered. Optional.
+          nullable: true
+        registrationId:
+          type: string
+          description: 'The identifier for a virtualEventExternalRegistrationInformation object. Optional. If set, the maximum supported length is 256 characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.storageQuotaBreakdown:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -39219,6 +39773,41 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.userActivityType:
+      title: userActivityType
+      enum:
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+    microsoft.graph.contentBase:
+      title: contentBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.operatingSystemSpecifications:
+      title: operatingSystemSpecifications
+      type: object
+      properties:
+        operatingSystemPlatform:
+          type: string
+          description: 'The platform of the operating system (for example, ''Windows'').'
+        operatingSystemVersion:
+          type: string
+          description: The version string of the operating system.
+      additionalProperties:
+        type: object
+    microsoft.graph.policyLocation:
+      title: policyLocation
+      type: object
+      properties:
+        value:
+          type: string
+          description: 'The actual value representing the location. Location value is specific for concretetype of the  policyLocation - policyLocationDomain, policyLocationUrl, or policyLocationApplication (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -39392,37 +39981,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:
@@ -40066,6 +40655,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethodCollectionResponse'
+    microsoft.graph.platformCredentialAuthenticationMethodCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethodCollectionResponse'
     microsoft.graph.softwareOathAuthenticationMethodCollectionResponse:
       description: Retrieved collection
       content:
