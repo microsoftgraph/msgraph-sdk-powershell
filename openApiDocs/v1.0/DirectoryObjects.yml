@@ -1130,7 +1130,7 @@ paths:
       tags:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
+      description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0

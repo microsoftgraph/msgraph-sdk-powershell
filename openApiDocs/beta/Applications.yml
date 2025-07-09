@@ -12210,11 +12210,11 @@ paths:
     put:
       tags:
         - servicePrincipals.customClaimsPolicy
-      summary: Update customClaimsPolicy
-      description: Update a customClaimsPolicy object.
+      summary: Create or replace claimsPolicy
+      description: 'Create a new customClaimsPolicy object if it doesn''t exist, or replace an existing one.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta
       operationId: servicePrincipal_SetClaimsPolicy
       parameters:
         - name: servicePrincipal-id
@@ -12245,11 +12245,11 @@ paths:
     patch:
       tags:
         - servicePrincipals.customClaimsPolicy
-      summary: Update customClaimsPolicy
-      description: Update a customClaimsPolicy object.
+      summary: Create or replace claimsPolicy
+      description: 'Create a new customClaimsPolicy object if it doesn''t exist, or replace an existing one.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta
       operationId: servicePrincipal_UpdateClaimsPolicy
       parameters:
         - name: servicePrincipal-id
@@ -28245,6 +28245,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30289,11 +30290,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -37506,11 +37507,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

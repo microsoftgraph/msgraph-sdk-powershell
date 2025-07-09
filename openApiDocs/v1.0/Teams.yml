@@ -1722,11 +1722,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -3771,6 +3771,9 @@ paths:
                     $ref: '#/components/schemas/microsoft.graph.keyValuePair'
                 recipient:
                   $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+                iconId:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -11040,6 +11043,9 @@ paths:
                     $ref: '#/components/schemas/microsoft.graph.keyValuePair'
                 recipient:
                   $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+                iconId:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -20367,11 +20373,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: team.channel_CreateMember
       parameters:
         - name: team-id
@@ -20526,11 +20532,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: team.channel_DeleteMember
       parameters:
         - name: team-id
@@ -25569,6 +25575,9 @@ paths:
                     $ref: '#/components/schemas/microsoft.graph.keyValuePair'
                 recipient:
                   $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+                iconId:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -39334,6 +39343,9 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+                iconId:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -43317,6 +43329,9 @@ paths:
                     $ref: '#/components/schemas/microsoft.graph.keyValuePair'
                 recipient:
                   $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+                iconId:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -51823,6 +51838,9 @@ paths:
                     $ref: '#/components/schemas/microsoft.graph.keyValuePair'
                 recipient:
                   $ref: '#/components/schemas/microsoft.graph.teamworkNotificationRecipient'
+                iconId:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -62420,6 +62438,9 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+                iconId:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -67618,6 +67639,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
+            dataSecurityAndGovernance:
+              $ref: '#/components/schemas/microsoft.graph.userDataSecurityAndGovernance'
             deviceManagementTroubleshootingEvents:
               type: array
               items:
@@ -70093,6 +70116,18 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userDataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
+        - title: userDataSecurityAndGovernance
+          type: object
+          properties:
+            activities:
+              $ref: '#/components/schemas/microsoft.graph.activitiesContainer'
+            protectionScopes:
+              $ref: '#/components/schemas/microsoft.graph.userProtectionScopeContainer'
           additionalProperties:
             type: object
     microsoft.graph.deviceManagementTroubleshootingEvent:
@@ -72776,6 +72811,34 @@ components:
               description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
           additionalProperties:
             type: object
+    microsoft.graph.dataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataSecurityAndGovernance
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.activitiesContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: activitiesContainer
+          type: object
+          properties:
+            contentActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentActivity'
+              description: Collection of activity logs related to content processing.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userProtectionScopeContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userProtectionScopeContainer
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.learningCourseActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -74385,37 +74448,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.attendeeType:
@@ -75165,6 +75228,24 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.contentActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentActivity
+          type: object
+          properties:
+            contentMetadata:
+              $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+            scopeIdentifier:
+              type: string
+              description: The scope identified from computed protection scopes.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.courseStatus:
       title: courseStatus
       enum:
@@ -76961,6 +77042,25 @@ components:
           description: For internal use only.
           format: int32
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentRequest:
+      title: processContentRequest
+      type: object
+      properties:
+        activityMetadata:
+          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
+        contentEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
+          description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        integratedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        protectedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
       additionalProperties:
         type: object
     microsoft.graph.sharingDetail:
@@ -78940,6 +79040,95 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.activityMetadata:
+      title: activityMetadata
+      type: object
+      properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.userActivityType'
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentMetadataBase:
+      title: processContentMetadataBase
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/microsoft.graph.contentBase'
+        correlationId:
+          type: string
+          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
+          format: date-time
+        identifier:
+          type: string
+          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
+        isTruncated:
+          type: boolean
+          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
+        length:
+          type: number
+          description: The length of the original content in bytes.
+          format: int64
+          nullable: true
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
+          format: date-time
+        name:
+          type: string
+          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
+        sequenceNumber:
+          type: number
+          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceMetadata:
+      title: deviceMetadata
+      type: object
+      properties:
+        deviceType:
+          type: string
+          description: 'Optional. The general type of the device (for example, ''Managed'', ''Unmanaged'').'
+          nullable: true
+        ipAddress:
+          type: string
+          description: The Internet Protocol (IP) address of the device.
+          nullable: true
+        operatingSystemSpecifications:
+          $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
+      additionalProperties:
+        type: object
+    microsoft.graph.integratedApplicationMetadata:
+      title: integratedApplicationMetadata
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the integrated application.
+          nullable: true
+        version:
+          type: string
+          description: The version number of the integrated application.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectedApplicationMetadata:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        - title: protectedApplicationMetadata
+          type: object
+          properties:
+            applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          additionalProperties:
+            type: object
     microsoft.graph.insightIdentity:
       title: insightIdentity
       type: object
@@ -79131,6 +79320,41 @@ components:
           type: string
           description: Refers to the Service Principal Name is the Application name in the tenant.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userActivityType:
+      title: userActivityType
+      enum:
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+    microsoft.graph.contentBase:
+      title: contentBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.operatingSystemSpecifications:
+      title: operatingSystemSpecifications
+      type: object
+      properties:
+        operatingSystemPlatform:
+          type: string
+          description: 'The platform of the operating system (for example, ''Windows'').'
+        operatingSystemVersion:
+          type: string
+          description: The version string of the operating system.
+      additionalProperties:
+        type: object
+    microsoft.graph.policyLocation:
+      title: policyLocation
+      type: object
+      properties:
+        value:
+          type: string
+          description: 'The actual value representing the location. Location value is specific for concretetype of the  policyLocation - policyLocationDomain, policyLocationUrl, or policyLocationApplication (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
       additionalProperties:
         type: object
     microsoft.graph.printTaskProcessingState:

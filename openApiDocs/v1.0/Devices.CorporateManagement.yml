@@ -14,7 +14,7 @@ paths:
       description: Read properties and relationships of the deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-policyset-deviceappmanagement-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetDeviceAppManagement
       parameters:
         - name: $select
@@ -54,7 +54,7 @@ paths:
       description: Update the properties of a deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-unlock-deviceappmanagement-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateDeviceAppManagement
       requestBody:
         description: New property values
@@ -2252,11 +2252,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: List windowsInformationProtections
-      description: List properties and relationships of the windowsInformationProtection objects.
+      summary: List managedAppConfigurations
+      description: List properties and relationships of the managedAppConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappconfiguration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2329,11 +2329,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: Get windowsInformationProtection
-      description: Read properties and relationships of the windowsInformationProtection object.
+      summary: Get managedAppConfiguration
+      description: Read properties and relationships of the managedAppConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappconfiguration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppPolicy
       parameters:
         - name: managedAppPolicy-id
@@ -2439,7 +2439,7 @@ paths:
       description: Not yet documented
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppPolicy_targetApp
       parameters:
         - name: managedAppPolicy-id
@@ -2488,11 +2488,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: List iosManagedAppRegistrations
-      description: List properties and relationships of the iosManagedAppRegistration objects.
+      summary: List androidManagedAppRegistrations
+      description: List properties and relationships of the androidManagedAppRegistration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppRegistration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2569,11 +2569,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Get managedAppRegistration
-      description: Read properties and relationships of the managedAppRegistration object.
+      summary: Get androidManagedAppRegistration
+      description: Read properties and relationships of the androidManagedAppRegistration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppRegistration
       parameters:
         - name: managedAppRegistration-id
@@ -2897,7 +2897,7 @@ paths:
       description: Not yet documented
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.appliedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -3184,7 +3184,7 @@ paths:
       description: Not yet documented
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.intendedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -3561,11 +3561,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppStatus
-      summary: List managedAppStatuses
-      description: List properties and relationships of the managedAppStatus objects.
+      summary: List managedAppStatusRaws
+      description: List properties and relationships of the managedAppStatusRaw objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatus-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppStatus
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3638,11 +3638,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppStatus
-      summary: Get managedAppStatus
-      description: Read properties and relationships of the managedAppStatus object.
+      summary: Get managedAppStatusRaw
+      description: Read properties and relationships of the managedAppStatusRaw object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatus-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppStatus
       parameters:
         - name: managedAppStatus-id
@@ -3758,11 +3758,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: List managedEBooks
-      description: List properties and relationships of the managedEBook objects.
+      summary: List iosVppEBooks
+      description: List properties and relationships of the iosVppEBook objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebook-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedEBook
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4051,11 +4051,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get iosVppEBookAssignment
-      description: Read properties and relationships of the iosVppEBookAssignment object.
+      summary: Get managedEBookAssignment
+      description: Read properties and relationships of the managedEBookAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-get?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_GetAssignment
       parameters:
         - name: managedEBook-id
@@ -4107,11 +4107,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Update iosVppEBookAssignment
-      description: Update the properties of a iosVppEBookAssignment object.
+      summary: Update managedEBookAssignment
+      description: Update the properties of a managedEBookAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-update?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_UpdateAssignment
       parameters:
         - name: managedEBook-id
@@ -6413,11 +6413,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get managedDeviceMobileAppConfiguration
-      description: Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+      summary: Get iosMobileAppConfiguration
+      description: Read properties and relationships of the iosMobileAppConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileAppConfiguration
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7574,11 +7574,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: List managedAndroidStoreApps
-      description: List properties and relationships of the managedAndroidStoreApp objects.
+      summary: List macOSLobApps
+      description: List properties and relationships of the macOSLobApp objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-macoslobapp-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileApp
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7628,11 +7628,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Create managedAndroidLobApp
-      description: Create a new managedAndroidLobApp object.
+      summary: Create macOSLobApp
+      description: Create a new macOSLobApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidlobapp-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-macoslobapp-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateMobileApp
       requestBody:
         description: New navigation property
@@ -7655,11 +7655,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get windowsMobileMSI
-      description: Read properties and relationships of the windowsMobileMSI object.
+      summary: Get iosLobApp
+      description: Read properties and relationships of the iosLobApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-windowsmobilemsi-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-ioslobapp-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileApp
       parameters:
         - name: mobileApp-id
@@ -7703,11 +7703,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Update windowsWebApp
-      description: Update the properties of a windowsWebApp object.
+      summary: Update iosVppApp
+      description: Update the properties of a iosVppApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-windowswebapp-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-iosvppapp-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateMobileApp
       parameters:
         - name: mobileApp-id
@@ -7738,11 +7738,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Delete managedIOSStoreApp
-      description: Deletes a managedIOSStoreApp.
+      summary: Delete iosiPadOSWebClip
+      description: Deletes a iosiPadOSWebClip.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-managediosstoreapp-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-iosipadoswebclip-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMobileApp
       parameters:
         - name: mobileApp-id
@@ -35441,6 +35441,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
+            dataSecurityAndGovernance:
+              $ref: '#/components/schemas/microsoft.graph.userDataSecurityAndGovernance'
             deviceManagementTroubleshootingEvents:
               type: array
               items:
@@ -38604,6 +38606,18 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userDataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
+        - title: userDataSecurityAndGovernance
+          type: object
+          properties:
+            activities:
+              $ref: '#/components/schemas/microsoft.graph.activitiesContainer'
+            protectionScopes:
+              $ref: '#/components/schemas/microsoft.graph.userProtectionScopeContainer'
+          additionalProperties:
+            type: object
     microsoft.graph.drive:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -40660,6 +40674,34 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.dataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataSecurityAndGovernance
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.activitiesContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: activitiesContainer
+          type: object
+          properties:
+            contentActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentActivity'
+              description: Collection of activity logs related to content processing.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userProtectionScopeContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userProtectionScopeContainer
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.baseItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43855,6 +43897,24 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.contentActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentActivity
+          type: object
+          properties:
+            contentMetadata:
+              $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+            scopeIdentifier:
+              type: string
+              description: The scope identified from computed protection scopes.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.itemReference:
       title: itemReference
       type: object
@@ -47379,6 +47439,25 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.processContentRequest:
+      title: processContentRequest
+      type: object
+      properties:
+        activityMetadata:
+          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
+        contentEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
+          description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        integratedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        protectedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
+      additionalProperties:
+        type: object
     microsoft.graph.album:
       title: album
       type: object
@@ -49880,6 +49959,95 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.activityMetadata:
+      title: activityMetadata
+      type: object
+      properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.userActivityType'
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentMetadataBase:
+      title: processContentMetadataBase
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/microsoft.graph.contentBase'
+        correlationId:
+          type: string
+          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
+          format: date-time
+        identifier:
+          type: string
+          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
+        isTruncated:
+          type: boolean
+          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
+        length:
+          type: number
+          description: The length of the original content in bytes.
+          format: int64
+          nullable: true
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
+          format: date-time
+        name:
+          type: string
+          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
+        sequenceNumber:
+          type: number
+          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceMetadata:
+      title: deviceMetadata
+      type: object
+      properties:
+        deviceType:
+          type: string
+          description: 'Optional. The general type of the device (for example, ''Managed'', ''Unmanaged'').'
+          nullable: true
+        ipAddress:
+          type: string
+          description: The Internet Protocol (IP) address of the device.
+          nullable: true
+        operatingSystemSpecifications:
+          $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
+      additionalProperties:
+        type: object
+    microsoft.graph.integratedApplicationMetadata:
+      title: integratedApplicationMetadata
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the integrated application.
+          nullable: true
+        version:
+          type: string
+          description: The version number of the integrated application.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectedApplicationMetadata:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        - title: protectedApplicationMetadata
+          type: object
+          properties:
+            applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          additionalProperties:
+            type: object
     microsoft.graph.documentSetVersionItem:
       title: documentSetVersionItem
       type: object
@@ -50366,6 +50534,41 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.userActivityType:
+      title: userActivityType
+      enum:
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+    microsoft.graph.contentBase:
+      title: contentBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.operatingSystemSpecifications:
+      title: operatingSystemSpecifications
+      type: object
+      properties:
+        operatingSystemPlatform:
+          type: string
+          description: 'The platform of the operating system (for example, ''Windows'').'
+        operatingSystemVersion:
+          type: string
+          description: The version string of the operating system.
+      additionalProperties:
+        type: object
+    microsoft.graph.policyLocation:
+      title: policyLocation
+      type: object
+      properties:
+        value:
+          type: string
+          description: 'The actual value representing the location. Location value is specific for concretetype of the  policyLocation - policyLocationDomain, policyLocationUrl, or policyLocationApplication (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -50539,37 +50742,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

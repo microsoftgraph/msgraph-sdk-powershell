@@ -9319,11 +9319,11 @@ paths:
     get:
       tags:
         - identity.customAuthenticationExtension
-      summary: Get customAuthenticationExtension
-      description: Read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
+      summary: Get authenticationEventListener
+      description: Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-beta
       operationId: identity_GetCustomAuthenticationExtension
       parameters:
         - name: customAuthenticationExtension-id
@@ -10337,11 +10337,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: Get riskDetection
-      description: Retrieve the properties of a riskDetection object.
+      summary: List riskDetection
+      description: Retrieve the properties of a collection of riskDetection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-beta
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -18454,11 +18454,11 @@ paths:
     put:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update crossTenantIdentitySyncPolicyPartner
-      description: Update the user synchronization policy of a partner-specific configuration.
+      summary: Create identitySynchronization
+      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-beta
       operationId: policy.crossTenantAccessPolicy.partner_SetIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -41940,6 +41940,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43146,11 +43147,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -53187,11 +53188,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
